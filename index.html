@@ -218,7 +218,7 @@
         theme.p.forEach(function (paper) {
           if (matches(paper, query)) (groups[paper.g] ||= []).push(paper);
         });
-        root.querySelector('.theme-count').textContent = theme.p.length + ' papers';
+        root.querySelector('.theme-count').textContent = theme.p.length + ' entries';
         const html = Object.keys(groups).map(function (groupId) {
           const papers = groups[groupId];
           return '<section class="paper-group"><h3>' + esc(theme.g[groupId]) + '</h3>' +
@@ -245,7 +245,7 @@
           const count = data.themes.reduce(function (sum, theme) {
             return sum + theme.p.filter(function (paper) { return matches(paper, query); }).length;
           }, 0);
-          status.textContent = query ? count + ' matching papers' : '400 papers from the three research roadmaps';
+          status.textContent = query ? count + ' matching papers' : '400 roadmap entries from the three research roadmaps';
         };
         globalSearch.addEventListener('input', renderAll);
         themeRoots.forEach(function (root) {
