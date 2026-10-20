@@ -232,7 +232,7 @@
         }).join('');
         root.querySelector('.paper-groups').innerHTML = html || '<div class="empty-state">No papers match this search.</div>';
       };
-      fetch('./references/paper-catalog.json').then(function (response) {
+      fetch('./references/paper-catalog.json?v=20261021').then(function (response) {
         if (!response.ok) throw new Error('catalog');
         return response.json();
       }).then(function (data) {
