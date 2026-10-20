@@ -4,7 +4,7 @@ Interactive, visual explanations of scientific papers and research concepts.
 
 **Homepage:** [Research Atlas](index.html)
 
-This repository collects the paper explainer webpages and research maps created by Kewei Zhu. Each paper lives in its own folder under [`papers/`](papers/), while the three main research themes are stored under [`references/roadmaps/`](references/roadmaps/).
+This repository collects the paper explainer webpages and research maps created by Kewei Zhu. The explainers are stored directly in the repository as self-contained HTML pages, so they can be opened through GitHub Pages without ChatGPT sign-in. Each paper lives in its own folder under [`papers/`](papers/), while the three main research themes are stored under [`references/roadmaps/`](references/roadmaps/).
 
 ## Three research themes
 
