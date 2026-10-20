@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="description" content="A visual research atlas connecting AI, metal-organic frameworks, robotics, and interactive paper explainers.">
+  <title>Research Atlas · Kewei Zhu</title>
+  <style>
+    :root {
+      --ink: #f4f7fb;
+      --muted: #a8b4c7;
+      --line: rgba(255,255,255,.13);
+      --panel: rgba(14, 23, 42, .73);
+      --bg: #07111f;
+      --cyan: #7de3ff;
+      --lime: #d7f26b;
+      --orange: #ffb66e;
+      --pink: #f4a6d7;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(67, 177, 255, .16), transparent 28rem),
+        radial-gradient(circle at 85% 20%, rgba(215, 242, 107, .11), transparent 25rem),
+        linear-gradient(145deg, #07111f 0%, #0a1528 58%, #101326 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 28px 0; }
+    .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; }
+    .mark { width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 12px; display: grid; place-items: center; background: linear-gradient(135deg, rgba(125,227,255,.25), rgba(215,242,107,.15)); font-weight: 800; }
+    .brand strong { letter-spacing: .02em; }
+    .brand span, .eyebrow, .meta { color: var(--muted); font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; }
+    nav { display: flex; gap: 18px; color: var(--muted); font-size: .9rem; }
+    nav a { text-decoration: none; }
+    nav a:hover { color: var(--ink); }
+    .hero { padding: 92px 0 76px; max-width: 850px; }
+    .eyebrow { color: var(--cyan); margin-bottom: 20px; }
+    h1 { margin: 0; max-width: 840px; font-size: clamp(3rem, 8vw, 6.7rem); line-height: .95; letter-spacing: -.075em; font-weight: 700; }
+    .hero p { max-width: 670px; margin: 28px 0 0; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.34rem); line-height: 1.65; }
+    .hero strong { color: var(--ink); font-weight: 600; }
+    .section-head { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin: 12px 0 22px; }
+    h2 { margin: 0; font-size: clamp(1.7rem, 3vw, 2.4rem); letter-spacing: -.04em; }
+    .section-head p { color: var(--muted); margin: 0; max-width: 440px; line-height: 1.55; }
+    .themes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card {
+      position: relative; min-height: 390px; padding: 26px; border: 1px solid var(--line);
+      border-radius: 24px; background: linear-gradient(155deg, rgba(255,255,255,.10), var(--panel));
+      overflow: hidden; display: flex; flex-direction: column; transition: transform .25s ease, border-color .25s ease;
+    }
+    .card:hover { transform: translateY(-7px); border-color: rgba(255,255,255,.35); }
+    .card::after { content: ""; position: absolute; width: 190px; height: 190px; border-radius: 50%; right: -65px; top: -65px; opacity: .18; filter: blur(2px); }
+    .ai::after { background: var(--cyan); }
+    .mof::after { background: var(--lime); }
+    .robotics::after { background: var(--orange); }
+    .card-top { display: flex; justify-content: space-between; align-items: center; }
+    .index { font-size: 3rem; font-weight: 750; letter-spacing: -.09em; color: rgba(255,255,255,.2); }
+    .pill { padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+    .card h3 { margin: 50px 0 10px; font-size: 1.65rem; letter-spacing: -.04em; }
+    .card h3 span { display: block; margin-top: 6px; color: var(--muted); font-size: .98rem; font-weight: 450; letter-spacing: 0; }
+    .card p { color: var(--muted); line-height: 1.6; margin: 0; }
+    .card-link { margin-top: auto; padding-top: 26px; display: flex; justify-content: space-between; align-items: center; text-decoration: none; font-weight: 650; }
+    .card-link b { font-size: 1.3rem; transition: transform .2s ease; }
+    .card-link:hover b { transform: translateX(5px); }
+    .ai .card-link { color: var(--cyan); }
+    .mof .card-link { color: var(--lime); }
+    .robotics .card-link { color: var(--orange); }
+    .latest { margin: 86px 0 68px; padding: 25px 28px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.055); display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+    .latest h3 { margin: 7px 0 5px; font-size: 1.3rem; }
+    .latest p { margin: 0; color: var(--muted); line-height: 1.5; }
+    .button { display: inline-flex; align-items: center; gap: 9px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; white-space: nowrap; }
+    .button:hover { background: rgba(255,255,255,.1); }
+    footer { display: flex; justify-content: space-between; gap: 18px; padding: 28px 0 42px; color: var(--muted); font-size: .86rem; border-top: 1px solid var(--line); }
+    footer a { color: var(--ink); text-decoration: none; }
+    @media (max-width: 800px) {
+      .themes { grid-template-columns: 1fr; }
+      .hero { padding-top: 60px; }
+      .section-head, .latest, footer { align-items: flex-start; flex-direction: column; }
+      nav { display: none; }
+      .latest .button { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <a class="brand" href="./">
+        <span class="mark">KZ</span>
+        <span><strong>Research Atlas</strong><br><span>Kewei Zhu · visual research notes</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#themes">Themes</a>
+        <a href="./papers/">Paper explainers</a>
+        <a href="https://github.com/vickie02736/paper-webpages">GitHub ↗</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">A visual index of research</div>
+        <h1>Three ways to map what comes next.</h1>
+        <p>
+          A growing collection of <strong>research roadmaps</strong> and interactive paper explainers,
+          connecting reusable AI frameworks, the evolving chemistry of MOFs, and embodied intelligence in robotics.
+        </p>
+      </section>
+
+      <section id="themes" aria-labelledby="themes-title">
+        <div class="section-head">
+          <h2 id="themes-title">Explore the three themes</h2>
+          <p>Each map starts from a reusable research question, then traces methods, representative papers, and possible extensions.</p>
+        </div>
+        <div class="themes">
+          <article class="card ai">
+            <div class="card-top"><span class="index">01</span><span class="pill">AI / ML</span></div>
+            <h3>AI Top Conferences<span>顶会 A 框架研究地图</span></h3>
+            <p>Reusable problem and algorithm frameworks across recent top-conference work, from optimisation and agents to retrieval and reasoning.</p>
+            <a class="card-link" href="./references/roadmaps/ai-top-conference-map.mm">Open research map <b>↗</b></a>
+          </article>
+          <article class="card mof">
+            <div class="card-top"><span class="index">02</span><span class="pill">Materials</span></div>
+            <h3>Metal–Organic Frameworks<span>MOF 近年进展地图</span></h3>
+            <p>Structure, disorder, glass, flexibility, simulation, and AI-guided discovery as a connected set of materials questions.</p>
+            <a class="card-link" href="./references/roadmaps/mof-recent-progress-map.mm">Open research map <b>↗</b></a>
+          </article>
+          <article class="card robotics">
+            <div class="card-top"><span class="index">03</span><span class="pill">Embodied AI</span></div>
+            <h3>Robotics<span>机器人近年进展地图</span></h3>
+            <p>From scalable demonstrations and transferable representations to generalist vision-language-action policies and real-world control.</p>
+            <a class="card-link" href="./references/roadmaps/robotics-recent-progress-map.mm">Open research map <b>↗</b></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="latest" aria-label="Latest paper explainer">
+        <div>
+          <div class="eyebrow">Latest explainer</div>
+          <h3>RAG · Retrieval-Augmented Generation</h3>
+          <p>A visual, interactive guide to the NeurIPS 2020 paper.</p>
+        </div>
+        <a class="button" href="https://rag-paper-explainer-20261020.smartheron16.chatgpt.site" rel="noopener">Open live page ↗</a>
+      </section>
+    </main>
+
+    <footer>
+      <span>Built for slow reading, clear questions, and better connections.</span>
+      <a href="https://github.com/vickie02736/paper-webpages">View repository ↗</a>
+    </footer>
+  </div>
+</body>
+</html>
