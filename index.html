@@ -227,7 +227,7 @@
           const papers = groups[groupId];
           return '<details class="paper-group"' + (query.trim() ? ' open' : '') + '><summary><h3>' + esc(theme.g[groupId]) + '</h3><span class="group-chevron">＋</span></summary>' +
             papers.map(function (paper) {
-              const localPage = paper.p && /^\\.\\//.test(paper.p);
+              const localPage = paper.p && /^\.\//.test(paper.p);
               const page = paper.p ? '<a href="' + safeUrl(paper.p) + '"' + (localPage ? '' : ' target="_blank" rel="noopener"') + '>Explainer ↗</a>' : '<span class="status">Webpage coming soon</span>';
               return '<article class="paper-row"><div class="paper-key">' + esc(paper.s) + '</div>' +
                 '<div><h4 class="paper-title">' + esc(paper.t) + '</h4><p class="paper-meta">' + esc(paper.m) + '</p></div>' +
