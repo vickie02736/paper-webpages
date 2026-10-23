@@ -98,11 +98,12 @@
     .theme-search { display:flex; justify-content:flex-end; margin-bottom:14px; }
     .theme-search input { width:min(360px,100%); padding:10px 12px; border:1px solid var(--line); border-radius:10px; background:rgba(0,0,0,.12); color:var(--ink); outline:0; }
     .paper-group { border-top:1px solid var(--line); margin-top:12px; }
-    .paper-group summary { list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; padding:16px 0 12px; }
-    .paper-group summary::-webkit-details-marker { display:none; }
-    .paper-group h3 { margin:0; color:var(--muted); font-size:.78rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; }
-    .group-chevron { color:var(--muted); font-size:1.1rem; transition:transform .2s ease; }
-    .paper-group[open] .group-chevron { transform:rotate(45deg); }
+    .group-toggle { width:100%; border:0; padding:16px 0 12px; display:flex; justify-content:space-between; align-items:center; gap:12px; color:var(--muted); background:transparent; cursor:pointer; text-align:left; font:inherit; }
+    .group-toggle:focus-visible { outline:2px solid var(--cyan); outline-offset:4px; border-radius:4px; }
+    .group-title { font-size:.78rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; }
+    .group-chevron { flex:0 0 auto; color:var(--muted); font-size:1.1rem; line-height:1; }
+    .group-toggle[aria-expanded="true"] .group-chevron { color:var(--cyan); }
+    .group-content[hidden] { display:none; }
     .paper-row { display:grid; grid-template-columns:minmax(120px,.25fr) minmax(240px,1fr) minmax(120px,.8fr) auto; gap:16px; align-items:center; padding:14px 0; border-top:1px solid rgba(255,255,255,.08); }
     .paper-row:first-of-type { border-top:0; }
     .paper-key { color:var(--cyan); font-size:.78rem; font-weight:700; }
@@ -225,7 +226,8 @@
         root.querySelector('.theme-count').textContent = theme.p.length + ' entries';
         const html = Object.keys(groups).map(function (groupId) {
           const papers = groups[groupId];
-          return '<details class="paper-group"' + (query.trim() ? ' open' : '') + '><summary><h3>' + esc(theme.g[groupId]) + '</h3><span class="group-chevron">＋</span></summary>' +
+          const expanded = Boolean(query.trim());
+          return '<section class="paper-group"><button class="group-toggle" type="button" aria-expanded="' + expanded + '"><span class="group-title">' + esc(theme.g[groupId]) + '</span><span class="group-chevron">' + (expanded ? '×' : '＋') + '</span></button><div class="group-content"' + (expanded ? '' : ' hidden') + '>' +
             papers.map(function (paper) {
               const localPage = paper.p && /^\.\//.test(paper.p);
               const page = paper.p ? '<a href="' + safeUrl(paper.p) + '"' + (localPage ? '' : ' target="_blank" rel="noopener"') + '>Explainer ↗</a>' : '<span class="status">Webpage coming soon</span>';
@@ -233,9 +235,18 @@
                 '<div><h4 class="paper-title">' + esc(paper.t) + '</h4><p class="paper-meta">' + esc(paper.m) + '</p></div>' +
                 '<div class="paper-info">' + (localPage ? 'Available in this repository' : (paper.p ? 'Hosted explainer' : 'Source paper indexed')) + '</div>' +
                 '<div class="paper-actions"><a href="' + safeUrl(paper.u) + '" target="_blank" rel="noopener">Original ↗</a>' + page + '</div></article>';
-            }).join('') + '</details>';
+            }).join('') + '</div></section>';
         }).join('');
         root.querySelector('.paper-groups').innerHTML = html || '<div class="empty-state">No papers match this search.</div>';
+        root.querySelectorAll('.group-toggle').forEach(function (button) {
+          button.addEventListener('click', function () {
+            const open = button.getAttribute('aria-expanded') === 'true';
+            const content = button.nextElementSibling;
+            button.setAttribute('aria-expanded', String(!open));
+            content.hidden = open;
+            button.querySelector('.group-chevron').textContent = open ? '＋' : '×';
+          });
+        });
       };
       fetch('./references/paper-catalog.json?v=20261023').then(function (response) {
         if (!response.ok) throw new Error('catalog');
