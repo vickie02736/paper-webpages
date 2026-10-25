@@ -103,7 +103,12 @@
     .group-title { font-size:.78rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; }
     .group-chevron { flex:0 0 auto; color:var(--muted); font-size:1.1rem; line-height:1; }
     .group-toggle[aria-expanded="true"] .group-chevron { color:var(--cyan); }
-    .group-content[hidden] { display:none; }
+    .group-content[hidden] { display:none !important; }
+    .category-menu > .group-toggle .group-title { font-size:1rem; color:var(--ink); letter-spacing:0; text-transform:none; }
+    .category-menu > .group-content { padding:0 0 8px 18px; border-left:2px solid var(--line); }
+    .topic-menu > .group-toggle { min-height:48px; }
+    .group-toggle { touch-action:manipulation; }
+    .group-chevron { min-width:28px; text-align:center; }
     .paper-row { display:grid; grid-template-columns:minmax(120px,.25fr) minmax(240px,1fr) minmax(120px,.8fr) auto; gap:16px; align-items:center; padding:14px 0; border-top:1px solid rgba(255,255,255,.08); }
     .paper-row:first-of-type { border-top:0; }
     .paper-key { color:var(--cyan); font-size:.78rem; font-weight:700; }
@@ -224,18 +229,33 @@
           if (matches(paper, query)) (groups[paper.g] ||= []).push(paper);
         });
         root.querySelector('.theme-count').textContent = theme.p.length + ' entries';
-        const html = Object.keys(groups).map(function (groupId) {
-          const papers = groups[groupId];
+        const categories = {};
+        Object.keys(groups).forEach(function (groupId) {
+          const label = theme.g[groupId];
+          const separator = label.indexOf(' / ');
+          const category = separator < 0 ? 'Other topics' : label.slice(0, separator);
+          const topic = separator < 0 ? label : label.slice(separator + 3);
+          (categories[category] ||= []).push({id: groupId, label: topic});
+        });
+        const disclosure = function (label, body, className) {
           const expanded = Boolean(query.trim());
-          return '<section class="paper-group"><button class="group-toggle" type="button" aria-expanded="' + expanded + '"><span class="group-title">' + esc(theme.g[groupId]) + '</span><span class="group-chevron">' + (expanded ? '×' : '＋') + '</span></button><div class="group-content"' + (expanded ? '' : ' hidden') + '>' +
-            papers.map(function (paper) {
+          return '<section class="paper-group ' + className + '"><button class="group-toggle" type="button" aria-expanded="' + expanded + '"><span class="group-title">' + esc(label) + '</span><span class="group-chevron" aria-hidden="true">' + (expanded ? '−' : '＋') + '</span></button><div class="group-content"' + (expanded ? '' : ' hidden') + '>' + body + '</div></section>';
+        };
+        const html = Object.keys(categories).map(function (category) {
+          const topics = categories[category].map(function (topic) {
+          const groupId = topic.id;
+          const papers = groups[groupId];
+          const rows = papers.map(function (paper) {
               const localPage = paper.p && /^\.\//.test(paper.p);
               const page = paper.p ? '<a href="' + safeUrl(paper.p) + '"' + (localPage ? '' : ' target="_blank" rel="noopener"') + '>Explainer ↗</a>' : '<span class="status">Webpage coming soon</span>';
               return '<article class="paper-row"><div class="paper-key">' + esc(paper.s) + '</div>' +
                 '<div><h4 class="paper-title">' + esc(paper.t) + '</h4><p class="paper-meta">' + esc(paper.m) + '</p></div>' +
                 '<div class="paper-info">' + (localPage ? 'Available in this repository' : (paper.p ? 'Hosted explainer' : 'Source paper indexed')) + '</div>' +
                 '<div class="paper-actions"><a href="' + safeUrl(paper.u) + '" target="_blank" rel="noopener">Original ↗</a>' + page + '</div></article>';
-            }).join('') + '</div></section>';
+            }).join('');
+          return disclosure(topic.label, rows, 'topic-menu');
+          }).join('');
+          return disclosure(category, topics, 'category-menu');
         }).join('');
         root.querySelector('.paper-groups').innerHTML = html || '<div class="empty-state">No papers match this search.</div>';
         root.querySelectorAll('.group-toggle').forEach(function (button) {
@@ -244,7 +264,7 @@
             const content = button.nextElementSibling;
             button.setAttribute('aria-expanded', String(!open));
             content.hidden = open;
-            button.querySelector('.group-chevron').textContent = open ? '＋' : '×';
+            button.querySelector('.group-chevron').textContent = open ? '＋' : '−';
           });
         });
       };
