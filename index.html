@@ -113,6 +113,7 @@
     .paper-row:first-of-type { border-top:0; }
     .paper-key { color:var(--cyan); font-size:.78rem; font-weight:700; }
     .paper-title { margin:0; font-size:.95rem; line-height:1.4; }
+    .paper-summary { margin:8px 0; color:#c4cfde; font-size:.88rem; font-weight:400; line-height:1.75; overflow-wrap:anywhere; }
     .paper-meta { margin:3px 0 0; color:var(--muted); font-size:.78rem; line-height:1.4; }
     .paper-info { color:var(--muted); font-size:.78rem; line-height:1.45; }
     .paper-actions { display:flex; gap:8px; justify-content:flex-end; align-items:center; white-space:nowrap; }
@@ -221,7 +222,7 @@
       };
       const matches = function (paper, query) {
         const q = query.trim().toLowerCase();
-        return !q || [paper.s, paper.m, paper.t].join(' ').toLowerCase().includes(q);
+        return !q || [paper.s, paper.m, paper.t, paper.d].join(' ').toLowerCase().includes(q);
       };
       const renderTheme = function (theme, root, query) {
         const groups = {};
@@ -249,7 +250,7 @@
               const localPage = paper.p && /^\.\//.test(paper.p);
               const page = paper.p ? '<a href="' + safeUrl(paper.p) + '"' + (localPage ? '' : ' target="_blank" rel="noopener"') + '>Explainer ↗</a>' : '<span class="status">Webpage coming soon</span>';
               return '<article class="paper-row"><div class="paper-key">' + esc(paper.s) + '</div>' +
-                '<div><h4 class="paper-title">' + esc(paper.t) + '</h4><p class="paper-meta">' + esc(paper.m) + '</p></div>' +
+                '<div><h4 class="paper-title">' + esc(paper.t) + '</h4>' + (paper.d ? '<p class="paper-summary" lang="zh-CN">' + esc(paper.d) + '</p>' : '') + '<p class="paper-meta">' + esc(paper.m) + '</p></div>' +
                 '<div class="paper-info">' + (localPage ? 'Available in this repository' : (paper.p ? 'Hosted explainer' : 'Source paper indexed')) + '</div>' +
                 '<div class="paper-actions"><a href="' + safeUrl(paper.u) + '" target="_blank" rel="noopener">Original ↗</a>' + page + '</div></article>';
             }).join('');
@@ -268,7 +269,7 @@
           });
         });
       };
-      fetch('./references/paper-catalog.json?v=20261025-nv-embed').then(function (response) {
+      fetch('./references/paper-catalog.json?v=20261025-introductions').then(function (response) {
         if (!response.ok) throw new Error('catalog');
         return response.json();
       }).then(function (data) {
