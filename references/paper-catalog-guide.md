@@ -1,6 +1,6 @@
 # Updating the paper catalogue
 
-The homepage reads [`paper-catalog.json`](paper-catalog.json) and builds the three expandable menus automatically.
+The homepage reads [`paper-catalog.json`](paper-catalog.json) and builds the five expandable menus automatically.
 
 When a new explainer is ready:
 

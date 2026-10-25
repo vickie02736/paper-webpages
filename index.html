@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow, noarchive">
-  <meta name="description" content="A visual research atlas connecting AI, metal-organic frameworks, robotics, and interactive paper explainers.">
+  <meta name="description" content="A visual research atlas connecting AI, metal-organic frameworks, robotics, AI for life sciences, mathematics, and interactive paper explainers.">
   <title>Research Atlas · Kewei Zhu</title>
   <style>
     :root {
@@ -17,6 +17,7 @@
       --lime: #d7f26b;
       --orange: #ffb66e;
       --pink: #f4a6d7;
+      --violet: #b9a6ff;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -59,6 +60,8 @@
     .ai::after { background: var(--cyan); }
     .mof::after { background: var(--lime); }
     .robotics::after { background: var(--orange); }
+    .bio::after { background: var(--pink); }
+    .math::after { background: var(--violet); }
     .card-top { display: flex; justify-content: space-between; align-items: center; }
     .index { font-size: 3rem; font-weight: 750; letter-spacing: -.09em; color: rgba(255,255,255,.2); }
     .pill { padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
@@ -71,6 +74,8 @@
     .ai .card-link { color: var(--cyan); }
     .mof .card-link { color: var(--lime); }
     .robotics .card-link { color: var(--orange); }
+    .bio .card-link { color: var(--pink); }
+    .math .card-link { color: var(--violet); }
     .latest { margin: 86px 0 68px; padding: 25px 28px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.055); display: flex; align-items: center; justify-content: space-between; gap: 25px; }
     .latest h3 { margin: 7px 0 5px; font-size: 1.3rem; }
     .latest p { margin: 0; color: var(--muted); line-height: 1.5; }
@@ -157,10 +162,11 @@
     <main>
       <section class="hero">
         <div class="eyebrow">A visual index of research</div>
-        <h1>Three ways to map what comes next.</h1>
+        <h1>Five ways to map what comes next.</h1>
         <p>
           A growing collection of <strong>research roadmaps</strong> and interactive paper explainers,
-          connecting reusable AI frameworks, the evolving chemistry of MOFs, and embodied intelligence in robotics.
+          connecting reusable AI frameworks, the evolving chemistry of MOFs, embodied intelligence in robotics,
+          AI for drug discovery, biology and medicine, and the mathematics both behind and advanced by AI.
         </p>
       </section>
 
@@ -168,7 +174,7 @@
         <div class="section-head">
           <div>
             <div class="eyebrow">Research catalogue</div>
-            <h2 id="themes-title">Explore the three themes</h2>
+            <h2 id="themes-title">Explore the five themes</h2>
           </div>
           <p>Open a theme to browse the papers from the roadmap. Search by title, method, conference, or year; pages will appear here as they are added.</p>
         </div>
@@ -187,6 +193,14 @@
           </details>
           <details class="theme-menu robotics" data-theme="Robotics">
             <summary><span class="theme-number">03</span><span class="theme-name">Robotics<small>机器人近年进展地图</small></span><span class="theme-count">Loading…</span><span class="chevron">＋</span></summary>
+            <div class="theme-body"><div class="theme-search"></div><div class="paper-groups"></div></div>
+          </details>
+          <details class="theme-menu bio" data-theme="Life Sciences">
+            <summary><span class="theme-number">04</span><span class="theme-name">AI for Life Sciences<small>AI 药物、生物与医疗研究地图</small></span><span class="theme-count">Loading…</span><span class="chevron">＋</span></summary>
+            <div class="theme-body"><div class="theme-search"></div><div class="paper-groups"></div></div>
+          </details>
+          <details class="theme-menu math" data-theme="Mathematics">
+            <summary><span class="theme-number">05</span><span class="theme-name">Mathematics<small>数学：AI for Math、Math for AI 与纯数学进展</small></span><span class="theme-count">Loading…</span><span class="chevron">＋</span></summary>
             <div class="theme-body"><div class="theme-search"></div><div class="paper-groups"></div></div>
           </details>
         </div>
@@ -283,7 +297,7 @@
           const count = data.themes.reduce(function (sum, theme) {
             return sum + theme.p.filter(function (paper) { return matches(paper, query); }).length;
           }, 0);
-          status.textContent = query ? count + ' matching papers' : total + ' papers from the three research roadmaps';
+          status.textContent = query ? count + ' matching papers' : total + ' papers from ' + data.themes.length + ' research roadmaps';
         };
         globalSearch.addEventListener('input', renderAll);
         themeRoots.forEach(function (root) {
