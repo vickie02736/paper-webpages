@@ -24,13 +24,16 @@ This repository collects the paper explainer webpages and research maps created 
 
 ```text
 index.html
+robots.txt
 papers/
   <paper-slug>/
     index.html
-    assets/
+    README.md
 references/
+  paper-catalog.json
+  paper-catalog-guide.md
   roadmaps/
-templates/
+    *.mm
 ```
 
 The explainers are designed as progressive, visual learning experiences: start with the central idea, then explore the mechanism, evidence, limitations, and broader connections.

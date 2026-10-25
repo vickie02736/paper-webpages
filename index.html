@@ -229,7 +229,7 @@
         theme.p.forEach(function (paper) {
           if (matches(paper, query)) (groups[paper.g] ||= []).push(paper);
         });
-        root.querySelector('.theme-count').textContent = theme.p.length + ' entries';
+        root.querySelector('.theme-count').textContent = theme.p.length + ' papers';
         const categories = {};
         Object.keys(groups).forEach(function (groupId) {
           const label = theme.g[groupId];
@@ -269,20 +269,21 @@
           });
         });
       };
-      fetch('./references/paper-catalog.json?v=20261025-introductions').then(function (response) {
+      fetch('./references/paper-catalog.json', {cache: 'no-cache'}).then(function (response) {
         if (!response.ok) throw new Error('catalog');
         return response.json();
       }).then(function (data) {
         const themeRoots = Array.from(document.querySelectorAll('.theme-menu'));
         const byName = {};
         data.themes.forEach(function (theme) { byName[theme.n] = theme; });
+        const total = data.themes.reduce(function (sum, theme) { return sum + theme.p.length; }, 0);
         const renderAll = function () {
           const query = globalSearch.value || '';
           themeRoots.forEach(function (root) { renderTheme(byName[root.dataset.theme], root, query); });
           const count = data.themes.reduce(function (sum, theme) {
             return sum + theme.p.filter(function (paper) { return matches(paper, query); }).length;
           }, 0);
-          status.textContent = query ? count + ' matching papers' : '400 roadmap entries from the three research roadmaps';
+          status.textContent = query ? count + ' matching papers' : total + ' papers from the three research roadmaps';
         };
         globalSearch.addEventListener('input', renderAll);
         themeRoots.forEach(function (root) {
