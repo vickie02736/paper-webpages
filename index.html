@@ -194,10 +194,10 @@
       <section class="latest" aria-label="Latest paper explainer">
         <div>
           <div class="eyebrow">Latest explainer</div>
-          <h3>RAG · Retrieval-Augmented Generation</h3>
-          <p>A self-contained visual, interactive guide to the NeurIPS 2020 paper.</p>
+          <h3>NV-Embed · Generalist Embedding</h3>
+          <p>A self-contained visual, interactive guide to the ICLR 2025 paper.</p>
         </div>
-        <a class="button" href="./papers/rag/">Open explainer ↗</a>
+        <a class="button" href="./papers/nv-embed/">Open explainer ↗</a>
       </section>
     </main>
 
@@ -268,7 +268,7 @@
           });
         });
       };
-      fetch('./references/paper-catalog.json?v=20261023').then(function (response) {
+      fetch('./references/paper-catalog.json?v=20261025-nv-embed').then(function (response) {
         if (!response.ok) throw new Error('catalog');
         return response.json();
       }).then(function (data) {

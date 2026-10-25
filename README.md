@@ -18,6 +18,8 @@ This repository collects the paper explainer webpages and research maps created 
 - [Self-RAG — Learning to Retrieve, Generate, and Critique through Self-Reflection](papers/self-rag/)
 - [DeepRAG — Thinking to Retrieve Step by Step for Large Language Models](papers/deeprag/)
 
+- [NV-Embed — Improved Techniques for Training LLMs as Generalist Embedding Models](papers/nv-embed/)
+
 ## Repository layout
 
 ```text
