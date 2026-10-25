@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow, noarchive">
-  <meta name="description" content="A visual research atlas connecting AI, metal-organic frameworks, robotics, AI for life sciences, mathematics, and interactive paper explainers.">
+  <meta name="description" content="A visual research atlas connecting AI, metal-organic frameworks, robotics, AI for chemistry and materials, AI for life sciences, mathematics, and interactive paper explainers.">
   <title>Research Atlas · Kewei Zhu</title>
   <style>
     :root {
@@ -60,6 +60,7 @@
     .ai::after { background: var(--cyan); }
     .mof::after { background: var(--lime); }
     .robotics::after { background: var(--orange); }
+    .chem::after { background: var(--cyan); }
     .bio::after { background: var(--pink); }
     .math::after { background: var(--violet); }
     .card-top { display: flex; justify-content: space-between; align-items: center; }
@@ -74,13 +75,10 @@
     .ai .card-link { color: var(--cyan); }
     .mof .card-link { color: var(--lime); }
     .robotics .card-link { color: var(--orange); }
+    .chem .card-link { color: var(--cyan); }
     .bio .card-link { color: var(--pink); }
     .math .card-link { color: var(--violet); }
-    .latest { margin: 86px 0 68px; padding: 25px 28px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.055); display: flex; align-items: center; justify-content: space-between; gap: 25px; }
-    .latest h3 { margin: 7px 0 5px; font-size: 1.3rem; }
-    .latest p { margin: 0; color: var(--muted); line-height: 1.5; }
-    .button { display: inline-flex; align-items: center; gap: 9px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; white-space: nowrap; }
-    .button:hover { background: rgba(255,255,255,.1); }
+    main { padding-bottom: 86px; }
     footer { display: flex; justify-content: space-between; gap: 18px; padding: 28px 0 42px; color: var(--muted); font-size: .86rem; border-top: 1px solid var(--line); }
     footer a { color: var(--ink); text-decoration: none; }
     .catalog-tools { display:flex; gap:14px; align-items:center; margin: 28px 0 16px; }
@@ -120,6 +118,8 @@
     .paper-title { margin:0; font-size:.95rem; line-height:1.4; }
     .paper-summary { margin:8px 0; color:#c4cfde; font-size:.88rem; font-weight:400; line-height:1.75; overflow-wrap:anywhere; }
     .paper-meta { margin:3px 0 0; color:var(--muted); font-size:.78rem; line-height:1.4; }
+    .paper-also { margin:6px 0 0; color:var(--muted); font-size:.76rem; line-height:1.55; }
+    .paper-also b { color:var(--cyan); font-weight:600; }
     .paper-info { color:var(--muted); font-size:.78rem; line-height:1.45; }
     .paper-actions { display:flex; gap:8px; justify-content:flex-end; align-items:center; white-space:nowrap; }
     .paper-actions a { color:var(--ink); text-decoration:none; font-size:.78rem; }
@@ -139,9 +139,8 @@
       .paper-actions { justify-content:flex-start; }
 
       .hero { padding-top: 60px; }
-      .section-head, .latest, footer { align-items: flex-start; flex-direction: column; }
+      .section-head, footer { align-items: flex-start; flex-direction: column; }
       nav { display: none; }
-      .latest .button { width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -162,11 +161,12 @@
     <main>
       <section class="hero">
         <div class="eyebrow">A visual index of research</div>
-        <h1>Five ways to map what comes next.</h1>
+        <h1>Six ways to map what comes next.</h1>
         <p>
           A growing collection of <strong>research roadmaps</strong> and interactive paper explainers,
           connecting reusable AI frameworks, the evolving chemistry of MOFs, embodied intelligence in robotics,
-          AI for drug discovery, biology and medicine, and the mathematics both behind and advanced by AI.
+          machine learning for chemistry and materials, AI for drug discovery, biology and medicine,
+          and the mathematics both behind and advanced by AI.
         </p>
       </section>
 
@@ -174,7 +174,7 @@
         <div class="section-head">
           <div>
             <div class="eyebrow">Research catalogue</div>
-            <h2 id="themes-title">Explore the five themes</h2>
+            <h2 id="themes-title">Explore the six themes</h2>
           </div>
           <p>Open a theme to browse the papers from the roadmap. Search by title, method, conference, or year; pages will appear here as they are added.</p>
         </div>
@@ -195,24 +195,19 @@
             <summary><span class="theme-number">03</span><span class="theme-name">Robotics<small>机器人近年进展地图</small></span><span class="theme-count">Loading…</span><span class="chevron">＋</span></summary>
             <div class="theme-body"><div class="theme-search"></div><div class="paper-groups"></div></div>
           </details>
+          <details class="theme-menu chem" data-theme="Chemistry &amp; Materials">
+            <summary><span class="theme-number">04</span><span class="theme-name">AI for Chemistry / Materials<small>AI 化学与材料研究地图</small></span><span class="theme-count">Loading…</span><span class="chevron">＋</span></summary>
+            <div class="theme-body"><div class="theme-search"></div><div class="paper-groups"></div></div>
+          </details>
           <details class="theme-menu bio" data-theme="Life Sciences">
-            <summary><span class="theme-number">04</span><span class="theme-name">AI for Life Sciences<small>AI 药物、生物与医疗研究地图</small></span><span class="theme-count">Loading…</span><span class="chevron">＋</span></summary>
+            <summary><span class="theme-number">05</span><span class="theme-name">AI for Life Sciences<small>AI 药物、生物与医疗研究地图</small></span><span class="theme-count">Loading…</span><span class="chevron">＋</span></summary>
             <div class="theme-body"><div class="theme-search"></div><div class="paper-groups"></div></div>
           </details>
           <details class="theme-menu math" data-theme="Mathematics">
-            <summary><span class="theme-number">05</span><span class="theme-name">Mathematics<small>数学：AI for Math、Math for AI 与纯数学进展</small></span><span class="theme-count">Loading…</span><span class="chevron">＋</span></summary>
+            <summary><span class="theme-number">06</span><span class="theme-name">Mathematics<small>数学：AI for Math、Math for AI 与纯数学进展</small></span><span class="theme-count">Loading…</span><span class="chevron">＋</span></summary>
             <div class="theme-body"><div class="theme-search"></div><div class="paper-groups"></div></div>
           </details>
         </div>
-      </section>
-
-      <section class="latest" aria-label="Latest paper explainer">
-        <div>
-          <div class="eyebrow">Latest explainer</div>
-          <h3>NV-Embed · Generalist Embedding</h3>
-          <p>A self-contained visual, interactive guide to the ICLR 2025 paper.</p>
-        </div>
-        <a class="button" href="./papers/nv-embed/">Open explainer ↗</a>
       </section>
     </main>
 
@@ -238,6 +233,26 @@
         const q = query.trim().toLowerCase();
         return !q || [paper.s, paper.m, paper.t, paper.d].join(' ').toLowerCase().includes(q);
       };
+      const paperKey = function (paper) { return String(paper.u || '').toLowerCase().replace(/\/+$/, ''); };
+      const listings = {};
+      const sharedPage = {};
+      const themeLabels = {};
+      const shortCategory = function (label) {
+        const separator = label.indexOf(' / ');
+        const category = separator < 0 ? label : label.slice(0, separator);
+        const topic = separator < 0 ? '' : label.slice(separator + 3);
+        return category.split('｜')[0] + (topic ? ' / ' + topic : '');
+      };
+      const alsoListed = function (theme, paper) {
+        const here = theme.g[paper.g];
+        const others = (listings[paperKey(paper)] || []).filter(function (entry) {
+          return !(entry.theme === theme.n && entry.label === here);
+        });
+        if (!others.length) return '';
+        return '<p class="paper-also" lang="zh-CN"><b>也收录于：</b>' + others.map(function (entry) {
+          return esc((themeLabels[entry.theme] || entry.theme) + ' · ' + shortCategory(entry.label));
+        }).join('；') + '</p>';
+      };
       const renderTheme = function (theme, root, query) {
         const groups = {};
         theme.p.forEach(function (paper) {
@@ -261,11 +276,12 @@
           const groupId = topic.id;
           const papers = groups[groupId];
           const rows = papers.map(function (paper) {
-              const localPage = paper.p && /^\.\//.test(paper.p);
-              const page = paper.p ? '<a href="' + safeUrl(paper.p) + '"' + (localPage ? '' : ' target="_blank" rel="noopener"') + '>Explainer ↗</a>' : '<span class="status">Webpage coming soon</span>';
+              const pagePath = paper.p || sharedPage[paperKey(paper)] || '';
+              const localPage = pagePath && /^\.\//.test(pagePath);
+              const page = pagePath ? '<a href="' + safeUrl(pagePath) + '"' + (localPage ? '' : ' target="_blank" rel="noopener"') + '>Explainer ↗</a>' : '<span class="status">Webpage coming soon</span>';
               return '<article class="paper-row"><div class="paper-key">' + esc(paper.s) + '</div>' +
-                '<div><h4 class="paper-title">' + esc(paper.t) + '</h4>' + (paper.d ? '<p class="paper-summary" lang="zh-CN">' + esc(paper.d) + '</p>' : '') + '<p class="paper-meta">' + esc(paper.m) + '</p></div>' +
-                '<div class="paper-info">' + (localPage ? 'Available in this repository' : (paper.p ? 'Hosted explainer' : 'Source paper indexed')) + '</div>' +
+                '<div><h4 class="paper-title">' + esc(paper.t) + '</h4>' + (paper.d ? '<p class="paper-summary" lang="zh-CN">' + esc(paper.d) + '</p>' : '') + '<p class="paper-meta">' + esc(paper.m) + '</p>' + alsoListed(theme, paper) + '</div>' +
+                '<div class="paper-info">' + (localPage ? 'Available in this repository' : (pagePath ? 'Hosted explainer' : 'Source paper indexed')) + '</div>' +
                 '<div class="paper-actions"><a href="' + safeUrl(paper.u) + '" target="_blank" rel="noopener">Original ↗</a>' + page + '</div></article>';
             }).join('');
           return disclosure(topic.label, rows, 'topic-menu');
@@ -289,15 +305,26 @@
       }).then(function (data) {
         const themeRoots = Array.from(document.querySelectorAll('.theme-menu'));
         const byName = {};
-        data.themes.forEach(function (theme) { byName[theme.n] = theme; });
-        const total = data.themes.reduce(function (sum, theme) { return sum + theme.p.length; }, 0);
+        data.themes.forEach(function (theme) {
+          byName[theme.n] = theme;
+          theme.p.forEach(function (paper) {
+            const key = paperKey(paper);
+            (listings[key] ||= []).push({theme: theme.n, label: theme.g[paper.g]});
+            if (paper.p && !sharedPage[key]) sharedPage[key] = paper.p;
+          });
+        });
+        themeRoots.forEach(function (root) {
+          themeLabels[root.dataset.theme] = root.querySelector('.theme-name').firstChild.textContent.trim();
+        });
+        const total = Object.keys(listings).length;
         const renderAll = function () {
           const query = globalSearch.value || '';
           themeRoots.forEach(function (root) { renderTheme(byName[root.dataset.theme], root, query); });
-          const count = data.themes.reduce(function (sum, theme) {
-            return sum + theme.p.filter(function (paper) { return matches(paper, query); }).length;
-          }, 0);
-          status.textContent = query ? count + ' matching papers' : total + ' papers from ' + data.themes.length + ' research roadmaps';
+          const matched = new Set();
+          data.themes.forEach(function (theme) {
+            theme.p.forEach(function (paper) { if (matches(paper, query)) matched.add(paperKey(paper)); });
+          });
+          status.textContent = query ? matched.size + ' matching papers' : total + ' papers from ' + data.themes.length + ' research roadmaps';
         };
         globalSearch.addEventListener('input', renderAll);
         themeRoots.forEach(function (root) {

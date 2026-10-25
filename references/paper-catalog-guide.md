@@ -1,6 +1,6 @@
 # Updating the paper catalogue
 
-The homepage reads [`paper-catalog.json`](paper-catalog.json) and builds the five expandable menus automatically.
+The homepage reads [`paper-catalog.json`](paper-catalog.json) and builds the six expandable menus automatically.
 
 When a new explainer is ready:
 
@@ -9,6 +9,8 @@ When a new explainer is ready:
 3. Set its `p` field to `./papers/<slug>/`.
 4. Commit the change and wait for GitHub Pages to rebuild.
 
-Each paper appears once, under its topic in the roadmap's main categories. The "reading route" branches at the end of each roadmap only re-reference those papers, so they are not added to the catalogue.
+Within a theme, each paper appears once, under its topic in the roadmap's main categories. The "reading route" branches at the end of each roadmap only re-reference those papers, so they are not added to the catalogue.
+
+A paper may also be listed in more than one theme. Use exactly the same `u` link in every theme so the homepage recognises it as the same paper, and write each `d` introduction from the perspective of its own theme. The homepage then shows "也收录于" with the other theme and branch, counts the paper once in the overall total, and reuses an explainer: setting `p` in any one theme is enough for every listing to show it.
 
 Leave `p` empty for papers that have an indexed source but no explainer page yet. The homepage will show `Webpage coming soon` and keep the original-paper link visible.
