@@ -84,6 +84,16 @@
     .bio .card-link { color: var(--pink); }
     .math .card-link { color: var(--violet); }
     main { padding-bottom: 86px; }
+    .recent { margin: 86px 0 0; padding: 25px 28px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.055); }
+    .recent[hidden] { display: none; }
+    .recent .eyebrow { margin-bottom: 0; }
+    .recent h3 { margin: 7px 0 10px; font-size: 1.3rem; }
+    .recent-item { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding: 14px 0; border-top: 1px solid rgba(255,255,255,.08); }
+    .recent-item h4 { margin: 0 0 4px; font-size: 1rem; line-height: 1.4; }
+    .recent-meta { margin: 0; color: var(--muted); font-size: .8rem; line-height: 1.5; }
+    .recent-meta b { color: var(--cyan); font-weight: 650; }
+    .button { display: inline-flex; align-items: center; gap: 9px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; white-space: nowrap; }
+    .button:hover { background: rgba(255,255,255,.1); }
     footer { display: flex; justify-content: space-between; gap: 18px; padding: 28px 0 42px; color: var(--muted); font-size: .86rem; border-top: 1px solid var(--line); }
     footer a { color: var(--ink); text-decoration: none; }
     .catalog-tools { display:flex; gap:14px; align-items:center; margin: 28px 0 16px; }
@@ -145,7 +155,8 @@
       .paper-actions { justify-content:flex-start; }
 
       .hero { padding-top: 60px; }
-      .section-head, footer { align-items: flex-start; flex-direction: column; }
+      .section-head, .recent-item, footer { align-items: flex-start; flex-direction: column; }
+      .recent-item .button { width: 100%; justify-content: center; }
       nav { display: none; }
     }
   </style>
@@ -213,6 +224,12 @@
           </details>
         </div>
       </section>
+
+      <section id="recent" class="recent" aria-labelledby="recent-title" hidden>
+        <div class="eyebrow" data-i18n="recentEyebrow">近一周的讲解页</div>
+        <h3 id="recent-title" data-i18n="recentTitle">最近新增的交互式讲解</h3>
+        <div id="recent-list"></div>
+      </section>
     </main>
 
     <footer>
@@ -259,6 +276,10 @@
           also: '也收录于：',
           alsoSep: '；',
           otherTopics: '其他',
+          recentEyebrow: '近一周的讲解页',
+          recentTitle: '最近新增的交互式讲解',
+          openExplainer: '打开讲解页 ↗',
+          addedOn: function (date) { return (date.getUTCMonth() + 1) + ' 月 ' + date.getUTCDate() + ' 日新增'; },
           unavailable: '论文目录加载失败',
           unavailableText: '无法加载论文目录，请查看仓库 README。'
         },
@@ -298,6 +319,10 @@
           also: 'Also listed in: ',
           alsoSep: '; ',
           otherTopics: 'Other topics',
+          recentEyebrow: 'Explainers from the past week',
+          recentTitle: 'Recently added interactive explainers',
+          openExplainer: 'Open explainer ↗',
+          addedOn: function (date) { return 'Added ' + date.toLocaleDateString('en-GB', {day: 'numeric', month: 'short', timeZone: 'UTC'}); },
           unavailable: 'Paper catalogue unavailable',
           unavailableText: 'The catalogue could not be loaded. Please open the repository README.'
         }
@@ -509,12 +534,38 @@
           }
           updateStatus();
         };
+        const recent = document.getElementById('recent');
+        const renderRecent = function () {
+          const day = 86400000;
+          const today = Math.floor(Date.now() / day) * day;
+          const items = Object.keys(data.explainers || {}).map(function (path) {
+            const added = new Date(data.explainers[path] + 'T00:00:00Z');
+            let entry = null;
+            data.themes.some(function (theme) {
+              const paper = theme.p.find(function (p) { return p.p === path; });
+              if (paper) entry = {theme: theme, paper: paper};
+              return Boolean(paper);
+            });
+            return {path: path, added: added, entry: entry};
+          }).filter(function (item) {
+            return item.entry && !isNaN(item.added) && today - item.added.getTime() <= 6 * day;
+          }).sort(function (a, b) { return b.added - a.added; });
+          recent.hidden = !items.length;
+          document.getElementById('recent-list').innerHTML = items.map(function (item) {
+            const paper = item.entry.paper;
+            const local = /^\.\//.test(item.path);
+            return '<div class="recent-item"><div><h4 lang="en">' + esc(paper.t) + '</h4><p class="recent-meta"><b>' + esc(shortName(paper)) + '</b> · ' +
+              esc(themeTitle(item.entry.theme.n)) + ' · ' + esc(t('addedOn')(item.added)) + '</p></div>' +
+              '<a class="button" href="' + safeUrl(item.path) + '"' + (local ? '' : ' target="_blank" rel="noopener"') + '>' + esc(t('openExplainer')) + '</a></div>';
+          }).join('');
+        };
         rerender = function () {
           themeRoots.forEach(function (root) {
             const name = root.dataset.theme;
             shown[name] = renderTheme(byName[name], root, tokens(globalSearch.value));
           });
           updateStatus();
+          renderRecent();
         };
         globalSearch.addEventListener('input', function () {
           expandState.search = {};
@@ -537,6 +588,7 @@
         const initialQuery = new URLSearchParams(window.location.search).get('q');
         if (initialQuery) globalSearch.value = initialQuery;
         renderAll();
+        renderRecent();
         if (initialQuery) document.getElementById('themes').scrollIntoView();
       }).catch(function () {
         status.textContent = t('unavailable');

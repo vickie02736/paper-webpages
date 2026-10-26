@@ -7,7 +7,8 @@ When a new explainer is ready:
 1. Add its self-contained page at `papers/<slug>/index.html`.
 2. Find the matching paper object in `references/paper-catalog.json`.
 3. Set its `p` field to `./papers/<slug>/`.
-4. Commit the change and wait for GitHub Pages to rebuild.
+4. Add `"./papers/<slug>/": "YYYY-MM-DD"` (the date it was published, in UTC) to the top-level `explainers` map. Explainers dated within the last seven days are listed in the homepage's recent-explainers section, newest first; the section hides itself when there are none.
+5. Commit the change and wait for GitHub Pages to rebuild.
 
 Within a theme, each paper appears once, under its topic in the roadmap's main categories. The "reading route" branches at the end of each roadmap only re-reference those papers, so they are not added to the catalogue.
 
