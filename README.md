@@ -47,4 +47,6 @@ The explainers are designed as progressive, visual learning experiences: start w
 
 The repository is public so that the webpages can be shared and deployed. The accompanying `robots.txt` and homepage `noindex` metadata ask search engines not to crawl or index the deployed site, but public GitHub repositories and public URLs can still be discovered or indexed.
 
-The homepage reads `references/paper-catalog.json` to build expandable paper menus from the six FreeMind roadmaps. When a new explainer is added, its `page` field can point to the local HTML page so the menu changes from “Webpage coming soon” to “Explainer”.
+The homepage reads `references/paper-catalog.json` to build expandable paper menus from the six FreeMind roadmaps. When a new explainer is added, its `p` field can point to the local HTML page so the menu changes from “Webpage coming soon” to “Explainer”.
+
+The homepage is bilingual. It opens in Chinese; the `EN` / `中文` button in the header switches languages, and the choice is remembered in the browser. Add `?lang=en` to a link to open the English version directly, and `?q=` to open it with a search already filled in (for example `?lang=en&q=protein+design`).

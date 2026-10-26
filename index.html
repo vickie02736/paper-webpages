@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow, noarchive">
-  <meta name="description" content="A visual research atlas connecting AI, metal-organic frameworks, robotics, AI for chemistry and materials, AI for life sciences, mathematics, and interactive paper explainers.">
-  <title>Research Atlas · Kewei Zhu</title>
+  <meta name="description" content="一份可视化研究图谱，连接 AI、金属有机框架、机器人、AI 化学与材料、AI 生命科学、数学与交互式论文讲解。">
+  <title>研究图谱 · Kewei Zhu</title>
   <style>
     :root {
       --ink: #f4f7fb;
@@ -38,12 +38,17 @@
     .mark { width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 12px; display: grid; place-items: center; background: linear-gradient(135deg, rgba(125,227,255,.25), rgba(215,242,107,.15)); font-weight: 800; }
     .brand strong { letter-spacing: .02em; }
     .brand span, .eyebrow, .meta { color: var(--muted); font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; }
+    .header-actions { display: flex; align-items: center; gap: 18px; }
     nav { display: flex; gap: 18px; color: var(--muted); font-size: .9rem; }
     nav a { text-decoration: none; }
     nav a:hover { color: var(--ink); }
+    .lang-toggle { flex: 0 0 auto; white-space: nowrap; padding: 7px 13px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.06); color: var(--ink); font: inherit; font-size: .82rem; font-weight: 600; cursor: pointer; }
+    .lang-toggle:hover { background: rgba(255,255,255,.12); }
+    .lang-toggle:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
     .hero { padding: 92px 0 76px; max-width: 850px; }
     .eyebrow { color: var(--cyan); margin-bottom: 20px; }
     h1 { margin: 0; max-width: 840px; font-size: clamp(3rem, 8vw, 6.7rem); line-height: .95; letter-spacing: -.075em; font-weight: 700; }
+    html[lang="zh-CN"] h1 { line-height: 1.12; letter-spacing: -.02em; }
     .hero p { max-width: 670px; margin: 28px 0 0; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.34rem); line-height: 1.65; }
     .hero strong { color: var(--ink); font-weight: 600; }
     .section-head { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin: 12px 0 22px; }
@@ -89,6 +94,7 @@
     .catalog { display:grid; gap:12px; }
     .theme-menu { border:1px solid var(--line); border-radius:22px; background:rgba(255,255,255,.045); overflow:hidden; }
     .theme-menu[open] { background:rgba(255,255,255,.075); }
+    .theme-menu.no-match { opacity:.45; }
     .theme-menu summary { list-style:none; cursor:pointer; display:grid; grid-template-columns:72px 1fr auto 28px; align-items:center; gap:18px; padding:22px 24px; }
     .theme-menu summary::-webkit-details-marker { display:none; }
     .theme-number { font-size:2.4rem; font-weight:750; color:rgba(255,255,255,.2); letter-spacing:-.08em; }
@@ -149,62 +155,60 @@
     <header>
       <a class="brand" href="./">
         <span class="mark">KZ</span>
-        <span><strong>Research Atlas</strong><br><span>Kewei Zhu · visual research notes</span></span>
+        <span><strong>Research Atlas</strong><br><span data-i18n="brandSub">Kewei Zhu · 可视化研究笔记</span></span>
       </a>
-      <nav aria-label="Main navigation">
-        <a href="#themes">Themes</a>
-        <a href="./papers/">Paper explainers</a>
-        <a href="https://github.com/vickie02736/paper-webpages">GitHub ↗</a>
-      </nav>
+      <div class="header-actions">
+        <nav data-i18n-aria="navAria" aria-label="主导航">
+          <a href="#themes" data-i18n="navThemes">主题</a>
+          <a href="./papers/" data-i18n="navExplainers">论文讲解</a>
+          <a href="https://github.com/vickie02736/paper-webpages">GitHub ↗</a>
+        </nav>
+        <button id="lang-toggle" class="lang-toggle" type="button" aria-pressed="false" aria-label="Switch to English">EN</button>
+      </div>
     </header>
 
     <main>
       <section class="hero">
-        <div class="eyebrow">A visual index of research</div>
-        <h1>Six ways to map what comes next.</h1>
-        <p>
-          A growing collection of <strong>research roadmaps</strong> and interactive paper explainers,
-          connecting reusable AI frameworks, the evolving chemistry of MOFs, embodied intelligence in robotics,
-          machine learning for chemistry and materials, AI for drug discovery, biology and medicine,
-          and the mathematics both behind and advanced by AI.
-        </p>
+        <div class="eyebrow" data-i18n="heroEyebrow">研究的可视化索引</div>
+        <h1 data-i18n-html="heroTitle">六条路线，<br>描绘下一步。</h1>
+        <p data-i18n-html="heroText">持续更新的<strong>研究路线图</strong>与交互式论文讲解，连接可复用的 AI 框架、不断演进的 MOF 化学、机器人中的具身智能、面向化学与材料的机器学习、AI 驱动的药物发现与生物医学，以及既支撑 AI、也被 AI 推动的数学。</p>
       </section>
 
       <section id="themes" aria-labelledby="themes-title">
         <div class="section-head">
           <div>
-            <div class="eyebrow">Research catalogue</div>
-            <h2 id="themes-title">Explore the six themes</h2>
+            <div class="eyebrow" data-i18n="catalogEyebrow">研究目录</div>
+            <h2 id="themes-title" data-i18n="catalogTitle">探索六个主题</h2>
           </div>
-          <p>Open a theme to browse the papers from the roadmap. Search by title, method, conference, or year; pages will appear here as they are added.</p>
+          <p data-i18n="catalogText">展开主题即可浏览路线图中的论文。可按标题、方法、子方向、会议或年份搜索，多个词不分先后；主题内搜索会在此基础上进一步筛选。</p>
         </div>
         <div class="catalog-tools">
-          <label class="search-box"><span>⌕</span><input id="catalog-search" type="search" placeholder="Search all papers…" aria-label="Search all papers"></label>
-          <span id="catalog-status" class="catalog-status">Loading paper catalogue…</span>
+          <label class="search-box"><span>⌕</span><input id="catalog-search" type="search" data-i18n-placeholder="searchPlaceholder" data-i18n-aria="searchAria" placeholder="搜索全部论文，例如 protein design 或 蛋白设计" aria-label="搜索全部论文"></label>
+          <span id="catalog-status" class="catalog-status" data-i18n="loading">正在加载论文目录…</span>
         </div>
         <div id="catalog" class="catalog" aria-live="polite">
-          <details class="theme-menu ai" data-theme="AI / ML">
-            <summary><span class="theme-number">01</span><span class="theme-name">AI Top Conferences<small>顶会 A 框架研究地图</small></span><span class="theme-count">Loading…</span><span class="chevron">＋</span></summary>
+          <details class="theme-menu ai" data-theme="AI / ML" data-title-zh="AI 顶会" data-sub-zh="顶会 A 框架研究地图" data-title-en="AI Top Conferences" data-sub-en="A framework map of top AI venues">
+            <summary><span class="theme-number">01</span><span class="theme-name">AI 顶会<small>顶会 A 框架研究地图</small></span><span class="theme-count" data-i18n="loadingShort">加载中…</span><span class="chevron">＋</span></summary>
             <div class="theme-body"><div class="theme-search"></div><div class="paper-groups"></div></div>
           </details>
-          <details class="theme-menu mof" data-theme="Materials">
-            <summary><span class="theme-number">02</span><span class="theme-name">Metal–Organic Frameworks<small>MOF 近年进展地图</small></span><span class="theme-count">Loading…</span><span class="chevron">＋</span></summary>
+          <details class="theme-menu mof" data-theme="Materials" data-title-zh="金属有机框架" data-sub-zh="MOF 近年进展地图" data-title-en="Metal–Organic Frameworks" data-sub-en="Recent progress in MOFs">
+            <summary><span class="theme-number">02</span><span class="theme-name">金属有机框架<small>MOF 近年进展地图</small></span><span class="theme-count" data-i18n="loadingShort">加载中…</span><span class="chevron">＋</span></summary>
             <div class="theme-body"><div class="theme-search"></div><div class="paper-groups"></div></div>
           </details>
-          <details class="theme-menu robotics" data-theme="Robotics">
-            <summary><span class="theme-number">03</span><span class="theme-name">Robotics<small>机器人近年进展地图</small></span><span class="theme-count">Loading…</span><span class="chevron">＋</span></summary>
+          <details class="theme-menu robotics" data-theme="Robotics" data-title-zh="机器人" data-sub-zh="机器人近年进展地图" data-title-en="Robotics" data-sub-en="Recent progress in robotics">
+            <summary><span class="theme-number">03</span><span class="theme-name">机器人<small>机器人近年进展地图</small></span><span class="theme-count" data-i18n="loadingShort">加载中…</span><span class="chevron">＋</span></summary>
             <div class="theme-body"><div class="theme-search"></div><div class="paper-groups"></div></div>
           </details>
-          <details class="theme-menu chem" data-theme="Chemistry &amp; Materials">
-            <summary><span class="theme-number">04</span><span class="theme-name">AI for Chemistry / Materials<small>AI 化学与材料研究地图</small></span><span class="theme-count">Loading…</span><span class="chevron">＋</span></summary>
+          <details class="theme-menu chem" data-theme="Chemistry &amp; Materials" data-title-zh="AI 化学与材料" data-sub-zh="AI 化学与材料研究地图" data-title-en="AI for Chemistry / Materials" data-sub-en="Machine learning for chemistry and materials">
+            <summary><span class="theme-number">04</span><span class="theme-name">AI 化学与材料<small>AI 化学与材料研究地图</small></span><span class="theme-count" data-i18n="loadingShort">加载中…</span><span class="chevron">＋</span></summary>
             <div class="theme-body"><div class="theme-search"></div><div class="paper-groups"></div></div>
           </details>
-          <details class="theme-menu bio" data-theme="Life Sciences">
-            <summary><span class="theme-number">05</span><span class="theme-name">AI for Life Sciences<small>AI 药物、生物与医疗研究地图</small></span><span class="theme-count">Loading…</span><span class="chevron">＋</span></summary>
+          <details class="theme-menu bio" data-theme="Life Sciences" data-title-zh="AI 生命科学" data-sub-zh="AI 药物、生物与医疗研究地图" data-title-en="AI for Life Sciences" data-sub-en="Drug discovery, biology and medicine">
+            <summary><span class="theme-number">05</span><span class="theme-name">AI 生命科学<small>AI 药物、生物与医疗研究地图</small></span><span class="theme-count" data-i18n="loadingShort">加载中…</span><span class="chevron">＋</span></summary>
             <div class="theme-body"><div class="theme-search"></div><div class="paper-groups"></div></div>
           </details>
-          <details class="theme-menu math" data-theme="Mathematics">
-            <summary><span class="theme-number">06</span><span class="theme-name">Mathematics<small>数学：AI for Math、Math for AI 与纯数学进展</small></span><span class="theme-count">Loading…</span><span class="chevron">＋</span></summary>
+          <details class="theme-menu math" data-theme="Mathematics" data-title-zh="数学" data-sub-zh="AI for Math、Math for AI 与纯数学进展" data-title-en="Mathematics" data-sub-en="AI for math, math for AI, and pure mathematics">
+            <summary><span class="theme-number">06</span><span class="theme-name">数学<small>AI for Math、Math for AI 与纯数学进展</small></span><span class="theme-count" data-i18n="loadingShort">加载中…</span><span class="chevron">＋</span></summary>
             <div class="theme-body"><div class="theme-search"></div><div class="paper-groups"></div></div>
           </details>
         </div>
@@ -212,15 +216,104 @@
     </main>
 
     <footer>
-      <span>Built for slow reading, clear questions, and better connections.</span>
-      <a href="https://github.com/vickie02736/paper-webpages">View repository ↗</a>
+      <span data-i18n="footerText">为慢读、清晰的问题与更好的联系而建。</span>
+      <a href="https://github.com/vickie02736/paper-webpages" data-i18n="footerLink">查看仓库 ↗</a>
     </footer>
   </div>
   <script>
     (function () {
+      const STRINGS = {
+        zh: {
+          docTitle: '研究图谱 · Kewei Zhu',
+          metaDesc: '一份可视化研究图谱，连接 AI、金属有机框架、机器人、AI 化学与材料、AI 生命科学、数学与交互式论文讲解。',
+          brandSub: 'Kewei Zhu · 可视化研究笔记',
+          navAria: '主导航',
+          navThemes: '主题',
+          navExplainers: '论文讲解',
+          heroEyebrow: '研究的可视化索引',
+          heroTitle: '六条路线，<br>描绘下一步。',
+          heroText: '持续更新的<strong>研究路线图</strong>与交互式论文讲解，连接可复用的 AI 框架、不断演进的 MOF 化学、机器人中的具身智能、面向化学与材料的机器学习、AI 驱动的药物发现与生物医学，以及既支撑 AI、也被 AI 推动的数学。',
+          catalogEyebrow: '研究目录',
+          catalogTitle: '探索六个主题',
+          catalogText: '展开主题即可浏览路线图中的论文。可按标题、方法、子方向、会议或年份搜索，多个词不分先后；主题内搜索会在此基础上进一步筛选。',
+          searchPlaceholder: '搜索全部论文，例如 protein design 或 蛋白设计',
+          searchAria: '搜索全部论文',
+          themeSearch: '在本主题内搜索…',
+          themeSearchAria: '在主题内搜索：',
+          loading: '正在加载论文目录…',
+          loadingShort: '加载中…',
+          footerText: '为慢读、清晰的问题与更好的联系而建。',
+          footerLink: '查看仓库 ↗',
+          toggle: 'EN',
+          toggleAria: 'Switch to English',
+          status: function (n, k) { return '共 ' + n + ' 篇论文，来自 ' + k + ' 张研究地图'; },
+          matching: function (n) { return n + ' 篇匹配的论文'; },
+          count: function (shown, total, searching) { return (searching ? shown + ' / ' : '') + total + ' 篇'; },
+          original: '原文 ↗',
+          explainer: '讲解页 ↗',
+          comingSoon: '讲解页制作中',
+          local: '本仓库提供',
+          hosted: '托管讲解页',
+          indexed: '已收录原文',
+          noMatch: '没有匹配的论文。',
+          also: '也收录于：',
+          alsoSep: '；',
+          otherTopics: '其他',
+          unavailable: '论文目录加载失败',
+          unavailableText: '无法加载论文目录，请查看仓库 README。'
+        },
+        en: {
+          docTitle: 'Research Atlas · Kewei Zhu',
+          metaDesc: 'A visual research atlas connecting AI, metal-organic frameworks, robotics, AI for chemistry and materials, AI for life sciences, mathematics, and interactive paper explainers.',
+          brandSub: 'Kewei Zhu · visual research notes',
+          navAria: 'Main navigation',
+          navThemes: 'Themes',
+          navExplainers: 'Paper explainers',
+          heroEyebrow: 'A visual index of research',
+          heroTitle: 'Six ways to map what comes next.',
+          heroText: 'A growing collection of <strong>research roadmaps</strong> and interactive paper explainers, connecting reusable AI frameworks, the evolving chemistry of MOFs, embodied intelligence in robotics, machine learning for chemistry and materials, AI for drug discovery, biology and medicine, and the mathematics both behind and advanced by AI.',
+          catalogEyebrow: 'Research catalogue',
+          catalogTitle: 'Explore the six themes',
+          catalogText: 'Open a theme to browse the papers from the roadmap. Search by title, method, topic, conference, or year; words can appear in any order, and a theme\'s own search narrows the results further.',
+          searchPlaceholder: 'Search all papers, e.g. protein design',
+          searchAria: 'Search all papers',
+          themeSearch: 'Search within this theme…',
+          themeSearchAria: 'Search within theme: ',
+          loading: 'Loading paper catalogue…',
+          loadingShort: 'Loading…',
+          footerText: 'Built for slow reading, clear questions, and better connections.',
+          footerLink: 'View repository ↗',
+          toggle: '中文',
+          toggleAria: '切换到中文',
+          status: function (n, k) { return n + ' papers from ' + k + ' research roadmaps'; },
+          matching: function (n) { return n + (n === 1 ? ' matching paper' : ' matching papers'); },
+          count: function (shown, total, searching) { return (searching ? shown + ' / ' : '') + total + ' papers'; },
+          original: 'Original ↗',
+          explainer: 'Explainer ↗',
+          comingSoon: 'Webpage coming soon',
+          local: 'Available in this repository',
+          hosted: 'Hosted explainer',
+          indexed: 'Source paper indexed',
+          noMatch: 'No papers match this search.',
+          also: 'Also listed in: ',
+          alsoSep: '; ',
+          otherTopics: 'Other topics',
+          unavailable: 'Paper catalogue unavailable',
+          unavailableText: 'The catalogue could not be loaded. Please open the repository README.'
+        }
+      };
+      const storedLang = function () {
+        try { return window.localStorage.getItem('atlas-lang'); } catch (error) { return null; }
+      };
+      const urlLang = new URLSearchParams(window.location.search).get('lang');
+      let lang = urlLang === 'en' || urlLang === 'zh' ? urlLang : (storedLang() === 'en' ? 'en' : 'zh');
+      const t = function (key) { return STRINGS[lang][key]; };
+
       const catalog = document.getElementById('catalog');
       const globalSearch = document.getElementById('catalog-search');
       const status = document.getElementById('catalog-status');
+      const toggle = document.getElementById('lang-toggle');
+      const themeRoots = Array.from(document.querySelectorAll('.theme-menu'));
       const esc = function (value) {
         return String(value || '').replace(/[&<>"']/g, function (ch) {
           return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]);
@@ -229,66 +322,86 @@
       const safeUrl = function (value) {
         return /^https:\/\//.test(value) || /^\.\//.test(value) ? value : '#';
       };
-      const matches = function (paper, query) {
-        const q = query.trim().toLowerCase();
-        return !q || [paper.s, paper.m, paper.t, paper.d].join(' ').toLowerCase().includes(q);
+      const normalize = function (value) {
+        return String(value || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+          .replace(/[\u2010-\u2015\u2212]/g, '-').toLowerCase();
+      };
+      const tokens = function (query) { return normalize(query).split(/\s+/).filter(Boolean); };
+      const matches = function (paper, terms) {
+        return terms.every(function (term) { return paper.haystack.includes(term); });
       };
       const paperKey = function (paper) { return String(paper.u || '').toLowerCase().replace(/\/+$/, ''); };
+      const splitLabel = function (label) {
+        const separator = label.indexOf(' / ');
+        return separator < 0 ? {category: '', topic: label} : {category: label.slice(0, separator), topic: label.slice(separator + 3)};
+      };
+      const themeTitle = function (name) {
+        const root = themeRoots.find(function (r) { return r.dataset.theme === name; });
+        return root ? root.dataset['title' + (lang === 'en' ? 'En' : 'Zh')] : name;
+      };
+
+      let catalogData = null;
       const listings = {};
       const sharedPage = {};
-      const themeLabels = {};
-      const shortCategory = function (label) {
-        const separator = label.indexOf(' / ');
-        const category = separator < 0 ? label : label.slice(0, separator);
-        const topic = separator < 0 ? '' : label.slice(separator + 3);
-        return category.split('｜')[0] + (topic ? ' / ' + topic : '');
+      const groupLabel = function (theme, groupId) { return lang === 'en' ? theme.ge[groupId] : theme.g[groupId]; };
+      const categoryText = function (category) { return lang === 'en' ? category.replace('｜', ' — ') : category; };
+      const shortName = function (paper) { return lang === 'en' ? (paper.se || paper.s) : paper.s; };
+      const metaText = function (paper) {
+        if (lang !== 'en') return paper.m;
+        const separator = paper.m.indexOf(' · ');
+        const venue = separator < 0 ? paper.m : paper.m.slice(0, separator);
+        const tag = separator < 0 ? '' : paper.m.slice(separator + 3);
+        return (catalogData.venues[venue] || venue) + (tag ? ' · ' + (catalogData.tags[tag] || tag) : '');
       };
       const alsoListed = function (theme, paper) {
-        const here = theme.g[paper.g];
         const others = (listings[paperKey(paper)] || []).filter(function (entry) {
-          return !(entry.theme === theme.n && entry.label === here);
+          return !(entry.theme === theme && entry.groupId === paper.g);
         });
         if (!others.length) return '';
-        return '<p class="paper-also" lang="zh-CN"><b>也收录于：</b>' + others.map(function (entry) {
-          return esc((themeLabels[entry.theme] || entry.theme) + ' · ' + shortCategory(entry.label));
-        }).join('；') + '</p>';
+        return '<p class="paper-also"><b>' + esc(t('also')) + '</b>' + others.map(function (entry) {
+          const parts = splitLabel(groupLabel(entry.theme, entry.groupId));
+          return esc(themeTitle(entry.theme.n) + ' · ' + parts.category.split('｜')[0] + ' / ' + parts.topic);
+        }).join(esc(t('alsoSep'))) + '</p>';
       };
-      const renderTheme = function (theme, root, query) {
+
+      const themeQueries = {};
+      const expandState = {saved: {}, search: {}};
+      const renderTheme = function (theme, root, globalTerms) {
+        const themeTerms = tokens(themeQueries[theme.n]);
+        const searching = globalTerms.length > 0 || themeTerms.length > 0;
+        const store = searching ? expandState.search : expandState.saved;
+        const visible = theme.p.filter(function (paper) { return matches(paper, globalTerms) && matches(paper, themeTerms); });
         const groups = {};
-        theme.p.forEach(function (paper) {
-          if (matches(paper, query)) (groups[paper.g] ||= []).push(paper);
-        });
-        root.querySelector('.theme-count').textContent = theme.p.length + ' papers';
+        visible.forEach(function (paper) { (groups[paper.g] ||= []).push(paper); });
+        root.querySelector('.theme-count').textContent = t('count')(visible.length, theme.p.length, searching);
         const categories = {};
         Object.keys(groups).forEach(function (groupId) {
-          const label = theme.g[groupId];
-          const separator = label.indexOf(' / ');
-          const category = separator < 0 ? 'Other topics' : label.slice(0, separator);
-          const topic = separator < 0 ? label : label.slice(separator + 3);
-          (categories[category] ||= []).push({id: groupId, label: topic});
+          const stableCategory = splitLabel(theme.g[groupId]).category;
+          (categories[stableCategory] ||= []).push(groupId);
         });
-        const disclosure = function (label, body, className) {
-          const expanded = Boolean(query.trim());
-          return '<section class="paper-group ' + className + '"><button class="group-toggle" type="button" aria-expanded="' + expanded + '"><span class="group-title">' + esc(label) + '</span><span class="group-chevron" aria-hidden="true">' + (expanded ? '−' : '＋') + '</span></button><div class="group-content"' + (expanded ? '' : ' hidden') + '>' + body + '</div></section>';
+        const disclosure = function (key, label, body, className) {
+          const expanded = key in store ? store[key] : searching;
+          return '<section class="paper-group ' + className + '"><button class="group-toggle" type="button" data-key="' + esc(key) + '" aria-expanded="' + expanded + '"><span class="group-title">' + esc(label) + '</span><span class="group-chevron" aria-hidden="true">' + (expanded ? '−' : '＋') + '</span></button><div class="group-content"' + (expanded ? '' : ' hidden') + '>' + body + '</div></section>';
         };
-        const html = Object.keys(categories).map(function (category) {
-          const topics = categories[category].map(function (topic) {
-          const groupId = topic.id;
-          const papers = groups[groupId];
-          const rows = papers.map(function (paper) {
+        const html = Object.keys(categories).map(function (stableCategory) {
+          const groupIds = categories[stableCategory];
+          const displayCategory = splitLabel(groupLabel(theme, groupIds[0])).category;
+          const topics = groupIds.map(function (groupId) {
+            const rows = groups[groupId].map(function (paper) {
               const pagePath = paper.p || sharedPage[paperKey(paper)] || '';
               const localPage = pagePath && /^\.\//.test(pagePath);
-              const page = pagePath ? '<a href="' + safeUrl(pagePath) + '"' + (localPage ? '' : ' target="_blank" rel="noopener"') + '>Explainer ↗</a>' : '<span class="status">Webpage coming soon</span>';
-              return '<article class="paper-row"><div class="paper-key">' + esc(paper.s) + '</div>' +
-                '<div><h4 class="paper-title">' + esc(paper.t) + '</h4>' + (paper.d ? '<p class="paper-summary" lang="zh-CN">' + esc(paper.d) + '</p>' : '') + '<p class="paper-meta">' + esc(paper.m) + '</p>' + alsoListed(theme, paper) + '</div>' +
-                '<div class="paper-info">' + (localPage ? 'Available in this repository' : (pagePath ? 'Hosted explainer' : 'Source paper indexed')) + '</div>' +
-                '<div class="paper-actions"><a href="' + safeUrl(paper.u) + '" target="_blank" rel="noopener">Original ↗</a>' + page + '</div></article>';
+              const summary = lang === 'en' ? paper.e : paper.d;
+              const page = pagePath ? '<a href="' + safeUrl(pagePath) + '"' + (localPage ? '' : ' target="_blank" rel="noopener"') + '>' + esc(t('explainer')) + '</a>' : '<span class="status">' + esc(t('comingSoon')) + '</span>';
+              return '<article class="paper-row"><div class="paper-key">' + esc(shortName(paper)) + '</div>' +
+                '<div><h4 class="paper-title" lang="en">' + esc(paper.t) + '</h4>' + (summary ? '<p class="paper-summary">' + esc(summary) + '</p>' : '') + '<p class="paper-meta">' + esc(metaText(paper)) + '</p>' + alsoListed(theme, paper) + '</div>' +
+                '<div class="paper-info">' + esc(localPage ? t('local') : (pagePath ? t('hosted') : t('indexed'))) + '</div>' +
+                '<div class="paper-actions"><a href="' + safeUrl(paper.u) + '" target="_blank" rel="noopener">' + esc(t('original')) + '</a>' + page + '</div></article>';
             }).join('');
-          return disclosure(topic.label, rows, 'topic-menu');
+            return disclosure(theme.n + '\ntopic\n' + groupId, splitLabel(groupLabel(theme, groupId)).topic, rows, 'topic-menu');
           }).join('');
-          return disclosure(category, topics, 'category-menu');
+          return disclosure(theme.n + '\ncategory\n' + stableCategory, displayCategory ? categoryText(displayCategory) : t('otherTopics'), topics, 'category-menu');
         }).join('');
-        root.querySelector('.paper-groups').innerHTML = html || '<div class="empty-state">No papers match this search.</div>';
+        root.querySelector('.paper-groups').innerHTML = html || '<div class="empty-state">' + esc(t('noMatch')) + '</div>';
         root.querySelectorAll('.group-toggle').forEach(function (button) {
           button.addEventListener('click', function () {
             const open = button.getAttribute('aria-expanded') === 'true';
@@ -296,50 +409,138 @@
             button.setAttribute('aria-expanded', String(!open));
             content.hidden = open;
             button.querySelector('.group-chevron').textContent = open ? '＋' : '−';
+            store[button.dataset.key] = !open;
           });
         });
+        return visible;
       };
+
+      const applyStatic = function () {
+        document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+        document.title = t('docTitle');
+        document.querySelector('meta[name="description"]').setAttribute('content', t('metaDesc'));
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
+          if (el.dataset.i18n === 'loading' && catalogData) return;
+          if (el.dataset.i18n === 'loadingShort' && catalogData) return;
+          el.textContent = t(el.dataset.i18n);
+        });
+        document.querySelectorAll('[data-i18n-html]').forEach(function (el) { el.innerHTML = t(el.dataset.i18nHtml); });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) { el.placeholder = t(el.dataset.i18nPlaceholder); });
+        document.querySelectorAll('[data-i18n-aria]').forEach(function (el) { el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
+        themeRoots.forEach(function (root) {
+          const suffix = lang === 'en' ? 'En' : 'Zh';
+          root.querySelector('.theme-name').innerHTML = esc(root.dataset['title' + suffix]) + '<small>' + esc(root.dataset['sub' + suffix]) + '</small>';
+          const input = root.querySelector('.theme-search input');
+          if (input) {
+            input.placeholder = t('themeSearch');
+            input.setAttribute('aria-label', t('themeSearchAria') + root.dataset['title' + suffix]);
+          }
+        });
+        toggle.textContent = t('toggle');
+        toggle.setAttribute('aria-label', t('toggleAria'));
+        toggle.setAttribute('aria-pressed', String(lang === 'en'));
+      };
+      const syncUrl = function () {
+        const url = new URL(window.location.href);
+        const q = globalSearch.value.trim();
+        if (q) url.searchParams.set('q', q); else url.searchParams.delete('q');
+        if (lang === 'en') url.searchParams.set('lang', 'en'); else url.searchParams.delete('lang');
+        window.history.replaceState(null, '', url);
+      };
+      let rerender = function () {};
+      toggle.addEventListener('click', function () {
+        lang = lang === 'en' ? 'zh' : 'en';
+        try { window.localStorage.setItem('atlas-lang', lang); } catch (error) { /* storage unavailable */ }
+        applyStatic();
+        rerender();
+        syncUrl();
+      });
+      applyStatic();
+
       fetch('./references/paper-catalog.json', {cache: 'no-cache'}).then(function (response) {
         if (!response.ok) throw new Error('catalog');
         return response.json();
       }).then(function (data) {
-        const themeRoots = Array.from(document.querySelectorAll('.theme-menu'));
+        catalogData = data;
+        data.tags = data.tags || {};
+        data.venues = data.venues || {};
         const byName = {};
         data.themes.forEach(function (theme) {
           byName[theme.n] = theme;
+          theme.ge = theme.ge || theme.g;
           theme.p.forEach(function (paper) {
             const key = paperKey(paper);
-            (listings[key] ||= []).push({theme: theme.n, label: theme.g[paper.g]});
+            (listings[key] ||= []).push({theme: theme, groupId: paper.g});
             if (paper.p && !sharedPage[key]) sharedPage[key] = paper.p;
+            const separator = paper.m.indexOf(' · ');
+            const venue = separator < 0 ? paper.m : paper.m.slice(0, separator);
+            const tag = separator < 0 ? '' : paper.m.slice(separator + 3);
+            paper.haystack = normalize([paper.s, paper.se, paper.m, data.venues[venue], data.tags[tag], paper.t, paper.d, paper.e,
+              theme.g[paper.g], theme.ge[paper.g]].join(' '));
           });
-        });
-        themeRoots.forEach(function (root) {
-          themeLabels[root.dataset.theme] = root.querySelector('.theme-name').firstChild.textContent.trim();
         });
         const total = Object.keys(listings).length;
-        const renderAll = function () {
-          const query = globalSearch.value || '';
-          themeRoots.forEach(function (root) { renderTheme(byName[root.dataset.theme], root, query); });
+        const shown = {};
+        let openBeforeSearch = null;
+        const updateStatus = function () {
+          if (!tokens(globalSearch.value).length) {
+            status.textContent = t('status')(total, data.themes.length);
+            return;
+          }
           const matched = new Set();
-          data.themes.forEach(function (theme) {
-            theme.p.forEach(function (paper) { if (matches(paper, query)) matched.add(paperKey(paper)); });
+          Object.keys(shown).forEach(function (name) {
+            shown[name].forEach(function (paper) { matched.add(paperKey(paper)); });
           });
-          status.textContent = query ? matched.size + ' matching papers' : total + ' papers from ' + data.themes.length + ' research roadmaps';
+          status.textContent = t('matching')(matched.size);
         };
-        globalSearch.addEventListener('input', renderAll);
+        const renderAll = function () {
+          const globalTerms = tokens(globalSearch.value);
+          const searching = globalTerms.length > 0;
+          if (searching && !openBeforeSearch) openBeforeSearch = themeRoots.map(function (root) { return root.open; });
+          themeRoots.forEach(function (root) {
+            const name = root.dataset.theme;
+            shown[name] = renderTheme(byName[name], root, globalTerms);
+            if (searching) root.open = shown[name].length > 0;
+            root.classList.toggle('no-match', searching && !shown[name].length);
+          });
+          if (!searching && openBeforeSearch) {
+            themeRoots.forEach(function (root, i) { root.open = openBeforeSearch[i]; });
+            openBeforeSearch = null;
+          }
+          updateStatus();
+        };
+        rerender = function () {
+          themeRoots.forEach(function (root) {
+            const name = root.dataset.theme;
+            shown[name] = renderTheme(byName[name], root, tokens(globalSearch.value));
+          });
+          updateStatus();
+        };
+        globalSearch.addEventListener('input', function () {
+          expandState.search = {};
+          renderAll();
+          syncUrl();
+        });
         themeRoots.forEach(function (root) {
+          const name = root.dataset.theme;
           const input = document.createElement('input');
-          input.type = 'search'; input.placeholder = 'Search this theme…';
-          input.setAttribute('aria-label', 'Search ' + root.dataset.theme);
+          input.type = 'search';
           input.addEventListener('input', function () {
-            renderTheme(byName[root.dataset.theme], root, input.value);
+            themeQueries[name] = input.value;
+            expandState.search = {};
+            shown[name] = renderTheme(byName[name], root, tokens(globalSearch.value));
+            updateStatus();
           });
           root.querySelector('.theme-search').appendChild(input);
         });
+        applyStatic();
+        const initialQuery = new URLSearchParams(window.location.search).get('q');
+        if (initialQuery) globalSearch.value = initialQuery;
         renderAll();
+        if (initialQuery) document.getElementById('themes').scrollIntoView();
       }).catch(function () {
-        status.textContent = 'Paper catalogue unavailable';
-        catalog.innerHTML = '<div class="empty-state">The catalogue could not be loaded. Please open the repository README.</div>';
+        status.textContent = t('unavailable');
+        catalog.innerHTML = '<div class="empty-state">' + esc(t('unavailableText')) + '</div>';
       });
     }());
   </script>
