@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <map version="1.0.1">
-  <node TEXT="MOF 近年进展与 A 框架地图｜截至 2026-10-20">
-    <node TEXT="代表性文献以 2021–2026 年正式发表研究为主，含 1 篇 2020 年入口；截至 2026-10-20。年份采用期刊引用年份，在线优先发表另行说明。" />
+  <node TEXT="MOF 近年进展与 A 框架地图｜截至 2026-10-26">
+    <node TEXT="代表性文献以 2021–2026 年正式发表研究为主，含 1 篇 2020 年入口；截至 2026-10-26。年份采用期刊引用年份，在线优先发表另行说明。" />
     <node TEXT="A 表示可复用的研究任务或设计框架。变量变化、AI 对应和阅读连线为本次归纳，不代表单一历史继承、领域穷尽或未被研究的新问题。研究类型按论文工作标注，不等于技术成熟度。" />
     <node TEXT="结构设计与非理想网络｜除了组成和平均晶体结构，还能设计什么？" POSITION="right" FOLDED="true">
       <node TEXT="拓扑引导的网状设计｜Topology-Guided Reticular Design" FOLDED="true">
@@ -637,6 +637,44 @@
         <node TEXT="材料–工艺协同设计">
           <node TEXT="CALF-20 VSA｜Chemical Engineering Journal 2023" LINK="https://www.sciencedirect.com/science/article/pii/S138589472205029X" />
           <node TEXT="PrISMa｜Nature 2024" LINK="https://www.nature.com/articles/s41586-024-07683-8" />
+        </node>
+      </node>
+    </node>
+    <node TEXT="稀土元素分离（REE）｜Rare-Earth Element Separation" POSITION="right" FOLDED="true">
+      <node TEXT="配位位点与吸附机制｜Coordination Sites and Adsorption Mechanisms" FOLDED="true">
+        <node TEXT="代表论文">
+          <node TEXT="Ln 局部配位环境｜ACS Applied Materials &amp; Interfaces 2024 · 配位表征与吸附机制" LINK="https://pubs.acs.org/doi/10.1021/acsami.4c09445">
+            <node TEXT="Local Coordination Environment of Lanthanides Adsorbed onto Cr- and Zr-based Metal–Organic Frameworks" />
+            <node TEXT="研究 Nd、Gd、Lu 在 Cr-MIL-101、UiO-66、UiO-68 及其衍生物中的局部配位环境，区分金属氧簇、缺陷与膦酸基团的吸附作用。重点理解哪些位点真正结合稀土，以及官能化如何改变位点竞争。" />
+          </node>
+          <node TEXT="PMIDA–MIL-101｜ACS Applied Materials &amp; Interfaces 2026 · 配体负载、吸附与再生" LINK="https://pubs.acs.org/doi/10.1021/acsami.6c16452">
+            <node TEXT="Aqueous Adsorption of Rare Earth Elements by Organophosphonate-Ligand-Modified Metal–Organic Frameworks: The Role of Ligand Loading in Surface Complexation" />
+            <node TEXT="在 MIL-101 中改变 PMIDA 配体负载量，结合吸附实验与分子动力学研究 Nd、Gd、Dy 的络合及 Fe(III) 竞争。更高负载会增强配位，却不带来成比例的容量提升，并揭示强结合与酸洗再生之间的权衡。" />
+          </node>
+        </node>
+      </node>
+      <node TEXT="MOF 选择性分离｜Selective REE Separation with MOFs" FOLDED="true">
+        <node TEXT="代表论文">
+          <node TEXT="NCU-1 纳米捕获｜Nature Communications 2024 · MOF 轻重稀土分离" LINK="https://www.nature.com/articles/s41467-024-45810-1">
+            <node TEXT="Rationally designed nanotrap structures for efficient separation of rare earth elements over a single step" />
+            <node TEXT="利用 NCU-1 中未配位羧基、三唑氮和孔道共同构成稀土纳米捕获位点，研究局部几何对轻稀土选择性的影响。结合二元离子对与尾矿体系，考察捕获位点设计如何转化为分离表现。" />
+          </node>
+          <node TEXT="ATZ-BTC-Zn｜Advanced Functional Materials 2025 · 稀土离子交换与选择性分离" LINK="https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.202419093">
+            <node TEXT="Efficient Separation of Adjacent Rare Earths in One Step by Using Ion-microporous Metal–Organic Frameworks" />
+            <node TEXT="在离子微孔 MOF ATZ-BTC-Zn 中结合纳米捕获口袋、离子传输通道和可交换反离子，研究稀土离子的选择性捕获与分离。阅读时需逐一核对所测离子对，区分相邻元素与非相邻元素的证据。" />
+          </node>
+        </node>
+      </node>
+      <node TEXT="非 MOF 对照与柱分离工艺｜Non-MOF Benchmarks and Column Processes" FOLDED="true">
+        <node TEXT="代表论文">
+          <node TEXT="Hans-LanM 二聚体｜Nature 2023 · 非 MOF 对照：蛋白质识别与柱分离" LINK="https://www.nature.com/articles/s41586-023-05945-5">
+            <node TEXT="Enhanced rare-earth separation with a metal-sensitive lanmodulin dimer" />
+            <node TEXT="研究镧系结合蛋白如何将微小离子尺寸差异放大为配位、氢键网络及二聚化差异，并用于 Nd/Dy 柱分离。作为非 MOF 对照，为柔性识别位点与协同性设计提供启发。" />
+          </node>
+          <node TEXT="LanM 固定化分离｜ACS Central Science 2021 · 非 MOF 对照：复杂进料与分离工艺" LINK="https://pubs.acs.org/doi/10.1021/acscentsci.1c00724">
+            <node TEXT="Bridging Hydrometallurgy and Biochemistry: A Protein-Based Process for Recovery and Separation of Rare Earth Elements" />
+            <node TEXT="将镧系结合蛋白固定化用于稀土回收与柱分离，研究复杂进料中的捕集、分组和目标离子对分离。作为非 MOF 工艺对照，帮助区分高吸附亲和力与高纯度、高回收率分离之间的要求。" />
+          </node>
         </node>
       </node>
     </node>
