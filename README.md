@@ -23,6 +23,8 @@ This repository collects the paper explainer webpages and research maps created 
 
 - [NV-Embed — Improved Techniques for Training LLMs as Generalist Embedding Models](papers/nv-embed/)
 
+- [Ln local coordination — Lanthanides in Cr- and Zr-based MOFs](papers/ln-local-coordination/)
+
 ## Repository layout
 
 ```text
