@@ -26,7 +26,7 @@ Original local paths were `/Users/admin/Downloads/` followed by the filenames ab
 |---|---|---|
 | Similar trivalent lanthanides and the design problem | Main pp. 1–2, introduction | Introductory explanation of the paper's motivation. The general size trend is background, not a new measurement here. |
 | Zn/BTC/DTB framework, two-dimensional extended network and two-fold interpenetration | Main p. 2, “Synthesis and structure description”; Figure 2, p. 3; SI Figures 2–3, pp. 7–8 | Structure of the host framework. It is not an atomically resolved structure of every loaded rare-earth ion. |
-| Rectangular windows approximately 9.9 × 5.8 Å; small pockets approximately 3.2 Å | Main p. 2; Figure 2; SI Figures 2–3 | These are different structural features. A pocket diameter is not the same quantity as an ionic radius, hydrated diameter or transport aperture. Diagrams are not to scale. |
+| Rectangular windows approximately 9.9 × 5.8 Å; small pockets approximately 3.2 Å | Main p. 2; Figure 2; SI Figures 2–3 | These are different structural features. A pocket diameter is not the same quantity as an ionic radius, hydrated diameter or transport aperture. The displayed original panels do not establish a quantitative comparison to hydrated ion size. |
 | Carboxyl, triazole N and water participate in binding | Main pp. 4–5, “Separation mechanism”; SI Figures 56–66, pp. 36–41 | Author-proposed interpretation of FT-IR/XPS changes, considered alongside calculations. It does not uniquely determine the aqueous coordination shell, coordination number or dehydration pathway. |
 | Cryo-EM fringes and possible oxide species | Main Figure 4, p. 4; discussion continuing p. 5 | The authors discuss possible oxide species. The explainer therefore does not portray all loaded ions as a single proven isolated coordination motif. |
 | Seven single-ion capacities | Main p. 2, “Sorption isotherm analysis”; SI Table 3, p. 45; SI Figures 20–26, pp. 16–19 | Two differing sets are retained separately, as documented below. Default chart: SI Langmuir fitted maximum capacity. Linear 0–500 mg/g scale; fitted values have no reported error bars. |
@@ -119,7 +119,7 @@ Main p. 5 reports −3.29 eV for Pr, −2.58 eV for Dy and −1.66 eV for Al. Mo
 
 The reported calculation is not a complete aqueous free-energy cycle. No full hydration-reservoir treatment, desolvation free energy, entropy contribution or exhaustive configurational/speciation sampling is supplied. No Boltzmann conversion from these energies to experimental SF is performed. Charge redistribution and Bader charges are calculated analyses, not measured ion charges or unique proof of binding strength. The explainer does not repeat the questionable main-text wording equating a larger positive Bader charge with “more electrons obtained.”
 
-## Original figures, reuse and new graphics
+## Original figures, reuse and structure views
 
 All four figure assets were extracted from the supplied publisher PDF and cropped to remove surrounding body text and captions. The scientific artwork, original English labels and data inside each crop were retained without recolouring, relabelling or digitising curves:
 
@@ -132,7 +132,21 @@ All four figure assets were extracted from the supplied publisher PDF and croppe
 
 Attribution: **Hu et al., Nature Communications 15, 1558 (2024), Figures 2, 3, 5 and 6**, [original article](https://www.nature.com/articles/s41467-024-45810-1), licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The figure reader states the cropping change, credits the authors, links the licence and links the article for full captions. No separate third-party credit line is shown for these original figures. Original figure labels remain English; explanatory reading guidance, alt text, source labels and controls are provided in Chinese and English.
 
-The hero and mechanism SVGs are newly drawn **teaching schematics**, not crystallographic coordinates, measured trajectories or quantitative geometric models. Ion marker size and dashed contacts are illustrative, not fitted radii, measured bond distances, a fixed coordination number or exclusion thresholds. Capacity and SF bars use explicitly transcribed values on labelled linear scales; no fitted qₘ error bars or continuous breakthrough datasets were manufactured.
+The hero and section 02 now display **direct local views of the original figure assets**, rather than newly drawn framework or coordination schematics. Each SVG embeds an existing, complete local PNG and clips its display using a `viewBox`; no new structure-image asset is generated. No atom, bond or contact is drawn over the source artwork, and the original structures and colours are not changed.
+
+| Display | Original panel and meaning |
+|---|---|
+| Hero | Figure 2d, from `assets/figure-2.png`: the host's small-pocket structure |
+| Structure view 1 | Figure 2b: the two-dimensional extended framework |
+| Structure view 2 | Figure 2c: the two-fold interpenetration topology |
+| Structure view 3 | Figure 2d: the small-pocket structure |
+| Structure view 4, Pr / Dy / Al selection | Figure 5d / 5e / 5f respectively, from `assets/figure-5.png`: the paper's corresponding calculated adsorption configurations |
+
+These four views are complementary ways to read the paper's structures, **not a temporal sequence, synthesis pathway or measured adsorption trajectory**. The purple spheres in Figure 2d mark voids/pockets; they do not represent actual adsorbed REE ions. Figure 5d–f shows selected computational configurations, not experimentally resolved structures of every loaded ion. The source's original geometry, connectivity and local contacts are retained, while the text explains the scope of each panel. The visible viewport crops are display changes in addition to the earlier removal of surrounding prose/captions; both changes are covered by the attribution and [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) notice above.
+
+Capacity and SF bars use explicitly transcribed values on labelled linear scales; no fitted qₘ error bars or continuous breakthrough datasets were manufactured. The separate mass-balance slider remains a labelled teaching calculation under the assumptions documented above.
+
+**Correction, 2026-10-27:** following the user's identification of a wrong structure graphic in section 02, the earlier fabricated closed three-dimensional framework and generic O/O/N-contact drawings were replaced by the direct original-panel views listed above. The same correction replaces the hero schematic with Figure 2d. This corrects the structural representation; it does not change the capacity datasets, reported SF values or teaching mass-balance derivation. No test or deployment outcome for this correction is asserted here.
 
 ## Source discrepancies and editorial decisions
 
