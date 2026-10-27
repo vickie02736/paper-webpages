@@ -416,7 +416,7 @@
               const pagePath = paper.p || sharedPage[paperKey(paper)] || '';
               const localPage = pagePath && /^\.\//.test(pagePath);
               const summary = lang === 'en' ? paper.e : paper.d;
-              const page = pagePath ? '<a href="' + safeUrl(pagePath) + '"' + (localPage ? '' : ' target="_blank" rel="noopener"') + '>' + esc(t('explainer')) + '</a>' : '<span class="status">' + esc(t('comingSoon')) + '</span>';
+              const page = pagePath ? '<a href="' + safeUrl(pagePath) + '" target="_blank" rel="noopener">' + esc(t('explainer')) + '</a>' : '<span class="status">' + esc(t('comingSoon')) + '</span>';
               return '<article class="paper-row"><div class="paper-key">' + esc(shortName(paper)) + '</div>' +
                 '<div><h4 class="paper-title" lang="en">' + esc(paper.t) + '</h4>' + (summary ? '<p class="paper-summary">' + esc(summary) + '</p>' : '') + '<p class="paper-meta">' + esc(metaText(paper)) + '</p>' + alsoListed(theme, paper) + '</div>' +
                 '<div class="paper-info">' + esc(localPage ? t('local') : (pagePath ? t('hosted') : t('indexed'))) + '</div>' +
@@ -553,10 +553,9 @@
           recent.hidden = !items.length;
           document.getElementById('recent-list').innerHTML = items.map(function (item) {
             const paper = item.entry.paper;
-            const local = /^\.\//.test(item.path);
             return '<div class="recent-item"><div><h4 lang="en">' + esc(paper.t) + '</h4><p class="recent-meta"><b>' + esc(shortName(paper)) + '</b> · ' +
               esc(themeTitle(item.entry.theme.n)) + ' · ' + esc(t('addedOn')(item.added)) + '</p></div>' +
-              '<a class="button" href="' + safeUrl(item.path) + '"' + (local ? '' : ' target="_blank" rel="noopener"') + '>' + esc(t('openExplainer')) + '</a></div>';
+              '<a class="button" href="' + safeUrl(item.path) + '" target="_blank" rel="noopener">' + esc(t('openExplainer')) + '</a></div>';
           }).join('');
         };
         rerender = function () {
