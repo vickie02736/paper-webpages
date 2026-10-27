@@ -51,6 +51,7 @@ async function eventually(check, label) {
     const full = clone(source);
     Object.keys(full.explainers).forEach(pagePath => {
       full.explainers[pagePath] = '2026-10-27';
+      (full.explainerCreatedAt ||= {})[pagePath] = '2026-10-27T12:00:00Z';
       (full.explainerUpdates ||= {})[pagePath] = '2026-10-27T12:00:00Z';
     });
     const stale = clone(full);
@@ -184,11 +185,12 @@ async function eventually(check, label) {
     const beforeTimer = await state();
     const updated = clone(full);
     updated.explainers['./papers/rag/'] = '2026-10-01';
-    updated.explainerUpdates['./papers/rag/'] = '2026-10-01T12:00:00Z';
+    updated.explainerCreatedAt['./papers/rag/'] = '2026-10-01T12:00:00Z';
+    updated.explainerUpdates['./papers/rag/'] = '2026-10-28T11:59:00Z';
     current = updated;
     await requestAfter(() => page.clock.fastForward(60000));
     assert.deepEqual(await state(), beforeTimer, 'Timer refresh preserves search, filter, language, expansion and focus');
-    assert.equal(await page.locator('#recent-list .recent-item').count(), recentTotal - 1, 'Changed catalogue rebuilds the recent list');
+    assert.equal(await page.locator('#recent-list .recent-item').count(), recentTotal - 1, 'An old creation stays outside the recent list despite an update today');
     await statusIs(enStatus(1, fullTotal));
     assert.equal(await page.evaluate(() => window.__catalogTestDocument), documentToken, 'Updates preserve the same document');
 
@@ -211,6 +213,50 @@ async function eventually(check, label) {
     current = changedRecent;
     await requestAfter(() => page.clock.fastForward(60000));
     assert.equal(await focusedRecentHref(), recentHref, 'Changed recent markup restores focus to the surviving link');
+
+    const creationCases = clone(full);
+    const setCreation = (pagePath, date, timestamp) => {
+      assert.ok(pagePath in creationCases.explainers, 'Creation fixture has a registered explainer: ' + pagePath);
+      creationCases.explainers[pagePath] = date;
+      creationCases.explainerCreatedAt[pagePath] = timestamp;
+    };
+    setCreation('./papers/e5-mistral/', '2026-10-28', '2026-10-28T11:30:00Z');
+    setCreation('./papers/nv-embed/', '2026-10-28', '2026-10-28T08:00:00Z');
+    delete creationCases.explainerCreatedAt['./papers/pmida-mil101/'];
+    creationCases.explainerCreatedAt['./papers/ln-local-coordination/'] = 'invalid';
+    creationCases.explainerCreatedAt['./papers/ncu1-nanotraps/'] = '2026-10-28T11:45:00Z';
+    setCreation('./papers/atz-btc-zn/', '2026-10-29', '2026-10-29T09:00:00Z');
+    setCreation('./papers/hans-lanm-dimer/', '2026-10-28', '2026-10-28T23:59:00Z');
+    setCreation('./papers/rag/', '2026-10-22', '2026-10-22T00:00:00Z');
+    setCreation('./papers/self-rag/', '2026-10-21', '2026-10-21T23:59:59.999Z');
+    current = creationCases;
+    await focusRefresh();
+    const recentItems = () => page.locator('#recent-list .recent-item').evaluateAll(rows => rows.map(row => ({
+      path: new URL(row.querySelector('a').href).pathname,
+      created: row.querySelector('time').dateTime,
+      text: row.querySelector('time').textContent
+    })));
+    const pathOf = pagePath => new URL(pagePath, base).pathname;
+    const items = await recentItems();
+    assert.deepEqual(items.slice(0, 2).map(item => item.path), [pathOf('./papers/e5-mistral/'), pathOf('./papers/nv-embed/')], 'New creations sort by their precise time within the same UTC day');
+    for (const pagePath of ['./papers/pmida-mil101/', './papers/ln-local-coordination/', './papers/ncu1-nanotraps/']) {
+      assert.equal(items.find(item => item.path === pathOf(pagePath))?.created, '2026-10-27T00:00:00.000Z', 'Missing, invalid or mismatched creation time falls back to the first date: ' + pagePath);
+    }
+    assert.ok(items.some(item => item.path === pathOf('./papers/rag/')), 'The start of the sixth preceding UTC day is included');
+    for (const pagePath of ['./papers/self-rag/', './papers/atz-btc-zn/', './papers/hans-lanm-dimer/']) {
+      assert.ok(!items.some(item => item.path === pathOf(pagePath)), 'Older or future creation is excluded: ' + pagePath);
+    }
+    assert.equal(await page.locator('#recent-title').textContent(), 'Recently added interactive explainers');
+    assert.match(items[0].text, /^Created .*11:30.* UTC$/, 'English recent date identifies the UTC creation time');
+    const changedUpdates = clone(creationCases);
+    Object.keys(changedUpdates.explainers).forEach(pagePath => { changedUpdates.explainerUpdates[pagePath] = '2026-10-28T11:59:00Z'; });
+    current = changedUpdates;
+    await requestAfter(() => page.clock.fastForward(60000));
+    assert.deepEqual(await recentItems(), items, 'Changing update times cannot restore old creations or alter recent ordering');
+    await page.locator('#lang-toggle').click();
+    assert.equal(await page.locator('#recent-title').textContent(), '最近新增的交互式讲解');
+    assert.match((await recentItems())[0].text, /11:30 UTC 创建$/, 'Chinese recent date identifies the UTC creation time');
+    await page.locator('#lang-toggle').click();
 
     // A paper shared across themes should retain its explainer and count only once.
     const shared = clone(updated);
@@ -319,7 +365,7 @@ async function eventually(check, label) {
     assert.equal(await retryPage.locator('.theme-search input').count(), full.themes.length, 'Subsequent timer updates do not initialize a second set of inputs');
     assert.deepEqual(retryErrors, [], 'Bootstrap recovery has no uncaught errors');
     await retryContext.close();
-    console.log('PASS catalogue: default explainer/unique/listing counts, ' + staleTotal + '→' + fullTotal + ' live update, combined searches/counts, clear, language/state, timer/focus/visibility refresh, recent-link focus, shared papers, invalid-data/failure recovery, bootstrap retry, 3 widths in both modes');
+    console.log('PASS catalogue: default explainer/unique/listing counts, ' + staleTotal + '→' + fullTotal + ' live update, creation-only recent dates/order/boundaries, combined searches/counts, clear, language/state, timer/focus/visibility refresh, recent-link focus, shared papers, invalid-data/failure recovery, bootstrap retry, 3 widths in both modes');
     console.log('PASS screenshots: ' + screenshots);
   } finally {
     await browser.close();

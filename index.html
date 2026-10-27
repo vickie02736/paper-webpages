@@ -234,7 +234,7 @@
 
       <section id="recent" class="recent" aria-labelledby="recent-title" hidden>
         <div class="eyebrow" data-i18n="recentEyebrow">近一周的讲解页</div>
-        <h3 id="recent-title" data-i18n="recentTitle">最近新增或更新的交互式讲解</h3>
+        <h3 id="recent-title" data-i18n="recentTitle">最近新增的交互式讲解</h3>
         <div id="recent-list"></div>
       </section>
     </main>
@@ -287,9 +287,9 @@
           alsoSep: '；',
           otherTopics: '其他',
           recentEyebrow: '近一周的讲解页',
-          recentTitle: '最近新增或更新的交互式讲解',
+          recentTitle: '最近新增的交互式讲解',
           openExplainer: '打开讲解页 ↗',
-          updatedOn: function (date) { return (date.getUTCMonth() + 1) + ' 月 ' + date.getUTCDate() + ' 日 ' + date.toLocaleTimeString('en-GB', {hour: '2-digit', minute: '2-digit', timeZone: 'UTC'}) + ' UTC 更新'; },
+          createdOn: function (date) { return (date.getUTCMonth() + 1) + ' 月 ' + date.getUTCDate() + ' 日 ' + date.toLocaleTimeString('en-GB', {hour: '2-digit', minute: '2-digit', timeZone: 'UTC'}) + ' UTC 创建'; },
           unavailable: '论文目录加载失败',
           unavailableText: '无法加载论文目录，请查看仓库 README。'
         },
@@ -333,9 +333,9 @@
           alsoSep: '; ',
           otherTopics: 'Other topics',
           recentEyebrow: 'Explainers from the past week',
-          recentTitle: 'Recently added or updated interactive explainers',
+          recentTitle: 'Recently added interactive explainers',
           openExplainer: 'Open explainer ↗',
-          updatedOn: function (date) { return 'Updated ' + date.toLocaleString('en-GB', {day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'UTC'}) + ' UTC'; },
+          createdOn: function (date) { return 'Created ' + date.toLocaleString('en-GB', {day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'UTC'}) + ' UTC'; },
           unavailable: 'Paper catalogue unavailable',
           unavailableText: 'The catalogue could not be loaded. Please open the repository README.'
         }
@@ -599,19 +599,19 @@
           const today = Math.floor(now / day) * day;
           const items = Object.keys(data.explainers || {}).map(function (path) {
             const added = new Date(data.explainers[path] + 'T00:00:00Z');
-            const timestamp = (data.explainerUpdates || {})[path];
-            const updated = timestamp ? new Date(timestamp) : added;
-            const latest = !isNaN(updated) && updated >= added ? updated : added;
+            const timestamp = (data.explainerCreatedAt || {})[path];
+            const created = timestamp ? new Date(timestamp) : added;
+            const first = !isNaN(created) && created.toISOString().slice(0, 10) === data.explainers[path] ? created : added;
             let entry = null;
             data.themes.some(function (theme) {
               const paper = theme.p.find(function (p) { return p.p === path; });
               if (paper) entry = {theme: theme, paper: paper};
               return Boolean(paper);
             });
-            return {path: path, added: added, updated: latest, entry: entry};
+            return {path: path, created: first, entry: entry};
           }).filter(function (item) {
-            return item.entry && !isNaN(item.added) && item.updated >= today - 6 * day && item.updated <= now;
-          }).sort(function (a, b) { return b.updated - a.updated || b.added - a.added || a.path.localeCompare(b.path); });
+            return item.entry && !isNaN(item.created) && item.created >= today - 6 * day && item.created <= now;
+          }).sort(function (a, b) { return b.created - a.created || a.path.localeCompare(b.path); });
           recent.hidden = !items.length;
           const recentList = document.getElementById('recent-list');
           const focused = document.activeElement;
@@ -619,7 +619,7 @@
           const html = items.map(function (item) {
             const paper = item.entry.paper;
             return '<div class="recent-item"><div><h4 lang="en">' + esc(paper.t) + '</h4><p class="recent-meta"><b>' + esc(shortName(paper)) + '</b> · ' +
-              esc(themeTitle(item.entry.theme.n)) + ' · <time datetime="' + item.updated.toISOString() + '">' + esc(t('updatedOn')(item.updated)) + '</time></p></div>' +
+              esc(themeTitle(item.entry.theme.n)) + ' · <time datetime="' + item.created.toISOString() + '">' + esc(t('createdOn')(item.created)) + '</time></p></div>' +
               '<a class="button" href="' + safeUrl(item.path) + '" target="_blank" rel="noopener">' + esc(t('openExplainer')) + '</a></div>';
           }).join('');
           if (recentList.innerHTML !== html) {
