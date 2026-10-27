@@ -40,3 +40,11 @@ Checked 2026-10-27:
 The reader preloads nearby figures, swaps decoded images, and shows bilingual loading/retry feedback. A delayed or failed download cannot leave the previous image visible under the newly selected figure caption. Rapid selections display only the last requested figure.
 
 Targeted browser checks passed for delayed downloads, decoded image pixels against each local source image, rapid switching, failed-load retry, language switching during a pending download and 1440/768/390 px layouts. The full repository browser regression and static checker were also rerun. Scientific content and first-publication date are unchanged.
+
+## Conceptual-diagram accuracy review (2026-10-27)
+
+The overview and Section 02 diagrams were checked against the original structural, exchange and computational evidence. The overview now marks one ~4.4 Å interlayer pocket and distinguishes hydrated zinc counterions from Zn-containing anionic chains. The mechanism uses separate channel/pocket views, possible-interaction dashes rather than established Ln–N bonds, and relative enrichment with both rare earths present in both phases. Inactive states are hidden. The diagrams do not assert a measured time sequence, exact exchange site, 1:1 stoichiometry or actual phase composition. See `sources.md` for the evidence and limits.
+
+The narrow-screen diagrams stack their structural views and phases vertically. A targeted browser check passed all 24 width/language/view combinations and 112 state checks, including true visibility, keyboard control, language/state preservation, SVG text bounds and 390↔1440 resizing. At 390 px, the minimum rendered SVG text is 12.6 px in the overview and 14.7 px in the mechanism. Desktop and phone screenshots were visually reviewed; representative files are retained at `/tmp/atz-btc-zn-diagrams-qa/` on the task host.
+
+Final validation after integrating the current publication branch: full static checks passed with zero warnings, and the repository browser regression passed all 10 explainers and 1327 interaction cases.

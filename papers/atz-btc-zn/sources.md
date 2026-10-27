@@ -127,3 +127,13 @@ The original-figure reader uses **Figure 1 (article p. 3), Figure 2 (p. 4), Figu
 - Figure 6: distinguish optimized structures, charge-density calculations and calculated gaps from measured spectra or aqueous free energies.
 
 Redrawn metric bars use the exact tables above. The mechanism stepper is a conceptual teaching diagram. The binary mass-balance display is an explicitly hypothetical calculation. No other plotted coordinates are presented as newly measured data.
+
+### Conceptual-diagram accuracy review (2026-10-27)
+
+The overview and Section 02 diagrams were rechecked against article Scheme 1, Figure 1, pp. 2–3, the exchange evidence in Figure 4 and SI Table S10, and the proposed interactions in Figures 4/6 and SI S67–S103.
+
+- The **~4.4 Å annotation denotes one interlayer pocket**, not the spacing between pocket centres. The overview bracket now spans one schematic pocket. Neither diagram is to scale.
+- The grey chains include **coordinated framework Zn**, whereas purple hydrated `[Zn(H₂O)₆]²⁺` species are **exchangeable counterions**. The mechanism draws the channel and pocket as separate conceptual views, without claiming that a specific Zn site becomes a specific Ln site, that framework Zn is displaced, or that the process has a measured sequence or 1:1 stoichiometry. The 9.9 × 7.8 Å channel and ~4.4 Å interlayer pocket retain separate labels.
+- Green dots represent functional-group regions rather than atom-resolved O/N positions. Dashed orange lines show **possible interactions involving the pocket environment and water**; they do not establish a direct aqueous Ln–N bond or a complete coordination shell. Generic Ln hydration circles specify no coordination number.
+- The separation view includes **both A and B in both phases**, labeled by relative enrichment rather than complete rejection. Icon counts and sizes encode no measured composition, recovery or product purity.
+- Inactive conceptual states are hidden, avoiding overlapping Zn/Ln icons that could be mistaken for a structural model.
