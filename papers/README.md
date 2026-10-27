@@ -13,6 +13,7 @@ Each explainer is a static visual webpage using the shared Research Atlas readin
 | NCU-1 nanotraps — Rationally designed nanotrap structures for efficient separation of rare earth elements over a single step | Nature Communications 2024 | [Open page](ncu1-nanotraps/) |
 | PMIDA–MIL-101 — Rare-earth adsorption and ligand loading | ACS AMI 2026 | [Open page](pmida-mil101/) |
 | ATZ-BTC-Zn — Ion-exchange-assisted separation of adjacent rare earths | Advanced Functional Materials 2025 (online 2024) | [Open page](atz-btc-zn/) |
+| Hans-LanM dimer — Enhanced rare-earth separation with a metal-sensitive lanmodulin dimer | Nature 2023 | [Open page](hans-lanm-dimer/) |
 
 Opening these pages does not require ChatGPT sign-in. Each supports Chinese and English, including diagrams and interactive feedback. Ln local coordination and PMIDA–MIL-101 also offer parallel bilingual reading.
 

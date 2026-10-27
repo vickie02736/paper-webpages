@@ -30,6 +30,7 @@ This repository collects the paper explainer webpages and research maps created 
 - [NCU-1 nanotraps — Rationally designed nanotrap structures for efficient separation of rare earth elements over a single step](papers/ncu1-nanotraps/)
 - [PMIDA–MIL-101 — Rare-earth adsorption and ligand loading](papers/pmida-mil101/)
 - [ATZ-BTC-Zn — Ion-exchange-assisted separation of adjacent rare earths](papers/atz-btc-zn/)
+- [Hans-LanM dimer — Enhanced rare-earth separation with a metal-sensitive lanmodulin dimer](papers/hans-lanm-dimer/)
 
 ## Repository layout
 
@@ -50,7 +51,7 @@ references/
     *.mm
 ```
 
-The explainers share the Research Atlas navy-and-cyan reading style, a two-row sticky header, accessible section navigation and reading progress. All nine pages support complete Chinese/English switching, including interactive feedback, and remember the homepage's language preference. Ln local coordination and PMIDA–MIL-101 also retain their parallel bilingual mode. Paper-specific diagrams, experiments and learning-depth options remain tailored to the subject.
+The explainers share the Research Atlas navy-and-cyan reading style, a two-row sticky header, accessible section navigation and reading progress. All ten pages support complete Chinese/English switching, including interactive feedback, and remember the homepage's language preference. Ln local coordination and PMIDA–MIL-101 also retain their parallel bilingual mode. Paper-specific diagrams, experiments and learning-depth options remain tailored to the subject.
 
 Start with the central idea, then explore the mechanism, evidence, limitations, and broader connections. See the [explainer implementation guide](papers/README.md#shared-reading-system) for the common styles and language controller.
 
