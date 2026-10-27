@@ -21,3 +21,11 @@ Correction (2026-10-27): section 02 and the hero now use direct views of origina
 本次更正验证（2026-10-27）：完整页面检查器通过（0 警告）；Chrome 检查通过，覆盖图 2b–d、图 5d–f 的面板／能量对应、中英文切换、状态与焦点保留、键盘操作和完整原图链接。1440 px、390 px、320 px 视口无横向溢出；页面无脚本或资源错误。
 
 Correction validation (2026-10-27): the full page checker passed with zero warnings. Chrome checks verified the Fig. 2b–d and Fig. 5d–f panel/energy mapping, both languages, state and focus preservation, keyboard operation and full-figure links. No horizontal overflow at 1440, 390 or 320 px; no script or resource errors.
+
+原图阅读器修复（2026-10-27）：第 06 节在新图加载期间隐藏旧图并显示双语提示，等待图片解码完成后显示；缓存已加载图片，忽略过期请求，并为失败或超时提供重试。图像、图注、选中按钮与原图链接保持一致；手机端图片按比例缩放，避免覆盖图注。图号保留原论文的 2、3、5、6。
+
+Figure-reader fix (2026-10-27): section 06 hides stale artwork while loading, shows bilingual feedback, and displays the selected image after decoding. Decoded images are cached, outdated requests cannot overwrite the current selection, and failed or timed-out loads offer a retry. Artwork, caption, selected button and original-image link stay aligned. Responsive image sizing keeps artwork clear of the caption. Figure numbers retain the article's 2, 3, 5 and 6.
+
+回归检查：`node scripts/check-ncu1-reader.cjs`（从仓库根目录运行；Playwright 与 Chromium 配置同 `scripts/check-explainers.cjs`）。检查实际解码和四张不同的图像、慢加载、失败重试、快速切换、超时后迟到的请求、加载中切换语言、键盘操作，以及 1440／768／390 px 下的图片边界和图注位置。截图保存于 `PAPER_QA_DIR`，默认使用系统临时目录。
+
+Regression check: run `node scripts/check-ncu1-reader.cjs` from the repository root, using the Playwright/Chromium configuration of `scripts/check-explainers.cjs`. It verifies four distinct decoded images, delayed/failed/racing/timed-out requests, retry, language switching during loading, keyboard controls, and image/caption geometry at 1440, 768 and 390 px. Screenshots go to `PAPER_QA_DIR` or the system temporary directory.

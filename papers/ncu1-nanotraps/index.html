@@ -39,6 +39,14 @@ body.atlas-paper[data-paper="ncu1-nanotraps"] .original-art{background:white;bor
 body.atlas-paper[data-paper="ncu1-nanotraps"] .mechanism-original{margin:0;background:white}
 body.atlas-paper[data-paper="ncu1-nanotraps"] .mechanism-original a{display:block}
 body.atlas-paper[data-paper="ncu1-nanotraps"] .mechanism-original figcaption{background:var(--panel2);color:var(--muted);font-size:12px;line-height:1.6;padding:12px 16px;border-top:1px solid var(--line)}
+
+/* Loading feedback replaces stale artwork until the selected image is decoded. */
+#figure-display{display:grid;place-items:center;min-height:220px;aspect-ratio:1.2}
+#figure-display #figure-link{width:100%}
+#figure-display #figure-image{height:auto}
+#figure-status{color:#173c39;text-align:center;padding:30px 18px}
+#figure-status p{margin:0 0 14px}
+#figure-retry{background:#14685b;color:white;border-color:#14685b}
 </style>
 <link rel="stylesheet" href="../../assets/paper.css">
 </head>
@@ -81,7 +89,7 @@ document.getElementById('main').innerHTML=`
 <section class="section" id="tailings">${sectionHead('05',P('把证据带回真实进料','What changes in a real feed?'),P('尾矿测试比二元模型更复杂，证明了复杂背景中的优先捕获和保留差异。它尚不能替代每个目标元素的完整纯化流程验证。','Tailings add real competing ions and show preferential capture and different retention. They do not establish a complete purification process for each target element.'))}
 <div class="field-grid"><div><span class="tag">${pair(P('赣州天然尾矿样品','NATURAL TAILINGS · GANZHOU'))}</span><p>${pair(P('原样先经过 0.22 μm 过滤。REE 初始浓度约 0.09–0.92 mg/L，Al 为 8.15 mg/L；从混合背景里捕获稀土，和从两种稀土里分出单一元素，是不同层次的问题。','The sample was prefiltered through 0.22 μm. Initial REE concentrations were about 0.09–0.92 mg/L, with Al at 8.15 mg/L. Capturing REEs from this background and purifying one REE from another are distinct challenges.'))}</p><div class="field-stat"><div><strong>100%</strong><small>${pair(P('Pr 捕获率 · 表中报告值','Pr capture · reported table value'))}</small></div><div><strong>68.48%</strong><small>${pair(P('Dy 捕获率','Dy capture'))}</small></div><div><strong>5.03%</strong><small>${pair(P('Al 捕获率','Al capture'))}</small></div></div><p class="source">${pair(P('SI Table 2，p. 44；100% 与残余 0 为表中舍入值，不能据此推断严格零残余、无限 Kd 或产品纯度。','SI Table 2, p. 44. Values of 100% and residual 0 are rounded source entries; they do not imply exactly zero residual, infinite Kd or product purity.'))}</p></div><div class="panel tinted"><h3>${pair(P('从批量捕获，到柱上保留','From batch capture to column retention'))}</h3><p>${pair(P('柱实验使用 500 mg 晶体，玻璃柱内径 9 mm，在常压下缓慢通过预过滤尾矿样品。正文报告竞争离子约 10 床体积先穿透；Pr 约 150，Dy 约 80 床体积。','A 9 mm internal-diameter glass column contained 500 mg of crystals. Prefiltered tailings passed slowly at ambient pressure. The main text reports competitor breakthrough at about 10 bed volumes, Pr at about 150 and Dy at about 80.'))}</p><div class="callout">${pair(P('更晚穿透意味着更强保留。收集哪一段出液、牺牲多少回收率，仍决定最终产品；这里不把几个突破点补画成虚构的连续曲线。','Later breakthrough means greater retention. The collection window and recovery trade-off still determine the product; sparse reported breakthrough points are not expanded into invented curves here.'))}</div><p class="source">${pair(P('正文 p. 4、图 3d；SI pp. 5–6、图 53–55。方法段未给出明确流量、床高及床体积定义，不能换算工业吞吐量。','Main p. 4, Fig. 3d; SI pp. 5–6, Figs. 53–55. The methods passage gives no explicit flow rate, bed height or bed-volume definition, so industrial throughput cannot be inferred.'))}</p></div></div></section>
 <section class="section" id="figures">${sectionHead('06',P('读回原图，检查解释','Read the figures behind the story'),P('切换图号，先看“量是什么”，再看图能支持哪一句结论。原图保留原始英文与标识，旁边提供完整双语读图提示。','Choose a figure, identify what is measured, then ask which conclusion it supports. Original artwork keeps its English labels; bilingual reading notes accompany it.'))}
-<div class="seg" id="figure-controls">${[2,3,5,6].map(n=>`<button data-figure="${n}">${pair(P('图 '+n,'Fig. '+n))}</button>`).join('')}</div><div class="figure-reader"><div class="figure-stage"><figure><a id="figure-link" href="assets/figure-2.png" target="_blank" rel="noopener"><img id="figure-image" src="assets/figure-2.png" width="970" height="735" alt=""></a><figcaption id="figure-caption"></figcaption></figure></div><div><span class="tag" id="figure-type"></span><h3 id="figure-title"></h3><div class="read-points" id="figure-notes" aria-live="polite"></div></div></div><p class="source">${pair(P('图像：Hu et al., Nature Communications 15, 1558 (2024)，图 2、3、5、6。由用户提供的正式 PDF 裁去周围正文与图注，图内内容未改动。原图为英文；中文解释位于右侧。','Images: Hu et al., Nature Communications 15, 1558 (2024), Figs. 2, 3, 5, 6. Surrounding prose and captions were cropped from the supplied publisher PDF; the artwork itself is unchanged. Original labels are English; translated guidance sits alongside.'))} <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · <a href="${article}">${pair(P('原文及完整图注','Article and full captions'))}</a></p></section>
+<div class="seg" id="figure-controls">${[2,3,5,6].map(n=>`<button data-figure="${n}">${pair(P('图 '+n,'Fig. '+n))}</button>`).join('')}</div><div class="figure-reader"><div class="figure-stage"><figure><div id="figure-display" aria-busy="true"><a id="figure-link" href="assets/figure-2.png" target="_blank" rel="noopener" hidden><img id="figure-image" width="970" height="735" alt="" hidden></a><div id="figure-status" role="status" aria-live="polite"><p id="figure-status-text"></p><button id="figure-retry" type="button" hidden></button></div></div><figcaption id="figure-caption"></figcaption></figure></div><div><span class="tag" id="figure-type"></span><h3 id="figure-title"></h3><div class="read-points" id="figure-notes" aria-live="polite"></div></div></div><p class="source">${pair(P('图像：Hu et al., Nature Communications 15, 1558 (2024)，图 2、3、5、6。由用户提供的正式 PDF 裁去周围正文与图注，图内内容未改动。原图为英文；中文解释位于右侧。','Images: Hu et al., Nature Communications 15, 1558 (2024), Figs. 2, 3, 5, 6. Surrounding prose and captions were cropped from the supplied publisher PDF; the artwork itself is unchanged. Original labels are English; translated guidance sits alongside.'))} <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · <a href="${article}">${pair(P('原文及完整图注','Article and full captions'))}</a></p></section>
 <section class="section" id="limits">${sectionHead('07',P('值得带走的设计原则，<br>与还需要补上的证据','A design principle to keep.<br>Evidence still to collect.'),P('这篇论文最有启发的贡献，是把局部几何与化学位点一起设计。以下边界来自已核对的实验范围，后续建议属于讲解者分析。','The useful design idea is to engineer local geometry and binding chemistry together. The boundaries below follow the verified experimental scope; proposed next tests are explainer analysis.'))}
 <div class="limits"><div class="limit"><h3>${pair(P('01 相隔较远，不等于相邻可分','01 Distant pairs do not prove adjacent separation'))}</h3><p>${pair(P('六组模型均是选定的轻／重组合。高 SF 不能外推到每一对相邻镧系元素；下一步应测试相邻对、多离子竞争及目标产品回收。','All six models are selected light/heavy pairs. Their SF values do not establish separation of every adjacent lanthanide pair; adjacent pairs, multicomponent competition and product recovery need direct tests.'))}</p></div><div class="limit"><h3>${pair(P('02 静态能量，不等于水相自由能','02 Static energy is not aqueous free energy'))}</h3><p>${pair(P('DFT 使用孤立离子参照。溶剂化、脱水代价、熵和物种变化没有被完整的水相自由能循环覆盖，不能用能量差直接换算实验 SF。','DFT uses isolated-ion references. Solvation, dehydration, entropy and speciation are not captured by a full aqueous free-energy cycle; energy differences cannot be directly converted to experimental SF.'))}</p></div><div class="limit"><h3>${pair(P('03 保持衍射，不等于不溶出','03 Retained diffraction does not establish zero leaching'))}</h3><p>${pair(P('pH 2–13 浸泡 12 h 后的 PXRD 与四轮再生有支持价值，但需要更长期的 Zn／配体溶出、结构和选择性联动测试，才能判断实际服役稳定性。','PXRD after 12 h at pH 2–13 and four reuse cycles are useful evidence. Longer tests linking Zn/linker leaching, structure and selectivity are needed to assess service stability.'))}</p></div><div class="limit"><h3>${pair(P('04 一次吸附，不等于一步完成工艺','04 One adsorption step is not an entire flowsheet'))}</h3><p>${pair(P('测试仍涉及预过滤、调 pH、6 h 接触、固液分离与酸洗再生。放大需要考察流量、床层、收集窗口、纯度—回收率与药剂消耗。','The tests still involve prefiltration, pH adjustment, 6 h contact, phase separation and acid regeneration. Scale-up must examine flow, bed design, collection windows, purity–recovery trade-offs and reagent use.'))}</p></div></div>
 <details><summary>${pair(P('与站内其他稀土研究怎样联系？','Connect this paper to other rare-earth studies'))}</summary><div class="inside"><p>${pair(P('NCU-1 关注结合口袋的几何与多点识别；Ln 局部配位页面关注实际吸附位点的结构证据；PMIDA–MIL-101 页面关注配体负载、吸附与再生。共同的问题是：怎样把“材料含有什么官能团”推进到“离子在哪里、以什么形态结合，以及怎样影响竞争分离”。','NCU-1 focuses on pocket geometry and multipoint recognition; the local-coordination page examines structural evidence for binding sites; PMIDA–MIL-101 explores ligand loading, adsorption and regeneration. Together they ask how to move from functional-group inventories to actual binding location, speciation and competitive separation.'))}</p><div class="footer-links"><a class="related-link" href="../ln-local-coordination/">${pair(P('Ln × MOF 局部配位 ↗','Ln × MOF local coordination ↗'))}</a><a class="related-link" href="../pmida-mil101/">PMIDA–MIL-101 ↗</a></div></div></details></section>
@@ -144,14 +152,49 @@ const figures={
  3:{size:[1080,830],page:3,type:P('实验数据与等温线拟合','EXPERIMENTAL DATA AND ISOTHERM FITS'),title:P('四个面板，四个不同问题','Four panels, four different questions'),alt:P('原文图 3：吸附等温线、pH 对分配系数影响、尾矿捕获率与柱突破曲线','Original Fig. 3: isotherms, pH-dependent partition coefficients, tailings capture and column breakthrough'),notes:[P('a：横轴 Cₑ（mg/L），纵轴 qₑ（mg/g）。散点与拟合曲线回答容量问题；不能从两条曲线高度比直接读出二元 SF。','a: Cₑ (mg/L) versus qₑ (mg/g). Data and fits address capacity, not a binary SF obtained by dividing curve heights.'),P('b：不同 pH 下的 Kd（mL/g）。与图 6 的二元浓度条件不同，不能混用 Kd 比值。','b: Kd (mL/g) at different pH. Its mixed-ion conditions differ from Fig. 6, so the Kd ratios are not interchangeable.'),P('c 为真实尾矿批量捕获百分比；d 为出液 C/C₀ 对床体积。较晚穿透表示更强保留，产品仍取决于收集区间。误差棒为 S.D.，n = 3。','c shows batch tailings capture; d plots effluent C/C₀ against bed volumes. Later breakthrough means greater retention; product composition depends on collection windows. Error bars: S.D., n = 3.')]},
  5:{size:[1060,665],page:5,type:P('计算模型 · 不是实验吸附能','COMPUTATIONAL MODELS · NOT MEASURED ENERGIES'),title:P('静态 DFT 支持什么趋势？','What trend does static DFT support?'),alt:P('原文图 5：Pr、Dy、Al 吸附模型、电荷分布与静态吸附能','Original Fig. 5: Pr, Dy and Al adsorption models, charge redistribution and static adsorption energies'),notes:[P('按图注与图内标识，a/d 是 Pr，b/e 是 Dy，c/f 是 Al。正文某一句对 a–c 的顺序有误，此处采用图注。','Using the caption and artwork: a/d = Pr, b/e = Dy, c/f = Al. One main-text sentence reverses a–c; the caption is followed here.'),P('−3.29、−2.58、−1.66 eV 是特定模型、孤立离子参照下的静态吸附能；更负表示该参照下更有利。','−3.29, −2.58 and −1.66 eV are static adsorption energies for chosen models, relative to isolated ions. More negative means more favourable under that reference.'),P('上排电荷重排与 Bader 数字是计算分析。它们既不是水相自由能，也不能单独证明原子尺度的真实结合路径。','Charge redistribution and Bader values are computational analyses. They are neither aqueous free energies nor unique proof of the microscopic binding pathway.')]},
  6:{size:[700,540],page:6,type:P('二元实验 SF 与计算摩尔分数','BINARY SF AND CALCULATED MOLAR FRACTIONS'),title:P('“out” 指向哪一个产品？','Which phase does “out” describe?'),alt:P('原文图 6：六组二元稀土进料与滤液的摩尔分数及 SF','Original Fig. 6: molar fractions of six binary feeds and filtrates, with SF values'),notes:[P('绿色 M1 是较轻离子，橙色 M2 是较重离子；“in” 为原始等摩尔混合物，“out” 为滤液。','Green M1 is the lighter member; orange M2 is heavier. “In” is the equimolar feed; “out” is the filtrate.'),P('橙色滤液占优，与较轻离子优先被固相吸附一致。它并没有直接展示洗脱后的轻稀土产品。','An orange-dominated filtrate is consistent with preferential adsorption of the lighter ion. The plot does not directly show an eluted light-REE product.'),P('SF 数值来自二元分配比；SI 声明摩尔分数按 SF/(1+SF) 换算。误差棒 S.D.、n = 3 不会消除“计算量”和“独立纯度测量”的区别。','SF comes from binary partitioning; the SI says molar fractions are calculated as SF/(1+SF). S.D. error bars and n = 3 do not make that conversion an independent purity assay.')]} };
+const figureLoads=new Map();
+let figureRequest=0;
+function loadFigure(n){
+ if(figureLoads.has(n))return figureLoads.get(n);
+ const img=new Image(),f=figures[n],record={image:img,status:'loading',ready:null};
+ img.width=f.size[0];img.height=f.size[1];img.decoding='async';
+ record.ready=new Promise(resolve=>{
+  const finish=status=>{
+   if(record.status!=='loading')return;
+   clearTimeout(timer);img.onload=null;img.onerror=null;record.status=status;resolve(record);
+  };
+  const timer=setTimeout(()=>finish('error'),30000);
+  img.onload=async()=>{try{if(img.decode)await img.decode();finish(img.naturalWidth>0?'ready':'error');}catch(e){finish('error');}};
+  img.onerror=()=>finish('error');
+ });
+ figureLoads.set(n,record);img.src=`assets/figure-${n}.png`;return record;
+}
+function displayFigure(record,n,request){
+ if(request!==figureRequest)return;
+ const ready=record.status==='ready',image=document.getElementById('figure-image'),link=document.getElementById('figure-link'),box=document.getElementById('figure-display');
+ box.setAttribute('aria-busy',String(record.status==='loading'));box.dataset.load=record.status;
+ document.getElementById('figure-status').hidden=ready;
+ const retry=document.getElementById('figure-retry');retry.hidden=record.status!=='error';retry.textContent=text(P('重新加载','Retry loading'));
+ if(ready){
+  record.image.id='figure-image';record.image.alt=text(figures[n].alt);record.image.dataset.figure=n;
+  if(image!==record.image)image.replaceWith(record.image);
+  record.image.hidden=false;link.hidden=false;
+ }else{
+  image.hidden=true;link.hidden=true;
+  document.getElementById('figure-status-text').textContent=text(record.status==='loading'?P(`正在加载图 ${n}…`,`Loading Figure ${n}…`):P(`图 ${n} 暂时未能加载，请重试。`,`Figure ${n} could not be loaded. Please retry.`));
+ }
+}
 function updateFigure(){
- const f=figures[S.figure],img=document.getElementById('figure-image'),link=document.getElementById('figure-link');
- img.src=`assets/figure-${S.figure}.png`;img.alt=text(f.alt);img.width=f.size[0];img.height=f.size[1];link.href=img.getAttribute('src');link.setAttribute('aria-label',text(P('在新标签页查看原图','View original figure in a new tab'))+' '+S.figure);
- document.getElementById('figure-caption').textContent=text(P(`图 ${S.figure} · 正文 p. ${f.page} · 点击放大`,`Fig. ${S.figure} · main p. ${f.page} · click to enlarge`));
+ const n=S.figure,f=figures[n],link=document.getElementById('figure-link'),request=++figureRequest,record=loadFigure(n);
+ link.href=`assets/figure-${n}.png`;link.setAttribute('aria-label',text(P('在新标签页查看原图','View original figure in a new tab'))+' '+n);
+ document.getElementById('figure-caption').textContent=text(P(`图 ${n} · 正文 p. ${f.page} · 点击放大`,`Fig. ${n} · main p. ${f.page} · click to enlarge`));
  document.getElementById('figure-type').textContent=text(f.type);document.getElementById('figure-title').textContent=text(f.title);
  document.getElementById('figure-notes').innerHTML=f.notes.map(x=>`<div class="read-point">${pair(x)}</div>`).join('');
- document.querySelectorAll('[data-figure]').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.figure===S.figure));
+ document.querySelectorAll('#figure-controls [data-figure]').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.figure===n));
+ displayFigure(record,n,request);
+ if(record.status==='loading')record.ready.then(()=>displayFigure(record,n,request));
 }
+
 function updateLanguage(){
  document.querySelector('meta[name=description]').content=text(P('交互式理解 NCU-1 的口袋匹配、容量数据、二元分离与证据边界。','Explore NCU-1 pocket matching, capacity data, binary rare-earth separation and evidence limits.'));
  for(const [id,v] of [['steps',P('结构与计算原图视图','Structure and calculation figure views')],['species-controls',P('比较计算离子','Compare calculated ions')],['capacity-controls',P('选择容量来源','Choose capacity source')],['figure-controls',P('选择原图','Choose original figure')]])document.getElementById(id).setAttribute('aria-label',text(v));
@@ -165,6 +208,7 @@ document.addEventListener('click',e=>{
  else if(b.dataset.species){S.species=b.dataset.species;updateMechanism()}
  else if(b.dataset.capacity){S.capacity=b.dataset.capacity;updateCapacity()}
  else if(b.dataset.figure){S.figure=+b.dataset.figure;updateFigure()}
+ else if(b.id==='figure-retry'){figureLoads.delete(S.figure);document.querySelector(`#figure-controls [data-figure="${S.figure}"]`).focus({preventScroll:true});updateFigure()}
  else if(b.id==='reset-lab'){S.heavy=1;updateBinary()}
 });
 document.getElementById('pair-select').addEventListener('change',e=>{S.pair=+e.target.value;updateBinary()});
