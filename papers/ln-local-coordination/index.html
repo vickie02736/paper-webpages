@@ -31,7 +31,7 @@ const mats=[
  {n:'UiO-66-NH₂ · ideal',sa:850,pore:'0.8 / 1.1',link:'6.0',pz:'3.4',metal:'Zr',q:[6.6,6.9,6.8],area:[5.40,5.16,4.57],xafs:['Nd','Gd','Lu']},
  {n:'UiO-66-NH₂ · defective',sa:1190,pore:'0.8 / 1.1',link:'5.8',pz:'5.6',metal:'Zr',q:[6.6,7.1,7.1],area:[3.87,3.79,3.41],xafs:['Nd','Lu']},
  {n:'UiO-66-NH-PAA',sa:820,pore:'0.8 / 1.1',link:'≈6.0',pz:'≈3',metal:'Zr',q:[7.2,7.2,7.2],area:[6.07,5.56,4.99],xafs:['Gd']},
- {n:'UiO-68-NH₂',sa:1310,pore:'1.8',link:'—',pz:'<1',metal:'Zr',q:[7.2,7.2,7.2],area:[3.80,3.49,3.14],xafs:['Gd','Lu']}
+ {n:'UiO-68-NH₂',sa:1310,pore:'1.8',link:'terphenyl',pz:'<1',metal:'Zr',q:[7.2,7.2,7.2],area:[3.80,3.49,3.14],xafs:['Gd','Lu']}
 ];
 const copy={
  hero:P('稀土离子，<br>究竟抓住了谁？','What does a<br>lanthanide really bind to?'),
@@ -44,22 +44,50 @@ const copy={
 function section(i,body,intro){return `<section class="section" id="${copy.ids[i]}"><div class="section-head"><div><div class="num">0${i} / ${T([P('概览','ORIENTATION'),P('研究逻辑','RESEARCH LOGIC'),P('位点实验室','SITE LAB'),P('配位几何','GEOMETRY'),P('实验证据','EVIDENCE'),P('技术深入','DEEP DIVE'),P('批判性理解','CRITICAL THINKING'),P('知识整合','SYNTHESIS')][i])}</div><h2>${T(copy.titles[i])}</h2></div>${intro?`<p>${T(intro)}</p>`:''}</div>${body}</section>`}
 function atom(x,y,r,el,c){return `<circle class="atom" cx="${x}" cy="${y}" r="${r}" fill="${c}"/><text x="${x}" y="${y+5}" text-anchor="middle" style="fill:#081825;font-weight:750;font-size:${r<18?12:16}px">${el}</text>`}
 function bond(x,y,a,b,cls=''){return `<line class="bond ${cls}" x1="${x}" y1="${y}" x2="${a}" y2="${b}"/>`}
-function siteSVG(hero=false){const m=hero?mats[5]:mats[S.mat],paa=hero||S.mat===5,st=hero?3:S.step,ln=hero?'Gd':S.ln;let x=st<2?145:273,y=st<2?95:193;let g=`<circle class="halo" cx="300" cy="205" r="115"/><circle class="halo" cx="300" cy="205" r="90"/>`;
- g+=bond(405,215,450,150)+bond(405,215,455,275)+bond(450,150,485,215)+bond(455,275,485,215);
- g+=bond(405,215,339,167)+bond(405,215,339,252)+bond(339,167,299,130)+bond(299,130,210,155)+bond(210,155,185,207)+bond(185,207,214,263)+bond(214,263,299,285)+bond(299,285,339,252);
- if(paa){g+=bond(214,263,184,300)+bond(184,300,140,296)+bond(140,296,110,251)+bond(110,251,165,227);g+=atom(140,296,21,'P','#ffbd79')+atom(184,300,14,'O','#ff8585')+atom(110,251,14,'O','#ff8585');x=st<2?85:120;y=st<2?95:201;}
- if(st>=2){g+=bond(x,y,paa?110:339,paa?251:167,'new');if(S.depth>0)g+=bond(x,y,paa?165:339,paa?227:252,'new');}
- for(const [a,b] of [[405,215],[450,150],[455,275],[485,215]])g+=atom(a,b,24,m.metal,m.metal==='Cr'?'#d2a4ef':'#6fe0d0');
- g+=atom(339,167,15,'O','#ff8585')+atom(339,252,15,'O','#ff8585')+atom(299,130,13,'C','#b2c2d3')+atom(210,155,13,'C','#b2c2d3')+atom(185,207,13,'C','#b2c2d3')+atom(214,263,13,'C','#b2c2d3')+atom(299,285,13,'C','#b2c2d3');
- if(m.n.includes('NH₂')&&!paa)g+=bond(185,207,151,230)+atom(151,230,17,'N','#8bb7ff');
- if(!hero&&S.mat===4&&S.depth>0)g+=`<path d="M340 272 L395 300" stroke="#ffbd79" stroke-width="3" stroke-dasharray="5 6"/><text x="425" y="314" text-anchor="middle" style="font-size:12px">−BDC</text>`;
- if(paa)g+=atom(165,227,14,'O','#ff8585');
- const waters=st<2?[[x-45,y-20],[x+35,y-35],[x+52,y+25],[x-32,y+40]]:[[x-45,y-25],[x-15,y+55]];
- for(const [a,b] of waters){g+=bond(x,y,a,b,'weak')+atom(a,b,11,'O','#ff8585');}
- g+=atom(x,y,28,ln,'#d4ef8a');if(st===3){g+=`<circle cx="${x}" cy="${y}" r="42" stroke="#d4ef8a" fill="none" stroke-dasharray="3 4"/>`+bond(x+15,y+12,paa?140:405,paa?296:215,'weak');}
- return `<svg viewBox="0 0 560 360" role="img" aria-label="${txt(P('镧系离子与金属氧簇或膦酸基结合的概念示意','Conceptual lanthanide binding at a metal oxo cluster or phosphonate group'))}">${g}</svg>`;
+function siteSVG(hero=false){
+ const m=hero?mats[5]:mats[S.mat],isCr=m.metal==='Cr',is68=m.n.includes('UiO-68'),isPaa=hero||S.mat===5,isDef=m.n.includes('defective'),st=hero?3:S.step,ln=hero?'Gd':S.ln;
+ const lx=hero?120:(st<2?145:250),ly=hero?190:(st<2?95:190),cx=425,cy=190;
+ const label=(x,y,v,c='#acc0d0',size=12,anchor='middle')=>`<text x="${x}" y="${y}" text-anchor="${anchor}" style="font-size:${size}px;fill:${c};font-weight:650">${v}</text>`;
+ const hex=(x,y,r,c='#b2c2d3')=>{const pts=Array.from({length:6},(_,i)=>{const a=Math.PI/6+i*Math.PI/3;return `${(x+r*Math.cos(a)).toFixed(1)},${(y+r*Math.sin(a)).toFixed(1)}`}).join(' ');return `<polygon points="${pts}" fill="none" stroke="${c}" stroke-width="3"/>`};
+ let g=`<circle class="halo" cx="${cx}" cy="${cy}" r="118"/><circle class="halo" cx="${cx}" cy="${cy}" r="92"/>`;
+ const clusterColor=isCr?'#d2a4ef':'#6fe0d0';
+ let donorO=[];
+ if(isCr){
+   const nodes=[[425,128],[425,252],[492,190]],o=[450,190];
+   nodes.forEach(([x,y])=>{g+=bond(x,y,o[0],o[1],'weak')+atom(x,y,20,'Cr',clusterColor)});
+   g+=atom(o[0],o[1],13,'O','#ff8585');
+   const outer=[[365,105],[365,275],[540,190]],oSites=[[390,116],[390,264],[520,190]];
+   outer.forEach(([x,y],i)=>{const o=oSites[i];g+=bond(nodes[i][0],nodes[i][1],o[0],o[1])+bond(o[0],o[1],x,y)+atom(o[0],o[1],8,'O','#ff8585')+hex(x,y,i===2?16:22);});
+   donorO=[oSites[0],oSites[1],oSites[2]];
+   if(m.n.includes('NH₂'))g+=label(338,104,'NH₂','#8bb7ff',12);
+   if(isDef)g+=label(470,304,'− linker','#ffbd79',11);
+   g+=label(450,76,'Cr₃O oxo trimer',clusterColor,12);
+ }else{
+   const nodes=[[425,112],[493,151],[493,229],[425,268],[357,229],[357,151]];
+   nodes.forEach(([x,y],i)=>{g+=bond(x,y,cx,cy,'weak')+atom(x,y,22,'Zr',clusterColor);if(i<5)g+=bond(x,y,nodes[(i+1)%6][0],nodes[(i+1)%6][1]);});
+   g+=bond(nodes[5][0],nodes[5][1],nodes[0][0],nodes[0][1])+atom(cx,cy,12,'O','#ff8585');
+   const linkerEnds=is68?[[470,86],[470,294]]:[[520,86],[520,294]],nodeO=[[501,118],[501,262]];
+   linkerEnds.forEach(([ex,ey],i)=>{const sy=i?229:151,o=nodeO[i];g+=bond(493,sy,o[0],o[1])+bond(o[0],o[1],ex,ey)+atom(o[0],o[1],10,'O','#ff8585');if(is68){const y2=ey+(i?15:-15),y3=ey+(i?28:-28);g+=bond(ex,ey,ex+26,y2)+bond(ex+26,y2,ex+52,y3)+hex(ex,ey,14)+hex(ex+26,y2,14)+hex(ex+52,y3,14)}else g+=hex(ex,ey,21);});
+   if(m.n.includes('NH₂'))g+=label(is68?540:493,is68?80:63,'NH₂','#8bb7ff',12);
+   if(isPaa){const anchor=linkerEnds[1],n=[490,320],p=[455,318],po=[425,326],pox=[455,290];g+=bond(anchor[0],anchor[1],n[0],n[1],'new')+atom(n[0],n[1],11,'N','#8bb7ff')+bond(n[0],n[1],p[0],p[1],'new')+atom(p[0],p[1],10,'P','#ffbd79')+bond(p[0],p[1],po[0],po[1],'new')+atom(po[0],po[1],10,'O','#ff8585')+bond(p[0],p[1],pox[0],pox[1],'weak')+atom(pox[0],pox[1],9,'O','#ff8585')+label(315,350,'–CO–CH₂–P(O)(OH)₂','#ffbd79',10,'start');donorO=[po];}
+   if(isDef){g+=`<path d="M357 229 L322 282" stroke="#ffbd79" stroke-width="3" stroke-dasharray="6 7"/>`+label(315,305,'−BDC','#ffbd79',11,'end');}
+   if(!isPaa){donorO=nodeO;}
+   g+=label(is68?400:cx,76,is68?'Zr₆ node · longer terphenyl linker':'Zr₆ oxo cluster',clusterColor,12);
+ }
+ if(st>=2&&donorO.length){
+   const target=donorO[0];
+   g+=bond(lx,ly,target[0],target[1],'new');
+   if((S.depth>0||hero)&&donorO[1])g+=bond(lx,ly,donorO[1][0],donorO[1][1],'new');
+ }
+ const waters=st<2?[[lx-45,ly-20],[lx+35,ly-35],[lx+52,ly+25],[lx-32,ly+40]]:[[lx-45,ly-25],[lx-15,ly+55]];
+ for(const [x,y] of waters)g+=bond(lx,ly,x,y,'weak')+atom(x,y,11,'O','#ff8585');
+ g+=atom(lx,ly,28,ln,'#d4ef8a');
+ if(st===3){const neighbor=isPaa?[493,229]:isCr?[492,190]:[493,151];g+=`<circle cx="${lx}" cy="${ly}" r="42" stroke="#d4ef8a" fill="none" stroke-dasharray="3 4"/>`+bond(lx+15,ly+12,neighbor[0],neighbor[1],'weak');}
+ const zhState=`${m.n}：${isCr?'Cr₃O 三聚节点':'Zr₆ 六核节点'}${is68?'，更长 terphenyl 连接体':''}${m.n.includes('NH₂')?'，氨基化连接体':''}${isPaa?'，PAA 通过酰胺连接':''}${isDef?'，含缺失连接体':''}`;
+ const enState=`${m.n}: ${isCr?'Cr₃O trimer':'Zr₆ node'}${is68?', longer terphenyl linker':''}${m.n.includes('NH₂')?', amino-functionalized linker':''}${isPaa?', PAA amide graft':''}${isDef?', missing-linker defect':''}`;
+ return `<svg viewBox="0 0 560 360" role="img" data-site-aria-zh="${zhState}" data-site-aria-en="${enState}" aria-label="${txt(P(zhState,enState))}">${g}</svg>`;
 }
-function hero(){return `<div class="hero"><div><div class="eyebrow">${T(P('配位化学 / ACS AMI 2024','Coordination chemistry / ACS AMI 2024'))}</div><h1>${T(copy.hero)}</h1><p class="lead">${T(copy.lead)}</p><div class="chips"><span class="chip lime">Nd³⁺ · Gd³⁺ · Lu³⁺</span><span class="chip">XAFS + DFT</span><span class="chip">Cr-MIL-101 · UiO</span></div><a href="#lab">${T(P('进入位点实验室 ↓','Enter the site lab ↓'))}</a></div><div class="diagram">${siteSVG(true)}<div class="legend"><span><i class="dot" style="background:var(--lime)"></i>Ln</span><span><i class="dot" style="background:var(--red)"></i>O</span><span><i class="dot"></i>Zr / Cr</span><span><i class="dot" style="background:var(--orange)"></i>P</span></div><div class="concept">${T(P('概念示意 · 非晶体坐标；球的数量不代表完整配位数。','Conceptual illustration · Not crystallographic coordinates; spheres do not represent the full coordination number.'))}</div></div></div>
+function hero(){return `<div class="hero"><div><div class="eyebrow">${T(P('配位化学 / ACS AMI 2024','Coordination chemistry / ACS AMI 2024'))}</div><h1>${T(copy.hero)}</h1><p class="lead">${T(copy.lead)}</p><div class="chips"><span class="chip lime">Nd³⁺ · Gd³⁺ · Lu³⁺</span><span class="chip">XAFS + DFT</span><span class="chip">Cr-MIL-101 · UiO</span></div><a href="#lab">${T(P('进入位点实验室 ↓','Enter the site lab ↓'))}</a></div><div class="diagram">${siteSVG(true)}<div class="legend"><span><i class="dot" style="background:var(--lime)"></i>Ln</span><span><i class="dot" style="background:var(--red)"></i>O</span><span><i class="dot"></i>Zr / Cr</span><span><i class="dot" style="background:var(--orange)"></i>P</span></div><div class="concept">${T(P('简化结构示意 · Figure 1 的 Cr₃O / Zr₆ 节点；不是完整晶胞或原子坐标。','Simplified structural illustration · Cr₃O / Zr₆ nodes from Figure 1; not a full unit cell or crystallographic coordinates.'))}</div></div></div>
 <div class="card"><div class="eyebrow">${T(P('论文信息','The paper'))}</div><h3>Local Coordination Environment of Lanthanides Adsorbed onto Cr- and Zr-based Metal–Organic Frameworks</h3><p class="small muted">Anastasia G. Ilgen · R. Eric Sikma · Dorina F. Sava Gallis · Kevin Leung · Chengjun Sun · Boyoung Song · Kadie M. M. Sanchez · Jacob G. Smith</p><div class="row small"><span>ACS Applied Materials &amp; Interfaces 2024, 16, 48536–48546 · 26 Aug 2024</span><a href="${DOI}" target="_blank" rel="noopener">${T(P('原文 ↗','Article ↗'))}</a><a href="${SI}" target="_blank" rel="noopener">${T(P('补充材料 ↗','Supporting information ↗'))}</a></div><p class="small muted" style="margin-top:12px;margin-bottom:0">${T(P('阅读范围：论文正文 11 页与 Supporting Information 12 页。本文是一项结合位点的机制研究，尚未实现单一镧系元素的选择性分离。','Reading scope: the 11-page article and 12-page supporting information. This is a binding-site mechanism study; selective separation of individual lanthanides was not achieved.'))}</p></div>${note(copy.depth[S.depth])}`}
 function glance(){const a=[
  [P('问题','Problem'),P('吸附量变化，不能告诉我们离子结合在金属节点还是官能团上。','A change in uptake does not identify whether ions bind to metal nodes or functional groups.')],
@@ -96,7 +124,7 @@ const all=[
  [P(paa?'Gd–P 路径支持膦酸基结合；较弱 Gd–Zr 路径说明节点结合仍可存在。':'Ln–Cr/Zr 近邻路径支持氧簇位点；只有第一层 O 还不足以认定具体位置。',paa?'Gd–P paths support phosphonate binding; a weaker Gd–Zr path leaves residual node binding possible.':'Ln–Cr/Zr neighbor paths support oxo-cluster binding; first-shell O alone cannot establish the specific site.'),P('输入：湿样与理论散射路径；操作：拟合第一层与外层；目的：用元素身份和距离区分候选结构；输出：带不确定度的配位模型；连接：下方证据表。','Input: wet samples and theoretical scattering paths. Operation: fit first and outer shells. Purpose: distinguish candidates using neighbor identity and distance. Output: coordination models with uncertainty. Next: the evidence table below.'),P('XAFS 是系综平均。路径强度还受配位数、无序、振幅因子等影响；不同几何可能产生相近距离。','XAFS is an ensemble average. Path amplitudes depend on coordination number, disorder and amplitude factors; different geometries can yield similar distances.')]
 ];return all[S.step]}
 function lab(){const m=mats[S.mat],d=mechanismText();const warning=!m.xafs.includes(S.ln)?P(`这组材料的 ${S.ln} 仅有吸附数据，未报告局部 XAFS 拟合；当前图为概念延伸，不能视为该样品的实测结构。`,`${S.ln} has uptake data but no reported local XAFS fit for this material. The diagram is conceptual extrapolation, not a measured structure for this sample.`):P('这组组合在 Table S4 中有 XAFS 拟合；图仍是候选机制示意，不是原子坐标复现。','This combination has an XAFS fit in Table S4. The diagram remains a candidate-mechanism illustration, not an atomic-coordinate reproduction.');
-return section(2,`<div class="grid2"><div><div class="row"><label class="field" style="flex:1"><span class="detail-label">${T(P('选择材料','Choose material'))}</span><select id="material">${mats.map((m,i)=>`<option value="${i}" ${i===S.mat?'selected':''}>${m.n}</option>`).join('')}</select></label><label class="field"><span class="detail-label">${T(P('选择元素','Choose element'))}</span><select id="element">${['Nd','Gd','Lu'].map(l=>`<option ${l===S.ln?'selected':''}>${l}</option>`).join('')}</select></label></div><div class="diagram" id="site">${siteSVG()}<div class="concept">${T(P('教学分步 · 非时间轨迹、非定量结构；绿色 = Ln–O，虚线 = 近邻关系。','Teaching sequence · Not a time trajectory or quantitative structure; green = Ln–O, dashed = neighbor relation.'))}</div></div><div class="steprail">${steps.map((s,i)=>button(P(`${i+1} · ${s[0]}`,`${i+1} · ${s[1]}`),`data-step="${i}" aria-pressed="${S.step===i}"`)).join('')}</div><div class="row">${button(P('← 上一步','← Previous'),`data-action="prev" ${S.step===0?'disabled':''}`)}${button(P('下一步 →','Next →'),`data-action="next" ${S.step===3?'disabled':''}`)}${button(P('重置步骤','Reset steps'),'data-action="reset"')}</div></div><div><div class="card" aria-live="polite"><div class="eyebrow">${S.step+1} / 4</div><h3>${T(d[0])}</h3>${S.depth>0?`<p class="muted">${T(d[1])}</p>`:''}${S.depth===2?`<div class="callout">${T(d[2])}</div>`:''}</div><div class="callout" style="margin-top:16px">${T(warning)}</div><div class="card" style="margin-top:16px"><div class="source-tag">${m.n}</div><dl class="module"><dt>${T(P('BET 比表面积','BET surface area'))}</dt><dd>${m.sa} m² g⁻¹</dd><dt>${T(P('理想结构孔径','Ideal-structure pore diameter'))}</dt><dd>${m.pore} nm</dd><dt>${T(P('BDC / 节点','BDC / node'))}</dt><dd>${m.link}</dd></dl><p class="small muted">${T(P('孔径来自理想结构，官能化可使其减小；UiO-68-NH₂ 另含约 5 nm 缺陷介孔。','Pore diameters refer to ideal structures and may decrease on functionalization; UiO-68-NH₂ also contains defect mesopores around 5 nm.'))}</p></div></div></div>${src(P('来源：Table 1，Figures 4–6，§3.3–3.6；XAFS 覆盖范围：SI Table S4。','Sources: Table 1, Figures 4–6, §3.3–3.6; XAFS coverage: SI Table S4.'))}`,
+return section(2,`<div class="grid2"><div><div class="row"><label class="field" style="flex:1"><span class="detail-label">${T(P('选择材料','Choose material'))}</span><select id="material">${mats.map((m,i)=>`<option value="${i}" ${i===S.mat?'selected':''}>${m.n}</option>`).join('')}</select></label><label class="field"><span class="detail-label">${T(P('选择元素','Choose element'))}</span><select id="element">${['Nd','Gd','Lu'].map(l=>`<option ${l===S.ln?'selected':''}>${l}</option>`).join('')}</select></label></div><div class="diagram" id="site">${siteSVG()}<div class="concept">${T(P('节点数量按正文 Figure 1：Cr-MIL-101 = Cr₃O 三聚节点；UiO 系列 = Zr₆ 氧簇。图只画一个简化节点和局部连接体，不是完整晶胞或原子坐标；绿色 = Ln–O，虚线 = 近邻关系。','Node counts follow Figure 1: Cr-MIL-101 = Cr₃O trimer; UiO materials = Zr₆ oxo cluster. One simplified node and local linker are shown, not a full unit cell or atomic coordinates; green = Ln–O, dashed = neighbor relation.'))}</div></div><div class="steprail">${steps.map((s,i)=>button(P(`${i+1} · ${s[0]}`,`${i+1} · ${s[1]}`),`data-step="${i}" aria-pressed="${S.step===i}"`)).join('')}</div><div class="row">${button(P('← 上一步','← Previous'),`data-action="prev" ${S.step===0?'disabled':''}`)}${button(P('下一步 →','Next →'),`data-action="next" ${S.step===3?'disabled':''}`)}${button(P('重置步骤','Reset steps'),'data-action="reset"')}</div></div><div><div class="card" aria-live="polite"><div class="eyebrow">${S.step+1} / 4</div><h3>${T(d[0])}</h3>${S.depth>0?`<p class="muted">${T(d[1])}</p>`:''}${S.depth===2?`<div class="callout">${T(d[2])}</div>`:''}</div><div class="callout" style="margin-top:16px">${T(warning)}</div><div class="card" style="margin-top:16px"><div class="source-tag">${m.n}</div><dl class="module"><dt>${T(P('BET 比表面积','BET surface area'))}</dt><dd>${m.sa} m² g⁻¹</dd><dt>${T(P('理想结构孔径','Ideal-structure pore diameter'))}</dt><dd>${m.pore} nm</dd><dt>${T(m.n.includes('UiO-68')?P('连接体 / 节点','Linker / node'):P('BDC / 节点','BDC / node'))}</dt><dd>${m.link}</dd></dl><p class="small muted">${T(P('孔径来自理想结构，官能化可使其减小；UiO-68-NH₂ 另含约 5 nm 缺陷介孔。','Pore diameters refer to ideal structures and may decrease on functionalization; UiO-68-NH₂ also contains defect mesopores around 5 nm.'))}</p></div></div></div>${src(P('来源：Table 1，Figures 4–6，§3.3–3.6；XAFS 覆盖范围：SI Table S4。','Sources: Table 1, Figures 4–6, §3.3–3.6; XAFS coverage: SI Table S4.'))}`,
 P('改变材料，看“结合在哪里”；改变元素，检查哪些组合真的有结构证据。','Change the material to inspect binding sites; change the element to check which combinations actually have structural evidence.'))}
 const topologies=[
  [P('单齿 · 单核','Monodentate · mononuclear'),P('一个表面 O 连接 Ln 与一个簇金属中心。可能位点包括 M–OH 或 M–O–BDC 的桥氧。','One surface O connects Ln to one cluster metal center. Candidate sites include M–OH and bridging oxygen in M–O–BDC.')],
@@ -180,7 +208,7 @@ function setLang(){
  document.body.dataset.lang=S.lang;
  document.documentElement.lang=S.lang==='en'?'en':'zh-CN';
  document.querySelectorAll('#depths button').forEach((b,i)=>{b.innerHTML=T([P('直觉','Intuition'),P('机制','Mechanism'),P('研究','Research')][i]);b.classList.toggle('active',i===S.depth);b.setAttribute('aria-pressed',String(i===S.depth));});
- document.querySelectorAll('svg[role=img]').forEach(e=>e.setAttribute('aria-label',txt(P('镧系离子结合位点概念示意','Conceptual lanthanide binding-site illustration'))));
+ document.querySelectorAll('svg[data-site-aria-zh]').forEach(e=>e.setAttribute('aria-label',S.lang==='en'?e.dataset.siteAriaEn:e.dataset.siteAriaZh));
  document.querySelectorAll('[data-figure-image]').forEach(e=>e.setAttribute('aria-label',txt(P('在新标签页查看原图','View the original figure in a new tab'))+' '+e.dataset.figureImage));
  document.querySelectorAll('[data-source-figure]').forEach(e=>{const figure=sourceFigures.find(f=>String(f.n)===e.dataset.sourceFigure);if(figure)e.alt=txt(figure.alt)});
  const ce=document.getElementById('chartElement');if(ce)ce.setAttribute('aria-label',txt(P('图表元素','Chart element')));
