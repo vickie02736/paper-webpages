@@ -10,5 +10,6 @@ Each explainer is a self-contained visual webpage. The current collection includ
 | E5-Mistral — Improving Text Embeddings with Large Language Models | ACL 2024 | [Open page](e5-mistral/) |
 | NV-Embed — Improved Techniques for Training LLMs as Generalist Embedding Models | ICLR 2025 | [Open page](nv-embed/) |
 | Ln local coordination — Lanthanides in Cr- and Zr-based MOFs | ACS AMI 2024 | [Open page](ln-local-coordination/) |
+| NCU-1 nanotraps — Rationally designed nanotrap structures for efficient separation of rare earth elements over a single step | Nature Communications 2024 | [Open page](ncu1-nanotraps/) |
 
 Each page is stored directly in this repository as a self-contained `index.html`; opening these links no longer requires ChatGPT sign-in.

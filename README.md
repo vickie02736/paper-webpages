@@ -27,6 +27,8 @@ This repository collects the paper explainer webpages and research maps created 
 
 - [Ln local coordination — Lanthanides in Cr- and Zr-based MOFs](papers/ln-local-coordination/)
 
+- [NCU-1 nanotraps — Rationally designed nanotrap structures for efficient separation of rare earth elements over a single step](papers/ncu1-nanotraps/)
+
 ## Repository layout
 
 ```text
