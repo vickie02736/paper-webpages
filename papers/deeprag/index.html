@@ -2,7 +2,8 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>\n<meta name="robots" content="noindex, nofollow, noarchive" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex, nofollow, noarchive" />
 <title>DeepRAG · 交互式论文讲解</title>
 <style>
 :root{--ink:#17223b;--muted:#667085;--bg:#f5f7fb;--card:#fff;--line:#e5e9f2;--blue:#4467ef;--blue2:#8ea4ff;--mint:#21b6a8;--amber:#f5a623;--rose:#ef6f91;--navy:#1e2b4f;--shadow:0 14px 40px rgba(27,45,85,.08);--radius:22px}
@@ -34,132 +35,963 @@ footer{padding:35px 6vw 58px;color:var(--muted);font-size:12px;border-top:1px so
 .source{font-size:11px;color:var(--muted);margin-top:14px}.source a{color:var(--blue);text-decoration:none}.only-advanced{display:none}.mode-advanced .only-advanced{display:block}.mode-beginner .formula{display:none}.mode-beginner .calibration{display:none}.mode-beginner .only-advanced{display:none!important}.mode-intermediate .only-advanced{display:none!important}
 @media(max-width:950px){.shell{display:block}aside{position:relative;height:auto;padding:17px 5vw;display:block}.toc{flex-direction:row;overflow:auto;margin-top:12px}.toc a{white-space:nowrap}.side-foot{display:none}.topbar{padding:10px 5vw}.hero{padding-top:40px}.hero-grid,.story,.grid2,.calibration{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}.takeaways{grid-template-columns:1fr 1fr 1fr}.map-grid{grid-template-columns:1fr 1fr}.map-center{grid-column:1/3;grid-row:2}}
 @media(max-width:560px){.grid3{grid-template-columns:1fr}.takeaways{grid-template-columns:1fr 1fr}.stat-row{grid-template-columns:1fr}.hero h1{font-size:43px}.section-head{display:block}.section-head p{margin-top:12px}.bar-row{grid-template-columns:95px 1fr 42px}.mdp-grid{grid-template-columns:1fr}.mdp-grid .arrow{display:none}}
+/* DeepRAG keeps its teaching diagrams within the shared Atlas visual system. */
+body.atlas-paper .shell{display:block;max-width:none;width:auto;margin:0;padding:0}
+body.atlas-paper main{width:100%;min-width:0}
+body.atlas-paper .hero,body.atlas-paper main>section,body.atlas-paper main>footer{max-width:none;padding-left:0;padding-right:0}
+body.atlas-paper .hero{padding-top:64px}
+body.atlas-paper .hero h1>span:not([data-i18n]){background:none;color:var(--cyan);-webkit-text-fill-color:currentColor}
+body.atlas-paper .hero h1 [data-i18n]{background:none;background-clip:initial;-webkit-background-clip:initial;color:inherit}
+body.atlas-paper .hero h1>span[data-i18n]{background:none;color:inherit}
+body.atlas-paper .level-note{margin:0 0 22px;white-space:normal}
+body.atlas-paper .mode{background:#10243a}
+body.atlas-paper .mode button.active{background:var(--cyan);color:#07111f}
+body.atlas-paper .pill,body.atlas-paper .tree-node,body.atlas-paper .map-node,body.atlas-paper .take,body.atlas-paper .quiz-q,body.atlas-paper .cal-card,body.atlas-paper .select{background:#101f30;color:var(--ink)}
+body.atlas-paper .stat,body.atlas-paper .step-view,body.atlas-paper .state,body.atlas-paper .graph-node{background:#0b1a2b;border-color:var(--line);color:var(--ink)}
+body.atlas-paper .tag,body.atlas-paper .decision button,body.atlas-paper .tree-label,body.atlas-paper .stepper button,body.atlas-paper .quiz-q button{background:#172f48;color:#b9dbff}
+body.atlas-paper .stepper button.active{background:var(--blue);color:#07111f}
+body.atlas-paper .tag.mint,body.atlas-paper .terminal,body.atlas-paper .evidence-col.support{background:#10342f;color:#8de6d2}
+body.atlas-paper .tag.amber,body.atlas-paper .evidence-col.open{background:#342b1e;color:#ffce99}
+body.atlas-paper .tag.rose{background:#39243b;color:#f4a6d7}
+body.atlas-paper .evidence-col.claim{background:#152b43}
+body.atlas-paper .decision button:hover{background:#254666}
+body.atlas-paper .tree-node>span:not([data-i18n]){display:block;font-weight:750;font-size:12px;margin-bottom:4px}
+body.atlas-paper .tree-node span[data-i18n]{display:inline;font:inherit;margin:0}
+body.atlas-paper .tree-node{font:inherit;font-size:12px;color:var(--ink);text-align:left}
+body.atlas-paper .bar-track{background:#233349}
+body.atlas-paper .trade-plot{border-color:var(--line);background:repeating-linear-gradient(90deg,transparent 0,transparent calc(20% - 1px),#203248 calc(20% - 1px),#203248 20%),repeating-linear-gradient(0deg,transparent 0,transparent calc(25% - 1px),#203248 calc(25% - 1px),#203248 25%)}
+body.atlas-paper .trade-plot:after{content:attr(data-axis)}
+body.atlas-paper .trade-point{border-color:#07111f;min-height:0;min-width:0}
+body.atlas-paper .trade-detail{background:#152b43;color:#bdd8f0}
+body.atlas-paper .quiz-q button.correct{background:#12483e;color:#a1ead8}
+body.atlas-paper .quiz-q button.wrong{background:#48273a;color:#ffc0d7}
+body.atlas-paper .tree-row.fork:before,body.atlas-paper .tree-row.fork:after,body.atlas-paper .tree-row.fork .tree-node:before{border-color:var(--line)}
+body.atlas-paper .tree{min-width:620px}
+body.atlas-paper .mdp-grid{grid-template-columns:1fr 30px 1fr}
+body.atlas-paper .bar-row{grid-template-columns:minmax(100px,145px) minmax(0,1fr) 45px}
+body.atlas-paper .evidence{grid-template-columns:repeat(3,minmax(0,1fr))}
+body.atlas-paper .map-grid>*{min-width:0;overflow-wrap:anywhere}
+body.atlas-paper .hero-visual{background:linear-gradient(145deg,#10243a,#183b52)}
+body.atlas-paper .map-node[aria-pressed="true"]{border-color:var(--blue);background:#183e55}
+body.atlas-paper .decision button[aria-pressed="true"]{border:1px solid var(--blue)}
+@media(max-width:700px){body.atlas-paper .hero{padding-top:40px}body.atlas-paper .hero-grid,body.atlas-paper .story,body.atlas-paper .grid2,body.atlas-paper .grid3,body.atlas-paper .calibration,body.atlas-paper .evidence{grid-template-columns:1fr}body.atlas-paper .mdp-grid{grid-template-columns:1fr}body.atlas-paper .mdp-grid>.arrow{display:none}body.atlas-paper .slider{grid-template-columns:90px minmax(0,1fr) 40px}body.atlas-paper .bar-row{font-size:11px;grid-template-columns:100px minmax(0,1fr) 40px}}
+
 </style>
+<link rel="stylesheet" href="../../assets/paper.css">
 </head>
-<body>
+<body class="atlas-paper" data-paper="deeprag">
 <div class="shell">
-<aside>
-  <div class="brand">DeepRAG<small>interactive paper explainer</small></div>
-  <nav class="toc">
-    <a href="#glance">01 概览</a><a href="#intuition">02 直觉</a><a href="#method">03 方法</a><a href="#deepdive">04 深入</a><a href="#evidence">05 证据</a><a href="#critical">06 批判</a><a href="#map">07 知识图谱</a>
-  </nav>
-  <div class="side-foot">ICLR 2026 · Guan et al.<br/><a href="https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf" target="_blank">阅读原文 PDF ↗</a></div>
-</aside>
+
 <main>
   <div class="topbar">
-    <div class="mode" aria-label="学习深度"><button class="active" data-level="beginner">Beginner</button><button data-level="intermediate">Intermediate</button><button data-level="advanced">Advanced</button></div><span class="level-note" id="levelNote">直觉层 · 先理解问题和主线</span>
-    <div class="progress" id="progress"></div>
+    <div class="mode" aria-label="学习深度"><button class="active" data-level="beginner">Beginner</button><button data-level="intermediate">Intermediate</button><button data-level="advanced">Advanced</button></div>
+
   </div>
   <header class="hero" id="glance">
-    <div class="eyebrow">ICLR 2026 · Paper at a Glance</div>
-    <h1>让模型先想清楚，<span>再决定要不要检索。</span></h1>
-    <p class="lede">DeepRAG 把 Retrieval-Augmented Reasoning 写成一个逐步决策过程：每一步生成一个原子子问题，判断该用内部知识还是外部检索，并在足够信息后停止。</p>
+    <div class="eyebrow"><span data-i18n="eyebrow">ICLR 2026 · 论文概览</span></div>
+    <h1><span data-i18n="hero-start">让模型先想清楚，</span><span><span data-i18n="hero-accent">再决定要不要检索。</span></span></h1>
+    <p class="lede"><span data-i18n="hero-lead">DeepRAG 把 Retrieval-Augmented Reasoning 写成一个逐步决策过程：每一步生成一个原子子问题，判断该用内部知识还是外部检索，并在足够信息后停止。</span></p>
+    <p class="level-note" id="levelNote" role="status"><span data-i18n="level-initial">直觉层 · 先理解问题和主线</span></p>
     <div class="meta"><span class="pill"><strong>DeepRAG</strong> · Thinking to Retrieve Step by Step</span><span class="pill">Xinyan Guan et al.</span><span class="pill">International Conference on Learning Representations 2026</span></div>
     <div class="hero-grid">
       <div class="card overview">
-        <span class="tag">One-sentence summary</span>
-        <p>通过 MDP 建模、二叉树搜索、模仿学习和知识边界校准，DeepRAG 学会在多跳问答中“按需检索”，同时追求正确率与检索效率。</p>
-        <div class="stat-row"><div class="stat"><b>25.41%</b><span>论文摘要报告的准确率提升</span></div><div class="stat"><b>5</b><span>评测数据集</span></div><div class="stat"><b>0–2</b><span>多数问题的检索轮数</span></div></div>
-        <div class="source">来源：Abstract；Sec. 4–5；Figure 3。数字只复述论文中报告的结果。</div>
+        <span class="tag"><span data-i18n="summary-label">一句话总结</span></span>
+        <p><span data-i18n="summary">通过 MDP 建模、二叉树搜索、模仿学习和知识边界校准，DeepRAG 学会在多跳问答中“按需检索”，同时追求正确率与检索效率。</span></p>
+        <div class="stat-row"><div class="stat"><b>25.41%</b><span><span data-i18n="stat-accuracy">论文摘要报告的准确率提升</span></span></div><div class="stat"><b>5</b><span><span data-i18n="stat-datasets">评测数据集</span></span></div><div class="stat"><b>0–2</b><span><span data-i18n="stat-rounds">多数问题的检索轮数</span></span></div></div>
+        <div class="source"><span data-i18n="hero-source">来源：Abstract；Sec. 4–5；Figure 3。数字只复述论文中报告的结果。</span></div>
       </div>
       <div class="card hero-visual">
         <div class="flow">
-          <div class="flow-row"><div class="node blue">原始问题<br/><small>complex question</small></div><div class="arrow">→</div><div class="node">原子子问题<br/><small>atomic subquery</small></div></div>
-          <div class="flow-row"><div class="node mint">内部知识<br/><small>parametric</small></div><div class="node">或</div><div class="node mint">外部检索<br/><small>retrieve</small></div><div class="arrow">→</div><div class="node blue">中间答案</div></div>
-          <div class="flow-row"><div class="node">继续分解</div><div class="arrow">↗</div><div class="node mint">满足条件？</div><div class="arrow">→</div><div class="node blue">最终答案</div></div>
+          <div class="flow-row"><div class="node blue"><span data-i18n="flow-question">原始问题</span><br/><small><span data-i18n="flow-complex">复杂问题</span></small></div><div class="arrow">→</div><div class="node"><span data-i18n="flow-subquery">原子子问题</span><br/><small><span data-i18n="flow-atomic">原子子问题</span></small></div></div>
+          <div class="flow-row"><div class="node mint"><span data-i18n="flow-internal">内部知识</span><br/><small><span data-i18n="flow-parametric">参数化</span></small></div><div class="node"><span data-i18n="flow-or">或</span></div><div class="node mint"><span data-i18n="flow-retrieval">外部检索</span><br/><small><span data-i18n="flow-retrieve-small">检索</span></small></div><div class="arrow">→</div><div class="node blue"><span data-i18n="flow-answer">中间答案</span></div></div>
+          <div class="flow-row"><div class="node"><span data-i18n="flow-continue">继续分解</span></div><div class="arrow">↗</div><div class="node mint"><span data-i18n="flow-enough">满足条件？</span></div><div class="arrow">→</div><div class="node blue"><span data-i18n="flow-final">最终答案</span></div></div>
         </div>
       </div>
     </div>
   </header>
 
   <section id="intuition">
-    <div class="section-head"><div><div class="kicker">02 · Intuition</div><h2>检索不是默认动作，<br/>而是一个原子决策。</h2></div><p>先用熟悉的信息推进推理，遇到知识缺口才搜索。这个节奏，就是 DeepRAG 想让模型学会的“知识边界”。</p></div>
+    <div class="section-head"><div><div class="kicker"><span data-i18n="intuition-kicker">02 · 直觉</span></div><h2><span data-i18n="intuition-title-a">检索不是默认动作，</span><br/><span data-i18n="intuition-title-b">而是一个原子决策。</span></h2></div><p><span data-i18n="intuition-intro">先用熟悉的信息推进推理，遇到知识缺口才搜索。这个节奏，就是 DeepRAG 想让模型学会的“知识边界”。</span></p></div>
     <div class="story">
-      <div class="card panel"><span class="tag amber">论文中的例子 · Figure 1</span><div class="quote">“指环王三部曲总时长是多少？”需要先找出三部电影，再分别确认时长，最后相加。<em>不是每一步都值得搜索。</em></div><div class="list"><div class="list-item"><i class="dot"></i><span>已知：三部曲包含三部电影。</span></div><div class="list-item"><i class="dot mint"></i><span>未知：每部电影的准确 runtime，需要检索。</span></div><div class="list-item"><i class="dot amber"></i><span>可推理：拿到三个时长后，直接求和即可。</span></div></div></div>
-      <div class="card panel"><span class="tag mint">跟随 5 个动作</span><div class="stepper" id="storyStepper"><button class="active">1 · 识别</button><button>2 · 拆解</button><button>3 · 判断</button><button>4 · 检索</button><button>5 · 停止</button></div><div class="step-view" id="storyView"><h4>STEP 1 · 先使用参数化知识</h4><p>“The Lord of the Rings trilogy consists of three films …”</p><small>模型知道三部电影的标题，因此此处不需要检索。</small></div></div>
+      <div class="card panel"><span class="tag amber"><span data-i18n="example-source">论文中的例子 · Figure 1</span></span><div class="quote"><span data-i18n="example-question">“指环王三部曲总时长是多少？”需要先找出三部电影，再分别确认时长，最后相加。</span><em><span data-i18n="example-emphasis">不是每一步都值得搜索。</span></em></div><div class="list"><div class="list-item"><i class="dot"></i><span><span data-i18n="example-known">已知：三部曲包含三部电影。</span></span></div><div class="list-item"><i class="dot mint"></i><span><span data-i18n="example-unknown">未知：每部电影的准确 runtime，需要检索。</span></span></div><div class="list-item"><i class="dot amber"></i><span><span data-i18n="example-reason">可推理：拿到三个时长后，直接求和即可。</span></span></div></div></div>
+      <div class="card panel"><span class="tag mint"><span data-i18n="walk-label">跟随 5 个动作</span></span><div class="stepper" id="storyStepper"><button class="active"><span data-i18n="step-recognise">1 · 识别</span></button><button><span data-i18n="step-decompose">2 · 拆解</span></button><button><span data-i18n="step-decide">3 · 判断</span></button><button><span data-i18n="step-retrieve">4 · 检索</span></button><button><span data-i18n="step-stop">5 · 停止</span></button></div><div class="step-view" id="storyView"><h4><span data-i18n="story-initial-title">STEP 1 · 先使用参数化知识</span></h4><p>“The Lord of the Rings trilogy consists of three films …”</p><small><span data-i18n="story-initial-copy">模型知道三部电影的标题，因此此处不需要检索。</span></small></div></div>
     </div>
   </section>
 
   <section id="method">
-    <div class="section-head"><div><div class="kicker">03 · How It Works</div><h2>把 RAG 写成<br/>一个 Markov Decision Process。</h2></div><p>状态包含“原问题 + 已生成的子问题/中间答案”；动作包含“继续/停止”和“检索/内部知识”两层决策。</p></div>
+    <div class="section-head"><div><div class="kicker"><span data-i18n="method-kicker">03 · 方法机制</span></div><h2><span data-i18n="method-title-a">把 RAG 写成</span><br/><span data-i18n="method-title-b">一个 Markov Decision Process。</span></h2></div><p><span data-i18n="method-intro">状态包含“原问题 + 已生成的子问题/中间答案”；动作包含“继续/停止”和“检索/内部知识”两层决策。</span></p></div>
     <div class="card mdp">
-      <span class="tag">可操作状态机 · MDP</span>
-      <div class="mdp-graph" aria-label="MDP state transition graph"><div class="graph-node"><b>state</b>sₜ</div><div class="graph-line"></div><div class="graph-node"><b>query</b>qₜ₊₁</div><div class="graph-line"></div><div class="graph-node"><b>answer</b>rₜ₊₁</div><div class="graph-line"></div><div class="graph-node"><b>next</b>sₜ₊₁</div></div>
-      <div class="mdp-grid"><div class="state"><b>当前状态 sₜ</b><code>x, (q₁,r₁), …, (qₜ,rₜ)</code></div><div class="arrow">→</div><div class="decision"><button data-action="parametric">▣ 用参数化知识回答</button><button data-action="retrieve">⌕ 检索文档后回答</button><button data-action="terminate">✓ 终止并生成最终答案</button></div></div>
-      <div id="mdpOutput" class="terminal" style="margin-top:16px"><strong>选择一个动作</strong>动作会改变状态，并影响总检索成本。</div>
+      <span class="tag"><span data-i18n="mdp-label">可操作状态机 · MDP</span></span>
+      <div class="mdp-graph" aria-label="MDP state transition graph"><div class="graph-node"><b><span data-i18n="state-label">状态</span></b>sₜ</div><div class="graph-line"></div><div class="graph-node"><b><span data-i18n="query-label">子问题</span></b>qₜ₊₁</div><div class="graph-line"></div><div class="graph-node"><b><span data-i18n="answer-label">答案</span></b>rₜ₊₁</div><div class="graph-line"></div><div class="graph-node"><b><span data-i18n="next-label">下一状态</span></b>sₜ₊₁</div></div>
+      <div class="mdp-grid"><div class="state"><b><span data-i18n="mdp-state">当前状态 sₜ</span></b><code>x, (q₁,r₁), …, (qₜ,rₜ)</code></div><div class="arrow">→</div><div class="decision"><button data-action="parametric"><span data-i18n="mdp-parametric">▣ 用参数化知识回答</span></button><button data-action="retrieve"><span data-i18n="mdp-retrieve">⌕ 检索文档后回答</span></button><button data-action="terminate"><span data-i18n="mdp-terminate">✓ 终止并生成最终答案</span></button></div></div>
+      <div id="mdpOutput" class="terminal" style="margin-top:16px"><strong><span data-i18n="mdp-prompt">选择一个动作</span></strong><span data-i18n="mdp-explanation">动作会改变状态，并影响总检索成本。</span></div>
     </div>
     <div class="grid3" style="margin-top:18px">
-      <div class="card panel"><span class="tag">Component 1</span><h3>Binary Tree Search</h3><p>每个子问题分出两条路：直接使用参数化知识，或检索外部文档。优先队列按 retrieval count 探索路径，找到正确且成本最低的轨迹。</p></div>
-      <div class="card panel"><span class="tag mint">Component 2</span><h3>Imitation Learning</h3><p>用最优轨迹训练 DeepRAG-Imi，让模型同时学习子问题生成、中间答案和检索时机。</p></div>
-      <div class="card panel"><span class="tag amber">Component 3</span><h3>Chain of Calibration</h3><p>离线用偏好对微调，在线用 outcome-based reward 自我探索，校准模型对“我知道什么”的判断。</p></div>
+      <div class="card panel"><span class="tag"><span data-i18n="component-one-label">组件 1</span></span><h3>Binary Tree Search</h3><p><span data-i18n="component-search">每个子问题分出两条路：直接使用参数化知识，或检索外部文档。优先队列按 retrieval count 探索路径，找到正确且成本最低的轨迹。</span></p></div>
+      <div class="card panel"><span class="tag mint"><span data-i18n="component-two-label">组件 2</span></span><h3>Imitation Learning</h3><p><span data-i18n="component-imitation">用最优轨迹训练 DeepRAG-Imi，让模型同时学习子问题生成、中间答案和检索时机。</span></p></div>
+      <div class="card panel"><span class="tag amber"><span data-i18n="component-three-label">组件 3</span></span><h3>Chain of Calibration</h3><p><span data-i18n="component-calibration">离线用偏好对微调，在线用 outcome-based reward 自我探索，校准模型对“我知道什么”的判断。</span></p></div>
     </div>
-    <div class="card tree-wrap" style="margin-top:18px"><span class="tag">点击节点查看它为什么重要</span><div class="tree" id="tree"><div class="tree-row"><div class="tree-node selected" data-detail="把原问题变成下一步最有用的 atomic subquery。"><span>原始问题 x</span>三部曲总时长？</div></div><div class="tree-label">第一个子问题的两条候选路径</div><div class="tree-row fork"><div class="tree-node direct" data-detail="如果模型已经知道电影标题，直接回答可以节省一次检索。"><span>Parametric</span>直接回答：三部电影</div><div class="tree-node retrieve" data-detail="检索这一步通常是冗余的；它仍被保留来比较成本与正确性。"><span>Retrieved</span>搜索：三部电影</div></div><div class="tree-label">第二个子问题：时长是否需要外部证据？</div><div class="tree-row fork"><div class="tree-node direct" data-detail="对准确 runtime，内部知识可能不够稳定。"><span>Parametric</span>猜测 178 分钟？</div><div class="tree-node retrieve" data-detail="外部文档提供可核验的 runtime，形成更可靠的中间答案。"><span>Retrieved</span>178 / 179 / 201 分钟</div></div><div id="treeDetail" class="terminal" style="width:min(100%,720px)">把原问题变成下一步最有用的 atomic subquery。</div></div></div>
+    <div class="card tree-wrap" style="margin-top:18px"><span class="tag"><span data-i18n="tree-prompt">点击节点查看它为什么重要</span></span><div class="tree" id="tree"><div class="tree-row"><button type="button" class="tree-node selected" data-detail="把原问题变成下一步最有用的 atomic subquery。"><span><span data-i18n="tree-original">原始问题 x</span></span><span data-i18n="tree-question">三部曲总时长？</span></button></div><div class="tree-label"><span data-i18n="tree-first">第一个子问题的两条候选路径</span></div><div class="tree-row fork"><button type="button" class="tree-node direct" data-detail="如果模型已经知道电影标题，直接回答可以节省一次检索。"><span><span data-i18n="tree-parametric-label">参数知识</span></span><span data-i18n="tree-direct">直接回答：三部电影</span></button><button type="button" class="tree-node retrieve" data-detail="检索这一步通常是冗余的；它仍被保留来比较成本与正确性。"><span><span data-i18n="tree-retrieved-label">检索文档</span></span><span data-i18n="tree-retrieve">搜索：三部电影</span></button></div><div class="tree-label"><span data-i18n="tree-second">第二个子问题：时长是否需要外部证据？</span></div><div class="tree-row fork"><button type="button" class="tree-node direct" data-detail="对准确 runtime，内部知识可能不够稳定。"><span><span data-i18n="tree-parametric-label">参数知识</span></span><span data-i18n="tree-guess">猜测 178 分钟？</span></button><button type="button" class="tree-node retrieve" data-detail="外部文档提供可核验的 runtime，形成更可靠的中间答案。"><span><span data-i18n="tree-retrieved-label">检索文档</span></span><span data-i18n="tree-runtime">178 / 179 / 201 分钟</span></button></div><div id="treeDetail" class="terminal" style="width:min(100%,720px)"><span data-i18n="tree-initial">把原问题变成下一步最有用的 atomic subquery。</span></div></div></div>
   </section>
 
   <section id="deepdive">
-    <div class="section-head"><div><div class="kicker">04 · Deep Dive</div><h2>奖励函数把两个目标<br/>放到同一张账单上。</h2></div><p>正确答案优先；在正确的前提下，检索越少，奖励越高。这正是“自适应”的数学来源。</p></div>
+    <div class="section-head"><div><div class="kicker"><span data-i18n="deepdive-kicker">04 · 深入理解</span></div><h2><span data-i18n="reward-title-a">奖励函数把两个目标</span><br/><span data-i18n="reward-title-b">放到同一张账单上。</span></h2></div><p><span data-i18n="reward-intro">正确答案优先；在正确的前提下，检索越少，奖励越高。这正是“自适应”的数学来源。</span></p></div>
     <div class="grid2">
-      <div class="card formula"><span class="tag">Equation 3 · Online calibration</span><div class="formula-box">R = <span class="accent">1</span> − <span class="mint">α</span> × min(<span class="accent">T</span>, <span class="mint">T(sₜ₊₁)</span>)</div><div class="formula-copy">当答案正确时，奖励随实际检索次数下降；格式错误得 0；答案错误不会因为少检索而获得“便宜的高分”。</div><label class="slider"><span>α penalty</span><input id="alpha" type="range" min="0" max=".4" value=".1" step=".01"/><output id="alphaOut">0.10</output></label><label class="slider"><span>retrievals</span><input id="retrievals" type="range" min="0" max="5" value="2" step="1"/><output id="retrievalsOut">2</output></label><div class="terminal" style="margin-top:16px"><strong id="rewardOut">R = 0.80</strong>在答案正确、T = 5 的示例预算下。</div></div>
-      <div class="card formula"><span class="tag mint">Equation 1 · Imitation learning</span><div class="formula-box">L = − Σ log [ Pr(<span class="accent">qᵢ</span>|<span class="mint">sᵢ₋₁</span>) + Pr(<span class="accent">aᵢ</span>|<span class="mint">sᵢ₋₁,qᵢ,dᵢ</span>) ]</div><div class="formula-copy">训练目标同时关注“问什么”和“怎么回答”。dᵢ 在该步未检索时为 null，帮助模型学会按需接入文档。</div><div class="list"><div class="list-item"><i class="dot"></i><span><b>qᵢ</b>：第 i 个子问题</span></div><div class="list-item"><i class="dot mint"></i><span><b>aᵢ</b>：中间答案</span></div><div class="list-item"><i class="dot amber"></i><span><b>sᵢ₋₁</b>：此前累积的推理状态</span></div></div></div>
+      <div class="card formula"><span class="tag"><span data-i18n="equation-three-label">公式 3 · 在线校准</span></span><div class="formula-box">R = <span class="accent">1</span> − <span class="mint">α</span> × min(<span class="accent">T</span>, <span class="mint">T(sₜ₊₁)</span>)</div><div class="formula-copy"><span data-i18n="reward-copy">当答案正确时，奖励随实际检索次数下降；格式错误得 0；答案错误不会因为少检索而获得“便宜的高分”。</span></div><label class="slider"><span><span data-i18n="alpha-label">α 惩罚系数</span></span><input id="alpha" type="range" min="0" max=".4" value=".1" step=".01"/><output id="alphaOut">0.10</output></label><label class="slider"><span><span data-i18n="retrievals-label">检索次数</span></span><input id="retrievals" type="range" min="0" max="5" value="2" step="1"/><output id="retrievalsOut">2</output></label><div class="terminal" style="margin-top:16px"><strong id="rewardOut">R = 0.80</strong><span data-i18n="reward-budget">在答案正确、T = 5 的示例预算下。</span></div></div>
+      <div class="card formula"><span class="tag mint"><span data-i18n="equation-one-label">公式 1 · 模仿学习</span></span><div class="formula-box">L = − Σ log [ Pr(<span class="accent">qᵢ</span>|<span class="mint">sᵢ₋₁</span>) + Pr(<span class="accent">aᵢ</span>|<span class="mint">sᵢ₋₁,qᵢ,dᵢ</span>) ]</div><div class="formula-copy"><span data-i18n="imitation-copy">训练目标同时关注“问什么”和“怎么回答”。dᵢ 在该步未检索时为 null，帮助模型学会按需接入文档。</span></div><div class="list"><div class="list-item"><i class="dot"></i><span><b>qᵢ</b><span data-i18n="symbol-query">：第 i 个子问题</span></span></div><div class="list-item"><i class="dot mint"></i><span><b>aᵢ</b><span data-i18n="symbol-answer">：中间答案</span></span></div><div class="list-item"><i class="dot amber"></i><span><b>sᵢ₋₁</b><span data-i18n="symbol-state">：此前累积的推理状态</span></span></div></div></div>
     </div>
-    <div class="card panel only-advanced" style="margin-top:18px"><span class="tag rose">Advanced · Offline calibration</span><p>DPO-style objective 比较 direct answer 与 retrieved answer 的偏好，β 控制相对于 reference model 的偏离惩罚。在线版本则采用 GRPO，并对 retrieved tokens 使用 masked loss。</p></div>
-    <div class="calibration" style="margin-top:18px"><div class="cal-card"><div class="cal-icon">◫</div><h4>Offline calibration</h4><p>从最优路径合成 preference pairs，再用偏好优化学习“何时检索”。模型：DeepRAG-RL<sub>off</sub>。</p></div><div class="cal-card"><div class="cal-icon">↻</div><h4>Online calibration</h4><p>用 outcome-based rewards 让模型自主探索，奖励正确、格式和检索效率。模型：DeepRAG-RL<sub>on</sub>。</p></div></div>
+    <div class="card panel only-advanced" style="margin-top:18px"><span class="tag rose"><span data-i18n="advanced-label">研究层 · 离线校准</span></span><p><span data-i18n="advanced-copy">DPO-style objective 比较 direct answer 与 retrieved answer 的偏好，β 控制相对于 reference model 的偏离惩罚。在线版本则采用 GRPO，并对 retrieved tokens 使用 masked loss。</span></p></div>
+    <div class="calibration" style="margin-top:18px"><div class="cal-card"><div class="cal-icon">◫</div><h4><span data-i18n="offline-label">离线校准</span></h4><p><span data-i18n="offline-copy">从最优路径合成 preference pairs，再用偏好优化学习“何时检索”。模型：DeepRAG-RL</span><sub>off</sub><span data-i18n="full-stop">。</span></p></div><div class="cal-card"><div class="cal-icon">↻</div><h4><span data-i18n="online-label">在线校准</span></h4><p><span data-i18n="online-copy">用 outcome-based rewards 让模型自主探索，奖励正确、格式和检索效率。模型：DeepRAG-RL</span><sub>on</sub><span data-i18n="full-stop">。</span></p></div></div>
   </section>
 
   <section id="evidence">
-    <div class="section-head"><div><div class="kicker">05 · Evidence</div><h2>实验支持了什么？</h2></div><p>切换 backbone，观察五个数据集上的平均 EM。数值来自 Table 1；图表只展示论文表中的平均列。</p></div>
+    <div class="section-head"><div><div class="kicker"><span data-i18n="evidence-kicker">05 · 实验证据</span></div><h2><span data-i18n="evidence-title">实验支持了什么？</span></h2></div><p><span data-i18n="evidence-intro">切换 backbone，观察五个数据集上的平均 EM。数值来自 Table 1；图表只展示论文表中的平均列。</span></p></div>
     <div class="card chart">
-      <div class="chart-toolbar"><span class="tag mint" style="margin:0">Table 1 · Average EM</span><select class="select" id="backbone"><option value="llama">Llama-3-8B Reasoning</option><option value="qwen">Qwen-2.5-32B Reasoning</option></select></div>
-      <div class="bars" id="bars"></div><div class="source">DeepRAG-RL<sub>on</sub> 在 Llama-3-8B 上平均 EM 42.36，在 Qwen-2.5-32B 上为 41.05；DeepRAG-RL<sub>off</sub> 分别为 41.47 和 35.72。</div>
-      <div class="tradeoff"><h4>准确率–检索成本前沿 · WebQuestions</h4><p>点越高代表 EM 越高；越靠左代表平均检索次数越少。青绿色点为 DeepRAG 变体。</p><div class="trade-plot" id="tradePlot"></div><div class="trade-detail" id="tradeDetail">点击一个点查看方法、EM 与平均检索次数。</div></div>
+      <div class="chart-toolbar"><span class="tag mint" style="margin:0"><span data-i18n="average-em-label">表 1 · 平均 EM</span></span><select class="select" id="backbone"><option value="llama">Llama-3-8B Reasoning</option><option value="qwen">Qwen-2.5-32B Reasoning</option></select></div>
+      <div class="bars" id="bars"></div><div class="source">DeepRAG-RL<sub>on</sub> <span data-i18n="evidence-source-a">在 Llama-3-8B 上平均 EM 42.36，在 Qwen-2.5-32B 上为 41.05；DeepRAG-RL</span><sub>off</sub> <span data-i18n="evidence-source-b">分别为 41.47 和 35.72。</span></div>
+      <div class="tradeoff"><h4><span data-i18n="trade-title">准确率–检索成本前沿 · WebQuestions</span></h4><p><span data-i18n="trade-copy">点越高代表 EM 越高；越靠左代表平均检索次数越少。青绿色点为 DeepRAG 变体。</span></p><div class="trade-plot" id="tradePlot"></div><div class="trade-detail" id="tradeDetail"><span data-i18n="trade-prompt">点击一个点查看方法、EM 与平均检索次数。</span></div></div>
     </div>
-    <div class="grid2" style="margin-top:18px"><div class="card panel"><span class="tag">效率 · Table 2</span><h3>更少检索，仍保持更高准确率</h3><p>在 WebQuestions 上，DeepRAG-RL<sub>on</sub> 的 EM 为 30.00，平均检索次数仅 0.14，平均时间 0.40 秒/题。论文将其与多种 baseline 比较，指出迭代式方法可能进入连续检索循环。</p></div><div class="card panel"><span class="tag amber">知识边界 · Table 3</span><h3>Balanced accuracy = 0.801</h3><p>在 2WikiMultihopQA 的 retrieval-needed 判断中，DeepRAG-RL<sub>on</sub> 的 balanced accuracy 和 MCC 分别为 0.801 与 0.543，说明它更能区分“该检索”和“不必检索”。</p></div></div>
-    <div class="card panel only-advanced" style="margin-top:18px"><span class="tag rose">Experimental detail</span><p>训练使用 HotpotQA 与 2WikiMultihopQA；每个数据集随机抽取 4,000 个样本用于 imitation learning，另外 1,000 个样本用于 calibration。OOD 数据集为 PopQA、WebQuestions、MuSiQue。</p></div>
+    <div class="grid2" style="margin-top:18px"><div class="card panel"><span class="tag"><span data-i18n="efficiency-tag">效率 · Table 2</span></span><h3><span data-i18n="efficiency-title">更少检索，仍保持更高准确率</span></h3><p><span data-i18n="efficiency-start">在 WebQuestions 上，DeepRAG-RL</span><sub>on</sub> <span data-i18n="efficiency-copy">的 EM 为 30.00，平均检索次数仅 0.14，平均时间 0.40 秒/题。论文将其与多种 baseline 比较，指出迭代式方法可能进入连续检索循环。</span></p></div><div class="card panel"><span class="tag amber"><span data-i18n="boundary-tag">知识边界 · Table 3</span></span><h3>Balanced accuracy = 0.801</h3><p><span data-i18n="boundary-start">在 2WikiMultihopQA 的 retrieval-needed 判断中，DeepRAG-RL</span><sub>on</sub> <span data-i18n="boundary-copy">的 balanced accuracy 和 MCC 分别为 0.801 与 0.543，说明它更能区分“该检索”和“不必检索”。</span></p></div></div>
+    <div class="card panel only-advanced" style="margin-top:18px"><span class="tag rose"><span data-i18n="experimental-detail-label">实验细节</span></span><p><span data-i18n="experimental-copy">训练使用 HotpotQA 与 2WikiMultihopQA；每个数据集随机抽取 4,000 个样本用于 imitation learning，另外 1,000 个样本用于 calibration。OOD 数据集为 PopQA、WebQuestions、MuSiQue。</span></p></div>
   </section>
 
   <section id="critical">
-    <div class="section-head"><div><div class="kicker">06 · Critical Thinking</div><h2>结论、证据与<br/>仍然未知的部分。</h2></div><p>下面把“论文确实展示了什么”和“读者仍需保持的谨慎”并列放在一起。</p></div>
-    <div class="evidence"><div class="evidence-col claim"><h4>Claims · 论文主张</h4><p>按需检索能同时提升多跳 QA 的准确率与检索效率；模型更能探索自身的知识边界。</p></div><div class="evidence-col support"><h4>Supporting evidence · 论文证据</h4><p>五个 benchmark、两种 backbone、OOD 结果、retrieval count、balanced accuracy / MCC，以及 imitation / calibration ablation。</p></div><div class="evidence-col open"><h4>Remaining uncertainty · 读者可追问</h4><p>论文在结论中强调未来开源代码；对不同 retriever、长文档噪声和更开放的生成任务，稳健性仍需更多验证。</p></div></div>
-    <div class="card panel" style="margin-top:18px"><span class="tag amber">研究者视角</span><div class="list"><div class="list-item"><i class="dot"></i><span><b>最强贡献：</b>把检索时机、子问题生成和终止决策放进同一条可训练轨迹。</span></div><div class="list-item"><i class="dot mint"></i><span><b>关键设计：</b>以“正确答案 + 低检索成本”为搜索目标，而非单纯增加 context。</span></div><div class="list-item"><i class="dot amber"></i><span><b>值得质疑：</b>奖励和最优路径依赖 retriever、最大检索预算 T 与答案判定方式；换环境后决策边界可能移动。</span></div></div></div>
+    <div class="section-head"><div><div class="kicker"><span data-i18n="critical-kicker">06 · 批判性理解</span></div><h2><span data-i18n="critical-title-a">结论、证据与</span><br/><span data-i18n="critical-title-b">仍然未知的部分。</span></h2></div><p><span data-i18n="critical-intro">下面把“论文确实展示了什么”和“读者仍需保持的谨慎”并列放在一起。</span></p></div>
+    <div class="evidence"><div class="evidence-col claim"><h4><span data-i18n="claims-label">Claims · 论文主张</span></h4><p><span data-i18n="claims-copy">按需检索能同时提升多跳 QA 的准确率与检索效率；模型更能探索自身的知识边界。</span></p></div><div class="evidence-col support"><h4><span data-i18n="support-label">Supporting evidence · 论文证据</span></h4><p><span data-i18n="support-copy">五个 benchmark、两种 backbone、OOD 结果、retrieval count、balanced accuracy / MCC，以及 imitation / calibration ablation。</span></p></div><div class="evidence-col open"><h4><span data-i18n="uncertainty-label">Remaining uncertainty · 读者可追问</span></h4><p><span data-i18n="uncertainty-copy">论文在结论中强调未来开源代码；对不同 retriever、长文档噪声和更开放的生成任务，稳健性仍需更多验证。</span></p></div></div>
+    <div class="card panel" style="margin-top:18px"><span class="tag amber"><span data-i18n="research-label">研究者视角</span></span><div class="list"><div class="list-item"><i class="dot"></i><span><b><span data-i18n="contribution-label">最强贡献：</span></b><span data-i18n="contribution-copy">把检索时机、子问题生成和终止决策放进同一条可训练轨迹。</span></span></div><div class="list-item"><i class="dot mint"></i><span><b><span data-i18n="design-label">关键设计：</span></b><span data-i18n="design-copy">以“正确答案 + 低检索成本”为搜索目标，而非单纯增加 context。</span></span></div><div class="list-item"><i class="dot amber"></i><span><b><span data-i18n="question-label">值得质疑：</span></b><span data-i18n="question-copy">奖励和最优路径依赖 retriever、最大检索预算 T 与答案判定方式；换环境后决策边界可能移动。</span></span></div></div></div>
   </section>
 
   <section id="map">
-    <div class="section-head"><div><div class="kicker">07 · Knowledge Map</div><h2>把整篇论文压缩成<br/>一张可点击的地图。</h2></div><p>点击外围节点，在中心下方查看对应的学习提示。</p></div>
-    <div class="card map"><svg class="map-lines" viewBox="0 0 900 205" preserveAspectRatio="none" aria-hidden="true"><path d="M90 35 C220 30 300 77 360 92"/><path d="M310 35 C360 45 390 70 420 92"/><path d="M590 35 C550 50 510 75 480 92"/><path d="M810 35 C700 35 610 70 540 92"/><path d="M90 170 C220 165 300 130 360 112"/><path d="M310 170 C360 160 390 135 420 112"/><path d="M590 170 C550 155 510 135 480 112"/><path d="M810 170 C700 165 610 135 540 112"/></svg><div class="map-grid"><button class="map-node" data-map="Problem">Hallucination<br/>与知识缺口</button><button class="map-node" data-map="Gap">固定检索<br/>或冗余检索</button><button class="map-node" data-map="Method">MDP + Binary Tree</button><button class="map-node" data-map="Evidence">Table 1–3<br/>+ ablations</button><div></div><div class="map-center">DeepRAG<br/><small>thinking to retrieve step by step</small></div><div></div><button class="map-node" data-map="Future">更强 retriever<br/>与长上下文</button><button class="map-node" data-map="Limit">预算与环境<br/>依赖性</button><button class="map-node" data-map="Takeaway">按需检索<br/>而不是全量检索</button><div></div></div><div class="map-detail" id="mapDetail">选择一个节点开始整合论文结构。</div></div>
-    <div class="takeaways" style="margin-top:18px"><div class="take"><b>01</b>先拆解问题，再决定检索。</div><div class="take"><b>02</b>每一步都有 atomic decision。</div><div class="take"><b>03</b>正确率与检索成本共同优化。</div><div class="take"><b>04</b>训练轨迹来自二叉树搜索。</div><div class="take"><b>05</b>校准的目标是知识边界。</div></div>
-    <div class="card panel" style="margin-top:18px"><span class="tag mint">Explain it yourself</span><div class="quiz"><div class="quiz-q"><p>1. 为什么第一步可以不检索，第二步却要检索？</p><button data-answer="wrong">因为每一步都必须搜索</button><button data-answer="correct">因为它们对模型内部知识的依赖不同</button><div class="answer">正确。DeepRAG 的核心不是“多搜”，而是让检索决策与知识边界对齐。</div></div><div class="quiz-q"><p>2. Binary Tree Search 的两条分支是什么？</p><button data-answer="correct">Parametric knowledge / Retrieved documents</button><button data-answer="wrong">两个不同的语言模型</button><div class="answer">正确。每个子问题都可走内部知识分支或外部检索分支。</div></div><div class="quiz-q"><p>3. 为什么“retrieve only”不一定最好？</p><button data-answer="correct">长上下文或无关知识可能损害回答</button><button data-answer="wrong">因为检索永远不准确</button><div class="answer">正确。论文 Figure 5 指出，持续检索会增加成本，也可能把噪声带入上下文。</div></div></div></div>
+    <div class="section-head"><div><div class="kicker"><span data-i18n="map-kicker">07 · 知识图谱</span></div><h2><span data-i18n="map-title-a">把整篇论文压缩成</span><br/><span data-i18n="map-title-b">一张可点击的地图。</span></h2></div><p><span data-i18n="map-intro">点击外围节点，在中心下方查看对应的学习提示。</span></p></div>
+    <div class="card map"><svg class="map-lines" viewBox="0 0 900 205" preserveAspectRatio="none" aria-hidden="true"><path d="M90 35 C220 30 300 77 360 92"/><path d="M310 35 C360 45 390 70 420 92"/><path d="M590 35 C550 50 510 75 480 92"/><path d="M810 35 C700 35 610 70 540 92"/><path d="M90 170 C220 165 300 130 360 112"/><path d="M310 170 C360 160 390 135 420 112"/><path d="M590 170 C550 155 510 135 480 112"/><path d="M810 170 C700 165 610 135 540 112"/></svg><div class="map-grid"><button class="map-node" data-map="Problem"><span data-i18n="map-hallucination">幻觉</span><br/><span data-i18n="map-gap-a">与知识缺口</span></button><button class="map-node" data-map="Gap"><span data-i18n="map-gap-b">固定检索</span><br/><span data-i18n="map-gap-c">或冗余检索</span></button><button class="map-node" data-map="Method"><span data-i18n="map-method-label">MDP + 二叉树</span></button><button class="map-node" data-map="Evidence"><span data-i18n="map-table-label">表 1–3</span><br/><span data-i18n="map-ablation-label">+ 消融实验</span></button><div></div><div class="map-center">DeepRAG<br/><small><span data-i18n="map-centre-subtitle">逐步思考，按需检索</span></small></div><div></div><button class="map-node" data-map="Future"><span data-i18n="map-future-a">更强 retriever</span><br/><span data-i18n="map-future-b">与长上下文</span></button><button class="map-node" data-map="Limit"><span data-i18n="map-limit-a">预算与环境</span><br/><span data-i18n="map-limit-b">依赖性</span></button><button class="map-node" data-map="Takeaway"><span data-i18n="map-takeaway-a">按需检索</span><br/><span data-i18n="map-takeaway-b">而不是全量检索</span></button><div></div></div><div class="map-detail" id="mapDetail"><span data-i18n="map-prompt">选择一个节点开始整合论文结构。</span></div></div>
+    <div class="takeaways" style="margin-top:18px"><div class="take"><b>01</b><span data-i18n="take-one">先拆解问题，再决定检索。</span></div><div class="take"><b>02</b><span data-i18n="take-two">每一步都有 atomic decision。</span></div><div class="take"><b>03</b><span data-i18n="take-three">正确率与检索成本共同优化。</span></div><div class="take"><b>04</b><span data-i18n="take-four">训练轨迹来自二叉树搜索。</span></div><div class="take"><b>05</b><span data-i18n="take-five">校准的目标是知识边界。</span></div></div>
+    <div class="card panel" style="margin-top:18px"><span class="tag mint"><span data-i18n="quiz-label">试着自己讲解</span></span><div class="quiz"><div class="quiz-q"><p><span data-i18n="quiz-one">1. 为什么第一步可以不检索，第二步却要检索？</span></p><button data-answer="wrong"><span data-i18n="quiz-one-wrong">因为每一步都必须搜索</span></button><button data-answer="correct"><span data-i18n="quiz-one-right">因为它们对模型内部知识的依赖不同</span></button><div class="answer"><span data-i18n="quiz-one-feedback">正确。DeepRAG 的核心不是“多搜”，而是让检索决策与知识边界对齐。</span></div></div><div class="quiz-q"><p><span data-i18n="quiz-two">2. Binary Tree Search 的两条分支是什么？</span></p><button data-answer="correct">Parametric knowledge / Retrieved documents</button><button data-answer="wrong"><span data-i18n="quiz-two-wrong">两个不同的语言模型</span></button><div class="answer"><span data-i18n="quiz-two-feedback">正确。每个子问题都可走内部知识分支或外部检索分支。</span></div></div><div class="quiz-q"><p><span data-i18n="quiz-three">3. 为什么“retrieve only”不一定最好？</span></p><button data-answer="correct"><span data-i18n="quiz-three-right">长上下文或无关知识可能损害回答</span></button><button data-answer="wrong"><span data-i18n="quiz-three-wrong">因为检索永远不准确</span></button><div class="answer"><span data-i18n="quiz-three-feedback">正确。论文 Figure 5 指出，持续检索会增加成本，也可能把噪声带入上下文。</span></div></div></div></div>
   </section>
-  <footer>Interactive explanation based on Guan et al., “DeepRAG: Thinking to Retrieve Step by Step for Large Language Models”, ICLR 2026. <a href="https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf" target="_blank">原文 PDF ↗</a> · <a href="https://github.com/icip-cas/DeepRAG" target="_blank">官方代码仓库 ↗</a><br/>页面中的可视化是对论文方法与结果的教学性重绘；具体数字均标注对应 Figure / Table / Section。</footer>
+  <footer><span data-i18n="footer-citation">本页基于 Guan 等人的论文 “DeepRAG: Thinking to Retrieve Step by Step for Large Language Models”（ICLR 2026）制作。</span> <a href="https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf" target="_blank"><span data-i18n="footer-paper">原文 PDF ↗</span></a> · <a href="https://github.com/icip-cas/DeepRAG" target="_blank"><span data-i18n="footer-code">官方代码仓库 ↗</span></a><br/><span data-i18n="footer-note">页面中的可视化是对论文方法与结果的教学性重绘；具体数字均标注对应 Figure / Table / Section。</span></footer>
 </main>
 </div>
+<script src="../../assets/paper.js"></script>
 <script>
-const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const $=(selector,scope=document)=>scope.querySelector(selector);
+const $$=(selector,scope=document)=>[...scope.querySelectorAll(selector)];
+const translations={
+  "level-initial": {
+    "zh": "直觉层 · 先理解问题和主线",
+    "en": "Intuition · Understand the problem and main idea first"
+  },
+  "hero-start": {
+    "zh": "让模型先想清楚，",
+    "en": "Let the model think first, "
+  },
+  "hero-accent": {
+    "zh": "再决定要不要检索。",
+    "en": "then decide whether to retrieve."
+  },
+  "hero-lead": {
+    "zh": "DeepRAG 把 Retrieval-Augmented Reasoning 写成一个逐步决策过程：每一步生成一个原子子问题，判断该用内部知识还是外部检索，并在足够信息后停止。",
+    "en": "DeepRAG formulates retrieval-augmented reasoning as a sequential decision process: generate an atomic subquery at each step, decide between internal knowledge and external retrieval, and stop when enough information is available."
+  },
+  "summary": {
+    "zh": "通过 MDP 建模、二叉树搜索、模仿学习和知识边界校准，DeepRAG 学会在多跳问答中“按需检索”，同时追求正确率与检索效率。",
+    "en": "Through MDP modelling, binary tree search, imitation learning and knowledge-boundary calibration, DeepRAG learns to retrieve on demand in multi-hop QA while pursuing both accuracy and retrieval efficiency."
+  },
+  "stat-accuracy": {
+    "zh": "论文摘要报告的准确率提升",
+    "en": "Accuracy improvement reported in the abstract"
+  },
+  "stat-datasets": {
+    "zh": "评测数据集",
+    "en": "Evaluation datasets"
+  },
+  "stat-rounds": {
+    "zh": "多数问题的检索轮数",
+    "en": "Retrieval rounds for most questions"
+  },
+  "hero-source": {
+    "zh": "来源：Abstract；Sec. 4–5；Figure 3。数字只复述论文中报告的结果。",
+    "en": "Source: Abstract; Sections 4–5; Figure 3. The numbers restate results reported in the paper."
+  },
+  "flow-question": {
+    "zh": "原始问题",
+    "en": "Original question"
+  },
+  "flow-subquery": {
+    "zh": "原子子问题",
+    "en": "Atomic subquery"
+  },
+  "flow-internal": {
+    "zh": "内部知识",
+    "en": "Internal knowledge"
+  },
+  "flow-or": {
+    "zh": "或",
+    "en": "or"
+  },
+  "flow-retrieval": {
+    "zh": "外部检索",
+    "en": "External retrieval"
+  },
+  "flow-answer": {
+    "zh": "中间答案",
+    "en": "Intermediate answer"
+  },
+  "flow-continue": {
+    "zh": "继续分解",
+    "en": "Keep decomposing"
+  },
+  "flow-enough": {
+    "zh": "满足条件？",
+    "en": "Enough information?"
+  },
+  "flow-final": {
+    "zh": "最终答案",
+    "en": "Final answer"
+  },
+  "intuition-title-a": {
+    "zh": "检索不是默认动作，",
+    "en": "Retrieval is a decision,"
+  },
+  "intuition-title-b": {
+    "zh": "而是一个原子决策。",
+    "en": "made one atomic step at a time."
+  },
+  "intuition-intro": {
+    "zh": "先用熟悉的信息推进推理，遇到知识缺口才搜索。这个节奏，就是 DeepRAG 想让模型学会的“知识边界”。",
+    "en": "Reason with familiar information first, and search when a knowledge gap appears. DeepRAG aims to teach the model this boundary between what it knows and what it needs to retrieve."
+  },
+  "example-source": {
+    "zh": "论文中的例子 · Figure 1",
+    "en": "Example from the paper · Figure 1"
+  },
+  "example-question": {
+    "zh": "“指环王三部曲总时长是多少？”需要先找出三部电影，再分别确认时长，最后相加。",
+    "en": "“What is the total runtime of The Lord of the Rings trilogy?” First identify the three films, verify each runtime, then add them."
+  },
+  "example-emphasis": {
+    "zh": "不是每一步都值得搜索。",
+    "en": "Not every step warrants a search."
+  },
+  "example-known": {
+    "zh": "已知：三部曲包含三部电影。",
+    "en": "Known: the trilogy consists of three films."
+  },
+  "example-unknown": {
+    "zh": "未知：每部电影的准确 runtime，需要检索。",
+    "en": "Unknown: the exact runtime of each film calls for retrieval."
+  },
+  "example-reason": {
+    "zh": "可推理：拿到三个时长后，直接求和即可。",
+    "en": "Reasoning: once the three runtimes are known, simply add them."
+  },
+  "walk-label": {
+    "zh": "跟随 5 个动作",
+    "en": "Follow five actions"
+  },
+  "step-recognise": {
+    "zh": "1 · 识别",
+    "en": "1 · Recognise"
+  },
+  "step-decompose": {
+    "zh": "2 · 拆解",
+    "en": "2 · Decompose"
+  },
+  "step-decide": {
+    "zh": "3 · 判断",
+    "en": "3 · Decide"
+  },
+  "step-retrieve": {
+    "zh": "4 · 检索",
+    "en": "4 · Retrieve"
+  },
+  "step-stop": {
+    "zh": "5 · 停止",
+    "en": "5 · Stop"
+  },
+  "story-initial-title": {
+    "zh": "STEP 1 · 先使用参数化知识",
+    "en": "STEP 1 · Use parametric knowledge first"
+  },
+  "story-initial-copy": {
+    "zh": "模型知道三部电影的标题，因此此处不需要检索。",
+    "en": "The model knows the titles of the three films, so retrieval is unnecessary here."
+  },
+  "method-title-a": {
+    "zh": "把 RAG 写成",
+    "en": "Formulate RAG as"
+  },
+  "method-title-b": {
+    "zh": "一个 Markov Decision Process。",
+    "en": "a Markov decision process."
+  },
+  "method-intro": {
+    "zh": "状态包含“原问题 + 已生成的子问题/中间答案”；动作包含“继续/停止”和“检索/内部知识”两层决策。",
+    "en": "The state contains the original question and generated subqueries/intermediate answers. Actions have two decision levels: continue or stop, then retrieve or use internal knowledge."
+  },
+  "mdp-label": {
+    "zh": "可操作状态机 · MDP",
+    "en": "Interactive state machine · MDP"
+  },
+  "mdp-state": {
+    "zh": "当前状态 sₜ",
+    "en": "Current state sₜ"
+  },
+  "mdp-parametric": {
+    "zh": "▣ 用参数化知识回答",
+    "en": "▣ Answer from parametric knowledge"
+  },
+  "mdp-retrieve": {
+    "zh": "⌕ 检索文档后回答",
+    "en": "⌕ Retrieve documents, then answer"
+  },
+  "mdp-terminate": {
+    "zh": "✓ 终止并生成最终答案",
+    "en": "✓ Stop and produce the final answer"
+  },
+  "mdp-prompt": {
+    "zh": "选择一个动作",
+    "en": "Choose an action"
+  },
+  "mdp-explanation": {
+    "zh": "动作会改变状态，并影响总检索成本。",
+    "en": "The action changes the state and affects the total retrieval cost."
+  },
+  "component-search": {
+    "zh": "每个子问题分出两条路：直接使用参数化知识，或检索外部文档。优先队列按 retrieval count 探索路径，找到正确且成本最低的轨迹。",
+    "en": "Each subquery branches into using parametric knowledge directly or retrieving external documents. A priority queue explores paths by retrieval count to find a correct trajectory with the lowest cost."
+  },
+  "component-imitation": {
+    "zh": "用最优轨迹训练 DeepRAG-Imi，让模型同时学习子问题生成、中间答案和检索时机。",
+    "en": "Train DeepRAG-Imi on optimal trajectories so the model learns subquery generation, intermediate answers and when to retrieve together."
+  },
+  "component-calibration": {
+    "zh": "离线用偏好对微调，在线用 outcome-based reward 自我探索，校准模型对“我知道什么”的判断。",
+    "en": "Offline preference-pair fine-tuning and online exploration with outcome-based rewards calibrate the model’s judgement of what it knows."
+  },
+  "tree-prompt": {
+    "zh": "点击节点查看它为什么重要",
+    "en": "Select a node to see why it matters"
+  },
+  "tree-original": {
+    "zh": "原始问题 x",
+    "en": "Original question x"
+  },
+  "tree-question": {
+    "zh": "三部曲总时长？",
+    "en": "Total runtime of the trilogy?"
+  },
+  "tree-first": {
+    "zh": "第一个子问题的两条候选路径",
+    "en": "Two candidate paths for the first subquery"
+  },
+  "tree-direct": {
+    "zh": "直接回答：三部电影",
+    "en": "Direct answer: three films"
+  },
+  "tree-retrieve": {
+    "zh": "搜索：三部电影",
+    "en": "Search: three films"
+  },
+  "tree-second": {
+    "zh": "第二个子问题：时长是否需要外部证据？",
+    "en": "Second subquery: do the runtimes need external evidence?"
+  },
+  "tree-guess": {
+    "zh": "猜测 178 分钟？",
+    "en": "Guess 178 minutes?"
+  },
+  "tree-runtime": {
+    "zh": "178 / 179 / 201 分钟",
+    "en": "178 / 179 / 201 minutes"
+  },
+  "tree-initial": {
+    "zh": "把原问题变成下一步最有用的 atomic subquery。",
+    "en": "Turn the original question into the most useful next atomic subquery."
+  },
+  "reward-title-a": {
+    "zh": "奖励函数把两个目标",
+    "en": "The reward function puts"
+  },
+  "reward-title-b": {
+    "zh": "放到同一张账单上。",
+    "en": "both goals on the same bill."
+  },
+  "reward-intro": {
+    "zh": "正确答案优先；在正确的前提下，检索越少，奖励越高。这正是“自适应”的数学来源。",
+    "en": "Correct answers come first. Among correct answers, fewer retrievals earn a higher reward: this is the mathematical basis for adaptation."
+  },
+  "reward-copy": {
+    "zh": "当答案正确时，奖励随实际检索次数下降；格式错误得 0；答案错误不会因为少检索而获得“便宜的高分”。",
+    "en": "For a correct answer, the reward decreases with the actual retrieval count. A format error scores 0; an incorrect answer does not earn a cheap high score just by retrieving less."
+  },
+  "reward-budget": {
+    "zh": "在答案正确、T = 5 的示例预算下。",
+    "en": "Teaching example with a correct answer and a budget of T = 5."
+  },
+  "imitation-copy": {
+    "zh": "训练目标同时关注“问什么”和“怎么回答”。dᵢ 在该步未检索时为 null，帮助模型学会按需接入文档。",
+    "en": "The training objective covers both what to ask and how to answer. When no retrieval occurs at a step, dᵢ is null, helping the model learn to consult documents on demand."
+  },
+  "symbol-query": {
+    "zh": "：第 i 个子问题",
+    "en": ": the i-th subquery"
+  },
+  "symbol-answer": {
+    "zh": "：中间答案",
+    "en": ": intermediate answer"
+  },
+  "symbol-state": {
+    "zh": "：此前累积的推理状态",
+    "en": ": the accumulated reasoning state"
+  },
+  "advanced-copy": {
+    "zh": "DPO-style objective 比较 direct answer 与 retrieved answer 的偏好，β 控制相对于 reference model 的偏离惩罚。在线版本则采用 GRPO，并对 retrieved tokens 使用 masked loss。",
+    "en": "A DPO-style objective compares preferences for direct and retrieved answers; β controls the penalty for diverging from the reference model. The online version uses GRPO and a masked loss for retrieved tokens."
+  },
+  "offline-copy": {
+    "zh": "从最优路径合成 preference pairs，再用偏好优化学习“何时检索”。模型：DeepRAG-RL",
+    "en": "Synthesize preference pairs from optimal paths, then learn when to retrieve through preference optimisation. Model: DeepRAG-RL"
+  },
+  "online-copy": {
+    "zh": "用 outcome-based rewards 让模型自主探索，奖励正确、格式和检索效率。模型：DeepRAG-RL",
+    "en": "Let the model explore with outcome-based rewards for correctness, format and retrieval efficiency. Model: DeepRAG-RL"
+  },
+  "full-stop": {
+    "zh": "。",
+    "en": "."
+  },
+  "evidence-title": {
+    "zh": "实验支持了什么？",
+    "en": "What do the experiments support?"
+  },
+  "evidence-intro": {
+    "zh": "切换 backbone，观察五个数据集上的平均 EM。数值来自 Table 1；图表只展示论文表中的平均列。",
+    "en": "Switch the backbone to inspect average EM across five datasets. Values come from Table 1; this chart shows only the average column reported in the paper."
+  },
+  "evidence-source-a": {
+    "zh": "在 Llama-3-8B 上平均 EM 42.36，在 Qwen-2.5-32B 上为 41.05；DeepRAG-RL",
+    "en": "achieves average EM of 42.36 on Llama-3-8B and 41.05 on Qwen-2.5-32B; DeepRAG-RL"
+  },
+  "evidence-source-b": {
+    "zh": "分别为 41.47 和 35.72。",
+    "en": "achieves 41.47 and 35.72, respectively."
+  },
+  "trade-title": {
+    "zh": "准确率–检索成本前沿 · WebQuestions",
+    "en": "Accuracy–retrieval cost frontier · WebQuestions"
+  },
+  "trade-copy": {
+    "zh": "点越高代表 EM 越高；越靠左代表平均检索次数越少。青绿色点为 DeepRAG 变体。",
+    "en": "Higher points indicate higher EM; points further left use fewer retrievals on average. Teal points are DeepRAG variants."
+  },
+  "trade-prompt": {
+    "zh": "点击一个点查看方法、EM 与平均检索次数。",
+    "en": "Select a point to inspect its method, EM and average retrieval count."
+  },
+  "efficiency-tag": {
+    "zh": "效率 · Table 2",
+    "en": "Efficiency · Table 2"
+  },
+  "efficiency-title": {
+    "zh": "更少检索，仍保持更高准确率",
+    "en": "Fewer retrievals, with higher accuracy"
+  },
+  "efficiency-start": {
+    "zh": "在 WebQuestions 上，DeepRAG-RL",
+    "en": "On WebQuestions, DeepRAG-RL"
+  },
+  "efficiency-copy": {
+    "zh": "的 EM 为 30.00，平均检索次数仅 0.14，平均时间 0.40 秒/题。论文将其与多种 baseline 比较，指出迭代式方法可能进入连续检索循环。",
+    "en": "achieves EM of 30.00 with only 0.14 retrievals and 0.40 seconds per question on average. The paper compares it with several baselines and notes that iterative methods can enter repeated-retrieval loops."
+  },
+  "boundary-tag": {
+    "zh": "知识边界 · Table 3",
+    "en": "Knowledge boundary · Table 3"
+  },
+  "boundary-start": {
+    "zh": "在 2WikiMultihopQA 的 retrieval-needed 判断中，DeepRAG-RL",
+    "en": "For retrieval-needed decisions on 2WikiMultihopQA, DeepRAG-RL"
+  },
+  "boundary-copy": {
+    "zh": "的 balanced accuracy 和 MCC 分别为 0.801 与 0.543，说明它更能区分“该检索”和“不必检索”。",
+    "en": "has balanced accuracy of 0.801 and MCC of 0.543, indicating better discrimination between when retrieval is needed and when it is not."
+  },
+  "experimental-copy": {
+    "zh": "训练使用 HotpotQA 与 2WikiMultihopQA；每个数据集随机抽取 4,000 个样本用于 imitation learning，另外 1,000 个样本用于 calibration。OOD 数据集为 PopQA、WebQuestions、MuSiQue。",
+    "en": "Training uses HotpotQA and 2WikiMultihopQA, randomly sampling 4,000 examples from each for imitation learning and another 1,000 for calibration. OOD datasets are PopQA, WebQuestions and MuSiQue."
+  },
+  "critical-title-a": {
+    "zh": "结论、证据与",
+    "en": "Claims, evidence and"
+  },
+  "critical-title-b": {
+    "zh": "仍然未知的部分。",
+    "en": "what remains unknown."
+  },
+  "critical-intro": {
+    "zh": "下面把“论文确实展示了什么”和“读者仍需保持的谨慎”并列放在一起。",
+    "en": "Read what the paper demonstrates alongside the questions that still call for caution."
+  },
+  "claims-label": {
+    "zh": "Claims · 论文主张",
+    "en": "Claims"
+  },
+  "claims-copy": {
+    "zh": "按需检索能同时提升多跳 QA 的准确率与检索效率；模型更能探索自身的知识边界。",
+    "en": "On-demand retrieval can improve both multi-hop QA accuracy and retrieval efficiency, while helping the model explore its knowledge boundary."
+  },
+  "support-label": {
+    "zh": "Supporting evidence · 论文证据",
+    "en": "Supporting evidence"
+  },
+  "support-copy": {
+    "zh": "五个 benchmark、两种 backbone、OOD 结果、retrieval count、balanced accuracy / MCC，以及 imitation / calibration ablation。",
+    "en": "Five benchmarks, two backbones, OOD results, retrieval counts, balanced accuracy/MCC, and imitation/calibration ablations."
+  },
+  "uncertainty-label": {
+    "zh": "Remaining uncertainty · 读者可追问",
+    "en": "Remaining uncertainty"
+  },
+  "uncertainty-copy": {
+    "zh": "论文在结论中强调未来开源代码；对不同 retriever、长文档噪声和更开放的生成任务，稳健性仍需更多验证。",
+    "en": "The conclusion emphasises future code release. Robustness across different retrievers, long-document noise and more open-ended generation tasks still needs further validation."
+  },
+  "research-label": {
+    "zh": "研究者视角",
+    "en": "Research perspective"
+  },
+  "contribution-label": {
+    "zh": "最强贡献：",
+    "en": "Main contribution:"
+  },
+  "contribution-copy": {
+    "zh": "把检索时机、子问题生成和终止决策放进同一条可训练轨迹。",
+    "en": "Put retrieval timing, subquery generation and termination decisions into one trainable trajectory."
+  },
+  "design-label": {
+    "zh": "关键设计：",
+    "en": "Key design:"
+  },
+  "design-copy": {
+    "zh": "以“正确答案 + 低检索成本”为搜索目标，而非单纯增加 context。",
+    "en": "Search for correct answers with low retrieval cost, rather than simply adding more context."
+  },
+  "question-label": {
+    "zh": "值得质疑：",
+    "en": "Open question:"
+  },
+  "question-copy": {
+    "zh": "奖励和最优路径依赖 retriever、最大检索预算 T 与答案判定方式；换环境后决策边界可能移动。",
+    "en": "Rewards and optimal paths depend on the retriever, maximum retrieval budget T and answer judgement. The decision boundary may shift in a different environment."
+  },
+  "map-title-a": {
+    "zh": "把整篇论文压缩成",
+    "en": "Condense the paper into"
+  },
+  "map-title-b": {
+    "zh": "一张可点击的地图。",
+    "en": "an interactive map."
+  },
+  "map-intro": {
+    "zh": "点击外围节点，在中心下方查看对应的学习提示。",
+    "en": "Select an outer node to read its learning prompt below the centre."
+  },
+  "map-gap-a": {
+    "zh": "与知识缺口",
+    "en": "and knowledge gaps"
+  },
+  "map-gap-b": {
+    "zh": "固定检索",
+    "en": "Fixed retrieval"
+  },
+  "map-gap-c": {
+    "zh": "或冗余检索",
+    "en": "or redundant retrieval"
+  },
+  "map-future-a": {
+    "zh": "更强 retriever",
+    "en": "Stronger retrievers"
+  },
+  "map-future-b": {
+    "zh": "与长上下文",
+    "en": "and longer contexts"
+  },
+  "map-limit-a": {
+    "zh": "预算与环境",
+    "en": "Budget and environment"
+  },
+  "map-limit-b": {
+    "zh": "依赖性",
+    "en": "dependence"
+  },
+  "map-takeaway-a": {
+    "zh": "按需检索",
+    "en": "Retrieve on demand"
+  },
+  "map-takeaway-b": {
+    "zh": "而不是全量检索",
+    "en": "rather than at every step"
+  },
+  "map-prompt": {
+    "zh": "选择一个节点开始整合论文结构。",
+    "en": "Choose a node to connect the structure of the paper."
+  },
+  "take-one": {
+    "zh": "先拆解问题，再决定检索。",
+    "en": "Decompose the question, then decide whether to retrieve."
+  },
+  "take-two": {
+    "zh": "每一步都有 atomic decision。",
+    "en": "Make an atomic decision at every step."
+  },
+  "take-three": {
+    "zh": "正确率与检索成本共同优化。",
+    "en": "Optimise accuracy and retrieval cost together."
+  },
+  "take-four": {
+    "zh": "训练轨迹来自二叉树搜索。",
+    "en": "Obtain training trajectories through binary tree search."
+  },
+  "take-five": {
+    "zh": "校准的目标是知识边界。",
+    "en": "Calibrate the knowledge boundary."
+  },
+  "quiz-one": {
+    "zh": "1. 为什么第一步可以不检索，第二步却要检索？",
+    "en": "1. Why can the first step skip retrieval while the second needs it?"
+  },
+  "quiz-one-wrong": {
+    "zh": "因为每一步都必须搜索",
+    "en": "Because every step must search"
+  },
+  "quiz-one-right": {
+    "zh": "因为它们对模型内部知识的依赖不同",
+    "en": "Because the steps rely differently on the model’s internal knowledge"
+  },
+  "quiz-one-feedback": {
+    "zh": "正确。DeepRAG 的核心不是“多搜”，而是让检索决策与知识边界对齐。",
+    "en": "Correct. The core idea is to align retrieval decisions with the knowledge boundary, rather than simply search more."
+  },
+  "quiz-two": {
+    "zh": "2. Binary Tree Search 的两条分支是什么？",
+    "en": "2. What are the two branches in binary tree search?"
+  },
+  "quiz-two-wrong": {
+    "zh": "两个不同的语言模型",
+    "en": "Two different language models"
+  },
+  "quiz-two-feedback": {
+    "zh": "正确。每个子问题都可走内部知识分支或外部检索分支。",
+    "en": "Correct. Each subquery can take an internal-knowledge branch or an external-retrieval branch."
+  },
+  "quiz-three": {
+    "zh": "3. 为什么“retrieve only”不一定最好？",
+    "en": "3. Why is “retrieve only” not always best?"
+  },
+  "quiz-three-right": {
+    "zh": "长上下文或无关知识可能损害回答",
+    "en": "Long contexts or irrelevant knowledge can harm the answer"
+  },
+  "quiz-three-wrong": {
+    "zh": "因为检索永远不准确",
+    "en": "Because retrieval is always inaccurate"
+  },
+  "quiz-three-feedback": {
+    "zh": "正确。论文 Figure 5 指出，持续检索会增加成本，也可能把噪声带入上下文。",
+    "en": "Correct. Figure 5 indicates that repeated retrieval increases cost and can introduce noise into the context."
+  },
+  "footer-paper": {
+    "zh": "原文 PDF ↗",
+    "en": "Paper PDF ↗"
+  },
+  "footer-code": {
+    "zh": "官方代码仓库 ↗",
+    "en": "Official code repository ↗"
+  },
+  "footer-note": {
+    "zh": "页面中的可视化是对论文方法与结果的教学性重绘；具体数字均标注对应 Figure / Table / Section。",
+    "en": "The visualisations are teaching redrawings of the paper’s methods and results. Numerical values are labelled with their corresponding Figure, Table or Section."
+  },
+  "eyebrow": {
+    "zh": "ICLR 2026 · 论文概览",
+    "en": "ICLR 2026 · Paper at a Glance"
+  },
+  "summary-label": {
+    "zh": "一句话总结",
+    "en": "One-sentence summary"
+  },
+  "flow-complex": {
+    "zh": "复杂问题",
+    "en": "complex question"
+  },
+  "flow-atomic": {
+    "zh": "原子子问题",
+    "en": "atomic subquery"
+  },
+  "flow-parametric": {
+    "zh": "参数化",
+    "en": "parametric"
+  },
+  "flow-retrieve-small": {
+    "zh": "检索",
+    "en": "retrieve"
+  },
+  "intuition-kicker": {
+    "zh": "02 · 直觉",
+    "en": "02 · Intuition"
+  },
+  "method-kicker": {
+    "zh": "03 · 方法机制",
+    "en": "03 · How It Works"
+  },
+  "state-label": {
+    "zh": "状态",
+    "en": "state"
+  },
+  "query-label": {
+    "zh": "子问题",
+    "en": "query"
+  },
+  "answer-label": {
+    "zh": "答案",
+    "en": "answer"
+  },
+  "next-label": {
+    "zh": "下一状态",
+    "en": "next"
+  },
+  "component-one-label": {
+    "zh": "组件 1",
+    "en": "Component 1"
+  },
+  "component-two-label": {
+    "zh": "组件 2",
+    "en": "Component 2"
+  },
+  "component-three-label": {
+    "zh": "组件 3",
+    "en": "Component 3"
+  },
+  "tree-parametric-label": {
+    "zh": "参数知识",
+    "en": "Parametric"
+  },
+  "tree-retrieved-label": {
+    "zh": "检索文档",
+    "en": "Retrieved"
+  },
+  "deepdive-kicker": {
+    "zh": "04 · 深入理解",
+    "en": "04 · Deep Dive"
+  },
+  "equation-three-label": {
+    "zh": "公式 3 · 在线校准",
+    "en": "Equation 3 · Online calibration"
+  },
+  "alpha-label": {
+    "zh": "α 惩罚系数",
+    "en": "α penalty"
+  },
+  "retrievals-label": {
+    "zh": "检索次数",
+    "en": "retrievals"
+  },
+  "equation-one-label": {
+    "zh": "公式 1 · 模仿学习",
+    "en": "Equation 1 · Imitation learning"
+  },
+  "advanced-label": {
+    "zh": "研究层 · 离线校准",
+    "en": "Advanced · Offline calibration"
+  },
+  "offline-label": {
+    "zh": "离线校准",
+    "en": "Offline calibration"
+  },
+  "online-label": {
+    "zh": "在线校准",
+    "en": "Online calibration"
+  },
+  "evidence-kicker": {
+    "zh": "05 · 实验证据",
+    "en": "05 · Evidence"
+  },
+  "average-em-label": {
+    "zh": "表 1 · 平均 EM",
+    "en": "Table 1 · Average EM"
+  },
+  "experimental-detail-label": {
+    "zh": "实验细节",
+    "en": "Experimental detail"
+  },
+  "critical-kicker": {
+    "zh": "06 · 批判性理解",
+    "en": "06 · Critical Thinking"
+  },
+  "map-kicker": {
+    "zh": "07 · 知识图谱",
+    "en": "07 · Knowledge Map"
+  },
+  "map-hallucination": {
+    "zh": "幻觉",
+    "en": "Hallucination"
+  },
+  "map-method-label": {
+    "zh": "MDP + 二叉树",
+    "en": "MDP + Binary Tree"
+  },
+  "map-table-label": {
+    "zh": "表 1–3",
+    "en": "Table 1–3"
+  },
+  "map-ablation-label": {
+    "zh": "+ 消融实验",
+    "en": "+ ablations"
+  },
+  "map-centre-subtitle": {
+    "zh": "逐步思考，按需检索",
+    "en": "thinking to retrieve step by step"
+  },
+  "quiz-label": {
+    "zh": "试着自己讲解",
+    "en": "Explain it yourself"
+  },
+  "footer-citation": {
+    "zh": "本页基于 Guan 等人的论文 “DeepRAG: Thinking to Retrieve Step by Step for Large Language Models”（ICLR 2026）制作。",
+    "en": "Interactive explanation based on Guan et al., “DeepRAG: Thinking to Retrieve Step by Step for Large Language Models”, ICLR 2026."
+  }
+};
+const S={lang:'zh',story:0,action:null,tree:0,trade:null,map:null,level:'beginner'};
+const pick=(zh,en)=>S.lang==='en'?en:zh;
 const storyData=[
-  ["STEP 1 · 先使用参数化知识","“The Lord of the Rings trilogy consists of three films …”","模型知道三部电影的标题，因此此处不需要检索。"],
-  ["STEP 2 · 生成原子子问题","“What is the runtime of each film?”","把总问题拆成可回答、可检索的 atomic subqueries。"],
-  ["STEP 3 · 做 atomic decision","“I am unsure of their exact runtimes.”","知识边界被触发：这一步选择 retrieve。"],
-  ["STEP 4 · 写入中间答案","“178 + 179 + 201 = 558 minutes.”","检索结果只服务于当前子问题，然后回到推理状态。"],
-  ["STEP 5 · 终止","“So the final answer is: 558 minutes.”","总结是参数化推理可以完成的动作，不必再检索。"]
+ {zh:['STEP 1 · 先使用参数化知识','“The Lord of the Rings trilogy consists of three films …”','模型知道三部电影的标题，因此此处不需要检索。'],en:['STEP 1 · Use parametric knowledge first','“The Lord of the Rings trilogy consists of three films …”','The model knows the titles of the three films, so retrieval is unnecessary here.']},
+ {zh:['STEP 2 · 生成原子子问题','“What is the runtime of each film?”','把总问题拆成可回答、可检索的 atomic subqueries。'],en:['STEP 2 · Generate an atomic subquery','“What is the runtime of each film?”','Decompose the original question into atomic subqueries that can be answered or retrieved.']},
+ {zh:['STEP 3 · 做 atomic decision','“I am unsure of their exact runtimes.”','知识边界被触发：这一步选择 retrieve。'],en:['STEP 3 · Make an atomic decision','“I am unsure of their exact runtimes.”','A knowledge gap is reached: choose retrieval at this step.']},
+ {zh:['STEP 4 · 写入中间答案','“178 + 179 + 201 = 558 minutes.”','检索结果只服务于当前子问题，然后回到推理状态。'],en:['STEP 4 · Record the intermediate answer','“178 + 179 + 201 = 558 minutes.”','The retrieved evidence serves the current subquery, then returns to the reasoning state.']},
+ {zh:['STEP 5 · 终止','“So the final answer is: 558 minutes.”','总结是参数化推理可以完成的动作，不必再检索。'],en:['STEP 5 · Stop','“So the final answer is: 558 minutes.”','Parametric reasoning can produce the summary without another retrieval.']}
 ];
-$$('#storyStepper button').forEach((b,i)=>b.onclick=()=>{$$('#storyStepper button').forEach(x=>x.classList.remove('active'));b.classList.add('active');const d=storyData[i];$('#storyView').innerHTML='<h4>'+d[0]+'</h4><p>'+d[1]+'</p><small>'+d[2]+'</small>'});
-$$('[data-action]').forEach(b=>b.onclick=()=>{const a=b.dataset.action;const out=$('#mdpOutput');const msg={parametric:['继续推理','中间答案来自模型的 parametric knowledge；retrieval cost 不增加。'],retrieve:['检索外部知识','生成文档 dₜ₊₁，再形成中间答案；retrieval cost +1。'],terminate:['进入终止状态','停止生成子问题，输出最终答案。']}[a];out.innerHTML='<strong>'+msg[0]+'</strong>'+msg[1]});
-$$('.tree-node').forEach(n=>n.onclick=()=>{$$('.tree-node').forEach(x=>x.classList.remove('selected'));n.classList.add('selected');$('#treeDetail').textContent=n.dataset.detail});
-function calcReward(){const a=+$('#alpha').value,t=+$('#retrievals').value;$('#alphaOut').textContent=a.toFixed(2);$('#retrievalsOut').textContent=t;$('#rewardOut').textContent='R = '+(1-a*Math.min(5,t)).toFixed(2)}
-$('#alpha').oninput=calcReward;$('#retrievals').oninput=calcReward;calcReward();
+const actionData={
+ parametric:{zh:['继续推理','中间答案来自模型的 parametric knowledge；retrieval cost 不增加。'],en:['Continue reasoning','The intermediate answer comes from parametric knowledge; retrieval cost does not increase.']},
+ retrieve:{zh:['检索外部知识','生成文档 dₜ₊₁，再形成中间答案；retrieval cost +1。'],en:['Retrieve external knowledge','Obtain document dₜ₊₁, then form the intermediate answer; retrieval cost +1.']},
+ terminate:{zh:['进入终止状态','停止生成子问题，输出最终答案。'],en:['Enter the terminal state','Stop generating subqueries and produce the final answer.']}
+};
+const treeDetails=[
+ ['把原问题变成下一步最有用的 atomic subquery。','Turn the original question into the most useful next atomic subquery.'],
+ ['如果模型已经知道电影标题，直接回答可以节省一次检索。','If the model already knows the film titles, a direct answer saves one retrieval.'],
+ ['检索这一步通常是冗余的；它仍被保留来比较成本与正确性。','Retrieval at this step is usually redundant; the branch is retained to compare cost and correctness.'],
+ ['对准确 runtime，内部知识可能不够稳定。','Internal knowledge may be unreliable for exact runtimes.'],
+ ['外部文档提供可核验的 runtime，形成更可靠的中间答案。','External documents provide verifiable runtimes for a more reliable intermediate answer.']
+];
+const mapText={
+ Problem:['问题：LLM 的参数化知识有时过时、不完整或不准确，导致事实性幻觉。','Problem: parametric knowledge may be outdated, incomplete or inaccurate, leading to factual hallucinations.'],
+ Gap:['缺口：复杂问题需要分解，而固定或冗余检索会带来噪声和成本。','Gap: complex questions need decomposition, while fixed or redundant retrieval adds noise and cost.'],
+ Method:['方法：MDP 状态 + 双层动作 + Binary Tree Search + Imitation Learning + Chain of Calibration。','Method: MDP states, two-level actions, binary tree search, imitation learning and a chain of calibration.'],
+ Evidence:['证据：Table 1 的准确率、Table 2 的检索成本、Table 3 的知识边界指标，以及两个消融实验。','Evidence: accuracy in Table 1, retrieval costs in Table 2, knowledge-boundary metrics in Table 3, and two ablation experiments.'],
+ Future:['方向：把按需检索扩展到更多 retriever、长文档与开放式生成。','Future: extend on-demand retrieval to more retrievers, long documents and open-ended generation.'],
+ Limit:['限制：奖励、预算 T、retriever 和答案判定共同影响学习到的边界。','Limit: rewards, budget T, the retriever and answer judgement jointly influence the learned boundary.'],
+ Takeaway:['记忆点：DeepRAG 不是把更多文档塞给模型，而是让模型学会什么时候需要文档。','Takeaway: DeepRAG teaches the model when documents are needed, rather than simply supplying more documents.']
+};
+const levelCopy={
+ beginner:['直觉层 · 先理解问题和主线','Intuition · Understand the problem and main idea first'],
+ intermediate:['机制层 · 查看 MDP、路径和实验','Mechanism · Explore the MDP, trajectories and experiments'],
+ advanced:['研究层 · 展开公式、训练细节和限制','Research · Reveal formulas, training details and limitations']
+};
+function renderStory(){
+ const d=storyData[S.story][S.lang];
+ $('#storyView').innerHTML='<h4>'+d[0]+'</h4><p>'+d[1]+'</p><small>'+d[2]+'</small>';
+ $$('#storyStepper button').forEach((b,i)=>{b.classList.toggle('active',i===S.story);b.setAttribute('aria-pressed',String(i===S.story));});
+}
+function renderAction(){
+ const d=S.action?actionData[S.action][S.lang]:[pick('选择一个动作','Choose an action'),pick('动作会改变状态，并影响总检索成本。','The action changes the state and affects the total retrieval cost.')];
+ $('#mdpOutput').innerHTML='<strong>'+d[0]+'</strong>'+d[1];
+ $$('[data-action]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.action===S.action)));
+}
+function renderTree(){
+ $('#treeDetail').textContent=pick(...treeDetails[S.tree]);
+ $$('.tree-node').forEach((b,i)=>{b.classList.toggle('selected',i===S.tree);b.setAttribute('aria-pressed',String(i===S.tree));b.removeAttribute('data-detail');});
+}
+function calcReward(){
+ const a=+$('#alpha').value,t=+$('#retrievals').value;
+ $('#alphaOut').textContent=a.toFixed(2);$('#retrievalsOut').textContent=t;
+ $('#rewardOut').textContent='R = '+(1-a*Math.min(5,t)).toFixed(2);
+}
 const data={llama:[['CoT',27.69],['CoT-Retrieve',34.90],['Search-R1',36.54],['R1-Searcher++',40.85],['DeepRAG-Imi',39.78],['DeepRAG-RLoff',41.47],['DeepRAG-RLon',42.36]],qwen:[['CoT',19.54],['CoT-Retrieve',29.86],['Search-R1',27.85],['R1-Searcher++',37.94],['DeepRAG-Imi',32.21],['DeepRAG-RLoff',35.72],['DeepRAG-RLon',41.05]]};
-function drawBars(){const vals=data[$('#backbone').value];const max=45;$('#bars').innerHTML=vals.map(x=>'<div class="bar-row"><span>'+x[0]+'</span><div class="bar-track"><div class="bar-fill '+(x[0].startsWith('DeepRAG')?'deep':'')+'" style="width:'+(x[1]/max*100)+'%"></div></div><span class="bar-value">'+x[1].toFixed(2)+'</span></div>').join('')}
-$('#backbone').onchange=drawBars;drawBars();
+function drawBars(){
+ $('#bars').innerHTML=data[$('#backbone').value].map(x=>'<div class="bar-row"><span>'+x[0]+'</span><div class="bar-track"><div class="bar-fill '+(x[0].startsWith('DeepRAG')?'deep':'')+'" style="width:'+(x[1]/45*100)+'%"></div></div><span class="bar-value">'+x[1].toFixed(2)+'</span></div>').join('');
+}
 const tradeData=[['FLARE',28.80,0.00],['DRAGIN',21.20,0.00],['UAR',22.70,.96],['TAARE',23.40,.66],['IterDRAG',15.90,2.25],['Auto-RAG',17.40,4.52],['R1-Searcher++',28.20,.16],['Search-R1',27.70,.51],['DeepRAG-Imi',30.00,.43],['DeepRAG-RLoff',32.70,.28],['DeepRAG-RLon',30.00,.14]];
-function drawTradeoff(){const maxRetrieval=5,maxEM=35;$('#tradePlot').innerHTML=tradeData.map((x,i)=>{const left=(x[2]/maxRetrieval*88+4).toFixed(2),bottom=((x[1]-14)/(maxEM-14)*86+5).toFixed(2),deep=x[0].startsWith('DeepRAG');return '<button class="trade-point '+(deep?'deep':'')+'" style="left:'+left+'%;bottom:'+bottom+'%" title="'+x[0]+'" data-trade="'+i+'"></button>'}).join('');$$('.trade-point').forEach(p=>p.onclick=()=>{const x=tradeData[+p.dataset.trade];$('#tradeDetail').innerHTML='<b>'+x[0]+'</b> · EM '+x[1].toFixed(2)+' · 平均检索 '+x[2].toFixed(2)+' 次/题'})}
-drawTradeoff();
-const mapText={Problem:'问题：LLM 的参数化知识有时过时、不完整或不准确，导致事实性幻觉。',Gap:'缺口：复杂问题需要分解，而固定或冗余检索会带来噪声和成本。',Method:'方法：MDP 状态 + 双层动作 + Binary Tree Search + Imitation Learning + Chain of Calibration。',Evidence:'证据：Table 1 的准确率、Table 2 的检索成本、Table 3 的知识边界指标，以及两个消融实验。',Future:'方向：把按需检索扩展到更多 retriever、长文档与开放式生成。',Limit:'限制：奖励、预算 T、retriever 和答案判定共同影响学习到的边界。',Takeaway:'记忆点：DeepRAG 不是把更多文档塞给模型，而是让模型学会什么时候需要文档。'};
-$$('.map-node').forEach(n=>n.onclick=()=>$('#mapDetail').textContent=mapText[n.dataset.map]);
-$$('.quiz-q button').forEach(b=>b.onclick=()=>{const q=b.parentElement;$$('button',q).forEach(x=>x.classList.remove('correct','wrong'));b.classList.add(b.dataset.answer);$('.answer',q).classList.add('show')});
-const progress=$('#progress');window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;progress.style.width=(scrollY/h*100)+'%'});
-const levelCopy={beginner:'直觉层 · 先理解问题和主线',intermediate:'机制层 · 查看 MDP、路径和实验',advanced:'研究层 · 展开公式、训练细节和限制'};
-$$('.mode button').forEach(b=>b.onclick=()=>{$$('.mode button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.body.classList.remove('mode-beginner','mode-intermediate','mode-advanced');document.body.classList.add('mode-'+b.dataset.level);$('#levelNote').textContent=levelCopy[b.dataset.level]});
-document.body.classList.add('mode-beginner');
-const sections=$$('section,header');const links=$$('.toc a');const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-30% 0px -55% 0px'});sections.forEach(s=>io.observe(s));
+function drawTradeoff(){
+ $('#tradePlot').innerHTML=tradeData.map((x,i)=>{
+  const left=(x[2]/5*88+4).toFixed(2),bottom=((x[1]-14)/(35-14)*86+5).toFixed(2);
+  return '<button type="button" class="trade-point '+(x[0].startsWith('DeepRAG')?'deep':'')+'" style="left:'+left+'%;bottom:'+bottom+'%" data-trade="'+i+'"></button>';
+ }).join('');
+ $$('.trade-point').forEach(b=>b.addEventListener('click',()=>{S.trade=+b.dataset.trade;renderTrade();}));
+}
+function renderTrade(){
+ $('#tradePlot').dataset.axis=pick('平均检索次数','Average retrievals');
+ $('#tradePlot').setAttribute('aria-label',pick('WebQuestions 准确率与平均检索次数散点图','WebQuestions accuracy versus average retrievals'));
+ $$('.trade-point').forEach(b=>{
+  const x=tradeData[+b.dataset.trade],label=x[0]+' · EM '+x[1].toFixed(2)+' · '+pick('平均检索 ','Average retrievals ')+x[2].toFixed(2);
+  b.title=label;b.setAttribute('aria-label',label);b.setAttribute('aria-pressed',String(+b.dataset.trade===S.trade));
+ });
+ if(S.trade===null){$('#tradeDetail').textContent=pick('点击一个点查看方法、EM 与平均检索次数。','Select a point to inspect its method, EM and average retrieval count.');return;}
+ const x=tradeData[S.trade];
+ $('#tradeDetail').innerHTML='<b>'+x[0]+'</b> · EM '+x[1].toFixed(2)+' · '+pick('平均检索 ','Average retrievals ')+x[2].toFixed(2)+pick(' 次/题',' per question');
+}
+function renderMap(){
+ $('#mapDetail').textContent=S.map?pick(...mapText[S.map]):pick('选择一个节点开始整合论文结构。','Choose a node to connect the structure of the paper.');
+ $$('.map-node').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.map===S.map)));
+}
+function renderDepth(){
+ document.body.classList.remove('mode-beginner','mode-intermediate','mode-advanced');
+ document.body.classList.add('mode-'+S.level);
+ $('#levelNote').textContent=pick(...levelCopy[S.level]);
+ $$('.mode button').forEach(b=>{
+  b.classList.toggle('active',b.dataset.level===S.level);
+  b.setAttribute('aria-pressed',String(b.dataset.level===S.level));
+  b.textContent={beginner:pick('直觉','Intuition'),intermediate:pick('机制','Mechanism'),advanced:pick('研究','Research')}[b.dataset.level];
+ });
+ $('.mode').setAttribute('aria-label',pick('学习深度','Learning depth'));
+}
+function applyLanguage(lang){
+ S.lang=lang==='en'?'en':'zh';
+ $$('[data-i18n]').forEach(node=>{const entry=translations[node.dataset.i18n];if(entry)node.textContent=entry[S.lang];});
+ $('.mdp-graph').setAttribute('aria-label',pick('MDP 状态转移图','MDP state transition graph'));
+ $('#backbone').setAttribute('aria-label',pick('实验骨干模型','Experiment backbone model'));
+ $('#alpha').setAttribute('aria-label',pick('检索惩罚系数 α','Retrieval penalty coefficient α'));
+ $('#retrievals').setAttribute('aria-label',pick('检索次数','Retrieval count'));
+ renderStory();renderAction();renderTree();renderTrade();renderMap();renderDepth();
+ $$('.quiz-q').forEach(renderQuiz);
+}
+$$('#storyStepper button').forEach((b,i)=>b.addEventListener('click',()=>{S.story=i;renderStory();}));
+$$('[data-action]').forEach(b=>b.addEventListener('click',()=>{S.action=b.dataset.action;renderAction();}));
+$$('.tree-node').forEach((b,i)=>b.addEventListener('click',()=>{S.tree=i;renderTree();}));
+$('#alpha').addEventListener('input',calcReward);
+$('#retrievals').addEventListener('input',calcReward);
+$('#backbone').addEventListener('change',drawBars);
+$$('.map-node').forEach(b=>b.addEventListener('click',()=>{S.map=b.dataset.map;renderMap();}));
+function renderQuiz(question){
+ const selected=$('button.correct,button.wrong',question),feedback=$('.answer [data-i18n]',question);
+ if(!selected||!feedback)return;
+ const explanation=translations[feedback.dataset.i18n][S.lang];
+ feedback.textContent=selected.dataset.answer==='correct'?explanation:pick('再想一步：','Think again: ')+explanation.slice(pick('正确。','Correct. ').length);
+}
+$$('.quiz-q button').forEach(b=>b.addEventListener('click',()=>{
+ const q=b.closest('.quiz-q');
+ $$('button',q).forEach(x=>{x.classList.remove('correct','wrong');x.setAttribute('aria-pressed',String(x===b));});
+ b.classList.add(b.dataset.answer);
+ $('.answer',q).classList.add('show');
+ renderQuiz(q);
+}));
+$$('.mode button').forEach(b=>b.addEventListener('click',()=>{S.level=b.dataset.level;renderDepth();}));
+['storyView','mdpOutput','treeDetail','tradeDetail','mapDetail'].forEach(id=>$('#'+id).setAttribute('aria-live','polite'));
+calcReward();drawBars();drawTradeoff();
+AtlasPaper.init({
+ shortTitle:'DeepRAG',
+ title:{zh:'DeepRAG · 交互式论文讲解',en:'DeepRAG · Interactive Paper Explainer'},
+ sections:[{id:'glance',zh:'概览',en:'Overview'},{id:'intuition',zh:'直觉',en:'Intuition'},{id:'method',zh:'方法',en:'Method'},{id:'deepdive',zh:'深入',en:'Deep dive'},{id:'evidence',zh:'证据',en:'Evidence'},{id:'critical',zh:'批判',en:'Critique'},{id:'map',zh:'知识图谱',en:'Knowledge map'}],
+ depth:$('.mode'),legacyHeader:$('.topbar'),allowBoth:false,onLanguageChange:applyLanguage
+});
+
 </script>
 </body>
 </html>
