@@ -21,6 +21,8 @@ This repository collects the paper explainer webpages and research maps created 
 - [Self-RAG — Learning to Retrieve, Generate, and Critique through Self-Reflection](papers/self-rag/)
 - [DeepRAG — Thinking to Retrieve Step by Step for Large Language Models](papers/deeprag/)
 
+- [E5-Mistral — Improving Text Embeddings with Large Language Models](papers/e5-mistral/)
+
 - [NV-Embed — Improved Techniques for Training LLMs as Generalist Embedding Models](papers/nv-embed/)
 
 - [Ln local coordination — Lanthanides in Cr- and Zr-based MOFs](papers/ln-local-coordination/)

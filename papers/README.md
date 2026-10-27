@@ -7,6 +7,7 @@ Each explainer is a self-contained visual webpage. The current collection includ
 | RAG — Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks | NeurIPS 2020 | [Open page](rag/) |
 | Self-RAG — Learning to Retrieve, Generate, and Critique through Self-Reflection | ICLR 2024 | [Open page](self-rag/) |
 | DeepRAG — Thinking to Retrieve Step by Step for Large Language Models | ICLR 2026 | [Open page](deeprag/) |
+| E5-Mistral — Improving Text Embeddings with Large Language Models | ACL 2024 | [Open page](e5-mistral/) |
 | NV-Embed — Improved Techniques for Training LLMs as Generalist Embedding Models | ICLR 2025 | [Open page](nv-embed/) |
 | Ln local coordination — Lanthanides in Cr- and Zr-based MOFs | ACS AMI 2024 | [Open page](ln-local-coordination/) |
 
