@@ -9,7 +9,7 @@ Song 等关于 ATZ-BTC-Zn 分离稀土离子的中英双语交互讲解。论文
 - **机制分步**：查看水合反离子、通道、离子交换和开放纳米口袋之间的关系。
 - **实测指标切换**：对比 SI Table S3 的 Langmuir 容量与拟合亲和常数，以及 Table S2 的实际尾矿水捕获率，保留各自的单位和条件。
 - **二元分离与质量守恒**：选择六组论文报告的 SF，再改变进料组成与总吸附比例，观察假设 SF 恒定时两相组成和回收率的变化。计算明确标为教学模型，不是新实验或工艺预测。
-- **原图阅读器**：结合 Figures 1、2、3、6，区分结构、吸附数据、滤液富集与 DFT 结果。
+- **原图阅读器**：结合 Figures 1、2、3、6，区分结构、吸附数据、滤液富集与 DFT 结果。接近该节时预加载原图；切换时显示加载状态，加载失败可重试，避免新图标题下仍显示旧图。
 
 页面特别说明最大 SF = 908 对应非严格相邻的 La/Nd；SF、容量、捕获率和产品纯度各有不同含义。正文与 SI 的实验条件差异保存在证据记录中。
 
@@ -34,3 +34,9 @@ Checked 2026-10-27:
 - Publication target: GitHub Pages from `origin/main`; live content is verified after pushing the validated version.
 
 静态检查、全站回归与本页专项验证均通过；关键排版与原图已目视核对。发布目标为 `origin/main` 的 GitHub Pages，推送后核对线上内容。
+
+## Figure-switching fix (2026-10-27)
+
+The reader preloads nearby figures, swaps decoded images, and shows bilingual loading/retry feedback. A delayed or failed download cannot leave the previous image visible under the newly selected figure caption. Rapid selections display only the last requested figure.
+
+Targeted browser checks passed for delayed downloads, decoded image pixels against each local source image, rapid switching, failed-load retry, language switching during a pending download and 1440/768/390 px layouts. The full repository browser regression and static checker were also rerun. Scientific content and first-publication date are unchanged.
