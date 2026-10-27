@@ -70,6 +70,14 @@ async function eventually(check, label) {
     const recentTotal = Object.keys(full.explainers).filter(pagePath => full.themes.some(theme => theme.p.some(paper => paper.p === pagePath))).length;
     const zhStatus = (matched, total) => matched === total ? '共 ' + total + ' 篇论文已有讲解' : '当前匹配 ' + matched + ' / 共 ' + total + ' 篇讲解';
     const enStatus = (matched, total) => matched === total ? total + ' papers with explainers' : 'Matching ' + matched + ' / ' + total + ' papers with explainers';
+    const defaultStatus = (data, lang = 'zh') => {
+      const entries = data.themes.flatMap(theme => theme.p);
+      const unique = new Set(entries.map(key)).size;
+      const explainers = new Set(entries.filter(paper => paper.p).map(key)).size;
+      return lang === 'zh'
+        ? '已有讲解 ' + explainers + ' 篇 · 论文 ' + unique + ' 篇（去重） · ' + data.themes.length + ' 个主题共 ' + entries.length + ' 条收录'
+        : explainers + ' explainers · ' + unique + ' unique papers · ' + entries.length + ' listings across ' + data.themes.length + ' themes';
+    };
     let current = stale;
     let failure = '';
     let requests = 0;
@@ -102,8 +110,34 @@ async function eventually(check, label) {
       }
       await page.setViewportSize({width: 1440, height: 1000});
     };
-    await page.goto(base + '?explainers=1&qa=catalog');
+    await page.goto(base + '?qa=catalog');
     await eventually(() => only.isEnabled(), 'Initial catalogue loads');
+    assert.equal(await only.isChecked(), false, 'The initial homepage defaults to the complete catalogue');
+    await statusIs(defaultStatus(stale));
+    current = full;
+    await requestAfter(() => page.clock.fastForward(60000));
+    await statusIs(defaultStatus(full));
+    const fullListings = full.themes.reduce((sum, theme) => sum + theme.p.length, 0);
+    assert.equal(await rowCount(), fullListings, 'Default mode renders every theme listing');
+    await screenshotTools('default-zh');
+
+    const extraListing = clone(full);
+    const duplicate = clone(full.themes.find(theme => theme.n === 'AI / ML').p.find(paper => paper.p === './papers/rag/'));
+    duplicate.p = '';
+    duplicate.g = 0;
+    extraListing.themes.find(theme => theme.n === 'Chemistry & Materials').p.push(duplicate);
+    assert.equal(new Set(extraListing.themes.flatMap(theme => theme.p.map(key))).size, new Set(full.themes.flatMap(theme => theme.p.map(key))).size, 'Duplicate fixture adds no new independent paper');
+    current = extraListing;
+    await requestAfter(() => page.clock.fastForward(60000));
+    await statusIs(defaultStatus(extraListing));
+    assert.equal(await rowCount(), fullListings + 1, 'Default count adds a cross-theme listing without adding a unique paper or explainer');
+    current = full;
+    await focusRefresh();
+    await statusIs(defaultStatus(full));
+    assert.equal(await rowCount(), fullListings, 'Removing the duplicate restores default totals');
+
+    current = stale;
+    await requestAfter(() => only.check());
     await statusIs(zhStatus(staleTotal, staleTotal));
     assert.equal(await rowCount(), explainerRows(stale).length, 'Initial stale catalogue omits MOF explainers');
     const documentToken = await page.evaluate(() => (window.__catalogTestDocument = Math.random()));
@@ -233,6 +267,14 @@ async function eventually(check, label) {
         assert.ok(geometry.document <= geometry.viewport + 1, lang + '/' + width + ': no document overflow: ' + JSON.stringify(geometry));
         assert.equal(await rowCount(), fullRows, 'Responsive layout retains all explainers');
         await page.screenshot({path: path.join(screenshots, 'catalog-' + width + '-' + lang + '.png'), fullPage: true});
+        await requestAfter(() => only.uncheck());
+        await statusIs(defaultStatus(full, lang));
+        assert.equal(await rowCount(), fullListings, 'Default responsive layout retains every listing');
+        const defaultGeometry = await page.evaluate(() => ({viewport: innerWidth, document: document.documentElement.scrollWidth}));
+        assert.ok(defaultGeometry.document <= defaultGeometry.viewport + 1, 'default/' + lang + '/' + width + ': no document overflow: ' + JSON.stringify(defaultGeometry));
+        await page.locator('.catalog-tools').screenshot({path: path.join(screenshots, 'catalog-tools-default-' + lang + '-' + width + '.png')});
+        await requestAfter(() => only.check());
+        await statusIs(lang === 'zh' ? zhStatus(fullTotal, fullTotal) : enStatus(fullTotal, fullTotal));
       }
     }
     assert.deepEqual(errors, [], 'No uncaught browser errors');
@@ -277,7 +319,7 @@ async function eventually(check, label) {
     assert.equal(await retryPage.locator('.theme-search input').count(), full.themes.length, 'Subsequent timer updates do not initialize a second set of inputs');
     assert.deepEqual(retryErrors, [], 'Bootstrap recovery has no uncaught errors');
     await retryContext.close();
-    console.log('PASS catalogue: ' + staleTotal + '→' + fullTotal + ' live update, combined searches/counts, clear, language/state, timer/focus/visibility refresh, recent-link focus, shared papers, invalid-data/failure recovery, bootstrap retry, 3 widths');
+    console.log('PASS catalogue: default explainer/unique/listing counts, ' + staleTotal + '→' + fullTotal + ' live update, combined searches/counts, clear, language/state, timer/focus/visibility refresh, recent-link focus, shared papers, invalid-data/failure recovery, bootstrap retry, 3 widths in both modes');
     console.log('PASS screenshots: ' + screenshots);
   } finally {
     await browser.close();

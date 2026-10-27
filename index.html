@@ -271,7 +271,7 @@
           footerLink: '查看仓库 ↗',
           toggle: 'EN',
           toggleAria: 'Switch to English',
-          status: function (n, k) { return '共 ' + n + ' 篇论文，来自 ' + k + ' 张研究地图'; },
+          status: function (n, k, listed, explained) { return '已有讲解 ' + explained + ' 篇 · 论文 ' + n + ' 篇（去重） · ' + k + ' 个主题共 ' + listed + ' 条收录'; },
           matching: function (n) { return n + ' 篇匹配的论文'; },
           explainerMatching: function (n, total) { return n === total ? '共 ' + total + ' 篇论文已有讲解' : '当前匹配 ' + n + ' / 共 ' + total + ' 篇讲解'; },
           clearSearch: '清除搜索',
@@ -317,7 +317,7 @@
           footerLink: 'View repository ↗',
           toggle: '中文',
           toggleAria: '切换到中文',
-          status: function (n, k) { return n + ' papers from ' + k + ' research roadmaps'; },
+          status: function (n, k, listed, explained) { return explained + ' explainers · ' + n + ' unique papers · ' + listed + ' listings across ' + k + ' themes'; },
           matching: function (n) { return n + (n === 1 ? ' matching paper' : ' matching papers'); },
           explainerMatching: function (n, total) { return n === total ? total + (total === 1 ? ' paper with an explainer' : ' papers with explainers') : 'Matching ' + n + ' / ' + total + ' papers with explainers'; },
           clearSearch: 'Clear search',
@@ -531,6 +531,7 @@
       const initializeCatalog = function (data) {
         const byName = {};
         let total = 0;
+        let listingTotal = 0;
         let explainerTotal = 0;
         let revision = JSON.stringify(data);
         const indexCatalog = function (next) {
@@ -556,6 +557,7 @@
             });
           });
           total = Object.keys(listings).length;
+          listingTotal = data.themes.reduce(function (sum, theme) { return sum + theme.p.length; }, 0);
           explainerTotal = Object.keys(sharedPage).length;
         };
         indexCatalog(data);
@@ -565,7 +567,7 @@
           const hasSearch = tokens(globalSearch.value).length > 0 || Object.values(themeQueries).some(function (query) { return tokens(query).length; });
           clearSearch.hidden = !hasSearch;
           if (!hasSearch && !onlyExplainers.checked) {
-            status.textContent = t('status')(total, data.themes.length);
+            status.textContent = t('status')(total, data.themes.length, listingTotal, explainerTotal);
             return;
           }
           const matched = new Set();
