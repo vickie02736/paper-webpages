@@ -96,10 +96,13 @@
     .button:hover { background: rgba(255,255,255,.1); }
     footer { display: flex; justify-content: space-between; gap: 18px; padding: 28px 0 42px; color: var(--muted); font-size: .86rem; border-top: 1px solid var(--line); }
     footer a { color: var(--ink); text-decoration: none; }
-    .catalog-tools { display:flex; gap:14px; align-items:center; margin: 28px 0 16px; }
+    .catalog-tools { display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin: 28px 0 16px; }
     .search-box { display:flex; align-items:center; gap:10px; flex:1; max-width:520px; padding:12px 15px; border:1px solid var(--line); border-radius:14px; background:rgba(255,255,255,.06); color:var(--muted); }
     .search-box input { width:100%; border:0; outline:0; background:transparent; color:var(--ink); font:inherit; }
     .search-box input::placeholder { color:var(--muted); }
+    .explainer-filter { display:inline-flex; align-items:center; gap:8px; min-height:44px; color:var(--ink); font-size:.86rem; cursor:pointer; }
+    .explainer-filter input { width:17px; height:17px; margin:0; accent-color:var(--cyan); }
+    .explainer-filter input:focus-visible { outline:2px solid var(--cyan); outline-offset:3px; }
     .catalog-status { color:var(--muted); font-size:.82rem; }
     .catalog { display:grid; gap:12px; }
     .theme-menu { border:1px solid var(--line); border-radius:22px; background:rgba(255,255,255,.045); overflow:hidden; }
@@ -195,7 +198,8 @@
         </div>
         <div class="catalog-tools">
           <label class="search-box"><span>⌕</span><input id="catalog-search" type="search" data-i18n-placeholder="searchPlaceholder" data-i18n-aria="searchAria" placeholder="搜索全部论文，例如 protein design 或 蛋白设计" aria-label="搜索全部论文"></label>
-          <span id="catalog-status" class="catalog-status" data-i18n="loading">正在加载论文目录…</span>
+          <label class="explainer-filter"><input id="only-explainers" type="checkbox" disabled><span data-i18n="onlyExplainers">仅显示已有讲解</span></label>
+          <span id="catalog-status" class="catalog-status" data-i18n="loading" role="status">正在加载论文目录…</span>
         </div>
         <div id="catalog" class="catalog" aria-live="polite">
           <details class="theme-menu ai" data-theme="AI / ML" data-title-zh="AI 顶会" data-sub-zh="顶会 A 框架研究地图" data-title-en="AI Top Conferences" data-sub-en="A framework map of top AI venues">
@@ -255,6 +259,7 @@
           catalogText: '展开主题即可浏览路线图中的论文。可按标题、方法、子方向、会议或年份搜索，多个词不分先后；主题内搜索会在此基础上进一步筛选。',
           searchPlaceholder: '搜索全部论文，例如 protein design 或 蛋白设计',
           searchAria: '搜索全部论文',
+          onlyExplainers: '仅显示已有讲解',
           themeSearch: '在本主题内搜索…',
           themeSearchAria: '在主题内搜索：',
           loading: '正在加载论文目录…',
@@ -265,6 +270,7 @@
           toggleAria: 'Switch to English',
           status: function (n, k) { return '共 ' + n + ' 篇论文，来自 ' + k + ' 张研究地图'; },
           matching: function (n) { return n + ' 篇匹配的论文'; },
+          explainerMatching: function (n) { return n + ' 篇论文已有讲解'; },
           count: function (shown, total, searching) { return (searching ? shown + ' / ' : '') + total + ' 篇'; },
           original: '原文 ↗',
           explainer: '讲解页 ↗',
@@ -298,6 +304,7 @@
           catalogText: 'Open a theme to browse the papers from the roadmap. Search by title, method, topic, conference, or year; words can appear in any order, and a theme\'s own search narrows the results further.',
           searchPlaceholder: 'Search all papers, e.g. protein design',
           searchAria: 'Search all papers',
+          onlyExplainers: 'Only papers with explainers',
           themeSearch: 'Search within this theme…',
           themeSearchAria: 'Search within theme: ',
           loading: 'Loading paper catalogue…',
@@ -308,6 +315,7 @@
           toggleAria: '切换到中文',
           status: function (n, k) { return n + ' papers from ' + k + ' research roadmaps'; },
           matching: function (n) { return n + (n === 1 ? ' matching paper' : ' matching papers'); },
+          explainerMatching: function (n) { return n + (n === 1 ? ' paper with an explainer' : ' papers with explainers'); },
           count: function (shown, total, searching) { return (searching ? shown + ' / ' : '') + total + ' papers'; },
           original: 'Original ↗',
           explainer: 'Explainer ↗',
@@ -336,6 +344,7 @@
 
       const catalog = document.getElementById('catalog');
       const globalSearch = document.getElementById('catalog-search');
+      const onlyExplainers = document.getElementById('only-explainers');
       const status = document.getElementById('catalog-status');
       const toggle = document.getElementById('lang-toggle');
       const themeRoots = Array.from(document.querySelectorAll('.theme-menu'));
@@ -368,6 +377,7 @@
       let catalogData = null;
       const listings = {};
       const sharedPage = {};
+      const explainerPath = function (paper) { return paper.p || sharedPage[paperKey(paper)] || ''; };
       const groupLabel = function (theme, groupId) { return lang === 'en' ? theme.ge[groupId] : theme.g[groupId]; };
       const categoryText = function (category) { return lang === 'en' ? category.replace('｜', ' — ') : category; };
       const shortName = function (paper) { return lang === 'en' ? (paper.se || paper.s) : paper.s; };
@@ -393,9 +403,11 @@
       const expandState = {saved: {}, search: {}};
       const renderTheme = function (theme, root, globalTerms) {
         const themeTerms = tokens(themeQueries[theme.n]);
-        const searching = globalTerms.length > 0 || themeTerms.length > 0;
+        const searching = globalTerms.length > 0 || themeTerms.length > 0 || onlyExplainers.checked;
         const store = searching ? expandState.search : expandState.saved;
-        const visible = theme.p.filter(function (paper) { return matches(paper, globalTerms) && matches(paper, themeTerms); });
+        const visible = theme.p.filter(function (paper) {
+          return (!onlyExplainers.checked || explainerPath(paper)) && matches(paper, globalTerms) && matches(paper, themeTerms);
+        });
         const groups = {};
         visible.forEach(function (paper) { (groups[paper.g] ||= []).push(paper); });
         root.querySelector('.theme-count').textContent = t('count')(visible.length, theme.p.length, searching);
@@ -413,7 +425,7 @@
           const displayCategory = splitLabel(groupLabel(theme, groupIds[0])).category;
           const topics = groupIds.map(function (groupId) {
             const rows = groups[groupId].map(function (paper) {
-              const pagePath = paper.p || sharedPage[paperKey(paper)] || '';
+              const pagePath = explainerPath(paper);
               const localPage = pagePath && /^\.\//.test(pagePath);
               const summary = lang === 'en' ? paper.e : paper.d;
               const page = pagePath ? '<a href="' + safeUrl(pagePath) + '" target="_blank" rel="noopener">' + esc(t('explainer')) + '</a>' : '<span class="status">' + esc(t('comingSoon')) + '</span>';
@@ -469,6 +481,7 @@
         const url = new URL(window.location.href);
         const q = globalSearch.value.trim();
         if (q) url.searchParams.set('q', q); else url.searchParams.delete('q');
+        if (onlyExplainers.checked) url.searchParams.set('explainers', '1'); else url.searchParams.delete('explainers');
         if (lang === 'en') url.searchParams.set('lang', 'en'); else url.searchParams.delete('lang');
         window.history.replaceState(null, '', url);
       };
@@ -508,7 +521,7 @@
         const shown = {};
         let openBeforeSearch = null;
         const updateStatus = function () {
-          if (!tokens(globalSearch.value).length) {
+          if (!tokens(globalSearch.value).length && !onlyExplainers.checked && !Object.values(themeQueries).some(function (query) { return tokens(query).length; })) {
             status.textContent = t('status')(total, data.themes.length);
             return;
           }
@@ -516,11 +529,11 @@
           Object.keys(shown).forEach(function (name) {
             shown[name].forEach(function (paper) { matched.add(paperKey(paper)); });
           });
-          status.textContent = t('matching')(matched.size);
+          status.textContent = t(onlyExplainers.checked ? 'explainerMatching' : 'matching')(matched.size);
         };
         const renderAll = function () {
           const globalTerms = tokens(globalSearch.value);
-          const searching = globalTerms.length > 0;
+          const searching = globalTerms.length > 0 || onlyExplainers.checked;
           if (searching && !openBeforeSearch) openBeforeSearch = themeRoots.map(function (root) { return root.open; });
           themeRoots.forEach(function (root) {
             const name = root.dataset.theme;
@@ -571,6 +584,11 @@
           renderAll();
           syncUrl();
         });
+        onlyExplainers.addEventListener('change', function () {
+          expandState.search = {};
+          renderAll();
+          syncUrl();
+        });
         themeRoots.forEach(function (root) {
           const name = root.dataset.theme;
           const input = document.createElement('input');
@@ -584,11 +602,14 @@
           root.querySelector('.theme-search').appendChild(input);
         });
         applyStatic();
-        const initialQuery = new URLSearchParams(window.location.search).get('q');
+        const initialParams = new URLSearchParams(window.location.search);
+        const initialQuery = initialParams.get('q');
         if (initialQuery) globalSearch.value = initialQuery;
+        onlyExplainers.checked = initialParams.get('explainers') === '1';
+        onlyExplainers.disabled = false;
         renderAll();
         renderRecent();
-        if (initialQuery) document.getElementById('themes').scrollIntoView();
+        if (initialQuery || onlyExplainers.checked) document.getElementById('themes').scrollIntoView();
       }).catch(function () {
         status.textContent = t('unavailable');
         catalog.innerHTML = '<div class="empty-state">' + esc(t('unavailableText')) + '</div>';
