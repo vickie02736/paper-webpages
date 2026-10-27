@@ -1,6 +1,6 @@
 # Source and evidence ledger
 
-Version: supplied publisher article (11 pages) and original supporting information (12 pages), DOI 10.1021/acsami.4c09445. Checked 2026-10-26. All measured values refer to this version, not subsequent studies.
+Version: supplied publisher article (11 pages) and original supporting information (12 pages), DOI 10.1021/acsami.4c09445. Checked 2026-10-27. All measured values refer to this version, not subsequent studies.
 
 | Page content | Exact location | Conditions, interpretation and limits |
 |---|---|---|
@@ -24,3 +24,7 @@ Version: supplied publisher article (11 pages) and original supporting informati
 | Additional critique | Clearly labeled explainer analysis | Matched-time controls, loading-dependent speciation, competitive experiments and hydrated free energies are suggestions, not paper results |
 
 All atom diagrams are conceptual, not crystal coordinates or measured reaction trajectories. Mass-balance slider values are teaching calculations using specified assumptions, not additional observations or fitted isotherms. The mass-balance equation is an explanatory definition, not a numbered equation claimed from the article.
+
+## Original-figure reading guide
+
+Figures 2, 3, 6 and 7 are cropped from the supplied article, pp. 48540 and 48543, and stored in `assets/figure-*.png`. Only surrounding prose and captions were removed; figure content is unchanged. Attribution, figure number and article page are shown beside each image. The guide distinguishes measured XAFS signals, the proposed structures in Figure 6D–E, and the DFT configuration in Figure 6C. Fourier-transform peak positions in Figures 3 and 7 are uncorrected radial distances, not fitted bond lengths. Distances quoted in the reading guide are from SI Table S4. The 1.0 → 7.0 mg/g Lu comparison is from SI Table S3 and is explicitly mass-normalized.
