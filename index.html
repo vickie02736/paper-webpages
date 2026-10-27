@@ -231,7 +231,7 @@
 
       <section id="recent" class="recent" aria-labelledby="recent-title" hidden>
         <div class="eyebrow" data-i18n="recentEyebrow">近一周的讲解页</div>
-        <h3 id="recent-title" data-i18n="recentTitle">最近新增的交互式讲解</h3>
+        <h3 id="recent-title" data-i18n="recentTitle">最近新增或更新的交互式讲解</h3>
         <div id="recent-list"></div>
       </section>
     </main>
@@ -283,9 +283,9 @@
           alsoSep: '；',
           otherTopics: '其他',
           recentEyebrow: '近一周的讲解页',
-          recentTitle: '最近新增的交互式讲解',
+          recentTitle: '最近新增或更新的交互式讲解',
           openExplainer: '打开讲解页 ↗',
-          addedOn: function (date) { return (date.getUTCMonth() + 1) + ' 月 ' + date.getUTCDate() + ' 日新增'; },
+          updatedOn: function (date) { return (date.getUTCMonth() + 1) + ' 月 ' + date.getUTCDate() + ' 日 ' + date.toLocaleTimeString('en-GB', {hour: '2-digit', minute: '2-digit', timeZone: 'UTC'}) + ' UTC 更新'; },
           unavailable: '论文目录加载失败',
           unavailableText: '无法加载论文目录，请查看仓库 README。'
         },
@@ -328,9 +328,9 @@
           alsoSep: '; ',
           otherTopics: 'Other topics',
           recentEyebrow: 'Explainers from the past week',
-          recentTitle: 'Recently added interactive explainers',
+          recentTitle: 'Recently added or updated interactive explainers',
           openExplainer: 'Open explainer ↗',
-          addedOn: function (date) { return 'Added ' + date.toLocaleDateString('en-GB', {day: 'numeric', month: 'short', timeZone: 'UTC'}); },
+          updatedOn: function (date) { return 'Updated ' + date.toLocaleString('en-GB', {day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'UTC'}) + ' UTC'; },
           unavailable: 'Paper catalogue unavailable',
           unavailableText: 'The catalogue could not be loaded. Please open the repository README.'
         }
@@ -550,24 +550,28 @@
         const recent = document.getElementById('recent');
         const renderRecent = function () {
           const day = 86400000;
-          const today = Math.floor(Date.now() / day) * day;
+          const now = Date.now();
+          const today = Math.floor(now / day) * day;
           const items = Object.keys(data.explainers || {}).map(function (path) {
             const added = new Date(data.explainers[path] + 'T00:00:00Z');
+            const timestamp = (data.explainerUpdates || {})[path];
+            const updated = timestamp ? new Date(timestamp) : added;
+            const latest = !isNaN(updated) && updated >= added ? updated : added;
             let entry = null;
             data.themes.some(function (theme) {
               const paper = theme.p.find(function (p) { return p.p === path; });
               if (paper) entry = {theme: theme, paper: paper};
               return Boolean(paper);
             });
-            return {path: path, added: added, entry: entry};
+            return {path: path, added: added, updated: latest, entry: entry};
           }).filter(function (item) {
-            return item.entry && !isNaN(item.added) && today - item.added.getTime() <= 6 * day;
-          }).sort(function (a, b) { return b.added - a.added; });
+            return item.entry && !isNaN(item.added) && item.updated >= today - 6 * day && item.updated <= now;
+          }).sort(function (a, b) { return b.updated - a.updated || b.added - a.added || a.path.localeCompare(b.path); });
           recent.hidden = !items.length;
           document.getElementById('recent-list').innerHTML = items.map(function (item) {
             const paper = item.entry.paper;
             return '<div class="recent-item"><div><h4 lang="en">' + esc(paper.t) + '</h4><p class="recent-meta"><b>' + esc(shortName(paper)) + '</b> · ' +
-              esc(themeTitle(item.entry.theme.n)) + ' · ' + esc(t('addedOn')(item.added)) + '</p></div>' +
+              esc(themeTitle(item.entry.theme.n)) + ' · <time datetime="' + item.updated.toISOString() + '">' + esc(t('updatedOn')(item.updated)) + '</time></p></div>' +
               '<a class="button" href="' + safeUrl(item.path) + '" target="_blank" rel="noopener">' + esc(t('openExplainer')) + '</a></div>';
           }).join('');
         };

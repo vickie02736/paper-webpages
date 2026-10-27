@@ -7,8 +7,13 @@ When a new explainer is ready:
 1. Add its self-contained page at `papers/<slug>/index.html`.
 2. Find the matching paper object in `references/paper-catalog.json`.
 3. Set its `p` field to `./papers/<slug>/`.
-4. Add `"./papers/<slug>/": "YYYY-MM-DD"` (the date it was published, in UTC) to the top-level `explainers` map. Explainers dated within the last seven days are listed in the homepage's recent-explainers section, newest first; the section hides itself when there are none.
-5. Commit the change and wait for GitHub Pages to rebuild.
+4. Add `"./papers/<slug>/": "YYYY-MM-DD"` (the date it was first published, in UTC) to the top-level `explainers` map. Keep this first-publication date unchanged when updating an existing explainer.
+5. Commit the explainer content and its catalogue entry, then run `node scripts/update-explainer-updates.cjs` from the repository root.
+6. Check the generated catalogue and the homepage, commit the catalogue update, then push both commits and wait for GitHub Pages to rebuild.
+
+The homepage's recent-explainers section shows explainers updated within the last seven UTC calendar days, newest update first. Updates on the same day are ordered by their precise timestamps; the section hides itself when there are none. The top-level `explainerUpdates` map holds these UTC ISO timestamps separately from the first-publication dates in `explainers`.
+
+For later updates, commit the explainer changes first, run `node scripts/update-explainer-updates.cjs`, check and commit the generated catalogue, then push. The script uses the latest Git commit time for each `papers/<slug>/` directory, including its local resources. An explainer with no Git history falls back to its first-publication date at midnight UTC. Commit times earlier than first publication are clamped to that date; invalid paths or first-publication dates stop generation with an error. Uncommitted edits are not included, so run the script after committing the page content.
 
 Within a theme, each paper appears once, under its topic in the roadmap's main categories. The "reading route" branches at the end of each roadmap only re-reference those papers, so they are not added to the catalogue.
 
