@@ -2,9 +2,9 @@
 
 [Open interactive explainer](https://vickie02736.github.io/paper-webpages/papers/ncu1-nanotraps/) · [English version](https://vickie02736.github.io/paper-webpages/papers/ncu1-nanotraps/?lang=en)
 
-中英双语交互讲解页，以用户提供的 7 页正式论文与 47 页补充材料为依据。逐步探索纳米捕获机制、切换正文报告容量与 SI 拟合容量、比较六组二元离子对，并用教学质量平衡计算区分分离因子、回收率与纯度。原图阅读器及可展开细节将论据连接到其适用范围。
+采用 Research Atlas 统一深色主题、无衬线字体、顶部导航与语言控件的中英双语交互讲解页；切换语言保留机制、离子、容量来源、二元离子对、教学滑块、原图及展开状态。以用户提供的 7 页正式论文与 47 页补充材料为依据。逐步探索纳米捕获机制、切换正文报告容量与 SI 拟合容量、比较六组二元离子对，并用教学质量平衡计算区分分离因子、回收率与纯度。原图阅读器及可展开细节将论据连接到其适用范围。
 
-A self-contained bilingual explainer based on the supplied seven-page publisher article and 47-page supplementary information. Explore the mechanism step by step, switch between main-text capacity values and SI fitted capacities, compare six binary ion pairs, and use a teaching mass-balance calculation to distinguish separation factor, recovery and purity. An original-figure reader and expandable details connect each claim to its evidence and scope.
+A static bilingual explainer using the shared Research Atlas dark theme, sans-serif typography, header, section navigation and language controls. Language switching preserves the selected mechanism, ion, capacity source, binary pair, teaching slider, figure and expanded details. Based on the supplied seven-page publisher article and 47-page supplementary information. Explore the mechanism step by step, switch between main-text capacity values and SI fitted capacities, compare six binary ion pairs, and use a teaching mass-balance calculation to distinguish separation factor, recovery and purity. An original-figure reader and expandable details connect each claim to its evidence and scope.
 
 正文第 2 页与 SI Table 3 的容量数值不同，页面分别标注；高分离因子不等于已测得的产品纯度。教学计算与示意图不是新增实验或经过验证的物理模拟。详细来源、条件与差异处理见 [sources.md](sources.md)。
 

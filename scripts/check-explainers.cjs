@@ -11,7 +11,7 @@ const http = require('node:http');
 const {chromium} = require(process.env.PAPER_PLAYWRIGHT_MODULE || 'playwright');
 
 const root = path.resolve(__dirname, '..');
-const slugs = ['rag', 'self-rag', 'deeprag', 'e5-mistral', 'nv-embed', 'ln-local-coordination', 'pmida-mil101'];
+const slugs = fs.readdirSync(path.join(root, 'papers')).filter(slug => fs.existsSync(path.join(root, 'papers', slug, 'index.html'))).sort();
 const screenshots = process.env.PAPER_QA_DIR || path.join(os.tmpdir(), 'paper-webpages-qa');
 fs.mkdirSync(screenshots, {recursive: true});
 let server;
@@ -191,7 +191,7 @@ async function snapshot(page) {
       await denied.close();
       console.log('PASS ' + slug + ': interactions, language/state, 3 widths, denied storage');
     }
-    console.log('PASS all 7 explainers; ' + actions + ' interaction cases; screenshots: ' + screenshots);
+    console.log('PASS all ' + slugs.length + ' explainers; ' + actions + ' interaction cases; screenshots: ' + screenshots);
   } finally {
     await browser.close();
     if (server) await new Promise(resolve => server.close(resolve));
