@@ -65,4 +65,6 @@ The homepage is bilingual. It opens in Chinese; the `EN` / `中文` button in th
 
 Select **Only papers with explainers / 仅显示已有讲解** beside the catalogue search to show papers with an available explainer. This filter combines with the global and theme searches, includes explainers shared across themes, and can be linked directly with `?explainers=1`.
 
+With a search active, the explainer filter shows matching / total explainer counts; **Clear search / 清除搜索** clears global and theme queries while keeping the current filter setting. Published catalogue updates sync automatically while preserving searches, the filter, language and expanded sections; a failed refresh keeps the current results.
+
 The **Explainers from the past week / 近一周的讲解页** section includes newly published and recently updated explainers, ordered by their latest update time, including updates made on the same day. Before publishing, run `node scripts/update-explainer-updates.cjs` after committing the explainer changes to refresh these timestamps from Git history. The original publication dates stay unchanged; see the [catalogue guide](references/paper-catalog-guide.md).

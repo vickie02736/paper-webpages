@@ -2,6 +2,8 @@
 
 The homepage reads [`paper-catalog.json`](paper-catalog.json) and builds the six expandable menus automatically.
 
+It fetches the published catalogue with cache-bypassing requests on initial load, when the explainer filter is toggled, when the page returns to the foreground or the window regains focus, and every 60 seconds while in the foreground. This synchronizes published catalogue data without scanning page directories: new explainers still need a `p` entry and the publication workflow below.
+
 When a new explainer is ready:
 
 1. Add its self-contained page at `papers/<slug>/index.html`.

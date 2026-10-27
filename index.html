@@ -104,6 +104,8 @@
     .explainer-filter input { width:17px; height:17px; margin:0; accent-color:var(--cyan); }
     .explainer-filter input:focus-visible { outline:2px solid var(--cyan); outline-offset:3px; }
     .catalog-status { color:var(--muted); font-size:.82rem; }
+    .clear-search { min-height:36px; padding:6px 11px; border:1px solid var(--line); border-radius:9px; background:transparent; color:var(--cyan); font:inherit; font-size:.82rem; cursor:pointer; }
+    .clear-search:focus-visible { outline:2px solid var(--cyan); outline-offset:3px; }
     .catalog { display:grid; gap:12px; }
     .theme-menu { border:1px solid var(--line); border-radius:22px; background:rgba(255,255,255,.045); overflow:hidden; }
     .theme-menu[open] { background:rgba(255,255,255,.075); }
@@ -200,6 +202,7 @@
           <label class="search-box"><span>⌕</span><input id="catalog-search" type="search" data-i18n-placeholder="searchPlaceholder" data-i18n-aria="searchAria" placeholder="搜索全部论文，例如 protein design 或 蛋白设计" aria-label="搜索全部论文"></label>
           <label class="explainer-filter"><input id="only-explainers" type="checkbox" disabled><span data-i18n="onlyExplainers">仅显示已有讲解</span></label>
           <span id="catalog-status" class="catalog-status" data-i18n="loading" role="status">正在加载论文目录…</span>
+          <button id="clear-search" class="clear-search" type="button" data-i18n="clearSearch" hidden>清除搜索</button>
         </div>
         <div id="catalog" class="catalog" aria-live="polite">
           <details class="theme-menu ai" data-theme="AI / ML" data-title-zh="AI 顶会" data-sub-zh="顶会 A 框架研究地图" data-title-en="AI Top Conferences" data-sub-en="A framework map of top AI venues">
@@ -270,7 +273,8 @@
           toggleAria: 'Switch to English',
           status: function (n, k) { return '共 ' + n + ' 篇论文，来自 ' + k + ' 张研究地图'; },
           matching: function (n) { return n + ' 篇匹配的论文'; },
-          explainerMatching: function (n) { return n + ' 篇论文已有讲解'; },
+          explainerMatching: function (n, total) { return n === total ? '共 ' + total + ' 篇论文已有讲解' : '当前匹配 ' + n + ' / 共 ' + total + ' 篇讲解'; },
+          clearSearch: '清除搜索',
           count: function (shown, total, searching) { return (searching ? shown + ' / ' : '') + total + ' 篇'; },
           original: '原文 ↗',
           explainer: '讲解页 ↗',
@@ -315,7 +319,8 @@
           toggleAria: '切换到中文',
           status: function (n, k) { return n + ' papers from ' + k + ' research roadmaps'; },
           matching: function (n) { return n + (n === 1 ? ' matching paper' : ' matching papers'); },
-          explainerMatching: function (n) { return n + (n === 1 ? ' paper with an explainer' : ' papers with explainers'); },
+          explainerMatching: function (n, total) { return n === total ? total + (total === 1 ? ' paper with an explainer' : ' papers with explainers') : 'Matching ' + n + ' / ' + total + ' papers with explainers'; },
+          clearSearch: 'Clear search',
           count: function (shown, total, searching) { return (searching ? shown + ' / ' : '') + total + ' papers'; },
           original: 'Original ↗',
           explainer: 'Explainer ↗',
@@ -342,10 +347,10 @@
       let lang = urlLang === 'en' || urlLang === 'zh' ? urlLang : (storedLang() === 'en' ? 'en' : 'zh');
       const t = function (key) { return STRINGS[lang][key]; };
 
-      const catalog = document.getElementById('catalog');
       const globalSearch = document.getElementById('catalog-search');
       const onlyExplainers = document.getElementById('only-explainers');
       const status = document.getElementById('catalog-status');
+      const clearSearch = document.getElementById('clear-search');
       const toggle = document.getElementById('lang-toggle');
       const themeRoots = Array.from(document.querySelectorAll('.theme-menu'));
       const esc = function (value) {
@@ -501,33 +506,65 @@
       });
       applyStatic();
 
-      fetch('./references/paper-catalog.json', {cache: 'no-cache'}).then(function (response) {
-        if (!response.ok) throw new Error('catalog');
-        return response.json();
-      }).then(function (data) {
-        catalogData = data;
-        data.tags = data.tags || {};
-        data.venues = data.venues || {};
+      const readCatalog = function () {
+        const url = new URL('./references/paper-catalog.json', window.location.href);
+        url.searchParams.set('v', String(Date.now()));
+        const controller = new AbortController();
+        const timeout = window.setTimeout(function () { controller.abort(); }, 15000);
+        return fetch(url, {cache: 'no-store', signal: controller.signal}).then(function (response) {
+          if (!response.ok) throw new Error('catalog');
+          return response.json();
+        }).then(function (data) {
+          if (!data || !Array.isArray(data.themes) || !data.themes.every(function (theme) {
+            return theme && typeof theme.n === 'string' && Array.isArray(theme.g) && theme.g.every(function (label) { return typeof label === 'string'; }) &&
+              (!theme.ge || (Array.isArray(theme.ge) && theme.ge.length === theme.g.length && theme.ge.every(function (label) { return typeof label === 'string'; }))) &&
+              Array.isArray(theme.p) && theme.p.every(function (paper) {
+                return paper && ['s', 't', 'u', 'm'].every(function (key) { return typeof paper[key] === 'string'; }) &&
+                  Number.isInteger(paper.g) && paper.g >= 0 && paper.g < theme.g.length && (!paper.p || typeof paper.p === 'string');
+              });
+          }) || !themeRoots.every(function (root) {
+            return data.themes.some(function (theme) { return theme.n === root.dataset.theme; });
+          })) throw new Error('catalog');
+          return data;
+        }).finally(function () { window.clearTimeout(timeout); });
+      };
+      const initializeCatalog = function (data) {
         const byName = {};
-        data.themes.forEach(function (theme) {
-          byName[theme.n] = theme;
-          theme.ge = theme.ge || theme.g;
-          theme.p.forEach(function (paper) {
-            const key = paperKey(paper);
-            (listings[key] ||= []).push({theme: theme, groupId: paper.g});
-            if (paper.p && !sharedPage[key]) sharedPage[key] = paper.p;
-            const separator = paper.m.indexOf(' · ');
-            const venue = separator < 0 ? paper.m : paper.m.slice(0, separator);
-            const tag = separator < 0 ? '' : paper.m.slice(separator + 3);
-            paper.haystack = normalize([paper.s, paper.se, paper.m, data.venues[venue], data.tags[tag], paper.t, paper.d, paper.e,
-              theme.g[paper.g], theme.ge[paper.g]].join(' '));
+        let total = 0;
+        let explainerTotal = 0;
+        let revision = JSON.stringify(data);
+        const indexCatalog = function (next) {
+          data = next;
+          catalogData = data;
+          data.tags = data.tags || {};
+          data.venues = data.venues || {};
+          [byName, listings, sharedPage].forEach(function (map) {
+            Object.keys(map).forEach(function (key) { delete map[key]; });
           });
-        });
-        const total = Object.keys(listings).length;
+          data.themes.forEach(function (theme) {
+            byName[theme.n] = theme;
+            theme.ge = theme.ge || theme.g;
+            theme.p.forEach(function (paper) {
+              const key = paperKey(paper);
+              (listings[key] ||= []).push({theme: theme, groupId: paper.g});
+              if (paper.p && !sharedPage[key]) sharedPage[key] = paper.p;
+              const separator = paper.m.indexOf(' · ');
+              const venue = separator < 0 ? paper.m : paper.m.slice(0, separator);
+              const tag = separator < 0 ? '' : paper.m.slice(separator + 3);
+              paper.haystack = normalize([paper.s, paper.se, paper.m, data.venues[venue], data.tags[tag], paper.t, paper.d, paper.e,
+                theme.g[paper.g], theme.ge[paper.g]].join(' '));
+            });
+          });
+          total = Object.keys(listings).length;
+          explainerTotal = Object.keys(sharedPage).length;
+        };
+        indexCatalog(data);
         const shown = {};
         let openBeforeSearch = null;
         const updateStatus = function () {
-          if (!tokens(globalSearch.value).length && !onlyExplainers.checked && !Object.values(themeQueries).some(function (query) { return tokens(query).length; })) {
+          const hasSearch = tokens(globalSearch.value).length > 0 || Object.values(themeQueries).some(function (query) { return tokens(query).length; });
+          clearSearch.hidden = !hasSearch;
+          if (!hasSearch && !onlyExplainers.checked) {
             status.textContent = t('status')(total, data.themes.length);
             return;
           }
@@ -535,16 +572,16 @@
           Object.keys(shown).forEach(function (name) {
             shown[name].forEach(function (paper) { matched.add(paperKey(paper)); });
           });
-          status.textContent = t(onlyExplainers.checked ? 'explainerMatching' : 'matching')(matched.size);
+          status.textContent = t(onlyExplainers.checked ? 'explainerMatching' : 'matching')(matched.size, explainerTotal);
         };
-        const renderAll = function () {
+        const renderAll = function (preserveOpen) {
           const globalTerms = tokens(globalSearch.value);
           const searching = globalTerms.length > 0 || onlyExplainers.checked;
           if (searching && !openBeforeSearch) openBeforeSearch = themeRoots.map(function (root) { return root.open; });
           themeRoots.forEach(function (root) {
             const name = root.dataset.theme;
             shown[name] = renderTheme(byName[name], root, globalTerms);
-            if (searching) root.open = shown[name].length > 0;
+            if (searching && !preserveOpen) root.open = shown[name].length > 0;
             root.classList.toggle('no-match', searching && !shown[name].length);
           });
           if (!searching && openBeforeSearch) {
@@ -574,22 +611,67 @@
             return item.entry && !isNaN(item.added) && item.updated >= today - 6 * day && item.updated <= now;
           }).sort(function (a, b) { return b.updated - a.updated || b.added - a.added || a.path.localeCompare(b.path); });
           recent.hidden = !items.length;
-          document.getElementById('recent-list').innerHTML = items.map(function (item) {
+          const recentList = document.getElementById('recent-list');
+          const focused = document.activeElement;
+          const focusHref = recentList.contains(focused) ? focused.getAttribute('href') : null;
+          const html = items.map(function (item) {
             const paper = item.entry.paper;
             return '<div class="recent-item"><div><h4 lang="en">' + esc(paper.t) + '</h4><p class="recent-meta"><b>' + esc(shortName(paper)) + '</b> · ' +
               esc(themeTitle(item.entry.theme.n)) + ' · <time datetime="' + item.updated.toISOString() + '">' + esc(t('updatedOn')(item.updated)) + '</time></p></div>' +
               '<a class="button" href="' + safeUrl(item.path) + '" target="_blank" rel="noopener">' + esc(t('openExplainer')) + '</a></div>';
           }).join('');
+          if (recentList.innerHTML !== html) {
+            recentList.innerHTML = html;
+            if (focusHref) {
+              const replacement = Array.from(recentList.querySelectorAll('a')).find(function (node) { return node.getAttribute('href') === focusHref; });
+              if (replacement) replacement.focus({preventScroll: true});
+            }
+          }
         };
         rerender = function () {
-          themeRoots.forEach(function (root) {
-            const name = root.dataset.theme;
-            shown[name] = renderTheme(byName[name], root, tokens(globalSearch.value));
-          });
-          updateStatus();
+          renderAll(true);
           renderRecent();
         };
+        let refreshing = null;
+        const refreshCatalog = function () {
+          if (refreshing) return refreshing;
+          refreshing = readCatalog().then(function (next) {
+            const nextRevision = JSON.stringify(next);
+            if (nextRevision === revision) { renderRecent(); return; }
+            const previouslyEmpty = themeRoots.map(function (root) { return !shown[root.dataset.theme].length; });
+            const focused = document.activeElement;
+            const focusKey = focused && focused.closest('.paper-groups') ? focused.dataset.key : null;
+            const focusHref = focused && focused.closest('.paper-row') ? focused.getAttribute('href') : null;
+            const focusTheme = focused && focused.closest('.theme-menu');
+            const scroll = {x: window.scrollX, y: window.scrollY};
+            indexCatalog(next);
+            revision = nextRevision;
+            rerender();
+            themeRoots.forEach(function (root, i) {
+              if (onlyExplainers.checked && previouslyEmpty[i] && shown[root.dataset.theme].length) root.open = true;
+            });
+            if (focusTheme && (focusKey || focusHref)) {
+              const selector = focusKey ? '.group-toggle' : '.paper-actions a';
+              const replacement = Array.from(focusTheme.querySelectorAll(selector)).find(function (node) {
+                return focusKey ? node.dataset.key === focusKey : node.getAttribute('href') === focusHref;
+              });
+              if (replacement) replacement.focus({preventScroll: true});
+            }
+            window.scrollTo(scroll.x, scroll.y);
+          }).catch(function () {
+            // Keep the current catalogue and filters available during a network failure.
+          }).finally(function () { refreshing = null; });
+          return refreshing;
+        };
         globalSearch.addEventListener('input', function () {
+          expandState.search = {};
+          renderAll();
+          syncUrl();
+        });
+        clearSearch.addEventListener('click', function () {
+          globalSearch.value = '';
+          Object.keys(themeQueries).forEach(function (name) { delete themeQueries[name]; });
+          themeRoots.forEach(function (root) { root.querySelector('.theme-search input').value = ''; });
           expandState.search = {};
           renderAll();
           syncUrl();
@@ -598,6 +680,7 @@
           expandState.search = {};
           renderAll();
           syncUrl();
+          refreshCatalog();
         });
         themeRoots.forEach(function (root) {
           const name = root.dataset.theme;
@@ -607,6 +690,7 @@
             themeQueries[name] = input.value;
             expandState.search = {};
             shown[name] = renderTheme(byName[name], root, tokens(globalSearch.value));
+            root.classList.toggle('no-match', !shown[name].length);
             updateStatus();
           });
           root.querySelector('.theme-search').appendChild(input);
@@ -619,11 +703,23 @@
         onlyExplainers.disabled = false;
         renderAll();
         renderRecent();
+        document.addEventListener('visibilitychange', function () { if (!document.hidden) refreshCatalog(); });
+        window.addEventListener('focus', refreshCatalog);
+        window.addEventListener('pageshow', function (event) { if (event.persisted) refreshCatalog(); });
+        window.setInterval(function () { if (!document.hidden) refreshCatalog(); }, 60000);
         if (initialQuery || onlyExplainers.checked) document.getElementById('themes').scrollIntoView();
-      }).catch(function () {
-        status.textContent = t('unavailable');
-        catalog.innerHTML = '<div class="empty-state">' + esc(t('unavailableText')) + '</div>';
-      });
+      };
+      let starting = null;
+      const loadCatalog = function () {
+        if (starting || catalogData || document.hidden) return;
+        starting = readCatalog().then(initializeCatalog).catch(function () {
+          status.textContent = t('unavailable');
+          window.setTimeout(loadCatalog, 60000);
+        }).finally(function () { starting = null; });
+      };
+      document.addEventListener('visibilitychange', function () { if (!document.hidden && !catalogData) loadCatalog(); });
+      window.addEventListener('focus', function () { if (!catalogData) loadCatalog(); });
+      loadCatalog();
     }());
   </script>
 </body>
