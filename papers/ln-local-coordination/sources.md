@@ -1,6 +1,6 @@
 # Source and evidence ledger
 
-Version: supplied publisher article (11 pages) and original supporting information (12 pages), DOI 10.1021/acsami.4c09445. Checked 2026-10-27. All measured values refer to this version, not subsequent studies.
+Version: supplied publisher article (11 pages) and original supporting information (12 pages), DOI 10.1021/acsami.4c09445. Checked 2026-10-28. All measured values refer to this version, not subsequent studies.
 
 | Page content | Exact location | Conditions, interpretation and limits |
 |---|---|---|
@@ -31,7 +31,16 @@ Figures 2, 3, 6 and 7 are cropped from the supplied article, pp. 48540 and 48543
 
 ## Site-lab structure audit
 
-On 27 October 2026, the material-selector diagrams were compared against the supplied article Figure 1 (p. 48538), Figure 4 (p. 48540), Figure 5 (p. 48541), and Figure 6 (p. 48543). The earlier teaching schematic incorrectly reused a four-metal motif for every material. It has been replaced with: (1) a three-metal [Cr3O] oxo-trimer motif for Cr-MIL-101 and Cr-MIL-101-NH2; (2) a six-metal [Zr6O4(OH)4] oxo-cluster projection for UiO-66, UiO-66-NH2-ideal, UiO-66-NH2-defective, UiO-66-NH-PAA and UiO-68-NH2; (3) a longer terphenyl-linker cue for UiO-68-NH2; (4) a persistent missing-linker cue for the defective sample; and (5) an amide-linked PAA cue, –NH–CO–CH2–P(O)(OH)2, attached to the linker rather than directly to the node. The drawings remain simplified local schematics, not full unit cells or crystallographic coordinates. Green Ln–O lines terminate at explicit O donor markers; dashed lines indicate neighbor relations.
+Recalibrated on 28 October 2026 against Figure 1 (p. 48538), Figure 4 (p. 48541), Figure 5 (p. 48542), Figure 6 (p. 48543), §2.5, §3.1 and §3.3–3.6, and SI Table S4. This replaces the earlier 27 October schematic, which still represented the Zr6 node as a ring, omitted atoms in the PAA graft, and conflated a full-node picture with a local binding motif.
+
+The material reference now uses unchanged crops of original Figure 1A (`assets/structure-uio.png`) and Figure 1B (`assets/structure-mil101.png`), preserving framework, node and linker insets. All seven selector entries have a separate material-identity summary: [Cr3O]7+ trimers with BDC/amino-BDC for the Cr materials; octahedral [Zr6O4(OH)4]12+ nodes for the UiO family; amino-terphenyl dicarboxylate (three aromatic rings) for UiO-68; and the PAA amide chain linker–NH–C(=O)–CH2–P(O)(OH)2. The condensed chain in the contact diagram represents the complete C/N connectivity, rather than an N–P bond. The article's structural Figure 1A PAA inset is itself schematic; the full amide chain follows the explicit formula in §2.5 and the coupling description in §3.1.
+
+The interactive graphic is now a separate, explicitly selected monodentate candidate: M–O–Ln (Figure 4A/5A, M = one Cr/Zr within the larger node) or P–O–Ln (Figure 6E). It does not redraw the complete cluster. Other mono-/bidentate species may coexist; this fixed illustration neither establishes exclusive speciation nor reproduces crystal coordinates. PAA shows three P oxygen positions, only one selected surface O contacts Ln, and hydrogen/protonation, formal charge and remaining ligands are not exhaustively drawn. Water O are incomplete reminders and do not specify hydration coordination number. The static DFT structure in Figure 6C is a separate model and is not substituted for the Figure 6E XAFS candidate.
+
+Steps 1–2 move the illustrated hydrated Ln toward a surface donor without adding a surface bond; step 3 adds exactly one green Ln–O contact; step 4 adds a dashed Ln···M or Ln···P scattering-neighbor path. The node path corresponds to the same M connected to the donor O; PAA targets P rather than Zr. The weaker measured Gd–Zr contribution is retained in explanatory text as possible residual node binding. Reading depth does not change the chosen contact motif. These stages explain the concept and are not a measured reaction trajectory.
+
+All 21 material/element combinations retain the Table S4 evidence coverage. Unmeasured combinations are explicitly identified as extrapolations; Nd/Lu–PAA labels follow the selected element without presenting the measured Gd–P evidence as their own. Defective/near-ideal sample summaries use average BDC/node values (5.8/6.0), not a drawn one-defect-per-node count. UiO-68 has no BDC/node value in Table 1; its longer linker is an identity, not a numerical linker/node ratio.
+
 ## Geometry audit
 
 The four geometry cards were checked against the captions and drawings in article Figures 4 and 5. Their topology is: A, monodentate mononuclear (M–O–Ln); B, bidentate mononuclear edge-sharing; C, bidentate binuclear corner-sharing with the two M–O vectors pointing away from one another; and D, bidentate binuclear corner-sharing with the two M–O vectors pointing toward one another. Here M is Cr or Zr and O is the surface donor oxygen contacting Ln. These cards are candidate local topologies, not complete oxo-cluster structures or crystallographic coordinates; the PAA phosphonate site is discussed separately because it has one P center.
