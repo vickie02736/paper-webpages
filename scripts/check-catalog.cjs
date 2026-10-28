@@ -268,7 +268,8 @@ async function eventually(check, label) {
     await focusRefresh();
     await statusIs(enStatus(fullTotal, fullTotal));
     assert.equal(await rowCount(), fullRows + 1, 'Shared paper appears in both themes');
-    const sharedHref = new URL(await page.locator('[data-theme="Chemistry & Materials"] .paper-row .paper-actions a').last().getAttribute('href'), page.url());
+    const sharedRow = page.locator('[data-theme="Chemistry & Materials"] .paper-row').filter({hasText: 'Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks'});
+    const sharedHref = new URL(await sharedRow.locator('.paper-actions a').last().getAttribute('href'), page.url());
     assert.ok(sharedHref.pathname.endsWith('/papers/rag/'), 'Shared listing reuses its explainer');
     assert.equal(sharedHref.searchParams.get('lang'), 'en', 'Shared explainer link carries the current language');
     current = updated;
