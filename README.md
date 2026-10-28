@@ -32,6 +32,8 @@ This repository collects the paper explainer webpages and research maps created 
 - [ATZ-BTC-Zn — Ion-exchange-assisted separation of adjacent rare earths](papers/atz-btc-zn/)
 - [Hans-LanM dimer — Enhanced rare-earth separation with a metal-sensitive lanmodulin dimer](papers/hans-lanm-dimer/)
 
+- [MOFTransformer — Multimodal pre-training for universal MOF transfer learning](papers/moftransformer/)
+
 ## Repository layout
 
 ```text
