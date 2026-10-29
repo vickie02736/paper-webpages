@@ -11,6 +11,7 @@
 | Page claim or visual | Evidence location | Interpretation boundary |
 |---|---|---|
 | CALF-20 contains Zn-connected 1,2,4-triazole layers with oxalate pillars; dmc topology; LCD ≈ 4.3 Å; PLD ≈ 3 Å | Article p. 2, Fig. 1 and adjacent text | The hero and structure drawings are labelled teaching schematics; they are not crystallographic coordinates. |
+| Page diagrams separate the layered framework from the dmc abstraction | Article p. 2, Fig. 1a–b | Cyan/pink/orange marks in the layered sketch identify Zn, triazolate linkers and oxalate pillars; the red/green/cyan inset preserves the Fig. 1b metal-node, organic-node and linker-branch convention as an abstract connectivity diagram. |
 | BET area 550 m² g⁻¹; simulated and measured N₂ at 77 K agree | Article p. 2, Fig. 2a | Agreement supports crystallinity/activation under the reported protocol; it does not validate every flexible-state assumption. |
 | CO₂ uptake at about 0.1–0.15 atm: ≈0.4, 0.7, 1.3, 1.9, 3.3 mmol g⁻¹ at 387, 365, 343, 323, 273 K | Article p. 2, Fig. 2b; workbook Figure 2b sheet | Values are representative points quoted by the authors, not a digitised replacement for the full isotherms. |
 | Rigid GCMC underpredicts at >≈150 mbar, especially 273 K | Article p. 2–3, discussion around Fig. 2 | The authors use this sign of the discrepancy to motivate a flexibility hypothesis; it is not, alone, proof of a mechanism. |
