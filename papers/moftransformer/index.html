@@ -28,11 +28,17 @@
 .mof-page .stepper button,.mof-page .tabs button{border:1px solid var(--line);background:#ffffff05;color:var(--muted);border-radius:11px;padding:9px 12px;cursor:pointer}
 .mof-page .stepper button.active,.mof-page .tabs button.active{border-color:var(--cyan);background:#7de3ff18;color:var(--ink)}
 .mof-page .step-view{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch}
-.mof-page .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;align-items:center}
-.mof-page .flow .node{min-height:104px;display:grid;place-items:center;text-align:center;padding:10px 7px;border:1px solid var(--line);border-radius:14px;background:#0b1729}
+.mof-page .flow{display:flex;align-items:center;gap:8px;min-width:0}
+.mof-page .flow .branch-stack{display:grid;gap:8px;flex:1.25 1 0;min-width:0}
+.mof-page .flow .node{flex:1 1 0;min-width:0;min-height:104px;display:grid;place-items:center;text-align:center;padding:10px 7px;border:1px solid var(--line);border-radius:14px;background:#0b1729}
+.mof-page .flow .node.active{border-color:var(--cyan);background:#7de3ff18;box-shadow:0 0 0 2px #7de3ff22}
+.mof-page .flow .source-node{flex:.8 1 0}
+.mof-page .flow .token-node{flex:1.45 1 0}
+.mof-page .flow .encoder-node{flex:1.2 1 0}
+.mof-page .flow .head-node{flex:1 1 0}
 .mof-page .flow .node strong{display:block;color:var(--cyan);font-size:16px}
 .mof-page .flow .node small{color:var(--muted);font-size:11px;line-height:1.35}
-.mof-page .flow .arrow{color:var(--cyan);text-align:center;font-size:23px}
+.mof-page .flow .arrow{flex:0 0 auto;color:var(--cyan);text-align:center;font-size:23px}
 .mof-page .detail{padding:20px;border-radius:16px;background:#0b1729;border-left:4px solid var(--cyan)}
 .mof-page .detail h3{font-size:25px}
 .mof-page .detail dl{display:grid;grid-template-columns:110px 1fr;gap:8px;margin:16px 0 0}
@@ -78,7 +84,7 @@
 .mof-page .bilingual-note strong{display:block;color:var(--cyan);margin-bottom:5px}
 .mof-page .mof-caption{font-size:12px;color:var(--muted);margin:8px 2px 0}
 @media(max-width:900px){.mof-page .hero{grid-template-columns:1fr}.mof-page .step-view,.mof-page .result-grid{grid-template-columns:1fr}.mof-page .limits{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.mof-page .hero-stats,.mof-page .grid3,.mof-page .grid2,.mof-page .bilingual-note{grid-template-columns:1fr}.mof-page .flow{grid-template-columns:1fr;gap:8px}.mof-page .flow .arrow{transform:rotate(90deg)}.mof-page .bar-row{grid-template-columns:118px 1fr 58px;font-size:12px}.mof-page .attn-line{grid-template-columns:125px 1fr 54px;font-size:12px}.mof-page .limits{grid-template-columns:1fr}}
+@media(max-width:640px){.mof-page .hero-stats,.mof-page .grid3,.mof-page .grid2,.mof-page .bilingual-note{grid-template-columns:1fr}.mof-page .flow{display:flex;flex-direction:column;gap:8px}.mof-page .flow .branch-stack,.mof-page .flow .node,.mof-page .flow .arrow{width:100%}.mof-page .flow .arrow{transform:rotate(90deg)}.mof-page .bar-row{grid-template-columns:118px 1fr 58px;font-size:12px}.mof-page .attn-line{grid-template-columns:125px 1fr 54px;font-size:12px}.mof-page .limits{grid-template-columns:1fr}}
 </style>
 <link rel="stylesheet" href="../../assets/paper.css">
 <style>
@@ -244,9 +250,20 @@ const walkData=[
 ];
 function renderWalk(){
  const d=walkData[state.walk];
- document.getElementById('walkFlow').innerHTML=[
-  ['unique atoms','unique atoms'],['atom graph','atom graph'],['[CLS] + patches','[CLS] + patches'],['property head','property head'],['prediction','prediction']
- ].map((x,i)=>'<div class="node'+(i===state.walk?' active':'')+'"><strong>'+x[0]+'</strong><small>'+x[1]+'</small></div>'+((i<4)?'<div class="arrow">→</div>':'')).join('');
+ const active=(condition)=>condition?' active':'';
+ document.getElementById('walkFlow').innerHTML=
+  '<div class="node source-node'+active(state.walk===0)+'"><strong>'+q('MOF 结构','MOF structure')+'</strong><small>'+q('周期晶体输入','periodic crystal input')+'</small></div>'+
+  '<div class="arrow">→</div>'+
+  '<div class="branch-stack">'+
+    '<div class="node local-branch'+active(state.walk===0||state.walk===1)+'"><strong>'+q('局部分支','Local branch')+'</strong><small>'+q('唯一原子 → 原子图','unique atoms → atom graph')+'</small></div>'+
+    '<div class="node global-branch'+active(state.walk===1)+'"><strong>'+q('全局分支','Global branch')+'</strong><small>'+q('CH₄ 网格 → 216 个 patch','CH₄ grid → 216 patches')+'</small></div>'+
+  '</div>'+
+  '<div class="arrow">→</div>'+
+  '<div class="node token-node'+active(state.walk===2)+'"><strong>'+q('完整 token 序列','Full token sequence')+'</strong><small>[CLS] · atom tokens · [SEP] · 216 patches · [VOL]</small></div>'+
+  '<div class="arrow">→</div>'+
+  '<div class="node encoder-node'+active(state.walk>=2)+'"><strong>'+q('Transformer 编码器','Transformer encoder')+'</strong><small>12 blocks · H = 768 · A = 12</small></div>'+
+  '<div class="arrow">→</div>'+
+  '<div class="node head-node'+active(state.walk===3)+'"><strong>'+q('[CLS] → MLP 性质头','[CLS] → MLP property head')+'</strong><small>'+q('迁移到目标性质','transfer to a target property')+'</small></div>';
  document.getElementById('walkDetail').innerHTML='<div class="eyebrow">'+q('步骤 '+(state.walk+1)+' / 4','STEP '+(state.walk+1)+' / 4')+'</div><h3>'+q(d.title[0],d.title[1])+'</h3><p>'+q(d.body[0],d.body[1])+'</p><dl><dt>'+q('证据','Evidence')+'</dt><dd>'+q(d.evidence[0],d.evidence[1])+'</dd></dl>';
  document.querySelectorAll('#walkSteps button').forEach(b=>b.classList.toggle('active',+b.dataset.walk===state.walk));
 }
