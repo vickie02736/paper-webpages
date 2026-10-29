@@ -30,6 +30,8 @@ This repository collects the paper explainer webpages and research maps created 
 - [NCU-1 nanotraps — Rationally designed nanotrap structures for efficient separation of rare earth elements over a single step](papers/ncu1-nanotraps/)
 - [PMIDA–MIL-101 — Rare-earth adsorption and ligand loading](papers/pmida-mil101/)
 
+- [CALF-20 flexibility — Gas adsorption and framework flexibility](papers/calf20-flexibility/)
+
 - [LanM fixed-bed separation — Bridging Hydrometallurgy and Biochemistry](papers/lanm-protein-process/)
 
 ## Repository layout
