@@ -23,6 +23,6 @@ First publication date: 2026-10-27 (UTC). Publication target: GitHub Pages from 
 
 ## Validation
 
-2026-10-29: the page checker passed with zero warnings. The original-figure reader now exposes loading, failure, and ready states, ignores stale rapid-switch loads, announces status changes, and provides a bilingual reset action. The full repository browser regression and focused checks cover Chinese/English, language and state persistence, blocked storage, keyboard input, figure states, image failure handling, and 1440/768/390 px layouts. Original-figure crops and representative desktop/tablet/phone screenshots were visually inspected.
+2026-10-29: the page checker passed with zero warnings. The original-figure reader now exposes loading, failure, and ready states, ignores stale rapid-switch loads, announces status changes, and provides a bilingual reset action. The chromatography panel now explains “wild type” when the WT label is clicked, with keyboard dismissal and language-aware text. The full repository browser regression and focused checks cover Chinese/English, language and state persistence, blocked storage, keyboard input, figure states, image failure handling, glossary state, and 1440/768/390 px layouts. Original-figure crops and representative desktop/tablet/phone screenshots were visually inspected.
 
 All core content and interactions use local assets; no runtime CDN is required.
