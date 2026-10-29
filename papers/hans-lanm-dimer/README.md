@@ -23,6 +23,6 @@ First publication date: 2026-10-27 (UTC). Publication target: GitHub Pages from 
 
 ## Validation
 
-2026-10-27: the full page checker passed with zero warnings. The repository browser regression passed for all 10 explainers (1,327 interaction cases), including Chinese/English, language and state persistence, blocked storage and 1440/768/390 px layouts. Focused browser checks verified keyboard input, the 3 mM preset, WT/R100K product values, mechanism selection, figure and quiz state, expanded details, header clearance at anchors and the homepage English link. Original-figure crops and representative desktop/tablet/phone screenshots were visually inspected.
+2026-10-29: the page checker passed with zero warnings. The original-figure reader now exposes loading, failure, and ready states, ignores stale rapid-switch loads, announces status changes, and provides a bilingual reset action. The full repository browser regression and focused checks cover Chinese/English, language and state persistence, blocked storage, keyboard input, figure states, image failure handling, and 1440/768/390 px layouts. Original-figure crops and representative desktop/tablet/phone screenshots were visually inspected.
 
 All core content and interactions use local assets; no runtime CDN is required.
