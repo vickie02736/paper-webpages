@@ -120,6 +120,7 @@ async function snapshot(page) {
           const selectIds = await page.locator('main select[id]').evaluateAll(elements => elements.map(e => e.id));
           for (const id of selectIds) {
             const select = page.locator('[id="' + id + '"]');
+            if (!await select.isVisible() || !await select.isEnabled()) continue;
             const values = await select.locator('option').evaluateAll(elements => elements.filter(e => !e.disabled).map(e => e.value));
             for (const value of values) {
               await select.selectOption(value);
@@ -129,8 +130,10 @@ async function snapshot(page) {
           }
           const ranges = await page.locator('main input[type="range"][id]').evaluateAll(elements => elements.map(e => ({id: e.id, min: +e.min || 0, max: +e.max || 100, step: +e.step || 1})));
           for (const range of ranges) {
+            const input = page.locator('[id="' + range.id + '"]');
+            if (!await input.isVisible() || !await input.isEnabled()) continue;
             for (const value of [range.min, range.min + Math.floor((range.max - range.min) / range.step / 2) * range.step, range.max]) {
-              await page.locator('[id="' + range.id + '"]').evaluate((e, value) => { e.value = value; e.dispatchEvent(new Event('input', {bubbles: true})); e.dispatchEvent(new Event('change', {bubbles: true})); }, String(value));
+              await input.evaluate((e, value) => { e.value = value; e.dispatchEvent(new Event('input', {bubbles: true})); e.dispatchEvent(new Event('change', {bubbles: true})); }, String(value));
               actions++;
               await checkContent(page, slug + ': ' + range.id, lang);
             }

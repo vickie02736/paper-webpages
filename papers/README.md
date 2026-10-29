@@ -14,6 +14,7 @@ Each explainer is a static visual webpage using the shared Research Atlas readin
 | PMIDA–MIL-101 — Rare-earth adsorption and ligand loading | ACS AMI 2026 | [Open page](pmida-mil101/) |
 | CALF-20 flexibility — Gas adsorption and framework flexibility | Nature Communications 2024 | [Open page](calf20-flexibility/) |
 | LanM fixed-bed separation — Bridging Hydrometallurgy and Biochemistry | ACS Central Science 2021 | [Open page](lanm-protein-process/) |
+| MOFTransformer — A multi-modal pre-training transformer for universal transfer learning in metal–organic frameworks | Nature Machine Intelligence 2023 | [Open page](moftransformer/) |
 
 Opening these pages does not require ChatGPT sign-in. Each supports Chinese and English, including diagrams and interactive feedback. Ln local coordination and PMIDA–MIL-101 also offer parallel bilingual reading.
 

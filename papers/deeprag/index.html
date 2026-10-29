@@ -32,9 +32,9 @@ section{max-width:1200px;margin:0 auto;padding:64px 6vw}.section-head{display:fl
 .takeaways{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.take{padding:16px;border-radius:16px;background:#fff;border:1px solid var(--line);font-size:13px}.take b{display:block;color:var(--blue);font-size:20px;margin-bottom:5px}
 .quiz{display:grid;gap:12px}.quiz-q{padding:17px;border:1px solid var(--line);border-radius:16px;background:#fff}.quiz-q p{margin:0 0 9px;font-size:14px;font-weight:700}.quiz-q button{padding:8px 11px;border-radius:9px;background:#f0f2f8;color:var(--muted);font-size:12px;margin:3px}.quiz-q button.correct{background:#dff7f1;color:#0a796d}.quiz-q button.wrong{background:#ffe5ec;color:#ad3e61}.answer{display:none;color:var(--muted);font-size:12px;margin-top:8px}.answer.show{display:block}
 footer{padding:35px 6vw 58px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);max-width:1200px;margin:0 auto}footer a{color:var(--blue)}
-.source{font-size:11px;color:var(--muted);margin-top:14px}.source a{color:var(--blue);text-decoration:none}.only-advanced{display:none}.mode-advanced .only-advanced{display:block}.mode-beginner .formula{display:none}.mode-beginner .calibration{display:none}.mode-beginner .only-advanced{display:none!important}.mode-intermediate .only-advanced{display:none!important}
+.source{font-size:11px;color:var(--muted);margin-top:14px}.source a{color:var(--blue);text-decoration:none}.bar-axis{display:grid;grid-template-columns:130px 1fr 50px;gap:10px;margin-top:8px;font-size:10px;color:var(--muted)}.bar-axis>div{display:flex;justify-content:space-between}.only-advanced{display:none}.mode-advanced .only-advanced{display:block}.mode-beginner .formula{display:none}.mode-beginner .calibration{display:none}.mode-beginner .only-advanced{display:none!important}.mode-intermediate .only-advanced{display:none!important}
 @media(max-width:950px){.shell{display:block}aside{position:relative;height:auto;padding:17px 5vw;display:block}.toc{flex-direction:row;overflow:auto;margin-top:12px}.toc a{white-space:nowrap}.side-foot{display:none}.topbar{padding:10px 5vw}.hero{padding-top:40px}.hero-grid,.story,.grid2,.calibration{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}.takeaways{grid-template-columns:1fr 1fr 1fr}.map-grid{grid-template-columns:1fr 1fr}.map-center{grid-column:1/3;grid-row:2}}
-@media(max-width:560px){.grid3{grid-template-columns:1fr}.takeaways{grid-template-columns:1fr 1fr}.stat-row{grid-template-columns:1fr}.hero h1{font-size:43px}.section-head{display:block}.section-head p{margin-top:12px}.bar-row{grid-template-columns:95px 1fr 42px}.mdp-grid{grid-template-columns:1fr}.mdp-grid .arrow{display:none}}
+@media(max-width:560px){.grid3{grid-template-columns:1fr}.takeaways{grid-template-columns:1fr 1fr}.stat-row{grid-template-columns:1fr}.hero h1{font-size:43px}.section-head{display:block}.section-head p{margin-top:12px}.bar-row,.bar-axis{grid-template-columns:95px 1fr 42px}.mdp-grid{grid-template-columns:1fr}.mdp-grid .arrow{display:none}}
 /* DeepRAG keeps its teaching diagrams within the shared Atlas visual system. */
 body.atlas-paper .shell{display:block;max-width:none;width:auto;margin:0;padding:0}
 body.atlas-paper main{width:100%;min-width:0}
@@ -68,14 +68,15 @@ body.atlas-paper .quiz-q button.wrong{background:#48273a;color:#ffc0d7}
 body.atlas-paper .tree-row.fork:before,body.atlas-paper .tree-row.fork:after,body.atlas-paper .tree-row.fork .tree-node:before{border-color:var(--line)}
 body.atlas-paper .tree{min-width:620px}
 body.atlas-paper .mdp-grid{grid-template-columns:1fr 30px 1fr}
-body.atlas-paper .bar-row{grid-template-columns:minmax(100px,145px) minmax(0,1fr) 45px}
+body.atlas-paper .bar-row,body.atlas-paper .bar-axis{grid-template-columns:minmax(100px,145px) minmax(0,1fr) 45px}
 body.atlas-paper .evidence{grid-template-columns:repeat(3,minmax(0,1fr))}
 body.atlas-paper .map-grid>*{min-width:0;overflow-wrap:anywhere}
 body.atlas-paper .hero-visual{background:linear-gradient(145deg,#10243a,#183b52)}
 body.atlas-paper .map-node[aria-pressed="true"]{border-color:var(--blue);background:#183e55}
 body.atlas-paper .decision button[aria-pressed="true"]{border:1px solid var(--blue)}
-@media(max-width:700px){body.atlas-paper .hero{padding-top:40px}body.atlas-paper .hero-grid,body.atlas-paper .story,body.atlas-paper .grid2,body.atlas-paper .grid3,body.atlas-paper .calibration,body.atlas-paper .evidence{grid-template-columns:1fr}body.atlas-paper .mdp-grid{grid-template-columns:1fr}body.atlas-paper .mdp-grid>.arrow{display:none}body.atlas-paper .slider{grid-template-columns:90px minmax(0,1fr) 40px}body.atlas-paper .bar-row{font-size:11px;grid-template-columns:100px minmax(0,1fr) 40px}}
+@media(max-width:700px){body.atlas-paper .hero{padding-top:40px}body.atlas-paper .hero-grid,body.atlas-paper .story,body.atlas-paper .grid2,body.atlas-paper .grid3,body.atlas-paper .calibration,body.atlas-paper .evidence{grid-template-columns:1fr}body.atlas-paper .mdp-grid{grid-template-columns:1fr}body.atlas-paper .mdp-grid>.arrow{display:none}body.atlas-paper .slider{grid-template-columns:90px minmax(0,1fr) 40px}body.atlas-paper .bar-row,body.atlas-paper .bar-axis{font-size:11px;grid-template-columns:100px minmax(0,1fr) 40px}}
 
+body.atlas-paper .trade-plot{margin-top:20px;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(20% - 1px),#203248 calc(20% - 1px),#203248 20%),repeating-linear-gradient(0deg,transparent 0,transparent calc(20% - 1px),#203248 calc(20% - 1px),#203248 20%)}.trade-plot:before{top:-20px;left:-28px}.trade-plot:after{bottom:-38px}.trade-tick{position:absolute;font-size:10px;color:var(--muted);pointer-events:none}.trade-tick.x{bottom:-18px;transform:translateX(-50%)}.trade-tick.y{left:-8px;transform:translate(-100%,50%)}.trade-detail{margin-top:44px}
 </style>
 <link rel="stylesheet" href="../../assets/paper.css">
 </head>
@@ -121,23 +122,23 @@ body.atlas-paper .decision button[aria-pressed="true"]{border:1px solid var(--bl
   <section id="method">
     <div class="section-head"><div><div class="kicker"><span data-i18n="method-kicker">03 · 方法机制</span></div><h2><span data-i18n="method-title-a">把 RAG 写成</span><br/><span data-i18n="method-title-b">一个 Markov Decision Process。</span></h2></div><p><span data-i18n="method-intro">状态包含“原问题 + 已生成的子问题/中间答案”；动作包含“继续/停止”和“检索/内部知识”两层决策。</span></p></div>
     <div class="card mdp">
-      <span class="tag"><span data-i18n="mdp-label">可操作状态机 · MDP</span></span>
+      <span class="tag"><span data-i18n="mdp-label">MDP · 图示继续分支，按钮另含终止动作</span></span>
       <div class="mdp-graph" aria-label="MDP state transition graph"><div class="graph-node"><b><span data-i18n="state-label">状态</span></b>sₜ</div><div class="graph-line"></div><div class="graph-node"><b><span data-i18n="query-label">子问题</span></b>qₜ₊₁</div><div class="graph-line"></div><div class="graph-node"><b><span data-i18n="answer-label">答案</span></b>rₜ₊₁</div><div class="graph-line"></div><div class="graph-node"><b><span data-i18n="next-label">下一状态</span></b>sₜ₊₁</div></div>
       <div class="mdp-grid"><div class="state"><b><span data-i18n="mdp-state">当前状态 sₜ</span></b><code>x, (q₁,r₁), …, (qₜ,rₜ)</code></div><div class="arrow">→</div><div class="decision"><button data-action="parametric"><span data-i18n="mdp-parametric">▣ 用参数化知识回答</span></button><button data-action="retrieve"><span data-i18n="mdp-retrieve">⌕ 检索文档后回答</span></button><button data-action="terminate"><span data-i18n="mdp-terminate">✓ 终止并生成最终答案</span></button></div></div>
       <div id="mdpOutput" class="terminal" style="margin-top:16px"><strong><span data-i18n="mdp-prompt">选择一个动作</span></strong><span data-i18n="mdp-explanation">动作会改变状态，并影响总检索成本。</span></div>
     </div>
     <div class="grid3" style="margin-top:18px">
-      <div class="card panel"><span class="tag"><span data-i18n="component-one-label">组件 1</span></span><h3>Binary Tree Search</h3><p><span data-i18n="component-search">每个子问题分出两条路：直接使用参数化知识，或检索外部文档。优先队列按 retrieval count 探索路径，找到正确且成本最低的轨迹。</span></p></div>
+      <div class="card panel"><span class="tag"><span data-i18n="component-one-label">组件 1</span></span><h3>Binary Tree Search</h3><p><span data-i18n="component-search">离线数据合成时，每个子问题分出参数知识与外部检索两条路径；优先队列先探索检索次数少的轨迹，并保留在预算内找到的正确答案路径。推理时使用训练后的策略。</span></p></div>
       <div class="card panel"><span class="tag mint"><span data-i18n="component-two-label">组件 2</span></span><h3>Imitation Learning</h3><p><span data-i18n="component-imitation">用最优轨迹训练 DeepRAG-Imi，让模型同时学习子问题生成、中间答案和检索时机。</span></p></div>
-      <div class="card panel"><span class="tag amber"><span data-i18n="component-three-label">组件 3</span></span><h3>Chain of Calibration</h3><p><span data-i18n="component-calibration">离线用偏好对微调，在线用 outcome-based reward 自我探索，校准模型对“我知道什么”的判断。</span></p></div>
+      <div class="card panel"><span class="tag amber"><span data-i18n="component-three-label">组件 3</span></span><h3>Chain of Calibration</h3><p><span data-i18n="component-calibration">从 DeepRAG-Imi 出发，选择离线偏好优化或在线 outcome-based reward 自我探索，校准“我知道什么”的判断。</span></p></div>
     </div>
-    <div class="card tree-wrap" style="margin-top:18px"><span class="tag"><span data-i18n="tree-prompt">点击节点查看它为什么重要</span></span><div class="tree" id="tree"><div class="tree-row"><button type="button" class="tree-node selected" data-detail="把原问题变成下一步最有用的 atomic subquery。"><span><span data-i18n="tree-original">原始问题 x</span></span><span data-i18n="tree-question">三部曲总时长？</span></button></div><div class="tree-label"><span data-i18n="tree-first">第一个子问题的两条候选路径</span></div><div class="tree-row fork"><button type="button" class="tree-node direct" data-detail="如果模型已经知道电影标题，直接回答可以节省一次检索。"><span><span data-i18n="tree-parametric-label">参数知识</span></span><span data-i18n="tree-direct">直接回答：三部电影</span></button><button type="button" class="tree-node retrieve" data-detail="检索这一步通常是冗余的；它仍被保留来比较成本与正确性。"><span><span data-i18n="tree-retrieved-label">检索文档</span></span><span data-i18n="tree-retrieve">搜索：三部电影</span></button></div><div class="tree-label"><span data-i18n="tree-second">第二个子问题：时长是否需要外部证据？</span></div><div class="tree-row fork"><button type="button" class="tree-node direct" data-detail="对准确 runtime，内部知识可能不够稳定。"><span><span data-i18n="tree-parametric-label">参数知识</span></span><span data-i18n="tree-guess">猜测 178 分钟？</span></button><button type="button" class="tree-node retrieve" data-detail="外部文档提供可核验的 runtime，形成更可靠的中间答案。"><span><span data-i18n="tree-retrieved-label">检索文档</span></span><span data-i18n="tree-runtime">178 / 179 / 201 分钟</span></button></div><div id="treeDetail" class="terminal" style="width:min(100%,720px)"><span data-i18n="tree-initial">把原问题变成下一步最有用的 atomic subquery。</span></div></div></div>
+    <div class="card tree-wrap" style="margin-top:18px"><span class="tag"><span data-i18n="tree-prompt">离线搜索的局部示意 · 未展开完整二叉树；点击查看</span></span><div class="tree" id="tree"><div class="tree-row"><button type="button" class="tree-node selected" data-detail="把原问题变成下一步最有用的 atomic subquery。"><span><span data-i18n="tree-original">原始问题 x</span></span><span data-i18n="tree-question">三部曲总时长？</span></button></div><div class="tree-label"><span data-i18n="tree-first">第一个子问题的两条候选路径</span></div><div class="tree-row fork"><button type="button" class="tree-node direct" data-detail="如果模型已经知道电影标题，直接回答可以节省一次检索。"><span><span data-i18n="tree-parametric-label">参数知识</span></span><span data-i18n="tree-direct">直接回答：三部电影</span></button><button type="button" class="tree-node retrieve" data-detail="检索这一步通常是冗余的；它仍被保留来比较成本与正确性。"><span><span data-i18n="tree-retrieved-label">检索文档</span></span><span data-i18n="tree-retrieve">搜索：三部电影</span></button></div><div class="tree-label"><span data-i18n="tree-second">仅沿上行“参数知识”分支继续：第一部电影的时长（另一子树省略）</span></div><div class="tree-row fork"><button type="button" class="tree-node direct" data-detail="对准确 runtime，内部知识可能不够稳定。"><span><span data-i18n="tree-parametric-label">参数知识</span></span><span data-i18n="tree-guess">猜测 178 分钟？</span></button><button type="button" class="tree-node retrieve" data-detail="外部文档提供可核验的 runtime，形成更可靠的中间答案。"><span><span data-i18n="tree-retrieved-label">检索文档</span></span><span data-i18n="tree-runtime">178 分钟（第一部）</span></button></div><div id="treeDetail" class="terminal" style="width:min(100%,720px)"><span data-i18n="tree-initial">把原问题变成下一步最有用的 atomic subquery。</span></div></div></div>
   </section>
 
   <section id="deepdive">
-    <div class="section-head"><div><div class="kicker"><span data-i18n="deepdive-kicker">04 · 深入理解</span></div><h2><span data-i18n="reward-title-a">奖励函数把两个目标</span><br/><span data-i18n="reward-title-b">放到同一张账单上。</span></h2></div><p><span data-i18n="reward-intro">正确答案优先；在正确的前提下，检索越少，奖励越高。这正是“自适应”的数学来源。</span></p></div>
+    <div class="section-head"><div><div class="kicker"><span data-i18n="deepdive-kicker">04 · 深入理解</span></div><h2><span data-i18n="reward-title-a">奖励函数把两个目标</span><br/><span data-i18n="reward-title-b">放到同一张账单上。</span></h2></div><p><span data-i18n="reward-intro">正确答案优先；α &gt; 0 且检索次数未达 T 时，少检索会提高奖励。达到惩罚上限后奖励不再下降；α = 0 时不惩罚检索。</span></p></div>
     <div class="grid2">
-      <div class="card formula"><span class="tag"><span data-i18n="equation-three-label">公式 3 · 在线校准</span></span><div class="formula-box">R = <span class="accent">1</span> − <span class="mint">α</span> × min(<span class="accent">T</span>, <span class="mint">T(sₜ₊₁)</span>)</div><div class="formula-copy"><span data-i18n="reward-copy">当答案正确时，奖励随实际检索次数下降；格式错误得 0；答案错误不会因为少检索而获得“便宜的高分”。</span></div><label class="slider"><span><span data-i18n="alpha-label">α 惩罚系数</span></span><input id="alpha" type="range" min="0" max=".4" value=".1" step=".01"/><output id="alphaOut">0.10</output></label><label class="slider"><span><span data-i18n="retrievals-label">检索次数</span></span><input id="retrievals" type="range" min="0" max="5" value="2" step="1"/><output id="retrievalsOut">2</output></label><div class="terminal" style="margin-top:16px"><strong id="rewardOut">R = 0.80</strong><span data-i18n="reward-budget">在答案正确、T = 5 的示例预算下。</span></div></div>
+      <div class="card formula"><span class="tag"><span data-i18n="equation-three-label">公式 3 · 在线校准</span></span><div class="formula-box">R = <span class="accent">1</span> − <span class="mint">α</span> × min(<span class="accent">T</span>, <span class="mint">T(sₜ₊₁)</span>)</div><div class="formula-copy"><span data-i18n="reward-copy">式（3）分三种情况：格式错误奖励 0；格式正确但答案错误奖励 score_format；答案正确奖励 1 − α min(T, T(s))。论文设置 score_format = 0.1、α = 0.1、T = 5。</span></div><label class="slider"><span data-i18n="reward-case-label">输出情况</span><select class="select" id="rewardCase"><option value="correct" data-i18n="reward-case-correct">答案正确</option><option value="wrong" data-i18n="reward-case-wrong">格式正确但答案错误</option><option value="malformed" data-i18n="reward-case-malformed">格式错误</option></select></label><label class="slider"><span><span data-i18n="alpha-label">α 惩罚系数</span></span><input id="alpha" type="range" min="0" max=".15" value=".1" step=".01"/><output id="alphaOut">0.10</output></label><label class="slider"><span><span data-i18n="retrievals-label">检索次数</span></span><input id="retrievals" type="range" min="0" max="8" value="2" step="1"/><output id="retrievalsOut">2</output></label><div class="terminal" style="margin-top:16px"><strong id="rewardOut">R = 0.80</strong><span data-i18n="reward-budget">教学计算器：固定 T = 5、score_format = 0.1；改变 α 与次数只演示奖励算术，不代表重新训练后的性能。</span></div></div>
       <div class="card formula"><span class="tag mint"><span data-i18n="equation-one-label">公式 1 · 模仿学习</span></span><div class="formula-box">L = − Σ log [ Pr(<span class="accent">qᵢ</span>|<span class="mint">sᵢ₋₁</span>) + Pr(<span class="accent">aᵢ</span>|<span class="mint">sᵢ₋₁,qᵢ,dᵢ</span>) ]</div><div class="formula-copy"><span data-i18n="imitation-copy">训练目标同时关注“问什么”和“怎么回答”。dᵢ 在该步未检索时为 null，帮助模型学会按需接入文档。</span></div><div class="list"><div class="list-item"><i class="dot"></i><span><b>qᵢ</b><span data-i18n="symbol-query">：第 i 个子问题</span></span></div><div class="list-item"><i class="dot mint"></i><span><b>aᵢ</b><span data-i18n="symbol-answer">：中间答案</span></span></div><div class="list-item"><i class="dot amber"></i><span><b>sᵢ₋₁</b><span data-i18n="symbol-state">：此前累积的推理状态</span></span></div></div></div>
     </div>
     <div class="card panel only-advanced" style="margin-top:18px"><span class="tag rose"><span data-i18n="advanced-label">研究层 · 离线校准</span></span><p><span data-i18n="advanced-copy">DPO-style objective 比较 direct answer 与 retrieved answer 的偏好，β 控制相对于 reference model 的偏离惩罚。在线版本则采用 GRPO，并对 retrieved tokens 使用 masked loss。</span></p></div>
@@ -145,13 +146,13 @@ body.atlas-paper .decision button[aria-pressed="true"]{border:1px solid var(--bl
   </section>
 
   <section id="evidence">
-    <div class="section-head"><div><div class="kicker"><span data-i18n="evidence-kicker">05 · 实验证据</span></div><h2><span data-i18n="evidence-title">实验支持了什么？</span></h2></div><p><span data-i18n="evidence-intro">切换 backbone，观察五个数据集上的平均 EM。数值来自 Table 1；图表只展示论文表中的平均列。</span></p></div>
+    <div class="section-head"><div><div class="kicker"><span data-i18n="evidence-kicker">05 · 实验证据</span></div><h2><span data-i18n="evidence-title">实验支持了什么？</span></h2></div><p><span data-i18n="evidence-intro">切换 backbone，查看 Table 1 的 Avg 列：它平均五个数据集的 EM 与 F1 共十个分数，不是单独的平均 EM。</span></p></div>
     <div class="card chart">
-      <div class="chart-toolbar"><span class="tag mint" style="margin:0"><span data-i18n="average-em-label">表 1 · 平均 EM</span></span><select class="select" id="backbone"><option value="llama">Llama-3-8B Reasoning</option><option value="qwen">Qwen-2.5-32B Reasoning</option></select></div>
-      <div class="bars" id="bars"></div><div class="source">DeepRAG-RL<sub>on</sub> <span data-i18n="evidence-source-a">在 Llama-3-8B 上平均 EM 42.36，在 Qwen-2.5-32B 上为 41.05；DeepRAG-RL</span><sub>off</sub> <span data-i18n="evidence-source-b">分别为 41.47 和 35.72。</span></div>
-      <div class="tradeoff"><h4><span data-i18n="trade-title">准确率–检索成本前沿 · WebQuestions</span></h4><p><span data-i18n="trade-copy">点越高代表 EM 越高；越靠左代表平均检索次数越少。青绿色点为 DeepRAG 变体。</span></p><div class="trade-plot" id="tradePlot"></div><div class="trade-detail" id="tradeDetail"><span data-i18n="trade-prompt">点击一个点查看方法、EM 与平均检索次数。</span></div></div>
+      <div class="chart-toolbar"><span class="tag mint" style="margin:0"><span data-i18n="average-em-label">Table 1 · Avg（EM 与 F1）</span></span><select class="select" id="backbone"><option value="llama">Llama-3-8B</option><option value="qwen">Qwen-2.5-32B</option></select></div>
+      <div class="bars" id="bars"></div><div class="bar-axis" aria-hidden="true"><span></span><div><span>0</span><span>15</span><span>30</span><span>45</span></div><span></span></div><div class="source">DeepRAG-RL<sub>on</sub> <span data-i18n="evidence-source-a">在 Llama-3-8B 上的 Avg 为 42.36，在 Qwen-2.5-32B 上为 41.05；DeepRAG-RL</span><sub>off</sub> <span data-i18n="evidence-source-b">分别为 41.47 和 35.72。共同分数轴为 0–45，柱长从零按比例绘制。</span></div>
+      <div class="tradeoff"><h4><span data-i18n="trade-title">准确率与检索成本 · WebQuestions · Table 2</span></h4><p><span data-i18n="trade-copy">横轴为平均检索次数 0–5，纵轴为 EM 10–35（截断坐标）；青绿色点为 DeepRAG。FLARE / DRAGIN 在该实验默认阈值下未触发检索，不代表它们没有检索功能。</span></p><div class="trade-plot" id="tradePlot"></div><div class="trade-detail" id="tradeDetail"><span data-i18n="trade-prompt">点击一个点查看方法、EM 与平均检索次数。</span></div></div>
     </div>
-    <div class="grid2" style="margin-top:18px"><div class="card panel"><span class="tag"><span data-i18n="efficiency-tag">效率 · Table 2</span></span><h3><span data-i18n="efficiency-title">更少检索，仍保持更高准确率</span></h3><p><span data-i18n="efficiency-start">在 WebQuestions 上，DeepRAG-RL</span><sub>on</sub> <span data-i18n="efficiency-copy">的 EM 为 30.00，平均检索次数仅 0.14，平均时间 0.40 秒/题。论文将其与多种 baseline 比较，指出迭代式方法可能进入连续检索循环。</span></p></div><div class="card panel"><span class="tag amber"><span data-i18n="boundary-tag">知识边界 · Table 3</span></span><h3>Balanced accuracy = 0.801</h3><p><span data-i18n="boundary-start">在 2WikiMultihopQA 的 retrieval-needed 判断中，DeepRAG-RL</span><sub>on</sub> <span data-i18n="boundary-copy">的 balanced accuracy 和 MCC 分别为 0.801 与 0.543，说明它更能区分“该检索”和“不必检索”。</span></p></div></div>
+    <div class="grid2" style="margin-top:18px"><div class="card panel"><span class="tag"><span data-i18n="efficiency-tag">效率 · Table 2</span></span><h3><span data-i18n="efficiency-title">相比 IterDRAG：少检索且 EM 更高</span></h3><p><span data-i18n="efficiency-start">在 WebQuestions 上，DeepRAG-RL</span><sub>on</sub> <span data-i18n="efficiency-copy">的 EM 为 30.00，平均检索 0.14 次、耗时 0.40 秒/题；IterDRAG 分别为 15.90、2.25 次、1.09 秒。RLoff 的 EM 更高（32.70），但检索也更多（0.28 次），体现不同工作点。</span></p></div><div class="card panel"><span class="tag amber"><span data-i18n="boundary-tag">知识边界 · Table 3</span></span><h3>Balanced accuracy = 0.801</h3><p><span data-i18n="boundary-start">在 2WikiMultihopQA 的 retrieval-needed 判断中，DeepRAG-RL</span><sub>on</sub> <span data-i18n="boundary-copy">的 balanced accuracy 和 MCC 分别为 0.801 与 0.543，说明它更能区分“该检索”和“不必检索”。</span></p></div></div>
     <div class="card panel only-advanced" style="margin-top:18px"><span class="tag rose"><span data-i18n="experimental-detail-label">实验细节</span></span><p><span data-i18n="experimental-copy">训练使用 HotpotQA 与 2WikiMultihopQA；每个数据集随机抽取 4,000 个样本用于 imitation learning，另外 1,000 个样本用于 calibration。OOD 数据集为 PopQA、WebQuestions、MuSiQue。</span></p></div>
   </section>
 
@@ -328,8 +329,8 @@ const translations={
     "en": "The state contains the original question and generated subqueries/intermediate answers. Actions have two decision levels: continue or stop, then retrieve or use internal knowledge."
   },
   "mdp-label": {
-    "zh": "可操作状态机 · MDP",
-    "en": "Interactive state machine · MDP"
+    "zh": "MDP · 图示继续分支，按钮另含终止动作",
+    "en": "MDP · diagram shows continuation; termination is a separate action"
   },
   "mdp-state": {
     "zh": "当前状态 sₜ",
@@ -356,20 +357,20 @@ const translations={
     "en": "The action changes the state and affects the total retrieval cost."
   },
   "component-search": {
-    "zh": "每个子问题分出两条路：直接使用参数化知识，或检索外部文档。优先队列按 retrieval count 探索路径，找到正确且成本最低的轨迹。",
-    "en": "Each subquery branches into using parametric knowledge directly or retrieving external documents. A priority queue explores paths by retrieval count to find a correct trajectory with the lowest cost."
+    "zh": "离线数据合成时，每个子问题分出参数知识与外部检索两条路径；优先队列先探索检索次数少的轨迹，并保留在预算内找到的正确答案路径。推理时使用训练后的策略。",
+    "en": "During offline data synthesis, each subquery branches into parametric and retrieved answers. A priority queue explores lower-retrieval trajectories first and retains a correct path within the budget. Inference uses the trained policy."
   },
   "component-imitation": {
     "zh": "用最优轨迹训练 DeepRAG-Imi，让模型同时学习子问题生成、中间答案和检索时机。",
     "en": "Train DeepRAG-Imi on optimal trajectories so the model learns subquery generation, intermediate answers and when to retrieve together."
   },
   "component-calibration": {
-    "zh": "离线用偏好对微调，在线用 outcome-based reward 自我探索，校准模型对“我知道什么”的判断。",
-    "en": "Offline preference-pair fine-tuning and online exploration with outcome-based rewards calibrate the model’s judgement of what it knows."
+    "zh": "从 DeepRAG-Imi 出发，选择离线偏好优化或在线 outcome-based reward 自我探索，校准“我知道什么”的判断。",
+    "en": "Starting from DeepRAG-Imi, choose offline preference optimization or online exploration with outcome-based rewards to calibrate what the model knows."
   },
   "tree-prompt": {
-    "zh": "点击节点查看它为什么重要",
-    "en": "Select a node to see why it matters"
+    "zh": "离线搜索的局部示意 · 未展开完整二叉树；点击查看",
+    "en": "Partial view of offline search · not the complete binary tree; select a node"
   },
   "tree-original": {
     "zh": "原始问题 x",
@@ -392,16 +393,16 @@ const translations={
     "en": "Search: three films"
   },
   "tree-second": {
-    "zh": "第二个子问题：时长是否需要外部证据？",
-    "en": "Second subquery: do the runtimes need external evidence?"
+    "zh": "仅沿上行“参数知识”分支继续：第一部电影的时长（另一子树省略）",
+    "en": "Continue only from the parametric branch above: the first film’s runtime (the other subtree is omitted)"
   },
   "tree-guess": {
     "zh": "猜测 178 分钟？",
     "en": "Guess 178 minutes?"
   },
   "tree-runtime": {
-    "zh": "178 / 179 / 201 分钟",
-    "en": "178 / 179 / 201 minutes"
+    "zh": "178 分钟（第一部）",
+    "en": "178 minutes (first film)"
   },
   "tree-initial": {
     "zh": "把原问题变成下一步最有用的 atomic subquery。",
@@ -416,16 +417,16 @@ const translations={
     "en": "both goals on the same bill."
   },
   "reward-intro": {
-    "zh": "正确答案优先；在正确的前提下，检索越少，奖励越高。这正是“自适应”的数学来源。",
-    "en": "Correct answers come first. Among correct answers, fewer retrievals earn a higher reward: this is the mathematical basis for adaptation."
+    "zh": "正确答案优先；α > 0 且检索次数未达 T 时，少检索会提高奖励。达到惩罚上限后奖励不再下降；α = 0 时不惩罚检索。",
+    "en": "Correct answers come first. With α > 0 and retrieval count below T, fewer retrievals earn more reward. The penalty stops growing at the cap; α = 0 applies no retrieval penalty."
   },
   "reward-copy": {
-    "zh": "当答案正确时，奖励随实际检索次数下降；格式错误得 0；答案错误不会因为少检索而获得“便宜的高分”。",
-    "en": "For a correct answer, the reward decreases with the actual retrieval count. A format error scores 0; an incorrect answer does not earn a cheap high score just by retrieving less."
+    "zh": "式（3）分三种情况：格式错误奖励 0；格式正确但答案错误奖励 score_format；答案正确奖励 1 − α min(T, T(s))。论文设置 score_format = 0.1、α = 0.1、T = 5。",
+    "en": "Equation (3) has three cases: malformed output earns 0; a formatted but wrong answer earns score_format; a correct answer earns 1 − α min(T, T(s)). The paper uses score_format = 0.1, α = 0.1 and T = 5."
   },
   "reward-budget": {
-    "zh": "在答案正确、T = 5 的示例预算下。",
-    "en": "Teaching example with a correct answer and a budget of T = 5."
+    "zh": "教学计算器：固定 T = 5、score_format = 0.1；改变 α 与次数只演示奖励算术，不代表重新训练后的性能。",
+    "en": "Teaching calculator with T = 5 and score_format = 0.1. Changing α and retrieval count demonstrates reward arithmetic, not retrained performance."
   },
   "imitation-copy": {
     "zh": "训练目标同时关注“问什么”和“怎么回答”。dᵢ 在该步未检索时为 null，帮助模型学会按需接入文档。",
@@ -464,24 +465,24 @@ const translations={
     "en": "What do the experiments support?"
   },
   "evidence-intro": {
-    "zh": "切换 backbone，观察五个数据集上的平均 EM。数值来自 Table 1；图表只展示论文表中的平均列。",
-    "en": "Switch the backbone to inspect average EM across five datasets. Values come from Table 1; this chart shows only the average column reported in the paper."
+    "zh": "切换 backbone，查看 Table 1 的 Avg 列：它平均五个数据集的 EM 与 F1 共十个分数，不是单独的平均 EM。",
+    "en": "Switch backbones to inspect Table 1’s Avg column: the mean of ten EM and F1 scores across five datasets, rather than EM alone."
   },
   "evidence-source-a": {
-    "zh": "在 Llama-3-8B 上平均 EM 42.36，在 Qwen-2.5-32B 上为 41.05；DeepRAG-RL",
-    "en": "achieves average EM of 42.36 on Llama-3-8B and 41.05 on Qwen-2.5-32B; DeepRAG-RL"
+    "zh": "在 Llama-3-8B 上的 Avg 为 42.36，在 Qwen-2.5-32B 上为 41.05；DeepRAG-RL",
+    "en": "has Avg 42.36 on Llama-3-8B and 41.05 on Qwen-2.5-32B; DeepRAG-RL"
   },
   "evidence-source-b": {
-    "zh": "分别为 41.47 和 35.72。",
-    "en": "achieves 41.47 and 35.72, respectively."
+    "zh": "分别为 41.47 和 35.72。共同分数轴为 0–45，柱长从零按比例绘制。",
+    "en": "achieves 41.47 and 35.72, respectively. Bars are proportional from zero on a shared 0–45 score axis."
   },
   "trade-title": {
-    "zh": "准确率–检索成本前沿 · WebQuestions",
-    "en": "Accuracy–retrieval cost frontier · WebQuestions"
+    "zh": "准确率与检索成本 · WebQuestions · Table 2",
+    "en": "Accuracy and retrieval cost · WebQuestions · Table 2"
   },
   "trade-copy": {
-    "zh": "点越高代表 EM 越高；越靠左代表平均检索次数越少。青绿色点为 DeepRAG 变体。",
-    "en": "Higher points indicate higher EM; points further left use fewer retrievals on average. Teal points are DeepRAG variants."
+    "zh": "横轴为平均检索次数 0–5，纵轴为 EM 10–35（截断坐标）；青绿色点为 DeepRAG。FLARE / DRAGIN 在该实验默认阈值下未触发检索，不代表它们没有检索功能。",
+    "en": "The x axis shows average retrievals from 0–5; the y axis shows EM from 10–35 (truncated). Teal marks DeepRAG. FLARE / DRAGIN triggered no retrieval with the experiment’s default thresholds; both are retrieval-capable methods."
   },
   "trade-prompt": {
     "zh": "点击一个点查看方法、EM 与平均检索次数。",
@@ -492,16 +493,16 @@ const translations={
     "en": "Efficiency · Table 2"
   },
   "efficiency-title": {
-    "zh": "更少检索，仍保持更高准确率",
-    "en": "Fewer retrievals, with higher accuracy"
+    "zh": "相比 IterDRAG：少检索且 EM 更高",
+    "en": "Compared with IterDRAG: fewer retrievals and higher EM"
   },
   "efficiency-start": {
     "zh": "在 WebQuestions 上，DeepRAG-RL",
     "en": "On WebQuestions, DeepRAG-RL"
   },
   "efficiency-copy": {
-    "zh": "的 EM 为 30.00，平均检索次数仅 0.14，平均时间 0.40 秒/题。论文将其与多种 baseline 比较，指出迭代式方法可能进入连续检索循环。",
-    "en": "achieves EM of 30.00 with only 0.14 retrievals and 0.40 seconds per question on average. The paper compares it with several baselines and notes that iterative methods can enter repeated-retrieval loops."
+    "zh": "的 EM 为 30.00，平均检索 0.14 次、耗时 0.40 秒/题；IterDRAG 分别为 15.90、2.25 次、1.09 秒。RLoff 的 EM 更高（32.70），但检索也更多（0.28 次），体现不同工作点。",
+    "en": "has EM 30.00, 0.14 retrievals and 0.40 seconds per item, versus IterDRAG’s 15.90, 2.25 and 1.09. RLoff has higher EM (32.70) with more retrievals (0.28), showing a different operating point."
   },
   "boundary-tag": {
     "zh": "知识边界 · Table 3",
@@ -816,8 +817,8 @@ const translations={
     "en": "05 · Evidence"
   },
   "average-em-label": {
-    "zh": "表 1 · 平均 EM",
-    "en": "Table 1 · Average EM"
+    "zh": "Table 1 · Avg（EM 与 F1）",
+    "en": "Table 1 · Avg (EM and F1)"
   },
   "experimental-detail-label": {
     "zh": "实验细节",
@@ -858,15 +859,31 @@ const translations={
   "footer-citation": {
     "zh": "本页基于 Guan 等人的论文 “DeepRAG: Thinking to Retrieve Step by Step for Large Language Models”（ICLR 2026）制作。",
     "en": "Interactive explanation based on Guan et al., “DeepRAG: Thinking to Retrieve Step by Step for Large Language Models”, ICLR 2026."
+  },
+  "reward-case-label": {
+    "zh": "输出情况",
+    "en": "Output case"
+  },
+  "reward-case-correct": {
+    "zh": "答案正确",
+    "en": "Correct answer"
+  },
+  "reward-case-wrong": {
+    "zh": "格式正确但答案错误",
+    "en": "Formatted, wrong answer"
+  },
+  "reward-case-malformed": {
+    "zh": "格式错误",
+    "en": "Malformed output"
   }
 };
 const S={lang:'zh',story:0,action:null,tree:0,trade:null,map:null,level:'beginner'};
 const pick=(zh,en)=>S.lang==='en'?en:zh;
 const storyData=[
  {zh:['STEP 1 · 先使用参数化知识','“The Lord of the Rings trilogy consists of three films …”','模型知道三部电影的标题，因此此处不需要检索。'],en:['STEP 1 · Use parametric knowledge first','“The Lord of the Rings trilogy consists of three films …”','The model knows the titles of the three films, so retrieval is unnecessary here.']},
- {zh:['STEP 2 · 生成原子子问题','“What is the runtime of each film?”','把总问题拆成可回答、可检索的 atomic subqueries。'],en:['STEP 2 · Generate an atomic subquery','“What is the runtime of each film?”','Decompose the original question into atomic subqueries that can be answered or retrieved.']},
+ {zh:['STEP 2 · 生成原子子问题','“What is the runtime of The Fellowship of the Ring?”','先问第一部电影的时长；再为另两部分别生成同类子问题。这里折叠展示重复步骤。'],en:['STEP 2 · Generate an atomic subquery','“What is the runtime of The Fellowship of the Ring?”','Ask for the first film’s runtime, then form a separate equivalent subquery for each remaining film. Repeated steps are collapsed here.']},
  {zh:['STEP 3 · 做 atomic decision','“I am unsure of their exact runtimes.”','知识边界被触发：这一步选择 retrieve。'],en:['STEP 3 · Make an atomic decision','“I am unsure of their exact runtimes.”','A knowledge gap is reached: choose retrieval at this step.']},
- {zh:['STEP 4 · 写入中间答案','“178 + 179 + 201 = 558 minutes.”','检索结果只服务于当前子问题，然后回到推理状态。'],en:['STEP 4 · Record the intermediate answer','“178 + 179 + 201 = 558 minutes.”','The retrieved evidence serves the current subquery, then returns to the reasoning state.']},
+ {zh:['STEP 4 · 汇总三次检索','“178 + 179 + 201 = 558 minutes.”','原图分别检索三部电影的时长，再汇总计算；这一张教学卡合并展示三次检索，不代表只调用一次。'],en:['STEP 4 · Combine three retrievals','“178 + 179 + 201 = 558 minutes.”','Figure 1 retrieves each film’s runtime separately before summing. This teaching card combines three retrieval steps, not a single tool call.']},
  {zh:['STEP 5 · 终止','“So the final answer is: 558 minutes.”','总结是参数化推理可以完成的动作，不必再检索。'],en:['STEP 5 · Stop','“So the final answer is: 558 minutes.”','Parametric reasoning can produce the summary without another retrieval.']}
 ];
 const actionData={
@@ -912,7 +929,9 @@ function renderTree(){
 function calcReward(){
  const a=+$('#alpha').value,t=+$('#retrievals').value;
  $('#alphaOut').textContent=a.toFixed(2);$('#retrievalsOut').textContent=t;
- $('#rewardOut').textContent='R = '+(1-a*Math.min(5,t)).toFixed(2);
+ const outcome=$('#rewardCase').value;
+ const reward=outcome==='malformed'?0:outcome==='wrong'?.1:1-a*Math.min(5,t);
+ $('#rewardOut').textContent='R = '+reward.toFixed(2);
 }
 const data={llama:[['CoT',27.69],['CoT-Retrieve',34.90],['Search-R1',36.54],['R1-Searcher++',40.85],['DeepRAG-Imi',39.78],['DeepRAG-RLoff',41.47],['DeepRAG-RLon',42.36]],qwen:[['CoT',19.54],['CoT-Retrieve',29.86],['Search-R1',27.85],['R1-Searcher++',37.94],['DeepRAG-Imi',32.21],['DeepRAG-RLoff',35.72],['DeepRAG-RLon',41.05]]};
 function drawBars(){
@@ -921,9 +940,9 @@ function drawBars(){
 const tradeData=[['FLARE',28.80,0.00],['DRAGIN',21.20,0.00],['UAR',22.70,.96],['TAARE',23.40,.66],['IterDRAG',15.90,2.25],['Auto-RAG',17.40,4.52],['R1-Searcher++',28.20,.16],['Search-R1',27.70,.51],['DeepRAG-Imi',30.00,.43],['DeepRAG-RLoff',32.70,.28],['DeepRAG-RLon',30.00,.14]];
 function drawTradeoff(){
  $('#tradePlot').innerHTML=tradeData.map((x,i)=>{
-  const left=(x[2]/5*88+4).toFixed(2),bottom=((x[1]-14)/(35-14)*86+5).toFixed(2);
+  const left=(x[2]/5*100).toFixed(2),bottom=((x[1]-10)/25*100).toFixed(2);
   return '<button type="button" class="trade-point '+(x[0].startsWith('DeepRAG')?'deep':'')+'" style="left:'+left+'%;bottom:'+bottom+'%" data-trade="'+i+'"></button>';
- }).join('');
+ }).join('')+[0,1,2,3,4,5].map(v=>'<span class="trade-tick x" style="left:'+(v/5*100)+'%">'+v+'</span>').join('')+[10,15,20,25,30,35].map(v=>'<span class="trade-tick y" style="bottom:'+((v-10)/25*100)+'%">'+v+'</span>').join('');
  $$('.trade-point').forEach(b=>b.addEventListener('click',()=>{S.trade=+b.dataset.trade;renderTrade();}));
 }
 function renderTrade(){
@@ -955,7 +974,8 @@ function renderDepth(){
 function applyLanguage(lang){
  S.lang=lang==='en'?'en':'zh';
  $$('[data-i18n]').forEach(node=>{const entry=translations[node.dataset.i18n];if(entry)node.textContent=entry[S.lang];});
- $('.mdp-graph').setAttribute('aria-label',pick('MDP 状态转移图','MDP state transition graph'));
+ $('.mdp-graph').setAttribute('aria-label',pick('MDP 继续分支的状态转移；终止动作直接进入最终答案','MDP continuation transition; termination goes directly to the final answer'));
+ $('#rewardCase').setAttribute('aria-label',pick('奖励计算的输出情况','Output case for reward calculation'));
  $('#backbone').setAttribute('aria-label',pick('实验骨干模型','Experiment backbone model'));
  $('#alpha').setAttribute('aria-label',pick('检索惩罚系数 α','Retrieval penalty coefficient α'));
  $('#retrievals').setAttribute('aria-label',pick('检索次数','Retrieval count'));
@@ -965,6 +985,7 @@ function applyLanguage(lang){
 $$('#storyStepper button').forEach((b,i)=>b.addEventListener('click',()=>{S.story=i;renderStory();}));
 $$('[data-action]').forEach(b=>b.addEventListener('click',()=>{S.action=b.dataset.action;renderAction();}));
 $$('.tree-node').forEach((b,i)=>b.addEventListener('click',()=>{S.tree=i;renderTree();}));
+$('#rewardCase').addEventListener('change',calcReward);
 $('#alpha').addEventListener('input',calcReward);
 $('#retrievals').addEventListener('input',calcReward);
 $('#backbone').addEventListener('change',drawBars);

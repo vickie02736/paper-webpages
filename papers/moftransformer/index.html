@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MOFTransformer：多模态预训练如何把金属有机框架的局部化学与全局孔结构迁移到多种性质预测任务。">
+<title>MOFTransformer · 交互式论文讲解</title>
+<style>
+:root{--mof-cyan:#7de3ff;--mof-mint:#78dfcd;--mof-amber:#ffb66e;--mof-purple:#b9a6ff;--mof-pink:#f4a6d7}
+.mof-page .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;padding-top:76px}
+.mof-page .hero h1{max-width:760px}
+.mof-page .hero .lead{max-width:760px}
+.mof-page .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px}
+.mof-page .stat{padding:15px 16px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(150deg,#15263b,#0e1c2f)}
+.mof-page .stat strong{display:block;color:var(--cyan);font-size:27px;line-height:1.15;letter-spacing:-.04em}
+.mof-page .stat span{display:block;color:var(--muted);font-size:12px;margin-top:5px}
+.mof-page .visual{border:1px solid var(--line);border-radius:22px;background:#0b1729;padding:14px;box-shadow:0 18px 42px #0004}
+.mof-page .visual svg{display:block;width:100%;height:auto}
+.mof-page .tagline{display:inline-flex;gap:8px;align-items:center;color:var(--cyan);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:750}
+.mof-page .tagline:before{content:\"\";width:24px;height:3px;border-radius:9px;background:var(--cyan)}
+.mof-page .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.mof-page .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mof-page .panel{padding:22px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}
+.mof-page .panel h3{margin:3px 0 8px;font-size:22px;line-height:1.25}
+.mof-page .panel p{color:var(--muted)}
+.mof-page .eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);font-weight:750}
+.mof-page .stepper,.mof-page .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.mof-page .stepper button,.mof-page .tabs button{border:1px solid var(--line);background:#ffffff05;color:var(--muted);border-radius:11px;padding:9px 12px;cursor:pointer}
+.mof-page .stepper button.active,.mof-page .tabs button.active{border-color:var(--cyan);background:#7de3ff18;color:var(--ink)}
+.mof-page .step-view{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch}
+.mof-page .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;align-items:center}
+.mof-page .flow .node{min-height:104px;display:grid;place-items:center;text-align:center;padding:10px 7px;border:1px solid var(--line);border-radius:14px;background:#0b1729}
+.mof-page .flow .node strong{display:block;color:var(--cyan);font-size:16px}
+.mof-page .flow .node small{color:var(--muted);font-size:11px;line-height:1.35}
+.mof-page .flow .arrow{color:var(--cyan);text-align:center;font-size:23px}
+.mof-page .detail{padding:20px;border-radius:16px;background:#0b1729;border-left:4px solid var(--cyan)}
+.mof-page .detail h3{font-size:25px}
+.mof-page .detail dl{display:grid;grid-template-columns:110px 1fr;gap:8px;margin:16px 0 0}
+.mof-page .detail dt{color:var(--cyan);font-weight:750}
+.mof-page .detail dd{margin:0;color:var(--muted)}
+.mof-page .task-card{min-height:220px;position:relative;overflow:hidden}
+.mof-page .task-card:before{content:\"\";position:absolute;inset:0 0 auto;height:4px;background:var(--accent,var(--cyan))}
+.mof-page .task-card .metric{font-size:38px;font-weight:800;letter-spacing:-.06em;color:var(--accent,var(--cyan));line-height:1.1;margin:18px 0 4px}
+.mof-page .formula{padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:#0b1729;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#d8e8f8;overflow-x:auto}
+.mof-page .formula b{color:var(--cyan)}
+.mof-page .callout{border-left:4px solid var(--mof-amber);border-radius:0 12px 12px 0;background:#322a22;padding:14px 16px;color:var(--ink)}
+.mof-page .note{border-left-color:var(--mof-purple);background:#24213b}
+.mof-page .source{color:var(--muted);font-size:12px;border-left:2px solid #365a68;padding-left:10px;margin-top:16px}
+.mof-page .select-wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+.mof-page .select-wrap label{color:var(--muted);font-size:13px}
+.mof-page select{min-height:42px;border:1px solid var(--line);border-radius:10px;padding:7px 10px;background:var(--panel2);color:var(--ink)}
+.mof-page .result-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.mof-page .bars{display:grid;gap:14px;margin-top:12px}
+.mof-page .bar-row{display:grid;grid-template-columns:150px 1fr 70px;gap:10px;align-items:center;font-size:13px}
+.mof-page .bar-track{height:12px;border-radius:999px;background:#20324a;overflow:hidden}
+.mof-page .bar-fill{height:100%;border-radius:inherit;background:var(--cyan);width:var(--w)}
+.mof-page .bar-fill.base{background:#99b9ff}
+.mof-page .bar-legend{display:flex;gap:16px;color:var(--muted);font-size:12px;margin-top:18px}
+.mof-page .dot{width:9px;height:9px;display:inline-block;border-radius:50%;background:var(--cyan);margin-right:5px}
+.mof-page .dot.base{background:#99b9ff}
+.mof-page .attention-visual{display:grid;gap:14px}
+.mof-page .attn-line{display:grid;grid-template-columns:180px 1fr 70px;gap:10px;align-items:center;font-size:13px}
+.mof-page .attn-track{height:16px;background:#20324a;border-radius:999px;overflow:hidden}
+.mof-page .attn-fill{height:100%;width:var(--w);background:linear-gradient(90deg,var(--mof-mint),var(--cyan));border-radius:inherit}
+.mof-page .attn-fill.low{background:#4a5870}
+.mof-page .limits{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mof-page .limit{padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
+.mof-page .limit h3{font-size:18px;margin:0 0 8px}
+.mof-page .limit p{margin:0;color:var(--muted);font-size:14px}
+.mof-page .quiz details{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:13px 16px;margin-top:10px}
+.mof-page .quiz summary{cursor:pointer;font-weight:700}
+.mof-page .quiz .answer{color:var(--muted);padding:12px 0 2px}
+.mof-page .source-list{display:grid;gap:10px}
+.mof-page .source-list a{color:var(--cyan)}
+.mof-page .source-list li{color:var(--muted);margin:4px 0}
+.mof-page .bilingual-note{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mof-page .bilingual-note>div{padding:14px;border-radius:13px;background:#0b1729;border:1px solid var(--line)}
+.mof-page .bilingual-note strong{display:block;color:var(--cyan);margin-bottom:5px}
+.mof-page .mof-caption{font-size:12px;color:var(--muted);margin:8px 2px 0}
+@media(max-width:900px){.mof-page .hero{grid-template-columns:1fr}.mof-page .step-view,.mof-page .result-grid{grid-template-columns:1fr}.mof-page .limits{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.mof-page .hero-stats,.mof-page .grid3,.mof-page .grid2,.mof-page .bilingual-note{grid-template-columns:1fr}.mof-page .flow{grid-template-columns:1fr;gap:8px}.mof-page .flow .arrow{transform:rotate(90deg)}.mof-page .bar-row{grid-template-columns:118px 1fr 58px;font-size:12px}.mof-page .attn-line{grid-template-columns:125px 1fr 54px;font-size:12px}.mof-page .limits{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="../../assets/paper.css">
+<style>
+.atlas-paper.mof-page .hero{max-width:none}
+.atlas-paper.mof-page .panel,.atlas-paper.mof-page .task-card,.atlas-paper.mof-page .limit{box-shadow:none}
+.atlas-paper.mof-page .visual svg text{font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+.atlas-paper.mof-page .section-head{align-items:end}
+.atlas-paper.mof-page .en{display:none}
+.atlas-paper.mof-page[data-lang="en"] .zh{display:none!important}
+.atlas-paper.mof-page[data-lang="en"] .en{display:revert!important}
+</style>
+</head>
+<body class="atlas-paper mof-page" data-paper="moftransformer">
+<main>
+<section class="hero" id="glance">
+  <div>
+    <div class="tagline"><span class="paired"><span class="zh" lang="zh-CN">交互式论文讲解 · Nature Machine Intelligence · 2023</span><span class="en" lang="en">Interactive paper explainer · Nature Machine Intelligence · 2023</span></span></div>
+    <h1 class="paired"><span class="zh" lang="zh-CN">让 MOF 的两种视角，<br>在同一个 Transformer 里相遇。</span><span class="en" lang="en">Let two views of a MOF<br>meet inside one Transformer.</span></h1>
+    <p class="lead paired"><span class="zh" lang="zh-CN">MOFTransformer 先在 100 万个假想 MOF 上学习“什么像一个 MOF”，再把这个表示迁移到吸附、扩散、带隙和文献标签等任务。关键是同时看局部化学和全局孔结构。</span><span class="en" lang="en">MOFTransformer first learns what a MOF looks like from one million hypothetical structures, then transfers that representation to adsorption, diffusion, band gaps and literature labels. The key is to see local chemistry and global pore structure together.</span></p>
+    <div class="hero-stats">
+      <div class="stat"><strong>1M</strong><span class="paired"><span class="zh">预训练 hMOFs</span><span class="en">pre-training hMOFs</span></span></div>
+      <div class="stat"><strong>2 → 1</strong><span class="paired"><span class="zh">局部图 + 全局能量网格</span><span class="en">local graph + global energy grid</span></span></div>
+      <div class="stat"><strong>1,079</strong><span class="paired"><span class="zh">拓扑分类目标</span><span class="en">topology classes</span></span></div>
+    </div>
+    <p class="source paired"><span class="zh">证据：正文摘要、Fig. 1；正式论文页码为 Nature Machine Intelligence 5, 309–318。</span><span class="en">Evidence: abstract and Fig. 1; Nature Machine Intelligence 5, 309–318.</span></p>
+  </div>
+  <div class="visual">
+    <svg viewBox="0 0 640 420" role="img" aria-label="局部原子图与全局能量网格经过 Transformer 汇合">
+      <defs><linearGradient id="mofGrad" x1="0" x2="1"><stop offset="0" stop-color="#7de3ff"/><stop offset="1" stop-color="#78dfcd"/></linearGradient></defs>
+      <rect width="640" height="420" rx="18" fill="#0b1729"/>
+      <text x="24" y="34" fill="#a8b4c7" font-size="12" letter-spacing="1.6" data-svg-copy="0">TWO MODALITIES · ONE REPRESENTATION</text>
+      <g transform="translate(34,82)">
+        <rect width="218" height="164" rx="15" fill="#10263a" stroke="#293a50"/>
+        <text x="18" y="28" fill="#7de3ff" font-size="14" font-weight="700" data-svg-copy="1">LOCAL · ATOM GRAPH</text>
+        <g stroke="#a8b4c7" stroke-width="3" opacity=".8"><line x1="45" y1="93" x2="102" y2="56"/><line x1="45" y1="93" x2="102" y2="126"/><line x1="102" y1="56" x2="169" y2="91"/><line x1="102" y1="126" x2="169" y2="91"/></g>
+        <g fill="#78dfcd" stroke="#07111f" stroke-width="3"><circle cx="45" cy="93" r="16"/><circle cx="102" cy="56" r="14"/><circle cx="102" cy="126" r="14"/><circle cx="169" cy="91" r="16"/></g>
+        <text x="18" y="146" fill="#a8b4c7" font-size="11" data-svg-copy="2">bonds · elements · neighbours</text>
+      </g>
+      <g transform="translate(34,270)">
+        <rect width="218" height="112" rx="15" fill="#10263a" stroke="#293a50"/>
+        <text x="18" y="29" fill="#b9a6ff" font-size="14" font-weight="700" data-svg-copy="3">GLOBAL · ENERGY GRID</text>
+        <g transform="translate(22,44)" stroke="#b9a6ff" stroke-width="1" opacity=".72">
+          <path d="M0 0h68v43H0zM17 0v43M34 0v43M51 0v43M0 14h68M0 28h68"/>
+          <path d="M86 0h68v43H86zM103 0v43M120 0v43M137 0v43M86 14h68M86 28h68"/>
+        </g>
+        <text x="18" y="95" fill="#a8b4c7" font-size="11" data-svg-copy="4">30 Å cube → 216 patches</text>
+      </g>
+      <path d="M270 174 C315 174 320 160 352 160" fill="none" stroke="#7de3ff" stroke-width="3" marker-end="url(#arrow)"/>
+      <path d="M270 321 C315 321 320 238 352 238" fill="none" stroke="#b9a6ff" stroke-width="3" marker-end="url(#arrow)"/>
+      <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#7de3ff"/></marker></defs>
+      <g transform="translate(360,118)">
+        <rect width="232" height="162" rx="19" fill="url(#mofGrad)" opacity=".18" stroke="#7de3ff"/>
+        <text x="116" y="43" text-anchor="middle" fill="#f4f7fb" font-size="23" font-weight="800">Transformer</text>
+        <text x="116" y="70" text-anchor="middle" fill="#cfeef1" font-size="12" data-svg-copy="5">self-attention · shared space</text>
+        <g fill="#07111f"><rect x="48" y="94" width="28" height="28" rx="7"/><rect x="86" y="94" width="28" height="28" rx="7"/><rect x="124" y="94" width="28" height="28" rx="7"/></g>
+        <text x="116" y="145" text-anchor="middle" fill="#cfeef1" font-size="12" data-svg-copy="6">[CLS] → property head</text>
+      </g>
+      <text x="360" y="337" fill="#a8b4c7" font-size="12" data-svg-copy="7">fine-tune on a small labelled set</text>
+    </svg>
+    <p class="mof-caption paired"><span class="zh">教学重绘：保留输入模态与信息流关系，不复现晶体坐标。</span><span class="en">Teaching redraw: preserves modalities and information flow; it is not a crystal-coordinate reconstruction.</span></p>
+  </div>
+</section>
+
+<section id="why">
+  <div class="section-head"><div><div class="eyebrow">01 · <span class="paired"><span class="zh">为什么需要它</span><span class="en">Why this model</span></span></div><h2 class="paired"><span class="zh">同一套表示，能不能跨过不同性质？</span><span class="en">Can one representation cross property boundaries?</span></h2></div><p class="paired"><span class="zh">MOF 的化学空间由金属节点、有机连接体和拓扑共同决定。只为一个应用训练的模型，往往无法直接迁移到另一个应用。</span><span class="en">A MOF’s chemical space is set jointly by metal nodes, organic linkers and topology. A model trained for one application often does not transfer directly to another.</span></p></div>
+  <div class="grid3">
+    <div class="panel"><div class="eyebrow">LOCAL</div><h3 class="paired"><span class="zh">局部化学</span><span class="en">Local chemistry</span></h3><p class="paired"><span class="zh">原子类型、邻居和键距离由 CGCNN 变成逐原子的 embedding，保留金属簇与 linker 的差异。</span><span class="en">Atom types, neighbours and bond distances become atom-wise embeddings through CGCNN, retaining differences between metal clusters and linkers.</span></p></div>
+    <div class="panel"><div class="eyebrow" style="color:var(--mof-purple)">GLOBAL</div><h3 class="paired"><span class="zh">全局孔结构</span><span class="en">Global pore structure</span></h3><p class="paired"><span class="zh">甲烷探针产生 3D energy grid，再切成 5 Å patch，表达可进入的空间与势能分布。</span><span class="en">A methane probe produces a 3D energy grid, split into 5 Å patches to describe accessible space and energy distribution.</span></p></div>
+    <div class="panel"><div class="eyebrow" style="color:var(--mof-amber)">TRANSFER</div><h3 class="paired"><span class="zh">迁移学习</span><span class="en">Transfer learning</span></h3><p class="paired"><span class="zh">先用无监督式的结构任务预训练，再用 5,000–20,000 个带标签样本微调性质头。</span><span class="en">Pre-train on structure-oriented tasks, then fine-tune a property head with only 5,000–20,000 labelled structures.</span></p></div>
+  </div>
+</section>
+
+<section id="walkthrough">
+  <div class="section-head"><div><div class="eyebrow">02 · <span class="paired"><span class="zh">跟随一个 MOF</span><span class="en">Follow one MOF</span></span></div><h2 class="paired"><span class="zh">从重复原子，到可迁移的 token 序列。</span><span class="en">From repeated atoms to a transferable token sequence.</span></h2></div><p class="paired"><span class="zh">点击四步，观察模型如何压缩、拼接并保留两种尺度的信息。</span><span class="en">Click through four steps to see how the model compresses, joins and retains information at two scales.</span></p></div>
+  <div class="panel">
+    <div class="stepper" id="walkSteps">
+      <button type="button" class="active" data-walk="0">1 · <span class="zh">分组</span><span class="en">Group</span></button>
+      <button type="button" data-walk="1">2 · <span class="zh">编码</span><span class="en">Encode</span></button>
+      <button type="button" data-walk="2">3 · <span class="zh">拼接</span><span class="en">Join</span></button>
+      <button type="button" data-walk="3">4 · <span class="zh">迁移</span><span class="en">Transfer</span></button>
+    </div>
+    <div class="step-view"><div class="flow" id="walkFlow"></div><div class="detail" id="walkDetail"></div></div>
+  </div>
+</section>
+
+<section id="pretrain">
+  <div class="section-head"><div><div class="eyebrow">03 · <span class="paired"><span class="zh">预训练机制</span><span class="en">Pre-training</span></span></div><h2 class="paired"><span class="zh">三个目标，逼模型学会 MOF 的骨架。</span><span class="en">Three objectives make the model learn a MOF’s skeleton.</span></h2></div><p class="paired"><span class="zh">MTP、VFP、MOC 分别约束拓扑、孔隙和局部化学；三者一起训练时，表示同时包含全局与局部线索。</span><span class="en">MTP, VFP and MOC constrain topology, porosity and local chemistry; together they make the representation carry both global and local cues.</span></p></div>
+  <div class="tabs" id="taskTabs">
+    <button type="button" class="active" data-task="mtp">MTP · <span class="zh">拓扑</span><span class="en">topology</span></button>
+    <button type="button" data-task="vfp">VFP · <span class="zh">空隙率</span><span class="en">void fraction</span></button>
+    <button type="button" data-task="moc">MOC · <span class="zh">节点 / linker</span><span class="en">node / linker</span></button>
+  </div>
+  <div class="grid2">
+    <div class="panel task-card" id="taskCard"></div>
+    <div class="panel">
+      <div class="eyebrow paired"><span class="zh">共享的预测头</span><span class="en">Shared prediction head</span></div>
+      <div class="formula" style="margin-top:14px"><b>[CLS]</b> + atom tokens + <b>[SEP]</b> + 216 grid patches + <b>[VOL]</b><br><span style="color:var(--muted)">→ Transformer (L = 12, H = 768, A = 12) → MLP head</span></div>
+      <p class="paired"><span class="zh">[VOL] 补回把能量网格统一到 30 Å 立方体时丢掉的原始晶胞体积信息。位置 embedding 与 modal-type embedding 逐元素相加。</span><span class="en">[VOL] restores original cell-volume information lost when energy grids are interpolated to a 30 Å cube. Position and modal-type embeddings are added element-wise.</span></p>
+      <div class="callout note paired"><span class="zh">SI Note S2：只做 MTP 或 VFP 更有利于 H₂ uptake / diffusivity；MOC 更有利于 band gap；三任务一起时总体 MAE 最低。</span><span class="en">SI Note S2: MTP or VFP alone helps H₂ uptake / diffusivity, MOC helps band gap, and all three together give the lowest overall MAE.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="evidence">
+  <div class="section-head"><div><div class="eyebrow">04 · <span class="paired"><span class="zh">实验证据</span><span class="en">Evidence</span></span></div><h2 class="paired"><span class="zh">小数据微调，能否跨过气体与标签类型？</span><span class="en">Can small-data fine-tuning cross gases and label types?</span></h2></div><p class="paired"><span class="zh">下面逐项重现 Table 1 的模型与原论文基线。R² 和 Accuracy 越高越好；MAE 越低越好。</span><span class="en">The explorer reproduces Table 1’s model and original-paper baseline. Higher R² and Accuracy are better; lower MAE is better.</span></p></div>
+  <div class="panel">
+    <div class="select-wrap"><label for="metricSelect" class="paired"><span class="zh">选择 Table 1 行</span><span class="en">Choose a Table 1 row</span></label><select id="metricSelect"><option value="n2u">N₂ uptake</option><option value="o2u">O₂ uptake</option><option value="n2d">N₂ diffusivity</option><option value="o2d">O₂ diffusivity</option><option value="co2">CO₂ Henry coefficient</option><option value="solvent">Solvent removal stability</option><option value="thermal">Thermal stability regression</option></select></div>
+    <div class="result-grid"><div><div class="bars" id="metricBars"></div><div class="bar-legend"><span><i class="dot"></i>MOFTransformer</span><span><i class="dot base"></i><span class="paired"><span class="zh">原论文模型</span><span class="en">original paper</span></span></span></div></div><div class="detail" id="metricDetail"></div></div>
+    <p class="source paired"><span class="zh">来源：Table 1（正文 pp. 313–314）；数据量为 5,286、8,183、2,148 或 3,098，具体随任务变化。柱长按数值比例绘制，不代表不确定度。</span><span class="en">Source: Table 1 (main text pp. 313–314); dataset sizes are 5,286, 8,183, 2,148 or 3,098 depending on the task. Bar lengths are proportional to the reported values and do not show uncertainty.</span></p>
+  </div>
+  <div class="grid3" style="margin-top:16px">
+    <div class="panel"><div class="eyebrow">SIMULATION</div><h3>H₂ uptake</h3><p class="paired"><span class="zh">GCMC，100 bar，77 K；10,000 production cycles。</span><span class="en">GCMC at 100 bar and 77 K; 10,000 production cycles.</span></p></div>
+    <div class="panel"><div class="eyebrow">SIMULATION</div><h3>H₂ diffusivity</h3><p class="paired"><span class="zh">无限稀释 MD，77 K；NVT，1 fs，3M cycles。</span><span class="en">Infinite-dilution MD at 77 K; NVT, 1 fs and 3M cycles.</span></p></div>
+    <div class="panel"><div class="eyebrow">DFT</div><h3>Band gap</h3><p class="paired"><span class="zh">QMOF v13，20,373 个结构，PBE band gaps。</span><span class="en">QMOF v13, 20,373 structures and PBE band gaps.</span></p></div>
+  </div>
+</section>
+
+<section id="attention">
+  <div class="section-head"><div><div class="eyebrow">05 · <span class="paired"><span class="zh">注意力能告诉我们什么</span><span class="en">What attention reveals</span></span></div><h2 class="paired"><span class="zh">物性不同，模型看的位置也不同。</span><span class="en">Different properties make the model look in different places.</span></h2></div><p class="paired"><span class="zh">切换物性，比较两种 embedding 的相对重要性。这里显示的是论文的定性方向，不是人为加上的百分比。</span><span class="en">Switch properties to compare the relative importance of the two embeddings. These are the paper’s qualitative directions, not invented percentages.</span></p></div>
+  <div class="tabs" id="attentionTabs"><button type="button" class="active" data-attn="uptake">H₂ uptake</button><button type="button" data-attn="diffusion">H₂ diffusivity</button><button type="button" data-attn="gap">Band gap</button></div>
+  <div class="grid2"><div class="panel attention-visual" id="attentionChart"></div><div class="panel" id="attentionDetail"></div></div>
+  <div class="callout paired" style="margin-top:16px"><span class="zh">Fig. 5 的定量线索：在 IRMOF-1 的 H₂ uptake 模型中，6×6×6 个 energy-grid patch 里 attention 最高的 8 个 patch 靠近金属；attention score > 0.008 的区域，其 patch 最低能量与晶胞最低能量之差倾向小于 20 kJ mol⁻¹。</span><span class="en">Quantitative clue from Fig. 5: for IRMOF-1 H₂ uptake, the eight highest-attention patches among 6×6×6 energy-grid patches are near metal atoms; regions with attention score > 0.008 tend to have a patch-to-unit-cell minimum-energy difference below 20 kJ mol⁻¹.</span></div>
+</section>
+
+<section id="limits">
+  <div class="section-head"><div><div class="eyebrow">06 · <span class="paired"><span class="zh">边界与复现</span><span class="en">Limits & reproducibility</span></span></div><h2 class="paired"><span class="zh">强结果，仍然有清晰的适用范围。</span><span class="en">Strong results still have a defined scope.</span></h2></div><p class="paired"><span class="zh">把“论文报告了什么”和“页面帮助你推断什么”分开，才能正确理解通用迁移。</span><span class="en">Separate what the paper reports from what the page helps you infer.</span></p></div>
+  <div class="limits">
+    <div class="limit"><h3 class="paired"><span class="zh">数据边界</span><span class="en">Data scope</span></h3><p class="paired"><span class="zh">公开数据库、模拟结果和 text-mined 标签；没有前瞻性合成实验验证。</span><span class="en">Public databases, simulations and text-mined labels; no prospective synthesis validation.</span></p></div>
+    <div class="limit"><h3 class="paired"><span class="zh">描述符近似</span><span class="en">Descriptor assumptions</span></h3><p class="paired"><span class="zh">energy grid 使用 CH₄ + UFF/TraPPE，并统一到 30 Å；[VOL] 用于补回体积。</span><span class="en">The energy grid uses CH₄ + UFF/TraPPE and a fixed 30 Å cube; [VOL] restores volume.</span></p></div>
+    <div class="limit"><h3 class="paired"><span class="zh">标签边界</span><span class="en">Label limits</span></h3><p class="paired"><span class="zh">PBE 对开壳层过渡金属带隙存在已知低估问题，注意力会反映训练标签的偏差。</span><span class="en">PBE has known underestimation modes for open-shell transition-metal gaps; attention can reflect label bias.</span></p></div>
+    <div class="limit"><h3 class="paired"><span class="zh">解释边界</span><span class="en">Interpretation</span></h3><p class="paired"><span class="zh">attention 是模型相关性信号，不能单独证明因果机理。</span><span class="en">Attention is a model-dependent relevance signal, not causal proof.</span></p></div>
+  </div>
+  <div class="panel quiz" style="margin-top:16px"><div class="eyebrow paired"><span class="zh">自检</span><span class="en">Check yourself</span></div>
+    <details><summary class="paired"><span class="zh">为什么模型需要 [VOL] token？</span><span class="en">Why does the model need a [VOL] token?</span></summary><div class="answer paired"><span class="zh">把 energy grid 插值到统一的 30 Å 立方体会抹掉原晶胞体积；[VOL] 把这条全局信息重新提供给 Transformer。</span><span class="en">Interpolating every energy grid to a 30 Å cube removes the original cell volume; [VOL] gives that global signal back to the Transformer.</span></div></details>
+    <details><summary class="paired"><span class="zh">为什么 MOC 对 band gap 更有帮助？</span><span class="en">Why does MOC help band-gap prediction?</span></summary><div class="answer paired"><span class="zh">MOC 直接要求逐原子区分金属节点与有机 linker，强化了带隙更依赖的局部化学表征。</span><span class="en">MOC directly distinguishes metal-node and organic-linker atoms, strengthening the local chemical representation that band gaps depend on more strongly.</span></div></details>
+    <details><summary class="paired"><span class="zh">Table 1 的 thermal stability 是否也明显领先？</span><span class="en">Does Table 1 show a clear thermal-stability win?</span></summary><div class="answer paired"><span class="zh">没有：MOFTransformer R²=0.44、MAE=45 °C，原论文模型 R²=0.46、MAE=44 °C；这是页面必须保留的边界。</span><span class="en">No: MOFTransformer has R²=0.44 and MAE=45 °C versus R²=0.46 and MAE=44 °C for the original-paper model. The boundary matters.</span></div></details>
+  </div>
+</section>
+
+<section id="sources">
+  <div class="section-head"><div><div class="eyebrow">07 · <span class="paired"><span class="zh">来源与入口</span><span class="en">Sources & links</span></span></div><h2 class="paired"><span class="zh">从论文到可复现代码。</span><span class="en">From paper to reproducible code.</span></h2></div><p class="paired"><span class="zh">页面中的数值、图示和限制都可回到主文或补充材料。</span><span class="en">Every number, diagram and limitation on this page points back to the main paper or its supplement.</span></p></div>
+  <div class="panel source-list">
+    <ul>
+      <li><a href="https://doi.org/10.1038/s42256-023-00628-2" target="_blank" rel="noopener">Nature Machine Intelligence · DOI 10.1038/s42256-023-00628-2</a></li>
+      <li><a href="https://doi.org/10.6084/m9.figshare.21155506" target="_blank" rel="noopener">Figshare · model, embeddings and fine-tuning data</a></li>
+      <li><a href="https://doi.org/10.6084/m9.figshare.21810147" target="_blank" rel="noopener">Figshare · 1 million hypothetical MOF CIF files</a></li>
+      <li><a href="https://github.com/hspark1212/MOFTransformer" target="_blank" rel="noopener">GitHub · MOFTransformer</a> · <a href="https://hspark1212.github.io/MOFTransformer" target="_blank" rel="noopener">documentation</a></li>
+    </ul>
+    <p class="source paired"><span class="zh">主文页码按 Nature Machine Intelligence 文章页码记录；补充材料定位见同目录 sources.md。页面的 SVG、柱状图和交互反馈均为教学重绘或对表格的直接可视化。</span><span class="en">Page references use the article pagination in Nature Machine Intelligence; supplementary locations are listed in sources.md. SVGs, bars and feedback are teaching redraws or direct visualisations of reported tables.</span></p>
+  </div>
+</section>
+</main>
+<script src="../../assets/paper.js"></script>
+<script>
+'use strict';
+const state={lang:'zh',walk:0,task:'mtp',metric:'n2u',attn:'uptake'};
+const q=(zh,en)=>'<span class="paired"><span class="zh" lang="zh-CN">'+zh+'</span><span class="en" lang="en">'+en+'</span></span>';
+const walkData=[
+ {title:['拓扑等价原子','Topologically equivalent atoms'],body:['SI Note S1：按最多三条连接键的元素邻域向量分组，重复原子被压缩成少量 unique-atom 集合，避免长序列带来的内存问题。','SI Note S1 groups atoms by an element-neighbour vector through at most three connected bonds. Repeated atoms become a small set of unique-atom groups, avoiding long-sequence memory costs.'],evidence:['Supplementary Note S1, SI p. 2','Supplementary Note S1, SI p. 2']},
+ {title:['两种 embedding','Two embeddings'],body:['CGCNN 输出不做 pooling 的 atom-wise vectors；CH₄ energy grid 被展平、按 5 Å 切成 216 个 patch，再线性投影。','CGCNN supplies atom-wise vectors without pooling; the CH₄ energy grid is flattened, split into 216 patches at 5 Å resolution, and linearly projected.'],evidence:['Fig. 1b, article p. 311','Fig. 1b, article p. 311']},
+ {title:['一条序列','One sequence'],body:['[CLS] → atom graph → [SEP] → energy-grid patches → [VOL]，再加位置和模态类型 embedding，送入 12 层 Transformer。','[CLS] → atom graph → [SEP] → energy-grid patches → [VOL], with position and modality-type embeddings, enters a 12-block Transformer.'],evidence:['Fig. 1b, article p. 311','Fig. 1b, article p. 311']},
+ {title:['小数据微调','Small-data fine-tuning'],body:['预训练权重初始化性质预测头；同一个 backbone 可接到吸附、扩散、带隙或 text-mined stability 标签。','Pre-trained weights initialise a property head; the same backbone can connect to adsorption, diffusion, band-gap or text-mined stability labels.'],evidence:['Abstract; Table 1, article pp. 309, 313–314','Abstract; Table 1, article pp. 309, 313–314']}
+];
+function renderWalk(){
+ const d=walkData[state.walk];
+ document.getElementById('walkFlow').innerHTML=[
+  ['unique atoms','unique atoms'],['atom graph','atom graph'],['[CLS] + patches','[CLS] + patches'],['property head','property head'],['prediction','prediction']
+ ].map((x,i)=>'<div class="node'+(i===state.walk?' active':'')+'"><strong>'+x[0]+'</strong><small>'+x[1]+'</small></div>'+((i<4)?'<div class="arrow">→</div>':'')).join('');
+ document.getElementById('walkDetail').innerHTML='<div class="eyebrow">'+q('步骤 '+(state.walk+1)+' / 4','STEP '+(state.walk+1)+' / 4')+'</div><h3>'+q(d.title[0],d.title[1])+'</h3><p>'+q(d.body[0],d.body[1])+'</p><dl><dt>'+q('证据','Evidence')+'</dt><dd>'+q(d.evidence[0],d.evidence[1])+'</dd></dl>';
+ document.querySelectorAll('#walkSteps button').forEach(b=>b.classList.toggle('active',+b.dataset.walk===state.walk));
+}
+const tasks={
+ mtp:{accent:'var(--mof-cyan)',name:['MOF topology prediction','MOF topology prediction'],metric:'0.97',metricLabel:['accuracy','accuracy'],body:['把 [CLS] token 接到 1,079 类拓扑分类头。拓扑与孔隙几何相关，因此这是全局结构的预训练信号。','A 1,079-class topology head reads the [CLS] token. Because topology relates to pore geometry, this is a global-structure pre-training signal.'],source:['正文 p. 312；Fig. 3a 的 t-SNE 显示不同拓扑的 class token 能分簇。','Main text p. 312; Fig. 3a shows class tokens clustering by topology in t-SNE.']},
+ vfp:{accent:'var(--mof-purple)',name:['Void fraction prediction','Void fraction prediction'],metric:'0.01',metricLabel:['MAE','MAE'],body:['预测由 ZEO++ 计算的 accessible void fraction。它把连续的孔隙量写进表示，而不是只记住离散拓扑名称。','Predicts accessible void fraction calculated by ZEO++. It writes a continuous pore-space quantity into the representation instead of memorising only discrete topology names.'],source:['正文 p. 312；VFP 的 MAE 为 0.01。','Main text p. 312; VFP MAE is 0.01.']},
+ moc:{accent:'var(--mof-amber)',name:['Metal cluster–organic linker classification','Metal cluster–organic linker classification'],metric:'0.98',metricLabel:['accuracy','accuracy'],body:['对 atom-based embedding 做逐原子二分类，判断原子属于 metal node 还是 organic linker，强化局部化学线索。','Performs atom-wise binary classification on the atom-based embedding: metal node or organic linker, strengthening local chemistry cues.'],source:['正文 p. 312；MOC 的准确率为 0.98。','Main text p. 312; MOC accuracy is 0.98.']}
+};
+function renderTask(){
+ const d=tasks[state.task];
+ document.getElementById('taskCard').style.setProperty('--accent',d.accent);
+ document.getElementById('taskCard').innerHTML='<div class="eyebrow">'+q('预训练任务','PRE-TRAINING TASK')+'</div><h3>'+q(d.name[0],d.name[1])+'</h3><div class="metric">'+d.metric+' <small style="font-size:14px;color:var(--muted);letter-spacing:0">'+q(d.metricLabel[0],d.metricLabel[1])+'</small></div><p>'+q(d.body[0],d.body[1])+'</p><p class="source">'+q(d.source[0],d.source[1])+'</p>';
+ document.querySelectorAll('#taskTabs button').forEach(b=>b.classList.toggle('active',b.dataset.task===state.task));
+}
+const metrics={
+ n2u:{label:['N₂ uptake','N₂ uptake'],kind:'R²',ours:.78,base:.71,n:'5,286',remark:['CoREMOF；正文引用的原模型为 R² 0.71。','CoREMOF; the original-paper model is R² 0.71.'],better:'high'},
+ o2u:{label:['O₂ uptake','O₂ uptake'],kind:'R²',ours:.83,base:.74,n:'5,286',remark:['同一 CoREMOF 数据量；跨气体仍保持优势。','Same CoREMOF size; the advantage persists across gases.'],better:'high'},
+ n2d:{label:['N₂ diffusivity','N₂ diffusivity'],kind:'R²',ours:.77,base:.76,n:'5,286',remark:['扩散任务中增益较小，但方向仍为正。','The gain is smaller for diffusion, but remains positive.'],better:'high'},
+ o2d:{label:['O₂ diffusivity','O₂ diffusivity'],kind:'R²',ours:.78,base:.74,n:'5,286',remark:['O₂ 的电子效应更复杂，仍高于原论文基线。','O₂ has more complex electronic effects, yet remains above the baseline.'],better:'high'},
+ co2:{label:['CO₂ Henry coefficient','CO₂ Henry coefficient'],kind:'MAE',ours:.30,base:.42,n:'8,183',remark:['这里越低越好；模型把 MAE 从 0.42 降到 0.30。','Lower is better here; the model reduces MAE from 0.42 to 0.30.'],better:'low'},
+ solvent:{label:['Solvent removal stability','Solvent removal stability'],kind:'Accuracy',ours:.76,base:.76,n:'2,148',remark:['文献标签分类与原论文模型持平。','The text-mined classification ties the original-paper model.'],better:'high'},
+ thermal:{label:['Thermal stability regression','Thermal stability regression'],kind:'R²',ours:.44,base:.46,n:'3,098',remark:['同时报告 MAE：45 °C（模型）对 44 °C（原论文）。','The paper also reports MAE: 45 °C for the model versus 44 °C for the original-paper model.'],better:'high'}
+};
+function renderMetric(){
+ const d=metrics[state.metric],max=Math.max(d.ours,d.base,.01), scale=(v)=>Math.round(v/max*100);
+ document.getElementById('metricBars').innerHTML='<div class="bar-row"><span>MOFTransformer</span><div class="bar-track"><div class="bar-fill" style="--w:'+scale(d.ours)+'%"></div></div><b>'+d.kind+' '+d.ours.toFixed(2)+'</b></div><div class="bar-row"><span>'+q('原论文模型','Original paper')+'</span><div class="bar-track"><div class="bar-fill base" style="--w:'+scale(d.base)+'%"></div></div><b>'+d.kind+' '+d.base.toFixed(2)+'</b></div>';
+ document.getElementById('metricDetail').innerHTML='<div class="eyebrow">'+q('Table 1 · '+d.label[0],'Table 1 · '+d.label[1])+'</div><h3>'+q(d.kind+' '+d.ours.toFixed(2),' '+d.kind+' '+d.ours.toFixed(2))+'</h3><p>'+q(d.remark[0],d.remark[1])+'</p><dl><dt>'+q('数据量','Data')+'</dt><dd>'+d.n+' '+q('structures','structures')+'</dd><dt>'+q('方向','Direction')+'</dt><dd>'+q(d.better==='low'?'MAE 越低越好':'R² / Accuracy 越高越好',d.better==='low'?'lower MAE is better':'higher R² / Accuracy is better')+'</dd></dl>';
+}
+const attn={
+ uptake:{title:['H₂ uptake：模型更看全局','H₂ uptake: the model looks global'],copy:['energy-grid embedding 的 attention 较高，atom-based embedding 较低。Fig. 5 还把最高的 8 个 patch 定位到 IRMOF-1 的金属附近。','Energy-grid embeddings receive higher attention and atom-based embeddings lower attention. Fig. 5 localises the eight highest patches near metals in IRMOF-1.'],global:'high',local:'low',source:['Fig. 4–5，正文 pp. 314–315','Figs. 4–5, main text pp. 314–315']},
+ diffusion:{title:['H₂ diffusivity：仍然偏全局','H₂ diffusivity: still global'],copy:['扩散与可进入体积、拓扑和势能景观相关，因此 energy-grid embedding 的 attention 较高。','Diffusion relates to accessible volume, topology and the energy landscape, so energy-grid embeddings receive higher attention.'],global:'high',local:'low',source:['Fig. 4，正文 p. 314；Fig. 2b 关联 accessible volume fraction','Fig. 4, main text p. 314; Fig. 2b relates it to accessible volume fraction']},
+ gap:{title:['Band gap：局部化学更重要','Band gap: local chemistry matters more'],copy:['band gap 与空隙率和拓扑几乎无关，atom-based embedding 的 attention 高于 energy-grid。QMOF 分析也提示模型会捕捉金属类别与 PBE 标签的关系。','Band gaps show little relation to void fraction or topology; atom-based embeddings receive higher attention than energy grids. The QMOF analysis also suggests links to metal classes and PBE labels.'],global:'low',local:'high',source:['Fig. 2c、Fig. 4；Supplementary Note S3','Figs. 2c and 4; Supplementary Note S3']}
+};
+function renderAttention(){
+ const d=attn[state.attn];
+ document.getElementById('attentionChart').innerHTML='<div class="eyebrow">'+q('定性 attention 方向','QUALITATIVE ATTENTION DIRECTION')+'</div><div class="attn-line"><span>'+q('atom-based graph','atom-based graph')+'</span><div class="attn-track"><div class="attn-fill '+(d.local==='low'?'low':'')+'" style="--w:'+(d.local==='high'?'88':'28')+'%"></div></div><b>'+q(d.local==='high'?'高':'低',d.local==='high'?'high':'low')+'</b></div><div class="attn-line"><span>'+q('energy grid','energy grid')+'</span><div class="attn-track"><div class="attn-fill '+(d.global==='low'?'low':'')+'" style="--w:'+(d.global==='high'?'88':'28')+'%"></div></div><b>'+q(d.global==='high'?'高':'低',d.global==='high'?'high':'low')+'</b></div><p class="source">'+q('条长只编码论文报告的相对方向。','Bar length encodes only the relative direction reported by the paper.')+'</p>';
+ document.getElementById('attentionDetail').innerHTML='<div class="eyebrow">'+q('当前物性','CURRENT PROPERTY')+'</div><h3>'+q(d.title[0],d.title[1])+'</h3><p>'+q(d.copy[0],d.copy[1])+'</p><p class="source">'+q(d.source[0],d.source[1])+'</p>';
+ document.querySelectorAll('#attentionTabs button').forEach(b=>b.classList.toggle('active',b.dataset.attn===state.attn));
+}
+function localizeGraphics(lang){
+ const copy=[
+  ['两种模态 · 一个表示','TWO MODALITIES · ONE REPRESENTATION'],
+  ['局部 · 原子图','LOCAL · ATOM GRAPH'],
+  ['键 · 元素 · 邻居','bonds · elements · neighbours'],
+  ['全局 · 能量网格','GLOBAL · ENERGY GRID'],
+  ['30 Å 立方体 → 216 个 patch','30 Å cube → 216 patches'],
+  ['自注意力 · 共享空间','self-attention · shared space'],
+  ['[CLS] → 性质预测头','[CLS] → property head'],
+  ['用小型标注集微调','fine-tune on a small labelled set']
+ ];
+ document.querySelectorAll('[data-svg-copy]').forEach(el=>{const d=copy[+el.dataset.svgCopy];el.textContent=lang==='en'?d[1]:d[0];});
+ document.querySelector('svg[role="img"]').setAttribute('aria-label',lang==='en'?'Local atom graph and global energy grid merge through a Transformer':'局部原子图与全局能量网格经过 Transformer 汇合');
+}
+document.querySelectorAll('#walkSteps button').forEach(b=>b.addEventListener('click',()=>{state.walk=+b.dataset.walk;renderWalk();}));
+document.querySelectorAll('#taskTabs button').forEach(b=>b.addEventListener('click',()=>{state.task=b.dataset.task;renderTask();}));
+document.getElementById('metricSelect').addEventListener('change',e=>{state.metric=e.target.value;renderMetric();});
+document.querySelectorAll('#attentionTabs button').forEach(b=>b.addEventListener('click',()=>{state.attn=b.dataset.attn;renderAttention();}));
+renderWalk();renderTask();renderMetric();renderAttention();
+const atlas=AtlasPaper.init({
+ shortTitle:'MOFTransformer',
+ title:{zh:'MOFTransformer · 交互式论文讲解 | Research Atlas',en:'MOFTransformer · Interactive Paper Explainer | Research Atlas'},
+ sections:[
+  {id:'glance',zh:'概览',en:'Overview'},{id:'why',zh:'问题',en:'Why'},{id:'walkthrough',zh:'信息流',en:'Information flow'},{id:'pretrain',zh:'预训练',en:'Pre-training'},{id:'evidence',zh:'实验证据',en:'Evidence'},{id:'attention',zh:'注意力',en:'Attention'},{id:'limits',zh:'边界',en:'Limits'},{id:'sources',zh:'来源',en:'Sources'}
+ ],
+ allowBoth:false,
+ onLanguageChange(lang){state.lang=lang;localizeGraphics(lang);renderWalk();renderTask();renderMetric();renderAttention();}
+});
+</script>
+</body>
+</html>

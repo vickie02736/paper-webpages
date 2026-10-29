@@ -1,0 +1,6 @@
+interface:
+  display_name: "论文交互网页制作"
+  short_description: "沿用 Research Atlas 统一深色风格，制作双语论文交互页并核对证据、接入目录与发布"
+  default_prompt: "使用 $paper-webpage 沿用 Research Atlas 深蓝／青色共享样式和导航，将这篇论文制作成完整中英切换、分层讲解的交互网页，核对来源并完成目录接入和发布。"
+policy:
+  allow_implicit_invocation: true

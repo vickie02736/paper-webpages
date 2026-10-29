@@ -34,6 +34,8 @@ This repository collects the paper explainer webpages and research maps created 
 
 - [LanM fixed-bed separation — Bridging Hydrometallurgy and Biochemistry](papers/lanm-protein-process/)
 
+- [MOFTransformer — Multimodal pre-training for universal MOF transfer learning](papers/moftransformer/)
+
 ## Repository layout
 
 ```text
