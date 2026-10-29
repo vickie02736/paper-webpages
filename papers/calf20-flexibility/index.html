@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="中英双语交互讲解：Oktavian et al. 研究 CALF-20 的气体吸附、吸附诱导柔性与水氢键网络。">
+<title>CALF-20 柔性｜气体吸附与框架响应</title>
+<style>
+/* Page-specific artwork and reading aids. Shared chrome comes from paper.css. */
+.calf-page .zh{display:inline}.calf-page .en{display:none!important}.calf-page[data-lang="en"] .zh{display:none!important}.calf-page[data-lang="en"] .en{display:inline!important}.calf-page[data-lang="en"] .metric span.en{display:block!important}.calf-page[data-lang="both"] .en{display:block!important;color:var(--muted);font-size:.92em}.calf-page[data-lang="both"] .zh{display:block}
+.calf-page main{padding-bottom:40px}.calf-page .hero{display:grid;grid-template-columns:1.06fr .94fr;gap:36px;align-items:center}.calf-page .hero-copy{padding-top:28px}.calf-page .hero h1{max-width:760px}.calf-page .kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800}.calf-page .lead{max-width:710px}.calf-page .paper-meta{margin-top:24px;color:var(--muted);font-size:13px}.calf-page .hero-art{background:linear-gradient(145deg,#102f49,#0b182a 72%);border:1px solid #2b4d69;border-radius:28px;padding:18px;box-shadow:0 20px 60px #0004}.calf-page .hero-art svg{display:block;width:100%;height:auto}.calf-page .art-caption{margin:10px 8px 0;color:var(--muted);font-size:12px}.calf-page .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 4px}.calf-page .metric{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:17px 18px}.calf-page .metric strong{display:block;color:var(--cyan);font-size:31px;line-height:1.1;letter-spacing:-.04em}.calf-page .metric span{display:block;color:var(--muted);font-size:12px;margin-top:6px}.calf-page .section-head{grid-template-columns:.84fr 1.16fr}.calf-page .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.calf-page .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.calf-page .card{padding:20px}.calf-page .card h3{margin:0 0 9px}.calf-page .eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800}.calf-page .source{border-left:3px solid var(--line);padding-left:11px;font-size:12px;color:var(--muted);margin:14px 0 0}.calf-page .source a{color:var(--cyan)}.calf-page .tag{display:inline-flex;border:1px solid #3d607b;border-radius:999px;padding:3px 9px;color:var(--cyan);font-size:11px;letter-spacing:.04em}.calf-page .callout{border-left:4px solid var(--amber);background:var(--amber2);border-radius:0 13px 13px 0;padding:14px 16px;margin-top:16px}.calf-page .warning{border-left-color:var(--rose);background:var(--rose2)}.calf-page .note{border-left-color:var(--purple);background:#24213b}.calf-page .control-row{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.calf-page button{border:1px solid var(--line);border-radius:10px;background:var(--panel2);color:var(--ink);padding:8px 12px;cursor:pointer}.calf-page button:hover,.calf-page button[aria-pressed="true"],.calf-page button.active{border-color:var(--cyan);background:#143240;color:var(--cyan)}.calf-page .micro{font-size:12px;color:var(--muted)}.calf-page .diagram{background:#0b1729;border:1px solid var(--line);border-radius:17px;overflow:hidden;padding:10px}.calf-page .diagram svg{display:block;width:100%;height:auto}.calf-page .diagram text{font-family:inherit}.calf-page .legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin-top:10px}.calf-page .legend i{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:5px}.calf-page .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;align-items:stretch;margin-top:16px}.calf-page .flow button{position:relative;text-align:left;min-height:82px}.calf-page .flow button:not(:last-child)::after{content:'→';position:absolute;right:-15px;top:25px;color:var(--cyan);font-size:18px;z-index:2}.calf-page .flow .flow-num{display:block;color:var(--cyan);font-size:11px;font-weight:800;margin-bottom:5px}.calf-page .flow .flow-title{font-weight:750;font-size:14px;line-height:1.35}.calf-page .flow-detail{margin-top:13px;min-height:118px}.calf-page .bars{display:grid;gap:10px;margin:16px 0}.calf-page .bar-row{display:grid;grid-template-columns:92px 1fr 72px;gap:10px;align-items:center;font-size:13px}.calf-page .bar-track{height:16px;border-radius:99px;background:#1c2c42;overflow:hidden}.calf-page .bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--mint));transition:width .2s ease}.calf-page .bar-fill.alt{background:linear-gradient(90deg,var(--amber),#f4a6d7)}.calf-page .value{text-align:right;font-variant-numeric:tabular-nums}.calf-page .axis{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-left:102px}.calf-page .peak-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:13px}.calf-page .peak{border:1px solid var(--line);border-radius:12px;padding:12px;background:#0d1a2c}.calf-page .peak b{display:block;color:var(--cyan);font-size:18px}.calf-page .peak small{color:var(--muted)}.calf-page .temperature{font-size:34px;font-weight:800;color:var(--cyan);letter-spacing:-.04em}.calf-page .formula{background:#0b1729;border:1px solid var(--line);border-radius:12px;padding:13px 16px;overflow:auto;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#d7f26b}.calf-page .table-wrap{overflow-x:auto}.calf-page table{width:100%;border-collapse:collapse;font-size:13px}.calf-page th,.calf-page td{padding:9px 10px;border:1px solid var(--line);vertical-align:top;text-align:left}.calf-page th{background:var(--panel2);color:var(--muted);font-weight:700}.calf-page .hbond-chart{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;align-items:end;height:190px;padding:10px 4px 28px;border-bottom:1px solid var(--line)}.calf-page .hbond-col{display:flex;flex-direction:column;justify-content:end;gap:4px;height:100%;min-width:0}.calf-page .hbond-stack{display:flex;flex-direction:column-reverse;justify-content:flex-start;height:135px;border-radius:8px 8px 0 0;overflow:hidden;background:#18273a}.calf-page .hbond-stack i{display:block;width:100%;min-height:1px}.calf-page .hbond-label{text-align:center;color:var(--muted);font-size:11px}.calf-page .hbond-value{text-align:center;font-size:10px;color:var(--ink);font-variant-numeric:tabular-nums}.calf-page .swatch0{background:#60738e}.calf-page .swatch1{background:#7de3ff}.calf-page .swatch2{background:#78dfcd}.calf-page .swatch3{background:#d7f26b}.calf-page .swatch4{background:#ffb66e}.calf-page .depth-note{font-size:12px;color:var(--muted);margin:0 0 12px}.calf-page .limits{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.calf-page .limit{border-top:3px solid var(--rose);padding:14px 2px 4px}.calf-page .limit h3{margin:0 0 7px}.calf-page details{margin-top:12px;padding:0 14px;border:1px solid var(--line);border-radius:13px}.calf-page details summary{cursor:pointer}.calf-page .foot{padding:34px 0 80px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.calf-page .foot-links{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px}.calf-page .foot a{color:var(--cyan)}
+.calf-page body[data-depth="0"] .d1,.calf-page body[data-depth="0"] .d2{display:none!important}
+.atlas-paper[data-depth="0"] .d1,.atlas-paper[data-depth="0"] .d2,.atlas-paper[data-depth="1"] .d2{display:none!important}
+@media(max-width:820px){.calf-page .hero{grid-template-columns:1fr;padding-top:42px}.calf-page .section-head,.calf-page .grid2{grid-template-columns:1fr}.calf-page .grid3{grid-template-columns:1fr 1fr}.calf-page .flow{grid-template-columns:1fr 1fr}.calf-page .flow button:not(:last-child)::after{display:none}.calf-page .metrics{grid-template-columns:1fr 1fr}.calf-page .section{padding-block:48px}}
+@media(max-width:480px){.calf-page > main{width:calc(100% - 36px)}.calf-page .grid3,.calf-page .limits{grid-template-columns:1fr}.calf-page .metrics{grid-template-columns:1fr}.calf-page .flow{grid-template-columns:1fr}.calf-page .bar-row{grid-template-columns:76px 1fr 59px}.calf-page .axis{margin-left:86px}.calf-page .peak-grid{grid-template-columns:1fr}.calf-page .hero h1{font-size:42px}}
+</style>
+<link rel="stylesheet" href="../../assets/paper.css">
+</head>
+<body class="atlas-paper atlas-reading calf-page" data-paper="calf20-flexibility" data-depth="1">
+<main id="paper-content">
+<div id="depth" class="depth-control" aria-label="阅读深度"><button type="button" data-depth="0" aria-pressed="false">直觉</button><button type="button" data-depth="1" aria-pressed="true">机制</button><button type="button" data-depth="2" aria-pressed="false">研究</button></div>
+<section class="hero" id="core">
+  <div class="hero-copy">
+    <div class="kicker">NATURE COMMUNICATIONS · 2024 · MOF</div>
+    <h1><span class="zh">孔道会动，选择性才有答案</span><span class="en">The pore moves—and selectivity follows</span></h1>
+    <p class="lead"><span class="zh">CALF-20 不是一张固定的“孔地图”。CO₂、H₂O 和温度会改变晶胞体积、孔体积分数与配体转角；把吸附等温线和原位 PXRD 放在一起，才能解释为什么它在湿烟气中仍偏好 CO₂。</span><span class="en">CALF-20 is not a fixed pore map. CO₂, H₂O and temperature change cell volume, pore-volume fraction and linker rotation. Pairing adsorption isotherms with in-situ PXRD explains why it still favours CO₂ in humid flue gas.</span></p>
+    <p class="paper-meta"><span class="zh">Oktavian 等，Nature Communications 15, 3898 (2024) · DOI 10.1038/s41467-024-48136-0</span><span class="en">Oktavian et al., Nature Communications 15, 3898 (2024) · DOI 10.1038/s41467-024-48136-0</span></p>
+    <div class="callout"><span class="zh">读完这一页，你应能回答：固定骨架模型为什么会低估 273 K 的 CO₂ 吸附？水又怎样通过受限氢键网络和框架柔性影响选择性？</span><span class="en">By the end, you should be able to answer: why does a rigid-framework model underpredict CO₂ at 273 K, and how do confined hydrogen bonds and framework flexibility shape selectivity?</span></div>
+  </div>
+  <div class="hero-art">
+    <svg viewBox="0 0 560 420" role="img" data-aria-zh="CALF-20 的 Zn–三唑层、草酸柱与气体客体的教学示意" data-aria-en="Teaching schematic of CALF-20 Zn–triazole layers, oxalate pillars and gas guests">
+      <defs><linearGradient id="calfGlow" x1="0" x2="1"><stop stop-color="#7de3ff" stop-opacity=".28"/><stop offset="1" stop-color="#78dfcd" stop-opacity=".04"/></linearGradient></defs>
+      <rect x="12" y="12" width="536" height="396" rx="22" fill="url(#calfGlow)" stroke="#355b78"/>
+      <g stroke="#7de3ff" stroke-width="3" fill="none" opacity=".9">
+        <path d="M78 101 L206 72 L336 105 L466 78 L466 153 L336 182 L206 149 L78 178 Z"/>
+        <path d="M78 244 L206 215 L336 248 L466 221 L466 296 L336 325 L206 292 L78 321 Z"/>
+        <path d="M78 101 L78 178 M206 72 L206 149 M336 105 L336 182 M466 78 L466 153 M78 244 L78 321 M206 215 L206 292 M336 248 L336 325 M466 221 L466 296"/>
+      </g>
+      <g stroke="#ffb66e" stroke-width="6" opacity=".8"><path d="M206 149 L206 215"/><path d="M336 182 L336 248"/><path d="M466 153 L466 221"/></g>
+      <g fill="#7de3ff"><circle cx="78" cy="101" r="9"/><circle cx="206" cy="72" r="9"/><circle cx="336" cy="105" r="9"/><circle cx="466" cy="78" r="9"/><circle cx="78" cy="244" r="9"/><circle cx="206" cy="215" r="9"/><circle cx="336" cy="248" r="9"/><circle cx="466" cy="221" r="9"/></g>
+      <g fill="#f4a6d7" opacity=".95"><circle cx="136" cy="125" r="7"/><circle cx="271" cy="126" r="7"/><circle cx="401" cy="126" r="7"/><circle cx="136" cy="268" r="7"/><circle cx="271" cy="269" r="7"/><circle cx="401" cy="269" r="7"/></g>
+      <g fill="#d7f26b" stroke="#07111f" stroke-width="2"><circle cx="168" cy="177" r="12"/><circle cx="305" cy="207" r="12"/><circle cx="431" cy="187" r="12"/></g>
+      <g fill="#07111f" font-size="12" font-weight="800" text-anchor="middle"><text x="168" y="181">CO₂</text><text x="305" y="211">H₂O</text><text x="431" y="191">CO₂</text></g>
+      <g fill="#f4f7fb" font-size="13"><text x="32" y="43" data-svg-zh="CALF-20 · dmc 拓扑 · 教学示意" data-svg-en="CALF-20 · dmc topology · schematic">CALF-20 · dmc 拓扑 · 教学示意</text><text x="390" y="376" fill="#a8b4c7" data-svg-zh="Zn–三唑层" data-svg-en="Zn–triazole layers">Zn–三唑层</text><text x="390" y="394" fill="#a8b4c7" data-svg-zh="草酸柱" data-svg-en="oxalate pillars">草酸柱</text></g>
+    </svg>
+    <p class="art-caption"><span class="zh">青线：Zn–三唑层；橙线：草酸柱；亮色球：客体分子。教学示意，不是晶体坐标复现。</span><span class="en">Cyan: Zn–triazole layers; orange: oxalate pillars; bright spheres: guest molecules. Schematic, not crystallographic coordinates.</span></p>
+  </div>
+</section>
+<div class="metrics" aria-label="Key reported metrics">
+  <div class="metric"><strong>550</strong><span><span class="zh">BET 表面积 / m² g⁻¹</span><span class="en">BET area / m² g⁻¹</span></span></div>
+  <div class="metric"><strong>4.3 Å</strong><span><span class="zh">最大空腔直径 LCD</span><span class="en">Largest cavity diameter (LCD)</span></span></div>
+  <div class="metric"><strong>3.0 Å</strong><span><span class="zh">限孔直径 PLD</span><span class="en">Pore limiting diameter (PLD)</span></span></div>
+</div>
+
+<section class="section" id="structure">
+  <div class="section-head"><div><div class="num">01 · STRUCTURE</div><h2><span class="zh">从 Zn、三唑和草酸，到 dmc 拓扑</span><span class="en">From Zn, triazole and oxalate to dmc</span></h2></div><p><span class="zh">先把“材料是什么”说清楚：重复的 1,2,4-triazole 层由 Zn 连接，oxalate 跨层桥接；SingleNode 简化后得到 RCSR 的 dmc 拓扑。</span><span class="en">Start with what the material is: repeating 1,2,4-triazole layers are connected by Zn, while oxalate bridges the layers. The SingleNode simplification gives the RCSR dmc topology.</span></p></div>
+  <div class="grid2">
+    <div class="diagram">
+      <svg viewBox="0 0 640 310" role="img" data-aria-zh="CALF-20 构筑单元和 dmc 拓扑的教学图" data-aria-en="Teaching diagram of CALF-20 building units and dmc topology">
+        <rect width="640" height="310" fill="#0b1729"/>
+        <g stroke="#7de3ff" stroke-width="4" fill="none"><path d="M85 82L215 47L345 82L475 47L565 85L435 120L305 85L175 120Z"/><path d="M85 210L215 175L345 210L475 175L565 213L435 248L305 213L175 248Z"/><path d="M85 82V210M215 47V175M345 82V210M475 47V175M565 85V213"/></g>
+        <g stroke="#ffb66e" stroke-width="7"><path d="M215 175V47"/><path d="M475 175V47"/></g>
+        <g fill="#7de3ff"><circle cx="85" cy="82" r="10"/><circle cx="215" cy="47" r="10"/><circle cx="345" cy="82" r="10"/><circle cx="475" cy="47" r="10"/><circle cx="565" cy="85" r="10"/><circle cx="85" cy="210" r="10"/><circle cx="215" cy="175" r="10"/><circle cx="345" cy="210" r="10"/><circle cx="475" cy="175" r="10"/><circle cx="565" cy="213" r="10"/></g>
+        <g fill="#f4a6d7"><circle cx="150" cy="101" r="7"/><circle cx="280" cy="101" r="7"/><circle cx="410" cy="101" r="7"/><circle cx="150" cy="229" r="7"/><circle cx="280" cy="229" r="7"/><circle cx="410" cy="229" r="7"/></g>
+        <g fill="#f4f7fb" font-size="15"><text x="27" y="26" data-svg-zh="Zn–三唑层" data-svg-en="Zn–triazole sheets">Zn–三唑层</text><text x="27" y="299" fill="#a8b4c7" data-svg-zh="粉色节点 = 有机连接体" data-svg-en="pink nodes = organic linkers">粉色节点 = 有机连接体</text><text x="410" y="299" fill="#ffb66e" data-svg-zh="橙色 = 草酸桥" data-svg-en="orange = oxalate bridges">橙色 = 草酸桥</text></g>
+      </svg>
+      <div class="legend"><span><i style="background:#7de3ff"></i><span class="zh">Zn / 金属节点</span><span class="en">Zn / metal nodes</span></span><span><i style="background:#f4a6d7"></i><span class="zh">有机节点</span><span class="en">organic nodes</span></span><span><i style="background:#ffb66e"></i><span class="zh">草酸柱</span><span class="en">oxalate pillar</span></span></div>
+    </div>
+    <div class="card">
+      <span class="tag"><span class="zh">论文报告 · Fig. 1</span><span class="en">Paper report · Fig. 1</span></span>
+      <h3><span class="zh">小孔道带来紧密匹配</span><span class="en">A tight fit for CO₂</span></h3>
+      <p><span class="zh">LCD 约 4.3 Å、PLD 约 3 Å。这个量级解释了 CO₂ 的可进入性，也解释了为什么 H₂O 的进入与重排不能简单当作“把孔填满”。</span><span class="en">LCD is about 4.3 Å and PLD about 3 Å. This scale helps CO₂ enter, while H₂O cannot be treated as simply “filling the pore” without rearrangement.</span></p>
+      <div class="grid3">
+        <div class="card"><b class="eyebrow">LINKER</b><strong>C₂N₃</strong><p class="micro"><span class="zh">三唑酸根</span><span class="en">triazolate</span></p></div>
+        <div class="card"><b class="eyebrow">PILLAR</b><strong>C₂O₄</strong><p class="micro"><span class="zh">草酸根</span><span class="en">oxalate</span></p></div>
+        <div class="card"><b class="eyebrow">TOPOLOGY</b><strong>dmc</strong><p class="micro"><span class="zh">RCSR 简化网络</span><span class="en">RCSR net</span></p></div>
+      </div>
+      <p class="source"><span class="zh">来源：正文 p. 2、Fig. 1；尺寸是几何表征值，不是某个吸附状态下的瞬时孔径。</span><span class="en">Source: main p. 2 and Fig. 1. These are geometric descriptors, not instantaneous pore sizes for one adsorption state.</span></p>
+      <p class="d1 micro"><span class="zh">机制层：SingleNode 把三唑酸根和草酸根简化为不同连接分支，保留节点—连接体的拓扑关系。</span><span class="en">Mechanism layer: SingleNode reduces triazolate and oxalate to distinct linker branches while retaining node–linker connectivity.</span></p>
+      <p class="d2 source"><span class="zh">研究层：作者用 ToposPro 与 CrystalNets 计算拓扑；dmc 是网络分类，不等于给出柔性自由能。</span><span class="en">Research layer: ToposPro and CrystalNets were used for topology; dmc classifies the net and does not itself provide a flexibility free energy.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="adsorption">
+  <div class="section-head"><div><div class="num">02 · ADSORPTION</div><h2><span class="zh">固定骨架模型先做对照，再暴露缺口</span><span class="en">The rigid model calibrates the question</span></h2></div><p><span class="zh">N₂ 77 K 的模拟与实验吻合，说明样品结晶且活化成功；CO₂ 等温线总体吻合，但在高于约 150 mbar、尤其 273 K 时模拟略低于实验。</span><span class="en">Simulated and measured N₂ at 77 K agree, supporting crystallinity and activation. CO₂ is broadly consistent, but simulations underpredict above about 150 mbar, especially at 273 K.</span></p></div>
+  <div class="grid2">
+    <div class="card">
+      <span class="tag"><span class="zh">交互读图 · Fig. 2b 摘要点</span><span class="en">Interactive read · Fig. 2b anchor points</span></span>
+      <div class="control-row" id="temp-controls" role="group" aria-label="Temperature selector"></div>
+      <div class="temperature" id="temp-value"></div>
+      <p id="temp-copy" class="lead"></p>
+      <div class="bars" id="temp-bars"></div><div class="axis"><span>0</span><span>1</span><span>2</span><span>3</span><span>3.5 mmol g⁻¹</span></div>
+      <p class="source" id="temp-source"></p>
+    </div>
+    <div class="card">
+      <h3><span class="zh">为什么“低估”反而是线索？</span><span class="en">Why does underprediction become a clue?</span></h3>
+      <div class="formula">rigid GCMC &lt; experiment at 273 K → guest-induced opening is plausible</div>
+      <p><span class="zh">如果实验样品还残留溶剂，固定、无溶剂模型通常会高估可达空间；这里却出现低估。因此作者把偏差解释为外部刺激（气体、温度）触发的结构变化，而不是简单的活化误差。</span><span class="en">Residual solvent would usually make a solvent-free rigid model overestimate accessible space. Here the sign is reversed. The authors therefore interpret the gap as evidence for stimulus-induced structural change, rather than a simple activation error.</span></p>
+      <div class="callout"><span class="zh">这个推断来自模型—实验差异，随后由 PXRD 与柔性 MD 检验；它不是仅凭一条等温线就证明的机制。</span><span class="en">This inference comes from the model–experiment gap and is then tested with PXRD and flexible MD; one isotherm alone does not prove the mechanism.</span></div>
+      <p class="d1 micro"><span class="zh">机制层：固定骨架 GCMC 使每个客体看到同一组晶体学坐标；NPT DFT-MD 则允许晶胞形状和体积响应。</span><span class="en">Mechanism layer: rigid GCMC gives every guest the same crystallographic coordinates; NPT DFT-MD allows cell shape and volume to respond.</span></p>
+      <p class="d2 source"><span class="zh">研究层：N₂/CO₂ 使用 20,000 平衡 + 20,000 生产循环；水使用 100,000 + 100,000，模型精度与采样成本不同。</span><span class="en">Research layer: N₂/CO₂ use 20,000 equilibration + 20,000 production cycles; water uses 100,000 + 100,000, reflecting different sampling demands.</span></p>
+      <p class="source"><span class="zh">来源：正文 p. 2–3、Fig. 2；flue-gas 条件约 0.1–0.15 atm。</span><span class="en">Source: main pp. 2–3 and Fig. 2; flue-gas condition is about 0.1–0.15 atm.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pxrd">
+  <div class="section-head"><div><div class="num">03 · PXRD</div><h2><span class="zh">峰位移动，把客体诱导的形变显影</span><span class="en">Peak shifts make guest-induced motion visible</span></h2></div><p><span class="zh">原位 PXRD 将干燥、CO₂、液水与不同 RH 的状态放在同一把尺上。交互图只表达正文报告的方向性移动，不伪造未给出的峰位数值。</span><span class="en">In-situ PXRD places dry, CO₂, liquid-water and humidity states on one scale. The interactive view shows reported directions only; it does not invent unreported peak positions.</span></p></div>
+  <div class="grid2">
+    <div class="card">
+      <span class="tag"><span class="zh">原位条件</span><span class="en">In-situ conditions</span></span>
+      <div class="control-row" id="condition-controls" role="group" aria-label="PXRD condition selector"></div>
+      <div class="diagram"><svg id="peak-chart" viewBox="0 0 650 300" role="img" data-aria-zh="CALF-20 PXRD 三个关键反射的方向性位移" data-aria-en="Directional shifts of three CALF-20 PXRD reflections"></svg></div>
+      <p id="condition-copy" class="micro"></p>
+      <div class="peak-grid"><div class="peak"><b>(100)</b><small><span class="zh">Zn–三唑层间</span><span class="en">between Zn–triazole layers</span></small></div><div class="peak"><b>(011)</b><small><span class="zh">孔道中部</span><span class="en">pore middle</span></small></div><div class="peak"><b>(020)</b><small><span class="zh">草酸基团平面</span><span class="en">oxalate-containing plane</span></small></div></div>
+    </div>
+    <div class="card">
+      <h3><span class="zh">从方向读机制</span><span class="en">Read the mechanism from the directions</span></h3>
+      <ul>
+        <li><span class="zh">100% CO₂： (100) 向高 2θ，(020) 向低 2θ；(011) 基本不动。</span><span class="en">100% CO₂: (100) shifts to higher 2θ and (020) to lower 2θ; (011) is nearly unchanged.</span></li>
+        <li><span class="zh">液水：三个反射都发生明显变化，尤其 (011) 向低 2θ。</span><span class="en">Liquid water: all three reflections change, especially (011) toward lower 2θ.</span></li>
+        <li><span class="zh">4% 与 10% RH：变化很小；20% RH：三处反射都明显变化。</span><span class="en">4% and 10% RH: little change; 20% RH: clear changes at all three reflections.</span></li>
+      </ul>
+      <div class="callout"><span class="zh">作者的机制解释：CO₂ 需要较少的结构调整，水需要框架略微打开；低 RH 下 CO₂ 先占据可达空间，因此表现出选择性。</span><span class="en">The authors’ mechanistic interpretation: CO₂ needs less structural adjustment, whereas water needs the framework to open slightly; at low RH, CO₂ fills accessible space first, producing selectivity.</span></div>
+      <p class="source"><span class="zh">来源：正文 p. 3、Fig. 3；SI Methods 1（Rigaku Miniflex 600，CuKα，110 °C N₂ 干燥后 50 °C 测量）。</span><span class="en">Source: main p. 3 and Fig. 3; SI Methods 1 (Rigaku Miniflex 600, CuKα, 110 °C N₂ drying then measurement at 50 °C).</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flexibility">
+  <div class="section-head"><div><div class="num">04 · FLEXIBILITY</div><h2><span class="zh">从 20 ps 的 DFT-MD，到可扫描的自由能</span><span class="en">From 20 ps of DFT-MD to scan-able free energy</span></div><p><span class="zh">DFT-MD 先给出“客体会把骨架撑开”的直接证据；MLP 再把昂贵的 DFT 采样扩展为体积方向的自由能剖面。</span><span class="en">DFT-MD first shows that guests hold the framework open; an MLP then extends expensive DFT sampling into free-energy profiles along volume.</span></p></div>
+  <div class="card">
+    <div class="flow" id="method-flow" role="group" aria-label="Simulation workflow"></div>
+    <div class="flow-detail card" id="method-detail" aria-live="polite"></div>
+  </div>
+  <div class="grid2" style="margin-top:18px">
+    <div class="card">
+      <span class="tag"><span class="zh">DFT-MD：客体保持框架打开</span><span class="en">DFT-MD: guests hold the framework open</span></span>
+      <div class="control-row" id="flex-controls" role="group" aria-label="Temperature selector for flexibility"></div>
+      <div class="temperature" id="flex-temp"></div>
+      <div class="bars" id="flex-bars"></div><div class="axis"><span>0%</span><span>4%</span><span>8%</span><span>12%</span></div>
+      <p class="source" id="flex-source"></p>
+    </div>
+    <div class="card">
+      <h3><span class="zh">273 K 的体积差很小，孔体积分数差很大</span><span class="en">At 273 K, a small cell-volume gap hides a larger pore-space gap</span></h3>
+      <div class="grid3"><div class="card"><b class="eyebrow">EMPTY</b><strong>5930 Å³</strong><p class="micro"><span class="zh">空骨架</span><span class="en">empty</span></p></div><div class="card"><b class="eyebrow">LOADED</b><strong>6089 Å³</strong><p class="micro"><span class="zh">客体加载</span><span class="en">guest-loaded</span></p></div><div class="card"><b class="eyebrow">Δ</b><strong>+2.7%</strong><p class="micro"><span class="zh">晶胞体积</span><span class="en">cell volume</span></p></div></div>
+      <p><span class="zh">同一温度下，N₂ 探针可达孔体积分数差为 11.9%。这就是为什么“晶胞只变了 2.7%”不能被读成“吸附空间只变了 2.7%”。</span><span class="en">At the same temperature, the N₂-probe-accessible pore-volume fraction differs by 11.9%. A 2.7% cell-volume change therefore cannot be read as only a 2.7% change in adsorption space.</span></p>
+      <p class="source"><span class="zh">来源：正文 p. 4、Fig. 4；NPT、2×2×2 超胞、273/323/387 K、20 ps、1 fs。</span><span class="en">Source: main p. 4 and Fig. 4; NPT, 2×2×2 supercell, 273/323/387 K, 20 ps, 1 fs.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="water">
+  <div class="section-head"><div><div class="num">05 · WATER</div><h2><span class="zh">水不是“有亲和力就会团聚”</span><span class="en">Water does not simply cluster because it is attracted</span></h2></div><p><span class="zh">293 K 水等温线呈 V 型；低 RH 下水分子稀疏、氢键受限。10% RH 的 RDF 指向草酸氧附近，而不是直接 Zn–O 配位。</span><span class="en">The 293 K water isotherm is type-V. At low RH, water is sparse and hydrogen bonding is constrained. The 10% RH RDF points to oxalate oxygen, not direct Zn–O coordination.</span></p></div>
+  <div class="grid2">
+    <div class="card">
+      <span class="tag"><span class="zh">氢键分布 · XLSX Fig. 6d</span><span class="en">Hydrogen-bond distribution · XLSX Fig. 6d</span></span>
+      <div class="control-row" id="rh-controls" role="group" aria-label="Relative humidity selector"></div>
+      <div class="hbond-chart" id="hbond-chart"></div>
+      <div class="legend"><span><i class="swatch0"></i>0 H-bonds</span><span><i class="swatch1"></i>1</span><span><i class="swatch2"></i>2</span><span><i class="swatch3"></i>3</span><span><i class="swatch4"></i>4</span></div>
+      <p class="source" id="rh-source"></p>
+    </div>
+    <div class="card">
+      <h3><span class="zh">三个尺度一起看</span><span class="en">Read three scales together</span></h3>
+      <div class="grid3"><div class="card"><b class="eyebrow">RDF</b><strong>2.8 Å</strong><p class="micro"><span class="zh">水 O–草酸 O 首峰</span><span class="en">water O–oxalate O first peak</span></p></div><div class="card"><b class="eyebrow">HBOND</b><strong>&lt; 2</strong><p class="micro"><span class="zh">80% RH 主要 1–2 条</span><span class="en">mostly 1–2 at 80% RH</span></p></div><div class="card"><b class="eyebrow">ENERGY</b><strong>73%</strong><p class="micro"><span class="zh">水–框架能量中静电占比</span><span class="en">electrostatic share of water–framework energy</span></p></div></div>
+      <p><span class="zh">在 Cu-BTC 与体相 TIP4P 水中，80% RH 时更常见 3–4 条氢键；CALF-20 的小孔、分散水分子和缺少直接 Zn 接触，共同抑制了水团簇化。</span><span class="en">At 80% RH, Cu-BTC and bulk TIP4P water more often show 3–4 hydrogen bonds. CALF-20’s confinement, dispersed water and lack of direct Zn contact suppress clustering.</span></p>
+      <div class="callout"><span class="zh">“疏水”在这里是结构—能量共同产生的行为：水–框架静电作用存在，但孔道几何不让水轻易形成体相样网络。</span><span class="en">“Hydrophobic” here is a coupled structural–energetic behaviour: water–framework electrostatics exist, but the geometry prevents a bulk-like network from forming easily.</span></div>
+      <p class="source"><span class="zh">来源：正文 pp. 6–7、Fig. 6；SI Fig. 3；氢键判据为 O–O &lt; 3.5 Å 且 O–H···O &gt; 150°。</span><span class="en">Source: main pp. 6–7, Fig. 6 and SI Fig. 3; H-bond criterion: O–O &lt; 3.5 Å and O–H···O &gt; 150°.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="limits">
+  <div class="section-head"><div><div class="num">06 · LIMITS</div><h2><span class="zh">哪些是证据，哪些仍是解释？</span><span class="en">What is evidence, and what remains interpretation?</span></h2></div><p><span class="zh">这篇论文的价值在于模拟先于实验并获得良好吻合；它的边界同样清楚：初始 GCMC 假设刚性骨架，MLP 与 DFT 受模型和采样限制，部分高压相变尚未被实验观察。</span><span class="en">The paper’s strength is that simulations preceded the experiments and agreed well with them. Its boundaries are clear: initial GCMC assumes a rigid framework, MLP/DFT depend on model and sampling, and some high-pressure transitions remain unobserved.</span></p></div>
+  <div class="limits">
+    <div class="limit"><h3><span class="zh">论文报告</span><span class="en">Paper report</span></h3><p><span class="zh">BET 550 m²/g；CO₂ 典型烟气条件约 0.4–3.3 mmol/g（387–273 K）；273 K 客体加载使晶胞体积 5930→6089 Å³；孔体积分数差 11.9%。</span><span class="en">BET 550 m²/g; CO₂ uptake is about 0.4–3.3 mmol/g across 387–273 K at typical flue-gas pressure; at 273 K, guest loading changes cell volume from 5930 to 6089 Å³ and pore-volume fraction by 11.9%.</span></p></div>
+    <div class="limit"><h3><span class="zh">作者机制</span><span class="en">Authors’ mechanism</span></h3><p><span class="zh">CO₂ 需要较少的结构调整，水需要更大重排；低 RH 下 CO₂ 先填充可达空间，帮助解释选择性。</span><span class="en">CO₂ needs less structural adjustment, while water needs more rearrangement; CO₂ fills accessible space first at low RH, helping explain selectivity.</span></p></div>
+    <div class="limit"><h3><span class="zh">模型边界</span><span class="en">Model boundary</span></h3><p><span class="zh">空骨架在 273 K 的 cp→lp 转变压力约 376 MPa、逆转低于 111 MPa；这些高压转变在实验中尚未观察。MLP 训练误差为 0.13 meV/atom（能量）与 28.3 meV/Å（力）。</span><span class="en">The empty framework’s 273 K cp→lp transition is about 376 MPa, with the reverse below 111 MPa; these high-pressure transitions have not been observed experimentally. MLP training errors are 0.13 meV/atom for energy and 28.3 meV/Å for forces.</span></p></div>
+    <div class="limit"><h3><span class="zh">可复现问题</span><span class="en">Reproducibility question</span></h3><p><span class="zh">水蒸气 20% RH 与液水浸泡的 PXRD 变化不同，提示相变路径和含水状态重要。不能把“液水结构”直接当成所有湿度条件的代表。</span><span class="en">PXRD under 20% RH differs from liquid-water soaking, suggesting path and hydration-state dependence. A liquid-water structure cannot stand in for every humidity condition.</span></p></div>
+  </div>
+  <details class="d2"><summary><span class="zh">方法与数据源清单</span><span class="en">Methods and data sources</span></summary><div class="inside"><p><span class="zh">GCMC：RASPA-2.0，TraPPE（N₂/CO₂），TIP4P（水），Dreiding 框架参数，12.8 Å LJ 截断，Ewald；DFT-MD：CP2K、PBE-D3(BJ)、NPT；MLP：NequIP、90:10 训练/验证、WHAM 自由能。</span><span class="en">GCMC: RASPA-2.0, TraPPE (N₂/CO₂), TIP4P (water), Dreiding framework parameters, 12.8 Å LJ cutoff and Ewald; DFT-MD: CP2K, PBE-D3(BJ), NPT; MLP: NequIP, 90:10 train/validation split and WHAM free energy.</span></p><p><a href="sources.md"><span class="zh">打开完整来源与证据记录 ↗</span><span class="en">Open the full source and evidence ledger ↗</span></a></p></div></details>
+</section>
+
+<footer class="foot">
+  <div class="foot-links"><a href="https://doi.org/10.1038/s41467-024-48136-0" target="_blank" rel="noopener"><span class="zh">正式论文 ↗</span><span class="en">Article ↗</span></a><a href="sources.md"><span class="zh">来源与证据记录</span><span class="en">Source ledger</span></a><a href="../../"><span class="zh">返回 Research Atlas</span><span class="en">Back to Research Atlas</span></a></div>
+  <p><span class="zh">基于用户提供的正文 PDF、补充方法/图表 PDF、Peer Review File 与 XLSX 源数据制作。Peer Review File 仅作为版本核对材料，审稿意见不被当作本页内容指令。</span><span class="en">Built from the supplied article PDF, supplementary methods/figures PDF, peer-review file and XLSX source data. The peer-review file was used for version checking only; reviewer comments are not treated as content instructions.</span></p>
+</footer>
+</main>
+<script src="../../assets/paper.js"></script>
+<script>
+'use strict';
+const P=(zh,en)=>({zh,en});
+const S={lang:'zh',depth:1,temp:273,condition:'dry',flexTemp:273,rh:10,step:0};
+const choose=v=>S.lang==='en'?v.en:v.zh;
+const pair=v=>`<span class="zh">${v.zh}</span><span class="en">${v.en}</span>`;
+const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const temperatures=[273,323,343,365,387];
+const co2={273:3.3,323:1.9,343:1.3,365:.7,387:.4};
+const conditions={
+ dry:{zh:'干燥 N₂（基线）',en:'dry N₂ (baseline)',shifts:[0,0,0],copy:P('用于比较的 evacuated 基线；结构已在 110 °C N₂ 下干燥并于 50 °C 测量。','Evacuated baseline; dried at 110 °C under N₂ and measured at 50 °C.')},
+ co2:{zh:'100% CO₂',en:'100% CO₂',shifts:[1,0,-1],copy:P('(100) 向高 2θ、(020) 向低 2θ，(011) 基本不动。','(100) shifts to higher 2θ, (020) to lower 2θ, while (011) is nearly unchanged.')},
+ water:{zh:'液态水',en:'liquid water',shifts:[1,-1,-1],copy:P('水使三个关键反射都移动，(011) 的低 2θ 移动尤其明显。','Water shifts all three reflections, with a clear lower-2θ movement for (011).')},
+ rh20:{zh:'20% RH',en:'20% RH',shifts:[1,-1,-1],copy:P('20% RH 出现明显变化；4% 与 10% RH 的变化较小。','20% RH produces clear changes; 4% and 10% RH show little change.')}
+};
+const steps=[
+ {title:P('DFT 探索','DFT exploration'),detail:P('2 ps DFT metadynamics 以晶胞体积为集体变量探索状态空间；随后在 4000–7000 Å³、50 Å³ 步长上做 0.5 ps umbrella sampling。','A 2 ps DFT metadynamics run explores volume space, followed by 0.5 ps umbrella sampling over 4000–7000 Å³ in 50 Å³ steps.')},
+ {title:P('抽取训练集','Build training data'),detail:P('每 5 fs 取快照，用 DFT 能量与力训练 NequIP；能量权重 1，力权重 5，训练/验证按 90:10 划分。','Snapshots are taken every 5 fs to train NequIP on DFT energies and forces; loss weights are 1 for energy and 5 for forces, with a 90:10 split.')},
+ {title:P('MLP 扩展采样','MLP sampling'),detail:P('用训练好的 MLP 做 15 ps umbrella sampling，覆盖 223、273、387 K；这一步把昂贵的 DFT 计算换成可扫描的长轨迹。','The trained MLP runs 15 ps umbrella sampling at 223, 273 and 387 K, replacing expensive DFT trajectories with longer scans.')},
+ {title:P('WHAM → 自由能','WHAM → free energy'),detail:P('WHAM 去偏得到自由能剖面，再对体积求负导数得到内部压力；结果显示 guest loading 会改变稳定体积和相变压力。','WHAM unbiases the profiles; the negative volume derivative gives internal pressure. Guest loading changes stable volumes and transition pressures.')}
+];
+const hb={2:[.8333,.1667,0,0,0],5:[.6963,.2519,.05185,0,0],10:[.5877,.3704,.0420,0,0],20:[.3303,.4676,.1968,.00536,0],40:[.1330,.3863,.4514,.0291,.00024],80:[.0842,.3346,.4903,.0884,.00246]};
+function btn(label,attrs=''){return `<button type="button" ${attrs}>${label}</button>`}
+function renderTemp(){
+ if(!document.getElementById('temp-controls').children.length) document.getElementById('temp-controls').innerHTML=temperatures.map(t=>btn(t+' K',`data-temp="${t}" aria-pressed="${S.temp===t}"`)).join('');
+ document.querySelectorAll('[data-temp]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.temp===String(S.temp))));
+ document.getElementById('temp-value').textContent=S.temp+' K';
+ document.getElementById('temp-copy').innerHTML=pair(P(`在约 0.1–0.15 atm CO₂ 下，论文报告约 ${co2[S.temp]} mmol g⁻¹。数值是正文给出的代表点，不是从等温线重 digitize 的整条曲线。`,`At about 0.1–0.15 atm CO₂, the paper reports about ${co2[S.temp]} mmol g⁻¹. These are representative values quoted in the text, not a re-digitised full curve.`));
+ document.getElementById('temp-bars').innerHTML=temperatures.map(t=>`<div class="bar-row"><span>${t} K</span><div class="bar-track"><div class="bar-fill ${t===S.temp?'alt':''}" style="width:${co2[t]/3.5*100}%"></div></div><span class="value">${co2[t]} mmol/g</span></div>`).join('');
+ document.getElementById('temp-source').innerHTML=pair(P('来源：正文 p. 2、Fig. 2b；顺序为 387、365、343、323、273 K 时约 0.4、0.7、1.3、1.9、3.3 mmol/g。','Source: main p. 2 and Fig. 2b; the text lists about 0.4, 0.7, 1.3, 1.9 and 3.3 mmol/g at 387, 365, 343, 323 and 273 K.'));
+}
+function renderCondition(){
+ if(!document.getElementById('condition-controls').children.length) document.getElementById('condition-controls').innerHTML=Object.entries(conditions).map(([k,v])=>btn(pair(v),`data-condition="${k}" aria-pressed="${S.condition===k}"`)).join('');
+ document.querySelectorAll('[data-condition]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.condition===String(S.condition))));
+ const c=conditions[S.condition];
+ const labels=['(100)','(011)','(020)']; const svgt=(zh,en)=>S.lang==='en'?en:S.lang==='both'?zh+' / '+en:zh;
+ document.getElementById('peak-chart').innerHTML=`<rect width="650" height="300" fill="#0b1729"/><line x1="100" y1="244" x2="600" y2="244" stroke="#496078"/><line x1="100" y1="50" x2="100" y2="244" stroke="#496078"/><text x="110" y="30" fill="#a8b4c7" font-size="12">${svgt('2θ 方向 · 教学示意','2θ direction · schematic')}</text>${labels.map((lab,i)=>{const y=95+i*60;const shift=c.shifts[i];const x=310+shift*70;const shiftLabel=shift>0?svgt('更高 2θ','higher 2θ'):shift<0?svgt('更低 2θ','lower 2θ'):svgt('变化很小','little shift');return `<line x1="${x}" y1="${y}" x2="${x+shift*40}" y2="${y}" stroke="${shift===0?'#7de3ff':'#ffb66e'}" stroke-width="7" stroke-linecap="round"/><circle cx="${x}" cy="${y}" r="9" fill="#7de3ff"/><circle cx="${x+shift*40}" cy="${y}" r="9" fill="#ffb66e"/><text x="112" y="${y+5}" fill="#f4f7fb" font-size="16">${lab}</text><text x="465" y="${y+5}" fill="#a8b4c7" font-size="12">${shiftLabel}</text>`}).join('')}<text x="310" y="278" fill="#7de3ff" font-size="11">${svgt('蓝 = 干燥基线 · 橙 = 当前条件','blue = evacuated baseline · orange = selected condition')}</text>`;
+ document.getElementById('condition-copy').innerHTML=pair(c.copy);
+}
+function renderFlow(){
+ if(!document.getElementById('method-flow').children.length) document.getElementById('method-flow').innerHTML=steps.map((s,i)=>`<button type="button" data-step="${i}" aria-pressed="${S.step===i}"><span class="flow-num">0${i+1}</span><span class="flow-title">${pair(s.title)}</span></button>`).join('');
+ document.querySelectorAll('[data-step]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.step===String(S.step))));
+ const st=steps[S.step];document.getElementById('method-detail').innerHTML=`<h3>${pair(st.title)}</h3><p>${pair(st.detail)}</p><p class="source">${pair(P('来源：正文 pp. 5–6、Methods；MLP 验证误差低于 0.13 meV/atom（能量）与 39.6 meV/Å（力）。','Source: main pp. 5–6 and Methods; MLP validation errors are below 0.13 meV/atom for energy and 39.6 meV/Å for forces.'))}</p>`;
+}
+function renderFlex(){
+ const diffs={273:11.9,323:7.3,387:6.6};
+ if(!document.getElementById('flex-controls').children.length) document.getElementById('flex-controls').innerHTML=[273,323,387].map(t=>btn(t+' K',`data-flex="${t}" aria-pressed="${S.flexTemp===t}"`)).join('');
+ document.querySelectorAll('[data-flex]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.flex===String(S.flexTemp))));
+ document.getElementById('flex-temp').textContent=S.flexTemp+' K';
+ document.getElementById('flex-bars').innerHTML=`<div class="bar-row"><span><span class="zh">孔体积分数差</span><span class="en">pore-fraction gap</span></span><div class="bar-track"><div class="bar-fill alt" style="width:${diffs[S.flexTemp]/12*100}%"></div></div><span class="value">${diffs[S.flexTemp]}%</span></div>`;
+ document.getElementById('flex-source').innerHTML=pair(P(`来源：正文 p. 4、Fig. 4d；${S.flexTemp} K 的空/客体加载孔体积分数差为 ${diffs[S.flexTemp]}%。273 K 另报告晶胞 5930→6089 Å³。`,`Source: main p. 4 and Fig. 4d; the empty/guest-loaded pore-fraction gap is ${diffs[S.flexTemp]}% at ${S.flexTemp} K. At 273 K, the paper also reports cell volumes of 5930→6089 Å³.`));
+}
+function renderHb(){
+ if(!document.getElementById('rh-controls').children.length) document.getElementById('rh-controls').innerHTML=[2,5,10,20,40,80].map(r=>btn(r+'% RH',`data-rh="${r}" aria-pressed="${S.rh===r}"`)).join('');
+ document.querySelectorAll('[data-rh]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.rh===String(S.rh))));
+ const vals=hb[S.rh];document.getElementById('hbond-chart').innerHTML=vals.map((v,i)=>`<div class="hbond-col"><div class="hbond-value">${(v*100).toFixed(1)}%</div><div class="hbond-stack"><i class="swatch${i}" style="height:${Math.max(1,v*100)}%" title="${i} ${S.lang==='en'?'H-bonds':'条氢键'}: ${(v*100).toFixed(1)}%"></i></div><div class="hbond-label">${i} ${S.lang==='en'?'H-bonds':'条氢键'}</div></div>`).join('');
+ document.getElementById('rh-source').innerHTML=pair(P(`来源：XLSX Figure 6d，${S.rh}% RH；柱高为水分子拥有 0、1、2、3、4 条氢键的概率。判据 O–O < 3.5 Å 且 O–H···O > 150°。`,`Source: XLSX Figure 6d, ${S.rh}% RH; bars are probabilities of 0, 1, 2, 3 or 4 hydrogen bonds per water molecule. Criterion: O–O < 3.5 Å and O–H···O > 150°.`));
+}
+function localizeSvg(){document.querySelectorAll('[data-aria-zh]').forEach(e=>e.setAttribute('aria-label',S.lang==='en'?e.dataset.ariaEn:e.dataset.ariaZh));document.querySelectorAll('[data-svg-zh]').forEach(e=>{e.textContent=S.lang==='en'?e.dataset.svgEn:S.lang==='both'?e.dataset.svgZh+' / '+e.dataset.svgEn:e.dataset.svgZh;});}
+function updateDepth(){document.querySelectorAll('#depth button').forEach((b,i)=>{b.textContent=(S.lang==='en'?['Intuition','Mechanism','Research']:['直觉','机制','研究'])[i];b.classList.toggle('active',i===S.depth);b.setAttribute('aria-pressed',String(i===S.depth));});}
+function updateLang(lang){S.lang=lang;document.body.dataset.lang=lang;localizeSvg();updateDepth();
+ const labels={".metrics":["论文关键指标","Key reported metrics"],"#temp-controls":["温度选择","Temperature selector"],"#condition-controls":["PXRD 条件选择","PXRD condition selector"],"#method-flow":["模拟流程","Simulation workflow"],"#flex-controls":["柔性计算温度","Temperature selector for flexibility"],"#rh-controls":["相对湿度选择","Relative humidity selector"]};Object.entries(labels).forEach(([sel,v])=>document.querySelector(sel).setAttribute("aria-label",v[S.lang==='en'?1:0]));renderTemp();renderCondition();renderFlow();renderFlex();renderHb();}
+document.getElementById('depth').addEventListener('click',e=>{const b=e.target.closest('[data-depth]');if(!b)return;S.depth=+b.dataset.depth;document.body.dataset.depth=String(S.depth);updateDepth();});
+document.getElementById('temp-controls').addEventListener('click',e=>{const b=e.target.closest('[data-temp]');if(!b)return;S.temp=+b.dataset.temp;renderTemp();});
+document.getElementById('condition-controls').addEventListener('click',e=>{const b=e.target.closest('[data-condition]');if(!b)return;S.condition=b.dataset.condition;renderCondition();});
+document.getElementById('method-flow').addEventListener('click',e=>{const b=e.target.closest('[data-step]');if(!b)return;S.step=+b.dataset.step;renderFlow();});
+document.getElementById('flex-controls').addEventListener('click',e=>{const b=e.target.closest('[data-flex]');if(!b)return;S.flexTemp=+b.dataset.flex;renderFlex();});
+document.getElementById('rh-controls').addEventListener('click',e=>{const b=e.target.closest('[data-rh]');if(!b)return;S.rh=+b.dataset.rh;renderHb();});
+renderTemp();renderCondition();renderFlow();renderFlex();renderHb();
+const controller=AtlasPaper.init({shortTitle:'CALF-20 柔性',title:{zh:'CALF-20 柔性｜气体吸附与框架响应',en:'CALF-20 flexibility | Gas adsorption and framework response'},allowBoth:true,depth:document.getElementById('depth'),legacyHeader:null,sections:[{id:'core',zh:'核心思想',en:'Core idea'},{id:'structure',zh:'结构与拓扑',en:'Structure & topology'},{id:'adsorption',zh:'吸附证据',en:'Adsorption evidence'},{id:'pxrd',zh:'PXRD 响应',en:'PXRD response'},{id:'flexibility',zh:'框架柔性',en:'Framework flexibility'},{id:'water',zh:'水与氢键',en:'Water & H-bonds'},{id:'limits',zh:'边界与来源',en:'Limits & sources'}],onLanguageChange:updateLang});
+</script>
+</body>
+</html>

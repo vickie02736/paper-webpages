@@ -17,6 +17,9 @@ Each explainer is a static visual webpage using the shared Research Atlas readin
 | MOFTransformer — A multi-modal pre-training transformer for universal transfer learning in metal–organic frameworks | Nature Machine Intelligence 2023 | [Open page](moftransformer/) |
 | MOF SNAP — Quantum-accurate potentials with temperature-driven active learning | npj Computational Materials 2024 | [Open page](mof-snap-active-learning/) |
 
+| CALF-20 — Gas adsorption and framework flexibility | Nature Communications 2024 | [Open page](calf20-flexibility/) |
+| LanM — Protein-based rare-earth recovery and separation | ACS Central Science 2021 | [Open page](lanm-protein-process/) |
+
 Opening these pages does not require ChatGPT sign-in. Each supports Chinese and English, including diagrams and interactive feedback. Ln local coordination and PMIDA–MIL-101 also offer parallel bilingual reading.
 
 ## Shared reading system
