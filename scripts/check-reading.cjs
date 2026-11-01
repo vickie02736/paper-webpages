@@ -2,7 +2,7 @@
 const {chromium}=require(process.env.PAPER_PLAYWRIGHT_MODULE||'playwright');
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),os=require('node:os'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..');
-const slugs=['calf20-flexibility','deeprag','e5-mistral','lanm-protein-process','ln-local-coordination','moftransformer','ncu1-nanotraps','nv-embed','pmida-mil101','rag','self-rag'];
+const slugs=fs.readdirSync(path.join(root,'papers')).filter(slug=>fs.existsSync(path.join(root,'papers',slug,'index.html'))).sort();
 const out=process.env.PAPER_QA_DIR||path.join(os.tmpdir(),'paper-reading-qa');fs.mkdirSync(out,{recursive:true});
 (async()=>{
  const server=http.createServer((req,res)=>{let f=path.resolve(root,'.'+new URL(req.url,'http://localhost').pathname);if(!f.startsWith(root+path.sep)&&f!==root)return res.writeHead(403).end();try{if(fs.statSync(f).isDirectory())f=path.join(f,'index.html');res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.png':'image/png'})[path.extname(f)]||'application/octet-stream');res.end(fs.readFileSync(f));}catch{res.writeHead(404).end();}});
@@ -42,7 +42,7 @@ const out=process.env.PAPER_QA_DIR||path.join(os.tmpdir(),'paper-reading-qa');fs
  for(let i=0;i<3;i++){await p.locator('[data-action="next"]').focus();await p.keyboard.press('Enter')}
  assert.notEqual(await p.evaluate(()=>document.activeElement.tagName),'BODY','last step focus');
  await p.close();
- for(const slug of ['ln-local-coordination','ncu1-nanotraps','lanm-protein-process']){
+ for(const slug of ['ln-local-coordination','lanm-protein-process']){
   const p=await b.newPage();let fail=true;await p.route('**/*.png',r=>fail?r.abort():r.continue());await p.goto(`${base}/papers/${slug}/?lang=en`);
   await p.locator('main details').evaluateAll(es=>es.forEach(e=>e.open=true));await p.locator('img[data-atlas-figure]').evaluateAll(es=>es.forEach(e=>e.loading='eager'));
   await p.waitForFunction(()=>[...document.querySelectorAll('img[data-atlas-figure]')].every(e=>e.dataset.loadState==='error'));
@@ -52,16 +52,7 @@ const out=process.env.PAPER_QA_DIR||path.join(os.tmpdir(),'paper-reading-qa');fs
   await p.waitForFunction(()=>[...document.querySelectorAll('img[data-atlas-figure]')].every(e=>e.dataset.loadState==='ready'));
   await p.close();console.log('PASS image failure/retry '+slug);
  }
- const race=await b.newPage();const pending=[];
- await race.route('**/figure-*.png',r=>pending.push(r));await race.goto(base+'/papers/ncu1-nanotraps/?lang=en',{waitUntil:'domcontentloaded'});
- await race.locator('[data-figure="3"]').click();await race.locator('[data-figure="5"]').click();await race.locator('[data-figure="6"]').click();
- assert.equal(await race.locator('#figure-image').getAttribute('data-load-state'),'loading');
- assert.equal(await race.locator('#figure-image').evaluate(e=>getComputedStyle(e).visibility),'hidden');
- await race.locator('[data-atlas-lang="zh"]').click();await race.unroute('**/figure-*.png');
- for(const r of pending.reverse())await r.continue().catch(()=>{});
- await race.waitForFunction(()=>document.querySelector('#figure-image').dataset.loadState==='ready');
- assert.match(await race.locator('#figure-image').getAttribute('src'),/figure-6/);assert.match(await race.locator('#figure-caption').innerText(),/图 6/);
- assert.equal(await race.locator('[data-figure="6"]').getAttribute('aria-pressed'),'true');await race.close();
+ // NCU-1 owns its image lifecycle; scripts/check-ncu1-reader.cjs covers its failure and race paths.
  console.log(`PASS reading checks; ${sections} section captures; ${out}`);
  }finally{await b.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1});

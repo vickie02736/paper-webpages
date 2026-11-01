@@ -7,3 +7,5 @@ A bilingual explainer using the shared Research Atlas dark theme and chapter nav
 Language switching preserves the selected interactions and follows the site's `?lang=` and `atlas-lang` conventions. The static page uses the repository's local shared assets; no sign-in or external runtime is required.
 
 Source: [ICLR 2026 paper](https://proceedings.iclr.cc/paper_files/paper/2026/hash/bdff657cb9351656c025da8e1dc538a4-Abstract-Conference.html). Paper values, equations and source locations are retained.
+
+[Visual sources and audit notes](sources.md) records the formal-paper locations, teaching illustrations and corrections checked on 2026-10-27.

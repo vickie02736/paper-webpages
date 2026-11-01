@@ -7,3 +7,5 @@ Use the shared header to navigate sections, choose a reading depth, and switch b
 Shared presentation assets: [`../../assets/paper.css`](../../assets/paper.css) and [`../../assets/paper.js`](../../assets/paper.js).
 
 Source: [ICLR 2024 paper](https://proceedings.iclr.cc/paper_files/paper/2024/hash/25f7be9694d7b32d5cc670927b8091e1-Abstract-Conference.html)
+
+[Visual sources and audit notes](sources.md) records the formal-paper locations, teaching illustrations and corrections checked on 2026-10-27.

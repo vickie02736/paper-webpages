@@ -2,13 +2,26 @@
 
 The homepage reads [`paper-catalog.json`](paper-catalog.json) and builds the six expandable menus automatically.
 
+The default count separates available explainers, unique papers (deduplicated across themes by their source link), and total theme listings. A paper listed in two themes contributes one unique paper and two listings; the theme counts add up to the listing total.
+
+It fetches the published catalogue with cache-bypassing requests on initial load, when the explainer filter is toggled, when the page returns to the foreground or the window regains focus, and every 60 seconds while in the foreground. This synchronizes published catalogue data without scanning page directories: new explainers still need a `p` entry and the publication workflow below.
+
+Run `node scripts/check-catalog.cjs` with Playwright available to check automatic refresh, filter counts, state preservation and failure recovery. It accepts the same `PAPER_PLAYWRIGHT_MODULE`, `PAPER_CHROMIUM_EXECUTABLE`, `PAPER_BASE_URL` and `PAPER_QA_DIR` overrides as the explainer browser checks.
+
 When a new explainer is ready:
 
 1. Add its self-contained page at `papers/<slug>/index.html`.
 2. Find the matching paper object in `references/paper-catalog.json`.
 3. Set its `p` field to `./papers/<slug>/`.
-4. Add `"./papers/<slug>/": "YYYY-MM-DD"` (the date it was published, in UTC) to the top-level `explainers` map. Explainers dated within the last seven days are listed in the homepage's recent-explainers section, newest first; the section hides itself when there are none.
-5. Commit the change and wait for GitHub Pages to rebuild.
+4. Add `"./papers/<slug>/": "YYYY-MM-DD"` (the date it was first published, in UTC) to the top-level `explainers` map. Keep this first-publication date unchanged when updating an existing explainer.
+5. Commit the explainer content and its catalogue entry, then run `node scripts/update-explainer-updates.cjs` from the repository root.
+6. Check the generated catalogue and the homepage, commit the catalogue update, then push both commits and wait for GitHub Pages to rebuild.
+
+The homepage's recent-explainers section shows explainers first created within the last seven UTC calendar days, newest creation first. Creations on the same day are ordered by their precise timestamps; the section hides itself when there are none. Updating an existing page does not reset this window or move the page to the top. The top-level `explainerCreatedAt` map holds immutable UTC ISO creation timestamps separately from the first-publication dates in `explainers`.
+
+The script preserves existing valid `explainerCreatedAt` values. For a missing value, it finds the earliest addition of `papers/<slug>/index.html` with Git's `--follow --diff-filter=A` history and uses that precise time only if its UTC date matches the first-publication date; missing history or a different UTC date falls back to midnight UTC on the original first-publication date. Invalid paths, first-publication dates, or existing creation timestamps stop generation with an error; creation timestamps must fall on their corresponding first-publication UTC date.
+
+For later updates, commit the explainer changes first, run `node scripts/update-explainer-updates.cjs`, check and commit the generated catalogue, then push. The script also continues to generate `explainerUpdates` from each `papers/<slug>/` directory's latest Git commit, including its local resources, for compatibility with the publication workflow; those update timestamps do not determine the homepage's recent list. Update times without Git history fall back to the first-publication date at midnight UTC, and earlier commit times are clamped to that date. Uncommitted edits are not included, so run the script after committing the page content; existing creation times and first-publication dates stay unchanged.
 
 Within a theme, each paper appears once, under its topic in the roadmap's main categories. The "reading route" branches at the end of each roadmap only re-reference those papers, so they are not added to the catalogue.
 

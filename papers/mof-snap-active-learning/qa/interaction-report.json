@@ -1,0 +1,2439 @@
+{
+  "checks": [
+    {
+      "name": "default language Chinese",
+      "pass": true
+    },
+    {
+      "name": "SI Table 1 row 1",
+      "pass": true,
+      "detail": {
+        "expected": [
+          2,
+          64,
+          1,
+          50,
+          100,
+          45
+        ],
+        "actual": {
+          "values": [
+            2,
+            64,
+            1,
+            50,
+            100
+          ],
+          "count": 45,
+          "width": 2.11069,
+          "feedback": "表 1 第 1 行。构型数来自原表，误差未在这里插值。"
+        }
+      }
+    },
+    {
+      "name": "SI Table 1 row 2",
+      "pass": true,
+      "detail": {
+        "expected": [
+          1,
+          32,
+          0.5,
+          30,
+          60,
+          68
+        ],
+        "actual": {
+          "values": [
+            1,
+            32,
+            0.5,
+            30,
+            60
+          ],
+          "count": 68,
+          "width": 3.18949,
+          "feedback": "表 1 第 2 行。构型数来自原表，误差未在这里插值。"
+        }
+      }
+    },
+    {
+      "name": "SI Table 1 row 3",
+      "pass": true,
+      "detail": {
+        "expected": [
+          0.5,
+          16,
+          0.5,
+          20,
+          40,
+          104
+        ],
+        "actual": {
+          "values": [
+            0.5,
+            16,
+            0.5,
+            20,
+            40
+          ],
+          "count": 104,
+          "width": 4.87805,
+          "feedback": "表 1 第 3 行。构型数来自原表，误差未在这里插值。"
+        }
+      }
+    },
+    {
+      "name": "SI Table 1 row 4",
+      "pass": true,
+      "detail": {
+        "expected": [
+          0.2,
+          8,
+          0.2,
+          10,
+          20,
+          227
+        ],
+        "actual": {
+          "values": [
+            0.2,
+            8,
+            0.2,
+            10,
+            20
+          ],
+          "count": 227,
+          "width": 10.6473,
+          "feedback": "表 1 第 4 行。构型数来自原表，误差未在这里插值。"
+        }
+      }
+    },
+    {
+      "name": "SI Table 1 row 5",
+      "pass": true,
+      "detail": {
+        "expected": [
+          0.05,
+          4,
+          0.05,
+          5,
+          10,
+          489
+        ],
+        "actual": {
+          "values": [
+            0.05,
+            4,
+            0.05,
+            5,
+            10
+          ],
+          "count": 489,
+          "width": 22.9362,
+          "feedback": "表 1 第 5 行。构型数来自原表，误差未在这里插值。"
+        }
+      }
+    },
+    {
+      "name": "SI Table 1 row 6",
+      "pass": true,
+      "detail": {
+        "expected": [
+          0.02,
+          4,
+          0.05,
+          5,
+          10,
+          609
+        ],
+        "actual": {
+          "values": [
+            0.02,
+            4,
+            0.05,
+            5,
+            10
+          ],
+          "count": 609,
+          "width": 28.5647,
+          "feedback": "表 1 第 6 行。构型数来自原表，误差未在这里插值。"
+        }
+      }
+    },
+    {
+      "name": "SI Table 1 row 7",
+      "pass": true,
+      "detail": {
+        "expected": [
+          0.02,
+          4,
+          0.04,
+          4,
+          8,
+          672
+        ],
+        "actual": {
+          "values": [
+            0.02,
+            4,
+            0.04,
+            4,
+            8
+          ],
+          "count": 672,
+          "width": 31.5197,
+          "feedback": "表 1 第 7 行。这是后续 ZIF-8 模拟采用的 672 构型训练集。"
+        }
+      }
+    },
+    {
+      "name": "SI Table 1 row 8",
+      "pass": true,
+      "detail": {
+        "expected": [
+          0.01,
+          2,
+          0.02,
+          2,
+          4,
+          1230
+        ],
+        "actual": {
+          "values": [
+            0.01,
+            2,
+            0.02,
+            2,
+            4
+          ],
+          "count": 1230,
+          "width": 57.6923,
+          "feedback": "表 1 第 8 行。构型数来自原表，误差未在这里插值。"
+        }
+      }
+    },
+    {
+      "name": "SI Table 1 row 9",
+      "pass": true,
+      "detail": {
+        "expected": [
+          0.005,
+          1,
+          0.01,
+          1,
+          2,
+          2132
+        ],
+        "actual": {
+          "values": [
+            0.005,
+            1,
+            0.01,
+            1,
+            2
+          ],
+          "count": 2132,
+          "width": 100,
+          "feedback": "表 1 第 9 行。构型数来自原表，误差未在这里插值。"
+        }
+      }
+    },
+    {
+      "name": "workflow state 0",
+      "pass": true,
+      "detail": {
+        "count": 51,
+        "source": "SI 表 2，步骤 0；正文图 4。各轮 MD 包含外加 D3(BJ)。",
+        "model": "—",
+        "gen": "200 个微扰构型",
+        "select": "CBAD：50 + 1",
+        "fit": "MLP0",
+        "pressed": "0"
+      }
+    },
+    {
+      "name": "workflow state 1",
+      "pass": true,
+      "detail": {
+        "count": 100,
+        "source": "SI 表 2，步骤 1；正文图 4。各轮 MD 包含外加 D3(BJ)。",
+        "model": "MLP0",
+        "gen": "MD：100 K",
+        "select": "CBAD：+49",
+        "fit": "MLP1",
+        "pressed": "1"
+      }
+    },
+    {
+      "name": "workflow state 2",
+      "pass": true,
+      "detail": {
+        "count": 147,
+        "source": "SI 表 2，步骤 2；正文图 4。各轮 MD 包含外加 D3(BJ)。",
+        "model": "MLP1",
+        "gen": "MD：200 K",
+        "select": "CBAD：+47",
+        "fit": "MLP2",
+        "pressed": "2"
+      }
+    },
+    {
+      "name": "workflow state 3",
+      "pass": true,
+      "detail": {
+        "count": 195,
+        "source": "SI 表 2，步骤 3；正文图 4。各轮 MD 包含外加 D3(BJ)。",
+        "model": "MLP2",
+        "gen": "MD：300 K",
+        "select": "CBAD：+48",
+        "fit": "MLP3",
+        "pressed": "3"
+      }
+    },
+    {
+      "name": "workflow state 4",
+      "pass": true,
+      "detail": {
+        "count": 487,
+        "source": "SI 表 2，步骤 10；正文图 4。各轮 MD 包含外加 D3(BJ)。",
+        "model": "MLP9",
+        "gen": "MD：1000 K",
+        "select": "CBAD：+47",
+        "fit": "MLP10",
+        "pressed": "4"
+      }
+    },
+    {
+      "name": "workflow state 5",
+      "pass": true,
+      "detail": {
+        "count": 537,
+        "source": "SI 表 2，步骤 11；正文图 4。各轮 MD 包含外加 D3(BJ)。",
+        "model": "MLP10",
+        "gen": "MD：400 K",
+        "select": "随机补样：+50",
+        "fit": "暂不重训",
+        "pressed": "5"
+      }
+    },
+    {
+      "name": "workflow state 6",
+      "pass": true,
+      "detail": {
+        "count": 596,
+        "source": "SI 表 2，步骤 12；正文图 4。各轮 MD 包含外加 D3(BJ)。",
+        "model": "MLP10",
+        "gen": "MD：10–500 K",
+        "select": "随机补样：+59",
+        "fit": "MLP11",
+        "pressed": "6"
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=1.90",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 95,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 95,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "1.90 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=1.91",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 95,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 95,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "1.91 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=1.92",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 96,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 96,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "1.92 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=1.93",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 96,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 96,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "1.93 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=1.94",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 97,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 97,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "1.94 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=1.95",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 97,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 97,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "1.95 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=1.96",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 98,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 98,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "1.96 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=1.97",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 98,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 98,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "1.97 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=1.98",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 99,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 99,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.98 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=1.99",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 99,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 99,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.99 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.00",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 100,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 100,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.00 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.01",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 100,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 100,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.01 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.02",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 101,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 101,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.02 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.03",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 101,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 101,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.03 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.04",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 102,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 102,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.04 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.05",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 102,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 102,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.05 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.06",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 103,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 103,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.06 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.07",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 103,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 103,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.07 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.08",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 104,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 104,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.08 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.09",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 104,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 104,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.09 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.10",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 105,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 105,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.10 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.11",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 105,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 105,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.11 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.12",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 106,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 106,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.12 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.13",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 106,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 106,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.13 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.14",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 107,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 107,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.14 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.15",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 107,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 107,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.15 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.16",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 108,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 108,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.16 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.17",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 108,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 108,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.17 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.02 bond=2.18",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 109,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 109,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.18 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=1.90",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 38,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 38,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "1.90 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=1.91",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 38,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 38,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "1.91 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=1.92",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 38,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 38,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "1.92 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=1.93",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 38,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 38,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "1.93 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=1.94",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 38,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 38,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "1.94 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=1.95",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 39,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 39,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.95 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=1.96",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 39,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 39,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.96 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=1.97",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 39,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 39,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.97 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=1.98",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 39,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 39,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.98 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=1.99",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 39,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 39,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.99 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.00",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 40,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 40,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.00 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.01",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 40,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 40,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.01 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.02",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 40,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 40,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.02 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.03",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 40,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 40,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.03 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.04",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 40,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 40,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.04 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.05",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 41,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 41,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.05 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.06",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 41,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 41,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.06 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.07",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 41,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 41,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.07 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.08",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 41,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 41,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.08 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.09",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 41,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 41,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.09 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.10",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 42,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 42,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.10 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.11",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 42,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 42,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.11 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.12",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 42,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 42,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.12 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.13",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 42,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 42,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.13 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.14",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 42,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 42,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.14 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.15",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 43,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 43,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.15 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.16",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 43,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 43,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.16 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.17",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 43,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 43,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.17 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.05 bond=2.18",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 43,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 43,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.18 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=1.90",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 19,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 19,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.90 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=1.91",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 19,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 19,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.91 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=1.92",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 19,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 19,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.92 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=1.93",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 19,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 19,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.93 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=1.94",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 19,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 19,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.94 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=1.95",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 19,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 19,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.95 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=1.96",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 19,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 19,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.96 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=1.97",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 19,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 19,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.97 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=1.98",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 19,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 19,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.98 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=1.99",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 19,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 19,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "1.99 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.00",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 20,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 20,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.00 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.01",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 20,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 20,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.01 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.02",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 20,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 20,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.02 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.03",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 20,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 20,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.03 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.04",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 20,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 20,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.04 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.05",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 20,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 20,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.05 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.06",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 20,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 20,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.06 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.07",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 20,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 20,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.07 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.08",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 20,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 20,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.08 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.09",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 20,
+          "accepted": false
+        },
+        "actual": {
+          "candidate": 20,
+          "accepted": false,
+          "highlight": 1,
+          "feedback": "跳过：候选键长落在已见分箱中。",
+          "value": "2.09 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.10",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 21,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 21,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.10 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.11",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 21,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 21,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.11 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.12",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 21,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 21,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.12 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.13",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 21,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 21,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.13 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.14",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 21,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 21,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.14 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.15",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 21,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 21,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.15 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.16",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 21,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 21,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.16 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.17",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 21,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 21,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.17 Å"
+        }
+      }
+    },
+    {
+      "name": "toy Δ=0.1 bond=2.18",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "candidate": 21,
+          "accepted": true
+        },
+        "actual": {
+          "candidate": 21,
+          "accepted": true,
+          "highlight": 1,
+          "feedback": "纳入：候选键长带来了一个新分箱。",
+          "value": "2.18 Å"
+        }
+      }
+    },
+    {
+      "name": "slider keyboard Home",
+      "pass": true
+    },
+    {
+      "name": "slider keyboard End",
+      "pass": true
+    },
+    {
+      "name": "loaded figure 1 zh",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8766/papers/mof-snap-active-learning/assets/figure-1.png",
+        "width": 1069,
+        "alt": "原文图 1：两种 MOF 的结构与原子类型",
+        "number": "原文图 1",
+        "source": "正文 PDF 第 2 页，图 1。",
+        "selected": "1",
+        "title": "两种 MOF 的结构与原子类型"
+      }
+    },
+    {
+      "name": "loaded figure 2 zh",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8766/papers/mof-snap-active-learning/assets/figure-2.png",
+        "width": 1504,
+        "alt": "原文图 2：CBAD：记录坐标分箱的覆盖",
+        "number": "原文图 2",
+        "source": "正文 PDF 第 3 页，图 2。",
+        "selected": "2",
+        "title": "CBAD：记录坐标分箱的覆盖"
+      }
+    },
+    {
+      "name": "loaded figure 3 zh",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8766/papers/mof-snap-active-learning/assets/figure-3.png",
+        "width": 1504,
+        "alt": "原文图 3：ZIF-8 学习曲线与训练散点",
+        "number": "原文图 3",
+        "source": "正文 PDF 第 5 页，图 3。",
+        "selected": "3",
+        "title": "ZIF-8 学习曲线与训练散点"
+      }
+    },
+    {
+      "name": "loaded figure 4 zh",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8766/papers/mof-snap-active-learning/assets/figure-4.png",
+        "width": 1488,
+        "alt": "原文图 4：MOF-5 的温度驱动训练流程",
+        "number": "原文图 4",
+        "source": "正文 PDF 第 6 页，图 4。",
+        "selected": "4",
+        "title": "MOF-5 的温度驱动训练流程"
+      }
+    },
+    {
+      "name": "loaded figure 5 zh",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8766/papers/mof-snap-active-learning/assets/figure-5.png",
+        "width": 1496,
+        "alt": "原文图 5：MOF-5 的训练与测试必须分开看",
+        "number": "原文图 5",
+        "source": "正文 PDF 第 7 页，图 5。",
+        "selected": "5",
+        "title": "MOF-5 的训练与测试必须分开看"
+      }
+    },
+    {
+      "name": "loaded figure 6 zh",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8766/papers/mof-snap-active-learning/assets/figure-6.png",
+        "width": 1496,
+        "alt": "原文图 6：晶格对温度与压力的响应",
+        "number": "原文图 6",
+        "source": "正文 PDF 第 8 页，图 6。",
+        "selected": "6",
+        "title": "晶格对温度与压力的响应"
+      }
+    },
+    {
+      "name": "loaded figure 7 zh",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8766/papers/mof-snap-active-learning/assets/figure-7.png",
+        "width": 1003,
+        "alt": "原文图 7：振动态密度：从轨迹到频谱",
+        "number": "原文图 7",
+        "source": "正文 PDF 第 9 页，图 7。",
+        "selected": "7",
+        "title": "振动态密度：从轨迹到频谱"
+      }
+    },
+    {
+      "name": "loaded figure 8 zh",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8766/papers/mof-snap-active-learning/assets/figure-8.png",
+        "width": 1496,
+        "alt": "原文图 8：苯环转动的二维自由能面",
+        "number": "原文图 8",
+        "source": "正文 PDF 第 9 页，图 8。",
+        "selected": "8",
+        "title": "苯环转动的二维自由能面"
+      }
+    },
+    {
+      "name": "loaded figure 1 en",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8766/papers/mof-snap-active-learning/assets/figure-1.png",
+        "width": 1069,
+        "alt": "Original Figure 1: Two MOF structures and atom types",
+        "number": "Original Figure 1",
+        "source": "Article PDF p. 2, Figure 1.",
+        "selected": "1",
+        "title": "Two MOF structures and atom types"
+      }
+    },
+    {
+      "name": "loaded figure 2 en",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8766/papers/mof-snap-active-learning/assets/figure-2.png",
+        "width": 1504,
+        "alt": "Original Figure 2: CBAD: track coordinate-bin coverage",
+        "number": "Original Figure 2",
+        "source": "Article PDF p. 3, Figure 2.",
+        "selected": "2",
+        "title": "CBAD: track coordinate-bin coverage"
+      }
+    },
+    {
+      "name": "loaded figure 3 en",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8766/papers/mof-snap-active-learning/assets/figure-3.png",
+        "width": 1504,
+        "alt": "Original Figure 3: ZIF-8 learning curves and training parity plots",
+        "number": "Original Figure 3",
+        "source": "Article PDF p. 5, Figure 3.",
+        "selected": "3",
+        "title": "ZIF-8 learning curves and training parity plots"
+      }
+    },
+    {
+      "name": "loaded figure 4 en",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8766/papers/mof-snap-active-learning/assets/figure-4.png",
+        "width": 1488,
+        "alt": "Original Figure 4: Temperature-driven training for MOF-5",
+        "number": "Original Figure 4",
+        "source": "Article PDF p. 6, Figure 4.",
+        "selected": "4",
+        "title": "Temperature-driven training for MOF-5"
+      }
+    },
+    {
+      "name": "loaded figure 5 en",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8766/papers/mof-snap-active-learning/assets/figure-5.png",
+        "width": 1496,
+        "alt": "Original Figure 5: Separate MOF-5 training and test results",
+        "number": "Original Figure 5",
+        "source": "Article PDF p. 7, Figure 5.",
+        "selected": "5",
+        "title": "Separate MOF-5 training and test results"
+      }
+    },
+    {
+      "name": "loaded figure 6 en",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8766/papers/mof-snap-active-learning/assets/figure-6.png",
+        "width": 1496,
+        "alt": "Original Figure 6: Lattice response to temperature and pressure",
+        "number": "Original Figure 6",
+        "source": "Article PDF p. 8, Figure 6.",
+        "selected": "6",
+        "title": "Lattice response to temperature and pressure"
+      }
+    },
+    {
+      "name": "loaded figure 7 en",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8766/papers/mof-snap-active-learning/assets/figure-7.png",
+        "width": 1003,
+        "alt": "Original Figure 7: Vibrational density of states from trajectories",
+        "number": "Original Figure 7",
+        "source": "Article PDF p. 9, Figure 7.",
+        "selected": "7",
+        "title": "Vibrational density of states from trajectories"
+      }
+    },
+    {
+      "name": "loaded figure 8 en",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8766/papers/mof-snap-active-learning/assets/figure-8.png",
+        "width": 1496,
+        "alt": "Original Figure 8: A two-dimensional free-energy landscape for ring rotation",
+        "number": "Original Figure 8",
+        "source": "Article PDF p. 9, Figure 8.",
+        "selected": "8",
+        "title": "A two-dimensional free-energy landscape for ring rotation"
+      }
+    },
+    {
+      "name": "native movie decode seek play",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "time": 9.605381,
+        "duration": 19,
+        "width": 776,
+        "height": 742,
+        "ready": 4,
+        "codec": "probably"
+      }
+    },
+    {
+      "name": "language state/focus/scroll/movie zh",
+      "pass": true,
+      "detail": {
+        "initial": {
+          "bond": "2.14",
+          "delta": "0.02",
+          "res": "3",
+          "step": "6",
+          "fig": "8",
+          "open": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "focus": "bond",
+          "scroll": 2500,
+          "time": 9.605381
+        },
+        "actual": {
+          "bond": "2.14",
+          "delta": "0.02",
+          "res": "3",
+          "step": "6",
+          "fig": "8",
+          "open": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "focus": "bond",
+          "scroll": 2500,
+          "time": 9.605381
+        }
+      }
+    },
+    {
+      "name": "language state/focus/scroll/movie en",
+      "pass": true,
+      "detail": {
+        "initial": {
+          "bond": "2.14",
+          "delta": "0.02",
+          "res": "3",
+          "step": "6",
+          "fig": "8",
+          "open": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "focus": "bond",
+          "scroll": 2500,
+          "time": 9.605381
+        },
+        "actual": {
+          "bond": "2.14",
+          "delta": "0.02",
+          "res": "3",
+          "step": "6",
+          "fig": "8",
+          "open": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "focus": "bond",
+          "scroll": 2500,
+          "time": 9.605381
+        }
+      }
+    },
+    {
+      "name": "anchor idea",
+      "pass": true,
+      "detail": {
+        "top": 121,
+        "header": 121,
+        "scroll": 0,
+        "max": 8545
+      }
+    },
+    {
+      "name": "anchor problem",
+      "pass": true,
+      "detail": {
+        "top": 144.921875,
+        "header": 121,
+        "scroll": 772,
+        "max": 8545
+      }
+    },
+    {
+      "name": "anchor cbad",
+      "pass": true,
+      "detail": {
+        "top": 145.265625,
+        "header": 121,
+        "scroll": 1599,
+        "max": 8545
+      }
+    },
+    {
+      "name": "anchor curriculum",
+      "pass": true,
+      "detail": {
+        "top": 144.765625,
+        "header": 121,
+        "scroll": 3231,
+        "max": 8545
+      }
+    },
+    {
+      "name": "anchor potential",
+      "pass": true,
+      "detail": {
+        "top": 145.15625,
+        "header": 121,
+        "scroll": 4348,
+        "max": 8545
+      }
+    },
+    {
+      "name": "anchor evidence",
+      "pass": true,
+      "detail": {
+        "top": 144.671875,
+        "header": 121,
+        "scroll": 5304,
+        "max": 8545
+      }
+    },
+    {
+      "name": "anchor figures",
+      "pass": true,
+      "detail": {
+        "top": 145.484375,
+        "header": 121,
+        "scroll": 6549,
+        "max": 8545
+      }
+    },
+    {
+      "name": "anchor limits",
+      "pass": true,
+      "detail": {
+        "top": 145.09375,
+        "header": 121,
+        "scroll": 8026,
+        "max": 8545
+      }
+    },
+    {
+      "name": "anchor sources",
+      "pass": true,
+      "detail": {
+        "top": 413.4375,
+        "header": 121,
+        "scroll": 8545,
+        "max": 8545
+      }
+    },
+    {
+      "name": "slow loading hides prior image",
+      "pass": true
+    },
+    {
+      "name": "rapid delayed figure2→3→8 ignores stale",
+      "pass": true
+    },
+    {
+      "name": "forced figure failure honest UI",
+      "pass": true,
+      "detail": "Image failed to load. Select this figure again to retry, or open the full-size image."
+    },
+    {
+      "name": "figure retry recovery",
+      "pass": true
+    },
+    {
+      "name": "expanded no overflow 1440 zh",
+      "pass": true,
+      "detail": {
+        "w": 1440,
+        "scroll": 1440,
+        "offenders": []
+      }
+    },
+    {
+      "name": "hero aspect ratio 1440 zh",
+      "pass": true,
+      "detail": {
+        "natural": 1.495104895104895,
+        "rendered": 1.4951327223514888
+      }
+    },
+    {
+      "name": "expanded no overflow 1440 en",
+      "pass": true,
+      "detail": {
+        "w": 1440,
+        "scroll": 1440,
+        "offenders": []
+      }
+    },
+    {
+      "name": "hero aspect ratio 1440 en",
+      "pass": true,
+      "detail": {
+        "natural": 1.495104895104895,
+        "rendered": 1.4951327223514888
+      }
+    },
+    {
+      "name": "expanded no overflow 768 zh",
+      "pass": true,
+      "detail": {
+        "w": 768,
+        "scroll": 768,
+        "offenders": []
+      }
+    },
+    {
+      "name": "hero aspect ratio 768 zh",
+      "pass": true,
+      "detail": {
+        "natural": 1.495104895104895,
+        "rendered": 1.4951168060004687
+      }
+    },
+    {
+      "name": "expanded no overflow 768 en",
+      "pass": true,
+      "detail": {
+        "w": 768,
+        "scroll": 768,
+        "offenders": []
+      }
+    },
+    {
+      "name": "hero aspect ratio 768 en",
+      "pass": true,
+      "detail": {
+        "natural": 1.495104895104895,
+        "rendered": 1.4951168060004687
+      }
+    },
+    {
+      "name": "expanded no overflow 390 zh",
+      "pass": true,
+      "detail": {
+        "w": 390,
+        "scroll": 390,
+        "offenders": [
+          {
+            "tag": "A",
+            "id": "",
+            "cl": "",
+            "right": 451.59375,
+            "text": "验证证据"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cl": "",
+            "right": 540.859375,
+            "text": "原图与视频"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cl": "",
+            "right": 617.875,
+            "text": "适用边界"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cl": "",
+            "right": 670.390625,
+            "text": "来源"
+          }
+        ]
+      }
+    },
+    {
+      "name": "hero aspect ratio 390 zh",
+      "pass": true,
+      "detail": {
+        "natural": 1.495104895104895,
+        "rendered": 1.4951703481842007
+      }
+    },
+    {
+      "name": "expanded no overflow 390 en",
+      "pass": true,
+      "detail": {
+        "w": 390,
+        "scroll": 390,
+        "offenders": [
+          {
+            "tag": "A",
+            "id": "",
+            "cl": "",
+            "right": 449.25,
+            "text": "Evidence"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cl": "",
+            "right": 567.84375,
+            "text": "Figures & movie"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cl": "",
+            "right": 629.5625,
+            "text": "Limits"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cl": "",
+            "right": 703.546875,
+            "text": "Sources"
+          }
+        ]
+      }
+    },
+    {
+      "name": "hero aspect ratio 390 en",
+      "pass": true,
+      "detail": {
+        "natural": 1.495104895104895,
+        "rendered": 1.4951703481842007
+      }
+    },
+    {
+      "name": "direct English URL",
+      "pass": true
+    },
+    {
+      "name": "URL preserves unrelated params/hash",
+      "pass": true
+    },
+    {
+      "name": "refresh language remembered",
+      "pass": true
+    },
+    {
+      "name": "stored preference without param",
+      "pass": true
+    },
+    {
+      "name": "cross-page link carries English",
+      "pass": true
+    },
+    {
+      "name": "storage blocked defaults Chinese",
+      "pass": true
+    },
+    {
+      "name": "storage blocked switch works",
+      "pass": true
+    },
+    {
+      "name": "no unexpected runtime/resource errors",
+      "pass": true,
+      "detail": {
+        "console": [],
+        "requests": []
+      }
+    }
+  ],
+  "failures": [],
+  "console": [],
+  "requests": [],
+  "screenshots": [
+    "/tmp/paper-1427/qa/1440-zh-full.png",
+    "/tmp/paper-1427/qa/1440-zh-figures.png",
+    "/tmp/paper-1427/qa/1440-en-full.png",
+    "/tmp/paper-1427/qa/1440-en-figures.png",
+    "/tmp/paper-1427/qa/768-zh-full.png",
+    "/tmp/paper-1427/qa/768-en-full.png",
+    "/tmp/paper-1427/qa/390-zh-full.png",
+    "/tmp/paper-1427/qa/390-zh-figures.png",
+    "/tmp/paper-1427/qa/390-en-full.png",
+    "/tmp/paper-1427/qa/390-en-figures.png",
+    "/tmp/paper-1427/qa/hero-1440-zh.png",
+    "/tmp/paper-1427/qa/cbad-1440-zh.png",
+    "/tmp/paper-1427/qa/cbad-1440-en.png",
+    "/tmp/paper-1427/qa/hero-390-en.png"
+  ]
+}
