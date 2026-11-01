@@ -1,0 +1,9 @@
+# Validation — 2026-11-01
+
+- Static checker: `python3 .agents/skills/paper-webpage/scripts/check_page.py --root "$PWD" --slug frontier-cs` — passed, no warnings.
+- Full collection regression: `scripts/check-explainers.cjs` with existing Playwright installation — all 15 explainers passed; 1,677 interaction cases, both languages, three widths, language/state/scroll preservation and denied-storage fallback. Shared assets were not modified by this task.
+- Targeted Chromium check: 1440, 768 and 390px, both languages, all sections and expanded details. Saved full-page and section screenshots under `/tmp/frontier-qa/`; viewed desktop Chinese full page, phone English full page and phone Chinese pass-rule module. No document overflow or console/resource errors.
+- Independently asserted fictional lab outputs at default (0.920×, −0.225 dB); nine latency/quality combinations including exact boundaries 0.96 and −0.25; single-group logistic outputs at −3, 0 and 3; Space selects workflow, Enter resets lab; language changes preserve input/selection/details/query/hash; direct English URL and reload work.
+- Catalogue: local homepage English search with explainers-only filter finds FrontierCS 2. Existing catalogue paper objects, first-publication dates and timestamp values preserved before adding the new entry.
+- Scientific check: reviewed paper §§3–6 and Appendix D, original benchmark metadata and official repo protocol; reconciled displayed Chinese/English text, workflow states, units, thresholds, partial-check warnings, probability bar and formula definitions with `sources.md`. No empirical scores reconstructed from figure coordinates; no new model experiments claimed.
+- Not tested: actual benchmark execution, real screen reader and hardware-specific rendering outside Chromium. No external images or image switching, so image failure/race tests do not apply. Remote source links read through web access; bibliography is not a systematic broken-link audit.

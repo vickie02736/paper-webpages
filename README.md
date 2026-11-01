@@ -38,6 +38,9 @@ This repository collects the paper explainer webpages and research maps created 
 - [CALF-20 — Gas adsorption and framework flexibility](papers/calf20-flexibility/)
 - [LanM — Protein-based rare-earth recovery and separation](papers/lanm-protein-process/)
 
+
+- [FrontierCS 2 — A Benchmark for Computer Science R&D](papers/frontier-cs/)
+
 ## Repository layout
 
 ```text
