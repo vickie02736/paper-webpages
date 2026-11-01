@@ -1,0 +1,22 @@
+.atlas-paper .annotation-term{display:inline;margin:0;padding:0;border:0;border-radius:2px;background:transparent;color:inherit;font:inherit;line-height:inherit;letter-spacing:inherit;text-align:inherit;text-transform:inherit;text-decoration:underline dotted var(--cyan);text-underline-offset:4px;cursor:pointer;min-height:0}
+.atlas-paper .annotation-term:hover,.atlas-paper .annotation-term[aria-expanded="true"]{background:#7de3ff18;color:var(--cyan)}
+.atlas-paper .reading-notes{margin:28px 0;scroll-margin-top:calc(var(--atlas-header-height,124px) + 24px)}
+.atlas-paper .reading-notes>details{border-color:#39516c}
+.atlas-paper .reading-notes summary{color:var(--cyan)}
+.atlas-paper .annotation-questions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.atlas-paper .annotation-question{text-align:left;min-height:48px;font-size:14px;line-height:1.6;padding:14px 16px}
+.atlas-paper .ln-term-dialog{position:fixed;z-index:1000;width:min(580px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow-y:auto;overscroll-behavior:contain;background:var(--panel);border:1px solid var(--cyan);border-radius:16px;padding:22px;box-shadow:0 18px 65px #000b;color:var(--ink);font-size:14px;line-height:1.75}
+.atlas-paper .annotation-dialog-head{display:flex;gap:18px;align-items:start;justify-content:space-between;margin-bottom:18px}
+.atlas-paper .annotation-dialog-head h2{font-size:20px;line-height:1.45;margin:0;color:var(--cyan);letter-spacing:0}
+.atlas-paper #ln-term-close{flex:none;font-size:12px;min-height:40px;padding:6px 12px}
+.atlas-paper #ln-term-definition p{margin:0 0 16px}
+.atlas-paper #ln-term-definition>:last-child{margin-bottom:0}
+.atlas-paper .annotation-formula{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:13px 15px;margin:16px 0;overflow-wrap:anywhere}
+.atlas-paper .annotation-formula small{display:block;font-size:11px;color:var(--muted);margin-bottom:7px}
+.atlas-paper .annotation-formula>div{font-size:16px;line-height:1.8}
+.atlas-paper .annotation-carboxyl{color:var(--pink)}
+.atlas-paper .annotation-phosphonate{color:var(--orange)}
+.atlas-paper .annotation-flow{padding-left:23px;margin:16px 0}
+.atlas-paper .annotation-flow li{padding-left:5px;margin-bottom:14px}
+.atlas-paper .annotation-flow strong{display:block;color:var(--cyan)}
+@media(max-width:600px){.atlas-paper .annotation-questions{grid-template-columns:1fr}.atlas-paper .ln-term-dialog{padding:18px;font-size:14px}.atlas-paper .annotation-dialog-head h2{font-size:18px}.atlas-paper .annotation-formula>div{font-size:14px}}
