@@ -36,3 +36,13 @@ All displayed experiment **numbers** matched the final conference paper; substan
 The formal PDF contains an internal caption typo: Table 4's subsection labels say “5.3.x”, while the actual body headings are **5.2.x**. Citations here use the actual body headings. The appendix Figure 2 caption mentions 4096 latents, whereas §3.2 and Appendix C specify **512 latents**; this page uses the explicitly documented model setting, does not reproduce that heatmap and does not treat its caption as a new model checkpoint.
 
 This is a consistency audit against published evidence, not independent training reproduction or recovery of actual attention weights. Browser layout / bilingual / keyboard regression is tracked by the repository audit task.
+
+## Bibliographic metadata
+
+Checked 2026-11-01. The shared byline uses the ordered manuscript authors and explicitly mapped publication-time affiliations stored under this paper’s original source URL in [`paper-catalog.json`](../../references/paper-catalog.json). Metadata is generated with `node scripts/build-paper-metadata.cjs`; the same record is used on the homepage.
+
+- [Official article metadata](https://proceedings.iclr.cc/paper_files/paper/2025/hash/c4bf73386022473a652a18941e9ea6f8-Abstract-Conference.html) — authors, dates.published.
+- [Author-submitted arXiv manuscript; ordered author list and first submission date (separate from formal publication)](https://arxiv.org/abs/2405.17428v3) — dates.preprint.
+- [Reviewed manuscript author superscripts and printed affiliation block; unresolved individual mappings remain unverified](https://arxiv.org/pdf/2405.17428v3) — affiliations.
+
+Paper dates: published = 2025-05-01; accepted = unverified; preprint = 2024-05-27. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.

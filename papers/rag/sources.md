@@ -37,3 +37,14 @@ Table 1's standard TQA scores are DPR 57.9, RAG-Token 55.2 and RAG-Sequence 56.8
 ## Validation limits
 
 Static checks verify syntax/resources/catalogue links; they cannot detect mislabeled metric columns, mixed evaluation splits or incorrect scientific relations. Browser interaction/language/layout checks are recorded by the containing audit task. The page contains HTML/CSS conceptual diagrams and bars, not an original-image reader; image download/race tests therefore do not apply to this page. Quantitative correctness here is established by the paper/table cross-check above.
+
+## Bibliographic metadata
+
+Checked 2026-11-01. The shared byline uses the ordered manuscript authors and explicitly mapped publication-time affiliations stored under this paper’s original source URL in [`paper-catalog.json`](../../references/paper-catalog.json). Metadata is generated with `node scripts/build-paper-metadata.cjs`; the same record is used on the homepage.
+
+- [PDF title page author block; printed names take precedence over proceedings account names](https://proceedings.neurips.cc/paper/2020/file/6b493230205f780e1bc26945df7481e5-Paper.pdf) — authors, affiliations.
+- [Author-submitted arXiv manuscript; ordered author list and first submission date (separate from formal publication)](https://arxiv.org/abs/2005.11401v4) — dates.preprint.
+- [Official proceedings manuscript: no individual-paper acceptance date disclosed](https://proceedings.neurips.cc/paper/2020/file/6b493230205f780e1bc26945df7481e5-Paper.pdf) — dates.accepted.
+- [Explicit printed proceedings publication statement; source discloses year only](https://proceedings.neurips.cc/paper/2020/file/6b493230205f780e1bc26945df7481e5-Paper.pdf) — dates.published.
+
+Paper dates: published = 2020; accepted = notDisclosed; preprint = 2020-05-22. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.

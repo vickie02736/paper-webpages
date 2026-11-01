@@ -160,3 +160,11 @@ Capacity and SF bars use explicitly transcribed values on labelled linear scales
 - **Other transcription issues:** SI Table 3 prints the Eu Freundlich Kꜰ entry as “54.8.0”; the page does not use it. SI p. 2 gives a 100 K crystal-collection temperature, while Table 1 reports 293(2) K; the page does not claim a temperature. The column method's “Figure S9” cross-reference is followed to the actual apparatus Figure 53 rather than relying on that erroneous cross-reference.
 
 The distinction between paper measurements, author-proposed mechanisms, teaching calculations and explainer analysis is maintained on the page. The main evidence limits are adjacent-element selectivity, independent phase purity/recovery, actual aqueous binding/speciation, long-term dissolution/durability and scale-up performance. No validation or deployment result is asserted in this scientific ledger.
+
+## Bibliographic metadata
+
+Checked 2026-11-01. The shared byline uses the ordered manuscript authors and explicitly mapped publication-time affiliations stored under this paper’s original source URL in [`paper-catalog.json`](../../references/paper-catalog.json). Metadata is generated with `node scripts/build-paper-metadata.cjs`; the same record is used on the homepage.
+
+- [Author information; About this article / publication history](https://www.nature.com/articles/s41467-024-45810-1) — dates.published, dates.accepted, affiliations, authors.
+
+Paper dates: published = 2024-02-20; accepted = 2024-02-05. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.

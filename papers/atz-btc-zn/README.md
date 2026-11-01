@@ -48,3 +48,5 @@ The overview and Section 02 diagrams were checked against the original structura
 The narrow-screen diagrams stack their structural views and phases vertically. A targeted browser check passed all 24 width/language/view combinations and 112 state checks, including true visibility, keyboard control, language/state preservation, SVG text bounds and 390↔1440 resizing. At 390 px, the minimum rendered SVG text is 12.6 px in the overview and 14.7 px in the mechanism. Desktop and phone screenshots were visually reviewed; representative files are retained at `/tmp/atz-btc-zn-diagrams-qa/` on the task host.
 
 Final validation after integrating the current publication branch: full static checks passed with zero warnings, and the repository browser regression passed all 10 explainers and 1327 interaction cases.
+
+Publication-time authors, affiliations and paper dates are rendered from the shared catalogue metadata; see [bibliographic evidence](sources.md#bibliographic-metadata) and the [metadata guide](../../references/paper-catalog-guide.md#authors-affiliations-and-paper-dates). Paper dates are separate from this explainer’s creation/publication/update dates.

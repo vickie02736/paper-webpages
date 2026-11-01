@@ -37,6 +37,7 @@ body[data-paper="rag"] .flow{grid-template-columns:1fr;gap:9px;margin-top:20px}
 body[data-paper="rag"] .flow-node{min-height:68px}
 body[data-paper="rag"] .flow-link{text-align:center;color:#9ceaff;font-size:12px}
 </style>
+<link rel="stylesheet" href="../../assets/bibliography.css">
 </head>
 <body class="atlas-paper atlas-reading" data-paper="rag">
 <header class="topbar"><div class="shell topbar-inner"><a class="brand" href="#top"><span class="brand-dot"></span><span>RAG / paper studio</span></a><nav class="nav"><a href="#glance">概览</a><a href="#intuition">直觉</a><a href="#method">方法</a><a href="#math">公式</a><a href="#evidence">证据</a><a href="#critical">批判</a></nav><div class="level-switch"><span>深度</span><button class="active" data-level="all">全景</button><button data-level="beginner">直觉</button><button data-level="advanced">研究</button></div><div class="lang-switch"><span>语言</span><button id="lang-zh" class="active">中文</button><button id="lang-en">English</button></div></div></header>
@@ -51,6 +52,8 @@ body[data-paper="rag"] .flow-link{text-align:center;color:#9ceaff;font-size:12px
 <section class="section"><div class="section-head"><div><div class="section-kicker">07 · Knowledge map</div><h2>最后只记住五件事</h2></div></div><div class="takeaways"><div class="take"><b>01</b><p>RAG = 参数记忆 + 外部文本记忆。</p></div><div class="take"><b>02</b><p>文档 z 是 latent variable，不需要逐条检索标签。</p></div><div class="take"><b>03</b><p>Sequence 共享文档；Token 可按 token 换文档。</p></div><div class="take"><b>04</b><p>可微检索与生成器可端到端共同适配任务。</p></div><div class="take"><b>05</b><p>替换索引即可更新世界知识，但无法消除来源偏差。</p></div></div></section>
 <footer class="footer">原文来源：Lewis et al., NeurIPS 2020。定量图表核对 Table 1、2、4、6 与 §4.5；流程据 Figure 1、公式据 §2.1，Hemingway 条带为 Figure 2 的定性教学简图，不是后验热图。完整核对记录见 <a href="sources.md">sources.md</a>。<br><a href="https://proceedings.neurips.cc/paper/2020/file/6b493230205f780e1bc26945df7481e5-Paper.pdf" target="_blank">打开论文 PDF ↗</a></footer>
 </main>
+<script src="../../assets/bibliography.js"></script>
+<script src="../../assets/paper-metadata.js"></script>
 <script src="../../assets/paper.js"></script>
 <script>
 const levelBtns=[...document.querySelectorAll('[data-level]')]; levelBtns.forEach(b=>b.onclick=()=>{levelBtns.forEach(x=>x.classList.remove('active'));b.classList.add('active');document.body.classList.remove('hide-advanced','hide-beginner');if(b.dataset.level==='beginner')document.body.classList.add('hide-advanced');if(b.dataset.level==='advanced')document.body.classList.add('hide-beginner')});

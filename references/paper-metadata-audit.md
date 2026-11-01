@@ -1,0 +1,251 @@
+# Paper metadata evidence and gaps
+
+Generated from `paper-catalog.json`; checked dates and field-level source locators are stored with each record. This ledger concerns bibliographic metadata only.
+
+核对结果：作者名单 451/451；单位 445/451；完整作者—单位对应 391/451。已核实发表日期 400 篇、录用日期 134 篇、首次预印本日期 211 篇；另有 123 篇的已检查官方记录未披露录用日期。下列 232 篇仍有至少一个未核实字段，不能视为全部信息已经核实。
+
+- papers: 451
+- authors: 451
+- affiliations: 445
+- completeMappings: 391
+- published: 400
+- accepted: 134
+- preprint: 211
+- acceptanceNotDisclosed: 123
+
+Dates use the precision published by the source. “Not disclosed” means the inspected official record does not disclose the date; “unverified” means the available evidence does not establish it. Preprint dates are separate from formal publication and acceptance. No conference notification date is substituted for a paper’s acceptance date. Author affiliation mappings are imported only when the source explicitly associates them.
+
+## Records with unverified fields
+
+- [Bayesian Optimization of Function Networks with Partial Evaluations](https://proceedings.mlr.press/v235/buathong24a.html): accepted
+- [Scaling Multi-Task Bayesian Optimization with Large Language Models](https://proceedings.iclr.cc/paper_files/paper/2026/hash/a4a3689e5ca538e340f58cdd29f513a9-Abstract-Conference.html): author–affiliation mapping
+- [Deep Batch Active Learning by Diverse, Uncertain Gradient Lower Bounds](https://openreview.net/pdf?id=ryghZJBKPS): accepted. Original source unavailable: 403
+- [Active Preference Learning for Large Language Models](https://proceedings.mlr.press/v235/muldrew24a.html): accepted
+- [Active Learning of Deep Neural Networks via Gradient-Free Cutting Planes](https://proceedings.mlr.press/v267/zhang25db.html): accepted
+- [Scalable Diffusion Models with Transformers](https://openaccess.thecvf.com/content/ICCV2023/papers/Peebles_Scalable_Diffusion_Models_with_Transformers_ICCV_2023_paper.pdf): published
+- [DiGress: Discrete Denoising Diffusion for Graph Generation](https://openreview.net/pdf?id=UaAD-Nu86WX): accepted. Original source unavailable: 403
+- [Flow Matching for Generative Modeling](https://openreview.net/forum?id=PqvMRDCJT9t): published, accepted. Unrecognised source page; not imported
+- [Flow Matching on General Geometries](https://openreview.net/forum?id=g7ohDlTITL): accepted. Unrecognised source page; not imported
+- [Trajectory Balance: Improved Credit Assignment in GFlowNets](https://papers.neurips.cc/paper_files/paper/2022/hash/27b51baca8377a0cf109f6ecc15a0f70-Abstract-Conference.html): author–affiliation mapping
+- [Multi-Objective GFlowNets](https://proceedings.mlr.press/v202/jain23a.html): author–affiliation mapping
+- [Improving Text Embeddings with Large Language Models](https://aclanthology.org/2024.acl-long.642/): accepted
+- [NV-Embed: Improved Techniques for Training LLMs as Generalist Embedding Models](https://proceedings.iclr.cc/paper_files/paper/2025/hash/c4bf73386022473a652a18941e9ea6f8-Abstract-Conference.html): accepted
+- [Unified Structure Generation for Universal Information Extraction](https://aclanthology.org/2022.acl-long.395/): accepted
+- [Instruct and Extract: Instruction Tuning for On-Demand Information Extraction](https://aclanthology.org/2023.emnlp-main.620/): accepted
+- [ReAct: Synergizing Reasoning and Acting in Language Models](https://openreview.net/pdf?id=WE_vluYUL-X): accepted. Original source unavailable: 403
+- [Toolformer: Language Models Can Teach Themselves to Use Tools](https://papers.nips.cc/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html): author–affiliation mapping
+- [Self-Consistency Improves Chain of Thought Reasoning in Language Models](https://openreview.net/pdf?id=1PL1NIMMrw): author–affiliation mapping, accepted. Original source unavailable: 403
+- [Language Agent Tree Search Unifies Reasoning, Acting, and Planning in Language Models](https://proceedings.mlr.press/v235/zhou24r.html): accepted
+- [MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework](https://proceedings.iclr.cc/paper_files/paper/2024/hash/6507b115562bb0a305f1958ccc87355a-Abstract-Conference.html): author–affiliation mapping
+- [ReConcile: Round-Table Conference Improves Reasoning via Consensus among Diverse LLMs](https://aclanthology.org/2024.acl-long.381/): accepted
+- [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](https://papers.neurips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html): author–affiliation mapping
+- [G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment](https://aclanthology.org/2023.emnlp-main.153/): accepted
+- [Prometheus: Inducing Fine-Grained Evaluation Capability in Language Models](https://proceedings.iclr.cc/paper_files/paper/2024/hash/803485352e61e3ebf41221e4776c9fd4-Abstract-Conference.html): author–affiliation mapping
+- [FActScore: Fine-Grained Atomic Evaluation of Factual Precision in Long Form Text Generation](https://aclanthology.org/2023.emnlp-main.741/): accepted
+- [Language Models with Conformal Factuality Guarantees](https://proceedings.mlr.press/v235/mohri24a.html): accepted
+- [Domain-Shift-Aware Conformal Prediction for Large Language Models](https://proceedings.mlr.press/v306/lin26t.html): accepted
+- [Model Alignment as Prospect Theoretic Optimization](https://proceedings.mlr.press/v235/ethayarajh24a.html): accepted
+- [DistiLLM: Towards Streamlined Distillation for Large Language Models](https://proceedings.mlr.press/v235/ko24c.html): accepted
+- [DistiLLM-2: A Contrastive Approach Boosts the Distillation of LLMs](https://proceedings.mlr.press/v267/ko25a.html): accepted
+- [Invariance Makes LLM Unlearning Resilient Even to Unanticipated Downstream Fine-Tuning](https://proceedings.mlr.press/v267/wang25en.html): accepted
+- [Towards Stable Test-Time Adaptation in Dynamic Wild World](https://openreview.net/pdf?id=g2YraF75Tj): author–affiliation mapping, accepted. Original source unavailable: 403
+- [Test-Time Adaptation with Binary Feedback](https://proceedings.mlr.press/v267/lee25g.html): accepted
+- [Equiformer: Equivariant Graph Attention Transformer for 3D Atomistic Graphs](https://openreview.net/pdf?id=KwmPfARgOTD): accepted. Original source unavailable: 403
+- [Fourier Neural Operator for Parametric Partial Differential Equations](https://openreview.net/pdf/53c47f849d1cd4d21b865caf7d774e07a5c42aa4.pdf): affiliations, author–affiliation mapping, accepted. Original source unavailable: 403 Affiliations remain unverified: accessible official records did not establish the manuscript byline institutions.
+- [Transolver: A Fast Transformer Solver for PDEs on General Geometries](https://proceedings.mlr.press/v235/wu24r.html): accepted
+- [A Time Series Is Worth 64 Words: Long-Term Forecasting with Transformers](https://openreview.net/pdf?id=Jbdc0vTOcol): accepted. Original source unavailable: 403
+- [A Decoder-Only Foundation Model for Time-Series Forecasting](https://proceedings.mlr.press/v235/das24c.html): accepted
+- [Time-MoE: Billion-Scale Time Series Foundation Models with Mixture of Experts](https://proceedings.iclr.cc/paper_files/paper/2025/hash/558d48c1f08675daa636e09bfe94a89e-Abstract-Conference.html): author–affiliation mapping
+- [Stable Differentiable Causal Discovery](https://proceedings.mlr.press/v235/nazaret24a.html): accepted
+- [Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data](https://openaccess.thecvf.com/content/CVPR2024/html/Yang_Depth_Anything_Unleashing_the_Power_of_Large-Scale_Unlabeled_Data_CVPR_2024_paper.html): author–affiliation mapping
+- [Depth Anything V2](https://proceedings.neurips.cc/paper_files/paper/2024/hash/26cfdcd8fe6fd75cc53e92963a656c58-Abstract-Conference.html): author–affiliation mapping
+- [FrontierCS 2: A Benchmark for Computer Science R&D](https://arxiv.org/abs/2610.29932): author–affiliation mapping, published, accepted
+- [Linker desymmetrisation unlocks new topologies, defective clusters, and catalytic activity in zirconium- and rare-earth metal–organic frameworks](https://pubs.rsc.org/en/content/articlehtml/2025/sc/d5sc05365j): accepted. Original source unavailable: 403
+- [Machine learning the quantum-chemical properties of metal–organic frameworks for accelerated materials discovery](https://www.sciencedirect.com/science/article/pii/S2590238521000709): affiliations, author–affiliation mapping, published, accepted. Original source unavailable: 403 Affiliations remain unverified: accessible official records did not establish the manuscript byline institutions.
+- [How Reproducible is the Synthesis of Zr–Porphyrin Metal–Organic Frameworks? An Interlaboratory Study](https://onlinelibrary.wiley.com/doi/full/10.1002/adma.202304832): accepted. Original source unavailable: 403
+- [CoRE MOF DB: A curated experimental metal-organic framework database with machine-learned properties for integrated material-process screening](https://www.sciencedirect.com/science/article/pii/S2590238525001833): published, accepted. Original source unavailable: 403
+- [DigiMOF: A Database of Metal–Organic Framework Synthesis Information Generated via Text Mining](https://pubs.acs.org/doi/10.1021/acs.chemmater.3c00788): accepted. Original source unavailable: 403
+- [A GPT-4 Reticular Chemist for Guiding MOF Discovery](https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202311983): accepted. Original source unavailable: 403
+- [Metal–Organic Framework Stability in Water and Harsh Environments from Data-Driven Models Trained on the Diverse WS24 Data Set](https://pubs.acs.org/doi/full/10.1021/jacs.4c05879): accepted. Original source unavailable: 403
+- [Elucidating the particle size-dependent guest-induced structural transition of flexible metal–organic frameworks by exploring cooperative nature](https://pubs.rsc.org/en/content/articlehtml/2024/ta/d4ta04222k): accepted. Original source unavailable: 403
+- [Toward a Generalizable Machine-Learned Potential for Metal–Organic Frameworks](https://pubs.acs.org/doi/10.1021/acsnano.4c12369): accepted. Original source unavailable: 403
+- [Cluster-Based Machine Learning Potentials to Describe Disordered Metal–Organic Frameworks up to the Mesoscale](https://pubs.acs.org/doi/full/10.1021/acs.chemmater.5c00821): accepted. Original source unavailable: 403
+- [A scalable metal-organic framework as a durable physisorbent for carbon dioxide capture](https://www.science.org/doi/10.1126/science.abi7281): accepted. Original source unavailable: 403
+- [Water-Enhanced Direct Air Capture of Carbon Dioxide in Metal–Organic Frameworks](https://pubs.acs.org/doi/10.1021/jacs.3c14125): accepted. Original source unavailable: 403
+- [High-temperature carbon dioxide capture in a porous material with terminal zinc hydride sites](https://www.science.org/doi/10.1126/science.adk5697): accepted. Original source unavailable: 403
+- [Multigas adsorption with single-site cooperativity in a metal–organic framework](https://www.science.org/doi/10.1126/science.ady2607): accepted. Original source unavailable: 403
+- [Large-Area Ultrathin Metal–Organic Framework Membranes Fabricated on Flexible Polymer Supports for Gas Separations](https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202404058): accepted. Original source unavailable: 403
+- [Scalable metal-organic framework membranes through nonclassical crystallization for molecular separation](https://www.science.org/doi/10.1126/sciadv.adz5237): accepted. Original source unavailable: 403
+- [Balancing volumetric and gravimetric uptake in highly porous materials for clean energy](https://www.science.org/doi/10.1126/science.aaz8881): published, accepted. Original source unavailable: 403
+- [Ultra-fast Proton Conduction and Photocatalytic Water Splitting in a Pillared Metal–Organic Framework](https://pubs.acs.org/doi/10.1021/jacs.3c03943): accepted. Original source unavailable: 403
+- [Mixed Ionic and Electronic Conductivity in a Tetrathiafulvalene-Phosphonate Metal–Organic Framework](https://pubs.acs.org/doi/10.1021/jacs.4c13792): accepted. Original source unavailable: 403
+- [The Mechanism of Rapid and Green Metal–Organic Framework Synthesis by In Situ Spectroscopy and Diffraction](https://pubs.acs.org/doi/10.1021/acs.chemmater.4c00879): accepted. Original source unavailable: 403
+- [Meniscus-Guided 3D Microprinting of Pure Metal–Organic Frameworks with High Gas-Uptake Performance](https://pubs.acs.org/doi/10.1021/acsami.1c22582): accepted. Original source unavailable: 403
+- [CO2/N2 separation by vacuum swing adsorption using a metal–organic framework, CALF-20: Multi-objective optimization and experimental validation](https://www.sciencedirect.com/science/article/pii/S138589472205029X): affiliations, author–affiliation mapping, published, accepted. Original source unavailable: 403 Affiliations remain unverified: accessible official records did not establish the manuscript byline institutions.
+- [Aqueous Adsorption of Rare Earth Elements by Organophosphonate-Ligand-Modified Metal–Organic Frameworks: The Role of Ligand Loading in Surface Complexation](https://pubs.acs.org/doi/10.1021/acsami.6c16452): accepted. Original source unavailable: 403
+- [Efficient Separation of Adjacent Rare Earths in One Step by Using Ion-microporous Metal–Organic Frameworks](https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.202419093): accepted. Original source unavailable: 403
+- [Open X-Embodiment: Robotic Learning Datasets and RT-X Models](https://is.mpg.de/en/publications/openx24): author–affiliation mapping, published, accepted
+- [DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset](https://roboticsproceedings.org/rss20/p120.html): author–affiliation mapping
+- [Where are we in the search for an Artificial Visual Cortex for Embodied Intelligence?](https://proceedings.neurips.cc/paper_files/paper/2023/hash/022ca1bed6b574b962c48a2856eb207b-Abstract-Conference.html): author–affiliation mapping
+- [OpenVLA: An Open-Source Vision-Language-Action Model](https://proceedings.mlr.press/v270/kim25c.html): accepted
+- [π₀: A Vision-Language-Action Flow Model for General Robot Control](https://roboticsproceedings.org/rss21/p010.html): accepted
+- [π₀.₅: a Vision-Language-Action Model with Open-World Generalization](https://proceedings.mlr.press/v305/black25a.html): accepted
+- [Streaming Flow Policy: Simplifying diffusion/flow-matching policies by treating action trajectories as flow trajectories](https://proceedings.mlr.press/v305/jiang25a.html): accepted
+- [3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations](https://roboticsproceedings.org/rss20/p067.html): author–affiliation mapping
+- [Contact-Anchored Policies: Contact Conditioning Creates Strong Robot Utility Models](https://roboticsproceedings.org/rss22/p141.html): author–affiliation mapping
+- [Code as Policies: Language Model Programs for Embodied Control](https://arxiv.org/abs/2209.07753): published, accepted
+- [PaLM-E: An Embodied Multimodal Language Model](https://proceedings.mlr.press/v202/driess23a.html): author–affiliation mapping
+- [ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation](https://proceedings.mlr.press/v270/huang25g.html): accepted
+- [Motion Planning around Obstacles with Convex Optimization](https://arxiv.org/abs/2205.04422): published, accepted
+- [cuRobo: Parallelized Collision-Free Minimum-Jerk Robot Motion Generation](https://curobo.org/research/research.html): published, accepted. Unrecognised source page; not imported
+- [ConceptFusion: Open-set Multimodal 3D Mapping](https://roboticsproceedings.org/rss19/p066.html): author–affiliation mapping
+- [ConceptGraphs: Open-Vocabulary 3D Scene Graphs for Perception and Planning](https://concept-graphs.github.io/): author–affiliation mapping, published, accepted
+- [ViNT: A Foundation Model for Visual Navigation](https://proceedings.mlr.press/v229/shah23a.html): author–affiliation mapping
+- [NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration](https://general-navigation-models.github.io/nomad/index.html): author–affiliation mapping, published, accepted
+- [NaVILA: Legged Robot Vision-Language-Action Model for Navigation](https://roboticsproceedings.org/rss21/p018.html): accepted
+- [Learning robust perceptive locomotion for quadrupedal robots in the wild](https://leggedrobotics.github.io/rl-perceptiveloco/): published, accepted
+- [Extreme Parkour with Legged Robots](https://extreme-parkour.github.io/): author–affiliation mapping, published, accepted
+- [Learning Human-to-Humanoid Real-Time Whole-Body Teleoperation](https://arxiv.org/abs/2403.04436): published, accepted
+- [HumanPlus: Humanoid Shadowing and Imitation from Humans](https://proceedings.mlr.press/v270/fu25a.html): author–affiliation mapping, accepted
+- [ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid Whole-Body Skills](https://www.roboticsproceedings.org/rss21/p066.html): accepted
+- [Mobile ALOHA: Learning Bimanual Mobile Manipulation using Low-Cost Whole-Body Teleoperation](https://proceedings.mlr.press/v270/fu25b.html): accepted
+- [Pedipulate: Enabling Manipulation Skills using a Quadruped Robot’s Leg](https://doi.org/10.1109/ICRA57147.2024.10611307): published, accepted. Original source unavailable: 202
+- [TD-MPC2: Scalable, Robust World Models for Continuous Control](https://www.tdmpc2.com/): author–affiliation mapping, accepted
+- [Reconciling Reality through Simulation: A Real-To-Sim-to-Real Approach for Robust Manipulation](https://roboticsproceedings.org/rss20/p015.html): author–affiliation mapping
+- [Learning Visual Parkour from Generated Images](https://proceedings.mlr.press/v270/yu25b.html): accepted
+- [ManiSkill2: A Unified Benchmark for Generalizable Manipulation Skills](https://openreview.net/pdf?id=b_CQDy9vrD1): author–affiliation mapping, accepted. Original source unavailable: 403
+- [BEHAVIOR-1K: A Benchmark for Embodied AI with 1,000 Everyday Activities and Realistic Simulation](https://proceedings.mlr.press/v205/li23a.html): author–affiliation mapping
+- [Sparsh: Self-supervised touch representations for vision-based tactile sensing](https://proceedings.mlr.press/v270/higuera25a.html): accepted
+- [Learning Unified Static-Dynamic Representation across Multiple Visuo-tactile Sensors](https://gewu-lab.github.io/AnyTouch/): accepted
+- [Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://roboticsproceedings.org/rss21/p052.html): author–affiliation mapping, accepted
+- [To the Noise and Back: Diffusion for Shared Autonomy](https://roboticsproceedings.org/rss19/p014.html): author–affiliation mapping
+- [DiffuseBot: Breeding Soft Robots With Physics-Augmented Generative Diffusion Models](https://proceedings.neurips.cc/paper_files/paper/2023/hash/8b1008098947ad59144c18a78337f937-Abstract-Conference.html): author–affiliation mapping
+- [Efficient automatic design of robots](https://pmc.ncbi.nlm.nih.gov/articles/PMC10576117/): published, accepted
+- [Evaluating Real-World Robot Manipulation Policies in Simulation](https://proceedings.mlr.press/v270/li25c.html): author–affiliation mapping, accepted
+- [PolaRiS: Scalable Real-to-Sim Evaluations for Generalist Robot Policies](https://roboticsproceedings.org/rss22/p062.html): author–affiliation mapping
+- [SafeDiffuser: Safe Planning with Diffusion Probabilistic Models](https://proceedings.iclr.cc/paper_files/paper/2025/hash/f95606d8e870020085990d9650b4f2a1-Abstract-Conference.html): author–affiliation mapping
+- [Real-Time Out-of-Distribution Failure Prevention via Multi-Modal Reasoning](https://proceedings.mlr.press/v305/ganai25a.html): accepted
+- [EGO-Swarm: A Fully Autonomous and Decentralized Quadrotor Swarm System in Cluttered Environments](https://ieeexplore.ieee.org/document/9561902/): author–affiliation mapping, published, accepted. Original source unavailable: 202
+- [MAPF-LNS2: Fast Repairing for Multi-Agent Path Finding via Large Neighborhood Search](https://ojs.aaai.org/index.php/AAAI/article/view/21266): accepted. Original source unavailable: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+- [LaCAM: Search-Based Algorithm for Quick Multi-Agent Pathfinding](https://ojs.aaai.org/index.php/AAAI/article/view/26377): accepted. Original source unavailable: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+- [Ab initio solution of the many-electron Schrödinger equation with deep neural networks](https://doi.org/10.1103/physrevresearch.2.033429): accepted
+- [A Self-Attention Ansatz for Ab-initio Quantum Chemistry](https://openreview.net/forum?id=xveTeHVlF7j): published, accepted. Unrecognised source page; not imported
+- [Accurate computation of quantum excited states with neural networks](https://www.science.org/doi/10.1126/science.adn0137): accepted. Original source unavailable: 403
+- [Kohn-Sham Equations as Regularizer: Building Prior Knowledge into Machine-Learned Physics](https://doi.org/10.1103/physrevlett.126.036401): accepted
+- [Pushing the frontiers of density functionals by solving the fractional electron problem](https://www.science.org/doi/10.1126/science.abj6511): accepted. Original source unavailable: 403
+- [OrbNet: Deep learning for quantum chemistry using symmetry-adapted atomic-orbital features](https://doi.org/10.1063/5.0021955): accepted. Original source unavailable: 403
+- [Generalized Neural-Network Representation of High-Dimensional Potential-Energy Surfaces](https://doi.org/10.1103/physrevlett.98.146401): accepted
+- [Gaussian Approximation Potentials: The Accuracy of Quantum Mechanics, without the Electrons](https://doi.org/10.1103/physrevlett.104.136403): accepted
+- [SchNet: A continuous-filter convolutional neural network for modeling quantum interactions](https://proceedings.neurips.cc/paper_files/paper/2017/hash/303ed4c69846ab36c2904d3ba8573050-Abstract.html): author–affiliation mapping
+- [Deep Potential Molecular Dynamics: A Scalable Model with the Accuracy of Quantum Mechanics](https://doi.org/10.1103/physrevlett.120.143001): accepted
+- [MACE: Higher Order Equivariant Message Passing Neural Networks for Fast and Accurate Force Fields](https://proceedings.neurips.cc/paper_files/paper/2022/hash/4a36c3c51af11ed9f34615b81edb5bbc-Abstract-Conference.html): author–affiliation mapping
+- [A foundation model for atomistic materials chemistry](https://arxiv.org/abs/2401.00096): author–affiliation mapping, published, accepted
+- [Crystal Graph Convolutional Neural Networks for an Accurate and Interpretable Prediction of Material Properties](https://doi.org/10.1103/physrevlett.120.145301): accepted
+- [Graph Networks as a Universal Machine Learning Framework for Molecules and Crystals](https://doi.org/10.1021/acs.chemmater.9b01294): accepted. Original source unavailable: 403
+- [Commentary: The Materials Project: A materials genome approach to accelerating materials innovation](https://doi.org/10.1063/1.4812323): accepted. Original source unavailable: 403
+- [Crystal Diffusion Variational Autoencoder for Periodic Material Generation](https://openreview.net/forum?id=03RLpj-tc_): author–affiliation mapping, accepted. Unrecognised source page; not imported
+- [Fine-Tuned Language Models Generate Stable Inorganic Materials as Text](https://proceedings.iclr.cc/paper_files/paper/2024/hash/5dc6d1c81754c32008c9667339b3fdd3-Abstract-Conference.html): author–affiliation mapping
+- [FlowMM: Generating Materials with Riemannian Flow Matching](https://proceedings.mlr.press/v235/miller24a.html): accepted
+- [Inverse Design of Solid-State Materials via a Continuous Representation](https://doi.org/10.1016/j.matt.2019.08.017): affiliations, author–affiliation mapping, published, accepted. Affiliations remain unverified: accessible official records did not establish the manuscript byline institutions.
+- [Predicting the Thermodynamic Stability of Solids Combining Density Functional Theory and Machine Learning](https://doi.org/10.1021/acs.chemmater.7b00156): accepted. Original source unavailable: 403
+- [Predicting reaction performance in C–N cross-coupling using machine learning](https://www.science.org/doi/10.1126/science.aar5169): accepted. Original source unavailable: 403
+- [A graph-convolutional neural network model for the prediction of chemical reactivity](https://doi.org/10.1039/c8sc04228d): accepted. Original source unavailable: 403
+- [Molecular Transformer: A Model for Uncertainty-Calibrated Chemical Reaction Prediction](https://doi.org/10.1021/acscentsci.9b00576): accepted. Original source unavailable: 403
+- [Deep Retrosynthetic Reaction Prediction using Local Reactivity and Global Attention](https://doi.org/10.1021/jacsau.1c00246): accepted. Original source unavailable: 403
+- [A robotic platform for flow synthesis of organic compounds informed by AI planning](https://www.science.org/doi/10.1126/science.aax1566): published, accepted. Original source unavailable: 403
+- [Phoenics: A Bayesian Optimizer for Chemistry](https://doi.org/10.1021/acscentsci.8b00307): accepted. Original source unavailable: 403
+- [Closed-loop optimization of general reaction conditions for heteroaryl Suzuki-Miyaura coupling](https://www.science.org/doi/10.1126/science.adc8743): accepted. Original source unavailable: 403
+- [Open Catalyst 2020 (OC20) Dataset and Community Challenges](https://doi.org/10.1021/acscatal.0c04525): accepted. Original source unavailable: 403
+- [The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts](https://doi.org/10.1021/acscatal.2c05426): accepted. Original source unavailable: 403
+- [Accelerating Computational Materials Discovery with Machine Learning and Cloud High-Performance Computing: from Large-Scale Screening to Experimental Validation](https://doi.org/10.1021/jacs.4c03849): accepted. Original source unavailable: 403
+- [A framework for evaluating the chemical knowledge and reasoning abilities of large language models against the expertise of chemists](https://www.nature.com/articles/s41557-025-01815-x): author–affiliation mapping
+- [Challenges in High-Throughput Inorganic Materials Prediction and Autonomous Synthesis](https://doi.org/10.1103/prxenergy.3.011002): accepted
+- [Accurate prediction of protein structures and interactions using a three-track neural network](https://www.science.org/doi/10.1126/science.abj8754): accepted. Original source unavailable: 403
+- [Evolutionary-scale prediction of atomic-level protein structure with a language model](https://www.science.org/doi/10.1126/science.ade2574): accepted. Original source unavailable: 403
+- [Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences](https://doi.org/10.1073/pnas.2016239118): accepted. Original source unavailable: 403
+- [ProtTrans: Toward Understanding the Language of Life Through Self-Supervised Learning](https://doi.org/10.1109/tpami.2021.3095381): accepted. Original source unavailable: 202
+- [Simulating 500 million years of evolution with a language model](https://www.science.org/doi/10.1126/science.ads0018): accepted. Original source unavailable: 403
+- [Robust deep learning–based protein sequence design using ProteinMPNN](https://www.science.org/doi/10.1126/science.add2187): accepted. Original source unavailable: 403
+- [DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking](https://openreview.net/forum?id=kKF8_K-mBbS): accepted. Unrecognised source page; not imported
+- [Generalized biomolecular modeling and design with RoseTTAFold All-Atom](https://www.science.org/doi/10.1126/science.adl2528): accepted. Original source unavailable: 403
+- [A Deep Learning Approach to Antibiotic Discovery](https://doi.org/10.1016/j.cell.2020.01.021): published, accepted
+- [3D Equivariant Diffusion for Target-Aware Molecule Generation and Affinity Prediction](https://openreview.net/forum?id=kJqXEPXMsE0): accepted. Unrecognised source page; not imported
+- [Uni-Mol: A Universal 3D Molecular Representation Learning Framework](https://openreview.net/forum?id=6K2RM6wVqKu): published, accepted. Unrecognised source page; not imported
+- [Root-aligned SMILES: a tight representation for chemical reaction prediction](https://doi.org/10.1039/d2sc02763a): accepted. Original source unavailable: 403
+- [HyenaDNA: Long-Range Genomic Sequence Modeling at Single Nucleotide Resolution](https://proceedings.neurips.cc/paper_files/paper/2023/hash/86ab6927ee4ae9bde4247793c46797c7-Abstract-Conference.html): author–affiliation mapping
+- [Sequence modeling and design from molecular to genome scale with Evo](https://www.science.org/doi/10.1126/science.ado9336): accepted. Original source unavailable: 403
+- [Zero-shot evaluation reveals limitations of single-cell foundation models](https://doi.org/10.1186/s13059-025-03574-x): accepted
+- [Predicting cellular responses to complex perturbations in high-throughput screens](https://doi.org/10.15252/msb.202211517): accepted
+- [Accurate proteome-wide missense variant effect prediction with AlphaMissense](https://www.science.org/doi/10.1126/science.adg7492): accepted. Original source unavailable: 403
+- [TotalSegmentator: Robust Segmentation of 104 Anatomic Structures in CT Images](https://doi.org/10.1148/ryai.230024): accepted. Original source unavailable: 403
+- [A foundation model for generalizable disease detection from retinal images](https://www.nature.com/articles/s41586-023-06555-x): author–affiliation mapping
+- [Performance of ChatGPT on USMLE: Potential for AI-assisted medical education using large language models](https://doi.org/10.1371/journal.pdig.0000198): accepted
+- [AI recognition of patient race in medical imaging: a modelling study](https://doi.org/10.1016/s2589-7500(22)00063-2): accepted
+- [Reporting guidelines for clinical trial reports for interventions involving artificial intelligence: the CONSORT-AI extension](https://www.nature.com/articles/s41591-020-1034-x): author–affiliation mapping
+- [External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients](https://doi.org/10.1001/jamainternmed.2021.2626): published, accepted. Original source unavailable: 403
+- [Artificial intelligence-supported screen reading versus standard double reading in the Mammography Screening with Artificial Intelligence trial (MASAI): a clinical safety analysis of a randomised, controlled, non-inferiority, single-blinded, screening accuracy study](https://doi.org/10.1016/s1470-2045(23)00298-x): published, accepted
+- [BioDiscoveryAgent: An AI Agent for Designing Genetic Perturbation Experiments](https://proceedings.iclr.cc/paper_files/paper/2025/hash/4252dc94531833029000f85dc5fac792-Abstract-Conference.html): author–affiliation mapping
+- [A generative deep learning approach to de novo antibiotic design](https://doi.org/10.1016/j.cell.2025.07.033): accepted
+- [The lean mathematical library](https://doi.org/10.1145/3372885.3373824): accepted. Original source unavailable: 403
+- [The Lean 4 Theorem Prover and Programming Language](https://doi.org/10.1007/978-3-030-79876-5_37): accepted
+- [MiniF2F: a cross-system benchmark for formal Olympiad-level mathematics](https://openreview.net/forum?id=9ZPegFuFTFv): accepted. Unrecognised source page; not imported
+- [LeanDojo: Theorem Proving with Retrieval-Augmented Language Models](https://proceedings.neurips.cc/paper_files/paper/2023/hash/4441469427094f8873d0fecb0c4e1cee-Abstract-Datasets_and_Benchmarks.html): author–affiliation mapping
+- [Generative Language Modeling for Automated Theorem Proving](https://arxiv.org/abs/2009.03393): published, accepted
+- [HyperTree Proof Search for Neural Theorem Proving](https://proceedings.neurips.cc/paper_files/paper/2022/hash/a8901c5e85fb8e1823bbf0f755053672-Abstract-Conference.html): author–affiliation mapping
+- [Draft, Sketch, and Prove: Guiding Formal Theorem Provers with Informal Proofs](https://openreview.net/forum?id=SMa9EAovKMC): accepted. Unrecognised source page; not imported
+- [Autoformalization with Large Language Models](https://proceedings.neurips.cc/paper_files/paper/2022/hash/d0c6bc641a56bebee9d985b937307367-Abstract-Conference.html): author–affiliation mapping
+- [Training Verifiers to Solve Math Word Problems](https://arxiv.org/abs/2110.14168): published, accepted
+- [Llemma: An Open Language Model for Mathematics](https://proceedings.iclr.cc/paper_files/paper/2024/hash/b225f5c7cd13615e9558c3931fa4e66f-Abstract-Conference.html): author–affiliation mapping
+- [Math-Shepherd: Verify and Reinforce LLMs Step-by-step without Human Annotations](https://aclanthology.org/2024.acl-long.510/): author–affiliation mapping, accepted
+- [DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models](https://arxiv.org/abs/2402.03300): author–affiliation mapping, published, accepted
+- [STaR: Bootstrapping Reasoning With Reasoning](https://proceedings.neurips.cc/paper_files/paper/2022/hash/639a9a172c044fbb64175b5fad42e9a5-Abstract-Conference.html): author–affiliation mapping
+- [Murmurations of elliptic curves](https://doi.org/10.1080/10586458.2024.2382361): accepted. Original source unavailable: 403
+- [Constructions in combinatorics via neural networks](https://arxiv.org/abs/2104.14516): published, accepted
+- [PatternBoost: Constructions in Mathematics with a Little Help from AI](https://arxiv.org/abs/2411.00566): published, accepted
+- [AlphaEvolve: A coding agent for scientific and algorithmic discovery](https://arxiv.org/abs/2506.13131): published, accepted
+- [Deep Learning For Symbolic Mathematics](https://openreview.net/forum?id=S1eZYeHFDS): published, accepted. Unrecognised source page; not imported
+- [Adam: A Method for Stochastic Optimization](https://arxiv.org/abs/1412.6980): accepted
+- [On the Convergence of Adam and Beyond](https://openreview.net/forum?id=ryQu7f-RZ): accepted. Unrecognised source page; not imported
+- [Decoupled Weight Decay Regularization](https://openreview.net/forum?id=Bkg6RiCqY7): accepted. Unrecognised source page; not imported
+- [Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability](https://openreview.net/forum?id=jh-rTtvkGeM): accepted. Unrecognised source page; not imported
+- [Sharpness-Aware Minimization for Efficiently Improving Generalization](https://openreview.net/forum?id=6Tm1mposlrM): accepted. Unrecognised source page; not imported
+- [Self-Stabilization: The Implicit Bias of Gradient Descent at the Edge of Stability](https://openreview.net/forum?id=nhKHA59gXz): published, accepted. Unrecognised source page; not imported
+- [The Implicit Bias of Gradient Descent on Separable Data](https://jmlr.org/papers/v19/18-188.html): accepted
+- [Gradient Descent Provably Optimizes Over-parameterized Neural Networks](https://openreview.net/forum?id=S1eK3i09YQ): accepted. Unrecognised source page; not imported
+- [Neural Tangent Kernel: Convergence and Generalization in Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2018/hash/5a4be1fa34e62bb8a6ec6b91d2462f5a-Abstract.html): author–affiliation mapping
+- [Understanding deep learning requires rethinking generalization](https://openreview.net/forum?id=Sy8gdB9xx): accepted. Unrecognised source page; not imported
+- [Reconciling modern machine-learning practice and the classical bias–variance trade-off](https://doi.org/10.1073/pnas.1903070116): accepted. Original source unavailable: 403
+- [Benign overfitting in linear regression](https://doi.org/10.1073/pnas.1907378117): accepted. Original source unavailable: 403
+- [Deep Double Descent: Where Bigger Models and More Data Hurt](https://openreview.net/forum?id=B1g5sA4twr): accepted. Unrecognised source page; not imported
+- [Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets](https://arxiv.org/abs/2201.02177): published, accepted
+- [Progress measures for grokking via mechanistic interpretability](https://openreview.net/forum?id=9XFSbDPmdW): accepted. Unrecognised source page; not imported
+- [Estimation of Non-Normalized Statistical Models by Score Matching](https://jmlr.org/papers/v6/hyvarinen05a.html): accepted
+- [Score-Based Generative Modeling through Stochastic Differential Equations](https://openreview.net/forum?id=PxTIG12RRHS): accepted. Unrecognised source page; not imported
+- [Sampling is as easy as learning the score: theory for diffusion models with minimal data assumptions](https://openreview.net/forum?id=zyLVMgsZ0U_): published, accepted. Unrecognised source page; not imported
+- [A computational fluid mechanics solution to the Monge-Kantorovich mass transfer problem](https://doi.org/10.1007/s002110050002): accepted
+- [Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow](https://openreview.net/forum?id=XVjTT1nw5z): published, accepted. Unrecognised source page; not imported
+- [Building Normalizing Flows with Stochastic Interpolants](https://openreview.net/forum?id=li7qeBbCR1t): accepted. Unrecognised source page; not imported
+- [Geometric Deep Learning: Going beyond Euclidean data](https://doi.org/10.1109/msp.2017.2693418): published, accepted. Original source unavailable: 202
+- [How Powerful are Graph Neural Networks?](https://openreview.net/forum?id=ryGs6iA5Km): accepted. Unrecognised source page; not imported
+- [Weisfeiler and Leman Go Neural: Higher-order Graph Neural Networks](https://doi.org/10.1609/aaai.v33i01.33014602): accepted. Original source unavailable: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+- [A new upper bound for diagonal Ramsey numbers](https://doi.org/10.4007/annals.2009.170.941): accepted
+- [An exponential improvement for diagonal Ramsey](https://doi.org/10.4007/annals.2026.203.3.4): published, accepted
+- [The asymptotics of r(4,t)](https://doi.org/10.4007/annals.2024.199.2.8): published, accepted
+- [Induced subgraphs of hypercubes and a proof of the Sensitivity Conjecture](https://doi.org/10.4007/annals.2019.190.3.6): accepted
+- [Improved bounds for the sunflower lemma](https://doi.org/10.4007/annals.2021.194.3.5): published, accepted
+- [Thresholds versus fractional expectation-thresholds](https://doi.org/10.4007/annals.2021.194.2.2): published, accepted
+- [A constant lower bound for the union-closed sets conjecture](https://arxiv.org/abs/2211.09055): published, accepted
+- [A proof of the Kahn–Kalai conjecture](https://doi.org/10.1090/jams/1028): accepted. Original source unavailable: 403
+- [Strong Bounds for 3-Progressions](https://doi.org/10.1109/focs57990.2023.00059): published, accepted. Original source unavailable: 202
+- [On a conjecture of Marton](https://doi.org/10.4007/annals.2025.201.2.5): published, accepted
+- [Improved Bounds for Szemerédi's Theorem](https://arxiv.org/abs/2402.17995): published, accepted
+- [Bounded gaps between primes](https://doi.org/10.4007/annals.2014.179.3.7): accepted
+- [Small gaps between primes](https://doi.org/10.4007/annals.2015.181.1.7): accepted
+- [New large value estimates for Dirichlet polynomials](https://doi.org/10.4007/annals.2026.203.2.6): affiliations, author–affiliation mapping, published, accepted. Affiliations remain unverified: accessible official records did not establish the manuscript byline institutions.
+- [The sphere packing problem in dimension 8](https://doi.org/10.4007/annals.2017.185.3.7): accepted
+- [The sphere packing problem in dimension 24](https://doi.org/10.4007/annals.2017.185.3.8): accepted
+- [The Conway knot is not slice](https://doi.org/10.4007/annals.2020.191.2.5): published, accepted
+- [Proof of the geometric Langlands conjecture I: construction of the functor](https://arxiv.org/abs/2405.03599): affiliations, author–affiliation mapping, published, accepted. Affiliations remain unverified: accessible official records did not establish the manuscript byline institutions.
+- [The proof of the $l^2$ Decoupling Conjecture](https://doi.org/10.4007/annals.2015.182.1.9): accepted
+- [Proof of the main conjecture in Vinogradov's mean value theorem for degrees higher than three](https://doi.org/10.4007/annals.2016.184.2.7): accepted
+- [Volume estimates for unions of convex sets, and the Kakeya set conjecture in three dimensions](https://arxiv.org/abs/2502.17655): published, accepted

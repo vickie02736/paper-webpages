@@ -52,6 +52,7 @@ body[data-paper="self-rag"][data-depth="beginner"] .advanced-only,body[data-pape
 @media(max-width:700px){body[data-paper="self-rag"] .grid2,body[data-paper="self-rag"] .map{grid-template-columns:1fr}body[data-paper="self-rag"] .section-head .select{max-width:100%;margin-top:16px}body[data-paper="self-rag"] .token-grid{grid-template-columns:1fr 1fr}body[data-paper="self-rag"] .bar-row{grid-template-columns:minmax(80px,110px) 1fr 42px}}
 .passage[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
 </style>
+<link rel="stylesheet" href="../../assets/bibliography.css">
 </head>
 <body class="atlas-paper atlas-reading" data-paper="self-rag" data-depth="beginner">
   <header class="topbar"><div class="topbar-inner"><div class="brand">SELF<span>·</span>RAG <span style="color:var(--muted);font-weight:500">/ explainer</span></div><nav class="nav"><a href="#glance">30 sec</a><a href="#intuition">Intuition</a><a href="#mechanism">How it works</a><a href="#math">Deep dive</a><a href="#evidence"><span data-i18n="static-0">证据</span></a><a href="#critical">Critique</a></nav><div class="controls"><button class="pill active" data-depth="beginner">Beginner</button><button class="pill" data-depth="intermediate">Intermediate</button><button class="pill" data-depth="advanced">Advanced</button></div></div></header>
@@ -74,7 +75,9 @@ body[data-paper="self-rag"][data-depth="beginner"] .advanced-only,body[data-pape
 
     <footer><p><b>Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection</b> · ICLR 2024</p><div class="footer-links"><a target="_blank" href="https://proceedings.iclr.cc/paper_files/paper/2024/file/25f7be9694d7b32d5cc670927b8091e1-Paper-Conference.pdf"><span data-i18n="static-161">论文 PDF</span></a><a target="_blank" href="https://selfrag.github.io/"><span data-i18n="static-162">项目主页 / code &amp; models</span></a><a target="_blank" href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/25f7be9694d7b32d5cc670927b8091e1-Abstract-Conference.html"><span data-i18n="label-23">ICLR 论文记录</span></a><a href="sources.md"><span data-i18n="evidence-ledger-link">图示来源与核对记录</span></a></div></footer>
   </main>
-  <script src="../../assets/paper.js"></script>
+  <script src="../../assets/bibliography.js"></script>
+<script src="../../assets/paper-metadata.js"></script>
+<script src="../../assets/paper.js"></script>
 <script>
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 let lang='zh';

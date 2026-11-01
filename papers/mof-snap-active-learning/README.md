@@ -46,3 +46,5 @@ node scripts/check-explainers.cjs
 ```
 
 Serve over local HTTP for browser checks. Scientific claim/figure checks are recorded in [sources.md](sources.md); actual browser, responsive, language/state and publication checks are recorded separately by the publishing task. The scientific audit does not substitute for running those checks.
+
+Publication-time authors, affiliations and paper dates are rendered from the shared catalogue metadata; see [bibliographic evidence](sources.md#bibliographic-metadata) and the [metadata guide](../../references/paper-catalog-guide.md#authors-affiliations-and-paper-dates). Paper dates are separate from this explainer’s creation/publication/update dates.

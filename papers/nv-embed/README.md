@@ -7,3 +7,5 @@ Static HTML explainer using the shared Research Atlas dark theme, header and sec
 Source: [ICLR 2025 paper](https://proceedings.iclr.cc/paper_files/paper/2025/hash/c4bf73386022473a652a18941e9ea6f8-Abstract-Conference.html)
 
 [Visual sources and audit notes](sources.md) records the formal-paper locations, teaching illustrations and corrections checked on 2026-10-27.
+
+Publication-time authors, affiliations and paper dates are rendered from the shared catalogue metadata; see [bibliographic evidence](sources.md#bibliographic-metadata) and the [metadata guide](../../references/paper-catalog-guide.md#authors-affiliations-and-paper-dates). Paper dates are separate from this explainer’s creation/publication/update dates.

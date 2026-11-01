@@ -9,3 +9,5 @@ Language switching preserves the selected interactions and follows the site's `?
 Source: [ICLR 2026 paper](https://proceedings.iclr.cc/paper_files/paper/2026/hash/bdff657cb9351656c025da8e1dc538a4-Abstract-Conference.html). Paper values, equations and source locations are retained.
 
 [Visual sources and audit notes](sources.md) records the formal-paper locations, teaching illustrations and corrections checked on 2026-10-27.
+
+Publication-time authors, affiliations and paper dates are rendered from the shared catalogue metadata; see [bibliographic evidence](sources.md#bibliographic-metadata) and the [metadata guide](../../references/paper-catalog-guide.md#authors-affiliations-and-paper-dates). Paper dates are separate from this explainer’s creation/publication/update dates.

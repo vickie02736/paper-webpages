@@ -211,3 +211,11 @@ This inventory includes HTML/CSS figures and collapsed content, not only image a
 - **Source links and downloads:** article, complete 18-page SI, original movie, code/data references, license and this record; version identity retained.
 
 Scientific review found the original figure crops and core quantities consistent with the supplied sources. Browser behavior, concurrent image-load states, language/state retention, responsive layout and final publication status must be recorded from actual execution; source comparison does not by itself certify those behaviors.
+
+## Bibliographic metadata
+
+Checked 2026-11-01. The shared byline uses the ordered manuscript authors and explicitly mapped publication-time affiliations stored under this paper’s original source URL in [`paper-catalog.json`](../../references/paper-catalog.json). Metadata is generated with `node scripts/build-paper-metadata.cjs`; the same record is used on the homepage.
+
+- [Author information; About this article / publication history](https://www.nature.com/articles/s41524-024-01427-y) — dates.published, dates.accepted, affiliations, authors.
+
+Paper dates: published = 2024-10-08; accepted = 2024-09-26. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.

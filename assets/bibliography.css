@@ -1,0 +1,20 @@
+.atlas-bibliography { color: #a8b4c7; font-size: 13px; line-height: 1.65; margin: 12px 0 16px; min-width: 0; overflow-wrap: anywhere; text-align: left; }
+.atlas-bibliography details { background: transparent; border: 0; border-radius: 0; padding: 0; margin: 0; }
+.atlas-bibliography summary { display: block; position: relative; cursor: pointer; min-height: 40px; padding: 6px 0 6px 16px; color: #cbd8e8; list-style: none; }
+.atlas-bibliography summary::before { content: '▸'; position: absolute; left: 0; top: 6px; color: #7de3ff; }
+.atlas-bibliography details[open] > summary::before { content: '▾'; }
+.atlas-bibliography summary::marker { color: #7de3ff; }
+.atlas-bibliography summary:focus-visible, .atlas-bibliography a:focus-visible { outline: 2px solid #7de3ff; outline-offset: 3px; }
+.atlas-bibliography .atlas-byline { font-weight: 500; }
+.atlas-bibliography .atlas-biblio-more { display: block; color: #7de3ff; font-size: 12px; }
+.atlas-bibliography .atlas-biblio-body { background: #101e31; border: 1px solid #293a50; border-radius: 12px; padding: 14px 16px; margin: 6px 0 12px; }
+.atlas-bibliography h5 { color: #f4f7fb; font-size: 13px; margin: 0 0 8px; }
+.atlas-bibliography .atlas-biblio-authors { display: flex; flex-wrap: wrap; gap: 4px 18px; list-style: none; padding: 0; margin: 0 0 14px; }
+.atlas-bibliography .atlas-biblio-units { list-style: none; padding: 0; margin: 0; }
+.atlas-bibliography .atlas-biblio-units li { margin: 5px 0; }
+.atlas-bibliography .atlas-biblio-dates { display: flex; flex-wrap: wrap; gap: 3px 18px; }
+.atlas-bibliography .atlas-biblio-dates b { color: #cbd8e8; font-weight: 500; }
+.atlas-bibliography .atlas-biblio-sources { margin: 12px 0 0; font-size: 12px; }
+.atlas-bibliography a { color: #7de3ff; }
+.atlas-paper .hero .atlas-bibliography { max-width: 100%; margin-block: 20px; }
+@media (max-width: 440px) { .atlas-bibliography .atlas-biblio-body { padding: 12px; } }

@@ -51,3 +51,11 @@ The page distinguishes three layers: **paper report** (measured or computed in t
 The earlier red/green cube inset was not a valid reconstruction of the dmc network. It and the disconnected-linker hero sketch have been replaced by original Figure 1 artwork. `assets/article-page-2.png` is the preserved 993 × 1319 render of page 2 of the supplied publisher PDF, rendered at 120 dpi on 2026-10-29. SVG viewports show Fig. 1a in the hero and Fig. 1a–b in the structure section; opening the image preserves the complete caption. Attribution: Oktavian et al., Nature Communications 15, 3898 (2024), DOI 10.1038/s41467-024-48136-0; CC BY 4.0. Only the visible viewport is cropped, no bonds or atoms are redrawn.
 
 Additional corrections from the preceding diagram review: the PXRD dry baseline stays fixed across conditions; the 20% RH state shows a reported change without assigning the liquid-water shift directions (main p. 3). The 0–3.5 mmol/g scale uses proportional tick positions aligned with the bars. H-bond probability bars have no artificial minimum, including exact zero-height bars for zero entries, and the 80% RH summary is “mostly 1–2”, not “<2” (Fig. 6d–e). The phase-transition direction is lp→cp at about 376 MPa, reversing to cp→lp below 111 MPa (main p. 5 and Fig. 5b). Numerical source arrays remain unchanged. This supersedes the earlier claim that all diagram geometry and scales had passed.
+
+## Bibliographic metadata
+
+Checked 2026-11-01. The shared byline uses the ordered manuscript authors and explicitly mapped publication-time affiliations stored under this paper’s original source URL in [`paper-catalog.json`](../../references/paper-catalog.json). Metadata is generated with `node scripts/build-paper-metadata.cjs`; the same record is used on the homepage.
+
+- [Author information; About this article / publication history](https://www.nature.com/articles/s41467-024-48136-0) — dates.published, dates.accepted, affiliations, authors.
+
+Paper dates: published = 2024-05-09; accepted = 2024-04-18. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.

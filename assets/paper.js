@@ -241,7 +241,9 @@
         url.searchParams.set('lang', lang);
         history.replaceState(null, '', url);
       } catch (_) {}
+      window.PaperBibliography?.captureState();
       if (options.onLanguageChange) options.onLanguageChange(lang);
+      window.PaperBibliography?.mountPaper(lang);
       readingRoute();
       syncFigures();
       syncMotion();
@@ -251,6 +253,7 @@
       if (focused?.isConnected && focused !== document.body) focused.focus({preventScroll: true});
       window.scrollTo({top: position, behavior: 'instant'});
     }
+    options.depth?.addEventListener('click', () => window.PaperBibliography?.captureState(), true);
     options.depth?.addEventListener('click', () => {
       queueMicrotask(() => {
         options.depth.querySelectorAll('button').forEach(button => {
@@ -263,6 +266,7 @@
     window.addEventListener('resize', scheduleNavigation);
     if (typeof ResizeObserver !== 'undefined') new ResizeObserver(scheduleNavigation).observe(header);
     if (main) new MutationObserver(() => {
+      window.PaperBibliography?.mountPaper(lang);
       readingRoute(); syncFigures(); syncMotion(); updateLinks(); scheduleNavigation();
     }).observe(main, {childList: true, subtree: true, attributes: true, attributeFilter: ['src']});
     setLanguage(lang);

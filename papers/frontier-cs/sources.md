@@ -134,3 +134,12 @@ Printed result values, transcribed by model name (pass rate in %, FCI points, me
 - Terminology definitions (patch/workload/harness/driver) summarise §§3–5.1 and Figure 4; the driver and model harness are explicitly different roles. Odds example is a labelled calculation from Appendix D Equation (2): odds 1 × e gives p=e/(1+e)=73.1%, not measured agent performance.
 
 - Aggregate task-difficulty conclusion near the FDI explanation follows PDF §5.2 p. 10: task difficulty has wider spread than the agents; median task is approximately at the strongest agent’s FCI. No exact median FDI or per-task order is inferred.
+
+## Bibliographic metadata
+
+Checked 2026-11-01. The shared byline uses the ordered manuscript authors and explicitly mapped publication-time affiliations stored under this paper’s original source URL in [`paper-catalog.json`](../../references/paper-catalog.json). Metadata is generated with `node scripts/build-paper-metadata.cjs`; the same record is used on the homepage.
+
+- [Official article metadata](https://arxiv.org/abs/2610.29932) — authors, dates.preprint.
+- [Version 1, Author list: individually printed author/affiliation grid; blank affiliations remain unverified](https://arxiv.org/html/2610.29932v1#Sx1) — affiliations.
+
+Paper dates: published = unverified; accepted = unverified; preprint = 2026-10-21. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.

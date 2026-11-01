@@ -202,7 +202,7 @@ async function eventually(check, label) {
     assert.equal(await page.locator('#catalog').innerHTML(), beforeIdentical, 'Identical refreshes do not duplicate rows or rebuild controls');
     assert.equal(await rowCount(), fullRows);
 
-    const recentLink = page.locator('#recent-list a').first();
+    const recentLink = page.locator('#recent-list .recent-item > a.button').first();
     const recentHref = await recentLink.getAttribute('href');
     await recentLink.focus();
     const focusedRecentHref = () => page.evaluate(() => document.activeElement.closest('#recent-list') ? document.activeElement.getAttribute('href') : null);
@@ -232,7 +232,7 @@ async function eventually(check, label) {
     current = creationCases;
     await focusRefresh();
     const recentItems = () => page.locator('#recent-list .recent-item').evaluateAll(rows => rows.map(row => ({
-      path: new URL(row.querySelector('a').href).pathname,
+      path: new URL(row.querySelector(':scope > a.button').href).pathname,
       created: row.querySelector('time').dateTime,
       text: row.querySelector('time').textContent
     })));

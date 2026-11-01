@@ -165,6 +165,7 @@
       nav { display: none; }
     }
   </style>
+<link rel="stylesheet" href="./assets/bibliography.css">
 </head>
 <body>
   <div class="shell">
@@ -196,10 +197,10 @@
             <div class="eyebrow" data-i18n="catalogEyebrow">研究目录</div>
             <h2 id="themes-title" data-i18n="catalogTitle">探索六个主题</h2>
           </div>
-          <p data-i18n="catalogText">展开主题即可浏览路线图中的论文。可按标题、方法、子方向、会议或年份搜索，多个词不分先后；主题内搜索会在此基础上进一步筛选。</p>
+          <p data-i18n="catalogText">展开主题即可浏览路线图中的论文。可按标题、作者、单位、方法、子方向、会议或年份搜索，多个词不分先后；主题内搜索会在此基础上进一步筛选。</p>
         </div>
         <div class="catalog-tools">
-          <label class="search-box"><span>⌕</span><input id="catalog-search" type="search" data-i18n-placeholder="searchPlaceholder" data-i18n-aria="searchAria" placeholder="搜索全部论文，例如 protein design 或 蛋白设计" aria-label="搜索全部论文"></label>
+          <label class="search-box"><span>⌕</span><input id="catalog-search" type="search" data-i18n-placeholder="searchPlaceholder" data-i18n-aria="searchAria" placeholder="搜索论文、作者或单位，例如 MIT 或 蛋白设计" aria-label="搜索全部论文"></label>
           <label class="explainer-filter"><input id="only-explainers" type="checkbox" disabled><span data-i18n="onlyExplainers">仅显示已有讲解</span></label>
           <span id="catalog-status" class="catalog-status" data-i18n="loading" role="status">正在加载论文目录…</span>
           <button id="clear-search" class="clear-search" type="button" data-i18n="clearSearch" hidden>清除搜索</button>
@@ -244,7 +245,8 @@
       <a href="https://github.com/vickie02736/paper-webpages" data-i18n="footerLink">查看仓库 ↗</a>
     </footer>
   </div>
-  <script>
+  <script src="./assets/bibliography.js"></script>
+<script>
     (function () {
       const STRINGS = {
         zh: {
@@ -259,11 +261,11 @@
           heroText: '持续更新的<strong>研究路线图</strong>与交互式论文讲解，连接可复用的 AI 框架、不断演进的 MOF 化学、机器人中的具身智能、面向化学与材料的机器学习、AI 驱动的药物发现与生物医学，以及既支撑 AI、也被 AI 推动的数学。',
           catalogEyebrow: '研究目录',
           catalogTitle: '探索六个主题',
-          catalogText: '展开主题即可浏览路线图中的论文。可按标题、方法、子方向、会议或年份搜索，多个词不分先后；主题内搜索会在此基础上进一步筛选。',
-          searchPlaceholder: '搜索全部论文，例如 protein design 或 蛋白设计',
+          catalogText: '展开主题即可浏览路线图中的论文。可按标题、作者、单位、方法、子方向、会议或年份搜索，多个词不分先后；主题内搜索会在此基础上进一步筛选。',
+          searchPlaceholder: '搜索论文、作者或单位，例如 MIT 或 蛋白设计',
           searchAria: '搜索全部论文',
           onlyExplainers: '仅显示已有讲解',
-          themeSearch: '在本主题内搜索…',
+          themeSearch: '在本主题内搜索论文、作者或单位…',
           themeSearchAria: '在主题内搜索：',
           loading: '正在加载论文目录…',
           loadingShort: '加载中…',
@@ -305,11 +307,11 @@
           heroText: 'A growing collection of <strong>research roadmaps</strong> and interactive paper explainers, connecting reusable AI frameworks, the evolving chemistry of MOFs, embodied intelligence in robotics, machine learning for chemistry and materials, AI for drug discovery, biology and medicine, and the mathematics both behind and advanced by AI.',
           catalogEyebrow: 'Research catalogue',
           catalogTitle: 'Explore the six themes',
-          catalogText: 'Open a theme to browse the papers from the roadmap. Search by title, method, topic, conference, or year; words can appear in any order, and a theme\'s own search narrows the results further.',
-          searchPlaceholder: 'Search all papers, e.g. protein design',
+          catalogText: 'Open a theme to browse the papers from the roadmap. Search by title, author, affiliation, method, topic, conference, or year; words can appear in any order, and a theme\'s own search narrows the results further.',
+          searchPlaceholder: 'Search papers, authors or affiliations, e.g. MIT',
           searchAria: 'Search all papers',
           onlyExplainers: 'Only papers with explainers',
-          themeSearch: 'Search within this theme…',
+          themeSearch: 'Search papers, authors or affiliations in this theme…',
           themeSearchAria: 'Search within theme: ',
           loading: 'Loading paper catalogue…',
           loadingShort: 'Loading…',
@@ -441,7 +443,7 @@
               const summary = lang === 'en' ? paper.e : paper.d;
               const page = pagePath ? '<a href="' + safeUrl(pagePath) + '" target="_blank" rel="noopener">' + esc(t('explainer')) + '</a>' : '<span class="status">' + esc(t('comingSoon')) + '</span>';
               return '<article class="paper-row"><div class="paper-key">' + esc(shortName(paper)) + '</div>' +
-                '<div><h4 class="paper-title" lang="en">' + esc(paper.t) + '</h4>' + (summary ? '<p class="paper-summary">' + esc(summary) + '</p>' : '') + '<p class="paper-meta">' + esc(metaText(paper)) + '</p>' + alsoListed(theme, paper) + '</div>' +
+                '<div><h4 class="paper-title" lang="en">' + esc(paper.t) + '</h4>' + PaperBibliography.html(catalogData.paperMetadata?.[paper.u], lang, theme.n + ':' + paper.u) + (summary ? '<p class="paper-summary">' + esc(summary) + '</p>' : '') + '<p class="paper-meta">' + esc(metaText(paper)) + '</p>' + alsoListed(theme, paper) + '</div>' +
                 '<div class="paper-info">' + esc(localPage ? t('local') : (pagePath ? t('hosted') : t('indexed'))) + '</div>' +
                 '<div class="paper-actions"><a href="' + safeUrl(paper.u) + '" target="_blank" rel="noopener">' + esc(t('original')) + '</a>' + page + '</div></article>';
             }).join('');
@@ -449,6 +451,7 @@
           }).join('');
           return disclosure(theme.n + '\ncategory\n' + stableCategory, displayCategory ? categoryText(displayCategory) : t('otherTopics'), topics, 'category-menu');
         }).join('');
+        const bibliographyFocus = PaperBibliography.captureFocus();
         root.querySelector('.paper-groups').innerHTML = html || '<div class="empty-state">' + esc(t('noMatch')) + '</div>';
         root.querySelectorAll('.group-toggle').forEach(function (button) {
           button.addEventListener('click', function () {
@@ -460,6 +463,7 @@
             store[button.dataset.key] = !open;
           });
         });
+        PaperBibliography.restoreFocus(bibliographyFocus);
         return visible;
       };
 
@@ -553,7 +557,7 @@
               const venue = separator < 0 ? paper.m : paper.m.slice(0, separator);
               const tag = separator < 0 ? '' : paper.m.slice(separator + 3);
               paper.haystack = normalize([paper.s, paper.se, paper.m, data.venues[venue], data.tags[tag], paper.t, paper.d, paper.e,
-                theme.g[paper.g], theme.ge[paper.g]].join(' '));
+                theme.g[paper.g], theme.ge[paper.g], PaperBibliography.searchText(data.paperMetadata?.[paper.u])].join(' '));
             });
           });
           total = Object.keys(listings).length;
@@ -619,11 +623,13 @@
           const html = items.map(function (item) {
             const paper = item.entry.paper;
             return '<div class="recent-item"><div><h4 lang="en">' + esc(paper.t) + '</h4><p class="recent-meta"><b>' + esc(shortName(paper)) + '</b> · ' +
-              esc(themeTitle(item.entry.theme.n)) + ' · <time datetime="' + item.created.toISOString() + '">' + esc(t('createdOn')(item.created)) + '</time></p></div>' +
+              esc(themeTitle(item.entry.theme.n)) + ' · <time datetime="' + item.created.toISOString() + '">' + esc(t('createdOn')(item.created)) + '</time></p>' + PaperBibliography.html(data.paperMetadata?.[paper.u], lang, 'recent:' + paper.u) + '</div>' +
               '<a class="button" href="' + safeUrl(item.path) + '" target="_blank" rel="noopener">' + esc(t('openExplainer')) + '</a></div>';
           }).join('');
           if (recentList.innerHTML !== html) {
+            const bibliographyFocus = PaperBibliography.captureFocus();
             recentList.innerHTML = html;
+            PaperBibliography.restoreFocus(bibliographyFocus);
             if (focusHref) {
               const replacement = Array.from(recentList.querySelectorAll('a')).find(function (node) { return node.getAttribute('href') === focusHref; });
               if (replacement) replacement.focus({preventScroll: true});

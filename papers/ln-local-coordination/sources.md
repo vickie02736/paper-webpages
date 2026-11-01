@@ -57,3 +57,12 @@ Six user-requested definitions are added without changing the existing experimen
 - **Inner-sphere coordination:** article §3.3–3.5, Figures 4–6. A surface donor directly enters the Ln first coordination sphere; other hydration waters can remain. “Inner” does not mean inside a MOF pore. The schematic outer-sphere comparison describes an intervening hydration layer, and the first O shell alone does not locate the surface binding site; outer-shell Cr/Zr/P paths provide additional constraints.
 
 The supplied PDFs are no longer at their original Downloads paths in this session. Article-specific rechecks used the preserved publisher-text extractions `/tmp/paper-sources/am4c09445.txt` and `am4c09445_si_001.txt`, existing unchanged Figure 1/3/6 assets, and the earlier evidence ledger. No new bond distances, measured spectra, species fractions or performance claims are introduced.
+
+## Bibliographic metadata
+
+Checked 2026-11-01. The shared byline uses the ordered manuscript authors and explicitly mapped publication-time affiliations stored under this paper’s original source URL in [`paper-catalog.json`](../../references/paper-catalog.json). Metadata is generated with `node scripts/build-paper-metadata.cjs`; the same record is used on the homepage.
+
+- [Publisher-deposited Crossref record; author affiliations and explicit published-online / accepted fields](https://api.crossref.org/works/10.1021/acsami.4c09445) — authors, affiliations, dates.published.
+- [Official Author & Article Information: accepted August 1, 2024; published online August 26, 2024 (publisher-indexed history; article access restricted)](https://pubs.acs.org/doi/10.1021/acsami.4c09445) — dates.published, dates.accepted.
+
+Paper dates: published = 2024-08-26; accepted = 2024-08-01. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.

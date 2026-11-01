@@ -25,3 +25,11 @@
 - UFF-optimised 1M hMOF CIF files: [Figshare 21810147](https://doi.org/10.6084/m9.figshare.21810147).
 - Code and documentation: [GitHub](https://github.com/hspark1212/MOFTransformer), [documentation](https://hspark1212.github.io/MOFTransformer), and version 1.0.1 on [PyPI](https://pypi.org/project/moftransformer/1.0.1/).
 - The page distinguishes paper-reported results from teaching redraws. The paper evaluates public databases, molecular simulations and text-mined labels; it does not validate new predictions with a prospective synthesis experiment. Energy grids use a methane probe with UFF/TraPPE and fixed 30 Å interpolation, with `[VOL]` added to retain original cell-volume information. PBE band gaps have known open-shell transition-metal error modes. Attention scores are model-dependent relevance signals, not causal proof.
+
+## Bibliographic metadata
+
+Checked 2026-11-01. The shared byline uses the ordered manuscript authors and explicitly mapped publication-time affiliations stored under this paper’s original source URL in [`paper-catalog.json`](../../references/paper-catalog.json). Metadata is generated with `node scripts/build-paper-metadata.cjs`; the same record is used on the homepage.
+
+- [Author information; About this article / publication history](https://www.nature.com/articles/s42256-023-00628-2) — dates.published, dates.accepted, affiliations, authors.
+
+Paper dates: published = 2023-03-13; accepted = 2023-02-06. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.

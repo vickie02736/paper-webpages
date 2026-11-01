@@ -7,3 +7,5 @@ Interactive explainer for Liu et al., “Aqueous Adsorption of Rare Earth Elemen
 - Scope: PMIDA loading, REE–ligand coordination, Fe(III) competition, acid regeneration, and evidence limits.
 
 Uses the [shared Research Atlas reading system](../README.md#shared-reading-system): navy/cyan styling, two-row section navigation, reading progress and visible keyboard focus. Chinese, English and parallel bilingual modes cover text, diagrams and interactive feedback. Open with `?lang=en` for English; the language follows the atlas preference and switching preserves depth, loading, geometry and evidence selections.
+
+Publication-time authors, affiliations and paper dates are rendered from the shared catalogue metadata; see [bibliographic evidence](sources.md#bibliographic-metadata) and the [metadata guide](../../references/paper-catalog-guide.md#authors-affiliations-and-paper-dates). Paper dates are separate from this explainer’s creation/publication/update dates.

@@ -137,3 +137,11 @@ The overview and Section 02 diagrams were rechecked against article Scheme 1, Fi
 - Green dots represent functional-group regions rather than atom-resolved O/N positions. Dashed orange lines show **possible interactions involving the pocket environment and water**; they do not establish a direct aqueous Ln–N bond or a complete coordination shell. Generic Ln hydration circles specify no coordination number.
 - The separation view includes **both A and B in both phases**, labeled by relative enrichment rather than complete rejection. Icon counts and sizes encode no measured composition, recovery or product purity.
 - Inactive conceptual states are hidden, avoiding overlapping Zn/Ln icons that could be mistaken for a structural model.
+
+## Bibliographic metadata
+
+Checked 2026-11-01. The shared byline uses the ordered manuscript authors and explicitly mapped publication-time affiliations stored under this paper’s original source URL in [`paper-catalog.json`](../../references/paper-catalog.json). Metadata is generated with `node scripts/build-paper-metadata.cjs`; the same record is used on the homepage.
+
+- [Publisher-deposited Crossref record; author affiliations and explicit published-online / accepted fields](https://api.crossref.org/works/10.1002/adfm.202419093) — authors, affiliations, dates.published.
+
+Paper dates: published = 2024-12-20; accepted = unverified. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.

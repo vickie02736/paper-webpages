@@ -17,3 +17,11 @@
 ## 本次检查范围与限制
 
 读取正文及 SI 表格文字，核对来源身份、容量取值及已有冲突说明。DOM、双语、交互及布局检查另见仓库 `reports/reading-improvements.md`。未重新开展 MD、拟合或源图数字化；未将既有证据记录视为所有模型状态都重新独立核验通过。页面科学文案、数值和公式保持原样。
+
+## Bibliographic metadata
+
+Checked 2026-11-01. The shared byline uses the ordered manuscript authors and explicitly mapped publication-time affiliations stored under this paper’s original source URL in [`paper-catalog.json`](../../references/paper-catalog.json). Metadata is generated with `node scripts/build-paper-metadata.cjs`; the same record is used on the homepage.
+
+- [Publisher-deposited Crossref record; author affiliations and explicit published-online / accepted fields](https://api.crossref.org/works/10.1021/acsami.6c16452) — authors, affiliations, dates.published.
+
+Paper dates: published = 2026-10-14; accepted = unverified. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.

@@ -29,3 +29,14 @@
 ## 本次纠正
 
 修正 Avg 被误标为 EM、backbone 名称、多目标散点图无刻度的比例解释，以及二叉树省略部分未声明、校准两分支顺序含糊、奖励只展示正确分支且允许参数破坏“正确答案优先”的问题。没有更改 Table 1–3 抄录值。奖励计算器新增输出情况选择，便于验收三个分段及 T=5 饱和边界。
+
+## Bibliographic metadata
+
+Checked 2026-11-01. The shared byline uses the ordered manuscript authors and explicitly mapped publication-time affiliations stored under this paper’s original source URL in [`paper-catalog.json`](../../references/paper-catalog.json). Metadata is generated with `node scripts/build-paper-metadata.cjs`; the same record is used on the homepage.
+
+- [Official article metadata](https://proceedings.iclr.cc/paper_files/paper/2026/hash/bdff657cb9351656c025da8e1dc538a4-Abstract-Conference.html) — authors, dates.published.
+- [PDF first-page author superscripts and affiliation block](https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf) — affiliations.
+- [Author-submitted arXiv manuscript; ordered author list and first submission date (separate from formal publication)](https://arxiv.org/abs/2502.01142v2) — dates.preprint.
+- [Official proceedings manuscript: no individual-paper acceptance date disclosed](https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf) — dates.accepted.
+
+Paper dates: published = 2026-04-20; accepted = notDisclosed; preprint = 2025-02-03. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.

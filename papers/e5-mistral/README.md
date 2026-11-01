@@ -7,3 +7,5 @@ Static HTML explainer using the shared Research Atlas dark theme, header and sec
 Source: [ACL 2024 paper](https://aclanthology.org/2024.acl-long.642/) · [Paper PDF](https://aclanthology.org/2024.acl-long.642.pdf)
 
 [Visual sources and audit notes](sources.md) records the formal-paper locations, teaching illustrations and corrections checked on 2026-10-27.
+
+Publication-time authors, affiliations and paper dates are rendered from the shared catalogue metadata; see [bibliographic evidence](sources.md#bibliographic-metadata) and the [metadata guide](../../references/paper-catalog-guide.md#authors-affiliations-and-paper-dates). Paper dates are separate from this explainer’s creation/publication/update dates.

@@ -10,3 +10,5 @@ Related-work comparison: all 29 efforts from paper §2 and FrontierCS 2, with a 
 
 
 Full PDF re-audit (2026-11-01): follows the supplied 31-page v1 PDF. Reading order now prioritises the paper's method and results before the related-work catalogue. Includes all 48 tasks in 13 selectable domains; scoped task construction; agent–driver–judge information boundaries across four phases; resource-budget examples; 12-agent charts for pass rate, FCI and mean score margin; a full settings table; mechanism-level QuarterPIR/BBQ/SVG-EAR explanations; four original figure crops; full-task probability and interval-method distinctions; and cost-cap/interpretation questions. Printed result values and figure provenance are recorded in `sources.md`.
+
+Publication-time authors, affiliations and paper dates are rendered from the shared catalogue metadata; see [bibliographic evidence](sources.md#bibliographic-metadata) and the [metadata guide](../../references/paper-catalog-guide.md#authors-affiliations-and-paper-dates). Paper dates are separate from this explainer’s creation/publication/update dates.

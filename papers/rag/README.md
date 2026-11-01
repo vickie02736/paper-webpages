@@ -9,3 +9,5 @@ Shared presentation assets: [`../../assets/paper.css`](../../assets/paper.css) a
 Source: [NeurIPS 2020 paper](https://proceedings.neurips.cc/paper/2020/file/6b493230205f780e1bc26945df7481e5-Paper.pdf)
 
 [Visual sources and audit notes](sources.md) records the formal-paper locations, teaching illustrations and corrections checked on 2026-10-27.
+
+Publication-time authors, affiliations and paper dates are rendered from the shared catalogue metadata; see [bibliographic evidence](sources.md#bibliographic-metadata) and the [metadata guide](../../references/paper-catalog-guide.md#authors-affiliations-and-paper-dates). Paper dates are separate from this explainer’s creation/publication/update dates.

@@ -24,3 +24,12 @@
 - The hero and mechanism diagrams are teaching schematics; they do not reproduce protein or bead coordinates.
 - “Purity”, “recovery”, “capacity”, “breakthrough” and “purification factor” are kept as separate quantities. The page does not convert one into another.
 - The paper identifies higher capacity/surface area, Fe/Si pretreatment and continuous/rotating-column scale-up as open engineering issues (main text p. 1805).
+
+## Bibliographic metadata
+
+Checked 2026-11-01. The shared byline uses the ordered manuscript authors and explicitly mapped publication-time affiliations stored under this paper’s original source URL in [`paper-catalog.json`](../../references/paper-catalog.json). Metadata is generated with `node scripts/build-paper-metadata.cjs`; the same record is used on the homepage.
+
+- [Publisher-deposited Crossref record; author affiliations and explicit published-online / accepted fields](https://api.crossref.org/works/10.1021/acscentsci.1c00724) — authors, affiliations, dates.published.
+- [Publisher full text archived in Europe PMC: article-meta contrib-group, aff, pub-date and history](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8614107/fullTextXML) — authors, affiliations, dates.published.
+
+Paper dates: published = 2021-10-08; accepted = notDisclosed. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.

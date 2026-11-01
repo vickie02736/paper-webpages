@@ -29,3 +29,5 @@ Figure-reader fix (2026-10-27): section 06 hides stale artwork while loading, sh
 回归检查：`node scripts/check-ncu1-reader.cjs`（从仓库根目录运行；Playwright 与 Chromium 配置同 `scripts/check-explainers.cjs`）。检查实际解码和四张不同的图像、慢加载、失败重试、快速切换、超时后迟到的请求、加载中切换语言、键盘操作，以及 1440／768／390 px 下的图片边界和图注位置。截图保存于 `PAPER_QA_DIR`，默认使用系统临时目录。
 
 Regression check: run `node scripts/check-ncu1-reader.cjs` from the repository root, using the Playwright/Chromium configuration of `scripts/check-explainers.cjs`. It verifies four distinct decoded images, delayed/failed/racing/timed-out requests, retry, language switching during loading, keyboard controls, and image/caption geometry at 1440, 768 and 390 px. Screenshots go to `PAPER_QA_DIR` or the system temporary directory.
+
+Publication-time authors, affiliations and paper dates are rendered from the shared catalogue metadata; see [bibliographic evidence](sources.md#bibliographic-metadata) and the [metadata guide](../../references/paper-catalog-guide.md#authors-affiliations-and-paper-dates). Paper dates are separate from this explainer’s creation/publication/update dates.

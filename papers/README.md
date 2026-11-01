@@ -36,3 +36,7 @@ The controller resolves a supported `?lang=` value, then `atlas-lang`, then Chin
 Keep translations explicit and render dynamic feedback from the current experiment state. A language switch must preserve sliders, selected charts and steps, answers, expanded details, focus and scroll position. Formal paper titles, identifiers, units and original figure images may retain their original language. No framework, build step or runtime CDN is required.
 
 For validation, run the paper-webpage static checker for every changed slug, then serve the repository over HTTP and check Chinese/English interactions at desktop, tablet and phone widths. The browser regression script in [`../scripts/check-explainers.cjs`](../scripts/check-explainers.cjs) uses Playwright supplied by the execution environment; it does not add a runtime dependency to the site.
+
+## Shared paper bibliography
+
+Every explainer loads `../assets/bibliography.css`, `bibliography.js` and generated `paper-metadata.js` (adjusted to its directory depth). `paper.js` mounts the shared byline below the title and supports language/depth rebuilds. The local metadata subset is generated from the homepage catalogue, so paper dates and author affiliations agree across both views. Follow the [catalogue metadata guide](../references/paper-catalog-guide.md#authors-affiliations-and-paper-dates); unresolved fields are recorded in the [gap ledger](../references/paper-metadata-audit.md).

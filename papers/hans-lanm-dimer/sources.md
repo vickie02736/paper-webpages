@@ -74,3 +74,11 @@ This page reports a model-mixture laboratory demonstration. It does not establis
 - `assets/figure-4.png`: Fig. 4 from article journal p. 91 / PDF p. 5, same rasterization, cropped to the figure area (662 × 489 pixels).
 - Original figure colours, panel labels, axes and numerical annotations are unchanged. Surrounding prose and original caption blocks are excluded; the bilingual reading guide supplies source locations and interpretation. The page attributes Mattocks et al. 2023 and links CC BY 4.0.
 - The mechanism schematic places Asp93 in the second-sphere network with Arg100; it is not drawn as a direct metal ligand. Coordination lines are selective teaching cues, not an exhaustive atomistic coordination model.
+
+## Bibliographic metadata
+
+Checked 2026-11-01. The shared byline uses the ordered manuscript authors and explicitly mapped publication-time affiliations stored under this paper’s original source URL in [`paper-catalog.json`](../../references/paper-catalog.json). Metadata is generated with `node scripts/build-paper-metadata.cjs`; the same record is used on the homepage.
+
+- [Author information; About this article / publication history](https://www.nature.com/articles/s41586-023-05945-5) — dates.published, dates.accepted, affiliations, authors.
+
+Paper dates: published = 2023-05-31; accepted = 2023-03-13. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.

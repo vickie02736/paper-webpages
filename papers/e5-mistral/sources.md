@@ -36,3 +36,13 @@
 - Source values, checkpoint identity, task counts, chart proportions, EOS information flow and formulas match the cited formal paper. No scientific value was changed in this audit; the page now links this ledger.
 - Visually inspected the original Figure 1, Figure 2 and Table 1 and checked all remaining source tables/text through the formal PDF. The authored examples are not subject to exact experimental-value matching.
 - This ledger certifies provenance and scientific consistency of the represented modules, not independent reproduction of training or verification of unpublished training data. Browser layout / bilingual / keyboard regression is tracked by the repository audit task.
+
+## Bibliographic metadata
+
+Checked 2026-11-01. The shared byline uses the ordered manuscript authors and explicitly mapped publication-time affiliations stored under this paper’s original source URL in [`paper-catalog.json`](../../references/paper-catalog.json). Metadata is generated with `node scripts/build-paper-metadata.cjs`; the same record is used on the homepage.
+
+- [Official article metadata](https://aclanthology.org/2024.acl-long.642/) — authors, dates.published.
+- [PDF first-page author superscripts and affiliation block](https://aclanthology.org/2024.acl-long.642.pdf) — affiliations.
+- [Author-submitted arXiv manuscript; ordered author list and first submission date (separate from formal publication)](https://arxiv.org/abs/2401.00368v3) — dates.preprint.
+
+Paper dates: published = 2024-08; accepted = unverified; preprint = 2023-12-31. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.

@@ -42,3 +42,30 @@ The homepage shows Chinese by default and switches to English with the language 
 | Venue before " · " in `m` | as written | top-level `venues` map, only for venues written in Chinese |
 
 When adding a paper, fill in `e` (and `se` if needed); when using a new tag or adding a subtopic, add the matching entry to `tags` or `ge`. Anything missing falls back to the Chinese text in English mode.
+
+## Authors, affiliations and paper dates
+
+The top-level `paperMetadata` map uses the exact existing paper source URL (`u`) as its key. Cross-theme listings reuse one record; `p`, `explainers`, `explainerCreatedAt` and `explainerUpdates` continue to describe the explainer, separately from the paper's dates. Recent-explainer ordering is unchanged.
+
+Each record contains:
+
+- `authors`: ordered `{name, affiliations: [id], aliases?, equalContribution?, corresponding?}` entries. Keep the names and order printed in the cited paper version. Set contribution/correspondence flags only when explicit. An empty affiliation list means that person's mapping is unverified; do not infer it from an email domain, present-day profile or author order.
+- `affiliations`: `{id, name, zh?, aliases?}` entries with the publication-time byline wording. Keep present addresses separate from byline affiliations. `zh` is an optional reliable translation of the **whole** affiliation; `aliases` may include reliable institution names in Chinese/English and common acronyms. Aliases affect search, not the displayed byline. Avoid ambiguous city-only aliases (Cambridge, MA is not the University of Cambridge).
+- `dates.published` and `dates.accepted`, plus `dates.preprint` when a preprint's initial deposit is verified: `{status, value?, source?}`. Status is `verified`, `notDisclosed`, `unverified` or `notApplicable`. A verified value is exactly `YYYY`, `YYYY-MM` or `YYYY-MM-DD`, preserving source precision. Do not pad unknown months/days. Never substitute a conference's notification date, event date or issue year for an individual acceptance date.
+- `sources`: `{url, fields, locator}` evidence records. Use the original publisher/proceedings/manuscript, or its archived copy; a publisher-deposited Crossref/PubMed record is identified as such. Record the relevant author block, numbered affiliations, publication history or explicit online-publication field. Retain version numbers for preprints. `checkedAt` is the metadata verification date; `notes` records access limitations, unresolved fields and any manually reviewed chronology exception.
+
+Formal publication uses the first online date, not the print/issue date. Keep the existing citation's issue year when different. A proceedings statement disclosing only the publication year retains year precision. The arXiv v1 submission date is **Preprint posted**, separately from revisions, formal publication and acceptance. `notDisclosed` means the inspected official record does not disclose the date; `unverified` means available evidence has not established it. Missing dates are visible, not guessed.
+
+Both global and theme searches index every author's name/aliases and every affiliation's original name, reliable Chinese name and aliases, including folded content. They retain the existing case/diacritic normalization and all-keyword matching and combine with the explainer filter.
+
+After editing metadata, run:
+
+```bash
+node scripts/build-paper-metadata.cjs
+node scripts/build-paper-metadata.cjs --check
+node scripts/check-paper-metadata.cjs
+```
+
+The generator validates coverage, source links, affiliation references, date precision and chronology. It writes the offline 15-page subset to `assets/paper-metadata.js` and the current missing-information ledger to [`paper-metadata-audit.md`](paper-metadata-audit.md). Commit both generated files with the catalogue. Do not hand-edit the subset. Also run the existing catalogue and explainer regressions when publishing.
+
+Pages load `bibliography.css`, `bibliography.js` and the generated `paper-metadata.js` before `paper.js`. The shared controller mounts one byline under the title and remounts it after dynamic body rebuilds. Native details, stable paper keys and captured state preserve expansion/focus during language changes, depth changes and catalogue refresh. A short summary shows the first author and first mapped affiliation, with additional affiliations available in the complete list.

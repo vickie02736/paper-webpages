@@ -60,7 +60,7 @@ references/
     *.mm
 ```
 
-The explainers share the Research Atlas navy-and-cyan reading style, a two-row sticky header, accessible section navigation and reading progress. All fourteen pages support complete Chinese/English switching, including interactive feedback, and remember the homepage's language preference. Ln local coordination and PMIDA–MIL-101 also retain their parallel bilingual mode. Paper-specific diagrams, experiments and learning-depth options remain tailored to the subject.
+The explainers share the Research Atlas navy-and-cyan reading style, a two-row sticky header, accessible section navigation and reading progress. All fifteen pages support complete Chinese/English switching, including interactive feedback, and remember the homepage's language preference. Ln local coordination and PMIDA–MIL-101 also retain their parallel bilingual mode. Paper-specific diagrams, experiments and learning-depth options remain tailored to the subject.
 
 Start with the central idea, then explore the mechanism, evidence, limitations, and broader connections. See the [explainer implementation guide](papers/README.md#shared-reading-system) for the common styles and language controller.
 
@@ -77,3 +77,5 @@ Select **Only papers with explainers / 仅显示已有讲解** beside the catalo
 With a search active, the explainer filter shows matching / total explainer counts; **Clear search / 清除搜索** clears global and theme queries while keeping the current filter setting. Published catalogue updates sync automatically while preserving searches, the filter, language and expanded sections; a failed refresh keeps the current results.
 
 The **Explainers from the past week / 近一周的讲解页** section includes explainers first created within the last seven UTC calendar days, ordered by their precise creation time, including creations on the same day; updating an existing page does not return it to the list or move it to the top. Before publishing, run `node scripts/update-explainer-updates.cjs` after committing the explainer changes to initialise missing creation timestamps from Git history while preserving existing creation times and first-publication dates; see the [catalogue guide](references/paper-catalog-guide.md).
+
+The homepage and all 15 explainers share expandable publication-time author/affiliation bylines and separate Published, Accepted and Preprint posted dates. Search includes full author lists, reliable Chinese/English institution names and acronyms. Metadata is maintained once per source URL in the catalogue; see the [schema and generation steps](references/paper-catalog-guide.md#authors-affiliations-and-paper-dates) and [unverified-information ledger](references/paper-metadata-audit.md).

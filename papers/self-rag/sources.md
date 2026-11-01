@@ -29,3 +29,15 @@
 ## 本次纠正
 
 修正 token 类型计数、ISREL 生成时序、Eq.(3) 的概率项、ISSUP 与答案覆盖面的混淆、默认软排序被误写成硬过滤、未检索状态仍可选择证据且保证高 utility 的演示，以及 top-1 消融的过度归因。Table 2 数值未发现需要更改之处。
+
+## Bibliographic metadata
+
+Checked 2026-11-01. The shared byline uses the ordered manuscript authors and explicitly mapped publication-time affiliations stored under this paper’s original source URL in [`paper-catalog.json`](../../references/paper-catalog.json). Metadata is generated with `node scripts/build-paper-metadata.cjs`; the same record is used on the homepage.
+
+- [Official article metadata](https://proceedings.iclr.cc/paper_files/paper/2024/hash/25f7be9694d7b32d5cc670927b8091e1-Abstract-Conference.html) — authors, dates.published.
+- [PDF title page author block; printed names take precedence over proceedings account names](https://proceedings.iclr.cc/paper_files/paper/2024/file/25f7be9694d7b32d5cc670927b8091e1-Paper-Conference.pdf) — authors.
+- [PDF first-page author superscripts and affiliation block](https://proceedings.iclr.cc/paper_files/paper/2024/file/25f7be9694d7b32d5cc670927b8091e1-Paper-Conference.pdf) — affiliations.
+- [Author-submitted arXiv manuscript; ordered author list and first submission date (separate from formal publication)](https://arxiv.org/abs/2310.11511v1) — dates.preprint.
+- [Official proceedings manuscript: no individual-paper acceptance date disclosed](https://proceedings.iclr.cc/paper_files/paper/2024/file/25f7be9694d7b32d5cc670927b8091e1-Paper-Conference.pdf) — dates.accepted.
+
+Paper dates: published = 2024-05-31; accepted = notDisclosed; preprint = 2023-10-17. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.
