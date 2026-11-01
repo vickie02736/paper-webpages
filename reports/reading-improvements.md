@@ -40,11 +40,13 @@ P2：原图异步解码与尺寸预留；减少重复绑定。E5-Mistral/NV-Embe
 - 检查 11 页的章节截图汇总；对首屏及相关图形、图注、表格进行目视核对。手机端 Self-RAG 主张表使用容器内横向滚动，保留表格内容；宽表和公式容器可用键盘聚焦。
 - 修复位置实测对比度：LanM 白底图注 9.17:1；RAG 序号 7.47:1；PMIDA 地图符号 11.42:1。LanM SVG 在 reduced-motion 下已暂停 SMIL 动画。
 - 保留核对：原有 11 篇全部存在、原有字面 ID 与外部来源 URL 保留，目录 JSON 与基线逐字节一致，首次发布日期未改。
-- 27 个去重外链的 HEAD 检查：21 个成功；5 个 ACS 链接被服务器以 403 拒绝，1 个 Springer SI 链接 DNS 解析失败。不能把这 6 个链接列为已确认失效，也不能列为通过；完整列表见下方。
+- 初次对 27 个去重外链执行 HEAD 检查：21 个成功；5 个 ACS 链接返回 403，1 个 Springer SI 链接 DNS 解析失败。2026-11-01 已用浏览器复核这 6 项：4 个论文入口正常，两份 SI 均从出版社当前入口成功下载；原来的两条 SI 直链需要更新。原检查历史与复核结果见下方。
 - 科学文案、公式、实验数据和图表尺度未改；新增 PMIDA 来源记录、补全辅助标签和 LanM 图内中文翻译。科学疑点单独保留。
 - 未验证：真实屏幕阅读器的语音体验、全量文字/图形的自动化 WCAG 审计、全部科学状态的独立源图复核、跨浏览器表现、Lighthouse/真实网络性能基准。没有异步结果集的页面不额外制造空状态；现有缺失实验值由回归中的图表切换覆盖。
 
-### 外链未确认项
+### 外链复核记录
+
+以下为初次自动 HEAD 检查的历史结果，不代表当前浏览器访问结论：
 
 - https://doi.org/10.1021/acsami.4c09445 — HTTP Error 403: Forbidden
 - https://doi.org/10.1021/acsami.6c16452 — HTTP Error 403: Forbidden
@@ -53,11 +55,21 @@ P2：原图异步解码与尺寸预留；减少重复绑定。E5-Mistral/NV-Embe
 - https://pubs.acs.org/doi/suppl/10.1021/acscentsci.1c00724/suppl_file/oc1c00724_si_001.pdf — HTTP Error 403: Forbidden
 - https://static-content.springer-cdn.com/esm/art%3A10.1038%2Fs41467-024-45810-1/MediaObjects/41467_2024_45810_MOESM1_ESM.pdf — <urlopen error [Errno 8] nodename nor servname provided, or not known>
 
+**2026-11-01 浏览器复核：**
+
+- [Ln 局部配位论文 DOI](https://doi.org/10.1021/acsami.4c09445)：正常打开 ACS 论文摘要页，标题与引用一致；全文访问仍受出版社订阅权限限制。
+- [PMIDA–MIL-101 论文 DOI](https://doi.org/10.1021/acsami.6c16452)：正常打开 ACS 论文页面，标题与引用一致。
+- [LanM 论文 DOI](https://doi.org/10.1021/acscentsci.1c00724)及[出版社原入口](https://pubs.acs.org/doi/10.1021/acscentsci.1c00724)：均正常打开同一篇 ACS Central Science 论文。以上 4 个入口的自动请求 403 不应被判为链接失效。
+- **LanM SI**：旧 `doi/suppl/.../oc1c00724_si_001.pdf` 地址在浏览器中跳回论文正文，不能作为已验证的 PDF 直链。已从正文提供的[当前下载入口](https://pubs.acs.org/acscii/article-supplement/395697/pdf/oc1c00724_si_001/)成功下载 PDF，并用 `pdfinfo` 确认共 19 页。
+- **NCU-1 SI**：记录中的 `static-content.springer-cdn.com` 在浏览器中仍报域名解析失败。[Nature 正文](https://www.nature.com/articles/s41467-024-45810-1)提供的真实域名为 `static-content.springer.com`；已从[官网 SI 链接](https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-024-45810-1/MediaObjects/41467_2024_45810_MOESM1_ESM.pdf)成功下载 PDF，并用 `pdfinfo` 确认共 47 页。文件 SHA-256 为 `62499ecd2ea4fa6649c30426749c6b08452b1e5c0b6e1b462be02e416a770e2b`，与已有来源记录一致。
+
+复核结论：论文入口及两份补充材料均可获取；两条旧 SI 直链仍需在使用它们的页面或来源文件中同步更新。本次只更新审计记录，不表示网页中的链接已替换，也不改变科学疑点的状态。本次针对原先未确认的 6 项复核，未重新测试其余 21 项。
+
 ## Skill 与发布剩余事项
 
 已先展示完整 diff，再应用四阶段流程、任务分流、文章保留约束和验证参考文档；完整差异保存在 `paper-webpage-skill.diff`。保持既有站点和发布约束。`quick_validate.py` 校验通过，全部 Skill 相对引用路径可解析。系统 Python 缺少 PyYAML，验证时仅在 `/tmp/paper-skill-validation-deps` 安装验证依赖，未增加项目运行依赖。
 
-本地预览：http://127.0.0.1:8765/ 。初次交付时文件未提交。后续发布使用最新 main 的既有时间元数据脚本；科学疑点、无法访问的外链及真实辅助技术体验仍作为明确遗留项记录。不要通过改写首次发布日期代替更新时间流程。
+本地预览：http://127.0.0.1:8765/ 。初次交付时文件未提交。后续发布使用最新 main 的既有时间元数据脚本；外链获取已按上述浏览器复核确认，仍需同步两条 SI 直链；科学疑点及真实辅助技术体验继续作为明确遗留项记录。不要通过改写首次发布日期代替更新时间流程。
 
 ## 完整修改文件清单
 
