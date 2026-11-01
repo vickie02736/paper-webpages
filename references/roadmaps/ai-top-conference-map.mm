@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <map version="1.0.1">
-  <node TEXT="AI 顶会 A 框架研究地图 | 2026-10-20">
-    <node TEXT="以 2023–2026 正式顶会论文为主，补充 2020–2022 年的必要入口；以官方会议、论文集和作者论文为核验依据。" />
+  <node TEXT="人工智能与机器学习研究地图 | 2026-10-20">
+    <node TEXT="以 2023–2026 年人工智能与机器学习研究为主，补充 2020–2022 年的必要入口；收录会议论文与明确标注的预印本，以官方论文集和作者原文为核验依据。主题按研究问题组织，不表示会议等级或录用状态。" />
     <node TEXT="分类与阅读脉络为本次整理，不表示严格引用继承、唯一分类或尚无人研究的空白。A 是可复用的问题或算法框架；同一方法也可能是相对于更早框架的 A+B。" />
     <node TEXT="优化与决策｜下一步采集什么、采取什么行动？" POSITION="right" FOLDED="true">
       <node TEXT="Bayesian Optimization｜贝叶斯优化" FOLDED="true">
@@ -294,6 +294,17 @@
           <node TEXT="DS-CP｜ICML 2026｜2026 扩展" LINK="https://proceedings.mlr.press/v306/lin26t.html">
             <node TEXT="Domain-Shift-Aware Conformal Prediction for Large Language Models" />
             <node TEXT="根据测试 prompt 与校准样本的接近程度进行重加权。" />
+          </node>
+        </node>
+      </node>
+      <node TEXT="Research &amp; Engineering Agent Benchmarks｜科研与工程智能体评测" FOLDED="true">
+        <node TEXT="原问题：智能体能否在真实研究与工程环境中完成可复核的贡献？" />
+        <node TEXT="输入与输出：任务环境、资源预算与参考实现 → 最终产物、隐藏评测结果与能力指标" />
+        <node TEXT="分类依据：这是评测基准研究，与提出工具调用、推理或协作方法的智能体论文区分。" />
+        <node TEXT="代表论文与阅读顺序">
+          <node TEXT="FrontierCS 2｜arXiv 2026｜预印本" LINK="https://arxiv.org/abs/2610.29932">
+            <node TEXT="FrontierCS 2: A Benchmark for Computer Science R&amp;D" />
+            <node TEXT="从论文仓库删除关键贡献，以原作者代码为参照，在隐藏工作负载上评估科研智能体。" />
           </node>
         </node>
       </node>

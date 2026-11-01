@@ -8,7 +8,7 @@ This repository collects the paper explainer webpages and research maps created 
 
 ## Six research themes
 
-- [AI Top Conferences — A Framework Research Map](references/roadmaps/ai-top-conference-map.mm)
+- [Artificial Intelligence & Machine Learning — Methods, Systems, Agents and Evaluation](references/roadmaps/ai-top-conference-map.mm)
 - [Metal–Organic Frameworks — Recent Progress Map](references/roadmaps/mof-recent-progress-map.mm)
 - [Robotics — Recent Progress Map](references/roadmaps/robotics-recent-progress-map.mm)
 - [AI for Chemistry / Materials — Machine Learning for Chemistry and Materials Map](references/roadmaps/ai-chemistry-materials-map.mm)
