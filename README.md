@@ -39,7 +39,7 @@ This repository collects the paper explainer webpages and research maps created 
 - [LanM — Protein-based rare-earth recovery and separation](papers/lanm-protein-process/)
 
 
-- [FrontierCS 2 — A Benchmark for Computer Science R&D](papers/frontier-cs/) — includes a bilingual comparison of 29 related evaluation efforts
+- [FrontierCS 2 — A Benchmark for Computer Science R&D](papers/frontier-cs/) — PDF-audited task/judge diagrams, complete 12-agent results, three case studies and 29 related efforts
 
 ## Repository layout
 

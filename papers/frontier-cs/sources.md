@@ -14,13 +14,13 @@ Reviewed 2026-11-01. Main version: Mang, Chai et al., **FrontierCS 2: A Benchmar
 
 - `glance`: 48 tasks, 13 domains — paper abstract and §1. Five-hour wall-clock budget — §4 and repository README. Publication metadata — arXiv version record. These numbers describe the public evaluated release, not the unreleased private set.
 - `question`: problem statement/program vs repository/patch — Table 1, §§1–2. Version distinction comes from sources 4–5; no original-version results are ranked against version 2.
-- `pipeline`: subtract contribution, retain dependencies/interfaces, restrict editable files — §3 and Fig. 2 caption. Structured LWE exception explicitly retained (§3 footnote 1). Agent/judge isolation, development score and sanitized message, final selection by agent, missing final = 0 — §4, Fig. 3 caption, repository README. Five-hour iteration and task feedback caps follow README.
+- `pipeline`: subtract contribution, retain dependencies/interfaces, restrict editable files — §3 and Fig. 3 caption. Structured LWE exception explicitly retained (§3 footnote 1). Agent/judge isolation, development score and sanitized message, final selection by agent, missing final = 0 — §4, Fig. 4 caption, repository README. Five-hour iteration and task feedback caps follow README.
 - `pass`: thresholds — §3 SVG-EAR example: latency ≤0.96 reference; PSNR tolerance 0.25 dB; SSIM 0.01; LPIPS 0.005. All-workload/all-metric condition — §§4–5.1. “Beats” means meeting the task threshold, not strict numerical dominance in every metric.
-- `evidence`: 12 reported agents, once per task — §§1, 5.1. Highest reported run pass rate 58%, Claude Opus 5.5/Claude Code; 16 tasks with no passing agent — abstract/§1. No exact per-agent results inferred from bar heights.
-- SVG-EAR case — §6.3, Fig. 10 caption: GPT-6 Astra faster on every clip and closer to full attention on average, but misses quality on two clips. No unreported point coordinates redrawn.
-- BBQ case — §6.2, Fig. 9 caption: register-based counters, faster circuit, largest passing circuit by lookup-table count on largest tested tree; final score ignores size. No unverified speedup displayed.
-- QuarterPIR case — §6.1, Fig. 8 caption: two-checksum mechanism, client knows the two groups that may differ, privacy preserved under task constraint, contribution not fully captured by pass or final score. No new cryptographic guarantee claimed.
-- `fci`: §5.2 and Appendix D steps 2–5, 9–11, Eqs. (1)–(7), Table 4. Group duplicate outcomes; normalize score margins; share run effect; conditional logistic probability; Kimi K2.7 anchor; ten FCI points = one logit; FDI uses probability of ALL groups integrated over the shared run effect, NOT one metric group's logistic probability.
+- `evidence`: 12 reported agents, once per task — §§1, 5.1. Highest reported run pass rate 58%, Claude Opus 5.5/Claude Code; 16 tasks with no passing agent — abstract/§1. Exact printed per-agent results were added in the PDF re-audit below; none are inferred from bar heights.
+- SVG-EAR case — §6.3, Fig. 11 caption: GPT-6 Astra faster on every clip and closer to full attention on average, but misses quality on two clips. No unreported point coordinates redrawn.
+- BBQ case — §6.2, Fig. 10 caption: register-based counters, faster circuit, largest passing circuit by lookup-table count on largest tested tree; final score ignores size. No unverified speedup displayed.
+- QuarterPIR case — §6.1, Fig. 9 caption: two-checksum mechanism, client knows the two groups that may differ, privacy preserved under task constraint, contribution not fully captured by pass or final score. No new cryptographic guarantee claimed.
+- `fci`: §5.2 and Appendix D steps 2–5, 9–11, Eqs. (1)–(7), Table 5. Group duplicate outcomes; normalize score margins; share run effect; conditional logistic probability; Kimi K2.7 anchor; ten FCI points = one logit; FDI uses probability of ALL groups integrated over the shared run effect, NOT one metric group's logistic probability.
 - Appendix D details retained: reference median over runs, task score spread selection rule delegated explicitly to appendix; scale floor 5.78; failed positive margin censored at ≥0; exact tie omits margin term; 500 task-bootstrap refits with hyperparameters fixed, 90% FCI intervals; FDI intervals computed separately, not attributed to the same bootstrap.
 - `limits`: budget truncation counts unfinished runs as missing-final/zero, NOT best-so-far patch — §5.3 and Appendix D step 12. More than 100 private tasks — abstract and §7. Generalisation boundaries and recommended reading unit are explicitly explainer analysis; unscored area limitation is reported in §§6.2, 7.
 
@@ -33,7 +33,7 @@ Reviewed 2026-11-01. Main version: Mang, Chai et al., **FrontierCS 2: A Benchmar
 5. FCI equation and probability bar (`fci`): teaching evaluation of p=logistic(z); linear bar on 0–100% probability scale, generated from same p as readout. z=−3,0,3 yields about 4.7%,50.0%,95.3%. Conditional on a single group's z; explicitly NOT full task probability, fitted FCI or calibrated forecast. Odds multiplier applies with same run effect.
 6. Research formulas and expanded statistical description (`fci details`): explanatory notation maps to Appendix D, no equation-number claim for a modified full likelihood. No fitting executed locally.
 
-No external image reader, simulated physical system, training pipeline, attention heatmap or unlabelled experimental data. Image-loading/rapid-image-switch tests therefore not applicable.
+The initial version used no images. The PDF re-audit below adds four static original-figure crops with the shared image loading/retry interface; there is no image-switching selector, physical simulation, model training or unlabelled experimental data.
 
 ## Related-work comparison update — 2026-11-01
 
@@ -84,3 +84,51 @@ Scope: transfer the requested comparison of all 29 efforts into `#related`, with
 3. `related-results`: exactly 29 static dossier entries, full paired translations. Each has task/input, evaluation/reference, distinction/limits and its own primary-source link. Category grouping is explainer analysis. Default focus contains the nine user-prioritised works. Filters hide entries only; they do not replace source content or imply rankings.
 4. Search/filter/count/reset/empty state: contains both-language search text; changing language preserves category, query and each details expansion. No experimental score, data point, measured speedup or numerical scale is introduced by filtering.
 5. Interpretation cautions: repository access ≠ research, reproduction ≠ improvement, beating a reimplementation ≠ beating author code, benchmark pass ≠ global novelty. These are explicit analytical distinctions, not new experimental findings.
+
+
+## Full supplied-PDF re-audit — 2026-11-01
+
+Authoritative artifact: user-supplied `2610.29932v1.pdf`, 31 pages, SHA256 `41f1915d21dec3726e0678cade8a79ea84a08648814a256fa54011cf66b298e8`. Read the main text and appendices A–D with layout-preserving extraction; visually inspected PDF pp. 7, 8, 11, 13–15 and the original-figure crops. This edition's figure numbers supersede the incorrect locators in the earlier evidence record (corrected above): construction = Figure 3; judge = Figure 4; QuarterPIR = Figure 9; BBQ = Figure 10; SVG-EAR = Figure 11. Table 4 is agent settings; Table 5 is statistical constants. No scientific conclusion is changed merely to fit a visual.
+
+### Added claims and exact numerical ledger
+
+- `tasks`, `pipeline`: PDF pp. 7–8, §§3–4 and Figures 3–4. SVG-EAR removes an error-aware attention class and three routines (cluster means; selected cluster pairs; exact selected pairs plus estimates for the rest); surrounding dependencies and calls remain. Private patch restores the reference. Agent reaches only the driver; model calls, patches and experiment GPU requests go through it. Only the judge uses the measurement GPU; optional test sandboxes handle Continuum episodes. Per-patch feedback includes development score and counts of workloads meeting each metric, not reference scores or raw stdout/stderr. Final suite adds unseen workloads. Missing final scores zero. Structured LWE exception retained.
+- `domain-buttons` / `domain-panel`: Appendix A Table 2, PDF pp. 24–25. All 48 task names checked, including the two FARGO tasks and four FlashLib tasks. Domain counts: databases 9; ML 9; MLSys 6; HPC 4; programming languages 4; architecture 3; cryptography 3; networking 3; security 2; robotics 2; bioinformatics 1; software engineering 1; theory 1. Counts sum to 48, no pass-rate or difficulty encoding. Domain descriptions are short teaching summaries of the named artifacts.
+- Resource examples: Appendix B Table 3, PDF pp. 26–27. SVG-EAR H100 / 25 development evaluations / 15 agent GPU-hours / 210-minute final timeout. DeTok L4 / 6 / 1.5 / 90 minutes. QuarterPIR no GPU / 8 / 4 cores, 8 GiB / 30 minutes. Continuum 1,800-minute final timeout. These are limits, not measured resource consumption or API costs; the five-hour agent budget is separate.
+- Pass vs final score: PDF pp. 8–10, §§4–5.1. Task-specific final score is 0–100. Mean-score plot is mean **margin over reference**, not raw mean final score. Passing can have a nonpositive margin and a positive margin can fail. No arbitrary joint score is introduced.
+- 12 reported agents × 48 tasks = 576 reported runs; Kimi K2.7 contributes another 48 to the 624-run fit. Two provider-refused Gemini runs remain failures. PDF pp. 9, 27–28, §5.1 and Appendix D Step 1. 576 and 48 anchor runs are arithmetic counts, not independent empirical findings.
+
+Printed result values, transcribed by model name (pass rate in %, FCI points, mean final-score margin in score points):
+
+| Agent | Figure 2 pass | Figure 7 FCI | Figure 6 margin |
+|---|---:|---:|---:|
+| Claude Opus 5.5 | 58 | 55.7 | +9.4 |
+| GPT-6 Astra | 44 | 50.7 | +7.1 |
+| GPT-6.1 Sol | 35 | 42.6 | +5.7 |
+| Gemini 4 Argon | 40 | 39.5 | +2.1 |
+| GLM 5.3 | 25 | 36.6 | +1.8 |
+| Muse Wonder 1.0 | 21 | 34.5 | +4.1 |
+| DeepSeek V4.1 Flash | 15 | 30.7 | +0.5 |
+| Kimi K3 | 21 | 26.4 | −1.2 |
+| GLM 5.3 Flash | 12 | 22.9 | −8.4 |
+| Muse Spark 1.3 | 12 | 22.1 | −3.3 |
+| Qwen 3.8 Max | 12 | 21.9 | −6.4 |
+| Step 5 Preview | 8 | 9.8 | −10.6 |
+
+- Agent settings: Appendix C Table 4, PDF p. 28. All 12 model–harness/version/effort/output-limit entries transcribed. Claude output limit is unknown (empty in source), not unlimited. “Not set” retains provider default; output-limit room-left behaviour and Muse side-call efforts remain qualified. Kimi K2.7 / Kimi Code 0.31.0 / medium / up to 131,072 only anchors FCI.
+- Cases: PDF pp. 11–15, §§6.1–6.3. QuarterPIR reference 1,760 bytes/lookup versus Muse Wonder 1.0 1,280 at 67 million entries (Figure 9). Reduction 480 bytes and 27.3% are explicitly calculated from printed values. Two-checksum recovery and the privacy constraint follow the text; no new security proof asserted. BBQ mechanisms contrast overlapped checks in retained memory with counters in registers; only Gemini, Claude and Sol pass. Figure 10 is 4,096 priorities / width 16; no dot coordinate is transcribed as an exact value. SVG-EAR reference/Astra mean time 891/729 s and PSNR 21.7/23.8 dB are Figure 11 labels. PSNR is against full attention; task pass thresholds use the author reference. Every-clip speed and two failing quality clips come from §6.3, not these means.
+- FCI/FDI: Appendix D Steps 1–12, PDF pp. 27–31. 624 runs, 115 metric groups, 13 strengths, 163 task parameters. Score spread uses strict interior (0,100) scores, falling back to all when fewer than three qualify; floor 5.78. Shared run effect connects metric outcomes and margin; this is not independent evidence counted twice. Priors yield finite difficulties for unbeaten groups. 64 Gauss–Hermite nodes. FCI uses 500 task-bootstrap refits; FDI uses 2,000 weighted Laplace draws with strengths held; budgeted FCI uses 100 task bootstraps. Full-task probability is product-over-groups integrated over a single shared run effect, then FDI solves 0.5. Equations on the page are teaching notation for source Eqs. (2), (6), (7), not a new estimator. No fitting is executed in the browser.
+- Cost interpretation: PDF pp. 9, 11–12, 30–31; Figures 5 and 8, §5.3, Appendix D Step 12. Mean cost and per-run cap are distinct; both source plots use log-dollar axes. Finished-within-cap runs keep final results; unfinished runs become no-final, all-group-fail/zero. Fixed task parameters; no best-so-far development patch used. DeepSeek small-budget lead has lower-bound pricing qualification. No exact dollar cost is invented from plotted positions.
+- Research-judgement FAQ: explicit explainer analysis; repository scope is not full paper invention; unseen workloads and network isolation are not proof of uncontaminated training; repeat-run reliability is not established by one run per pair.
+
+### Revised visual inventory
+
+1. Hero reading route and thesis: design → decision → finding, supported by abstract and §§3–5. Existing headline, overview counts and external entry points retained.
+2. Task split: two HTML columns distinguish agent artifacts and judge artifacts, not model-training stages. Domain explorer changes task names/count/interpretation for all 13 states.
+3. Agent–driver–judge diagram: static information boundary plus four selectable phases, with explicit model/API path, experiment versus judge hardware, feedback fields and final selection. State highlights are pedagogical, not measured traffic.
+4. Result bars: 12 points per metric; same exact ledger drives labels, sorting and bars. Pass axis 0–100%, FCI 0–70 points; margin axis −15…+15 with a labelled zero. No omitted values, empirical CIs reconstructed or incompatible benchmark versions mixed. Static full table preserves all 36 printed values and settings.
+5. Original figures: `assets/figure-7-fci.png` (PDF p. 11, Figure 7); `figure-9-quarterpir.png` (p. 13); `figure-10-bbq.png` (p. 14); `figure-11-svg-ear.png` (p. 15). Cropped from the supplied PDF at 180 dpi, retaining full axes, original English labels and full captions. White backgrounds preserved; bilingual text explains each figure and links to full-size image. Figure 9 starts at 1,200 bytes; Figure 10's size axis uses nonuniform/logarithmic positions and inverted clock direction; Figure 11 starts at 600 s / 16 dB. Original scales are not silently converted into zero-origin bars.
+6. FCI evidence chain and full-task formula: counts and probability components correspond to Appendix D; existing single-group logistic slider and fictional two-video lab remain labelled and mathematically unchanged.
+7. Related work: all 29 dossiers and controls retained in full, moved after the main paper argument; original `#related` URL works. Relationship arrows/categories remain explicit teaching synthesis.
+
+- Terminology definitions (patch/workload/harness/driver) summarise §§3–5.1 and Figure 4; the driver and model harness are explicitly different roles. Odds example is a labelled calculation from Appendix D Equation (2): odds 1 × e gives p=e/(1+e)=73.1%, not measured agent performance.

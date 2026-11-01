@@ -23,7 +23,7 @@ Each explainer is a static visual webpage using the shared Research Atlas readin
 Opening these pages does not require ChatGPT sign-in. Each supports Chinese and English, including diagrams and interactive feedback. Ln local coordination and PMIDA–MIL-101 also offer parallel bilingual reading.
 
 
-- [FrontierCS 2 — A Benchmark for Computer Science R&D](frontier-cs/) — arXiv 2026; bilingual workflow, pass-rule and FCI explorations, plus a filterable comparison of 29 related works.
+- [FrontierCS 2 — A Benchmark for Computer Science R&D](frontier-cs/) — arXiv 2026; PDF-audited bilingual guide with all 48 tasks, judge isolation, complete 12-agent results, three case studies, FCI/FDI and 29 related works.
 
 ## Shared reading system
 
