@@ -22,6 +22,9 @@ Each explainer is a static visual webpage using the shared Research Atlas readin
 
 Opening these pages does not require ChatGPT sign-in. Each supports Chinese and English, including diagrams and interactive feedback. Ln local coordination and PMIDA–MIL-101 also offer parallel bilingual reading.
 
+
+- [FrontierCS 2 — A Benchmark for Computer Science R&D](frontier-cs/) — arXiv 2026; bilingual workflow, pass-rule and FCI explorations.
+
 ## Shared reading system
 
 Pages load [`../assets/paper.css`](../assets/paper.css) after their local styles and [`../assets/paper.js`](../assets/paper.js) before their page script. Keep `class="atlas-paper"` and `data-paper="<slug>"` on the body. The shared stylesheet owns the navy/cyan palette, 1180px content width, typography, common controls and responsive header. Local CSS owns each paper's diagrams and layouts; scope SVG rules to their diagram containers.
