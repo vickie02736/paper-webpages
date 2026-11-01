@@ -27,7 +27,7 @@ body.atlas-paper .hero-copy{min-width:0}body.atlas-paper .hero h1{overflow-wrap:
 </style>
 <link rel="stylesheet" href="../../assets/paper.css">
 </head>
-<body class="atlas-paper" data-paper="e5-mistral">
+<body class="atlas-paper atlas-reading" data-paper="e5-mistral">
 <header class="topbar">
  <div class="wrap header-inner"><a class="brand" href="../../"><span>↖</span> RESEARCH ATLAS</a><nav aria-label="页内导航"><a href="#data">数据生成</a><a href="#training">模型训练</a><a href="#evidence">实验证据</a><a href="#limits">边界</a></nav></div>
  <div class="progress" id="progress" aria-hidden="true"></div>
@@ -153,8 +153,8 @@ function localizePage(lang=pageLanguage){
  pageLanguage=lang;
  for(const root of [document.querySelector('main'),document.querySelector('footer'),document.querySelector('.skip')].filter(Boolean)){
   const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let node;
-  while((node=walker.nextNode())){if(node.parentElement.closest('script,style,[data-example-source]'))continue;if(!pageTextBindings.has(node))pageTextBindings.set(node,{source:node.data,key:node.data.trim()});const value=translatedText(pageTextBindings.get(node).source);if(node.data!==value)node.data=value;}
-  for(const element of [root,...root.querySelectorAll('[aria-label],[alt],[title]')])for(const attr of ['aria-label','alt','title'])if(element.hasAttribute(attr)){
+  while((node=walker.nextNode())){if(node.parentElement.closest('script,style,[data-example-source],.atlas-reading-route,.atlas-image-status'))continue;if(!pageTextBindings.has(node))pageTextBindings.set(node,{source:node.data,key:node.data.trim()});const value=translatedText(pageTextBindings.get(node).source);if(node.data!==value)node.data=value;}
+  for(const element of [root,...root.querySelectorAll('[aria-label],[alt],[title]')])for(const attr of ['aria-label','alt','title'])if(element.hasAttribute(attr)&&!element.closest('.atlas-reading-route,.atlas-image-status')&&!element.hasAttribute('data-atlas-scroll')){
    if(!originalAttributes.has(element))originalAttributes.set(element,new Map());const saved=originalAttributes.get(element);if(!saved.has(attr))saved.set(attr,element.getAttribute(attr));element.setAttribute(attr,translatedText(saved.get(attr)));
   }
  }
