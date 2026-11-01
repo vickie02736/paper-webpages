@@ -132,3 +132,5 @@ Printed result values, transcribed by model name (pass rate in %, FCI points, me
 7. Related work: all 29 dossiers and controls retained in full, moved after the main paper argument; original `#related` URL works. Relationship arrows/categories remain explicit teaching synthesis.
 
 - Terminology definitions (patch/workload/harness/driver) summarise §§3–5.1 and Figure 4; the driver and model harness are explicitly different roles. Odds example is a labelled calculation from Appendix D Equation (2): odds 1 × e gives p=e/(1+e)=73.1%, not measured agent performance.
+
+- Aggregate task-difficulty conclusion near the FDI explanation follows PDF §5.2 p. 10: task difficulty has wider spread than the agents; median task is approximately at the strongest agent’s FCI. No exact median FDI or per-task order is inferred.
