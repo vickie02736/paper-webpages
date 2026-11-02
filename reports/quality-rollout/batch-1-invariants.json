@@ -1,0 +1,22 @@
+{
+  "hydrolytic-stability-grading": {
+    "originalIDsRetained": true,
+    "originalDatasetUnchanged": true
+  },
+  "mof-hydrolysis-atomistic": {
+    "originalIDsRetained": true,
+    "originalDatasetUnchanged": true
+  },
+  "mil100-water-matrices": {
+    "originalIDsRetained": true,
+    "originalDatasetUnchanged": true
+  },
+  "cmpo-mil101-ree": {
+    "originalIDsRetained": true,
+    "originalDatasetUnchanged": true
+  },
+  "defect-phosphate-uio66-yb": {
+    "originalIDsRetained": true,
+    "originalDatasetUnchanged": true
+  }
+}

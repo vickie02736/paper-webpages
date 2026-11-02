@@ -1,0 +1,750 @@
+{
+  "hydrolytic-stability-grading": {
+    "lead": [
+      "同样泡过水的两份材料，可能保留不同的东西。这篇观点论文教我们把“接触条件”和“测后结果”分别记录，而不是只写一个稳定标签。",
+      "Two materials exposed to water may retain different properties. This perspective separates exposure conditions from measured outcomes, instead of relying on one stability label."
+    ],
+    "foundationTitle": [
+      "把“稳定”拆成可测的问题",
+      "Turn “stable” into measurable questions"
+    ],
+    "foundation": [
+      "MOF 是金属节点和有机连接体组成的有孔网络。水可能改变连接、排列或孔道入口；这些变化不一定同时发生，所以需要分别观察。",
+      "A MOF is a porous network of metal nodes and organic linkers. Water may change connections, order or pore entrances; these changes need not occur together and require separate observations."
+    ],
+    "terms": [
+      [
+        [
+          "相对湿度 RH",
+          "Relative humidity, RH"
+        ],
+        [
+          "同温度下，空气中水蒸气压力占饱和值的比例。50% RH 不表示空气的一半是水。",
+          "Water-vapour pressure as a fraction of saturation pressure at the same temperature. 50% RH does not mean half the air is water."
+        ]
+      ],
+      [
+        [
+          "PXRD：排列还整齐吗？",
+          "PXRD: does order remain?"
+        ],
+        [
+          "X 射线照射粉末，记录各角度散射强度；重复的原子排列产生峰。留下峰不能直接清点已溶解的材料。",
+          "X-rays illuminate powder and scattered intensity is recorded by angle. Repeated atomic arrangements produce peaks, but those peaks do not count dissolved material."
+        ]
+      ],
+      [
+        [
+          "气体吸附：还能进去吗？",
+          "Gas adsorption: can a probe enter?"
+        ],
+        [
+          "先移走占孔分子（活化），再测气体进入并停留的量。它检验可接近孔隙，结果也依赖气体和温度。",
+          "Remove pore occupants (activation), then measure gas entering and attaching. This probes accessible porosity and depends on the gas and temperature."
+        ]
+      ]
+    ],
+    "problem": [
+      "过去只写“水稳定”，读者无法知道暴露有多不同、究竟测了什么。本文增加的是一套报告语言，不是一种新材料，也不是统一的寿命预测公式。",
+      "A bare “water-stable” claim hides both exposure and measurement differences. The contribution is a reporting language, not a new material or universal lifetime formula."
+    ],
+    "methodTarget": "builder",
+    "methodTitle": [
+      "数字、字母、时间各承担什么任务？",
+      "What do the number, letter and duration describe?"
+    ],
+    "steps": [
+      [
+        [
+          "指定暴露",
+          "Specify exposure"
+        ],
+        [
+          "先选表2中的温度、湿度或浸水条件。数字说明做过什么处理，不是把全部环境压成一个通用强度。",
+          "Choose temperature, humidity or immersion from Table 2. The number identifies the treatment, not a universal severity score."
+        ]
+      ],
+      [
+        [
+          "分别观察两种结果",
+          "Measure two outcomes"
+        ],
+        [
+          "用衍射检查有序，用气体吸附检查孔隙。两项都有结果后，才按表3组合成 A–D。",
+          "Use diffraction for order and gas adsorption for porosity. Assign A–D from Table 3 only after both outcomes are known."
+        ]
+      ],
+      [
+        [
+          "补上过程信息",
+          "Add the process history"
+        ],
+        [
+          "写明时长、活化、后续暴露是否继续下降。作者建议的24 h是起始测试，不是证明永久稳定的终点。",
+          "Record duration, activation and whether further exposure causes more loss. The suggested 24 h is an initial test, not proof of permanent survival."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "下面的记录器是教学工具；没有真实实验输入，就不是对任何材料的新鉴定。",
+      "The record builder is a teaching tool. Without real experimental inputs it does not classify a material."
+    ],
+    "methodSource": [
+      "出处：正文表2–3，§§3–5.5。",
+      "Source: Main Tables 2–3; §§3–5.5."
+    ],
+    "evidenceTarget": "matrix",
+    "evidenceTitle": [
+      "同样保留衍射峰，结论可以不同",
+      "The same retained peaks can support different conclusions"
+    ],
+    "comparison": [
+      [
+        [
+          "情景一：孔隙没有测",
+          "Case 1: porosity unmeasured"
+        ],
+        [
+          "假设沸水处理后 PXRD 保留，但没有气体吸附结果。只能报告保留的有序信号，不能补成类别 A。",
+          "Suppose PXRD remains after boiling-water treatment, with no gas-adsorption result. Report retained order; do not fill in category A."
+        ]
+      ],
+      [
+        [
+          "情景二：测得孔隙丧失",
+          "Case 2: measured porosity loss"
+        ],
+        [
+          "若另有测量表明孔隙丧失，而部分有序仍在，表3对应 C。“没测”和“测不到孔隙”有不同证据身份。",
+          "If measurements instead show porosity loss with some order retained, Table 3 gives C. Unmeasured and measured loss are different evidence states."
+        ]
+      ]
+    ],
+    "inference": [
+      "两种情景均为教学假设。分类没有给出统一的保留率阈值；数字更大或字母更靠前，都不能直接换算为使用寿命。",
+      "Both scenarios are hypothetical. The proposal gives no universal retention threshold; neither number nor letter directly converts to service lifetime."
+    ],
+    "evidenceSource": [
+      "出处：正文表3，§5.5。情景为教学假设，不是新增实验记录。",
+      "Source: Main Table 3; §5.5. Hypothetical examples, not new experimental records."
+    ],
+    "question": [
+      "自检：只测 PXRD，为什么不能给出 6A？",
+      "Check: why is PXRD alone insufficient for 6A?"
+    ],
+    "answer": [
+      "6 只能说明选了沸水条件；A 还要求有序与孔隙两项都保留。缺少孔隙测量，字母就没有完整证据。时间仍需单独写明。",
+      "6 only identifies boiling-water exposure. A additionally requires retained order and porosity; without the pore measurement the letter lacks evidence. Duration must still be reported."
+    ],
+    "depthSections": {
+      "builder": 2
+    },
+    "audit": "P1, background/terminology: the original exposure cards used RH and the matrix used crystallinity/porosity before explaining their measurement. The builder is retained and introduced through a three-step reporting rationale.",
+    "science": "Rechecked main §§3–5.5 and Tables 2–3. A/B/C/D mapping and missing-evidence logic are preserved. The publisher lists no independent scientific SI. Added examples are explicitly hypothetical, with no numerical severity or lifetime conversion."
+  },
+  "mof-hydrolysis-atomistic": {
+    "lead": [
+      "计算机怎样看到一次很少发生的断键？本文用“推动探索”的方法寻找水解路径，再估计局部障碍。被加速看到的事件，不等于材料在水里的真实寿命。",
+      "How can a computer observe a rare bond-breaking event? This study encourages exploration to find a hydrolysis pathway and estimate its local barrier. An accelerated event is not a material’s lifetime in water."
+    ],
+    "foundationTitle": [
+      "先分清真实材料与计算模型",
+      "Separate the material from its computational model"
+    ],
+    "foundation": [
+      "MOF 的金属节点由有机连接体连成网络。水解是水参与改变这些连接的反应。本文研究的是七种含锌（Zn）框架中的局部事件，没有把整块材料泡水测寿命。",
+      "Organic linkers connect metal nodes in a MOF. Hydrolysis is a water-involving reaction that changes these connections. This study models local events in seven zinc (Zn) frameworks, rather than measuring the lifetime of an immersed sample."
+    ],
+    "terms": [
+      [
+        [
+          "反应力场 ReaxFF",
+          "Reactive force field, ReaxFF"
+        ],
+        [
+          "计算机用一组近似规则计算原子间作用，允许连接随运动改变。规则的适用性会影响预测。",
+          "Approximate rules calculate atomic interactions and allow connections to change during motion. The validity of those rules affects predictions."
+        ]
+      ],
+      [
+        [
+          "集体变量 CV",
+          "Collective variable, CV"
+        ],
+        [
+          "把很多原子的运动压缩成少数量来跟踪。这里用两个距离，分别看水靠近金属和氢转移。",
+          "A small set of quantities tracks many atomic motions. Here two distances track approach to the metal and hydrogen transfer."
+        ]
+      ],
+      [
+        [
+          "能垒与偏置",
+          "Barrier and bias"
+        ],
+        [
+          "能垒是反应路径上要跨过的自由能障碍。元动力学在已经探索的位置加偏置，促使模型去看别的位置。",
+          "A barrier is a free-energy obstacle along a reaction route. Metadynamics adds bias in explored regions to encourage visits elsewhere."
+        ]
+      ]
+    ],
+    "problem": [
+      "直接等罕见反应发生可能太慢，偏置让路径更容易被探索；代价是轨迹里的“几百皮秒”不再是自然条件下的等待时间。",
+      "Waiting directly for a rare event can be too slow. Bias makes exploration easier, but hundreds of picoseconds in that trajectory are no longer a natural waiting time."
+    ],
+    "methodTarget": "method",
+    "methodTitle": [
+      "两个距离怎样变成反应路径？",
+      "How do two distances reveal a pathway?"
+    ],
+    "steps": [
+      [
+        [
+          "选两把距离尺",
+          "Choose two distance measures"
+        ],
+        [
+          "CV-1 测 Zn 到水中氧的距离；CV-2 测连接体 O/N 到水中 H 的距离。Å 是长度单位，1 Å = 10⁻¹⁰ m。",
+          "CV-1 measures Zn to water oxygen; CV-2 measures linker O/N to water hydrogen. An ångström, Å, is 10⁻¹⁰ m."
+        ]
+      ],
+      [
+        [
+          "改变采样方式",
+          "Change how states are sampled"
+        ],
+        [
+          "反复运动并施加历史相关偏置，促使体系离开已访问区域。它不是给真实材料施加了同样的实验外力。",
+          "Run motion with history-dependent bias to leave visited regions. This is a sampling device, not an equivalent experimental treatment of a real material."
+        ]
+      ],
+      [
+        [
+          "读取模型自由能",
+          "Read model free energy"
+        ],
+        [
+          "在二维自由能面上比较反应前区域与路径高点，近似得到局部能垒；再用独立假设估计速率。",
+          "Compare the initial region and high points on the two-dimensional free-energy surface to approximate a local barrier; estimating a rate needs further assumptions."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "一个局部事件仍缺少多水协同、缺陷扩展和材料失效条件。采样轨迹、公式估计和实验寿命必须分别标记。",
+      "A local event still omits collective water effects, defect propagation and a material failure criterion. Label sampled trajectories, formula estimates and experimental lifetimes separately."
+    ],
+    "methodSource": [
+      "出处：正式正文§2、图1–3、表2；SI图S1–S5及吸附能定义。",
+      "Source: Final main §2, Figs. 1–3, Table 2; SI Figs. S1–S5 and adsorption-energy definition."
+    ],
+    "evidenceTarget": "sensitivity",
+    "evidenceTitle": [
+      "只多 1 kcal/mol，为什么时间比会明显变？",
+      "Why can an extra 1 kcal/mol strongly change the time ratio?"
+    ],
+    "comparison": [
+      [
+        [
+          "先规定比较条件",
+          "Set comparison conditions"
+        ],
+        [
+          "教学例子：温度都为300 K（约27 °C），两步骤具有相同前因子，只比较能垒相差1 kcal/mol。",
+          "Teaching example: both steps are at 300 K (about 27 °C), share a prefactor, and differ in barrier by 1 kcal/mol."
+        ]
+      ],
+      [
+        [
+          "再算相对变化",
+          "Then calculate relative change"
+        ],
+        [
+          "RT ≈ 0.596 kcal/mol，所以 exp(1/0.596) ≈ 5.35。这里是两个局部步骤的估计时间比，没有给任何材料新的寿命。",
+          "RT ≈ 0.596 kcal/mol, so exp(1/0.596) ≈ 5.35. This is an estimated time ratio for two local steps, not a new material lifetime."
+        ]
+      ]
+    ],
+    "equation": [
+      "τ₂/τ₁ = exp[ΔΔG‡/(RT)] ≈ 5.35",
+      "τ₂/τ₁ = exp[ΔΔG‡/(RT)] ≈ 5.35"
+    ],
+    "equationMeaning": [
+      "τ 是取速率倒数得到的局部时间尺度；ΔΔG‡ 是两个活化自由能之差；T 是开尔文温度；R = 0.001987 kcal·mol⁻¹·K⁻¹。exp(x) 表示 e 的 x 次方，e 约为2.718。式子只在相同前因子等假设下比较比例。",
+      "τ is a local timescale approximated by inverse rate; ΔΔG‡ is the activation-free-energy difference; T is kelvin temperature; R = 0.001987 kcal·mol⁻¹·K⁻¹. exp(x) means e raised to x, with e about 2.718. The comparison requires assumptions including a common prefactor."
+    ],
+    "inference": [
+      "论文的能垒误差没有完整统计定义，不能把这个教学比例变成寿命置信区间。水吸附能与水解能垒也是不同量。",
+      "The paper does not fully define barrier uncertainty statistically. This teaching ratio is not a lifetime confidence interval; water adsorption energy and hydrolysis barrier are also different quantities."
+    ],
+    "evidenceSource": [
+      "出处：正文§3的Eyring关系式和表2；本例为推导的教学比例，没有进行新模拟。",
+      "Source: Main §3 Eyring relation and Table 2; derived teaching ratio, no new simulation."
+    ],
+    "question": [
+      "自检：偏置轨迹在 450 ps 出现反应，能说材料450 ps后失效吗？",
+      "Check: does reaction at 450 ps in a biased trajectory mean failure after 450 ps?"
+    ],
+    "answer": [
+      "不能。偏置改变了事件出现的速度；记录的是局部事件，也没有定义整块材料失效。无偏置速率、反应如何传播及功能损失都需要额外证据。",
+      "No. Bias changes event timing, the event is local, and bulk failure has not been defined. Unbiased rates, propagation and functional loss require additional evidence."
+    ],
+    "depthSections": {
+      "correlation": 3
+    },
+    "audit": "P1, terminology and inference gap: the original method immediately used CV, ReaxFF, NVT and biased trajectories; the sensitivity equation lacked a high-school exponential bridge. The revision defines objects before equations and retains all seven reported model rows.",
+    "science": "Reread final main methods/Eyring discussion and SI energy definition. Added only the explicitly hypothetical 300 K ratio exp(1/(R*300)) = 5.35; no absolute lifetime, new fitted energy or measured uncertainty is supplied."
+  },
+  "mil100-water-matrices": {
+    "lead": [
+      "把材料放进水里，不仅水可能改变材料，材料也可能改变水。本文同时追踪晶体、孔隙、浸出和酸碱度，说明“看起来还在”为什么不够。",
+      "Water can change a material, and the material can change the water. This study follows crystal order, pores, leaching and acidity to explain why apparent survival is insufficient."
+    ],
+    "foundationTitle": [
+      "两边都观察：材料与水",
+      "Observe both the solid and the water"
+    ],
+    "foundation": [
+      "MIL-100(Fe) 是一种含铁（Fe）的多孔金属有机框架。水分子和溶液成分接触孔内表面；材料的组分也可能进入液体，使两边同时变化。",
+      "MIL-100(Fe) is an iron-containing porous metal–organic framework. Water and dissolved species contact its internal surfaces; material components can also enter the liquid, changing both sides."
+    ],
+    "terms": [
+      [
+        [
+          "水介质",
+          "Water matrix"
+        ],
+        [
+          "这里比较去离子水与污水处理出水。后者含其他溶质；同样是水，不代表缓冲能力和背景铁浓度相同。",
+          "The study compares deionized water with wastewater-treatment effluent. Dissolved substances in the latter alter buffering and background iron."
+        ]
+      ],
+      [
+        [
+          "浸出",
+          "Leaching"
+        ],
+        [
+          "材料中的元素或连接体进入液相。测液体浓度时需考虑原来水中已有的背景，不能把全部信号归给材料。",
+          "Elements or linkers enter the liquid. Its original background must be considered before attributing the entire measured concentration to the material."
+        ]
+      ],
+      [
+        [
+          "pH 是对数",
+          "pH is logarithmic"
+        ],
+        [
+          "pH 每降低1，氢离子活度约增大10倍。活度表示参与化学平衡的有效浓度；真实加酸量还受缓冲影响。",
+          "A one-unit pH decrease corresponds to a tenfold hydrogen-ion activity increase. Activity is an effective concentration for equilibria; acid demand also depends on buffering."
+        ]
+      ]
+    ],
+    "problem": [
+      "只测回收粉末会漏掉溶液变化；只测pH也不知道孔是否保留。本研究把两类证据配对，但正文与SI的若干数值冲突仍需要保留。",
+      "Recovered powder alone misses solution changes, while pH alone cannot reveal retained pores. The study pairs these observations, with several main-text/SI numerical conflicts still unresolved."
+    ],
+    "methodTarget": "evidence",
+    "methodTitle": [
+      "为什么同一次暴露要分成几条观察路线？",
+      "Why follow several observation routes after exposure?"
+    ],
+    "steps": [
+      [
+        [
+          "记录水的起点",
+          "Record the water baseline"
+        ],
+        [
+          "记录介质、初始pH与背景铁；同时规定投加量、温度和时间，才知道测后变化相对什么而言。",
+          "Record medium, initial pH and background iron, together with dose, temperature and duration, to define the baseline."
+        ]
+      ],
+      [
+        [
+          "检查回收固体",
+          "Examine recovered solid"
+        ],
+        [
+          "PXRD 用 X 射线散射看有序排列；气体吸附再估计 BET 比表面积，即每克处理后固体可供探针气体接近的表面积。",
+          "PXRD uses X-ray scattering to examine order; gas adsorption estimates BET area, the probe-accessible area per gram of prepared solid."
+        ]
+      ],
+      [
+        [
+          "检查液体",
+          "Examine the liquid"
+        ],
+        [
+          "测pH和铁／连接体进入液体的量，再与固体证据合并。残余峰、面积下降和酸化可以同时出现。",
+          "Measure pH and iron/linker entering the liquid, then combine these with solid evidence. Residual peaks, reduced area and acidification can coexist."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "这些是不同测量窗口，不是同一个“稳定百分比”。氮气测得的面积不直接等于水中稀土可用位点数。",
+      "These measurements are different windows, not one stability percentage. Nitrogen-accessible area is not a direct count of rare-earth binding sites in water."
+    ],
+    "methodSource": [
+      "出处：正文§§2–3、图1–5、表1；SI方法和表S4–S6。",
+      "Source: Main §§2–3, Figs. 1–5 and Table 1; SI methods, Tables S4–S6."
+    ],
+    "evidenceTarget": "ph",
+    "evidenceTitle": [
+      "pH 从6到3，为什么不是“酸性增加50%”？",
+      "Why is pH 6 to 3 not a 50% acidity increase?"
+    ],
+    "comparison": [
+      [
+        [
+          "数字上的下降",
+          "The numerical decrease"
+        ],
+        [
+          "教学起点6、终点3，相差3个pH单位。直接用(6−3)/6算百分比，会把对数刻度误当线性刻度。",
+          "A teaching change from 6 to 3 is three pH units. Calculating (6−3)/6 treats a logarithmic scale as linear."
+        ]
+      ],
+      [
+        [
+          "对应的化学比例",
+          "The corresponding chemical ratio"
+        ],
+        [
+          "氢离子活度的终点／起点 = 10³ = 1000。这个比值不等于必须加入1000倍的酸。",
+          "Final/initial hydrogen-ion activity = 10³ = 1000. This does not imply 1000 times as much added acid."
+        ]
+      ]
+    ],
+    "equation": [
+      "a(H⁺)终 / a(H⁺)初 = 10^(pH初 − pH终)",
+      "a(H⁺)final / a(H⁺)initial = 10^(pHinitial − pHfinal)"
+    ],
+    "equationMeaning": [
+      "a(H⁺) 是按标准态归一的氢离子活度；pH = −log₁₀a(H⁺)。这个通用定义解释下面的教学滑块，没有重新生成论文的pH时间曲线。",
+      "a(H⁺) is hydrogen-ion activity relative to its standard state; pH = −log₁₀a(H⁺). This general definition explains the teaching slider without reconstructing a paper time trace."
+    ],
+    "inference": [
+      "出水有缓冲能力，可能让pH早期变化较小；这不保证长期恒定，也不能单独证明材料没有变化。",
+      "Buffering can reduce the initial pH change in effluent, but does not guarantee long-term constancy or an unchanged material."
+    ],
+    "evidenceSource": [
+      "出处：正文§3.5／图5及SI表S5–S6提供论文背景；pH从6到3为明确假设的教学算例。",
+      "Source: Main §3.5 / Fig. 5 and SI S5–S6 for context; pH 6→3 is an explicitly hypothetical teaching example."
+    ],
+    "question": [
+      "自检：保留PXRD峰、BET下降、pH下降，三个结果矛盾吗？",
+      "Check: are retained PXRD peaks, lower BET area and falling pH contradictory?"
+    ],
+    "answer": [
+      "不矛盾。它们分别看有序部分、探针能进入的表面和溶液化学。材料可以留下有序部分，同时孔可接近性和液体组成发生变化。",
+      "No. They examine ordered regions, probe-accessible surface and solution chemistry. Ordered material may remain while pore accessibility and liquid composition change."
+    ],
+    "depthSections": {
+      "drift": 3
+    },
+    "audit": "P1, background/formula gap: the page used matrix, BET and hydrogen-ion activity before an intuitive measurement story. Added a two-sided workflow and a pH scale example; retained the existing explicit main/SI discrepancies.",
+    "science": "Reread main results/methods, Table 1 and SI S4–S6. No conflicting iron concentration is selected as uniquely correct. The added 6→3 example is hypothetical and uses the pH definition, not a digitized experimental trace."
+  },
+  "cmpo-mil101-ree": {
+    "lead": [
+      "给多孔材料装上能结合稀土的基团，能否既抓得住、又挑得准？本文把含磷基团接到MIL-101上，再分别检验容量、竞争偏好和连接保留。",
+      "Can a porous material equipped with rare-earth-binding groups capture effectively and selectively? This study attaches phosphorus-containing groups to MIL-101 and separately tests capacity, competition and attachment retention."
+    ],
+    "foundationTitle": [
+      "支架、抓手、被捕集的离子",
+      "Scaffold, binding group and captured ion"
+    ],
+    "foundation": [
+      "MIL-101(Cr) 是含铬节点与有机连接体组成的多孔支架。Eu 是铕，Y 是钇，属于稀土元素；Zn 是锌，作为另一类竞争金属。溶液里的带电粒子叫离子。",
+      "MIL-101(Cr) is a porous scaffold of chromium-containing nodes and organic linkers. Eu is europium and Y yttrium, both rare-earth elements; Zn is zinc, another competing metal. Charged dissolved species are ions."
+    ],
+    "terms": [
+      [
+        [
+          "螯合基团",
+          "Chelating group"
+        ],
+        [
+          "一个分子基团可以用多个结合位置抓住同一金属离子，称螯合。“抓手”只是结合功能的比喻，不规定唯一原子构型。",
+          "A group can bind one metal ion through multiple donor positions: chelation. “Gripper” describes binding function, not a uniquely established atomic geometry."
+        ]
+      ],
+      [
+        [
+          "每克容量 q",
+          "Capacity per gram, q"
+        ],
+        [
+          "转移到固体的目标元素质量除以吸附剂质量，单位mg/g。它随进料、pH和接触时间变化。",
+          "Mass of target transferred to the solid divided by adsorbent mass, in mg/g. It depends on feed, pH and contact time."
+        ]
+      ],
+      [
+        [
+          "分配系数 Kd",
+          "Distribution coefficient, Kd"
+        ],
+        [
+          "固体每克所含目标量与平衡液体浓度之比，单位mL/g。比较两个离子的Kd，才得到这里的分离系数。",
+          "Solid loading per gram divided by equilibrium liquid concentration, in mL/g. Comparing two ions’ Kd values gives the separation factor used here."
+        ]
+      ]
+    ],
+    "problem": [
+      "母体耐酸，不代表新增基团不会掉落；单离子容量高，也不代表混合液里选择性好。因此作者分别设计改性对照、混合竞争和稳定性检查。",
+      "An acid-resistant support need not retain every attached group, and high single-ion capacity need not mean good mixture selectivity. Functionalization controls, competition and stability tests address these separate questions."
+    ],
+    "methodTarget": "route",
+    "methodTitle": [
+      "三步接枝不是三个同义名称",
+      "Three functionalization steps serve different purposes"
+    ],
+    "steps": [
+      [
+        [
+          "建立锚点",
+          "Create anchors"
+        ],
+        [
+          "氯甲基化先给有机连接体增加可继续反应的位置；它本身还不是最终抓手。",
+          "Chloromethylation creates positions for subsequent chemistry on the organic linker; it is not yet the final binding group."
+        ]
+      ],
+      [
+        [
+          "加连接臂",
+          "Add a spacer"
+        ],
+        [
+          "二胺把后续偶联需要的胺端引入。这里的NH₂中间体不是直接由氨基连接体合成的另一种MOF。",
+          "A diamine supplies the amine end for later coupling. This NH₂ intermediate is not a separate MOF synthesized directly from an amino linker."
+        ]
+      ],
+      [
+        [
+          "接上含磷基团并检验",
+          "Attach phosphorus groups and test"
+        ],
+        [
+          "最终偶联形成作者所称CMPO型基团，再测P含量与Eu吸附。前两步对照帮助判断完整基团的重要性。",
+          "Final coupling creates the authors’ CMPO-type group; P content and Eu uptake are measured. The intermediate controls help test the importance of the complete group."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "P含量是负载估计，不是直接数出全部水中可接近的位点；面积下降也可能含接枝增重和孔占据的贡献。",
+      "P content estimates loading, not the count of all water-accessible sites. Lower area can also reflect added mass and pore occupation."
+    ],
+    "methodSource": [
+      "出处：正文合成部分、图3、表1及吸附对照；SI§§1–2。",
+      "Source: Main synthesis section, Fig. 3, Table 1 and adsorption controls; SI §§1–2."
+    ],
+    "evidenceTarget": "competition",
+    "evidenceTitle": [
+      "偏好Eu，为什么仍不等于高回收率？",
+      "Why does preference for Eu not guarantee high recovery?"
+    ],
+    "comparison": [
+      [
+        [
+          "偏好：比较两种离子",
+          "Preference compares two ions"
+        ],
+        [
+          "表2报告Eu/Y分离系数3.2：在该混合条件下Eu更偏向固体。它没有表示初始Eu中有3.2%或100%被回收。",
+          "Table 2 reports Eu/Y separation factor 3.2: Eu favours the solid more under that mixture condition. It says neither 3.2% nor 100% of initial Eu was recovered."
+        ]
+      ],
+      [
+        [
+          "回收分数：还要知道用量",
+          "Transferred fraction also needs dosage"
+        ],
+        [
+          "用报告的Eu Kd=149 mL/g和V/m=400 mL/g作质量守恒演示：149/(149+400)≈27.1%。这是按已报告值推导的比例，不是新增实测回收率。",
+          "A mass-balance illustration using reported Eu Kd=149 mL/g and V/m=400 mL/g gives 149/(149+400)≈27.1%. This is derived from reported values, not a new recovery measurement."
+        ]
+      ]
+    ],
+    "equation": [
+      "r = Kd / (Kd + V/m)",
+      "r = Kd / (Kd + V/m)"
+    ],
+    "equationMeaning": [
+      "r 为初始溶液中转移到固体的比例；V 为液体体积，m 为固体质量。假设目标元素只在固体和液体两处，且该Kd适用。V/m和Kd必须用相同单位；实际回收产品还需解吸和收集。",
+      "r is the fraction of initial dissolved target transferred to solid; V is liquid volume and m solid mass. It assumes a two-phase balance and an applicable Kd. V/m and Kd must share units; product recovery additionally needs desorption and collection."
+    ],
+    "inference": [
+      "滑块改变固液比时保持Kd不变，是教学假设；真实竞争、饱和或pH变化都可能改变Kd。",
+      "Holding Kd constant as dosage changes is a teaching assumption; real competition, saturation or pH changes can alter it."
+    ],
+    "evidenceSource": [
+      "出处：正文Kd定义及表2；按两相物料衡算推导。正文与SI的不同批次继续分开。",
+      "Source: Main Kd definition and Table 2; derived two-phase balance. Main and SI batch distinctions remain separate."
+    ],
+    "question": [
+      "自检：为什么不能把12.46 mg/g与3.2放在一起直接排名？",
+      "Check: why can 12.46 mg/g and 3.2 not directly rank the same performance?"
+    ],
+    "answer": [
+      "前者是单离子等温线拟合的容量上限，后者是特定混合液的分配偏好比值。对象、单位和条件都不同，必须先决定要比较容量还是分离。",
+      "The first is a fitted single-ion capacity limit; the second is a partitioning preference in a specific mixture. Their objects, units and conditions differ; decide whether capacity or separation is the target."
+    ],
+    "depthSections": {
+      "kinetics": 2
+    },
+    "audit": "P1, background/denominator gap: the original opening used chelating groups and separation factors before defining them. Added scaffold/group/ion prerequisites, synthesis-purpose flow and a worked distribution-to-transfer example.",
+    "science": "Reread main synthesis, adsorption equations and Table 2 plus SI batch/porosity notes. Worked r=149/549=0.2714 uses the reported rounded Kd and V/m with explicit mass-balance assumptions; the published SF remains 3.2, not replaced by rounded-Kd division."
+  },
+  "defect-phosphate-uio66-yb": {
+    "lead": [
+      "增加可结合稀土的位置，是否一定让分离更好？这篇论文先加磷酸基、再调缺陷，得到更高Yb容量，却没有让每一种竞争选择性同步提高。",
+      "Does adding rare-earth binding opportunities always improve separation? This paper adds phosphate groups and then tunes defects, raising Yb capacity without improving every competitive selectivity."
+    ],
+    "foundationTitle": [
+      "“更多位置”与“更会挑选”是两个问题",
+      "More opportunities and better discrimination are different"
+    ],
+    "foundation": [
+      "UiO-66 是由含锆节点和有机连接体组成的多孔网络；Yb 是镱，La 是镧，都是稀土元素。本文的OP表示磷酸基修饰样品，ST1–ST3表示随后三种处理条件，不是稳定性等级。",
+      "UiO-66 is a porous network of zirconium-containing nodes and organic linkers. Yb is ytterbium and La lanthanum, both rare earths. OP is the phosphate-functionalized sample; ST1–ST3 identify three subsequent treatments, not stability grades."
+    ],
+    "terms": [
+      [
+        [
+          "缺陷",
+          "Defect"
+        ],
+        [
+          "偏离理想完整连接的部位。少一些连接可能暴露结合位置，也可能削弱框架；不能自动等同于更好。",
+          "A departure from ideal connectivity. Missing connections may expose binding opportunities but can also weaken the framework; they are not automatically beneficial."
+        ]
+      ],
+      [
+        [
+          "TGA 与 EPR",
+          "TGA and EPR"
+        ],
+        [
+          "热重分析（TGA）记录加热时质量怎样变化，再按组成假设推算缺陷。电子顺磁共振（EPR）检测未成对电子的磁响应，提供缺陷相关信号；都不是逐个拍到所有缺陷。",
+          "Thermogravimetric analysis (TGA) records mass changes on heating and infers defects using composition assumptions. Electron paramagnetic resonance (EPR) detects magnetic responses of unpaired electrons. Neither directly images and counts every defect."
+        ]
+      ],
+      [
+        [
+          "ζ 电位",
+          "Zeta potential"
+        ],
+        [
+          "由分散颗粒在电场中的运动推算的电位指标，用于讨论表面电荷环境；它不是某个原子位点的直接电荷。",
+          "A potential inferred from dispersed-particle motion in an electric field, used to discuss the charge environment; it is not the direct charge on one atomic site."
+        ]
+      ]
+    ],
+    "problem": [
+      "本文想同时调节结合基团与缺陷。评价必须把“装入多少Yb”“比La更偏爱Yb多少”和“多轮后剩多少能力”分开，因为三者分母不同。",
+      "The study tunes binding groups and defects together. Evaluation must separate Yb loading, preference over La, and retention over cycles because their denominators differ."
+    ],
+    "methodTarget": "defects",
+    "methodTitle": [
+      "缺陷数为什么依赖模型？",
+      "Why does a defect count depend on a model?"
+    ],
+    "steps": [
+      [
+        [
+          "先量失重",
+          "Measure mass loss"
+        ],
+        [
+          "TGA给出指定加热范围内的质量变化。这里ST2使用20.71%的报告失重，不是直接读取“3.79个缺陷”。",
+          "TGA measures mass change across a heating interval. Here ST2 uses a reported 20.71% loss, not a direct reading of “3.79 defects”."
+        ]
+      ],
+      [
+        [
+          "规定完整样品应如何失重",
+          "Define the intact-material reference"
+        ],
+        [
+          "SI用完整材料理论失重L=56.30%及每Zr₆的归一化关系建立参照。客体、修饰和残渣假设会影响它。",
+          "The SI uses theoretical intact loss L=56.30% and normalization per Zr₆. Guests, functionalization and residue assumptions affect that reference."
+        ]
+      ],
+      [
+        [
+          "在假设内换算",
+          "Convert within those assumptions"
+        ],
+        [
+          "n=6(1−20.71/L)得到约3.79。它是按SI模型得到的平均缺失连接体数，不是每个节点都拍到同一构型。",
+          "n=6(1−20.71/L) gives about 3.79. This is an average missing-linker estimate from the SI model, not an image of identical configurations at every node."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "下面滑块改变的是理论参照假设，不是在网页上重新合成材料。EPR、TGA和孔隙证据共同讨论缺陷，不能互相替代。",
+      "The slider changes a reference assumption; it does not synthesize a material. EPR, TGA and pore evidence contribute different information."
+    ],
+    "methodSource": [
+      "出处：正文§3.1；SI的TGA推导、图S1–S2和表S1。",
+      "Source: Main §3.1; SI TGA derivation and Figs. S1–S2 / Table S1."
+    ],
+    "evidenceTarget": "selectivity",
+    "evidenceTitle": [
+      "看同一对离子，才看得出权衡",
+      "Compare the same ion pair to reveal the trade-off"
+    ],
+    "comparison": [
+      [
+        [
+          "单离子条件容量提高",
+          "Single-ion conditional loading rises"
+        ],
+        [
+          "OP→ST2：83.11→132.76 mg Yb/g。这是指定进料、pH和温度下的吸附量，不是每个条件都能达到的保证。",
+          "OP→ST2: 83.11→132.76 mg Yb/g. These loadings apply to the specified feed, pH and temperature, not every condition."
+        ]
+      ],
+      [
+        [
+          "混合液Yb/La偏好下降",
+          "Yb/La preference falls in a mixture"
+        ],
+        [
+          "OP→ST2：4.650→2.518。两者仍大于1，说明该条件下仍偏好Yb，但增强容量没有增强这对离子的分离偏好。",
+          "OP→ST2: 4.650→2.518. Both exceed 1 and still favour Yb under these conditions, but higher capacity did not improve this pair’s preference."
+        ]
+      ]
+    ],
+    "equation": [
+      "S(Yb/La) = Kd,Yb / Kd,La",
+      "S(Yb/La) = Kd,Yb / Kd,La"
+    ],
+    "equationMeaning": [
+      "Kd是固体每克负载量与平衡液体浓度之比；两个Kd在同一竞争实验中相除，得到无单位选择性。1表示等分配偏好，不是两种离子的容量必然相等。",
+      "Kd is loading per gram of solid divided by equilibrium liquid concentration. Dividing two Kd values from the same competitive experiment gives dimensionless selectivity. 1 denotes equal partitioning preference, not necessarily equal capacities."
+    ],
+    "inference": [
+      "不能推成“所有选择性都下降”：原文Yb/Nd的趋势不同。也不能把单离子容量比冒充混合液中的选择性。",
+      "Do not infer that all selectivities decrease: Yb/Nd behaves differently. A single-ion capacity ratio also cannot replace competitive selectivity."
+    ],
+    "evidenceSource": [
+      "出处：正文§3.2、图7b、式12–13；SI图S2。单离子与混合液的不同条件分别保留。",
+      "Source: Main §3.2, Fig. 7b and eqs. 12–13; SI Fig. S2. Different single-ion and mixture protocols are retained."
+    ],
+    "question": [
+      "自检：面积下降、报告孔宽增大，是否证明总孔隙增加？",
+      "Check: do lower area and larger reported pore width prove more total porosity?"
+    ],
+    "answer": [
+      "不能。面积、孔宽和总孔体积是不同量；这篇论文总孔体积也下降。孔宽还依赖测量与模型，不能直接当水合Yb进入的精确窗口。",
+      "No. Area, pore width and total pore volume are different quantities; total volume also decreases here. Reported width depends on measurement/model choices and is not an exact entry window for hydrated Yb."
+    ],
+    "depthSections": {
+      "isotherms": 3,
+      "kinetics": 2
+    },
+    "audit": "P1, terminology/evidence gap: EPR, TGA, zeta potential and modeled defects appeared before operational definitions. Added their roles, the TGA inference chain and a paired capacity/selectivity comparison.",
+    "science": "Reread final main §3.1/§3.2, Fig.7, eqs.12–13 and SI TGA model/Table S1/Fig.S2. Preserved TGA assumptions, Ar rather than N2 measurement, distinct single-ion/mixture conditions and the existing main/SI kinetic inconsistency."
+  }
+}

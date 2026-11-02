@@ -25,3 +25,17 @@ Metadata from expanded publisher history: received2025-05-28,revised/accepted202
 
 mof-hydrolysis-atomistic-publisher.html SHA256 a177cc252fb2e6489bfdd00a4d4bab3b748161d1774d56486aa5caa9fefa467a
 mof-hydrolysis-atomistic-si.docx SHA256 513f7cf0f17b67f552dd025c0625961850eb2070fa76b86dc5ee8a740bfa8094
+
+## High-school teaching revision — 2026-11-02
+
+P1, terminology and inference gap: the original method immediately used CV, ReaxFF, NVT and biased trajectories; the sensitivity equation lacked a high-school exponential bridge. The revision defines objects before equations and retains all seven reported model rows.
+
+New method guide: Source: Final main §2, Figs. 1–3, Table 2; SI Figs. S1–S5 and adsorption-energy definition.
+
+New evidence comparison: Source: Main §3 Eyring relation and Table 2; derived teaching ratio, no new simulation.
+
+Reread final main methods/Eyring discussion and SI energy definition. Added only the explicitly hypothetical 300 K ratio exp(1/(R*300)) = 5.35; no absolute lifetime, new fitted energy or measured uncertainty is supplied.
+
+Reader task: Check: does reaction at 450 ps in a biased trajectory mean failure after 450 ps? No. Bias changes event timing, the event is local, and bulk failure has not been defined. Unbiased rates, propagation and functional loss require additional evidence.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

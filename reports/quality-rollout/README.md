@@ -11,3 +11,5 @@ Scientific verification and teaching reviews are in the four linked report direc
 Release checks: all 43 full static page checks; full 43-page browser regression (3,993 actions); high-school structure checks (108 actions); review-transfer checks (324 actions). Catalogue and publication metadata checks are rerun in the release checkout with the existing Playwright installation. The initial missing Playwright-module error in two check commands was an environment lookup issue, not a page failure; the commands were rerun with the configured module path.
 
 Deployments target the existing GitHub Pages source, main branch, repository root. Content is committed before generating update timestamps. A release is confirmed only when Pages reports the corresponding commit and the online content/assets match.
+
+- Batch 1: [before audit](batch-1-before.md), [science / teaching / technical review](batch-1-review.md), [browser checks](batch-1-technical.json).

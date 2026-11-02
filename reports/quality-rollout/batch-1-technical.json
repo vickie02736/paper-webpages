@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "batch": 1,
+  "pages": [
+    "hydrolytic-stability-grading",
+    "mof-hydrolysis-atomistic",
+    "mil100-water-matrices",
+    "cmpo-mil101-ree",
+    "defect-phosphate-uio66-yb"
+  ],
+  "viewportLanguageDepthCombinations": 90,
+  "sectionAnchorChecks": 882,
+  "checks": [
+    "default foundations/evidence, progressive method and details",
+    "Chinese/English rendered text",
+    "keyboard Enter/Space, focus and native checkpoint",
+    "language/depth preserve expanded state and scroll",
+    "all section anchors; no page overflow or local HTTP/page errors",
+    "direct English reload"
+  ],
+  "screenshots": "/tmp/mof-quality-batch-1",
+  "limits": [
+    "source accuracy and teaching audit are separate",
+    "no human comprehension or real screen-reader test",
+    "no new image loading controls in these additions"
+  ]
+}

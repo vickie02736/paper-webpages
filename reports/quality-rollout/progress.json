@@ -12,23 +12,23 @@
       "papers": [
         {
           "slug": "hydrolytic-stability-grading",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "mof-hydrolysis-atomistic",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "mil100-water-matrices",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "cmpo-mil101-ree",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "defect-phosphate-uio66-yb",
-          "status": "queued"
+          "status": "validated-for-publication"
         }
       ]
     },

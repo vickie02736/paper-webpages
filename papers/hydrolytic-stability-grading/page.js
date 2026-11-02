@@ -51,7 +51,7 @@
   document.getElementById('missing-example').addEventListener('click', () => preset([6, 168, 'retained', 'unknown', 'unknown', 'missing']));
   document.getElementById('porous-example').addEventListener('click', () => preset([5, 24, 'lost', 'retained', 'plateau', 'reported']));
   document.getElementById('reset').addEventListener('click', () => preset([4, 24, 'retained', 'unknown', 'unknown', 'missing']));
-  window.AtlasPaper.init({
+  window.AtlasPaper.init({depth:window.PaperLesson.depth,
     shortTitle: 'MOF · A–D',
     title: {zh: 'MOF 水稳定性：分级之前，先把条件说清', en: 'MOF water stability: state the conditions before grading'},
     sections: [
