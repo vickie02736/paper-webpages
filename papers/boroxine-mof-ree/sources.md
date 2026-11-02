@@ -29,3 +29,17 @@ S13/14impuritysetsdistinctfromS10all7REErough50. S13C0K52.7129Mg49.5619Ca39.9372
 boroxine-mof-ree-publisher.html SHA256 0152f694f86e1a6e0612c3391bb9b22ed16f88c71edbd2b4a5a72a2f3e659edd
 
 boroxine-mof-ree-si.docx SHA256 12e3acdfe7188cf5ad75f717fe77a83ff9be6e0336087e815198ee12d452528f
+
+## High-school teaching revision — 2026-11-02
+
+P1 process / denominator: recovery is a recipe list without explaining each stream; impurity comparison needs a worked two-element balance. Teach sacrificial use first, preserve log-axis versus log-metric distinction and show why simultaneous high removals do not establish purity.
+
+New method guide: Source: Main §§2.6, 3.4 and original Fig. 6; SI Table S15 and Figs. S20–S22 provide framework-change context.
+
+New evidence comparison: Source: MOF-B1 initial/equilibrium concentrations in SI Table S14; recovery evidence in main Fig. 6.
+
+Reread main sacrificial-material/irreversible-collapse statements, visually rechecked Fig6 route and SI TablesS14/S15 plus water/collapse evidence.96.99/98.74% are explicit calculations from S14, not product purity. Retained negative Langmuir-affinity warning, Zn blank, concurrent hydrolysis and unresolved structural assignment.
+
+Reader task: Check: do Yb₂O₃ diffraction peaks establish purity and total recovery? No. Peaks support that crystalline phase, but do not quantify every trace impurity or close the feed-to-product Yb balance. Product elemental analysis, yield and Yb in mother liquor and washes are needed.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

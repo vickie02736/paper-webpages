@@ -1,0 +1,131 @@
+{
+  "status": "PASS",
+  "scope": "Computed foreground/background contrast for new lesson headings, paragraphs, checkpoints and depth controls; all at least 4.5:1",
+  "rows": [
+    {
+      "slug": "hydrolytic-stability-grading",
+      "count": 32,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "mof-hydrolysis-atomistic",
+      "count": 34,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "mil100-water-matrices",
+      "count": 34,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "cmpo-mil101-ree",
+      "count": 34,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "defect-phosphate-uio66-yb",
+      "count": 34,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "mof-stability-three-axes",
+      "count": 32,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "mof-kinetic-stability",
+      "count": 32,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "water-stable-mof-design",
+      "count": 32,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "hydrolytic-stability-benchmark",
+      "count": 34,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "water-dual-impact",
+      "count": 34,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "uio66-dangling-linkers",
+      "count": 32,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "ree-mof-critical-review",
+      "count": 34,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "ree-mof-targeted-review",
+      "count": 34,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "ree-porous-framework-review",
+      "count": 32,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "ree-mof-protocol",
+      "count": 32,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "functionalized-cr-mil101",
+      "count": 34,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "acrylic-mil101-scandium",
+      "count": 32,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "dual-functional-uio66-gd",
+      "count": 34,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "uio66-zif8-ree",
+      "count": 34,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "organophosphorus-mil101",
+      "count": 34,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "dga-mil101-europium",
+      "count": 34,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "mil101-sba15-lu-y",
+      "count": 32,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "dtpa-mil101-ammonium",
+      "count": 34,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "hkust1-lutetium",
+      "count": 34,
+      "minimum": 8.001152610486862
+    },
+    {
+      "slug": "boroxine-mof-ree",
+      "count": 34,
+      "minimum": 8.001152610486862
+    }
+  ]
+}

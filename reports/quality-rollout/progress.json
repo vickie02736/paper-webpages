@@ -102,23 +102,28 @@
       "papers": [
         {
           "slug": "functionalized-cr-mil101",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "dc6be69a110e5d7379544dde41fb8c81f8b9b9b0"
         },
         {
           "slug": "acrylic-mil101-scandium",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "dc6be69a110e5d7379544dde41fb8c81f8b9b9b0"
         },
         {
           "slug": "dual-functional-uio66-gd",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "dc6be69a110e5d7379544dde41fb8c81f8b9b9b0"
         },
         {
           "slug": "uio66-zif8-ree",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "dc6be69a110e5d7379544dde41fb8c81f8b9b9b0"
         },
         {
           "slug": "organophosphorus-mil101",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "dc6be69a110e5d7379544dde41fb8c81f8b9b9b0"
         }
       ]
     },
@@ -127,23 +132,23 @@
       "papers": [
         {
           "slug": "dga-mil101-europium",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "mil101-sba15-lu-y",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "dtpa-mil101-ammonium",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "hkust1-lutetium",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "boroxine-mof-ree",
-          "status": "queued"
+          "status": "validated-for-publication"
         }
       ]
     }

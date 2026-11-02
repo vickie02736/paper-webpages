@@ -1,0 +1,44 @@
+{
+  "commit": "dc6be69a110e5d7379544dde41fb8c81f8b9b9b0",
+  "pagesBuild": "built",
+  "onlineChecks": [
+    {
+      "path": "papers/functionalized-cr-mil101/",
+      "status": 200,
+      "newLessonMarkers": true
+    },
+    {
+      "path": "papers/acrylic-mil101-scandium/",
+      "status": 200,
+      "newLessonMarkers": true
+    },
+    {
+      "path": "papers/dual-functional-uio66-gd/",
+      "status": 200,
+      "newLessonMarkers": true
+    },
+    {
+      "path": "papers/uio66-zif8-ree/",
+      "status": 200,
+      "newLessonMarkers": true
+    },
+    {
+      "path": "papers/organophosphorus-mil101/",
+      "status": 200,
+      "newLessonMarkers": true
+    },
+    {
+      "path": "assets/paper-lesson.js",
+      "sha256Matches": true
+    },
+    {
+      "path": "assets/paper-lesson.css",
+      "sha256Matches": true
+    },
+    {
+      "path": "references/paper-catalog.json",
+      "entriesPresent": true,
+      "firstDatesAndCreationTimesUnchanged": true
+    }
+  ]
+}

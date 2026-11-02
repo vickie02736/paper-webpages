@@ -35,3 +35,17 @@ Units2branchesMIL101LangmuirLu63.4Y25.3mg/g,teachingapproximatemolarmasses175/88
 Transport2branchesSDMtable4all12numbersunitsandR²;notfitnewtimecurves. Regeneration2branchesFig8a/bqualitativenormalizedretention,noinventedbarheights. Total15scientificchoicebranchesplusreported-fitCeinput;scienceoutputscheckedallcaseslanguages/widths.
 
 Final HTML SHA256 60b3ae1f607239962e0945f2b21592eef2ee14221744b4870217577e02f92add
+
+## High-school teaching revision — 2026-11-02
+
+P1 method background / inference: transport introduces SDM and Crank–Nicolson without mapping ion movement; capacity warns about large SipsQm but does not explain why equal R2 can coexist with divergent limits. Add physical steps, assumptions and model-limit comparison.
+
+New method guide: Source: Main §2.3 model and boundary conditions, §3.2.2, Fig. 7 and Table 4; no independent SI is listed.
+
+New evidence comparison: Source: Main §2.3, Table 2 and Fig. 6. Both Qₘ values retain their original meanings; the larger is not selected as a performance record.
+
+Reread main §2.3 SDM assumptions, Table2 (SBA-Y17.9/330.4), Fig6 and §3.2.2/Table4. No listed independent SI. Preserved separate single-ion feeds, unmatched functionalization routes and rate-unit uncertainty. No new solver, kinetic curve or competitive selectivity is inferred.
+
+Reader task: Check: does a larger Sips Qₘ with high R² prove the sorbent holds more? No. It is a model estimate of a limit requiring near-saturation data and model checking. Agreement within the observed range does not independently validate a distant asymptote.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

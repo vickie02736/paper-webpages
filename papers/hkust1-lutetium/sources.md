@@ -44,3 +44,17 @@ Local draft. Page-only static and JS syntax checks passed. `/tmp/lutetium-qa.cjs
 
 - `hkust1-lutetium.pdf` SHA-256: `63156702a749ef9dfd66ea9a565761900cf001b52f49830fa371df7ca160c37b` (2,161,331 bytes)
 - `hkust1-lutetium-si.docx` SHA-256: `86d05aaaaf90dcf9760dfee7bc26778d66c35290d7a451d72f2de8301b168bd9` (3,107,082 bytes)
+
+## High-school teaching revision — 2026-11-02
+
+P1 quantity / inference: trace already supplies conditions but needs staged µg→mg→mg/g arithmetic before the slider. Mechanism lists FTIR/XPS without connecting their outputs to the missing exchange balance. Add a counting foundation and observation-to-hypothesis guide.
+
+New method guide: Source: Main §3.7 and Fig. 7; separate competition evidence in SI Fig. S3.
+
+New evidence comparison: Source: Main §3.6 and Fig. 6b conditions of 50 μg/L, 400 mL and 50 mg; capacity and cycling separately in Table 1 and Fig. 5b.
+
+Rechecked final main §3.6 trace conditions, §3.7/Fig7, reuse values and SI figure scope.0.4mg/g is feed-inventory arithmetic, not new capacity. XPS fractions remain surface observations; no Cu/Lu exchange stoichiometry or clinical177Lu validation inferred. Missing background concentrations remain explicit.
+
+Reader task: Check: can high trace removal validate a capacity of 512.82 mg/g? No. This experiment supplies at most 0.4 mg/g and never approaches that capacity scale. The 512.82 mg/g value is a Langmuir parameter from another concentration series and must be judged using its data and model.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

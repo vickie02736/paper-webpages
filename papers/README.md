@@ -56,6 +56,8 @@ Opening these pages does not require ChatGPT sign-in. Each supports Chinese and 
 - [Defect/phosphate UiO-66 and Yb](defect-phosphate-uio66-yb/) — Chemical Engineering Science 2026
 - [Boroxine MOF and REEs](boroxine-mof-ree/) — Chemical Engineering Journal 2026
 
+The MOF/REE high-school revisions use three cumulative reading levels, source-specific method guides and worked evidence comparisons. See the [rollout and separate validation reports](../reports/quality-rollout/README.md).
+
 ## Shared reading system
 
 Pages load [`../assets/paper.css`](../assets/paper.css) after their local styles and [`../assets/paper.js`](../assets/paper.js) before their page script. Keep `class="atlas-paper"` and `data-paper="<slug>"` on the body. The shared stylesheet owns the navy/cyan palette, 1180px content width, typography, common controls and responsive header. Local CSS owns each paper's diagrams and layouts; scope SVG rules to their diagram containers.
@@ -71,3 +73,7 @@ For validation, run the paper-webpage static checker for every changed slug, the
 ## Shared paper bibliography
 
 Every explainer loads `../assets/bibliography.css`, `bibliography.js` and generated `paper-metadata.js` (adjusted to its directory depth). `paper.js` mounts the shared byline below the title and supports language/depth rebuilds. The local metadata subset is generated from the homepage catalogue, so paper dates and author affiliations agree across both views. Follow the [catalogue metadata guide](../references/paper-catalog-guide.md#authors-affiliations-and-paper-dates); unresolved fields are recorded in the [gap ledger](../references/paper-metadata-audit.md).
+
+## Optional teaching layer
+
+The 25 rollout pages additionally load `../assets/paper-lesson.css` and `paper-lesson.js` (adjust paths to page depth). The helper manages only the authored progressive sections, native reading checkpoints and depth note; the existing page controls and datasets remain authoritative. It integrates through `AtlasPaper.init({depth: window.PaperLesson.depth, ...})`, retains the existing language controller and restores scroll after translated-note layout. Do not use the rollout renderer to reapply a page that already contains its lesson modules.
