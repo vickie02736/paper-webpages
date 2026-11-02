@@ -1,0 +1,22 @@
+{
+  "mof-stability-three-axes": {
+    "originalIDsRetained": true,
+    "originalDatasetUnchanged": true
+  },
+  "mof-kinetic-stability": {
+    "originalIDsRetained": true,
+    "originalDatasetUnchanged": true
+  },
+  "water-stable-mof-design": {
+    "originalIDsRetained": true,
+    "originalDatasetUnchanged": true
+  },
+  "hydrolytic-stability-benchmark": {
+    "originalIDsRetained": true,
+    "originalDatasetUnchanged": true
+  },
+  "water-dual-impact": {
+    "originalIDsRetained": true,
+    "originalDatasetUnchanged": true
+  }
+}

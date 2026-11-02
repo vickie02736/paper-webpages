@@ -47,3 +47,17 @@ Source SHA-256:
 - `water-dual-impact.pdf`: `ee388df7e84707af93de85c2d2bd9745d0a89f221b4bdb65f550042ec278a2c6`
 - `water-dual-impact-si.pdf`: `3cf054061e5d666c8ebf73e9d0cfbdb645423cb59f6d3615e4d2862d76a1cdb3`
 - `water-dual-impact-structures.zip`: `a4b8099a67cc8b02d865422629ff26285b54b6a5d3e0f621bd9a635fbd639f9c`
+
+## High-school teaching revision — 2026-11-02
+
+P1 background / reasoning: core immediately introduces periodic/truncated DFT; paths warns about references without walking through the INT0→TS0 subtraction. Define the modeled objects, separate model roles and add a worked reference-invariant barrier calculation.
+
+New method guide: Source: Main methods and §3; SI methods, Figs. S1–S3 and Table S1.
+
+New evidence comparison: Source: Main Fig. 3 and adjacent UMCM-1 pathway text; SI Fig. S3; main discussion for the MOF-303 search limitation.
+
+Reread main methods and Fig. 3 pathway text (INT0 25.2 below reactants, TS0 2.8 above), SI methods/Fig. S3 and model limitations. Added 28.0 is an explicit arithmetic derivation, not a measured barrier or lifetime. Spin/model and coordinate-header discrepancies are retained, with original data unchanged.
+
+Reader task: Check: if all levels shift upward by 10 kJ/mol, does the local barrier change? No. This is a hypothetical change of common reference: 12.8 − (−15.2) is still 28.0. The start-to-peak difference is unchanged. A level becoming positive or negative alone does not establish a barrierless reaction.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

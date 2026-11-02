@@ -12,7 +12,13 @@
     document.getElementById('lesson-depth-note').textContent=notes[lang][level-1];
   }
   depth.addEventListener('click',event=>{const button=event.target.closest('button[data-depth]');if(!button||!depth.contains(button))return;level=Number(button.dataset.depth);render()});
-  new MutationObserver(render).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+  new MutationObserver(()=>{
+    const position=scrollY;
+    render();
+    // Flush the changed note's layout before restoring the reading position.
+    document.body.getBoundingClientRect();
+    window.scrollTo({top:position,behavior:'instant'});
+  }).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
   window.PaperLesson={depth};
   render();
 })();

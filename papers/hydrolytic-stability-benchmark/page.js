@@ -89,7 +89,7 @@
   function preset(values) {['mp','mh','wp','wh'].forEach((id,i)=>el(id).value=values[i]);calculateMass();}
   el('preset-cr').addEventListener('click',()=>preset([30,47.4,82,51]));
   el('preset-uio').addEventListener('click',()=>preset([30,26.67,88,72]));
-  window.AtlasPaper.init({
+  window.AtlasPaper.init({depth:window.PaperLesson.depth,
     shortTitle:'MOF · H₂O',
     title:{zh:'MOF 水稳定性：三个指标，三个问题',en:'MOF water stability: three measures, three questions'},
     sections:[{id:'core',zh:'核心问题',en:'Core question'},{id:'method',zh:'实验流程',en:'Workflow'},{id:'metrics',zh:'三个指标',en:'Three measures'},{id:'evidence',zh:'51 材料比较',en:'Compare 51 materials'},{id:'mass',zh:'质量校正',en:'Mass correction'},{id:'interpretation',zh:'设计启发',en:'Design insights'},{id:'limits',zh:'证据边界',en:'Evidence limits'},{id:'sources',zh:'来源',en:'Sources'}],

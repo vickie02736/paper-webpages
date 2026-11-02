@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "batch": 2,
+  "pages": [
+    "mof-stability-three-axes",
+    "mof-kinetic-stability",
+    "water-stable-mof-design",
+    "hydrolytic-stability-benchmark",
+    "water-dual-impact"
+  ],
+  "viewportLanguageDepthCombinations": 90,
+  "sectionAnchorChecks": 846,
+  "checks": [
+    "default foundations/evidence, progressive method and details",
+    "Chinese/English rendered text",
+    "keyboard Enter/Space, focus and native checkpoint",
+    "language/depth preserve expanded state and scroll",
+    "all section anchors; no page overflow or local HTTP/page errors",
+    "direct English reload"
+  ],
+  "screenshots": "/tmp/mof-quality-batch-2",
+  "limits": [
+    "source accuracy and teaching audit are separate",
+    "no human comprehension or real screen-reader test",
+    "no new image loading controls in these additions"
+  ]
+}

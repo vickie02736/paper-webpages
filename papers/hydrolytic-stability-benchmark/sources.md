@@ -55,3 +55,17 @@ Publisher author block and article history: six authors in the order above; all 
 - Completed: all8 sections at1440/768/390px in both languages; all51 material choices and all4 measure controls, missing data, table search/sort/empty state, valid/invalid mass inputs, calculator presets, keyboard Enter/Space, focus and state retention, direct English URL/reload, anchors, console and overflow. Representative screenshots were saved and viewed in `reports/mof-ree-qa/`; final browser report is `benchmark-final-result.txt`.
 - Integrate immutable catalogue identity, source-backed author metadata, publication dates and README entries with the other 27 additions.
 - Run complete site checks and publish the final collection; this draft has not been pushed.
+
+## High-school teaching revision — 2026-11-02
+
+P1 denominator / reasoning: mass already reports 47.40 mg, 82%, 51% and 98.27%, but skips the intermediate equivalent masses. Method is a procedural list without explicit consequences of discarded filtrate and activation. Add intermediate arithmetic and purpose/limit flow.
+
+New method guide: Source: Main §2.4; SI S4–S5 methods and S105–S106 independent batches.
+
+New evidence comparison: Source: MIL-101(Cr) row in SI Table S3 (30, 47.40, 82, 51, 98.27); main mass-retention definition.
+
+Rechecked main §2.4, SI S4–S5 and Table S3 row MIL-101(Cr). Calculated 24.60 and 24.174 mg from reported masses/fractions; ratio rounds to SI 98.27%. Original 51-entry dataset and null values are unchanged. Corrected mass is not relabeled as intact framework or a complete mass balance.
+
+Reader task: Check: does nearly 100% corrected mass mean every pore remains usable? No. Matter can remain while connections or pore shapes change, or entrances become blocked. Gas sorption and diffraction are separate evidence; missing CO₂ data must not be filled with zero.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

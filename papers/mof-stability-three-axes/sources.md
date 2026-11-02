@@ -34,3 +34,17 @@ The six PowerPoint exports are the article's Figs. 1–6. Original PDF figures/B
 JS syntax and page-only static checks pass. Playwright checks pass at 1440, 768 and 390 px in both languages: all nine sections, all three axis selections, three application scenarios, all nine evidence choices, presets/reset, native-select typeahead, keyboard Enter/Space/Tab, details expansion, language-state persistence and direct-English refresh; no horizontal overflow or console/page errors. Screenshots saved to `reports/mof-ree-qa/axes-*`; mobile hero, desktop core and tablet report visually inspected. Mobile hero shortened to avoid a single-character orphan; affected screenshots and full browser checks rerun. Catalog-generated author/date metadata, catalog integration and publication remain pending.
 
 Source PDF SHA-256: `0725932f6e13fb1f0ca5855813b39dde5e9551b98b327afe41fc784ed7583d18`.
+
+## High-school teaching revision — 2026-11-02
+
+P1 background / evidence chain: core “全局热力学最低能量” precedes a concrete account of useful pores. Thermal “TGA 平台” is correct but methods are not connected visually; mechanical drying loss needs an explicit competing pathway. Add object definitions, complementary measurement flow and drying comparison.
+
+New method guide: Source: Review stability-assessment and thermal-stability sections; Box 1 provides the MOF structural definition.
+
+New evidence comparison: Source: Review mechanical-stability discussion of drying and capillary forces.
+
+Reread the review thermal/mechanical discussions and Box 1. Definitions and capillary interpretation follow the review, not new experiments. No independent scientific SI is listed; figure slide exports are not SI. Proposed diagnostic controls are marked as explainer inference.
+
+Reader task: Check: why does a TGA plateau not establish intact pores? TGA measures net mass change. Rearrangement or pore collapse can occur without a corresponding large loss of matter. Diffraction and pore measurements, with heating conditions, are still needed.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

@@ -746,5 +746,737 @@
     },
     "audit": "P1, terminology/evidence gap: EPR, TGA, zeta potential and modeled defects appeared before operational definitions. Added their roles, the TGA inference chain and a paired capacity/selectivity comparison.",
     "science": "Reread final main §3.1/§3.2, Fig.7, eqs.12–13 and SI TGA model/Table S1/Fig.S2. Preserved TGA assumptions, Ar rather than N2 measurement, distinct single-ion/mixture conditions and the existing main/SI kinetic inconsistency."
+  },
+  "mof-stability-three-axes": {
+    "lead": [
+      "一块多孔材料可能耐酸，却在干燥或加热后失去孔道。这篇综述要求我们先说清受到什么挑战，再选择能回答问题的测量。",
+      "A porous solid can resist acid yet lose its pores during drying or heating. This review asks us to name the challenge first, then choose measurements that answer it."
+    ],
+    "foundationTitle": [
+      "“还能用”需要保住什么？",
+      "What must survive for the material to remain useful?"
+    ],
+    "foundation": [
+      "MOF 是金属连接点和有机分子连接体组成的多孔固体。孔让分子进入内部；连接关系和孔道都可能改变。本文不是把每种材料送进同一实验，而是整理不同研究如何判断它们在化学、热和力的作用下是否改变。",
+      "A MOF is a porous solid assembled from metal junctions and organic molecular linkers. Pores admit molecules into its interior; both connections and pore access can change. This review organizes studies of chemical, thermal and mechanical change, rather than testing every material in one experiment."
+    ],
+    "terms": [
+      [
+        [
+          "化学挑战",
+          "Chemical challenge"
+        ],
+        [
+          "水、酸、碱或竞争分子可能改变金属与连接体的结合。pH 只描述酸碱性，不能告诉你溶液中还有哪些竞争分子。",
+          "Water, acid, base or competing molecules can change metal–linker bonding. pH describes acidity, not which competing molecules are present."
+        ]
+      ],
+      [
+        [
+          "热挑战",
+          "Thermal challenge"
+        ],
+        [
+          "加热可能先赶走孔中的溶剂，再改变连接或分解骨架。失去溶剂的质量，不等于同样比例的骨架消失。",
+          "Heating may first remove pore solvent, then alter connections or decompose the framework. Solvent mass loss is not the same fraction of framework destruction."
+        ]
+      ],
+      [
+        [
+          "力学挑战",
+          "Mechanical challenge"
+        ],
+        [
+          "压片、研磨和干燥中的力都能改变孔结构。干燥时孔内液面产生的毛细力，也可能拉拢孔壁。",
+          "Pressing, milling and forces during drying can alter pores. Capillary forces from liquid surfaces inside drying pores can pull pore walls together."
+        ]
+      ]
+    ],
+    "problem": [
+      "读完要能为“在某条件下稳定”补齐三件事：处理条件、测量对象、保留了什么功能。三个维度不能加成一个通用分数。",
+      "You should be able to complete a stability claim with its treatment, measured object and retained function. The three dimensions do not add up to a universal score."
+    ],
+    "methodTarget": "thermal",
+    "methodTitle": [
+      "加热后，为什么要看三种不同输出？",
+      "Why examine three different outputs after heating?"
+    ],
+    "steps": [
+      [
+        [
+          "1 · 质量随温度变化",
+          "1 · Mass versus temperature"
+        ],
+        [
+          "热重分析（TGA）边加热边称重，输出质量—温度曲线。平台只表示该区间净质量变化较小；它不直接显示孔的形状。",
+          "Thermogravimetric analysis (TGA) weighs a sample during heating and gives a mass–temperature curve. A plateau means little net mass change over that interval, not a direct view of pore shape."
+        ]
+      ],
+      [
+        [
+          "2 · 原子排列是否仍有规则",
+          "2 · Does ordered packing remain?"
+        ],
+        [
+          "粉末 X 射线衍射（PXRD）记录不同角度的散射强度。峰位和峰形帮助识别有序晶相及其变化；它和称重回答不同问题。",
+          "Powder X-ray diffraction (PXRD) measures scattered intensity at different angles. Peak positions and shapes help identify ordered crystalline phases and their changes; this answers a different question from weighing."
+        ]
+      ],
+      [
+        [
+          "3 · 分子还能否进入",
+          "3 · Can molecules still enter?"
+        ],
+        [
+          "气体吸附测量已知条件下固体吸入多少探针气体。BET 方法用这类数据估计每克样品可达表面积；它补充孔道是否可用的信息。",
+          "Gas adsorption measures how much probe gas a solid takes up under specified conditions. BET analysis estimates accessible surface area per gram from such data, adding information on usable pore access."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "这是互补测量关系，不要求把同一份已分解的样品依次送入所有仪器。比较时应交代批次、前处理、气氛和升温历史。",
+      "These are complementary measurements, not a requirement to send one already decomposed specimen through every instrument. Comparisons need batch, pretreatment, atmosphere and heating history."
+    ],
+    "methodSource": [
+      "出处：综述稳定性评估与热稳定性章节；Box 1 提供 MOF 的结构定义。",
+      "Source: Review stability-assessment and thermal-stability sections; Box 1 provides the MOF structural definition."
+    ],
+    "evidenceTarget": "mechanical",
+    "evidenceTitle": [
+      "孔损失发生在哪一步？",
+      "At which step were pores lost?"
+    ],
+    "comparison": [
+      [
+        [
+          "浸水时的化学变化",
+          "Chemical change during immersion"
+        ],
+        [
+          "水可能改变连接，导致溶出或重排。这是需要用溶液分析、固体表征等证据支持的路径。",
+          "Water may change connections, causing dissolution or rearrangement. This pathway needs evidence such as solution analysis and solid characterization."
+        ]
+      ],
+      [
+        [
+          "回收干燥时的力学变化",
+          "Mechanical change during recovery and drying"
+        ],
+        [
+          "液体离开细孔时的毛细力也可能导致塌陷。若只在干燥后测孔，观察包含浸泡和干燥的共同历史。",
+          "Capillary forces as liquid leaves small pores can also cause collapse. A pore measurement made only after drying includes the history of both immersion and drying."
+        ]
+      ]
+    ],
+    "inference": [
+      "讲解者判断：仅凭“浸水—干燥后 BET 下降”，还不能把全部损失归给水解。要区分路径，需要过程中的表征或改变干燥方式的对照；这不是本文提供的新对照实验。",
+      "Explainer inference: a BET decrease after immersion and drying cannot assign all loss to hydrolysis. Intermediate characterization or controls varying drying are needed to separate pathways; these are not new experiments supplied by this page."
+    ],
+    "evidenceSource": [
+      "出处：综述机械稳定性章节中干燥与毛细力的讨论。",
+      "Source: Review mechanical-stability discussion of drying and capillary forces."
+    ],
+    "question": [
+      "自测：TGA 有平台，为什么还不能说孔道完整？",
+      "Check: why does a TGA plateau not establish intact pores?"
+    ],
+    "answer": [
+      "TGA 测净质量变化。结构可以重排或孔道塌陷，却没有相应的大量物质离开。还需衍射和孔道测量，并报告加热条件。",
+      "TGA measures net mass change. Rearrangement or pore collapse can occur without a corresponding large loss of matter. Diffraction and pore measurements, with heating conditions, are still needed."
+    ],
+    "depthSections": {
+      "design": 2
+    },
+    "audit": "P1 background / evidence chain: core “全局热力学最低能量” precedes a concrete account of useful pores. Thermal “TGA 平台” is correct but methods are not connected visually; mechanical drying loss needs an explicit competing pathway. Add object definitions, complementary measurement flow and drying comparison.",
+    "science": "Reread the review thermal/mechanical discussions and Box 1. Definitions and capillary interpretation follow the review, not new experiments. No independent scientific SI is listed; figure slide exports are not SI. Proposed diagnostic controls are marked as explainer inference."
+  },
+  "mof-kinetic-stability": {
+    "lead": [
+      "材料有更容易到达的最终状态，并不表示它会立刻变成那个状态。这篇综述用“重排有多难”解释多孔框架为何能在某些腐蚀性气体中继续工作。",
+      "A material having a more favorable final state does not mean it transforms immediately. This review asks how difficult rearrangement is to explain persistence in some corrosive gases."
+    ],
+    "foundationTitle": [
+      "终点倾向与到达速度，是两件事",
+      "A preferred destination and the speed of reaching it differ"
+    ],
+    "foundation": [
+      "MOF 的连接点和分子连接体围出孔道。气体可以留在孔里，也可能攻击连接。即使变成较致密的结构更有利，原子仍需经过连接断开、移动和重新结合的过程。",
+      "Junctions and molecular linkers enclose pores in a MOF. Gas can occupy these pores or attack their connections. Even when a denser structure is more favorable, atoms must still break, move and remake connections to reach it."
+    ],
+    "terms": [
+      [
+        [
+          "热力学倾向",
+          "Thermodynamic preference"
+        ],
+        [
+          "在指定条件下，比较起点与终点的自由能。自由能综合能量与热运动相关的因素；较低的终点不直接告诉我们转变要多久。",
+          "Compare the free energies of starting and final states under specified conditions. Free energy combines energetic and thermal contributions; a lower final state does not directly give the time needed to reach it."
+        ]
+      ],
+      [
+        [
+          "动力学障碍",
+          "Kinetic barrier"
+        ],
+        [
+          "转变途中要经过较难达到的排列。相对于起点的自由能上升，就是所讨论的能垒；它影响转变速度。",
+          "Transformation passes through a harder-to-reach arrangement. Its free-energy rise above the starting state is the barrier discussed here; this affects transformation speed."
+        ]
+      ],
+      [
+        [
+          "可逆捕集",
+          "Reversible capture"
+        ],
+        [
+          "先吸入气体，再在再生条件下释放，并保留下一轮工作的材料。只测一次高吸附量还没有完成这个检验。",
+          "Capture gas, release it under regeneration conditions and retain material for the next run. One high uptake measurement does not complete this test."
+        ]
+      ]
+    ],
+    "problem": [
+      "本页的能量图回答“改变哪一部分会让重排更难”，容量图回答“在什么测试中留住了多少氨”。两张图不能互相换算。",
+      "The energy diagram asks which change makes rearrangement harder. The capacity chart asks how much ammonia is retained in a particular test. These plots cannot be converted into one another."
+    ],
+    "methodTarget": "barriers",
+    "methodTitle": [
+      "读能量图：先找起点，再比较山坡",
+      "Read the energy diagram: find the start, then compare the rise"
+    ],
+    "steps": [
+      [
+        [
+          "1 · 固定读图含义",
+          "1 · Fix the meaning of the axes"
+        ],
+        [
+          "横向表示结构变化的进程，不是时间；纵向表示相对能量。峰顶对应路径中较难到达的状态，而不是样品温度。",
+          "The horizontal direction denotes progress through structural change, not time. The vertical direction is relative energy. A peak represents a harder-to-reach state, not sample temperature."
+        ]
+      ],
+      [
+        [
+          "2 · 比较峰顶与起点",
+          "2 · Compare peak and start"
+        ],
+        [
+          "要判断障碍，读峰顶高出当前起点多少。抬高峰顶或稳定起点，都可能增加这一差值；下面按钮分别演示这种思路。",
+          "Read how far the peak lies above the current starting state. Raising the peak or stabilizing the starting state can increase that difference; the buttons below illustrate these approaches."
+        ]
+      ],
+      [
+        [
+          "3 · 再问实验持续多久",
+          "3 · Then ask how long the experiment lasts"
+        ],
+        [
+          "曲线没有真实能量单位，也没有速率参数。它解释为什么存在动力学保护，不能从图中读出几天或几年。",
+          "The curves have no measured energy scale or rate parameters. They explain kinetic protection; they do not give days or years of service."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "定性教学图依据综述的论证组织；不是某个 MOF 的计算轨迹。水合金属离子的交换速率也不能直接当作框架寿命。",
+      "This qualitative teaching plot organizes the review’s argument; it is not a calculated trajectory for a specific MOF. Water exchange rates of dissolved metal ions likewise are not framework lifetimes."
+    ],
+    "methodSource": [
+      "出处：综述图 2 及动力学稳定性、水合离子交换讨论。",
+      "Source: Review Fig. 2 and discussions of kinetic stability and aquo-ion exchange."
+    ],
+    "evidenceTarget": "ammonia",
+    "evidenceTitle": [
+      "密闭平衡吸附与流动突破，测的是什么？",
+      "What do equilibrium uptake and flow breakthrough measure?"
+    ],
+    "comparison": [
+      [
+        [
+          "静态：给定压力下装入多少",
+          "Static: loading at a specified pressure"
+        ],
+        [
+          "让样品接触氨并测量平衡吸附量。下图所选静态值为 1 bar、298 K 的纯氨条件，不能代表低浓度气流。",
+          "Expose the sample to ammonia and measure equilibrium loading. The selected static values below use pure ammonia at 1 bar and 298 K; they do not represent a dilute flowing feed."
+        ]
+      ],
+      [
+        [
+          "突破：出口开始漏出前留住多少",
+          "Breakthrough: retention before gas emerges downstream"
+        ],
+        [
+          "让含氨气流通过吸附床，监测出口浓度。达到规定出口判据时统计已捕集的量；进料浓度、湿度和判据都会影响结果。",
+          "Pass an ammonia-containing stream through a sorbent bed and monitor its outlet concentration. Count capture up to a specified outlet criterion; feed concentration, humidity and that criterion affect the result."
+        ]
+      ]
+    ],
+    "inference": [
+      "下面四种材料的突破条目采用 1000 ppm、298 K；湿态为 80% 相对湿度（实际水汽分压占该温度饱和值的百分比）。即使这些名义条件相同，原研究的突破判据和装置仍需核对。高容量也不证明吸附后骨架完整。",
+      "The four selected breakthrough entries below use 1000 ppm at 298 K; humid tests use 80% relative humidity (water-vapor pressure as a percentage of saturation at that temperature). Even with matching nominal conditions, original breakthrough criteria and apparatus need comparison. High capacity alone does not establish an intact framework afterward."
+    ],
+    "evidenceSource": [
+      "出处：综述表 2、表 3 和图 5；本页保留其选取的四种材料，非全部综述数据的统一基准。",
+      "Source: Review Tables 2–3 and Fig. 5. The page retains its four selected materials, not a uniform benchmark of all reviewed data."
+    ],
+    "question": [
+      "自测：一种材料静态吸氨更多，就一定更适合防护滤床吗？",
+      "Check: does higher static ammonia uptake guarantee a better protective filter?"
+    ],
+    "answer": [
+      "不能。滤床需要在目标浓度、湿度和流量下延迟出口突破；还要核对材料降解和使用方式。纯气平衡容量不能替代这些条件下的突破实验。",
+      "No. A filter must delay outlet breakthrough at the target concentration, humidity and flow rate; degradation and use conditions also matter. Pure-gas equilibrium capacity cannot replace that breakthrough test."
+    ],
+    "depthSections": {
+      "chemistry": 2
+    },
+    "audit": "P1 terminology / reading structure: idea opens with “量热…亚稳态”, while ammonia jumps from static to breakthrough capacity. Define the physical object and barrier first, explain axes before controls and depict the two measurement questions separately.",
+    "science": "Reread main kinetic-stability discussion, Fig. 2, Fig. 5 and Tables 2–3. The four-page subset conditions are retained; full Fig. 5 spans other concentrations/one static temperature exception and is not generalized. No SI is listed. No lifetime or absolute energy is inferred from the teaching curves."
+  },
+  "water-stable-mof-design": {
+    "lead": [
+      "让框架不被水破坏，只完成了第一步。用于捕集二氧化碳时，还要让气体进得去、能被留下，并能在再生时放出来。",
+      "Preventing water damage is only the first step. For carbon dioxide capture, gas must also enter, be retained and be released during regeneration."
+    ],
+    "foundationTitle": [
+      "稳定的“容器”，还要有可用的入口",
+      "A durable container also needs usable entrances"
+    ],
+    "foundation": [
+      "MOF 是由金属连接点和有机连接体搭成的多孔固体。“吸附”指分子在材料表面或孔内被留下；“再生”指用适当条件把它们释放，使材料能重复使用。本综述把耐水设计与 CO₂ 捕集联系起来。",
+      "A MOF is a porous solid made of metal junctions and organic linkers. Adsorption retains molecules at surfaces or within pores. Regeneration releases them under suitable conditions so the material can be used again. This review connects water-resistant design with CO₂ capture."
+    ],
+    "terms": [
+      [
+        [
+          "连接是否耐受",
+          "Do the connections persist?"
+        ],
+        [
+          "水可能竞争金属附近的位置或改变连接体。加强连接、增加连接数等策略针对这一问题，但需在具体介质中验证。",
+          "Water can compete near a metal or alter a linker. Stronger or more numerous connections address this problem, but need validation in the actual medium."
+        ]
+      ],
+      [
+        [
+          "入口是否可达",
+          "Are entrances accessible?"
+        ],
+        [
+          "疏水表示较不容易与水接近或润湿。入口的疏水修饰可能减少水接触，也可能影响气体进入；不能只看拒水效果。",
+          "Hydrophobic means less favorable contact or wetting by water. Hydrophobic entrance modifications may reduce water access but also affect gas entry; water exclusion is not the only target."
+        ]
+      ],
+      [
+        [
+          "亲和力与选择性",
+          "Affinity and selectivity"
+        ],
+        [
+          "亲和力描述某种分子被吸引的倾向；选择性比较混合物中不同分子的偏好。单独一种气体的高吸附量不是混合气分离结果。",
+          "Affinity describes attraction toward a species; selectivity compares preferences among mixture components. High uptake of one pure gas is not a mixture-separation result."
+        ]
+      ]
+    ],
+    "problem": [
+      "读完应能把设计分成“保住材料”和“完成捕集”两项检验，并指出需要在哪种含水气流下复测。",
+      "You should separate preserving the material from accomplishing capture, and identify the humid feed under which retesting is needed."
+    ],
+    "methodTarget": "design",
+    "methodTitle": [
+      "从改哪里，到测什么",
+      "From the location of a change to the test it requires"
+    ],
+    "steps": [
+      [
+        [
+          "1 · 指明设计作用处",
+          "1 · Locate the design intervention"
+        ],
+        [
+          "改变金属–连接体结合、网络连接数或孔口环境，作用对象不同。先确定要阻止连接断裂，还是减少水接近。",
+          "Changing metal–linker bonding, network connectivity or a pore entrance affects different objects. First decide whether the aim is to prevent bond loss or reduce water access."
+        ]
+      ],
+      [
+        [
+          "2 · 检查处理后的材料",
+          "2 · Examine the treated solid"
+        ],
+        [
+          "衍射看有序排列；气体吸附看孔是否可达；溶出分析看哪些组分离开。几类证据一起约束“耐水”的含义。",
+          "Diffraction probes ordered packing; gas adsorption probes pore accessibility; leaching analysis tracks departing components. Together these constrain the meaning of water resistance."
+        ]
+      ],
+      [
+        [
+          "3 · 回到实际捕集条件",
+          "3 · Return to capture conditions"
+        ],
+        [
+          "在目标 CO₂ 浓度、温度、湿度和竞争气体下测捕集与释放，并查看循环后材料。结构保留不自动保证工作容量。",
+          "Measure capture and release at the target CO₂ concentration, temperature, humidity and competing gases, then examine the cycled solid. Structural retention does not guarantee working capacity."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "这是根据综述组织的验证顺序，不表示每个被引研究都做齐了这些实验。下方设计按钮展示策略与代价，不预测指定材料的寿命。",
+      "This is a validation sequence organized from the review, not a claim that every cited study completed every test. The design controls below explain strategies and trade-offs, not material lifetimes."
+    ],
+    "methodSource": [
+      "出处：综述第 2 节耐水构筑策略、第 3 节 CO₂ 捕集及表 1–2。",
+      "Source: Review §2 water-stable construction, §3 CO₂ capture and Tables 1–2."
+    ],
+    "evidenceTarget": "capture",
+    "evidenceTitle": [
+      "读容量表，先确认分母和条件",
+      "Read capacity with its denominator and conditions"
+    ],
+    "comparison": [
+      [
+        [
+          "每克材料吸入多少",
+          "How much per gram of material?"
+        ],
+        [
+          "mmol/g 是每克吸附剂中所吸附气体的毫摩尔数。表 2 将 1 bar 与 0.15 bar 的 CO₂ 吸附量分列：压力改变，即使材料相同，装入量也可能不同。",
+          "mmol/g counts millimoles of adsorbed gas per gram of sorbent. Table 2 separates CO₂ uptake at 1 bar and 0.15 bar: changing pressure can change loading even for the same material."
+        ]
+      ],
+      [
+        [
+          "混合气里更偏爱谁",
+          "Which component is preferred in a mixture?"
+        ],
+        [
+          "表中的 IAST 选择性来自“理想吸附溶液理论”的模型估算，用单组分等温线预测混合物偏好。它与真正让湿混合气流过材料的突破实验不是同一证据。",
+          "IAST selectivity is an estimate from ideal adsorbed solution theory, using single-component isotherms to predict mixture preference. It differs from breakthrough evidence obtained by passing a humid mixture through the solid."
+        ]
+      ]
+    ],
+    "inference": [
+      "水有时竞争位点，有时参与胺与 CO₂ 的反应；方向取决于材料和反应条件。综述里的不同例子不能合成“加水总能提高捕集”的规律。再生后能释放多少，还决定可循环使用的容量。",
+      "Water can compete for sites or participate in amine–CO₂ chemistry; the direction depends on material and conditions. Different reviewed examples do not establish that adding water always improves capture. Release during regeneration also determines reusable capacity."
+    ],
+    "evidenceSource": [
+      "出处：综述表 2、第 3.3.2 节及含水捕集讨论；模型估算与实际混合气检验分开。",
+      "Source: Review Table 2, §3.3.2 and discussion of capture with water; model estimates are separated from mixture tests."
+    ],
+    "question": [
+      "自测：加上拒水层后衍射峰保留，就完成了捕集材料优化吗？",
+      "Check: do retained diffraction peaks after adding a water-repelling layer complete optimization?"
+    ],
+    "answer": [
+      "没有。峰支持有序结构仍存在，还需确认入口未堵、目标气流下仍有容量和选择性，以及能再生。改性保护结构与提高捕集性能是两项证据。",
+      "No. Peaks support retained order; pore access, capacity and selectivity in the target feed, and regeneration still need checking. Structural protection and capture performance require separate evidence."
+    ],
+    "depthSections": {
+      "energy": 2,
+      "tradeoffs": 2
+    },
+    "audit": "P1 terminology / evidence chain: design uses “配位单元” and capture compares IAST with uptake before explaining inputs and outputs. Preserve correct trade-offs, introduce adsorption/regeneration and add design-to-test and pressure/denominator comparisons.",
+    "science": "Reread review §2, §3.3.2, Table 2 and water/amine discussion. The guidance is a synthesis of review evidence, not a new common-protocol dataset. IAST is identified as a model prediction; no new converted gas volumes or capacity ranking is introduced. No independent scientific SI is listed."
+  },
+  "hydrolytic-stability-benchmark": {
+    "lead": [
+      "同样经过浸水、回收和干燥，材料的晶体排列、可用孔道和回收质量仍可能给出不同答案。本文把 50 种 MOF 与一种沸石放进同一套流程，比较这些答案为何分开。",
+      "After the same immersion, recovery and drying workflow, ordered packing, usable pores and recovered mass can give different answers. This study compares those answers for 50 MOFs and one zeolite."
+    ],
+    "foundationTitle": [
+      "把“剩下多少”拆成三个可测问题",
+      "Split “how much remains” into three measurable questions"
+    ],
+    "foundation": [
+      "MOF 的连接点和连接体围出孔道。规则排列可以留下衍射峰，但气体未必还能进入全部孔；回收的固体也可能夹带水。本文的多指标设计正是为了避免一种读数替所有性质作答。",
+      "MOF junctions and linkers enclose pores. Ordered packing can retain diffraction peaks even when not all pores remain accessible; recovered solids may also contain water. Multiple measurements prevent one reading from standing in for all these properties."
+    ],
+    "terms": [
+      [
+        [
+          "有序排列",
+          "Ordered packing"
+        ],
+        [
+          "PXRD 即粉末 X 射线衍射：测散射强度随角度的变化。本研究比较峰的积分强度；它不是直接称出“完整晶体”的质量比例。",
+          "PXRD, powder X-ray diffraction, measures scattered intensity versus angle. This study compares integrated peak intensity; that does not directly weigh the fraction of intact crystals."
+        ]
+      ],
+      [
+        [
+          "可达孔道",
+          "Accessible pores"
+        ],
+        [
+          "气体吸附测气体能进入并留住多少。BET 分析给出每克样品可达表面积；CO₂ 吸附量则直接针对特定气体和条件。",
+          "Gas adsorption measures entry and retention. BET analysis estimates accessible surface area per gram; CO₂ uptake addresses a specific gas and set of conditions."
+        ]
+      ],
+      [
+        [
+          "校正质量",
+          "Corrected mass"
+        ],
+        [
+          "TGA 即热重分析：加热并称重，以规定平台估计除去溶剂后的质量分数。原样和回收样品都要校正，才有同类分母。",
+          "TGA, thermogravimetric analysis, heats and weighs the sample. A specified plateau estimates its solvent-free mass fraction. Both pristine and recovered samples need correction for a like-for-like denominator."
+        ]
+      ]
+    ],
+    "problem": [
+      "读完要能解释为什么 47.4 mg 回收固体可以对应约 98% 的校正质量保留，而不是框架“生长了 58%”。",
+      "You should be able to explain why 47.4 mg recovered solid can correspond to about 98% corrected mass retention, rather than 58% framework growth."
+    ],
+    "methodTarget": "method",
+    "methodTitle": [
+      "这条流程测到了哪些共同历史？",
+      "What combined history does this workflow test?"
+    ],
+    "steps": [
+      [
+        [
+          "1 · 设定相同水暴露",
+          "1 · Set a common water exposure"
+        ],
+        [
+          "30 mg 样品加入 5 mL 去离子水，常温 24 h。这样统一液固用量与时间，但并不统一各样品的缺陷、粒径或合成历史。",
+          "Expose 30 mg to 5 mL deionized water for 24 h at ambient temperature. This aligns liquid-to-solid amount and time, not defects, particle size or synthesis history."
+        ]
+      ],
+      [
+        [
+          "2 · 回收与干燥",
+          "2 · Recover and dry"
+        ],
+        [
+          "过滤并弃去滤液，空气干燥 72 h 后称重。滤液被弃去意味着这套数据没有直接清点所有已进入水中的组分。",
+          "Filter, discard the filtrate, air-dry for 72 h and weigh. Discarding the filtrate means this dataset does not directly count every component that entered the water."
+        ]
+      ],
+      [
+        [
+          "3 · 按测量要求前处理",
+          "3 · Prepare for each measurement"
+        ],
+        [
+          "气体吸附前另有 120 °C 真空 15 h 的活化。孔隙结果因此包含浸水、干燥与活化的影响，不能全归给单一断键反应。",
+          "Gas sorption includes activation at 120 °C under vacuum for 15 h. Pore results therefore include immersion, drying and activation, not solely one bond-cleavage reaction."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "这是一套统一处理后的比较，不是实时追踪浸水中的每一步。三批 UiO-66 的重复性也不是所有材料的误差条。",
+      "This is comparison after a common treatment, not real-time tracking of every immersion step. Repeatability from three UiO-66 batches is not an error bar for every material."
+    ],
+    "methodSource": [
+      "出处：正文第 2.4 节；SI S4–S5 方法及 S105–S106 独立批次。",
+      "Source: Main §2.4; SI S4–S5 methods and S105–S106 independent batches."
+    ],
+    "evidenceTarget": "mass",
+    "evidenceTitle": [
+      "先算两边的无溶剂等效质量，再相除",
+      "First calculate solvent-free equivalent mass on both sides"
+    ],
+    "comparison": [
+      [
+        [
+          "原样：30 mg 的 82%",
+          "Pristine: 82% of 30 mg"
+        ],
+        [
+          "30 × 0.82 = 24.60 mg。分母是原样按 TGA 平台换算的无溶剂等效质量，不是直接使用 30 mg。",
+          "30 × 0.82 = 24.60 mg. The denominator is the pristine solvent-free equivalent mass derived using the TGA plateau, not simply 30 mg."
+        ]
+      ],
+      [
+        [
+          "回收：47.40 mg 的 51%",
+          "Recovered: 51% of 47.40 mg"
+        ],
+        [
+          "47.40 × 0.51 = 24.174 mg。回收总质量较大，但其中用于校正的比例较小。两者必须一起读。",
+          "47.40 × 0.51 = 24.174 mg. The recovered total mass is larger but its correction fraction is smaller. Both quantities must be read together."
+        ]
+      ]
+    ],
+    "equation": [
+      "Rₘ = (m后 × w后) ÷ (m前 × w前) × 100% ≈ 98.27%",
+      "Rₘ = (m_after × w_after) ÷ (m_before × w_before) × 100% ≈ 98.27%"
+    ],
+    "equationMeaning": [
+      "m 是称量质量（mg），w 是 TGA 无溶剂平台质量分数（用 0–1 小数）。本式是按 SI 数值复算；mg 相消。它依赖平台能代表所定义无溶剂质量的假设。",
+      "m is weighed mass in mg; w is the TGA solvent-free plateau fraction expressed from 0 to 1. This recalculates SI values; mg cancels. It relies on the plateau representing the defined solvent-free mass."
+    ],
+    "inference": [
+      "98.27% 是本方法的校正质量保留率，既不是有序晶体比例，也不是所有金属和连接体的完整物料衡算。滤液未被这条流程定量。",
+      "98.27% is corrected mass retention under this method, not the ordered-crystal fraction or a complete metal-and-linker mass balance. This workflow did not quantify the filtrate."
+    ],
+    "evidenceSource": [
+      "出处：SI 表 S3 的 MIL-101(Cr) 行（30、47.40、82、51、98.27）；正文质量评价定义。",
+      "Source: MIL-101(Cr) row in SI Table S3 (30, 47.40, 82, 51, 98.27); main mass-retention definition."
+    ],
+    "question": [
+      "自测：校正质量接近 100%，能说明孔道全部可用吗？",
+      "Check: does nearly 100% corrected mass mean every pore remains usable?"
+    ],
+    "answer": [
+      "不能。质量可以留下，但连接或孔形改变、孔口堵塞。需要另看气体吸附与衍射；缺失的 CO₂ 数据也不能填成零。",
+      "No. Matter can remain while connections or pore shapes change, or entrances become blocked. Gas sorption and diffraction are separate evidence; missing CO₂ data must not be filled with zero."
+    ],
+    "depthSections": {
+      "interpretation": 2
+    },
+    "audit": "P1 denominator / reasoning: mass already reports 47.40 mg, 82%, 51% and 98.27%, but skips the intermediate equivalent masses. Method is a procedural list without explicit consequences of discarded filtrate and activation. Add intermediate arithmetic and purpose/limit flow.",
+    "science": "Rechecked main §2.4, SI S4–S5 and Table S3 row MIL-101(Cr). Calculated 24.60 and 24.174 mg from reported masses/fractions; ratio rounds to SI 98.27%. Original 51-entry dataset and null values are unchanged. Corrected mass is not relabeled as intact framework or a complete mass balance."
+  },
+  "water-dual-impact": {
+    "lead": [
+      "水能靠近材料，并不代表它一定会把连接拆开。本文比较四种 MOF 的计算模型，追问水先停在哪里、怎样聚在一起，以及能否走向局部水解。",
+      "Water approaching a material does not necessarily break its connections. Calculations for four MOFs ask where water first binds, how it gathers and whether it can proceed toward local hydrolysis."
+    ],
+    "foundationTitle": [
+      "先分清吸附、聚集与断键",
+      "Separate adsorption, clustering and bond cleavage"
+    ],
+    "foundation": [
+      "MOF 的金属连接点与有机连接体围出孔道。水进入孔后，可以被某个位点吸引；更多水还可以彼此连接。只有进一步改变原有连接，才涉及这里研究的初始水解。",
+      "Metal junctions and organic linkers enclose MOF pores. Water can enter and be attracted to a site; additional water can also associate with other water molecules. Initial hydrolysis involves a further change to the original framework connections."
+    ],
+    "terms": [
+      [
+        [
+          "氢键",
+          "Hydrogen bond"
+        ],
+        [
+          "水的氢可与附近含氧或含氮部位产生有方向的吸引，形成水网络。它与框架的金属–连接体连接不是同一种键。",
+          "A water hydrogen can interact directionally with nearby oxygen- or nitrogen-containing sites, building a water network. This differs from a framework metal–linker bond."
+        ]
+      ],
+      [
+        [
+          "DFT 计算",
+          "DFT calculation"
+        ],
+        [
+          "密度泛函理论用电子分布估算给定原子排列的能量和作用力。改变排列并比较能量，可研究局部过程；它不是直接拍摄材料。",
+          "Density functional theory uses electron density to estimate energies and forces for an atomic arrangement. Comparing arrangements probes local processes; it is not direct imaging of a material."
+        ]
+      ],
+      [
+        [
+          "自由能路径",
+          "Free-energy path"
+        ],
+        [
+          "在指定温度和压力下，给一串候选结构计算相对自由能。中间稳定结构称中间体，连接步骤中的高点称过渡态；路径不是实际经过时间。",
+          "At specified temperature and pressure, assign relative free energies to candidate structures. Local stable structures are intermediates; a connecting high point is a transition state. The path is not elapsed time."
+        ]
+      ]
+    ],
+    "problem": [
+      "读完应能解释：为什么“吸水强”与“耐水”并不矛盾，以及为什么模型路径上的 +2.8 不能直接当成从已吸附水状态出发的能垒。",
+      "You should explain why strong water attraction can coexist with water resistance, and why +2.8 on a path is not directly the barrier measured from the water-bound state."
+    ],
+    "methodTarget": "models",
+    "methodTitle": [
+      "两种模型保留了什么，又省去了什么？",
+      "What does each model retain or leave out?"
+    ],
+    "steps": [
+      [
+        [
+          "1 · 周期晶体",
+          "1 · Periodic crystal"
+        ],
+        [
+          "把晶胞在空间中重复，保留框架网络的连接约束，再计算加入水后的排列。这里部分含水计算收敛困难，作者主要据此讨论定性机制。",
+          "Repeat a unit cell in space to retain network constraints, then calculate arrangements with water. Some hydrated calculations have convergence difficulties, so the authors mainly use them for qualitative mechanisms."
+        ]
+      ],
+      [
+        [
+          "2 · 截断簇",
+          "2 · Truncated cluster"
+        ],
+        [
+          "取出局部节点与连接体片段，用氢处理切断的边界。计算量较小，便于寻找反应步骤，但边缘与柔性会不同于完整晶体。",
+          "Extract a node-and-linker fragment and cap cut boundaries with hydrogen. This reduces cost and facilitates reaction searches, but edges and flexibility differ from the full crystal."
+        ]
+      ],
+      [
+        [
+          "3 · 只在明确参照内比较",
+          "3 · Compare within a defined reference"
+        ],
+        [
+          "先确认模型、方法、含水数和自旋设置，再比较同一路径的结构。不同模型的绝对能量不能直接相减来排材料寿命。",
+          "Identify model, method, water count and spin treatment before comparing structures along a path. Absolute energies from different models cannot simply be subtracted to rank material lifetimes."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "下面 n 是每个簇添加的客体水分子数，不是湿度。方法参数与坐标文件标注间的差异保留在复现章节，不能用一张平滑曲线掩盖。",
+      "Below, n counts guest water molecules added to a cluster; it is not humidity. Differences between method statements and coordinate-file labels remain in the reproducibility section rather than being hidden by a smooth curve."
+    ],
+    "methodSource": [
+      "出处：正文方法、第 3 节；SI 方法、图 S1–S3 和表 S1。",
+      "Source: Main methods and §3; SI methods, Figs. S1–S3 and Table S1."
+    ],
+    "evidenceTarget": "paths",
+    "evidenceTitle": [
+      "同一个峰，为什么有两个不同的高度？",
+      "Why can the same peak have two different heights?"
+    ],
+    "comparison": [
+      [
+        [
+          "相对共同零点",
+          "Relative to the common zero"
+        ],
+        [
+          "UMCM-1 小模型以未结合反应物为零点：INT0 为 −25.2，TS0 为 +2.8 kJ/mol。这些是论文报告的相对自由能。",
+          "The small UMCM-1 model sets unbound reactants to zero: INT0 is −25.2 and TS0 is +2.8 kJ/mol. These are reported relative free energies."
+        ]
+      ],
+      [
+        [
+          "相对当前起点",
+          "Relative to the current starting state"
+        ],
+        [
+          "若已经处在 INT0，从 −25.2 上升到 +2.8 要跨越 28.0 kJ/mol。能垒是差值，不能只读过渡态旁的数字。",
+          "If the system is already at INT0, rising from −25.2 to +2.8 requires 28.0 kJ/mol. The barrier is a difference, not simply the number next to the transition state."
+        ]
+      ]
+    ],
+    "equation": [
+      "ΔG‡局部 = G(TS0) − G(INT0) = 2.8 − (−25.2) = 28.0 kJ/mol",
+      "ΔG‡local = G(TS0) − G(INT0) = 2.8 − (−25.2) = 28.0 kJ/mol"
+    ],
+    "equationMeaning": [
+      "G 是该模型在 298.15 K、1 atm 下的自由能；Δ 表示差，‡ 标记到过渡态的障碍。kJ/mol 表示按一摩尔该模型反应事件计的能量。本式只复算图 3 的局部上升，不新增动力学模拟。",
+      "G is this model’s free energy at 298.15 K and 1 atm; Δ denotes a difference and ‡ marks the transition-state barrier. kJ/mol expresses energy per mole of the modeled reaction events. This only recalculates a local rise in Fig. 3, not a new kinetic simulation."
+    ],
+    "inference": [
+      "模型中没找到 MOF-303 的水解过渡态，不等于证明所有路径不存在，也不等于无限寿命。局部自由能路径需要更多证据才能连接到真实材料的宏观失效。",
+      "Not finding a hydrolysis transition state for MOF-303 in these models does not prove that all paths are absent or that lifetime is infinite. Connecting local free-energy paths to bulk failure needs additional evidence."
+    ],
+    "evidenceSource": [
+      "出处：正文图 3 及相邻 UMCM-1 路径说明；SI 图 S3；MOF-303 搜索边界见正文讨论。",
+      "Source: Main Fig. 3 and adjacent UMCM-1 pathway text; SI Fig. S3; main discussion for the MOF-303 search limitation."
+    ],
+    "question": [
+      "自测：把所有能级一起上移 10 kJ/mol，局部能垒会改变吗？",
+      "Check: if all levels shift upward by 10 kJ/mol, does the local barrier change?"
+    ],
+    "answer": [
+      "不会。这是改变共同零点的教学假设。12.8 − (−15.2) 仍是 28.0；起点与峰的差不变。不能只凭某个能级变正或变负判断反应是否无障碍。",
+      "No. This is a hypothetical change of common reference: 12.8 − (−15.2) is still 28.0. The start-to-peak difference is unchanged. A level becoming positive or negative alone does not establish a barrierless reaction."
+    ],
+    "depthSections": {
+      "spin": 3
+    },
+    "audit": "P1 background / reasoning: core immediately introduces periodic/truncated DFT; paths warns about references without walking through the INT0→TS0 subtraction. Define the modeled objects, separate model roles and add a worked reference-invariant barrier calculation.",
+    "science": "Reread main methods and Fig. 3 pathway text (INT0 25.2 below reactants, TS0 2.8 above), SI methods/Fig. S3 and model limitations. Added 28.0 is an explicit arithmetic derivation, not a measured barrier or lifetime. Spin/model and coordinate-header discrepancies are retained, with original data unchanged."
   }
 }

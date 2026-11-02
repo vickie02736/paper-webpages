@@ -12,23 +12,28 @@
       "papers": [
         {
           "slug": "hydrolytic-stability-grading",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "89ad64a5090bd542a95f055188636060444d480c"
         },
         {
           "slug": "mof-hydrolysis-atomistic",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "89ad64a5090bd542a95f055188636060444d480c"
         },
         {
           "slug": "mil100-water-matrices",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "89ad64a5090bd542a95f055188636060444d480c"
         },
         {
           "slug": "cmpo-mil101-ree",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "89ad64a5090bd542a95f055188636060444d480c"
         },
         {
           "slug": "defect-phosphate-uio66-yb",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "89ad64a5090bd542a95f055188636060444d480c"
         }
       ]
     },
@@ -37,23 +42,23 @@
       "papers": [
         {
           "slug": "mof-stability-three-axes",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "mof-kinetic-stability",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "water-stable-mof-design",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "hydrolytic-stability-benchmark",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "water-dual-impact",
-          "status": "queued"
+          "status": "validated-for-publication"
         }
       ]
     },

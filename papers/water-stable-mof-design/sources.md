@@ -80,3 +80,17 @@ Cache files are outside the repository; no subscription PDF is committed.
 
 - `water-stable-mof-design.pdf`: 5,070,519 bytes; SHA-256 `0865cb30e927b00a91b5518db019c9d761090527e657b4ed9777e6078765a499`.
 - `water-stable-mof-design-full.xml`: 690,733 bytes; SHA-256 `f355ed8310eac00316ab5b8285732d5ffc8be04f0c80fcb13240905b1fe7cb55`.
+
+## High-school teaching revision — 2026-11-02
+
+P1 terminology / evidence chain: design uses “配位单元” and capture compares IAST with uptake before explaining inputs and outputs. Preserve correct trade-offs, introduce adsorption/regeneration and add design-to-test and pressure/denominator comparisons.
+
+New method guide: Source: Review §2 water-stable construction, §3 CO₂ capture and Tables 1–2.
+
+New evidence comparison: Source: Review Table 2, §3.3.2 and discussion of capture with water; model estimates are separated from mixture tests.
+
+Reread review §2, §3.3.2, Table 2 and water/amine discussion. The guidance is a synthesis of review evidence, not a new common-protocol dataset. IAST is identified as a model prediction; no new converted gas volumes or capacity ranking is introduced. No independent scientific SI is listed.
+
+Reader task: Check: do retained diffraction peaks after adding a water-repelling layer complete optimization? No. Peaks support retained order; pore access, capacity and selectivity in the target feed, and regeneration still need checking. Structural protection and capture performance require separate evidence.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

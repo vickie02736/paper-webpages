@@ -23,7 +23,7 @@ for slug in sys.argv[1:]:
  first=s.select_one('main section')
  if first.h2:first.h2.insert_after(fragment(primer))
  else:first.append(fragment(primer))
- method='<div class="lesson-block" id="lesson-method" data-lesson-level="2">'+p(['机制 · 这些步骤为什么不能省略','Mechanism · Why these steps matter'],'lesson-kicker')+h(d['methodTitle'])+'<ol class="lesson-flow">'+''.join('<li>'+h(x[0],'h4')+p(x[1])+'</li>'for x in d['steps'])+'</ol>'+p(d['methodBoundary'],'lesson-boundary')+p(d['methodSource'],'lesson-source')+'</div>'
+ method='<div class="lesson-block" id="lesson-method" data-lesson-level="2">'+p(['机制 · 这些步骤为什么不能省略','Mechanism · Why these steps matter'],'lesson-kicker')+h(d['methodTitle'])+'<ol class="lesson-flow">'+''.join('<li>'+h([re.sub(r'^\d+\s*[·.]\s*','',v) for v in x[0]],'h4')+p(x[1])+'</li>'for x in d['steps'])+'</ol>'+p(d['methodBoundary'],'lesson-boundary')+p(d['methodSource'],'lesson-source')+'</div>'
  target=s.select_one('#'+d['methodTarget']);assert target is not None;target.h2.insert_after(fragment(method))
  evidence='<div class="lesson-block" id="lesson-evidence">'+h(d['evidenceTitle'])+'<div class="lesson-pair">'+''.join('<div>'+h(x[0],'h4')+p(x[1])+'</div>' for x in d['comparison'])+'</div>'
  if d.get('equation'):evidence+='<p class="lesson-equation">'+bi(d['equation'])+'</p>'+p(d['equationMeaning'])
