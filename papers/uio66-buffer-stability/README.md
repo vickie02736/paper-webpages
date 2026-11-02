@@ -1,11 +1,21 @@
-# UiO-66 meets buffers
+## High-school quality revision
 
-Bilingual interactive explainer for Bůžek et al., DOI [10.1039/D0QI00973C](https://doi.org/10.1039/D0QI00973C).
+This revision is included in the authorized quality rollout. [Release and validation record](../../reports/quality-rollout/README.md). Earlier local-pilot notes below document the development stages.
 
-The condition explorer aligns all 30 measured conditions from main Table 1 with zirconium measurements from SI Table S3. It keeps linker release, filtered zirconium, detection limits, pH drift and BET evidence distinct. Source-specific interpretation and limits are recorded in [sources.md](sources.md).
+# UiO-66 in buffers — local quality pilot
 
-Files: `index.html`, `data.js`, `page.js`, `sources.md`. Uses the shared Research Atlas reading system. Default Chinese, full English switch. Source PDFs and publisher HTML remain in the local research cache rather than being redistributed.
+Bilingual explainer of Bůžek et al., *Metal–organic frameworks vs. buffers: case study of UiO-66 stability*, Inorganic Chemistry Frontiers 8, 720–734 (2021), [DOI](https://doi.org/10.1039/D0QI00973C).
 
-Catalogue integrated; first-publication date 2026-11-02. Full static, production bibliography, catalogue/taxonomy and all-43-page browser checks pass (3,649 interaction actions).
+This revision is a local pilot after the second round of reader feedback, awaiting another reading. It is not published. It introduces three cumulative reading levels (Intuition, Mechanism, Research), a three-step evidence investigation, attributed original Figures 4/9 with axis/control guides, denominator calculations, three measured-condition comparisons, SI checks of alternative explanations and a transfer question with reason-specific feedback. All 30 original measured conditions remain available.
 
-[Published page](https://vickie02736.github.io/paper-webpages/papers/uio66-buffer-stability/) · [Evidence ledger](sources.md). Deployment is checked against the final GitHub Pages commit after push.
+[Local preview](http://127.0.0.1:8876/papers/uio66-buffer-stability/) · [English preview](http://127.0.0.1:8876/papers/uio66-buffer-stability/?lang=en) · [Evidence ledger](sources.md)
+
+[Round 2 feedback and separate reviews](../../reports/uio66-buffer-quality-pilot/feedback-round2.md) · [Draft quality standard](../../reports/uio66-buffer-quality-pilot/standard-draft.md) · [Before audit](../../reports/uio66-buffer-quality-pilot/audit-before.md) · [Separate scientific, educational and technical reviews](../../reports/uio66-buffer-quality-pilot/review-after.md)
+
+The existing published page retains its original URL and first-publication date, 2026-11-02. Catalogue metadata and the original dates are unchanged. The user subsequently authorized solidifying the Skill; its standards are now recorded, while this page revision remains local for evaluation.
+
+Round 2 adds an explained PXRD measurement sketch, a solid/liquid evidence map and four method stages with purpose, sample allocation and limits. It distinguishes glass-vessel linker experiments from parallel plastic-vessel Zr experiments. Original measured data remain unchanged.
+
+Following permission to use original images, the Intuition layer now places the original Figure 4 PXRD panel beside its explanation, with complete axes/curves, bilingual guidance, attribution and a link to the full-resolution complete figure.
+
+The high-school refinement moves material foundations before PXRD, adds a two-task buffer diagram, explains HPLC/ICP-MS operations and calibration, and brings the separate percentage denominators into the default layer. All 30 measured rows remain unchanged. [Current science, teaching and technical review](../../reports/standards-high-school-transfer/review.md).

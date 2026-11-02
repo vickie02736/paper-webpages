@@ -1,0 +1,22 @@
+{
+  "uio66-dangling-linkers": {
+    "originalIDsRetained": true,
+    "originalDatasetUnchanged": true
+  },
+  "ree-mof-critical-review": {
+    "originalIDsRetained": true,
+    "originalDatasetUnchanged": true
+  },
+  "ree-mof-targeted-review": {
+    "originalIDsRetained": true,
+    "originalDatasetUnchanged": true
+  },
+  "ree-porous-framework-review": {
+    "originalIDsRetained": true,
+    "originalDatasetUnchanged": true
+  },
+  "ree-mof-protocol": {
+    "originalIDsRetained": true,
+    "originalDatasetUnchanged": true
+  }
+}

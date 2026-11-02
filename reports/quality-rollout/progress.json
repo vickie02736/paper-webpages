@@ -1,0 +1,155 @@
+{
+  "audience": "High-school background; complete Chinese and English",
+  "releasePolicy": "Publish current three pilots, then five batches of five after separate scientific, teaching and technical review",
+  "initial": [
+    "uio66-buffer-stability",
+    "water-stable-mof-discovery",
+    "water-stability-review"
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "papers": [
+        {
+          "slug": "hydrolytic-stability-grading",
+          "status": "published",
+          "commit": "89ad64a5090bd542a95f055188636060444d480c"
+        },
+        {
+          "slug": "mof-hydrolysis-atomistic",
+          "status": "published",
+          "commit": "89ad64a5090bd542a95f055188636060444d480c"
+        },
+        {
+          "slug": "mil100-water-matrices",
+          "status": "published",
+          "commit": "89ad64a5090bd542a95f055188636060444d480c"
+        },
+        {
+          "slug": "cmpo-mil101-ree",
+          "status": "published",
+          "commit": "89ad64a5090bd542a95f055188636060444d480c"
+        },
+        {
+          "slug": "defect-phosphate-uio66-yb",
+          "status": "published",
+          "commit": "89ad64a5090bd542a95f055188636060444d480c"
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "papers": [
+        {
+          "slug": "mof-stability-three-axes",
+          "status": "published",
+          "commit": "0423e3f04242d910c153423f3722c8227d14d4b8"
+        },
+        {
+          "slug": "mof-kinetic-stability",
+          "status": "published",
+          "commit": "0423e3f04242d910c153423f3722c8227d14d4b8"
+        },
+        {
+          "slug": "water-stable-mof-design",
+          "status": "published",
+          "commit": "0423e3f04242d910c153423f3722c8227d14d4b8"
+        },
+        {
+          "slug": "hydrolytic-stability-benchmark",
+          "status": "published",
+          "commit": "0423e3f04242d910c153423f3722c8227d14d4b8"
+        },
+        {
+          "slug": "water-dual-impact",
+          "status": "published",
+          "commit": "0423e3f04242d910c153423f3722c8227d14d4b8"
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "papers": [
+        {
+          "slug": "uio66-dangling-linkers",
+          "status": "published",
+          "commit": "437739d0e3ef7a3e214076c1a1c360ebe048ffd7"
+        },
+        {
+          "slug": "ree-mof-critical-review",
+          "status": "published",
+          "commit": "437739d0e3ef7a3e214076c1a1c360ebe048ffd7"
+        },
+        {
+          "slug": "ree-mof-targeted-review",
+          "status": "published",
+          "commit": "437739d0e3ef7a3e214076c1a1c360ebe048ffd7"
+        },
+        {
+          "slug": "ree-porous-framework-review",
+          "status": "published",
+          "commit": "437739d0e3ef7a3e214076c1a1c360ebe048ffd7"
+        },
+        {
+          "slug": "ree-mof-protocol",
+          "status": "published",
+          "commit": "437739d0e3ef7a3e214076c1a1c360ebe048ffd7"
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "papers": [
+        {
+          "slug": "functionalized-cr-mil101",
+          "status": "validated-for-publication"
+        },
+        {
+          "slug": "acrylic-mil101-scandium",
+          "status": "validated-for-publication"
+        },
+        {
+          "slug": "dual-functional-uio66-gd",
+          "status": "validated-for-publication"
+        },
+        {
+          "slug": "uio66-zif8-ree",
+          "status": "validated-for-publication"
+        },
+        {
+          "slug": "organophosphorus-mil101",
+          "status": "validated-for-publication"
+        }
+      ]
+    },
+    {
+      "batch": 5,
+      "papers": [
+        {
+          "slug": "dga-mil101-europium",
+          "status": "queued"
+        },
+        {
+          "slug": "mil101-sba15-lu-y",
+          "status": "queued"
+        },
+        {
+          "slug": "dtpa-mil101-ammonium",
+          "status": "queued"
+        },
+        {
+          "slug": "hkust1-lutetium",
+          "status": "queued"
+        },
+        {
+          "slug": "boroxine-mof-ree",
+          "status": "queued"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Teaching audit is not a human learning-outcome test",
+    "No real screen-reader session has been performed"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "viewportLanguages": 6,
+  "structureInteractions": 108,
+  "checks": [
+    "actual non-empty geometry rendering",
+    "pointer and keyboard rotation",
+    "zoom and reset",
+    "hydrogen changes displayed geometry",
+    "state preserved across language and depth",
+    "same initial Angstrom scale with 5 Angstrom scale bar",
+    "two common-scale VPOV bars: 62 and 26 percent",
+    "original Figure 3 loads with bilingual alt",
+    "bilingual loading and failure, retry recovery, other structure remains usable",
+    "no horizontal page overflow or JavaScript errors"
+  ],
+  "limitations": [
+    "not a pore-volume recalculation or GCMC run",
+    "no human comprehension study"
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "refcode": "IQECIS",
+    "coordinatesAndBonds": "PASS: identical to independent intact-entry packing and framework-label selection",
+    "atoms": 528,
+    "bonds": 556
+  },
+  {
+    "refcode": "YEZKUL",
+    "coordinatesAndBonds": "PASS: identical to independent intact-entry packing and framework-label selection",
+    "atoms": 495,
+    "bonds": 506
+  }
+]

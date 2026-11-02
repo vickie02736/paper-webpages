@@ -1,0 +1,33 @@
+{
+  "commit": "7176d218e74c5104e8e0a3486e340beacc82a542",
+  "pagesBuild": "built",
+  "onlineChecks": [
+    {
+      "path": "papers/uio66-buffer-stability/",
+      "status": 200,
+      "marker": "percent-foundations"
+    },
+    {
+      "path": "papers/water-stability-review/",
+      "status": 200,
+      "marker": "conflict-lab"
+    },
+    {
+      "path": "papers/water-stable-mof-discovery/",
+      "status": 200,
+      "marker": "structures.js"
+    },
+    {
+      "path": "papers/water-stability-review/assets/figure-28.png",
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/water-stable-mof-discovery/assets/structures/iqecis.json",
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/water-stable-mof-discovery/assets/structures/yezkul.json",
+      "sha256Matches": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "combinations": 18,
+  "actions": 360,
+  "anchors": 60,
+  "checks": [
+    "grouped holdout invariants",
+    "all 18 MAE/r pairs against SI S14, common scale",
+    "four data-generation states and purpose",
+    "two uncertainty endpoints",
+    "all 20 database/stage values against SI S16/S18",
+    "four candidate ML/GCMC pairs",
+    "three transfer answers",
+    "English text and accessibility labels",
+    "depth/language/selection/expanded-state preservation",
+    "keyboard Enter/Space/Tab and focus",
+    "figure failure/retry",
+    "storage unavailable",
+    "all original numeric data unchanged"
+  ],
+  "limitations": [
+    "no training or GCMC rerun",
+    "no real screen-reader or human learning test"
+  ]
+}

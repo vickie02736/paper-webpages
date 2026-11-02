@@ -14,7 +14,7 @@ window.DISCOVERY_DATA = {
         "不能把超过原子数限制的结构归为不稳定。",
         "Structures above the atom-count cutoff cannot be labelled unstable."
       ],
-      "source": "Main §2.1; SI §1"
+      "source": "Main §2.1; SI Fig. S1 / Table S1"
     },
     {
       "number": "4 + 13 + 39",
@@ -30,7 +30,7 @@ window.DISCOVERY_DATA = {
         "这是生成候选结构的规则，不是证明所有修饰结构都可合成。",
         "These are candidate-generation rules, rather than proof that every derivative is synthesizable."
       ],
-      "source": "Main §2.1; SI Figs. S1–S3"
+      "source": "Main §2.1; SI Fig. S2 / Tables S1–S3"
     },
     {
       "number": "1,148 → 900",
@@ -46,7 +46,7 @@ window.DISCOVERY_DATA = {
         "几何筛查不能替代合成、化学稳定性与孔道可接近性的实验。",
         "Geometry filtering does not replace experiments on synthesis, chemical stability or pore access."
       ],
-      "source": "Main §2.1; Fig. 1; SI §1"
+      "source": "Main §2.1; SI Fig. S2 / Tables S1–S3"
     },
     {
       "number": "900 → 736",
@@ -62,7 +62,7 @@ window.DISCOVERY_DATA = {
         "未收敛代表该计算未提供可靠标签，不等于零吸附、孔塌陷或实验失败。",
         "Nonconvergence means no reliable label from that calculation, rather than zero uptake, pore collapse or experimental failure."
       ],
-      "source": "Main §2.2; SI Figs. S4–S6"
+      "source": "Main §2.2; SI Tables S4–S6"
     }
   ],
   "models": [

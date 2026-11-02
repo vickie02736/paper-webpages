@@ -42,3 +42,17 @@ Page-only static/JS syntax pass. `/tmp/cmpo-qa.cjs` passes four stages, all thre
 
 - `cmpo-mil101-ree.pdf` SHA-256: `8605899033c1ffd009949cce09b3431d4088a5d9411a948a2257eb95196eac1e`
 - `cmpo-mil101-ree-si.docx` SHA-256: `65bf5d5bc1bc1c3280b6336268882a3984efd198ea404d8ec00e7d1879363cf0`
+
+## High-school teaching revision — 2026-11-02
+
+P1, background/denominator gap: the original opening used chelating groups and separation factors before defining them. Added scaffold/group/ion prerequisites, synthesis-purpose flow and a worked distribution-to-transfer example.
+
+New method guide: Source: Main synthesis section, Fig. 3, Table 1 and adsorption controls; SI §§1–2.
+
+New evidence comparison: Source: Main Kd definition and Table 2; derived two-phase balance. Main and SI batch distinctions remain separate.
+
+Reread main synthesis, adsorption equations and Table 2 plus SI batch/porosity notes. Worked r=149/549=0.2714 uses the reported rounded Kd and V/m with explicit mass-balance assumptions; the published SF remains 3.2, not replaced by rounded-Kd division.
+
+Reader task: Check: why can 12.46 mg/g and 3.2 not directly rank the same performance? The first is a fitted single-ion capacity limit; the second is a partitioning preference in a specific mixture. Their objects, units and conditions differ; decide whether capacity or separation is the target.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

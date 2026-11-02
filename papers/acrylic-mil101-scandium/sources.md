@@ -42,3 +42,17 @@ JS syntax and `check_page.py --page-only` pass. `/tmp/acrylic-qa.cjs` checks all
 
 - `acrylic-mil101-scandium.html` SHA-256: `3b8d92b7f2bad466070be9e0c136a2f025487e5bdd1b9b0afd4752a154aae1d3`
 - `acrylic-mil101-scandium--am9b00476_si_001.pdf` SHA-256: `5b3550ff176d86d5e4e6018f4cadea46be9772eca41b086874db6321c87e9cd3`
+
+## High-school teaching revision — 2026-11-02
+
+P1 naming / inference: synthesis explains x/y but begins with unexpanded AA; capacity lists three values without explicitly ruling out a false improvement ratio. Add material chemistry and operation purposes, then compare measured uptake and fitted limits. Keep Sel logarithm visible before the chart.
+
+New method guide: Source: Main §§2.2–2.3, Scheme 1 and Table 1; SI characterization and isotherms.
+
+New evidence comparison: Source: Main Tables 1–3 and SI Fig. S1. The logarithmic selectivity definition is in main Eq. 8 and SI Table S1.
+
+Rechecked main preparation/Table1–3 and Eq8, plus SI TableS1/S2 and FigS1. All75 Sel entries remain unchanged; no base assumption or back-transform. Three capacities remain tied to their distinct protocols. No quantitative leaching limit is invented from the absent AA peak.
+
+Reader task: Check: can Sc/La Sel = 2.31 mean 2.31-fold preference or 2.31% recovery? Neither. It is the logarithm of a distribution-ratio ratio, not a direct ratio or percentage. Its positive sign favors Sc under those conditions, but the unspecified base prevents an exact fold value and it does not establish product purity.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

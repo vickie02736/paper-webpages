@@ -77,3 +77,17 @@ Ten sections; full Chinese/English interface; three energy routes, six gas branc
 `/tmp/mof-ree-sources/mof-kinetic-stability.pdf`: **2,520,521 bytes**, SHA-256 `0fd95f9e4021e0dcf9d297fd1b251186cf5ea895a692c8d5a6d372f39066ce48`.
 
 The subscription PDF remains outside the repository. Cached page text and figure contacts support auditing but are not published as the article.
+
+## High-school teaching revision — 2026-11-02
+
+P1 terminology / reading structure: idea opens with “量热…亚稳态”, while ammonia jumps from static to breakthrough capacity. Define the physical object and barrier first, explain axes before controls and depict the two measurement questions separately.
+
+New method guide: Source: Review Fig. 2 and discussions of kinetic stability and aquo-ion exchange.
+
+New evidence comparison: Source: Review Tables 2–3 and Fig. 5. The page retains its four selected materials, not a uniform benchmark of all reviewed data.
+
+Reread main kinetic-stability discussion, Fig. 2, Fig. 5 and Tables 2–3. The four-page subset conditions are retained; full Fig. 5 spans other concentrations/one static temperature exception and is not generalized. No SI is listed. No lifetime or absolute energy is inferred from the teaching curves.
+
+Reader task: Check: does higher static ammonia uptake guarantee a better protective filter? No. A filter must delay outlet breakthrough at the target concentration, humidity and flow rate; degradation and use conditions also matter. Pure-gas equilibrium capacity cannot replace that breakthrough test.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

@@ -87,7 +87,7 @@
     renderRoute(); renderGas(); renderCapacity();
   }
   window.matchMedia('(max-width:650px)').addEventListener('change', renderRoute);
-  AtlasPaper.init({
+  AtlasPaper.init({depth:window.PaperLesson.depth,
     shortTitle: 'MOF · H₂O · NH₃',
     title: { zh: 'MOF 动力学稳定性：为什么结构能留下来？', en: 'MOF kinetic stability: why does the structure persist?' },
     sections: [

@@ -1,0 +1,111 @@
+[
+  {
+    "refcode": "IQECIS",
+    "ccdc": 1443542,
+    "doi": "10.1002/chem.201600705",
+    "cellLengths": [
+      23.7773,
+      23.7773,
+      23.7773
+    ],
+    "cellAngles": [
+      90.0,
+      90.0,
+      90.0
+    ],
+    "spacegroup": "P213",
+    "atomCount": 528,
+    "bondCount": 556,
+    "elements": {
+      "F": 12,
+      "O": 40,
+      "Co": 16,
+      "S": 4,
+      "N": 48,
+      "C": 252,
+      "H": 156
+    },
+    "maxBondLength": 2.1387703968544653,
+    "removedComponents": [
+      {
+        "formula": "C4 H9 N1 O1",
+        "atoms": 15
+      },
+      {
+        "formula": "C4 H9 N1 O1",
+        "atoms": 15
+      },
+      {
+        "formula": "H2 O1",
+        "atoms": 3
+      },
+      {
+        "formula": "H2 O1",
+        "atoms": 3
+      },
+      {
+        "formula": "H2 O1",
+        "atoms": 3
+      },
+      {
+        "formula": "H2 O1",
+        "atoms": 3
+      },
+      {
+        "formula": "H2 O1",
+        "atoms": 3
+      }
+    ],
+    "sha256": "78c49b78495dabbf261ed052ec2236c42412febf01c0c0580672e3ab2e7f3d31"
+  },
+  {
+    "refcode": "YEZKUL",
+    "ccdc": 947029,
+    "doi": "10.1021/ja309452y",
+    "cellLengths": [
+      21.0856,
+      21.0856,
+      17.9678
+    ],
+    "cellAngles": [
+      90.0,
+      90.0,
+      119.99999999999999
+    ],
+    "spacegroup": "R32",
+    "atomCount": 495,
+    "bondCount": 506,
+    "elements": {
+      "Mo": 16,
+      "Ni": 11,
+      "O": 36,
+      "H": 180,
+      "C": 216,
+      "N": 36
+    },
+    "maxBondLength": 2.1173304198390963,
+    "removedComponents": [
+      {
+        "formula": "C6 N1",
+        "atoms": 7
+      },
+      {
+        "formula": "C3 N2",
+        "atoms": 5
+      },
+      {
+        "formula": "H2 O1",
+        "atoms": 3
+      },
+      {
+        "formula": "H2 O1",
+        "atoms": 3
+      },
+      {
+        "formula": "H2 O1",
+        "atoms": 3
+      }
+    ],
+    "sha256": "9a8021ce802cc1ac3ac3b22c4796a746c064a300219293b1edb4700d0844dc3d"
+  }
+]

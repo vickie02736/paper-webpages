@@ -33,3 +33,17 @@ The PDF title page verifies both authors at the Department of Chemistry, Univers
 Shared author/date byline remains pending proper catalog metadata integration. Final catalog and publication checks are still required.
 
 Publisher PDF SHA-256: `bea360b1b403fe4d30f5cebd0bf96aec52aec5bfea29d440c831a63342e36566`.
+
+## High-school teaching revision — 2026-11-02
+
+P1, background/terminology: the original exposure cards used RH and the matrix used crystallinity/porosity before explaining their measurement. The builder is retained and introduced through a three-step reporting rationale.
+
+New method guide: Source: Main Tables 2–3; §§3–5.5.
+
+New evidence comparison: Source: Main Table 3; §5.5. Hypothetical examples, not new experimental records.
+
+Rechecked main §§3–5.5 and Tables 2–3. A/B/C/D mapping and missing-evidence logic are preserved. The publisher lists no independent scientific SI. Added examples are explicitly hypothetical, with no numerical severity or lifetime conversion.
+
+Reader task: Check: why is PXRD alone insufficient for 6A? 6 only identifies boiling-water exposure. A additionally requires retained order and porosity; without the pore measurement the letter lacks evidence. Duration must still be reported.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

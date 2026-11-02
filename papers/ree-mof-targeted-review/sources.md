@@ -113,3 +113,17 @@ HTML SHA256 817c867dbbb6c5e5c894b7e38c4e1c23230a58022a6964baf6abc11a3e3fe2b4
     ]
   }
 }
+
+## High-school teaching revision — 2026-11-02
+
+P1 background / process inference: “群组/单元素” and six design strategies need explicit feed/output definitions. “成形…牺牲位点” lacks a denominator example. Add a proposed-route flow with transfer losses and a labeled hypothetical composite calculation.
+
+New method guide: Source: Review §4 two-stage proposal and Table 2; downstream checks are a teaching organization of its validation needs.
+
+New evidence comparison: Basis: Review §2.4 composites and shaped-material examples in §3; numbers are explicitly hypothetical denominator teaching.
+
+Reread review §§2.4, 3 and the two-stage paragraph/Table2 in §4. Kept proposed architecture separate from tested processes. The 50%-MOF calculation is hypothetical with inert-binder/no-access-change assumptions; no original capacity or disputed review value is changed. No independent SI listed.
+
+Reader task: Check: does strong REE/iron separation establish high-purity neodymium? No. It may only enrich REEs as a group. Nd separation from coexisting REEs, subsequent release and product composition still need testing, with target losses tracked at each step.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

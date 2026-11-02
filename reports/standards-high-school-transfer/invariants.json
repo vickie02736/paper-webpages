@@ -1,0 +1,13 @@
+{
+  "uio66-buffer-stability": {
+    "dataSHA256": "b011978eb9120203a61f8288832e1ff04753288e47dbcb6950ef1a0cf38af0e5",
+    "allExistingIDsRetained": true,
+    "duplicateIDs": false
+  },
+  "water-stability-review": {
+    "dataSHA256": "047cbdfb37ef4ea38c4704155eda6153c612a0f2350bbd1f044aa8eb7858a5d5",
+    "allExistingIDsRetained": true,
+    "duplicateIDs": false
+  },
+  "figure28SHA256": "3792cff689fe6cbc37c7cec81cc01621ee3c29fc5630a0a7cc066b7c00a15df8"
+}

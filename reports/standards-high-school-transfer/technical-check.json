@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "reviewActions": 324,
+  "sectionAnchorChecks": 198,
+  "widths": [
+    1440,
+    768,
+    390
+  ],
+  "languages": [
+    "zh",
+    "en"
+  ],
+  "depths": [
+    1,
+    2,
+    3
+  ],
+  "checks": [
+    "UiO foundations visible at default depth; worked ratio; English text and labels",
+    "18 original review selections plus 3 figure-reading states and 3 reasoning answers",
+    "all sections and expanded details; overflow; first-use definitions",
+    "language/depth state, scroll, focus, Enter/Space/Tab",
+    "direct English URL/reload; blocked storage",
+    "new original image slow load, failure and retry",
+    "no local failed resources or page errors"
+  ],
+  "limits": [
+    "scientific audit is separate",
+    "no human reread or real screen-reader test"
+  ]
+}

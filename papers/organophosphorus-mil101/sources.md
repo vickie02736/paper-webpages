@@ -34,3 +34,17 @@ Final9-page article/Figs1–5/Tables1–3 previously read from author thesis; fu
 
 organophosphorus-mil101-publisher.html SHA256 2d60ed40ed7d629fe0d2d924a61ddb38d247cf022cd1d3645eed78358a9c662e
 organophosphorus-mil101-si.docx SHA256 7f8f62c161e315aef8212e551db2a4428793a5adf71d01623d3a583f11a9605c
+
+## High-school teaching revision — 2026-11-02
+
+P1 object distinction / unit meaning: C/H/T labels and “骨架保留” need an explicit two-component material model. Leaching graph already warns about percent conversion, but does not show why elemental concentration lacks the denominator. Add preparation/check flow and a sourced μg-to-mg example.
+
+New method guide: Source: Main §§2.2, 3.7; SI S1–S3 and Figs. S12–S14.
+
+New evidence comparison: Source: T50–P row in SI Table S4; main Fig. 4c and SI Figs. S12–S14 provide separate regeneration evidence.
+
+Reread main materials/regeneration and full SI TableS4 plus S12–S14 captions. 29.9587mg/L is exact unit conversion of29958.7μg/L P, not TBP concentration or release fraction. Kept pH-leaching and regeneration conditions separate and preserved reported zero/missing-value distinctions.
+
+Reader task: Check: why measure phosphorus groups and solution P when diffraction peaks remain? Diffraction mainly probes the ordered solid support. Functional molecules can be lost without erasing all support peaks. Spectra, liquid composition and next-run uptake add evidence about functional retention.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

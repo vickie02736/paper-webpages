@@ -54,7 +54,7 @@
       `15 个报告的 Sel 值范围为 ${num(min)}–${num(max)}。${selectedPH === 0 ? '作者在 pH 1 下报告的吸附较弱；这些数值不能等同于高 Sc 回收率。' : '作者在此 pH 范围内观察到 Sc 优先吸附。数值描述相对分配，不能直接给出进料的回收比例。'}条形图与完整表格使用同一组源数据。`;
   }
   function render() { renderRoute(); renderPH(); }
-  window.AtlasPaper.init({
+  window.AtlasPaper.init({depth:window.PaperLesson.depth,
     shortTitle: 'AA–MIL-101',
     title: {zh:'丙烯酸改性 MIL-101：容量增加之后，Sc 选择性如何？',en:'Acrylic-acid MIL-101: capacity and Sc selectivity'},
     sections:[

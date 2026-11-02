@@ -82,3 +82,17 @@ All scientific main/SI read but empirical inconsistencies remain disclosed. Page
 mil100-water-matrices.html SHA256 1470af47a656564cbcc44c5cbb5d38addca0eeca90e1ef988cf13fe93f312fcc
 
 mil100-water-matrices-si.docx SHA256 44f5b6c770f757baf6921d754431dd4a74d42080ce4e17aef4396c3176269a99
+
+## High-school teaching revision — 2026-11-02
+
+P1, background/formula gap: the page used matrix, BET and hydrogen-ion activity before an intuitive measurement story. Added a two-sided workflow and a pH scale example; retained the existing explicit main/SI discrepancies.
+
+New method guide: Source: Main §§2–3, Figs. 1–5 and Table 1; SI methods, Tables S4–S6.
+
+New evidence comparison: Source: Main §3.5 / Fig. 5 and SI S5–S6 for context; pH 6→3 is an explicitly hypothetical teaching example.
+
+Reread main results/methods, Table 1 and SI S4–S6. No conflicting iron concentration is selected as uniquely correct. The added 6→3 example is hypothetical and uses the pH definition, not a digitized experimental trace.
+
+Reader task: Check: are retained PXRD peaks, lower BET area and falling pH contradictory? No. They examine ordered regions, probe-accessible surface and solution chemistry. Ordered material may remain while pore accessibility and liquid composition change.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

@@ -34,3 +34,17 @@ All12pagesviewedpair1–6includingimageonlyreaction. SImethodAr87K,EDTAtitration
 defect-phosphate-uio66-yb-publisher.html SHA256 28f22c5af581e313b0ee291d4cf192b8d0d3b604f1dfddf21807150fa2057dfd
 
 defect-phosphate-uio66-yb-si.docx SHA256 c78ea4ccb43f75aed42259112511540f96e7d81d528f932de273e1112048b2b9
+
+## High-school teaching revision — 2026-11-02
+
+P1, terminology/evidence gap: EPR, TGA, zeta potential and modeled defects appeared before operational definitions. Added their roles, the TGA inference chain and a paired capacity/selectivity comparison.
+
+New method guide: Source: Main §3.1; SI TGA derivation and Figs. S1–S2 / Table S1.
+
+New evidence comparison: Source: Main §3.2, Fig. 7b and eqs. 12–13; SI Fig. S2. Different single-ion and mixture protocols are retained.
+
+Reread final main §3.1/§3.2, Fig.7, eqs.12–13 and SI TGA model/Table S1/Fig.S2. Preserved TGA assumptions, Ar rather than N2 measurement, distinct single-ion/mixture conditions and the existing main/SI kinetic inconsistency.
+
+Reader task: Check: do lower area and larger reported pore width prove more total porosity? No. Area, pore width and total pore volume are different quantities; total volume also decreases here. Reported width depends on measurement/model choices and is not an exact entry window for hydrated Yb.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

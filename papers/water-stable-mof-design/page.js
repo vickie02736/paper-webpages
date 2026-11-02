@@ -114,7 +114,7 @@
     renderEvidence();
     renderScenario();
   }
-  AtlasPaper.init({
+  AtlasPaper.init({depth:window.PaperLesson.depth,
     shortTitle: 'MOF · H₂O · CO₂',
     title: { zh: '耐水 MOF：从构筑策略到 CO₂ 捕集', en: 'Water-resistant MOFs: design and CO₂ capture' },
     sections: [
