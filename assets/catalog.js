@@ -10,11 +10,6 @@
           application: "应用",
           related: "相关方法与对照",
           relatedNote: "这些论文主归其他主题，通过此处关联阅读。",
-          routesTitle: "三条研究路线",
-          routesText: "沿问题串联不同主题。点击论文查看其主分类与讲解入口。",
-          routesEyebrow: "MOF + AI 阅读路径",
-          tasteTitle: "读完留下五个判断",
-          tasteText: "问题为什么重要？关键机制是什么？什么证据最有说服力？边界在哪里？怎样启发 MOF 研究？",
           docTitle: '研究图谱 · Kewei Zhu',
           metaDesc: '以 MOF 与 AI 为核心的研究图谱，连接化学材料、实验机器人、数学基础、生命科学与交互式论文讲解。',
           brandSub: 'Kewei Zhu · 可视化研究笔记',
@@ -70,11 +65,6 @@
           application: "Application",
           related: "Related methods & comparisons",
           relatedNote: "These references have their primary home in another theme.",
-          routesTitle: "Three research routes",
-          routesText: "Follow questions across themes. Select a paper to find its primary category and explainer.",
-          routesEyebrow: "MOF + AI reading routes",
-          tasteTitle: "Five judgments to keep from a paper",
-          tasteText: "Why does the question matter? What drives the result? Which evidence is most convincing? Where are the limits? How could it inform MOF research?",
           docTitle: 'Research Atlas · Kewei Zhu',
           metaDesc: 'A research atlas centred on MOFs and AI, connecting chemistry, laboratory robotics, mathematical foundations, life sciences and interactive explainers.',
           brandSub: 'Kewei Zhu · visual research notes',
@@ -197,18 +187,8 @@
       const alsoListed = function (theme, paper) {
         return paper.tagIds.length ? '<div class="paper-tags">'+paper.tagIds.map(id => '<button type="button" data-tag="'+esc(id)+'" aria-pressed="'+selectedTags.has(id)+'">'+esc(textOf(catalogData.taxonomyTags[id].name))+'</button>').join('')+'</div>' : '';
       };
-      const renderDiscovery = function () {
+      const renderFilters = function () {
         const focused=document.activeElement;
-        const routeState=[...document.querySelectorAll('.research-route')].filter(n=>n.open).map(n=>n.id);
-        const focusRef=focused?.dataset.paperRef; const focusRoute=focused?.closest('.research-route')?.id;
-        const summaryFocus=focused?.matches('.research-route > summary');
-        const routeHTML=catalogData.researchRoutes.map(route => '<details class="research-route" id="route-'+esc(route.id)+'"'+(routeState.includes('route-'+route.id)?' open':'')+'><summary><strong>'+esc(textOf(route.name))+'</strong><span aria-hidden="true">＋</span></summary><p>'+esc(textOf(route.question))+'</p><ol>'+route.stages.map(stage=>'<li><h3>'+esc(textOf(stage.name))+'</h3><p>'+esc(textOf(stage.note))+'</p><ul>'+stage.paperIds.map(id=>'<li>'+referenceLink(id)+'</li>').join('')+'</ul></li>').join('')+'</ol></details>').join('');
-        const routes=document.getElementById('research-routes');
-        if(routes.innerHTML!==routeHTML){routes.innerHTML=routeHTML;
-          const scope=focusRoute?document.getElementById(focusRoute):null;
-          const restore=summaryFocus?scope?.querySelector('summary'):focusRef?[...(scope||routes).querySelectorAll('[data-paper-ref]')].find(n=>n.dataset.paperRef===focusRef):null;
-          restore?.focus({preventScroll:true});
-        }
         const oldValue=selectedTheme;
         const options='<option value="">'+esc(t('allThemes'))+'</option>'+catalogData.themes.map(theme=>'<option value="'+esc(theme.id)+'">'+esc(textOf(theme.name))+'</option>').join('');
         if(themeFilter.innerHTML!==options)themeFilter.innerHTML=options;
@@ -440,7 +420,7 @@
             openBeforeSearch = null;
           }
           updateStatus();
-          renderDiscovery();
+          renderFilters();
         };
         const recent = document.getElementById('recent');
         const renderRecent = function () {

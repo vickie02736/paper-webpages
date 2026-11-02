@@ -165,22 +165,11 @@
       nav { display: none; }
     }
 
-    #routes { margin-bottom:64px; }
-    #research-routes { display:grid; gap:12px; }
-    .research-route { border:1px solid var(--line); border-radius:16px; padding:0 22px; background:var(--panel); }
-    .research-route > summary { cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:22px 0; list-style:none; }
-    .research-route > summary::-webkit-details-marker { display:none; }
-    .research-route[open] > summary span { transform:rotate(45deg); }
-    .research-route > p { margin-top:0; color:var(--muted); }
-    .research-route > ol { padding-left:24px; }
-    .research-route > ol > li { padding:0 0 20px 8px; }
-    .research-route h3 { font-size:1rem; margin:0; }
-    .research-route p,.related-papers p { color:var(--muted); line-height:1.65; }
-    .research-route ul,.related-papers ul { padding-left:20px; line-height:1.9; }
+    .related-papers p { color:var(--muted); line-height:1.65; }
+    .related-papers ul { padding-left:20px; line-height:1.9; }
+    .related-papers small { color:var(--muted); }
     .paper-ref { color:var(--cyan); text-underline-offset:3px; overflow-wrap:anywhere; }
-    .research-route small,.related-papers small { color:var(--muted); }
-    .taste-note { margin:20px 0; color:var(--muted); line-height:1.7; }
-    .taste-note summary,.tag-filters summary,.related-papers summary { cursor:pointer; min-height:44px; padding:12px 0; }
+    .tag-filters summary,.related-papers summary { cursor:pointer; min-height:44px; padding:12px 0; }
     .theme-filter { display:flex; align-items:center; gap:8px; font-size:.85rem; }
     .theme-filter select { color:var(--ink); background:var(--bg); border:1px solid var(--line); border-radius:9px; padding:10px; max-width:100%; font:inherit; }
     .tag-filters { border-top:1px solid var(--line); margin-bottom:18px; }
@@ -196,7 +185,7 @@
     .related-papers { border-top:1px solid var(--line); margin-top:18px; }
     .related-papers[hidden] { display:none; }
     :is(a,button,input,select,summary):focus-visible { outline:2px solid var(--cyan); outline-offset:4px; }
-    @media(max-width:800px) { .theme-filter { flex-wrap:wrap; } .theme-filter select { width:100%; } .hero { padding:42px 0 50px; } #routes { margin-bottom:46px; } }
+    @media(max-width:800px) { .theme-filter { flex-wrap:wrap; } .theme-filter select { width:100%; } .hero { padding:42px 0 50px; } }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
   </style>
 <link rel="stylesheet" href="./assets/bibliography.css">
@@ -210,7 +199,6 @@
       </a>
       <div class="header-actions">
         <nav data-i18n-aria="navAria" aria-label="主导航">
-          <a href="#routes" data-i18n="routesTitle">三条研究路线</a>
           <a href="#themes" data-i18n="navThemes">主题</a>
           <a href="./papers/" data-i18n="navExplainers">论文讲解</a>
           <a href="https://github.com/vickie02736/paper-webpages">GitHub ↗</a>
@@ -224,12 +212,6 @@
         <div class="eyebrow" data-i18n="heroEyebrow">研究的可视化索引</div>
         <h1 data-i18n-html="heroTitle">MOF + AI，<br>连接下一步。</h1>
         <p data-i18n-html="heroText">以<strong>金属有机框架与人工智能</strong>为核心的灵感库：连接高通量筛选、机器学习势与自动实验，从数学基础和兄弟领域积累问题、方法与判断。</p>
-      </section>
-
-      <section id="routes" aria-labelledby="routes-title">
-        <div class="section-head"><div><div class="eyebrow" data-i18n="routesEyebrow">MOF + AI 阅读路径</div><h2 id="routes-title" data-i18n="routesTitle">三条研究路线</h2></div><p data-i18n="routesText">沿问题串联不同主题。点击论文查看其主分类与讲解入口。</p></div>
-        <div id="research-routes"></div>
-        <details class="taste-note"><summary data-i18n="tasteTitle">读完留下五个判断</summary><p data-i18n="tasteText">问题为什么重要？关键机制是什么？什么证据最有说服力？边界在哪里？怎样启发 MOF 研究？</p></details>
       </section>
 
       <section id="themes" aria-labelledby="themes-title">
@@ -266,6 +248,6 @@
     </footer>
   </div>
   <script src="./assets/bibliography.js"></script>
-<script src="./assets/catalog.js?v=2"></script>
+<script src="./assets/catalog.js?v=3"></script>
 </body>
 </html>

@@ -20,7 +20,7 @@ Keep each paper’s `id` unchanged. The initial IDs were minted from exact sourc
 
 `tagIds` refers to `taxonomyTags`: object, method, task and application are separate dimensions, each with a bilingual name. Assign tags only when supported by the paper. The UI combines same-dimension choices with OR and different dimensions with AND. Publication metadata tags in the older top-level `tags` translation map are independent of these research tags. Spell out machine-learning interatomic potentials and retain MLP/MLIP aliases; do not confuse that meaning with multilayer perceptrons.
 
-`relatedPaperIds` lists references whose primary home is another theme. `researchRoutes[]` contains three curated routes with bilingual questions, stages, notes and `paperIds`. These reference links display the primary theme and open the unique entry. A reference does not claim that a method has already been validated in a different domain.
+`relatedPaperIds` lists references whose primary home is another theme. `researchRoutes[]` retains three curated reference collections with bilingual questions, stages, notes and `paperIds`; they are not rendered on the homepage. Related-paper links display the primary theme and open the unique entry. A reference does not claim that a method has already been validated in a different domain.
 
 ## Search and state
 
@@ -53,7 +53,7 @@ Each paper retains `s`, `se` where needed, `t`, `m`, `d` and `e`. Every new them
 
 - `node scripts/check-taxonomy.cjs --data-only`: all original identities, contexts, counts, metadata, paths and structured references.
 - `node scripts/check-catalog.cjs`: automatic refresh, combined search, failure recovery, immutable creation ordering, language and responsive layouts.
-- `node scripts/check-taxonomy.cjs`: the data checks plus MOF stability/REE, typed tags, aliases, route links and responsive screenshots. Serve the repository locally and set `PAPER_BASE_URL` (default `http://127.0.0.1:8768/`).
+- `node scripts/check-taxonomy.cjs`: the data checks plus MOF stability/REE, typed tags, aliases, direct-paper/reference links and responsive screenshots. Serve the repository locally and set `PAPER_BASE_URL` (default `http://127.0.0.1:8768/`).
 - `node scripts/build-paper-metadata.cjs --check` and `node scripts/check-paper-metadata.cjs`: preserve bibliographic records and author/affiliation/date searches.
 
 Browser checks accept `PAPER_PLAYWRIGHT_MODULE`, `PAPER_CHROMIUM_EXECUTABLE`, `PAPER_BASE_URL` where supported, and `PAPER_QA_DIR`. The taxonomy migration baseline is immutable; a future intentional collection-size change must update the count contract together with an explicit inventory audit, not simply weaken the preservation checks.

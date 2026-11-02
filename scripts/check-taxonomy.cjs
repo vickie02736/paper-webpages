@@ -83,8 +83,7 @@ const {chromium}=require(process.env.PAPER_PLAYWRIGHT_MODULE||'playwright');
   await page.locator('#clear-search').click();
   for(const [query,count] of [['AIRS',1],['LLM-NERRE',1],['MLIP',13]]){await page.locator('#catalog-search').fill(query);assert.equal(await page.locator('#catalog .paper-row').count(),count,query);}
   await page.locator('#clear-search').click();
-  const firstRoute=page.locator('.research-route').first();await firstRoute.locator('summary').press('Enter');
-  const ref=firstRoute.locator('[data-paper-ref]').first();const target=await ref.getAttribute('data-paper-ref');await ref.click();
+  const target=papers[0].id;await page.goto(base+'?lang=en&paper='+target);await page.waitForFunction(()=>!document.querySelector('#only-explainers').disabled);
   assert.equal(await page.locator('#catalog .paper-row').count(),1);assert.equal(new URL(page.url()).searchParams.get('paper'),target);
   assert.equal(await page.locator('#catalog .paper-row').getAttribute('data-paper-id'),target);
   await page.reload();await page.waitForFunction(()=>!document.querySelector('#only-explainers').disabled);assert.equal(await page.locator('#catalog .paper-row').count(),1);
@@ -99,15 +98,15 @@ const {chromium}=require(process.env.PAPER_PLAYWRIGHT_MODULE||'playwright');
    await page.goto(base+'?lang='+language);await page.waitForFunction(()=>!document.querySelector('#only-explainers').disabled);await page.setViewportSize({width,height:width===390?844:1000});
    await page.screenshot({path:path.join(out,'home-'+width+'-'+language+'.png'),fullPage:true});
    await page.locator('#theme-filter').selectOption('mof');
-   await page.locator('.research-route').first().locator('summary').click();
+   assert.equal(await page.locator('#routes,.research-route,.taste-note,a[href="#routes"]').count(),0,'Removed homepage reading section and navigation');
    await page.locator('.tag-filters > summary').click();
    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'No document overflow '+width+'/'+language);
    await page.locator('#catalog').screenshot({path:path.join(out,'mof-expanded-'+width+'-'+language+'.png')});
    if(language==='en'){
-    const residue=await page.locator('#routes,.theme-name,.theme-description,.group-title,#tag-options,.related-papers').evaluateAll(nodes=>nodes.filter(n=>n.checkVisibility({checkVisibilityCSS:true})&&/[\u3400-\u9fff]/.test(n.textContent)).map(n=>n.textContent));
+    const residue=await page.locator('.theme-name,.theme-description,.group-title,#tag-options,.related-papers').evaluateAll(nodes=>nodes.filter(n=>n.checkVisibility({checkVisibilityCSS:true})&&/[\u3400-\u9fff]/.test(n.textContent)).map(n=>n.textContent));
     assert.deepEqual(residue,[],'English taxonomy labels');
    }
   }
-  assert.deepEqual(errors,[]);console.log('PASS navigation: MOF stability/REE, theme and typed tag filters, URL reload, aliases, route/reference links, bilingual stable expansion, keyboard, three widths and screenshots: '+out);
+  assert.deepEqual(errors,[]);console.log('PASS navigation: MOF stability/REE, theme and typed tag filters, URL reload, aliases, direct-paper/reference links, bilingual stable expansion, keyboard, three widths and screenshots: '+out);
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

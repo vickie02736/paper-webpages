@@ -18,6 +18,6 @@ The AI/ML theme is organised by research topic, not conference prestige or accep
 
 ## MOF + AI reading routes
 
-The homepage adds three bilingual routes in `researchRoutes`: high-throughput MOF screening and inverse design; MOF machine-learning potentials and simulation; and automated MOF experiments. Each stage references existing paper IDs. These curated routes complement the 34 preserved conceptual routes in these maps.
+The catalogue retains three bilingual reference collections in `researchRoutes` (not displayed on the homepage): high-throughput MOF screening and inverse design; MOF machine-learning potentials and simulation; and automated MOF experiments. Each stage references existing paper IDs. These curated routes complement the 34 preserved conceptual routes in these maps.
 
 MOF has explicit Stability and Rare-Earth Adsorption & Separation subcategories. Non-MOF comparisons such as LanM remain available in the MOF reading collection while their primary catalogue home is general chemistry/materials. Existing filenames, source URLs and explanatory map nodes remain intact.

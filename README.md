@@ -17,9 +17,9 @@ Six primary themes organize 451 papers, with one primary record per paper:
 - [Mathematics & Modelling Foundations / 数学与建模基础](https://vickie02736.github.io/paper-webpages/?theme=mathematics): 78 papers.
 - [Life Sciences, Drug Discovery & Medicine / 生命科学、药物与医学](https://vickie02736.github.io/paper-webpages/?theme=life-medicine): 70 papers.
 
-Three [curated reading routes](https://vickie02736.github.io/paper-webpages/#routes) connect these themes: high-throughput MOF screening and inverse design, MOF machine-learning potentials and simulation, and automated MOF experiments. They reference existing papers, without adding duplicate catalogue records. MOF also retains five related methods/comparisons whose primary home is general chemistry and materials.
+The homepage proceeds directly from its introduction to the six-theme catalogue. MOF retains five related methods/comparisons whose primary home is general chemistry and materials.
 
-The library supports collecting ideas and developing research judgment. The five reading prompts ask about the question, mechanism, evidence, limits and possible transfer to MOF research. The existing [FreeMind reading collections](references/roadmaps/) retain their original explanatory context and filenames.
+The library supports collecting ideas and developing research judgment. The existing [FreeMind reading collections](references/roadmaps/) retain their original explanatory context and filenames.
 
 ## Paper explainers
 
@@ -90,6 +90,6 @@ The homepage and all 15 explainers share expandable publication-time author/affi
 
 Use the primary-theme selector and the expandable cross-disciplinary tags alongside global or within-theme search. Tags have separate object, method, task and application dimensions: selections within one dimension use OR; different dimensions use AND. For example, `?theme=mof&tag=application%3Aree` selects MOF rare-earth adsorption/separation, and `?tag=object%3Amof&tag=method%3Amlip` selects MOF interatomic potentials. `MLP`, `MLIP` and the old `AIRS` abbreviation are searchable aliases; the synthesis paper now displays its original abbreviation, AIRES.
 
-A paper reference uses `?paper=<stable-id>` and opens the primary entry. Existing `?q=`, `?lang=`, `?explainers=1`, `#themes`, `#recent` and all explainer paths remain valid. Related readings and routes show the primary theme and do not affect the 451-paper total. A migration ledger preserves all 463 old listings: [`taxonomy-migration.json`](references/taxonomy-migration.json).
+A paper reference uses `?paper=<stable-id>` and opens the primary entry. Existing `?q=`, `?lang=`, `?explainers=1`, `#themes`, `#recent` and all explainer paths remain valid. Related readings show the primary theme and do not affect the 451-paper total. A migration ledger preserves all 463 old listings: [`taxonomy-migration.json`](references/taxonomy-migration.json).
 
 Run `node scripts/check-taxonomy.cjs --data-only` for migration and schema checks. Browser checks are described in the [catalogue guide](references/paper-catalog-guide.md).
