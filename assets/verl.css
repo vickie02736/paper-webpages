@@ -16,7 +16,7 @@
 .verl-page .lab-results{min-width:0}.verl-page .metrics{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:18px}.verl-page .metric{flex:1 1 130px;padding:18px;background:var(--panel2);border-radius:14px}
 .verl-page .metric span{display:block;color:var(--muted);font-size:.85rem}.verl-page .metric strong{display:block;font-size:1.6rem;color:var(--cyan);font-variant-numeric:tabular-nums}
 .verl-page .table-scroll{overflow-x:auto;max-width:100%;border:1px solid var(--line);border-radius:12px}.verl-page table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}.verl-page th,.verl-page td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}.verl-page th{color:var(--cyan);background:var(--panel2)}
-.verl-page .plot{width:100%;height:auto;min-width:0;background:var(--panel);border-radius:16px}.verl-page .plot text{fill:var(--muted);font-size:12px}.verl-page .plot .curve{stroke:var(--cyan);stroke-width:3;fill:none}.verl-page .plot .axis{stroke:var(--line)}
+.verl-page .plot{width:100%;height:auto;min-width:0;background:var(--panel);border-radius:16px}.verl-page .plot text{fill:var(--muted);font-size:14px}.verl-page .plot .curve{stroke:var(--cyan);stroke-width:3;fill:none}.verl-page .plot .axis{stroke:var(--line)}
 .verl-page .lab-note,.verl-page figcaption,.verl-page .source-note{color:var(--muted);font-size:.9rem}.verl-page .source-note{overflow-wrap:anywhere}
 .verl-page .callout{border-left:3px solid var(--amber);padding:12px 20px;background:var(--panel)}
 .verl-page figure{margin:24px 0}.verl-page .bars{display:grid;gap:12px;padding:22px;background:var(--panel);border-radius:16px}.verl-page .bar-row{display:grid;grid-template-columns:minmax(125px,1fr) minmax(0,2fr) 60px;gap:12px;align-items:center}.verl-page .bar-track{height:12px;background:var(--panel2);border-radius:5px;overflow:hidden}.verl-page .bar-fill{display:block;height:100%;background:var(--cyan)}
@@ -30,3 +30,5 @@
 .verl-page[data-paper="verl-algorithm-baselines"] .lab-controls{grid-template-columns:1fr 2fr auto;align-items:end}
 .verl-page .lab-results th{white-space:normal}
 @media(max-width:800px){.verl-page[data-paper="verl-algorithm-baselines"] .lab-controls{grid-template-columns:1fr}}
+
+@media(max-width:480px){.verl-page .plot text{font-size:18px}}

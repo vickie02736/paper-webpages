@@ -1252,7 +1252,7 @@
       "zh": "verl 使用 adv_estimator=gpg 与 loss_mode=gpg。本文精读 arXiv v4；较早文档的简述不等于实现了 v4 全部消融中的设置。",
       "en": "verl uses adv_estimator=gpg and loss_mode=gpg. This guide reads arXiv v4; an earlier documentation summary does not establish implementation of every v4 ablation setting."
     },
-    "locator": "§2.2 equations 5–8; Table 1; §3.4–3.5; Appendix A distributed aggregation",
+    "locator": "§2.2 equations 5–8; Table 1 (PDF p.4); §3 experiments and ablations; Appendix A",
     "rows": [
       [
         "GPG, α=1",

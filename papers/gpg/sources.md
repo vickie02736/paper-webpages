@@ -11,7 +11,7 @@
 
 ## Source locators
 
-§2.2 equations 5–8; Table 1; §3.4–3.5; Appendix A distributed aggregation
+§2.2 equations 5–8; Table 1 (PDF p.4); §3 experiments and ablations; Appendix A
 
 ## Claim mapping
 

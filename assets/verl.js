@@ -37,10 +37,10 @@ const table=(heads,rows)=>'<div class="table-scroll"><table><thead><tr>'+heads.m
 const note=s=>'<p class="lab-note">'+esc(s)+'</p>';
 function curve(fn,xmin,xmax,label,current){
  const ys=Array.from({length:101},(_,i)=>fn(xmin+(xmax-xmin)*i/100));let low=Math.min(...ys,0),high=Math.max(...ys,0);if(high===low)high=low+1;const span=high-low;if(low<0)low-=span*.08;high+=span*.08;
- const px=x=>72+(x-xmin)/(xmax-xmin)*480,py=y=>210-(y-low)/(high-low)*180;
+ const px=x=>92+(x-xmin)/(xmax-xmin)*460,py=y=>210-(y-low)/(high-low)*180;
  const points=ys.map((y,i)=>px(xmin+(xmax-xmin)*i/100).toFixed(2)+','+py(y).toFixed(2)).join(' ');
- const ticks=[0,.5,1].map(t=>{const x=xmin+(xmax-xmin)*t,y=low+(high-low)*t;return `<text x="${px(x)}" y="234" text-anchor="middle">${n(x)}</text><text x="63" y="${py(y)+4}" text-anchor="end">${Math.abs(y)>=1000?y.toExponential(1):Number(y.toPrecision(3))}</text>`;}).join('');
- return `<svg class="plot" role="img" aria-label="${esc(label)}" viewBox="0 0 580 270"><line class="axis" x1="72" y1="210" x2="552" y2="210"/><line class="axis" x1="72" y1="30" x2="72" y2="210"/>${ticks}<polyline class="curve" points="${points}"/><circle cx="${px(current)}" cy="${py(fn(current))}" r="5" fill="#ffb66e"/><text x="300" y="258" text-anchor="middle">${esc(label)}</text></svg>`;
+ const ticks=[0,.5,1].map(t=>{const x=xmin+(xmax-xmin)*t,y=low+(high-low)*t;return `<text x="${px(x)}" y="234" text-anchor="middle">${n(x)}</text><text x="83" y="${py(y)+4}" text-anchor="end">${Math.abs(y)>=1000?y.toExponential(1):Number(y.toPrecision(3))}</text>`;}).join('');
+ return `<svg class="plot" role="img" aria-label="${esc(label)}" viewBox="0 0 580 270"><line class="axis" x1="92" y1="210" x2="552" y2="210"/><line class="axis" x1="92" y1="30" x2="92" y2="210"/>${ticks}<polyline class="curve" points="${points}"/><circle cx="${px(current)}" cy="${py(fn(current))}" r="5" fill="#ffb66e"/><text x="300" y="258" text-anchor="middle">${esc(label)}</text></svg>`;
 }
 function render(){
  controls.querySelectorAll('input[type=range]').forEach(e=>document.getElementById(e.id+'-value').value=n(+e.value));
@@ -76,9 +76,9 @@ function handleInput(event){
 }
 controls.addEventListener('input',handleInput);controls.addEventListener('change',handleInput);
 document.getElementById('reset-lab').addEventListener('click',()=>{if(defs[d.slug])defs[d.slug].forEach(def=>{document.getElementById(def[0]).value=Array.isArray(def[3])?def[4]:def[6];});else{document.getElementById('dataset').value='all';document.getElementById('model').value='all';}render();});
-document.querySelectorAll('[data-depth]').forEach(b=>b.addEventListener('click',()=>{depth=b.dataset.depth;document.querySelectorAll('[data-depth]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));document.querySelectorAll('[data-level]').forEach(e=>{e.hidden=depth==='intuition'&&e.dataset.level!=='intuition'||depth==='mechanism'&&e.dataset.level==='research';});}));
+document.querySelectorAll('[data-depth]').forEach(b=>b.addEventListener('click',()=>{const position=scrollY;depth=b.dataset.depth;document.querySelectorAll('[data-depth]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));document.querySelectorAll('[data-level]').forEach(e=>{e.hidden=depth==='intuition'&&e.dataset.level!=='intuition'||depth==='mechanism'&&e.dataset.level==='research';});reader.refresh();window.scrollTo({top:position,behavior:'instant'});}));
 const sectionLabels=[['background','研究问题','Problem'],['mechanism','方法机制','Method'],['math','公式推导','Derivation'],['lab','交互实验室','Interactive lab'],['evidence','实验证据','Evidence'],['limits','局限与联系','Limits'],['implementation','verl 附注','verl notes'],['sources','来源','Sources']];
-window.AtlasPaper.init({shortTitle:d.short,title:d.title,sections:sectionLabels.map(([id,zh,en])=>({id,zh,en})),depth:document.getElementById('depth-control'),allowBoth:false,onLanguageChange:l=>{lang=l;translate();}});
+const reader=window.AtlasPaper.init({shortTitle:d.short,title:d.title,sections:sectionLabels.map(([id,zh,en])=>({id,zh,en})),depth:document.getElementById('depth-control'),allowBoth:false,onLanguageChange:l=>{lang=l;translate();}});
 // Initial depth uses progressive disclosures inside sections; every section remains navigable.
 document.querySelector('[data-depth="intuition"]').click();
 })();
