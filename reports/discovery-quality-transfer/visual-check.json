@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "viewports": [
+    1440,
+    768,
+    390
+  ],
+  "languages": [
+    "zh",
+    "en"
+  ],
+  "checks": [
+    "default reading screenshots",
+    "revised mobile table header",
+    "English model identifiers and numeric separators",
+    "keyboard horizontal figure scrolling",
+    "bilingual image-loading state",
+    "no page overflow"
+  ],
+  "contrast": [
+    {
+      "selector": ".learning-lane p",
+      "foreground": "rgb(244, 247, 251)",
+      "background": "rgb(16, 30, 49)",
+      "ratio": 15.609030841298592
+    },
+    {
+      "selector": ".purpose-node p",
+      "foreground": "rgb(244, 247, 251)",
+      "background": "rgb(16, 30, 49)",
+      "ratio": 15.609030841298592
+    },
+    {
+      "selector": ".split-grid td",
+      "foreground": "rgb(227, 255, 244)",
+      "background": "rgb(18, 57, 47)",
+      "ratio": 12.031655606897564
+    },
+    {
+      "selector": ".split-grid .held-out",
+      "foreground": "rgb(242, 223, 255)",
+      "background": "rgb(52, 34, 66)",
+      "ratio": 11.540829885189526
+    },
+    {
+      "selector": "figcaption",
+      "foreground": "rgb(168, 180, 199)",
+      "background": "rgb(7, 17, 31)",
+      "ratio": 9.03352403929926
+    },
+    {
+      "selector": "#split-insight",
+      "foreground": "rgb(244, 247, 251)",
+      "background": "rgb(21, 38, 59)",
+      "ratio": 14.241894558317837
+    },
+    {
+      "selector": "#transfer-feedback",
+      "foreground": "rgb(244, 247, 251)",
+      "background": "rgb(16, 30, 49)",
+      "ratio": 15.609030841298592
+    }
+  ],
+  "limitations": [
+    "manual screenshot review recorded separately",
+    "not a full automated accessibility audit"
+  ]
+}

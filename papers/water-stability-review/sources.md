@@ -1,3 +1,7 @@
+## Publication scope update
+
+The user authorized publishing this high-school revision, including its attributed original figures and requested structure visualizations. Earlier local-only scope notes below are historical; scientific limitations and source-reading boundaries still apply. [Rollout record](../../reports/quality-rollout/README.md).
+
 # Evidence ledger: water stability and adsorption in MOFs
 
 ## Final batch verification
@@ -96,3 +100,24 @@ All design values are textual with their conditions; no quantitative bars distor
 Eleven sections; fully bilingual static prose, headings and 18 selectable states (five applications, four categories, six material dossiers and three designs). A textual three-stage workflow is labelled teaching. No remote rendering or subscription images are needed. Dynamic text updates preserve controls, focus and open details during language changes.
 
 Static page-only check passes. `/tmp/water-review-qa.cjs` passes all 11 sections at 1440/768/390 px in Chinese and English, verifies opposite-language static spans are hidden, all 18 selectable states and critical conditions/source locations, details, keyboard Enter/Space, focus, state preservation and direct English URL/reload. No console errors or document overflow. Screenshots are saved as `reports/mof-ree-qa/water-review-*.png`. A screenshot review identified missing scoped language CSS; this was fixed and the full responsive run repeated. Final desktop/tablet/phone screenshots were inspected. Catalog integration and publication remain pending for the entire batch.
+
+## 2026-11-02 — high-school transfer pilot (local, supersedes implementation notes above)
+
+**Reason for selection:** this is a review synthesizing heterogeneous studies, unlike the UiO-66 single-study experimental diagnosis and the earlier ML screening page. It tests whether the teaching standard can preserve provenance and conflicting evidence rather than imposing one experimental flowchart.
+
+**New evidence map and beginner foundations.** `#review-foundations`, `#review-evidence-map`: MOF, adsorption, PXRD, BET per gram of recovered solid, regeneration and SI are explained before use. The map separates original studies, the review’s synthesis, exposure category and evidence confidence. Main §4 explicitly bases classification on experimental characterization and confidence on characterization methods and independent studies; it does not test every material in one controlled experiment. Analogies are conceptual, without crystal topology or quantitative simulated data.
+
+**Conflict-reading exercise.** `#conflict-lab` transcribes two MIL-100(Fe) records:
+
+- SI Table S5, printed p. S8 (PDF page 8), SI reference 6: boiling water for one week; no change in PXRD or BET surface area.
+- SI Table S6, printed p. S9 (PDF page 9), SI reference 39: two days in liquid water; majority of BET surface area lost, PXRD maintained. The entry supplies neither temperature nor a numerical loss percentage. Both omissions remain explicit.
+
+Both SI pages were reread as text and visually inspected this pass. The records are separate studies, not timepoints on one batch. Three answer branches reject unsupported repair or automatic error claims and support checking comparable protocols. Main §4 discusses defect content, crystal sizes and activation as possible sources of differences; it does not establish the cause of this particular pair. The page explicitly states that these two cited primary studies have not been independently read in full.
+
+**Category versus confidence example.** La-BTB: SI Table S4, p. S7, reports retained PXRD after three days in water / pH 2 HCl / pH 14 NaOH at 60 or 100 °C, but no paired BET measurement. Low confidence is retained; it is neither a numerical probability nor proof of poor material performance.
+
+**Original Figure 28 and reading guide.** Source image: publisher asset `m_cr5002589_0032.png`, copied unchanged to `assets/figure-28.png`. Publisher full-size endpoint: <https://pubs.acs.org/view-large/figure/201128245/cr5002589_0032.tif>. Main §3.2, Figure 28 and eqs. 1–2 establish the endpoint/barrier distinction. The image was visually inspected before use. Three reading states explain axes, identical start/end levels and the larger green barrier. Horizontal reaction coordinate is not time or travel distance; the diagram has no numerical scale or measured lifetime. It is the authors’ conceptual diagram, not quantitative data for named materials. The source labels Eₐ₁/Eₐ₂ on a Free Energy axis; the text explicitly explains ΔG‡ as the free-energy increase from reactants to the transition state. No numerical rate, energy or lifetime is inferred. Figure is attributed to Burtch et al., © 2014 ACS; user authorized original images for the local pilot.
+
+**Formulas and scope.** G, Δ, ‡, reactants/products/transition state, specified conditions and use of endpoint subtraction are explained before the existing mechanism formulas. GCMC and MD definitions precede their detailed simulation limitations. Basic terms remain visible; research depth reveals technical assumptions and application extensions. None of the new interactions calculates a physical trajectory or synthesizes experimental data.
+
+**Implementation:** all 11 section IDs, 18 original selection states, source links and `data.js` remain. Adds three cumulative reading depths, three figure-reading states and three inference responses. Image load/failure/retry and accessible bilingual alt/status are explicit. No shared resources or catalogue dates changed. See [current validation](../../reports/standards-high-school-transfer/review.md); these changes are local and do not modify the published version.

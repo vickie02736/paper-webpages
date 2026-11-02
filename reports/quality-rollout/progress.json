@@ -1,0 +1,140 @@
+{
+  "audience": "High-school background; complete Chinese and English",
+  "releasePolicy": "Publish current three pilots, then five batches of five after separate scientific, teaching and technical review",
+  "initial": [
+    "uio66-buffer-stability",
+    "water-stable-mof-discovery",
+    "water-stability-review"
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "papers": [
+        {
+          "slug": "hydrolytic-stability-grading",
+          "status": "queued"
+        },
+        {
+          "slug": "mof-hydrolysis-atomistic",
+          "status": "queued"
+        },
+        {
+          "slug": "mil100-water-matrices",
+          "status": "queued"
+        },
+        {
+          "slug": "cmpo-mil101-ree",
+          "status": "queued"
+        },
+        {
+          "slug": "defect-phosphate-uio66-yb",
+          "status": "queued"
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "papers": [
+        {
+          "slug": "mof-stability-three-axes",
+          "status": "queued"
+        },
+        {
+          "slug": "mof-kinetic-stability",
+          "status": "queued"
+        },
+        {
+          "slug": "water-stable-mof-design",
+          "status": "queued"
+        },
+        {
+          "slug": "hydrolytic-stability-benchmark",
+          "status": "queued"
+        },
+        {
+          "slug": "water-dual-impact",
+          "status": "queued"
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "papers": [
+        {
+          "slug": "uio66-dangling-linkers",
+          "status": "queued"
+        },
+        {
+          "slug": "ree-mof-critical-review",
+          "status": "queued"
+        },
+        {
+          "slug": "ree-mof-targeted-review",
+          "status": "queued"
+        },
+        {
+          "slug": "ree-porous-framework-review",
+          "status": "queued"
+        },
+        {
+          "slug": "ree-mof-protocol",
+          "status": "queued"
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "papers": [
+        {
+          "slug": "functionalized-cr-mil101",
+          "status": "queued"
+        },
+        {
+          "slug": "acrylic-mil101-scandium",
+          "status": "queued"
+        },
+        {
+          "slug": "dual-functional-uio66-gd",
+          "status": "queued"
+        },
+        {
+          "slug": "uio66-zif8-ree",
+          "status": "queued"
+        },
+        {
+          "slug": "organophosphorus-mil101",
+          "status": "queued"
+        }
+      ]
+    },
+    {
+      "batch": 5,
+      "papers": [
+        {
+          "slug": "dga-mil101-europium",
+          "status": "queued"
+        },
+        {
+          "slug": "mil101-sba15-lu-y",
+          "status": "queued"
+        },
+        {
+          "slug": "dtpa-mil101-ammonium",
+          "status": "queued"
+        },
+        {
+          "slug": "hkust1-lutetium",
+          "status": "queued"
+        },
+        {
+          "slug": "boroxine-mof-ree",
+          "status": "queued"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Teaching audit is not a human learning-outcome test",
+    "No real screen-reader session has been performed"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "viewportLanguageDepthCombinations": 18,
+  "actions": 174,
+  "checks": [
+    "all 30 unchanged data conditions and bar scales",
+    "3 evidence steps",
+    "3 comparisons and exact selected values",
+    "3 transfer answers",
+    "English visible text/aria",
+    "state, language, depth, scroll and keyboard focus",
+    "all section IDs, responsive overflow",
+    "figure failure/retry",
+    "denied storage"
+  ],
+  "limitations": [
+    "not tested with a real screen reader",
+    "learning outcomes await user reading"
+  ]
+}

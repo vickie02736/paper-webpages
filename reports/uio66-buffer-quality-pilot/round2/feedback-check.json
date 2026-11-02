@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "methodStates": 72,
+  "dimensions": [
+    1440,
+    768,
+    390
+  ],
+  "languages": [
+    "zh",
+    "en"
+  ],
+  "depths": [
+    1,
+    2,
+    3
+  ],
+  "checks": [
+    "exact reference values and distinct analysis routes",
+    "one visible step and accurate pressed/status state",
+    "all translated SVG labels within bounds",
+    "visible English diagram/step text",
+    "keyboard Enter/Space and focus",
+    "method step retained across depth/language changes",
+    "no malformed LOD element; visible <LOD explanation",
+    "no document overflow or page errors"
+  ],
+  "limits": [
+    "scientific correctness reviewed separately against sources",
+    "real screen-reader and learning-outcome tests not performed"
+  ]
+}
