@@ -77,3 +77,7 @@ These are general definitions and worked teaching examples, not experimental obs
 - [Foundation: Batch size-invariance for policy optimization](https://arxiv.org/abs/2110.00641): Section 2, decoupled clipped and KL-penalized objectives: separate behavior and proximal policies.
 
 - [Later analysis: Trust Region Masking](https://arxiv.org/html/2512.23075v1): Sections 2–5: autoregressive context distributions, sequence-level versus token-level control. The teaching page does not claim to reproduce TRM training.
+
+- [TRM paper study (v5)](../trm/): Related paper study, separately adopts v5 and its qualified guarantee; does not alter this topic’s original v1 source attribution.
+
+- [Batch size-invariance paper study](../batch-size-invariance/): Hilton, Cobbe and Schulman, NeurIPS 2022; separate behavior and proximal policies.

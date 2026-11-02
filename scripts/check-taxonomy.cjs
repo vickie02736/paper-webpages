@@ -40,6 +40,13 @@ for(const t of verlBaseline.themes)for(const original of t.p){
 for(const key of ['paperMetadata','explainers','explainerCreatedAt'])for(const[k,v]of Object.entries(verlBaseline[key]))assert.deepEqual(catalog[key][k],v,'Pre-verl '+key+' preserved');
 for(const addition of verl.records){const actual=sources.get(addition.u);assert(actual);assert.equal(actual.id,addition.id);assert.equal(actual.p,addition.path);assert.equal(actual.topicId,addition.topicId);assert(!verlBaseline.themes.some(t=>t.p.some(p=>p.id===addition.id)));}
 for(const t of baseline.themes)for(const p of t.p){const expected=applyPlacement(structuredClone(p));if(p.id===verl.updatedRecords[0].id)expected.p=verl.updatedRecords[0].p;assert.deepEqual(sources.get(p.u),expected,'Original audit baseline retained with explicit placement correction');}
+const rl=JSON.parse(fs.readFileSync(path.join(root,'reports/rl-foundations-additions.json'),'utf8'));
+const rlBaseline=JSON.parse(execFileSync('git',['show',rl.baselineCommit+':references/paper-catalog.json'],{cwd:root,encoding:'utf8',maxBuffer:20*1024*1024}));
+assert.equal(rl.records.length,2);assert.equal(rlBaseline.themes.flatMap(t=>t.p).length,490);
+for(const t of rlBaseline.themes)for(const p of t.p)assert.deepEqual(sources.get(p.u),p,'Every pre-TRM paper record unchanged');
+for(const key of ['paperMetadata','explainers','explainerCreatedAt'])for(const[k,v]of Object.entries(rlBaseline[key]))assert.deepEqual(catalog[key][k],v,'Pre-TRM '+key+' preserved');
+assert.deepEqual(catalog.collections,rlBaseline.collections,'Original collection identities preserved');
+for(const addition of rl.records){const p=sources.get(addition.u);assert(p);assert.equal(p.id,addition.id);assert.equal(p.p,addition.path);assert.equal(p.topicId,addition.topicId);assert(!rlBaseline.themes.some(t=>t.p.some(old=>old.u===p.u)));}
 const collection=catalog.collections.find(c=>c.id==='verl-algorithms');assert(collection);
 assert.equal(collection.items.length,15);assert.equal(new Set(collection.items.map(i=>i.path)).size,15);
 assert.equal(collection.items.filter(i=>i.type==='paper').length,12);
@@ -48,9 +55,9 @@ for(const item of collection.items){const ai=catalog.themes.find(t=>t.id==='ai')
 assert(catalog.themes.find(t=>t.id==='mathematics').relatedPaperIds.includes(placement.paperId));
 assert.deepEqual(collection.items.filter(i=>i.type==='document').map(i=>i.path),verl.documentPages);
 for(const item of collection.items){assert(fs.existsSync(path.join(root,item.path,'index.html')));assert(catalog.explainers[item.path]);if(item.type==='paper')assert(papers.some(p=>p.id===item.paperId&&p.p===item.path));else assert(!item.paperId&&!papers.some(p=>p.p===item.path));}
-assert.equal(Object.keys(catalog.explainers).length,58);
-assert.equal(papers.length,490);assert.equal(sources.size,490);assert.equal(ids.size,490);
-assert.deepEqual(catalog.themes.map(t=>[t.id,t.p.length]),[['mof',96],['ai',102],['chemistry-materials',73],['robotics-lab',72],['mathematics',77],['life-medicine',70]]);
+assert.equal(Object.keys(catalog.explainers).length,60);
+assert.equal(papers.length,492);assert.equal(sources.size,492);assert.equal(ids.size,492);
+assert.deepEqual(catalog.themes.map(t=>[t.id,t.p.length]),[['mof',96],['ai',104],['chemistry-materials',73],['robotics-lab',72],['mathematics',77],['life-medicine',70]]);
 assert.equal(migration.mapping.length,451);
 assert.equal(migration.mapping.flatMap(m=>m.old).length,463);
 assert.equal(papers.flatMap(p=>p.legacyContexts).length,463);
@@ -74,13 +81,13 @@ for(const t of catalog.themes){
 for(const route of catalog.researchRoutes)for(const stage of route.stages)for(const id of stage.paperIds)assert(ids.has(id));
 for(const m of migration.mapping){const p=sources.get(m.sourceUrl),expected=m.paperId===placement.paperId?placement.to:m;assert.equal(p.id,m.paperId);assert.equal(p.topicId,expected.topicId);assert(catalog.themes.find(t=>t.id===expected.primaryThemeId).p.includes(p));}
 assert.equal(catalog.researchRoutes.length,3);
-assert.equal(new Set(papers.filter(p=>p.p).map(p=>p.p)).size,55);
+assert.equal(new Set(papers.filter(p=>p.p).map(p=>p.p)).size,57);
 for(const p of papers.filter(p=>p.p))assert(fs.existsSync(path.join(root,p.p,'index.html')));
 const mof=catalog.themes.find(t=>t.id==='mof');
 const categoryCount=name=>mof.p.filter(p=>mof.groups[p.g].category.zh===name).length;
 assert.equal(categoryCount('MOF 稳定性'),14);assert.equal(categoryCount('稀土吸附与分离'),20);
 assert.equal(mof.relatedPaperIds.length,5);
-console.log('PASS taxonomy: original451records/463contexts preserved;28MOF+11verl additions;490papers/55paper+3document explainers;96/102/73/72/77/70 primary counts;explicit GRPO theme correction;immutable baseline metadata and dates.');
+console.log('PASS taxonomy: original451records/463contexts preserved;28MOF+11verl+2RL additions;492papers/57paper+3document explainers;96/104/73/72/77/70 primary counts;explicit GRPO theme correction;immutable baseline metadata and dates.');
 if(process.argv.includes('--data-only'))process.exit(0);
 const {chromium}=require(process.env.PAPER_PLAYWRIGHT_MODULE||'playwright');
 (async()=>{
@@ -91,7 +98,7 @@ const {chromium}=require(process.env.PAPER_PLAYWRIGHT_MODULE||'playwright');
   const page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'});const errors=[];
   page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400&&r.url().startsWith(base))errors.push(r.url()+': '+r.status());});
   await page.goto(base);await page.waitForFunction(()=>!document.querySelector('#only-explainers').disabled);
-  assert.equal(await page.locator('#catalog .paper-row').count(),490);
+  assert.equal(await page.locator('#catalog .paper-row').count(),492);
   assert.deepEqual(await page.locator('.theme-menu').evaluateAll(nodes=>nodes.map(n=>n.dataset.theme)),catalog.themes.map(t=>t.id));
   await page.locator('#theme-filter').selectOption('mof');
   assert.equal(await page.locator('#catalog .paper-row').count(),96);

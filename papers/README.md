@@ -56,6 +56,9 @@ Opening these pages does not require ChatGPT sign-in. Each supports Chinese and 
 - [Defect/phosphate UiO-66 and Yb](defect-phosphate-uio66-yb/) — Chemical Engineering Science 2026
 - [Boroxine MOF and REEs](boroxine-mof-ree/) — Chemical Engineering Journal 2026
 
+- [TRM — Trust Region Masking](trm/) — arXiv v5, sequence masks and long-horizon error bounds.
+- [Batch size-invariance for policy optimization](batch-size-invariance/) — NeurIPS 2022, PPO-EWMA and batch scaling.
+
 The MOF/REE high-school revisions use three cumulative reading levels, source-specific method guides and worked evidence comparisons. See the [rollout and separate validation reports](../reports/quality-rollout/README.md).
 
 ## Shared reading system

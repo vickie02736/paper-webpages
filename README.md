@@ -8,10 +8,10 @@ This repository collects the paper explainer webpages and research maps created 
 
 ## Research around MOF + AI
 
-Six primary themes organize 490 papers, with one primary record per paper:
+Six primary themes organize 492 papers, with one primary record per paper:
 
 - [Metal–Organic Frameworks / 金属有机框架](https://vickie02736.github.io/paper-webpages/?theme=mof): 96 papers. Includes separate **MOF Stability / MOF 稳定性** and **Rare-Earth Adsorption & Separation / 稀土吸附与分离** subcategories.
-- [Artificial Intelligence & Computing / 人工智能与计算](https://vickie02736.github.io/paper-webpages/?theme=ai): 102 papers and 3 documentation articles.
+- [Artificial Intelligence & Computing / 人工智能与计算](https://vickie02736.github.io/paper-webpages/?theme=ai): 104 papers and 3 documentation articles.
 - [General Chemistry & Materials / 通用化学与材料](https://vickie02736.github.io/paper-webpages/?theme=chemistry-materials): 73 papers.
 - [Robotics & Lab Automation / 机器人与实验自动化](https://vickie02736.github.io/paper-webpages/?theme=robotics-lab): 72 papers.
 - [Mathematics & Modelling Foundations / 数学与建模基础](https://vickie02736.github.io/paper-webpages/?theme=mathematics): 77 papers.
@@ -22,6 +22,9 @@ The homepage proceeds directly from its introduction to the six-theme catalogue.
 The library supports collecting ideas and developing research judgment. The existing [FreeMind reading collections](references/roadmaps/) retain their original explanatory context and filenames.
 
 ## Paper explainers
+
+- [TRM — Trust Region Masking](papers/trm/) — arXiv v5, sequence masks and long-horizon error bounds.
+- [Batch size-invariance for policy optimization](papers/batch-size-invariance/) — NeurIPS 2022, PPO-EWMA and batch scaling.
 
 - [RAG — Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](papers/rag/)
 - [Self-RAG — Learning to Retrieve, Generate, and Critique through Self-Reflection](papers/self-rag/)
@@ -101,7 +104,7 @@ references/
     *.mm
 ```
 
-The explainers share the Research Atlas navy-and-cyan reading style, a two-row sticky header, accessible section navigation and reading progress. All 58 pages support complete Chinese/English switching, including interactive feedback, and remember the homepage's language preference. Ln local coordination and PMIDA–MIL-101 also retain their parallel bilingual mode. Paper-specific diagrams, experiments and learning-depth options remain tailored to the subject.
+The explainers share the Research Atlas navy-and-cyan reading style, a two-row sticky header, accessible section navigation and reading progress. All 60 pages support complete Chinese/English switching, including interactive feedback, and remember the homepage's language preference. Ln local coordination and PMIDA–MIL-101 also retain their parallel bilingual mode. Paper-specific diagrams, experiments and learning-depth options remain tailored to the subject.
 
 Start with the central idea, then explore the mechanism, evidence, limitations, and broader connections. See the [explainer implementation guide](papers/README.md#shared-reading-system) for the common styles and language controller.
 

@@ -1388,6 +1388,18 @@
         "zh": "后续分析：Trust Region Masking",
         "en": "Later analysis: Trust Region Masking",
         "locator": "Sections 2–5: autoregressive context distributions, sequence-level versus token-level control. The teaching page does not claim to reproduce TRM training."
+      },
+      {
+        "url": "../trm/",
+        "zh": "TRM 原论文精读（v5）",
+        "en": "TRM paper study (v5)",
+        "locator": "Related paper study, separately adopts v5 and its qualified guarantee; does not alter this topic’s original v1 source attribution."
+      },
+      {
+        "url": "../batch-size-invariance/",
+        "zh": "批量大小不变性原论文精读",
+        "en": "Batch size-invariance paper study",
+        "locator": "Hilton, Cobbe and Schulman, NeurIPS 2022; separate behavior and proximal policies."
       }
     ],
     "claimLocators": {
@@ -1491,6 +1503,18 @@
         "zh": "后续分析：Trust Region Masking",
         "en": "Later analysis: Trust Region Masking",
         "locator": "Sections 2–5: autoregressive context distributions, sequence-level versus token-level control. The teaching page does not claim to reproduce TRM training."
+      },
+      {
+        "url": "../trm/",
+        "zh": "TRM 原论文精读（v5）",
+        "en": "TRM paper study (v5)",
+        "locator": "Related paper study, separately adopts v5 and its qualified guarantee; does not alter this topic’s original v1 source attribution."
+      },
+      {
+        "url": "../batch-size-invariance/",
+        "zh": "批量大小不变性原论文精读",
+        "en": "Batch size-invariance paper study",
+        "locator": "Hilton, Cobbe and Schulman, NeurIPS 2022; separate behavior and proximal policies."
       }
     ],
     "claimLocators": {

@@ -1,0 +1,23 @@
+{
+  "baselineCommit": "f460bef0596d5d6ce1228e59676145b347b583ae",
+  "baselinePapers": 490,
+  "baselineExplainers": 58,
+  "records": [
+    {
+      "id": "paper-91567a33b3a7",
+      "u": "https://arxiv.org/abs/2512.23075",
+      "path": "./papers/trm/",
+      "topicId": "ai-training-adaptation-rl-post-training"
+    },
+    {
+      "id": "paper-6e8d04b9d484",
+      "u": "https://arxiv.org/abs/2110.00641",
+      "path": "./papers/batch-size-invariance/",
+      "topicId": "ai-training-adaptation-rl-post-training"
+    }
+  ],
+  "expectedPapers": 492,
+  "expectedPaperExplainers": 57,
+  "expectedDocumentExplainers": 3,
+  "notes": "Two real papers added to AI RL/post-training; all 490 previous records and original dates retained; original 15-item verl collection unchanged."
+}
