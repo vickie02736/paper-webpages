@@ -1,0 +1,102 @@
+{
+  "hydrolytic-stability-grading": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "mof-hydrolysis-atomistic": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "mil100-water-matrices": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "cmpo-mil101-ree": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "defect-phosphate-uio66-yb": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "mof-stability-three-axes": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "mof-kinetic-stability": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "water-stable-mof-design": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "hydrolytic-stability-benchmark": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "water-dual-impact": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "uio66-dangling-linkers": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "ree-mof-critical-review": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "ree-mof-targeted-review": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "ree-porous-framework-review": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "ree-mof-protocol": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "functionalized-cr-mil101": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "acrylic-mil101-scandium": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "dual-functional-uio66-gd": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "uio66-zif8-ree": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "organophosphorus-mil101": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "dga-mil101-europium": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "mil101-sba15-lu-y": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "dtpa-mil101-ammonium": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "hkust1-lutetium": {
+    "originalMainTextRetained": true,
+    "missing": []
+  },
+  "boroxine-mof-ree": {
+    "originalMainTextRetained": true,
+    "missing": []
+  }
+}

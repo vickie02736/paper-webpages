@@ -40,3 +40,17 @@ Teaching2sliders rEu,rj0–100%,V10mL/m.02g=500mL/g. D=500r/(1−r);βD ratio. D
 dga-mil101-europium-publisher.html SHA256 482b324894b8b6a736bf5250c27719b8c2f91f63f752041d790a9518caa1a6d7
 
 dga-mil101-europium-si.docx SHA256 d8cd9fa5451f6f28986ada6810c8a5ad2a2a16ce4644600a0dc0d0c55be50151
+
+## High-school teaching revision — 2026-11-02
+
+P1 evidence provenance / mathematical jump: comparison mentions unmatched free-ligand evidence and metrics jumps directly to r/(1-r). Explain each comparator’s provenance and walk through removed-versus-remaining amounts before the existing sliders.
+
+New method guide: Source: Main §3.2 and Fig. 3; §3.4 mechanism discussion and SI Fig. S9.
+
+New evidence comparison: Basis: Main Eq. 6 and Table 2 definition as a D ratio; numbers come from the page’s teaching sliders, not a reported experiment.
+
+Reread main §§3.2–3.4, Table2/Eq6 and SI S7–S9. The 90/50 example derives from existing hypothetical inputs, not the reported32.349/53.055/47.061 betas. Acid/anhydride naming and HOMO/LUMO label reversal remain disclosed. No quantitative synergy or aqueous binding free-energy calculation is introduced.
+
+Reader task: Check: why is β not 1.8 when removal is 90% versus 50%? Because D also divides by each residual liquid fraction. Removing 90% leaves 10%, while removing 50% leaves 50%; calculate 9 and 1 first, then divide to obtain 9. Conditions must match, and these values are teaching assumptions.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

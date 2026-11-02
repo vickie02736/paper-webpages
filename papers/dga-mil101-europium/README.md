@@ -7,3 +7,7 @@ Twelve bilingual sections from the complete final main article and SI include 14
 Scientific/browser QA passes in Chinese and English at 1440, 768 and 390 px. Representative screenshots were saved and viewed. Catalogue and production bibliography are integrated; all 43 pages pass full static checks and browser regression (3,649 interaction actions). First-publication date: 2026-11-02.
 
 [Published page](https://vickie02736.github.io/paper-webpages/papers/dga-mil101-europium/) · [Evidence ledger](sources.md). Deployment is checked against the final GitHub Pages commit after push.
+
+## High-school teaching revision
+
+Introduces material-specific foundations, a method rationale, a worked evidence comparison and a reading checkpoint, with cumulative Intuition/Mechanism/Research controls. Original data and anchors are preserved. [Quality rollout and separate validation](../../reports/quality-rollout/README.md).

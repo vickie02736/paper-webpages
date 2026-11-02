@@ -2956,5 +2956,753 @@
     },
     "audit": "P1 object distinction / unit meaning: C/H/T labels and “骨架保留” need an explicit two-component material model. Leaching graph already warns about percent conversion, but does not show why elemental concentration lacks the denominator. Add preparation/check flow and a sourced μg-to-mg example.",
     "science": "Reread main materials/regeneration and full SI TableS4 plus S12–S14 captions. 29.9587mg/L is exact unit conversion of29958.7μg/L P, not TBP concentration or release fraction. Kept pH-leaching and regeneration conditions separate and preserved reported zero/missing-value distinctions."
+  },
+  "dga-mil101-europium": {
+    "lead": [
+      "给 MIL-101 引入 DGA 相关含氧基团后，对稀土的偏好发生变化。要理解 Eu 为什么更突出，需要把真实混合物分配、对照来源和作者的机制解释分开。",
+      "Introducing DGA-related oxygen-containing groups changes MIL-101’s rare-earth preference. Understanding the Eu preference requires separating mixture partitioning, the origins of controls and the authors’ mechanistic interpretation."
+    ],
+    "foundationTitle": [
+      "被留下的比例，与固液间的偏好不同",
+      "Fraction captured differs from preference between solid and liquid"
+    ],
+    "foundation": [
+      "Eu 是铕；La、Lu、Y 是镧、镥、钇，均在本文作为稀土比较对象。MIL-101 的孔内化学环境能吸引溶液中的离子，但离子也受周围水分子、酸碱性与其他离子影响。功能化改变这一竞争环境，不是仅增加一个空容器。",
+      "Eu is europium; La, Lu and Y are lanthanum, lutetium and yttrium, the other REE comparators here. MIL-101 pore environments can attract ions, while water, acidity and other ions also influence them. Functionalization changes this competition, rather than only adding empty storage space."
+    ],
+    "terms": [
+      [
+        [
+          "DGA 相关基团",
+          "DGA-related groups"
+        ],
+        [
+          "本文通过后修饰引入含醚氧、羰基等部位的化学环境。正文试剂名称与图示的酸／酸酐写法有差异；本页保留这项复现限制。",
+          "Post-functionalization introduces environments containing ether oxygen, carbonyl groups and related sites. Acid/anhydride naming differs between reagent text and diagrams; this reproducibility limitation is retained."
+        ]
+      ],
+      [
+        [
+          "去除率 r",
+          "Removal fraction r"
+        ],
+        [
+          "从液体中减少的目标量除以初始目标量。用小数计算时，90% 写作 0.90；它还没有除以液体中剩余的量。",
+          "Target removed from liquid divided by its initial amount. Write 90% as 0.90 in fractional calculations; this has not yet been compared with the amount remaining in liquid."
+        ]
+      ],
+      [
+        [
+          "分配系数 D 与 β",
+          "Distribution coefficient D and β"
+        ],
+        [
+          "D 比较单位固体上的量与平衡液体浓度；β 再比较两离子的 D。本论文 β 是直接比值，相等时为 1，没有取对数。",
+          "D compares loading per solid mass with equilibrium liquid concentration; β compares D for two ions. Here β is a direct ratio, equal to 1 for equal partitioning, with no logarithm."
+        ]
+      ]
+    ],
+    "problem": [
+      "读完应能解释为何 90% 与 50% 去除，对应的 β 可以是 9，而不是 1.8；同时不把这个教学例子当作论文测量。",
+      "You should explain why 90% and 50% removal can yield β = 9 rather than 1.8, while keeping that teaching example separate from measured results."
+    ],
+    "methodTarget": "comparison",
+    "methodTitle": [
+      "三类比较，各支持到哪一步？",
+      "What does each of the three comparisons support?"
+    ],
+    "steps": [
+      [
+        [
+          "母体：检查原有偏好",
+          "Parent: inspect the original preference"
+        ],
+        [
+          "论文在同一比较图中展示 MIL-101-NH₂ 的去除。柱很低不等于严格为零；断轴也改变视觉印象。",
+          "The paper shows removal by MIL-101-NH₂ in the comparison plot. Small bars are not exactly zero, and the broken axis affects visual impressions."
+        ]
+      ],
+      [
+        [
+          "改性物：检验整体改变",
+          "Modified solid: test the overall change"
+        ],
+        [
+          "改性后 Eu 的表现更突出，支持材料改性改变了吸附行为。但接入量、孔环境等也一起改变，尚不能单独隔离每一种原因。",
+          "Eu becomes more prominent after modification, supporting changed adsorption behavior. Loading and pore environment also change, so the comparison does not isolate every cause."
+        ]
+      ],
+      [
+        [
+          "游离配体：辨认文献参照",
+          "Free ligand: identify a literature comparison"
+        ],
+        [
+          "游离 DGA 类配体的偏好部分来自先前文献，并非同条件新测的完整对照。所谓协同需要匹配的配体量、介质和条件进一步检验。",
+          "Free DGA-type ligand preferences partly come from prior literature, not a complete newly measured matched control. Synergy needs further tests matching ligand amount, medium and conditions."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "这是证据来源的分支比较，不是同一样品的三步化学反应。DFT 片段的轨道能差也不能独立证明水中 Eu 结合自由能或完整分离过程。",
+      "These are evidence-source comparisons, not three reactions of one specimen. Fragment orbital gaps from DFT likewise do not independently establish aqueous Eu binding free energy or a complete separation process."
+    ],
+    "methodSource": [
+      "出处：正文第 3.2 节、图 3；第 3.4 节机制讨论及 SI 图 S9。",
+      "Source: Main §3.2 and Fig. 3; §3.4 mechanism discussion and SI Fig. S9."
+    ],
+    "evidenceTarget": "metrics",
+    "evidenceTitle": [
+      "先比较“已去除／仍留下”，再比较两个离子",
+      "Compare removed to remaining first, then compare the two ions"
+    ],
+    "comparison": [
+      [
+        [
+          "Eu：去除 90%，剩余 10%",
+          "Eu: 90% removed, 10% remains"
+        ],
+        [
+          "以同一初始量为基准，去除／剩余 = 0.90/0.10 = 9。这个比值反映两相分配的比例关系。",
+          "On the same initial-amount basis, removed/remaining = 0.90/0.10 = 9. This ratio expresses the partition relationship."
+        ]
+      ],
+      [
+        [
+          "竞争者：去除 50%，剩余 50%",
+          "Competitor: 50% removed, 50% remains"
+        ],
+        [
+          "去除／剩余 = 0.50/0.50 = 1。相同液固比下，两者 D 的比因此是 9/1，而非 90/50。",
+          "Removed/remaining = 0.50/0.50 = 1. With the same liquid-to-solid ratio, the D ratio is therefore 9/1, not 90/50."
+        ]
+      ]
+    ],
+    "equation": [
+      "D = (V/m)r/(1−r)；βEu/j = DEu/Dj = 9",
+      "D = (V/m)r/(1−r); βEu/j = DEu/Dj = 9"
+    ],
+    "equationMeaning": [
+      "V 是液体体积，m 是吸附剂质量。教学设置 V = 10 mL、m = 0.020 g，V/m = 500 mL/g，因此 D 分别为 4500 与 500 mL/g，β 无单位。r 用 0–1 小数。",
+      "V is liquid volume and m sorbent mass. In this teaching setup V = 10 mL and m = 0.020 g, so V/m = 500 mL/g. D values are 4500 and 500 mL/g, giving dimensionless β. r is a fraction from 0 to 1."
+    ],
+    "inference": [
+      "这些是假设去除率，忽略沉淀、容器与取样损失。r = 1 会使分母为零，不能把“测不到残余”当作已精确测得无限 D；必须考虑检测限。",
+      "These removal fractions are hypothetical and neglect precipitation, vessel and sampling losses. r = 1 gives a zero denominator. Undetectable residual concentration is not a precisely measured infinite D; detection limits matter."
+    ],
+    "evidenceSource": [
+      "依据：正文式 6 和表 2 的 D 比值定义；数值来自本页原有教学滑块，非论文实验。",
+      "Basis: Main Eq. 6 and Table 2 definition as a D ratio; numbers come from the page’s teaching sliders, not a reported experiment."
+    ],
+    "question": [
+      "自测：两个去除率只差 40 个百分点，为什么 β 不等于 1.8？",
+      "Check: why is β not 1.8 when removal is 90% versus 50%?"
+    ],
+    "answer": [
+      "因为 D 还除以各自液体中剩余的比例。90% 去除只剩 10%，50% 去除仍剩 50%；先算 9 和 1，再相除得 9。条件必须相同，且这些数值只是教学假设。",
+      "Because D also divides by each residual liquid fraction. Removing 90% leaves 10%, while removing 50% leaves 50%; calculate 9 and 1 first, then divide to obtain 9. Conditions must match, and these values are teaching assumptions."
+    ],
+    "depthSections": {
+      "orbitals": 3
+    },
+    "audit": "P1 evidence provenance / mathematical jump: comparison mentions unmatched free-ligand evidence and metrics jumps directly to r/(1-r). Explain each comparator’s provenance and walk through removed-versus-remaining amounts before the existing sliders.",
+    "science": "Reread main §§3.2–3.4, Table2/Eq6 and SI S7–S9. The 90/50 example derives from existing hypothetical inputs, not the reported32.349/53.055/47.061 betas. Acid/anhydride naming and HOMO/LUMO label reversal remain disclosed. No quantitative synergy or aqueous binding free-energy calculation is introduced."
+  },
+  "mil101-sba15-lu-y": {
+    "lead": [
+      "同一组吸附数据可以被两种模型很好地拟合，却得到相差很大的容量极限。本文同时比较两种载体，并提醒我们区分观测范围、模型假设和混合物选择性。",
+      "Two models can fit the same uptake data well yet give very different capacity limits. This study compares two supports while requiring us to distinguish measured range, model assumptions and mixture selectivity."
+    ],
+    "foundationTitle": [
+      "载体、基团和孔道一起变，不能只归因于孔径",
+      "Support, groups and pores change together—not just pore size"
+    ],
+    "foundation": [
+      "SBA-15 是多孔二氧化硅，MIL-101(Cr) 是含铬的金属–有机框架。它们分别引入含膦酸基团和 PMIDA 相关基团来结合 Lu（镥）或 Y（钇）。两条路线不仅改变孔尺寸，也改变结合化学。",
+      "SBA-15 is porous silica and MIL-101(Cr) is a chromium metal–organic framework. They receive phosphonic-acid and PMIDA-related groups, respectively, to bind Lu (lutetium) or Y (yttrium). The routes differ in binding chemistry as well as pore dimensions."
+    ],
+    "terms": [
+      [
+        [
+          "等温线",
+          "Isotherm"
+        ],
+        [
+          "固定温度下，比较平衡液体浓度与每克固体的吸附量。不同浓度点约束曲线，但并不保证观测到了饱和平台。",
+          "At fixed temperature, compare equilibrium liquid concentration with uptake per gram. Concentration points constrain a curve without necessarily reaching a saturation plateau."
+        ]
+      ],
+      [
+        [
+          "拟合参数 Qₘ",
+          "Fitted Qₘ"
+        ],
+        [
+          "模型推算的渐近容量极限。不同函数在观测区内相似，离开观测区后却可能分开，因此 Qₘ 不是自动测得的最大值。",
+          "The model’s asymptotic capacity limit. Functions can agree within the measured range and diverge outside it, so Qₘ is not automatically a measured maximum."
+        ]
+      ],
+      [
+        [
+          "传质",
+          "Mass transfer"
+        ],
+        [
+          "离子从主体液体移到颗粒表面，再进入内部的过程。表面液膜和颗粒内部可能分别限制到达结合位置的速度。",
+          "Movement of ions from bulk liquid to the particle surface and into its interior. An external liquid film and intraparticle transport can separately limit access to binding sites."
+        ]
+      ]
+    ],
+    "problem": [
+      "读完应能解释为何“R² 都是 0.99”仍不足以选择容量最大的模型，也能说明为什么单离子 Lu/Y 容量比不是竞争分离因子。",
+      "You should explain why R² = 0.99 for both fits is insufficient to choose the largest capacity, and why a single-ion Lu/Y capacity ratio is not a competitive separation factor."
+    ],
+    "methodTarget": "transport",
+    "methodTitle": [
+      "传质模型把哪些步骤分开了？",
+      "Which steps does the transport model separate?"
+    ],
+    "steps": [
+      [
+        [
+          "从液体移到外表面",
+          "Move from liquid to the outer surface"
+        ],
+        [
+          "颗粒外面存在浓度变化区，可用液膜传质系数描述。模型需要液体浓度与表面浓度的差作为驱动力。",
+          "A concentration gradient near the particle is represented by an external-film transfer coefficient. The model uses the difference between bulk and surface concentrations as a driving force."
+        ]
+      ],
+      [
+        [
+          "局部吸附与孔内移动",
+          "Local adsorption and intraparticle movement"
+        ],
+        [
+          "表面扩散模型（SDM）假设表面吸附很快达到局部平衡，再描述已吸附离子沿颗粒内表面的移动。它使用等效球形颗粒等简化。",
+          "The surface diffusion model (SDM) assumes rapid local adsorption equilibrium, then describes adsorbed ions moving along internal surfaces. It uses simplifications including an equivalent spherical particle."
+        ]
+      ],
+      [
+        [
+          "用时间数据约束参数",
+          "Constrain parameters with time data"
+        ],
+        [
+          "作者数值求解并与浓度随时间的实验比较，估计传质参数。拟合支持模型在这些条件下描述数据，不证明所有微观步骤已经唯一确定。",
+          "The authors solve the model numerically and compare concentration-time data to estimate transfer parameters. Fit quality supports description under those conditions, not a unique identification of every microscopic step."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "下方只展示论文报告的参数与模型含义，不在网页重跑扩散求解。原表速率单位与方法时间单位的疑点仍保留。",
+      "The page displays reported parameters and model meaning without rerunning a diffusion solver. Discrepancies between tabulated rate units and method time units remain visible."
+    ],
+    "methodSource": [
+      "出处：正文第 2.3 节模型与边界条件、第 3.2.2 节、图 7 和表 4；未列独立 SI。",
+      "Source: Main §2.3 model and boundary conditions, §3.2.2, Fig. 7 and Table 4; no independent SI is listed."
+    ],
+    "evidenceTarget": "capacity",
+    "evidenceTitle": [
+      "一条高拟合度曲线，为什么仍有不确定的终点？",
+      "Why can a well-fitting curve still have an uncertain limit?"
+    ],
+    "comparison": [
+      [
+        [
+          "Langmuir：SBA–Y 为 17.9 mg/g",
+          "Langmuir: SBA–Y gives 17.9 mg/g"
+        ],
+        [
+          "该模型用有限等效位点的函数描述吸附；Qₘ 是该函数的极限，不是对一杯样品直接称量出来的值。",
+          "This function describes uptake with finite equivalent sites; Qₘ is its limit, not a direct weighing result from one sample."
+        ]
+      ],
+      [
+        [
+          "Sips：同一对象为 330.4 mg/g",
+          "Sips: the same system gives 330.4 mg/g"
+        ],
+        [
+          "Sips 增加描述非均一性的参数，也可在有限数据范围内拟合良好。大的远端极限不能凭 R² = 0.99 变成已观测容量。",
+          "Sips adds a heterogeneity parameter and can fit a limited range well. A large distant limit does not become observed capacity because R² = 0.99."
+        ]
+      ]
+    ],
+    "inference": [
+      "R² 描述模型对观测数据变化的贴合程度，不是“结论有 99% 概率正确”。原始初始浓度范围为 2–40 mg/L；下方 Cₑ 超过 40 mg/L 时一定已超出这些实验，低于它也不表示每个滑块点都实测过。",
+      "R² describes fit to variation in observed data, not a 99% probability that the conclusion is correct. Initial concentrations were 2–40 mg/L. A plotted Cₑ above 40 mg/L is necessarily beyond these tests; lower slider values are not all measured points either."
+    ],
+    "evidenceSource": [
+      "出处：正文第 2.3 节、表 2 和图 6。两种 Qₘ 保持原表，不选择较大者作为性能纪录。",
+      "Source: Main §2.3, Table 2 and Fig. 6. Both Qₘ values retain their original meanings; the larger is not selected as a performance record."
+    ],
+    "question": [
+      "自测：Sips 的 Qₘ 更大且 R² 很高，就证明吸附剂装得更多吗？",
+      "Check: does a larger Sips Qₘ with high R² prove the sorbent holds more?"
+    ],
+    "answer": [
+      "没有。那是模型对极限的推算，需要更接近饱和的数据与模型检验。当前观测范围内拟合良好，不能独立验证远处渐近值。",
+      "No. It is a model estimate of a limit requiring near-saturation data and model checking. Agreement within the observed range does not independently validate a distant asymptote."
+    ],
+    "depthSections": {
+      "transport": 2,
+      "units": 2
+    },
+    "audit": "P1 method background / inference: transport introduces SDM and Crank–Nicolson without mapping ion movement; capacity warns about large SipsQm but does not explain why equal R2 can coexist with divergent limits. Add physical steps, assumptions and model-limit comparison.",
+    "science": "Reread main §2.3 SDM assumptions, Table2 (SBA-Y17.9/330.4), Fig6 and §3.2.2/Table4. No listed independent SI. Preserved separate single-ion feeds, unmatched functionalization routes and rate-unit uncertainty. No new solver, kinetic curve or competitive selectivity is inferred."
+  },
+  "dtpa-mil101-ammonium": {
+    "lead": [
+      "稀土溶液里可能同时有远多于稀土的铵。DTPA 改性 MIL-101 在模拟高铵体系中仍能捕集稀土，但小百分比的铵变化不能直接当作“零干扰”或产品高纯。",
+      "REE solutions may contain much more ammonium than rare earths. DTPA-modified MIL-101 retains uptake in simulated high-ammonium feeds, but a small ammonium percentage change is not automatically zero interference or high product purity."
+    ],
+    "foundationTitle": [
+      "“少量背景变化”还要乘上很大的起始量",
+      "A small background fraction must be multiplied by its starting amount"
+    ],
+    "foundation": [
+      "DTPA 是二乙烯三胺五乙酸；本研究使用其衍生物修饰带氨基的 MIL-101，引入额外结合环境。铵是 NH₄⁺，属于另一种共存离子。页面必须同时记录稀土去除、铵变化和材料自身是否改变。",
+      "DTPA is diethylenetriaminepentaacetic acid; a derivative modifies amino-bearing MIL-101 to add binding environments. Ammonium, NH₄⁺, is a different coexisting ion. REE removal, ammonium changes and changes to the sorbent all require separate records."
+    ],
+    "terms": [
+      [
+        [
+          "NH₄⁺–N",
+          "NH₄⁺–N"
+        ],
+        [
+          "按铵中氮元素质量报告浓度。1000 mg N/L 不是 1000 mg 整个 NH₄⁺/L，也不是稀土的摩尔浓度。",
+          "Concentration reported by the mass of nitrogen in ammonium. 1000 mg N/L is not 1000 mg of whole NH₄⁺ per liter and is not an REE molar concentration."
+        ]
+      ],
+      [
+        [
+          "滴定基团量",
+          "Titrated group content"
+        ],
+        [
+          "用已知浓度试剂反应，再根据消耗量估算酸性基团。它是依赖操作和模型的总量，不直接证明每个基团都能被水合稀土接近。",
+          "React with a known reagent and estimate acidic groups from its consumption. This is an operational estimate, not proof that every group is accessible to hydrated REEs."
+        ]
+      ],
+      [
+        [
+          "剂量与负载",
+          "Dose and loading"
+        ],
+        [
+          "剂量是每升液体投入多少克固体；负载是每克固体留下多少毫克目标。同样去除率下，固体用得更多，平均每克分到的量会更少。",
+          "Dose is grams of solid added per liter; loading is milligrams of target retained per gram. At the same removal fraction, more solid divides the retained target among more grams."
+        ]
+      ]
+    ],
+    "problem": [
+      "读完应能区分对模拟铵背景的耐受、对其他杂质的选择性，以及最终回收产品的组成。",
+      "You should distinguish tolerance to simulated ammonium background, selectivity against other impurities and final recovered-product composition."
+    ],
+    "methodTarget": "loading",
+    "methodTitle": [
+      "为什么更多投料还要重新检查孔道？",
+      "Why recheck pores when adding more ligand feed?"
+    ],
+    "steps": [
+      [
+        [
+          "改变制备投料",
+          "Change preparation feed"
+        ],
+        [
+          "DTPA/载体 1:1、2:1、3:1 是起始质量比，不是最终接枝量。增加投入可能增加保留基团，也可能改变团聚与孔环境。",
+          "DTPA/support 1:1, 2:1 and 3:1 are initial mass ratios, not final grafting levels. More feed can change retained groups, aggregation and pore environment."
+        ]
+      ],
+      [
+        [
+          "测两种不同的结果",
+          "Measure two different outcomes"
+        ],
+        [
+          "滴定羧基从 0.317 增至 0.473 mmol/g，而 SI 中 BET 面积从约 961 降至 214 m²/g。基团量和气体可达空间并没有一起增加。",
+          "Titrated carboxyl groups rise from 0.317 to 0.473 mmol/g, while SI BET area falls from about 961 to 214 m²/g. Group content and gas-accessible space do not increase together."
+        ]
+      ],
+      [
+        [
+          "回到溶液捕集检验",
+          "Return to solution capture"
+        ],
+        [
+          "原文在这些配方中选择 1:1 的表现。孔阻塞和团聚是作者解释，不能把共同变化直接证明为单一原因。",
+          "The article favors the 1:1 formulation among these feeds. Pore blocking and aggregation are author explanations; covariation does not isolate one cause."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "这里只比较同一投料系列；不同温度系列、等温线、铵背景和循环实验仍保留各自条件，不拼成一个未经测量的材料响应面。",
+      "This compares one feed-ratio series. Temperature, isotherm, ammonium and cycling experiments retain their own conditions rather than becoming an unmeasured joint response surface."
+    ],
+    "methodSource": [
+      "出处：正文第 3.3 节、图 3；SI 表 S3、图 S10–S11。",
+      "Source: Main §3.3 and Fig. 3; SI Table S3 and Figs. S10–S11."
+    ],
+    "evidenceTarget": "ammonium",
+    "evidenceTitle": [
+      "1% 很小，但它的分母可能很大",
+      "One percent is small, but its denominator may be large"
+    ],
+    "comparison": [
+      [
+        [
+          "假设铵氮初始 1000 mg N/L",
+          "Suppose initial ammonium is 1000 mg N/L"
+        ],
+        [
+          "若真的下降 1%，变化就是 10 mg N/L。不能仅凭“只变了 1%”便宣布绝对变化可以忽略；还需考虑测量误差和物质去向。",
+          "A genuine 1% decrease would be 10 mg N/L. “Only 1%” alone does not establish negligible absolute change; measurement uncertainty and material destination matter."
+        ]
+      ],
+      [
+        [
+          "假设稀土初始 20 mg/L",
+          "Suppose initial REE is 20 mg/L"
+        ],
+        [
+          "若去除 75%，变化为 15 mg REE/L。它与上一项采用不同元素质量基准，不能直接相除当成摩尔选择性或产品纯度。",
+          "A hypothetical 75% removal changes it by 15 mg REE/L. These amounts use different elemental mass bases and cannot simply be divided into molar selectivity or product purity."
+        ]
+      ]
+    ],
+    "equation": [
+      "1000 × 0.01 = 10 mg N/L；20 × 0.75 = 15 mg REE/L",
+      "1000 × 0.01 = 10 mg N/L; 20 × 0.75 = 15 mg REE/L"
+    ],
+    "equationMeaning": [
+      "这是借用论文进料尺度的教学算例；1% 和 75% 不代表同一实验点。计算只展示分母影响，不断言这些减少量全部被吸附。",
+      "This teaching example uses feed scales from the paper; 1% and 75% are not asserted as one experimental point. It illustrates denominators without assigning every concentration decrease to adsorption."
+    ],
+    "inference": [
+      "正文与 SI 报告的铵变化仍需结合分析不确定性和两相物料衡算。高铵下有稀土捕集，不自动证明对 Fe、Al、其他稀土也能分离，更不是实际矿液产品的纯度结果。",
+      "Reported ammonium changes require analytical uncertainty and two-phase balances. REE capture at high ammonium does not automatically establish separation from Fe, Al or other REEs, nor purity of a product from actual mine liquor."
+    ],
+    "evidenceSource": [
+      "出处：正文第 3.6 节、图 4；SI 图 S14。算例为讲解者假设，原始曲线与条件不变。",
+      "Source: Main §3.6 and Fig. 4; SI Fig. S14. Arithmetic is hypothetical teaching; original curves and conditions are unchanged."
+    ],
+    "question": [
+      "自测：铵氮浓度变化小，就证明吸附后固体不含铵吗？",
+      "Check: does a small ammonium-nitrogen concentration change prove no ammonium on the solid?"
+    ],
+    "answer": [
+      "不能。百分数需要与大背景、检测不确定性和固液两侧测量一起读。证明占位或产品组成，需要相应组分分析；单靠小浓度差无法完成。",
+      "No. The percentage must be read with the large background, measurement uncertainty and measurements of both phases. Site occupancy or product composition needs relevant compositional analysis; a small concentration difference is insufficient."
+    ],
+    "depthSections": {
+      "mechanism": 2
+    },
+    "audit": "P1 denominator / background: ammonium lists100–1500mgN/L and small changes without a concrete absolute-amount comparison. Loading assumes titration and feed-ratio knowledge. Add N-basis definition, group/pore trade-off flow and an explicitly hypothetical1% example.",
+    "science": "Reread main §§3.3/3.6, SI TableS3 and FigS14 caption/series. Preserved NH4-N basis and simulated-feed scope. The1%/75% arithmetic is hypothetical and does not create a shared experimental record or establish ammonium sorption. Existing condition, unit, figure and thermodynamic inconsistencies remain visible."
+  },
+  "hkust1-lutetium": {
+    "lead": [
+      "低浓度水样能被大幅净化，并不表示材料在那次实验中装到了高容量。本文的痕量去除、浓溶液容量与再生衰减，需要放在不同的物料尺度上理解。",
+      "Strong removal from dilute water does not mean the sorbent approached high capacity in that test. Trace removal, concentrated-feed capacity and reuse loss here operate on different material-inventory scales."
+    ],
+    "foundationTitle": [
+      "先数水里总共只有多少 Lu",
+      "First count how much Lu the water contains"
+    ],
+    "foundation": [
+      "HKUST-1 是含铜（Cu）节点和 BTC（均苯三甲酸根）连接体的多孔材料；Lu 是镥，本文研究水中的三价 Lu(III) 离子。高容量实验提供较多目标，而模拟痕量水样只含微克级总量。这两类测试回答不同问题。",
+      "HKUST-1 is a porous material with copper (Cu) nodes and BTC (benzene-1,3,5-tricarboxylate) linkers; Lu is lutetium, studied here as triply charged aqueous Lu(III). High-capacity tests provide much more target than the microgram inventory in the simulated trace-water test. These address different questions."
+    ],
+    "terms": [
+      [
+        [
+          "μg 与 mg",
+          "μg and mg"
+        ],
+        [
+          "1000 μg = 1 mg。痕量试验浓度用 μg/L，而容量用 mg/g；跨单位计算必须显式换算。",
+          "1000 μg equals 1 mg. The trace test uses μg/L, while capacity uses mg/g; calculations across these units need explicit conversion."
+        ]
+      ],
+      [
+        [
+          "去除率",
+          "Removal"
+        ],
+        [
+          "液体中减少的 Lu 占初始 Lu 的百分数。它描述水样变化，不直接衡量固体离饱和还差多少。",
+          "The percentage of initial Lu lost from the liquid. It describes the water change, not how close the solid is to saturation."
+        ]
+      ],
+      [
+        [
+          "表面原子百分数",
+          "Surface atomic percentage"
+        ],
+        [
+          "X 射线光电子能谱（XPS）用 X 射线照射表面，测电子能量并估计元素比例。Cu 百分数下降，可能涉及表面组成与分母变化；它不是直接测全样品 Cu 离开的总量。",
+          "X-ray photoelectron spectroscopy (XPS) illuminates the surface with X-rays, measures electron energies and estimates elemental proportions. A lower Cu percentage can involve surface composition and denominator changes; it does not directly count total Cu lost from the whole sample."
+        ]
+      ]
+    ],
+    "problem": [
+      "读完应能算出痕量实验的负载上限，并说出还需要哪些证据才能证明 Cu–Lu 发生定量交换。",
+      "You should calculate the trace experiment’s loading ceiling and identify what else is needed to demonstrate quantitative Cu–Lu exchange."
+    ],
+    "methodTarget": "mechanism",
+    "methodTitle": [
+      "从“捕集到 Lu”到“Lu 替换 Cu”，还差什么？",
+      "What separates Lu capture from proof of Cu replacement?"
+    ],
+    "steps": [
+      [
+        [
+          "先确认液体浓度改变",
+          "Confirm the liquid concentration change"
+        ],
+        [
+          "按开始和结束的 Lu 浓度计算减少量，并用无材料等空白检查容器、沉淀等损失。浓度下降先支持从水相移走。",
+          "Calculate loss from initial and final Lu concentrations, using blanks such as no-sorbent controls to assess vessel and precipitation losses. A decrease first supports removal from water."
+        ]
+      ],
+      [
+        [
+          "再看固体局部信号",
+          "Inspect local signals in the solid"
+        ],
+        [
+          "红外光谱（FTIR）和 XPS 的变化支持 Lu 与固体相关，作者据此提出含氧位点参与。峰的归属仍不是完整配位结构。",
+          "Changes in infrared spectra (FTIR) and XPS support Lu association with the solid; the authors propose oxygen-site involvement. Peak assignments do not supply a complete coordination structure."
+        ]
+      ],
+      [
+        [
+          "检验交换的收支",
+          "Test the exchange balance"
+        ],
+        [
+          "要证明原 Cu 被 Lu 替换，需要溶液与固体中的 Cu、Lu 总量及电荷／结构证据。只相减 XPS 原子百分数不能完成这个衡算。",
+          "Proving replacement of Cu by Lu requires total Cu/Lu in solution and solid plus charge and structural evidence. Subtracting XPS atomic percentages does not close that balance."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "第三步是讲解者指出的进一步验证需要，不是声称本文已完成全部收支。作者的离子交换提案与直接观察分开保留。",
+      "The third step identifies further validation needs; it does not claim the paper completed all balances. The authors’ exchange proposal remains distinct from direct observations."
+    ],
+    "methodSource": [
+      "出处：正文第 3.7 节、图 7；竞争证据另见 SI 图 S3。",
+      "Source: Main §3.7 and Fig. 7; separate competition evidence in SI Fig. S3."
+    ],
+    "evidenceTarget": "trace",
+    "evidenceTitle": [
+      "即使全部吸走，这杯水也只能提供 0.4 mg/g",
+      "Even complete removal supplies only 0.4 mg/g in this test"
+    ],
+    "comparison": [
+      [
+        [
+          "先算目标总量",
+          "Calculate total target first"
+        ],
+        [
+          "50 μg/L × 0.4 L = 20 μg = 0.020 mg Lu。无论材料还有多少空位，都不能从这杯水吸出更多 Lu。",
+          "50 μg/L × 0.4 L = 20 μg = 0.020 mg Lu. Regardless of unused sites, this water cannot supply more Lu than that."
+        ]
+      ],
+      [
+        [
+          "再除以固体质量",
+          "Then divide by solid mass"
+        ],
+        [
+          "50 mg 固体 = 0.050 g。若全部去除，0.020/0.050 = 0.4 mg/g；这远低于浓溶液等温线的拟合 qₘ。",
+          "50 mg solid = 0.050 g. Complete removal gives 0.020/0.050 = 0.4 mg/g, far below the fitted qₘ from concentrated-feed isotherms."
+        ]
+      ]
+    ],
+    "equation": [
+      "q上限 = C₀V/m = 0.020 mg ÷ 0.050 g = 0.4 mg/g",
+      "q_ceiling = C₀V/m = 0.020 mg ÷ 0.050 g = 0.4 mg/g"
+    ],
+    "equationMeaning": [
+      "C₀ 是初始浓度，V 是液体体积，m 是吸附剂质量。上限假设初始 Lu 全部被吸附；实际 q 需用 C₀−Cₑ，并排除其他损失。",
+      "C₀ is initial concentration, V liquid volume and m sorbent mass. The ceiling assumes every initial Lu ion is adsorbed; actual q requires C₀−Cₑ and exclusion of other losses."
+    ],
+    "inference": [
+      "因此痕量去除可以很好，同时再生后高浓度容量明显下降。痕量结果不证明容量不衰减；模拟背景的完整浓度配方仍未给出，也不能扩展为临床放射性废水验证。",
+      "Strong trace removal can coexist with substantial high-concentration capacity loss after reuse. Trace results do not establish unchanged capacity. The full simulated-background recipe remains unavailable, and this is not validation in clinical radioactive wastewater."
+    ],
+    "evidenceSource": [
+      "出处：正文第 3.6 节、图 6b 的 50 μg/L、400 mL、50 mg 条件；容量和循环另见表 1、图 5b。",
+      "Source: Main §3.6 and Fig. 6b conditions of 50 μg/L, 400 mL and 50 mg; capacity and cycling separately in Table 1 and Fig. 5b."
+    ],
+    "question": [
+      "自测：痕量实验去除率高，能否验证 512.82 mg/g 的容量？",
+      "Check: can high trace removal validate a capacity of 512.82 mg/g?"
+    ],
+    "answer": [
+      "不能。这次最多只有 0.4 mg/g 的目标可供吸附，根本未接近那一容量尺度。512.82 mg/g 是另一组浓度实验的 Langmuir 参数，需要按等温线数据与模型评价。",
+      "No. This experiment supplies at most 0.4 mg/g and never approaches that capacity scale. The 512.82 mg/g value is a Langmuir parameter from another concentration series and must be judged using its data and model."
+    ],
+    "depthSections": {
+      "stability": 2
+    },
+    "audit": "P1 quantity / inference: trace already supplies conditions but needs staged µg→mg→mg/g arithmetic before the slider. Mechanism lists FTIR/XPS without connecting their outputs to the missing exchange balance. Add a counting foundation and observation-to-hypothesis guide.",
+    "science": "Rechecked final main §3.6 trace conditions, §3.7/Fig7, reuse values and SI figure scope.0.4mg/g is feed-inventory arithmetic, not new capacity. XPS fractions remain surface observations; no Cu/Lu exchange stoichiometry or clinical177Lu validation inferred. Missing background concentrations remain explicit."
+  },
+  "boroxine-mof-ree": {
+    "lead": [
+      "这是一种在捕集时被消耗的材料：稀土被富集，锌进入液体，框架最终塌陷。评价它需要看完整回收路线，而不是把高去除率等同于可反复再生。",
+      "This material is consumed during capture: REEs are enriched, zinc enters the liquid and the framework ultimately collapses. Evaluation requires the complete recovery route, not equating high removal with repeated regeneration."
+    ],
+    "foundationTitle": [
+      "消耗支架来捕集，与保留支架再生，是不同路线",
+      "Capture with a consumed support differs from framework-preserving reuse"
+    ],
+    "foundation": [
+      "MOF-B1/B2 是含 Zn（锌）和硼氧六环相关有机单元的框架。硼氧六环由三个硼与三个氧组成；这类连接可以受水影响。本文明确讨论吸附饱和后的不可逆结构塌陷，并把材料用作牺牲型吸附剂。",
+      "MOF-B1/B2 contain Zn (zinc) and organic units involving boroxine rings, composed of three boron and three oxygen atoms. These linkages can respond to water. The article explicitly discusses irreversible collapse at saturation and use as a sacrificial sorbent."
+    ],
+    "terms": [
+      [
+        [
+          "牺牲型吸附剂",
+          "Sacrificial sorbent"
+        ],
+        [
+          "允许捕集过程中消耗原材料，再从负载产物中取回目标。好坏要结合材料用量、产品收率、杂质和废液，不能用循环次数同可再生材料直接比较。",
+          "The original material may be consumed during capture, with the target recovered from the loaded product. Assessment needs material use, product yield, impurities and waste; cycle counts are not directly comparable with reusable sorbents."
+        ]
+      ],
+      [
+        [
+          "离子交换提案",
+          "Ion-exchange proposal"
+        ],
+        [
+          "作者联系 Zn 释放与 REE 捕集，提出交换参与。但水解也同时发生，不能只凭释放量增大就确定每个原子的替换比例。",
+          "The authors link Zn release with REE capture and propose exchange involvement. Concurrent hydrolysis means increased release alone does not determine an atom-by-atom replacement ratio."
+        ]
+      ],
+      [
+        [
+          "分离因子与对数量尺",
+          "Separation factor and logarithmic axis"
+        ],
+        [
+          "本文 SF 是直接 Kd 比值，相等基线为 1。下图用对数坐标放下相差数千倍的数值；改变画图量尺没有把 SF 的定义改成 log(SF)。",
+          "Here SF is a direct Kd ratio, with equality at 1. A logarithmic plotting axis accommodates values spanning thousands; changing the display scale does not redefine SF as log(SF)."
+        ]
+      ]
+    ],
+    "problem": [
+      "读完应能解释高 Yb 去除为何仍会伴随 Al 共捕集，以及为什么后续得到氧化物衍射峰还不足以证明产品纯度。",
+      "You should explain why high Yb removal can coexist with Al co-capture and why oxide diffraction after recovery alone does not establish product purity."
+    ],
+    "methodTarget": "recovery",
+    "methodTitle": [
+      "三个阶段，要追踪的不只是 Yb",
+      "Track more than Yb through three recovery stages"
+    ],
+    "steps": [
+      [
+        [
+          "酸浸：把负载固体转成溶液",
+          "Acid leaching: turn loaded solid into solution"
+        ],
+        [
+          "图 6 使用 2 M HCl 溶解负载材料。Yb 进入液体，残余支架组分与共捕集杂质也需追踪；原框架不会因此恢复。",
+          "Fig. 6 uses 2 M HCl to dissolve the loaded material. Yb enters solution, while residual support components and co-captured impurities also require tracking; the original framework is not restored."
+        ]
+      ],
+      [
+        [
+          "沉淀：分开固体与母液",
+          "Precipitate: separate solid from mother liquor"
+        ],
+        [
+          "加入草酸，再用稀氨水调 pH，老化并离心。沉淀、母液和洗涤液分别带走不同物质；图中没有给出精确目标 pH。",
+          "Add oxalic acid, adjust pH with dilute ammonia, age and centrifuge. Precipitate, mother liquor and washes carry different material; the figure gives no exact target pH."
+        ]
+      ],
+      [
+        [
+          "热处理：形成氧化物并检测",
+          "Heat: form and examine the oxide"
+        ],
+        [
+          "图示干燥后升至 800 °C 保温 4 h，产物衍射与 Yb₂O₃ 相符。还需定量分析收率和杂质，才能评价回收产品。",
+          "The figure dries the solid, then heats to 800 °C for 4 h; product diffraction is consistent with Yb₂O₃. Quantitative yield and impurity analysis are still needed to assess the recovered product."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "这条路线处理的是已消耗或塌陷的材料，不是温和洗脱后将同一框架反复使用。含 Zn 的液体没有消失，其处理需求属于流程评价的一部分。",
+      "This route handles consumed or collapsed material, not mild stripping followed by repeated reuse of the same framework. Zn-containing liquid remains and its treatment belongs in process assessment."
+    ],
+    "methodSource": [
+      "出处：正文第 2.6、3.4 节和原图 6；SI 表 S15、图 S20–S22 提供框架变化背景。",
+      "Source: Main §§2.6, 3.4 and original Fig. 6; SI Table S15 and Figs. S20–S22 provide framework-change context."
+    ],
+    "evidenceTarget": "impurities",
+    "evidenceTitle": [
+      "Yb 去除约 97%，也可能同时留下更多 Al",
+      "About 97% Yb removal can coexist with even stronger Al removal"
+    ],
+    "comparison": [
+      [
+        [
+          "Yb：13.0976 → 0.3941 mg/L",
+          "Yb: 13.0976 → 0.3941 mg/L"
+        ],
+        [
+          "SI 表 S14 的 B1 结果，对应 (13.0976−0.3941)/13.0976 × 100% ≈ 96.99% 去除。它只以初始 Yb 为分母。",
+          "For B1 in SI Table S14, (13.0976−0.3941)/13.0976 × 100% ≈ 96.99% removal. Its denominator is initial Yb only."
+        ]
+      ],
+      [
+        [
+          "Al：14.8947 → 0.1881 mg/L",
+          "Al: 14.8947 → 0.1881 mg/L"
+        ],
+        [
+          "同表对应约 98.74% Al 去除。即使 Yb 去除很高，Al 也明显离开水相，不能把固体当作纯 Yb 产品。",
+          "The same table gives about 98.74% Al removal. Despite strong Yb removal, substantial Al also leaves the liquid, so the solid is not established as a pure Yb product."
+        ]
+      ]
+    ],
+    "equation": [
+      "Rᵢ = (C₀,ᵢ − Cₑ,ᵢ)/C₀,ᵢ × 100%",
+      "Rᵢ = (C₀,ᵢ − Cₑ,ᵢ)/C₀,ᵢ × 100%"
+    ],
+    "equationMeaning": [
+      "i 指指定元素，C₀ 与 Cₑ 分别为初始和最终浓度；同用 mg/L 后单位相消。不同元素的去除率各用自己的分母，不能相加成产品纯度。",
+      "i identifies an element; C₀ and Cₑ are its initial and final concentrations. Using mg/L for both cancels units. Each element’s removal uses its own denominator; these percentages do not add to product purity."
+    ],
+    "inference": [
+      "这是按原表复算的去除，不新增相分配或沉淀机制证明。最终酸浸、沉淀与煅烧可能改变杂质分布，需单独量产品与废液。",
+      "These are removal calculations from the source table, not new proof of phase distribution or precipitation mechanisms. Leaching, precipitation and calcination can change impurity partitioning; product and waste streams need separate measurement."
+    ],
+    "evidenceSource": [
+      "出处：SI 表 S14 的 MOF-B1 初始／平衡浓度；回收证据见正文图 6。",
+      "Source: MOF-B1 initial/equilibrium concentrations in SI Table S14; recovery evidence in main Fig. 6."
+    ],
+    "question": [
+      "自测：得到 Yb₂O₃ 的衍射峰，就证明纯度和总回收率了吗？",
+      "Check: do Yb₂O₃ diffraction peaks establish purity and total recovery?"
+    ],
+    "answer": [
+      "不能。峰支持该晶相存在，不量出所有微量杂质，也不提供从初始进料到产品的完整 Yb 收支。需要产品元素分析、产量和母液／洗液中的 Yb。",
+      "No. Peaks support that crystalline phase, but do not quantify every trace impurity or close the feed-to-product Yb balance. Product elemental analysis, yield and Yb in mother liquor and washes are needed."
+    ],
+    "depthSections": {
+      "structure": 2
+    },
+    "audit": "P1 process / denominator: recovery is a recipe list without explaining each stream; impurity comparison needs a worked two-element balance. Teach sacrificial use first, preserve log-axis versus log-metric distinction and show why simultaneous high removals do not establish purity.",
+    "science": "Reread main sacrificial-material/irreversible-collapse statements, visually rechecked Fig6 route and SI TablesS14/S15 plus water/collapse evidence.96.99/98.74% are explicit calculations from S14, not product purity. Retained negative Langmuir-affinity warning, Zn blank, concurrent hydrolysis and unresolved structural assignment."
   }
 }

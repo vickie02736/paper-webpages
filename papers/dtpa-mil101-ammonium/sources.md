@@ -44,3 +44,17 @@ S6ErlnK3.52076/3.66151/3.83298,G−8.58/−9.28/−9.98,H12.28S.070. TableGappro
 dtpa-mil101-ammonium-publisher.html SHA256 38cbb4137dd67ce26ec47d7141c0dc23efea048f6ca166227184bc45ec31848c
 
 dtpa-mil101-ammonium-si.docx SHA256 ab286fb19d57417341152bb4ceec50fbb9fb1010a3ee19cfe4fdee21b1ef0743
+
+## High-school teaching revision — 2026-11-02
+
+P1 denominator / background: ammonium lists100–1500mgN/L and small changes without a concrete absolute-amount comparison. Loading assumes titration and feed-ratio knowledge. Add N-basis definition, group/pore trade-off flow and an explicitly hypothetical1% example.
+
+New method guide: Source: Main §3.3 and Fig. 3; SI Table S3 and Figs. S10–S11.
+
+New evidence comparison: Source: Main §3.6 and Fig. 4; SI Fig. S14. Arithmetic is hypothetical teaching; original curves and conditions are unchanged.
+
+Reread main §§3.3/3.6, SI TableS3 and FigS14 caption/series. Preserved NH4-N basis and simulated-feed scope. The1%/75% arithmetic is hypothetical and does not create a shared experimental record or establish ammonium sorption. Existing condition, unit, figure and thermodynamic inconsistencies remain visible.
+
+Reader task: Check: does a small ammonium-nitrogen concentration change prove no ammonium on the solid? No. The percentage must be read with the large background, measurement uncertainty and measurements of both phases. Site occupancy or product composition needs relevant compositional analysis; a small concentration difference is insufficient.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.
