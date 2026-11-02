@@ -1,6 +1,6 @@
 # OPD / GKD
 
-[独立讲解页 / Independent explainer](index.html) · [专题目录 / Collection](../../collections/verl-algorithms/)
+[讲解页 / Explainer](index.html) · [人工智能与计算 / Artificial Intelligence & Computing](../../?theme=ai&q=verl#themes)
 
 学生先生成自己的轨迹，教师再对这些前缀给出分布反馈。训练时见到的状态因而更接近学生推理时真正遇到的状态。
 

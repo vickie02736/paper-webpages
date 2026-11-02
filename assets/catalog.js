@@ -10,6 +10,8 @@
           application: "应用",
           related: "相关方法与对照",
           relatedNote: "这些论文主归其他主题，通过此处关联阅读。",
+          document: '文档文章',
+          documents: function (n) { return ' · 文档文章 ' + n + ' 篇'; },
           docTitle: '研究图谱 · Kewei Zhu',
           metaDesc: '以 MOF 与 AI 为核心的研究图谱，连接化学材料、实验机器人、数学基础、生命科学与交互式论文讲解。',
           brandSub: 'Kewei Zhu · 可视化研究笔记',
@@ -65,6 +67,8 @@
           application: "Application",
           related: "Related methods & comparisons",
           relatedNote: "These references have their primary home in another theme.",
+          document: 'Documentation article',
+          documents: function (n) { return ' · ' + n + ' documentation articles'; },
           docTitle: 'Research Atlas · Kewei Zhu',
           metaDesc: 'A research atlas centred on MOFs and AI, connecting chemistry, laboratory robotics, mathematical foundations, life sciences and interactive explainers.',
           brandSub: 'Kewei Zhu · visual research notes',
@@ -209,9 +213,11 @@
         const visible = theme.p.filter(function (paper) {
           return filteredByFacets(paper) && (!onlyExplainers.checked || explainerPath(paper)) && matches(paper, globalTerms) && matches(paper, themeTerms);
         });
+        const documents = (theme.documents || []).filter(doc => !selectedPaper && !selectedTags.size && (!selectedTheme || selectedTheme === theme.id) && matches(doc, globalTerms) && matches(doc, themeTerms));
+        root.dataset.documentCount = String(documents.length);
         const groups = {};
-        visible.forEach(function (paper) { (groups[paper.g] ||= []).push(paper); });
-        root.querySelector('.theme-count').textContent = t('count')(visible.length, theme.p.length, searching);
+        [...visible, ...documents].forEach(function (paper) { (groups[paper.g] ||= []).push(paper); });
+        root.querySelector('.theme-count').textContent = t('count')(visible.length, theme.p.length, searching) + (documents.length ? t('documents')(documents.length) : '');
         const categories = {};
         Object.keys(groups).forEach(function (groupId) {
           const stableCategory = theme.groups[groupId].categoryId;
@@ -226,6 +232,9 @@
           const displayCategory = textOf(theme.groups[groupIds[0]].category);
           const topics = groupIds.map(function (groupId) {
             const rows = groups[groupId].map(function (paper) {
+              if (paper.type === 'document') {
+                return '<article class="document-row" id="document-'+esc(paper.id)+'" data-document-id="'+esc(paper.id)+'"><div class="paper-key">'+esc(textOf(paper.shortTitle || paper.title))+'</div><div><h4 class="paper-title">'+esc(textOf(paper.title))+'</h4><p class="paper-summary">'+esc(textOf(paper.summary))+'</p><p class="paper-meta">'+esc(t('document'))+'</p></div><div class="paper-info">'+esc(t('local'))+'</div><div class="paper-actions"><a href="'+esc(safeUrl(paper.source))+'" target="_blank" rel="noopener">'+esc(t('original'))+'</a><a href="'+esc(safeUrl(paper.path))+'" target="_blank" rel="noopener">'+esc(t('explainer'))+'</a></div></article>';
+              }
               const pagePath = explainerPath(paper);
               const localPage = pagePath && /^\.\//.test(pagePath);
               const summary = lang === 'en' ? paper.e : paper.d;
@@ -336,11 +345,14 @@
             const collectionIds=new Set();
             for(const collection of data.collections){
               if(!collection||!/^[-a-z0-9]+$/.test(collection.id)||collectionIds.has(collection.id)||!themes.has(collection.themeId)||!/^\.\/collections\/[a-z0-9-]+\/$/.test(collection.path)||!bilingual(collection.title)||!bilingual(collection.summary)||!Array.isArray(collection.items))throw new Error('collection');
+              if(collection.presentation!==undefined&&!['navigation','theme'].includes(collection.presentation))throw new Error('collection presentation');
               collectionIds.add(collection.id);const paths=new Set();
               for(const item of collection.items){
                 if(!item||!/^[-a-z0-9]+$/.test(item.id)||!/^\.\/papers\/[a-z0-9-]+\/$/.test(item.path)||paths.has(item.path)||!['paper','document'].includes(item.type)||!bilingual(item.title)||!bilingual(item.summary)||!/^https:\/\//.test(item.source))throw new Error('collection item');
                 paths.add(item.path);
+                if(item.shortTitle!==undefined&&!bilingual(item.shortTitle))throw new Error('collection short title');
                 if(item.type==='paper'&&!data.themes.some(t=>t.p.some(p=>p.id===item.paperId&&p.p===item.path))||item.type==='document'&&item.paperId)throw new Error('collection paper identity');
+                if(collection.presentation==='theme'&&!data.themes.some(t=>t.id===collection.themeId&&(item.type==='paper'?t.p.some(p=>p.id===item.paperId):t.groups.some(g=>g.id===item.topicId))))throw new Error('collection theme placement');
               }
             }
           }
@@ -380,6 +392,12 @@
           data.themes.forEach(function (theme) {
             byName[theme.n] = theme;
             theme.ge = theme.ge || theme.g;
+            const collectionTerms = (item, collection) => [collection.id, collection.title.zh, collection.title.en, item.id, item.title.zh, item.title.en, item.shortTitle?.zh, item.shortTitle?.en, item.summary.zh, item.summary.en];
+            theme.documents = (data.collections || []).filter(c => c.presentation === 'theme' && c.themeId === theme.id).flatMap(collection => collection.items.filter(item => item.type === 'document').map(item => {
+              const g = theme.groups.findIndex(group => group.id === item.topicId);
+              const haystack = normalize([...collectionTerms(item, collection), item.source, theme.name.zh, theme.name.en, theme.g[g], theme.ge[g]].join(' '));
+              return {...item, g, haystack, searchWords: new Set(haystack.split(/[^\p{L}\p{N}]+/u))};
+            }));
             theme.p.forEach(function (paper) {
               paper.primaryTheme=theme.id;entityIndex.set(paper.id,{paper,theme});
               const key = paperKey(paper);
@@ -388,8 +406,9 @@
               const separator = paper.m.indexOf(' · ');
               const venue = separator < 0 ? paper.m : paper.m.slice(0, separator);
               const tag = separator < 0 ? '' : paper.m.slice(separator + 3);
+              const collectionAliases = (data.collections || []).flatMap(c => c.items.filter(item => item.paperId === paper.id).flatMap(item => collectionTerms(item, c)));
               paper.haystack = normalize([paper.id, paper.u, paper.s, paper.se, paper.m, data.venues[venue], data.tags[tag], paper.t, paper.d, paper.e,
-                theme.name.zh,theme.name.en,theme.role.zh,theme.role.en,theme.g[paper.g],theme.ge[paper.g],...paper.aliases,...paper.legacyContexts.flatMap(c=>[c.theme,c.group,c.groupEn,c.summary.zh,c.summary.en]),...paper.tagIds.flatMap(id=>[id,data.taxonomyTags[id].name.zh,data.taxonomyTags[id].name.en]),PaperBibliography.searchText(data.paperMetadata?.[paper.u])].join(' '));
+                theme.name.zh,theme.name.en,theme.role.zh,theme.role.en,theme.g[paper.g],theme.ge[paper.g],...collectionAliases,...paper.aliases,...paper.legacyContexts.flatMap(c=>[c.theme,c.group,c.groupEn,c.summary.zh,c.summary.en]),...paper.tagIds.flatMap(id=>[id,data.taxonomyTags[id].name.zh,data.taxonomyTags[id].name.en]),PaperBibliography.searchText(data.paperMetadata?.[paper.u])].join(' '));
               paper.searchWords = new Set(paper.haystack.split(/[^\p{L}\p{N}]+/u));
             });
           });
@@ -406,16 +425,18 @@
         let openBeforeSearch = null;
         const updateStatus = function () {
           const hasSearch = Boolean(selectedTheme || selectedPaper || selectedTags.size) || tokens(globalSearch.value).length > 0 || Object.values(themeQueries).some(function (query) { return tokens(query).length; });
+          const documentCount = themeRoots.reduce((sum, root) => sum + Number(root.dataset.documentCount || 0), 0);
+          const documentStatus = documentCount ? t('documents')(documentCount) : '';
           clearSearch.hidden = !hasSearch;
           if (!hasSearch && !onlyExplainers.checked) {
-            status.textContent = t('status')(total, data.themes.length, listingTotal, explainerTotal);
+            status.textContent = t('status')(total, data.themes.length, listingTotal, explainerTotal) + documentStatus;
             return;
           }
           const matched = new Set();
           Object.keys(shown).forEach(function (name) {
             shown[name].forEach(function (paper) { matched.add(paperKey(paper)); });
           });
-          status.textContent = t(onlyExplainers.checked ? 'explainerMatching' : 'matching')(matched.size, explainerTotal);
+          status.textContent = t(onlyExplainers.checked ? 'explainerMatching' : 'matching')(matched.size, explainerTotal) + documentStatus;
         };
         const renderAll = function (preserveOpen) {
           const globalTerms = tokens(globalSearch.value);
@@ -424,11 +445,12 @@
           themeRoots.forEach(function (root) {
             const name = root.dataset.theme;
             shown[name] = renderTheme(byName[name], root, globalTerms);
-            if (searching && !preserveOpen) root.open = shown[name].length > 0;
-            root.classList.toggle('no-match', searching && !shown[name].length);
+            const hasMatches = shown[name].length > 0 || Number(root.dataset.documentCount) > 0;
+            if (searching && !preserveOpen) root.open = hasMatches;
+            root.classList.toggle('no-match', searching && !hasMatches);
             root.querySelector('.theme-description').textContent=textOf(byName[name].description);
             let collectionLinks=root.querySelector('.collection-links');
-            const collections=(data.collections||[]).filter(c=>c.themeId===name);
+            const collections=(data.collections||[]).filter(c=>c.themeId===name && c.presentation!=='theme');
             if(!collectionLinks){collectionLinks=document.createElement('div');collectionLinks.className='collection-links';root.querySelector('.theme-description').after(collectionLinks);}
             collectionLinks.hidden=!collections.length;
             collectionLinks.innerHTML=collections.map(c=>'<p><a class="button" href="'+safeUrl(c.path)+'">'+esc(textOf(c.title))+' ↗</a><br><span>'+esc(textOf(c.summary))+'</span></p>').join('');

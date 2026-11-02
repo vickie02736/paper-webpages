@@ -69,15 +69,15 @@ async function eventually(check, label) {
     const mofRows = full.themes.find(theme => theme.n === 'mof').p.filter(paper => fullKeys.has(key(paper))).length;
     const outsideMofTotal = new Set(full.themes.filter(theme => theme.n !== 'mof').flatMap(theme => theme.p.filter(paper => fullKeys.has(key(paper))).map(key))).size;
     const recentTotal = Object.keys(full.explainers).filter(pagePath => full.themes.some(theme => theme.p.some(paper => paper.p === pagePath)) || (full.collections || []).some(c => c.items.some(item => item.path === pagePath))).length;
-    const zhStatus = (matched, total) => matched === total ? '共 ' + total + ' 篇论文已有讲解' : '当前匹配 ' + matched + ' / 共 ' + total + ' 篇讲解';
-    const enStatus = (matched, total) => matched === total ? total + ' papers with explainers' : 'Matching ' + matched + ' / ' + total + ' papers with explainers';
+    const zhStatus = (matched, total, documents = 3) => (matched === total ? '共 ' + total + ' 篇论文已有讲解' : '当前匹配 ' + matched + ' / 共 ' + total + ' 篇讲解') + (documents ? ' · 文档文章 ' + documents + ' 篇' : '');
+    const enStatus = (matched, total, documents = 3) => (matched === total ? total + ' papers with explainers' : 'Matching ' + matched + ' / ' + total + ' papers with explainers') + (documents ? ' · ' + documents + ' documentation articles' : '');
     const defaultStatus = (data, lang = 'zh') => {
       const entries = data.themes.flatMap(theme => theme.p);
       const unique = new Set(entries.map(key)).size;
       const explainers = new Set(entries.filter(paper => paper.p).map(key)).size;
       return lang === 'zh'
-        ? '已有讲解 ' + explainers + ' 篇 · 文献 ' + unique + ' 篇 · ' + data.themes.length + ' 个主分类'
-        : explainers + ' explainers · ' + unique + ' papers · ' + data.themes.length + ' primary themes';
+        ? '已有讲解 ' + explainers + ' 篇 · 文献 ' + unique + ' 篇 · ' + data.themes.length + ' 个主分类 · 文档文章 3 篇'
+        : explainers + ' explainers · ' + unique + ' papers · ' + data.themes.length + ' primary themes · 3 documentation articles';
     };
     let current = stale;
     let failure = '';
@@ -165,7 +165,7 @@ async function eventually(check, label) {
     await ai.locator('input').fill('self');
     assert.equal(await rowCount(), 1, 'Theme search combines with the global search');
     await page.locator('#lang-toggle').click();
-    await statusIs(enStatus(1, fullTotal));
+    await statusIs(enStatus(1, fullTotal, 0));
     assert.equal(await global.inputValue(), 'retrieval', 'Language switching retains global search');
     assert.equal(await ai.locator('input').inputValue(), 'self', 'Language switching retains theme search');
 
@@ -191,7 +191,7 @@ async function eventually(check, label) {
     await requestAfter(() => page.clock.fastForward(60000));
     assert.deepEqual(await state(), beforeTimer, 'Timer refresh preserves search, filter, language, expansion and focus');
     assert.equal(await page.locator('#recent-list .recent-item').count(), recentTotal - 1, 'An old creation stays outside the recent list despite an update today');
-    await statusIs(enStatus(1, fullTotal));
+    await statusIs(enStatus(1, fullTotal, 0));
     assert.equal(await page.evaluate(() => window.__catalogTestDocument), documentToken, 'Updates preserve the same document');
 
     await clear.click();

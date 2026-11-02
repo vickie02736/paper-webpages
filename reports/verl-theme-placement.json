@@ -1,0 +1,25 @@
+{
+  "baselineCommit": "fe5e64526d166f9dc6beae99fa9a1cf4227b3753",
+  "reason": "User requested all verl articles in Artificial Intelligence & Computing, with individual catalogue entries rather than a collection-only entry.",
+  "paperId": "paper-3e01248237a0",
+  "from": {
+    "primaryThemeId": "mathematics",
+    "topicId": "mathematics-mathematical-reasoning-proof-discovery-266b7787ecae",
+    "g": 16
+  },
+  "to": {
+    "primaryThemeId": "ai",
+    "topicId": "ai-training-adaptation-rl-post-training",
+    "g": 37
+  },
+  "preservedRelatedThemeId": "mathematics",
+  "allowedPaperFields": [
+    "g",
+    "topicId"
+  ],
+  "documentPaths": [
+    "./papers/verl-algorithm-baselines/",
+    "./papers/rollout-correction/",
+    "./papers/rollout-correction-math/"
+  ]
+}

@@ -1,6 +1,6 @@
 # DPPO
 
-[独立讲解页 / Independent explainer](index.html) · [专题目录 / Collection](../../collections/verl-algorithms/)
+[讲解页 / Explainer](index.html) · [人工智能与计算 / Artificial Intelligence & Computing](../../?theme=ai&q=verl#themes)
 
 同样的概率比，在低概率和高概率 token 上代表不同的分布变化。DPPO 使用散度近似定义更新掩码。
 

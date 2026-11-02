@@ -1,6 +1,6 @@
 # Rollout Correction
 
-[独立讲解页 / Independent explainer](index.html) · [专题目录 / Collection](../../collections/verl-algorithms/)
+[讲解页 / Explainer](index.html) · [人工智能与计算 / Artificial Intelligence & Computing](../../?theme=ai&q=verl#themes)
 
 把真实采样分布、PPO 的旧策略锚点和当前策略分开，分别处理数据分布偏移与优化更新。
 

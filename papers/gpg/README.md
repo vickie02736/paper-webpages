@@ -1,6 +1,6 @@
 # GPG
 
-[独立讲解页 / Independent explainer](index.html) · [专题目录 / Collection](../../collections/verl-algorithms/)
+[讲解页 / Explainer](index.html) · [人工智能与计算 / Artificial Intelligence & Computing](../../?theme=ai&q=verl#themes)
 
 保留直接策略梯度，去掉组内标准差缩放，并按有效样本比例校正梯度幅度。简单目标仍需要认真处理批次统计。
 

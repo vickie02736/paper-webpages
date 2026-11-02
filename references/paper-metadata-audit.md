@@ -103,6 +103,7 @@ Dates use the precision published by the source. “Not disclosed” means the i
 - [Rethinking the Trust Region in LLM Reinforcement Learning](https://arxiv.org/abs/2602.04879): accepted
 - [On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes](https://arxiv.org/abs/2306.13649): accepted
 - [Offline Regularised Reinforcement Learning for Large Language Models Alignment](https://arxiv.org/abs/2405.19107): published, accepted
+- [DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models](https://arxiv.org/abs/2402.03300): author–affiliation mapping, published, accepted
 - [Equiformer: Equivariant Graph Attention Transformer for 3D Atomistic Graphs](https://openreview.net/pdf?id=KwmPfARgOTD): accepted. Original source unavailable: 403
 - [Ab initio solution of the many-electron Schrödinger equation with deep neural networks](https://doi.org/10.1103/physrevresearch.2.033429): accepted
 - [A Self-Attention Ansatz for Ab-initio Quantum Chemistry](https://openreview.net/forum?id=xveTeHVlF7j): published, accepted. Unrecognised source page; not imported
@@ -192,7 +193,6 @@ Dates use the precision published by the source. “Not disclosed” means the i
 - [Training Verifiers to Solve Math Word Problems](https://arxiv.org/abs/2110.14168): published, accepted
 - [Llemma: An Open Language Model for Mathematics](https://proceedings.iclr.cc/paper_files/paper/2024/hash/b225f5c7cd13615e9558c3931fa4e66f-Abstract-Conference.html): author–affiliation mapping
 - [Math-Shepherd: Verify and Reinforce LLMs Step-by-step without Human Annotations](https://aclanthology.org/2024.acl-long.510/): author–affiliation mapping, accepted
-- [DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models](https://arxiv.org/abs/2402.03300): author–affiliation mapping, published, accepted
 - [Murmurations of elliptic curves](https://doi.org/10.1080/10586458.2024.2382361): accepted. Original source unavailable: 403
 - [Constructions in combinatorics via neural networks](https://arxiv.org/abs/2104.14516): published, accepted
 - [PatternBoost: Constructions in Mathematics with a Little Help from AI](https://arxiv.org/abs/2411.00566): published, accepted

@@ -1,6 +1,6 @@
 # OTB
 
-[独立讲解页 / Independent explainer](index.html) · [专题目录 / Collection](../../collections/verl-algorithms/)
+[讲解页 / Explainer](index.html) · [人工智能与计算 / Artificial Intelligence & Computing](../../?theme=ai&q=verl#themes)
 
 用生成过程累计的梯度能量估计每个位置的奖励基线，减少长序列中的方差，并避免把 padding 当作真实样本。
 

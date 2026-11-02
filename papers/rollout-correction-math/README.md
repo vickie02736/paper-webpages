@@ -1,6 +1,6 @@
 # Rollout Correction Math
 
-[独立讲解页 / Independent explainer](index.html) · [专题目录 / Collection](../../collections/verl-algorithms/)
+[讲解页 / Explainer](index.html) · [人工智能与计算 / Artificial Intelligence & Computing](../../?theme=ai&q=verl#themes)
 
 重要性采样的核心是把一个分布下的期望改写到另一个分布；token、前缀与整条序列的权重对应不同估计问题。
 

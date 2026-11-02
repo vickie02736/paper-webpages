@@ -1,6 +1,6 @@
 # GRPO
 
-[独立讲解页 / Independent explainer](index.html) · [专题目录 / Collection](../../collections/verl-algorithms/)
+[讲解页 / Explainer](index.html) · [人工智能与计算 / Artificial Intelligence & Computing](../../?theme=ai&q=verl#themes)
 
 从同一问题的多个答案中估计相对优势，省去单独的价值网络；组内归一化也会改变不同问题的权重。
 

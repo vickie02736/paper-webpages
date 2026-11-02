@@ -46,10 +46,23 @@ const out=process.env.PAPER_QA_DIR||'/tmp/verl-specific-qa';fs.mkdirSync(out,{re
  await p.goto(base+'papers/verl-algorithm-baselines/?lang=en');await p.locator('#dataset').selectOption('LeetCode');await p.locator('#model').selectOption('google/gemma-2-2b-it');assert((await p.locator('#lab-results').innerText()).includes('No records'));
  await p.goto(base+'collections/verl-algorithms/?lang=en');assert.equal(await p.locator('.collection-card').count(),15);await p.locator('#collection-search').fill('SPPO');assert.equal(await p.locator('.collection-card:visible').count(),1);await p.locator('#collection-search').fill('unfindable');assert.equal(await p.locator('.collection-card:visible').count(),0);await p.locator('[data-atlas-lang="zh"]').click();assert.equal(await p.locator('#collection-search').inputValue(),'unfindable');await p.locator('#collection-search').fill('');
  for(const width of [1440,768,390]){await p.setViewportSize({width,height:1000});assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await p.screenshot({path:path.join(out,'collection-'+width+'.png'),fullPage:true});}
- await p.goto(base+'?lang=en');await p.waitForFunction(()=>!document.querySelector('#only-explainers').disabled);assert.equal(await p.locator('#catalog .paper-row').count(),490);assert.equal(await p.locator('.collection-links a').count(),1);
+ await p.goto(base+'?lang=en');await p.waitForFunction(()=>!document.querySelector('#only-explainers').disabled);assert.equal(await p.locator('#catalog .paper-row').count(),490);assert.equal(await p.locator('.collection-links a').count(),0);assert.equal(await p.locator('#theme-ai .document-row').count(),3);
  const recentPaths=await p.locator('#recent-list .recent-item>a').evaluateAll(es=>es.map(e=>new URL(e.href).pathname));assert.equal(new Set(recentPaths).size,recentPaths.length);
  for(const item of collection.items.filter(i=>i.type==='document'))assert(recentPaths.some(p=>p.endsWith(item.path.slice(1))));
  await p.locator('#only-explainers').check();assert.equal(await p.locator('#catalog .paper-row').count(),55);
+ // All verl articles belong to the AI catalogue and participate in its normal search.
+ for(const width of [1440,768,390])for(const lang of ['zh','en']){
+  await p.setViewportSize({width,height:1000});await p.goto(base+'?theme=ai&q=verl&lang='+lang+'#themes');await p.waitForFunction(()=>!document.querySelector('#only-explainers').disabled);
+  assert.equal(await p.locator('#theme-ai .paper-row:visible').count(),12);assert.equal(await p.locator('#theme-ai .document-row:visible').count(),3);
+  assert.equal(await p.locator('#theme-ai #paper-3e01248237a0').count(),1);assert.equal(await p.locator('#theme-mathematics #paper-3e01248237a0').count(),0);
+  const paths=await p.locator('#theme-ai .paper-actions a').evaluateAll(es=>es.map(e=>new URL(e.href).pathname));for(const item of collection.items)assert(paths.some(path=>path.endsWith(item.path.slice(1))));
+  assert(!/15 个独立|15 independent/.test(await p.locator('#theme-ai').innerText()));assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+  await p.locator('#theme-ai').screenshot({path:path.join(out,'ai-verl-'+width+'-'+lang+'.png')});
+ }
+ await p.locator('#catalog-search').fill('rollout-correction-math');assert.equal(await p.locator('#catalog .paper-row').count(),0);assert.equal(await p.locator('#theme-ai .document-row:visible').count(),1);assert.equal(await p.locator('#theme-ai').getAttribute('open'),'');
+ await p.locator('#lang-toggle').click();assert.equal(await p.locator('#catalog-search').inputValue(),'rollout-correction-math');assert.equal(await p.locator('#theme-ai .document-row:visible').count(),1);
+ await p.locator('#only-explainers').check();assert.equal(await p.locator('#theme-ai .document-row:visible').count(),1);
+ await p.goto(base+'?lang=en');await p.waitForFunction(()=>!document.querySelector('#only-explainers').disabled);await p.locator('#only-explainers').check();assert.equal(await p.locator('#catalog .paper-row').count(),55);
  // Reject malformed collection references and retain the previous working catalogue.
  const bad=structuredClone(catalog);bad.collections[0].items[0].paperId='paper-000000000000';await p.route('**/references/paper-catalog.json*',route=>route.fulfill({json:bad}));await p.evaluate(()=>window.dispatchEvent(new Event('focus')));await p.waitForTimeout(200);assert.equal(await p.locator('#catalog .paper-row').count(),55);
  assert.deepEqual(errors,[]);console.log('PASS verl: 15 labs, bilingual research-depth screenshots at 3 widths, keyboard/state, independent numerical checks, collection search, document recents, paper-only counts, invalid-collection recovery.');

@@ -8,13 +8,13 @@ This repository collects the paper explainer webpages and research maps created 
 
 ## Research around MOF + AI
 
-Six primary themes organize 479 papers, with one primary record per paper:
+Six primary themes organize 490 papers, with one primary record per paper:
 
 - [Metal–Organic Frameworks / 金属有机框架](https://vickie02736.github.io/paper-webpages/?theme=mof): 96 papers. Includes separate **MOF Stability / MOF 稳定性** and **Rare-Earth Adsorption & Separation / 稀土吸附与分离** subcategories.
-- [Artificial Intelligence & Computing / 人工智能与计算](https://vickie02736.github.io/paper-webpages/?theme=ai): 90 papers.
+- [Artificial Intelligence & Computing / 人工智能与计算](https://vickie02736.github.io/paper-webpages/?theme=ai): 102 papers and 3 documentation articles.
 - [General Chemistry & Materials / 通用化学与材料](https://vickie02736.github.io/paper-webpages/?theme=chemistry-materials): 73 papers.
 - [Robotics & Lab Automation / 机器人与实验自动化](https://vickie02736.github.io/paper-webpages/?theme=robotics-lab): 72 papers.
-- [Mathematics & Modelling Foundations / 数学与建模基础](https://vickie02736.github.io/paper-webpages/?theme=mathematics): 78 papers.
+- [Mathematics & Modelling Foundations / 数学与建模基础](https://vickie02736.github.io/paper-webpages/?theme=mathematics): 77 papers.
 - [Life Sciences, Drug Discovery & Medicine / 生命科学、药物与医学](https://vickie02736.github.io/paper-webpages/?theme=life-medicine): 70 papers.
 
 The homepage proceeds directly from its introduction to the six-theme catalogue. MOF retains five related methods/comparisons whose primary home is general chemistry and materials.
@@ -101,7 +101,7 @@ references/
     *.mm
 ```
 
-The explainers share the Research Atlas navy-and-cyan reading style, a two-row sticky header, accessible section navigation and reading progress. All 43 pages support complete Chinese/English switching, including interactive feedback, and remember the homepage's language preference. Ln local coordination and PMIDA–MIL-101 also retain their parallel bilingual mode. Paper-specific diagrams, experiments and learning-depth options remain tailored to the subject.
+The explainers share the Research Atlas navy-and-cyan reading style, a two-row sticky header, accessible section navigation and reading progress. All 58 pages support complete Chinese/English switching, including interactive feedback, and remember the homepage's language preference. Ln local coordination and PMIDA–MIL-101 also retain their parallel bilingual mode. Paper-specific diagrams, experiments and learning-depth options remain tailored to the subject.
 
 Start with the central idea, then explore the mechanism, evidence, limitations, and broader connections. See the [explainer implementation guide](papers/README.md#shared-reading-system) for the common styles and language controller.
 
@@ -131,4 +131,4 @@ Run `node scripts/check-taxonomy.cjs --data-only` for migration and schema check
 
 ## verl algorithm explainers
 
-[Browse all 15 independent pages](collections/verl-algorithms/) — 12 bilingual paper studies and 3 documentation studies, each with its own interactive lab and evidence ledger.
+[Read the verl articles in Artificial Intelligence & Computing](?theme=ai&q=verl#themes). The theme lists each paper and documentation article directly, with bilingual content, teaching interactions and evidence ledgers.

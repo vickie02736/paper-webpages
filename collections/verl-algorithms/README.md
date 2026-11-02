@@ -1,6 +1,6 @@
 # verl algorithms
 
-[Open collection](index.html) — 12 independent paper pages and 3 documentation pages. Navigation is not counted as a paper or an additional explainer.
+[Artificial Intelligence & Computing](../../?theme=ai&q=verl#themes) — all articles are listed directly in their theme. This existing index remains available at its original URL; it does not add a paper or explainer count.
 
 - [PPO](../../papers/ppo/) — paper
 - [GRPO](../../papers/grpo/) — paper

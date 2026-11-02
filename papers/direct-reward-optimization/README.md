@@ -1,6 +1,6 @@
 # DRO
 
-[独立讲解页 / Independent explainer](index.html) · [专题目录 / Collection](../../collections/verl-algorithms/)
+[讲解页 / Explainer](index.html) · [人工智能与计算 / Artificial Intelligence & Computing](../../?theme=ai&q=verl#themes)
 
 从提示、回答、标量反馈三元组出发，以正则化最优策略的关系构造平方目标；在实现中必须保留 soft advantage 的含义。
 

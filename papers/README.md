@@ -76,7 +76,7 @@ Every paper explainer loads `../assets/bibliography.css`, `bibliography.js` and 
 
 ## verl algorithm explainers
 
-[Browse all 15 independent pages](../collections/verl-algorithms/) — 12 bilingual paper studies and 3 documentation studies, each with its own interactive lab and evidence ledger.
+[Read the verl articles in Artificial Intelligence & Computing](../?theme=ai&q=verl#themes). The theme lists each paper and documentation article directly, with bilingual content, teaching interactions and evidence ledgers.
 
 ## Optional teaching layer
 

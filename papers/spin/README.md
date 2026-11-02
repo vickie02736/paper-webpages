@@ -1,6 +1,6 @@
 # SPIN
 
-[独立讲解页 / Independent explainer](index.html) · [专题目录 / Collection](../../collections/verl-algorithms/)
+[讲解页 / Explainer](index.html) · [人工智能与计算 / Artificial Intelligence & Computing](../../?theme=ai&q=verl#themes)
 
 反复区分固定的人类示范与当前模型生成的答案，持续利用已有 SFT 数据，而不必每轮购买新的偏好标注。
 
