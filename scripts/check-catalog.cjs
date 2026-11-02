@@ -55,7 +55,7 @@ async function eventually(check, label) {
       (full.explainerUpdates ||= {})[pagePath] = '2026-10-27T12:00:00Z';
     });
     const stale = clone(full);
-    stale.themes.find(theme => theme.n === 'Materials').p.forEach(paper => { paper.p = ''; });
+    stale.themes.find(theme => theme.n === 'mof').p.forEach(paper => { paper.p = ''; });
     const key = paper => paper.u.toLowerCase().replace(/\/+$/, '');
     const explainerKeys = data => new Set(data.themes.flatMap(theme => theme.p.filter(paper => paper.p).map(key)));
     const explainerRows = data => {
@@ -66,8 +66,8 @@ async function eventually(check, label) {
     const staleTotal = explainerKeys(stale).size;
     const fullRows = explainerRows(full).length;
     const fullKeys = explainerKeys(full);
-    const mofRows = full.themes.find(theme => theme.n === 'Materials').p.filter(paper => fullKeys.has(key(paper))).length;
-    const outsideMofTotal = new Set(full.themes.filter(theme => theme.n !== 'Materials').flatMap(theme => theme.p.filter(paper => fullKeys.has(key(paper))).map(key))).size;
+    const mofRows = full.themes.find(theme => theme.n === 'mof').p.filter(paper => fullKeys.has(key(paper))).length;
+    const outsideMofTotal = new Set(full.themes.filter(theme => theme.n !== 'mof').flatMap(theme => theme.p.filter(paper => fullKeys.has(key(paper))).map(key))).size;
     const recentTotal = Object.keys(full.explainers).filter(pagePath => full.themes.some(theme => theme.p.some(paper => paper.p === pagePath))).length;
     const zhStatus = (matched, total) => matched === total ? '共 ' + total + ' 篇论文已有讲解' : '当前匹配 ' + matched + ' / 共 ' + total + ' 篇讲解';
     const enStatus = (matched, total) => matched === total ? total + ' papers with explainers' : 'Matching ' + matched + ' / ' + total + ' papers with explainers';
@@ -76,8 +76,8 @@ async function eventually(check, label) {
       const unique = new Set(entries.map(key)).size;
       const explainers = new Set(entries.filter(paper => paper.p).map(key)).size;
       return lang === 'zh'
-        ? '已有讲解 ' + explainers + ' 篇 · 论文 ' + unique + ' 篇（去重） · ' + data.themes.length + ' 个主题共 ' + entries.length + ' 条收录'
-        : explainers + ' explainers · ' + unique + ' unique papers · ' + entries.length + ' listings across ' + data.themes.length + ' themes';
+        ? '已有讲解 ' + explainers + ' 篇 · 文献 ' + unique + ' 篇 · ' + data.themes.length + ' 个主分类'
+        : explainers + ' explainers · ' + unique + ' papers · ' + data.themes.length + ' primary themes';
     };
     let current = stale;
     let failure = '';
@@ -93,8 +93,8 @@ async function eventually(check, label) {
     const only = page.locator('#only-explainers');
     const global = page.locator('#catalog-search');
     const clear = page.locator('#clear-search');
-    const ai = page.locator('[data-theme="AI / ML"]');
-    const mof = page.locator('[data-theme="Materials"]');
+    const ai = page.locator('[data-theme="ai"]');
+    const mof = page.locator('[data-theme="mof"]');
     const statusIs = async text => eventually(async () => (await status.textContent()) === text, 'Expected status: ' + text + '; got: ' + await status.textContent());
     const requestAfter = async action => {
       const before = requests;
@@ -123,15 +123,15 @@ async function eventually(check, label) {
     await screenshotTools('default-zh');
 
     const extraListing = clone(full);
-    const duplicate = clone(full.themes.find(theme => theme.n === 'AI / ML').p.find(paper => paper.p === './papers/rag/'));
+    const duplicate = clone(full.themes.find(theme => theme.n === 'ai').p.find(paper => paper.p === './papers/rag/'));
     duplicate.p = '';
     duplicate.g = 0;
-    extraListing.themes.find(theme => theme.n === 'Chemistry & Materials').p.push(duplicate);
+    extraListing.themes.find(theme => theme.n === 'chemistry-materials').p.push(duplicate);
     assert.equal(new Set(extraListing.themes.flatMap(theme => theme.p.map(key))).size, new Set(full.themes.flatMap(theme => theme.p.map(key))).size, 'Duplicate fixture adds no new independent paper');
     current = extraListing;
     await requestAfter(() => page.clock.fastForward(60000));
     await statusIs(defaultStatus(extraListing));
-    assert.equal(await rowCount(), fullListings + 1, 'Default count adds a cross-theme listing without adding a unique paper or explainer');
+    assert.equal(await rowCount(), fullListings, 'Duplicate primary entities are rejected; the working catalogue is retained');
     current = full;
     await focusRefresh();
     await statusIs(defaultStatus(full));
@@ -258,23 +258,11 @@ async function eventually(check, label) {
     assert.match((await recentItems())[0].text, /11:30 UTC 创建$/, 'Chinese recent date identifies the UTC creation time');
     await page.locator('#lang-toggle').click();
 
-    // A paper shared across themes should retain its explainer and count only once.
-    const shared = clone(updated);
-    const sharedPaper = clone(shared.themes.find(theme => theme.n === 'AI / ML').p.find(paper => paper.p === './papers/rag/'));
-    sharedPaper.p = '';
-    sharedPaper.g = 0;
-    shared.themes.find(theme => theme.n === 'Chemistry & Materials').p.push(sharedPaper);
-    current = shared;
-    await focusRefresh();
-    await statusIs(enStatus(fullTotal, fullTotal));
-    assert.equal(await rowCount(), fullRows + 1, 'Shared paper appears in both themes');
-    const sharedRow = page.locator('[data-theme="Chemistry & Materials"] .paper-row').filter({hasText: 'Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks'});
-    const sharedHref = new URL(await sharedRow.locator('.paper-actions a').last().getAttribute('href'), page.url());
-    assert.ok(sharedHref.pathname.endsWith('/papers/rag/'), 'Shared listing reuses its explainer');
-    assert.equal(sharedHref.searchParams.get('lang'), 'en', 'Shared explainer link carries the current language');
-    current = updated;
-    await focusRefresh();
-    assert.equal(await rowCount(), fullRows, 'Rebuilding indexes removes obsolete shared listings');
+    // Cross-theme references use IDs and never duplicate the primary record.
+    assert.equal(new Set(full.themes.flatMap(theme => theme.p.map(p => p.id))).size, fullListings);
+    const relatedIds=full.themes.find(theme=>theme.id==='mof').relatedPaperIds;
+    assert.equal(relatedIds.length,5);
+    for(const id of relatedIds) assert(full.themes.some(theme=>theme.id!=='mof'&&theme.p.some(p=>p.id===id)));
 
     const beforeFailure = await page.locator('#catalog').innerHTML();
     for (failure of ['http', 'json']) {
@@ -283,10 +271,13 @@ async function eventually(check, label) {
       await statusIs(enStatus(fullTotal, fullTotal));
     }
     failure = '';
-    for (const malformed of ['missing', 'number']) {
+    for (const malformed of ['missing', 'number', 'legacy', 'labels', 'reference']) {
       current = clone(updated);
       if (malformed === 'missing') delete current.themes[0].p[0].m;
-      else current.themes[0].p[0].m = 2026;
+      else if (malformed === 'number') current.themes[0].p[0].m = 2026;
+      else if (malformed === 'legacy') current.themes[0].p[0].legacyContexts = [{}];
+      else if (malformed === 'labels') delete current.themes[0].ge;
+      else current.researchRoutes[0].stages[0].paperIds.push('nonexistent');
       await focusRefresh();
       assert.equal(await page.locator('#catalog').innerHTML(), beforeFailure, 'Valid JSON with ' + malformed + ' paper metadata preserves the working catalogue');
       await statusIs(enStatus(fullTotal, fullTotal));
@@ -366,7 +357,7 @@ async function eventually(check, label) {
     assert.equal(await retryPage.locator('.theme-search input').count(), full.themes.length, 'Subsequent timer updates do not initialize a second set of inputs');
     assert.deepEqual(retryErrors, [], 'Bootstrap recovery has no uncaught errors');
     await retryContext.close();
-    console.log('PASS catalogue: default explainer/unique/listing counts, ' + staleTotal + '→' + fullTotal + ' live update, creation-only recent dates/order/boundaries, combined searches/counts, clear, language/state, timer/focus/visibility refresh, recent-link focus, shared papers, invalid-data/failure recovery, bootstrap retry, 3 widths in both modes');
+    console.log('PASS catalogue: primary-paper/explainer counts, ' + staleTotal + '→' + fullTotal + ' live update, creation-only recent dates/order/boundaries, combined searches/counts, clear, language/state, timer/focus/visibility refresh, recent-link focus, unique entities and related references, invalid-data/failure recovery, bootstrap retry, 3 widths in both modes');
     console.log('PASS screenshots: ' + screenshots);
   } finally {
     await browser.close();

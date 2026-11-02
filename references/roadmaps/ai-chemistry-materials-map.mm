@@ -12,18 +12,26 @@
           <node TEXT="FermiNet｜Physical Review Research 2020｜较早入口" LINK="https://doi.org/10.1103/physrevresearch.2.033429">
             <node TEXT="Ab initio solution of the many-electron Schrödinger equation with deep neural networks" />
             <node TEXT="用满足反对称性的深度网络表示波函数，精度接近耦合簇。" />
+            <attribute NAME="paperId" VALUE="paper-ee7fa46fb8e9" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="PauliNet｜Nature Chemistry 2020｜较早入口" LINK="https://www.nature.com/articles/s41557-020-0544-y">
             <node TEXT="Deep-neural-network solution of the electronic Schrödinger equation" />
             <node TEXT="在 Hartree–Fock 基础上加入神经网络修正，内置物理约束。" />
+            <attribute NAME="paperId" VALUE="paper-6c5e194fa7a4" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="Psiformer｜ICLR 2023｜近年代表" LINK="https://openreview.net/forum?id=xveTeHVlF7j">
             <node TEXT="A Self-Attention Ansatz for Ab-initio Quantum Chemistry" />
             <node TEXT="用自注意力替代 FermiNet 的部分结构，在更大分子上更准确。" />
+            <attribute NAME="paperId" VALUE="paper-234d038c8d23" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="Neural excited states｜Science 2024｜已有扩展" LINK="https://www.science.org/doi/10.1126/science.adn0137">
             <node TEXT="Accurate computation of quantum excited states with neural networks" />
             <node TEXT="把神经网络变分方法从基态扩展到激发态。" />
+            <attribute NAME="paperId" VALUE="paper-ab42b977ebfe" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -35,10 +43,14 @@
           <node TEXT="KS regularizer｜Physical Review Letters 2021｜较早入口" LINK="https://doi.org/10.1103/physrevlett.126.036401">
             <node TEXT="Kohn-Sham Equations as Regularizer: Building Prior Knowledge into Machine-Learned Physics" />
             <node TEXT="把 Kohn–Sham 自洽求解嵌入训练过程，学到的泛函泛化更好。" />
+            <attribute NAME="paperId" VALUE="paper-c31b1423eba4" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="DM21｜Science 2021｜近年代表" LINK="https://www.science.org/doi/10.1126/science.abj6511">
             <node TEXT="Pushing the frontiers of density functionals by solving the fractional electron problem" />
             <node TEXT="在训练中加入分数电荷与分数自旋约束，缓解离域误差。" />
+            <attribute NAME="paperId" VALUE="paper-ba719eeea21e" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -50,18 +62,26 @@
           <node TEXT="QM9｜Scientific Data 2014｜较早入口" LINK="https://www.nature.com/articles/sdata.2014.22">
             <node TEXT="Quantum chemistry structures and properties of 134 kilo molecules" />
             <node TEXT="13 万个小分子的 DFT 结构与性质，是分子机器学习的基础基准。" />
+            <attribute NAME="paperId" VALUE="paper-0cffb244a5e6" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="SchNOrb｜Nature Communications 2019｜近年代表" LINK="https://www.nature.com/articles/s41467-019-12875-2">
             <node TEXT="Unifying machine learning and quantum chemistry with a deep neural network for molecular wavefunctions" />
             <node TEXT="预测分子在原子轨道基下的哈密顿量，进而得到波函数与性质。" />
+            <attribute NAME="paperId" VALUE="paper-600539f9c876" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="OrbNet｜The Journal of Chemical Physics 2020｜已有扩展" LINK="https://doi.org/10.1063/5.0021955">
             <node TEXT="OrbNet: Deep learning for quantum chemistry using symmetry-adapted atomic-orbital features" />
             <node TEXT="以低成本半经验计算得到的轨道特征作为图网络输入。" />
+            <attribute NAME="paperId" VALUE="paper-f75f260ebbdb" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="DeepH｜Nature Computational Science 2022｜已有扩展" LINK="https://www.nature.com/articles/s43588-022-00265-6">
             <node TEXT="Deep-learning density functional theory Hamiltonian for efficient ab initio electronic-structure calculation" />
             <node TEXT="利用局域性与等变性预测晶体的 DFT 哈密顿量，可扩展到大体系。" />
+            <attribute NAME="paperId" VALUE="paper-e6b28bf1aa12" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -75,18 +95,26 @@
           <node TEXT="Behler–Parrinello｜Physical Review Letters 2007｜较早入口" LINK="https://doi.org/10.1103/physrevlett.98.146401">
             <node TEXT="Generalized Neural-Network Representation of High-Dimensional Potential-Energy Surfaces" />
             <node TEXT="把总能量分解为原子能量之和，并用对称函数描述局域环境。" />
+            <attribute NAME="paperId" VALUE="paper-f0208b662efd" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="GAP｜Physical Review Letters 2010｜较早入口" LINK="https://doi.org/10.1103/physrevlett.104.136403">
             <node TEXT="Gaussian Approximation Potentials: The Accuracy of Quantum Mechanics, without the Electrons" />
             <node TEXT="用高斯过程回归拟合原子能量，开创 GAP 系列势函数。" />
+            <attribute NAME="paperId" VALUE="paper-508070d98dae" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="SchNet｜NeurIPS 2017｜近年代表" LINK="https://proceedings.neurips.cc/paper_files/paper/2017/hash/303ed4c69846ab36c2904d3ba8573050-Abstract.html">
             <node TEXT="SchNet: A continuous-filter convolutional neural network for modeling quantum interactions" />
             <node TEXT="连续滤波卷积直接从原子坐标学习，无需手工描述符。" />
+            <attribute NAME="paperId" VALUE="paper-1722d9f94d11" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="DeePMD｜Physical Review Letters 2018｜近年代表" LINK="https://doi.org/10.1103/physrevlett.120.143001">
             <node TEXT="Deep Potential Molecular Dynamics: A Scalable Model with the Accuracy of Quantum Mechanics" />
             <node TEXT="可扩展的深度势分子动力学，后续发展为 DeePMD-kit 生态。" />
+            <attribute NAME="paperId" VALUE="paper-b722b9b79893" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -98,18 +126,26 @@
           <node TEXT="NequIP｜Nature Communications 2022｜近年代表" LINK="https://www.nature.com/articles/s41467-022-29939-5">
             <node TEXT="E(3)-equivariant graph neural networks for data-efficient and accurate interatomic potentials" />
             <node TEXT="E(3) 等变图网络大幅提高数据效率，少量训练数据即可达到高精度。" />
+            <attribute NAME="paperId" VALUE="paper-c05279b930ed" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="MACE｜NeurIPS 2022｜近年代表" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/4a36c3c51af11ed9f34615b81edb5bbc-Abstract-Conference.html">
             <node TEXT="MACE: Higher Order Equivariant Message Passing Neural Networks for Fast and Accurate Force Fields" />
             <node TEXT="高阶等变消息使两层网络即可达到高精度，速度更快。" />
+            <attribute NAME="paperId" VALUE="paper-830c0cada1ab" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="Allegro｜Nature Communications 2023｜已有扩展" LINK="https://www.nature.com/articles/s41467-023-36329-y">
             <node TEXT="Learning local equivariant representations for large-scale atomistic dynamics" />
             <node TEXT="严格局域的等变结构便于并行，可模拟上亿原子。" />
+            <attribute NAME="paperId" VALUE="paper-e6687b9b6b57" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="Equiformer｜ICLR 2023｜已有扩展" LINK="https://openreview.net/pdf?id=KwmPfARgOTD">
             <node TEXT="Equiformer: Equivariant Graph Attention Transformer for 3D Atomistic Graphs" />
             <node TEXT="把注意力机制推广到等变特征，在分子与催化数据集上预测能量与力。" />
+            <attribute NAME="paperId" VALUE="paper-0d2b87e8226a" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -121,14 +157,20 @@
           <node TEXT="M3GNet｜Nature Computational Science 2022｜近年代表" LINK="https://www.nature.com/articles/s43588-022-00349-3">
             <node TEXT="A universal graph deep learning interatomic potential for the periodic table" />
             <node TEXT="在 Materials Project 弛豫数据上训练覆盖 89 种元素的通用势。" />
+            <attribute NAME="paperId" VALUE="paper-6009f5d8d2b5" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="CHGNet｜Nature Machine Intelligence 2023｜已有扩展" LINK="https://www.nature.com/articles/s42256-023-00716-3">
             <node TEXT="CHGNet as a pretrained universal neural network potential for charge-informed atomistic modelling" />
             <node TEXT="把磁矩作为电荷状态的代理，模拟含电荷转移的过程。" />
+            <attribute NAME="paperId" VALUE="paper-4bbb33af87d7" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="MACE-MP-0｜arXiv 2023｜预印本" LINK="https://arxiv.org/abs/2401.00096">
             <node TEXT="A foundation model for atomistic materials chemistry" />
             <node TEXT="在 Materials Project 数据上训练的 MACE 基础模型，可用于多种化学体系。" />
+            <attribute NAME="paperId" VALUE="paper-3c8a7e394c0c" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -142,14 +184,20 @@
           <node TEXT="CGCNN｜Physical Review Letters 2018｜较早入口" LINK="https://doi.org/10.1103/physrevlett.120.145301">
             <node TEXT="Crystal Graph Convolutional Neural Networks for an Accurate and Interpretable Prediction of Material Properties" />
             <node TEXT="把晶体表示为多重图，用卷积网络预测多种 DFT 性质。" />
+            <attribute NAME="paperId" VALUE="paper-005c40d4baa6" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="MEGNet｜Chemistry of Materials 2019｜近年代表" LINK="https://doi.org/10.1021/acs.chemmater.9b01294">
             <node TEXT="Graph Networks as a Universal Machine Learning Framework for Molecules and Crystals" />
             <node TEXT="加入全局状态变量，同一框架处理分子与晶体。" />
+            <attribute NAME="paperId" VALUE="paper-30690a573a7d" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="ALIGNN｜npj Computational Materials 2021｜已有扩展" LINK="https://www.nature.com/articles/s41524-021-00650-1">
             <node TEXT="Atomistic Line Graph Neural Network for improved materials property predictions" />
             <node TEXT="通过线图显式建模键角，提升多种性质的预测精度。" />
+            <attribute NAME="paperId" VALUE="paper-eb55e477d5bb" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -161,14 +209,20 @@
           <node TEXT="Materials Project｜APL Materials 2013｜较早入口" LINK="https://doi.org/10.1063/1.4812323">
             <node TEXT="Commentary: The Materials Project: A materials genome approach to accelerating materials innovation" />
             <node TEXT="开放的高通量 DFT 材料数据库，是许多材料模型的训练来源。" />
+            <attribute NAME="paperId" VALUE="paper-7147b00ace1f" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="Matbench｜npj Computational Materials 2020｜近年代表" LINK="https://www.nature.com/articles/s41524-020-00406-3">
             <node TEXT="Benchmarking materials property prediction methods: the Matbench test set and Automatminer reference algorithm" />
             <node TEXT="13 项标准任务与自动化基线，统一比较材料性质预测方法。" />
+            <attribute NAME="paperId" VALUE="paper-4965949aaef3" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="OMat24｜Nature Computational Science 2026｜2026 扩展" LINK="https://www.nature.com/articles/s43588-026-00996-w">
             <node TEXT="The Open Materials 2024 (OMat24) inorganic materials dataset and models" />
             <node TEXT="一亿多个非平衡结构的 DFT 数据集，用于训练通用势。" />
+            <attribute NAME="paperId" VALUE="paper-0550a04d39be" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -180,10 +234,14 @@
           <node TEXT="Crystal Twins｜npj Computational Materials 2022｜近年代表" LINK="https://www.nature.com/articles/s41524-022-00921-5">
             <node TEXT="Crystal twins: self-supervised learning for crystalline material property prediction" />
             <node TEXT="对晶体图做增强后自监督预训练，提升小数据性质预测。" />
+            <attribute NAME="paperId" VALUE="paper-667d7228a003" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="MOFTransformer｜Nature Machine Intelligence 2023｜已有扩展" LINK="https://www.nature.com/articles/s42256-023-00628-2">
             <node TEXT="A multi-modal pre-training transformer for universal transfer learning in metal–organic frameworks" />
             <node TEXT="结合原子图与能量网格的多模态预训练，是多孔材料迁移学习的代表。" />
+            <attribute NAME="paperId" VALUE="paper-a3a6220b2043" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -197,18 +255,26 @@
           <node TEXT="CDVAE｜ICLR 2022｜较早入口" LINK="https://openreview.net/forum?id=03RLpj-tc_">
             <node TEXT="Crystal Diffusion Variational Autoencoder for Periodic Material Generation" />
             <node TEXT="结合变分自编码器与扩散去噪生成周期性晶体。" />
+            <attribute NAME="paperId" VALUE="paper-24bc12cf7a00" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="DiffCSP｜NeurIPS 2023｜近年代表" LINK="https://proceedings.neurips.cc/paper_files/paper/2023/hash/38b787fc530d0b31825827e2cc306656-Abstract.html">
             <node TEXT="Crystal Structure Prediction by Joint Equivariant Diffusion" />
             <node TEXT="对晶格与分数坐标联合扩散，用于晶体结构预测。" />
+            <attribute NAME="paperId" VALUE="paper-10d14cbe9305" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="Crystal-text LLM｜ICLR 2024｜已有扩展" LINK="https://proceedings.iclr.cc/paper_files/paper/2024/hash/5dc6d1c81754c32008c9667339b3fdd3-Abstract-Conference.html">
             <node TEXT="Fine-Tuned Language Models Generate Stable Inorganic Materials as Text" />
             <node TEXT="把晶体写成文本，微调大语言模型生成稳定材料。" />
+            <attribute NAME="paperId" VALUE="paper-2a00a9b6d0e6" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="FlowMM｜ICML 2024｜已有扩展" LINK="https://proceedings.mlr.press/v235/miller24a.html">
             <node TEXT="FlowMM: Generating Materials with Riemannian Flow Matching" />
             <node TEXT="在晶体的对称流形上做黎曼流匹配，生成更高效。" />
+            <attribute NAME="paperId" VALUE="paper-1078190dcddf" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -220,14 +286,20 @@
           <node TEXT="iMatGen｜Matter 2019｜较早入口" LINK="https://doi.org/10.1016/j.matt.2019.08.017">
             <node TEXT="Inverse Design of Solid-State Materials via a Continuous Representation" />
             <node TEXT="用图像式连续表示和生成模型做固体材料逆向设计。" />
+            <attribute NAME="paperId" VALUE="paper-9c9e43210738" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="MOFDiff｜ICLR 2024｜已有扩展" LINK="https://proceedings.iclr.cc/paper_files/paper/2024/hash/47547ee84e3fbbcbbbbad7c1fd9a973b-Abstract-Conference.html">
             <node TEXT="MOFDiff: Coarse-grained Diffusion for Metal-Organic Framework Design" />
             <node TEXT="以粗粒化构筑单元做扩散生成，处理大型框架材料。" />
+            <attribute NAME="paperId" VALUE="paper-2f00e86abcaf" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="MatterGen｜Nature 2025｜近年代表" LINK="https://www.nature.com/articles/s41586-025-08628-5">
             <node TEXT="A generative model for inorganic materials design" />
             <node TEXT="可按化学、对称性与磁性等条件生成稳定无机材料，并经实验合成验证。" />
+            <attribute NAME="paperId" VALUE="paper-765cd183a8ba" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -239,14 +311,20 @@
           <node TEXT="Stability prediction｜Chemistry of Materials 2017｜较早入口" LINK="https://doi.org/10.1021/acs.chemmater.7b00156">
             <node TEXT="Predicting the Thermodynamic Stability of Solids Combining Density Functional Theory and Machine Learning" />
             <node TEXT="用机器学习预筛钙钛矿稳定性，再用 DFT 验证。" />
+            <attribute NAME="paperId" VALUE="paper-d88e93b6f0a4" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="Perovskite screening｜Nature Communications 2018｜近年代表" LINK="https://www.nature.com/articles/s41467-018-05761-w">
             <node TEXT="Accelerated discovery of stable lead-free hybrid organic-inorganic perovskites via machine learning" />
             <node TEXT="结合机器学习与 DFT 筛选无铅杂化钙钛矿光伏材料。" />
+            <attribute NAME="paperId" VALUE="paper-baaecb5083de" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="GNoME｜Nature 2023｜已有扩展" LINK="https://www.nature.com/articles/s41586-023-06735-9">
             <node TEXT="Scaling deep learning for materials discovery" />
             <node TEXT="主动学习扩展图网络与 DFT 循环，预测出数十万种新的稳定晶体。" />
+            <attribute NAME="paperId" VALUE="paper-fab26d57329d" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -260,14 +338,20 @@
           <node TEXT="C–N coupling yields｜Science 2018｜较早入口" LINK="https://www.science.org/doi/10.1126/science.aar5169">
             <node TEXT="Predicting reaction performance in C–N cross-coupling using machine learning" />
             <node TEXT="用高通量实验数据训练随机森林预测偶联反应产率。" />
+            <attribute NAME="paperId" VALUE="paper-82e045860339" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="WLDN reactivity｜Chemical Science 2019｜近年代表" LINK="https://doi.org/10.1039/c8sc04228d">
             <node TEXT="A graph-convolutional neural network model for the prediction of chemical reactivity" />
             <node TEXT="先预测反应中心，再枚举并排序候选产物。" />
+            <attribute NAME="paperId" VALUE="paper-e1e711ad8d94" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="Molecular Transformer｜ACS Central Science 2019｜已有扩展" LINK="https://doi.org/10.1021/acscentsci.9b00576">
             <node TEXT="Molecular Transformer: A Model for Uncertainty-Calibrated Chemical Reaction Prediction" />
             <node TEXT="把反应预测当作 SMILES 翻译，并给出校准后的不确定性。" />
+            <attribute NAME="paperId" VALUE="paper-c2a1c765e8d3" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -279,18 +363,26 @@
           <node TEXT="3N-MCTS｜Nature 2018｜较早入口" LINK="https://www.nature.com/articles/nature25978">
             <node TEXT="Planning chemical syntheses with deep neural networks and symbolic AI" />
             <node TEXT="神经网络加蒙特卡洛树搜索，开启数据驱动的合成规划。" />
+            <attribute NAME="paperId" VALUE="paper-f658cc3f3b6c" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="Retro*｜ICML 2020｜较早入口" LINK="https://proceedings.mlr.press/v119/chen20k.html">
             <node TEXT="Retro*: Learning Retrosynthetic Planning with Neural Guided A* Search" />
             <node TEXT="用学习的合成代价引导与或树搜索，路线更短。" />
+            <attribute NAME="paperId" VALUE="paper-e3a82ccd9109" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="LocalRetro｜JACS Au 2021｜近年代表" LINK="https://doi.org/10.1021/jacsau.1c00246">
             <node TEXT="Deep Retrosynthetic Reaction Prediction using Local Reactivity and Global Attention" />
             <node TEXT="结合化学局部性原理与全局注意力的单步逆合成模型。" />
+            <attribute NAME="paperId" VALUE="paper-b46be23909ae" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="AI-planned flow synthesis｜Science 2019｜已有扩展" LINK="https://www.science.org/doi/10.1126/science.aax1566">
             <node TEXT="A robotic platform for flow synthesis of organic compounds informed by AI planning" />
             <node TEXT="AI 规划路线后由机器人流动化学平台自动执行合成。" />
+            <attribute NAME="paperId" VALUE="paper-8dc9773aedd7" />
+            <attribute NAME="primaryThemeId" VALUE="robotics-lab" />
           </node>
         </node>
       </node>
@@ -302,14 +394,20 @@
           <node TEXT="Phoenics｜ACS Central Science 2018｜较早入口" LINK="https://doi.org/10.1021/acscentsci.8b00307">
             <node TEXT="Phoenics: A Bayesian Optimizer for Chemistry" />
             <node TEXT="面向化学实验的贝叶斯优化器，支持并行批量实验。" />
+            <attribute NAME="paperId" VALUE="paper-8066ce23544a" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="Bayesian reaction optimization｜Nature 2021｜近年代表" LINK="https://www.nature.com/articles/s41586-021-03213-y">
             <node TEXT="Bayesian reaction optimization as a tool for chemical synthesis" />
             <node TEXT="系统比较贝叶斯优化与化学家，前者更高效且更稳定。" />
+            <attribute NAME="paperId" VALUE="paper-f563dae3432c" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="General Suzuki conditions｜Science 2022｜已有扩展" LINK="https://www.science.org/doi/10.1126/science.adc8743">
             <node TEXT="Closed-loop optimization of general reaction conditions for heteroaryl Suzuki-Miyaura coupling" />
             <node TEXT="闭环优化寻找对多种底物都适用的通用反应条件。" />
+            <attribute NAME="paperId" VALUE="paper-6d31f88e1dc7" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -323,14 +421,20 @@
           <node TEXT="CO₂ electrocatalysts｜Nature 2020｜较早入口" LINK="https://www.nature.com/articles/s41586-020-2242-8">
             <node TEXT="Accelerated discovery of CO2 electrocatalysts using active machine learning" />
             <node TEXT="主动学习筛选合金催化剂，发现高效 CO₂ 还原的铜铝催化剂。" />
+            <attribute NAME="paperId" VALUE="paper-678d8f41c32a" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="OC20｜ACS Catalysis 2021｜近年代表" LINK="https://doi.org/10.1021/acscatal.0c04525">
             <node TEXT="Open Catalyst 2020 (OC20) Dataset and Community Challenges" />
             <node TEXT="上百万次 DFT 弛豫构成的催化数据集与社区挑战。" />
+            <attribute NAME="paperId" VALUE="paper-cf7f8f29e1a4" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="OC22｜ACS Catalysis 2023｜已有扩展" LINK="https://doi.org/10.1021/acscatal.2c05426">
             <node TEXT="The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts" />
             <node TEXT="把数据集扩展到氧化物电催化剂，用于析氧等反应。" />
+            <attribute NAME="paperId" VALUE="paper-dcd79726f4f3" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -342,10 +446,14 @@
           <node TEXT="Intermetallic active learning｜Nature Catalysis 2018｜较早入口" LINK="https://www.nature.com/articles/s41929-018-0142-1">
             <node TEXT="Active learning across intermetallics to guide discovery of electrocatalysts for CO2 reduction and H2 evolution" />
             <node TEXT="自动化 DFT 工作流结合主动学习，在大量金属间化合物中筛选催化剂。" />
+            <attribute NAME="paperId" VALUE="paper-0c3672a01758" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="AdsorbML｜npj Computational Materials 2023｜近年代表" LINK="https://www.nature.com/articles/s41524-023-01121-5">
             <node TEXT="AdsorbML: a leap in efficiency for adsorption energy calculations using generalizable machine learning potentials" />
             <node TEXT="用机器学习势筛选构型，只对少数候选做 DFT，计算量大幅降低。" />
+            <attribute NAME="paperId" VALUE="paper-270fa92b51f0" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -357,14 +465,20 @@
           <node TEXT="Battery cycle life｜Nature Energy 2019｜较早入口" LINK="https://www.nature.com/articles/s41560-019-0356-8">
             <node TEXT="Data-driven prediction of battery cycle life before capacity degradation" />
             <node TEXT="只用前 100 个循环的数据预测锂电池寿命。" />
+            <attribute NAME="paperId" VALUE="paper-c63fcdae068f" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="Fast-charging optimization｜Nature 2020｜近年代表" LINK="https://www.nature.com/articles/s41586-020-1994-5">
             <node TEXT="Closed-loop optimization of fast-charging protocols for batteries with machine learning" />
             <node TEXT="早期寿命预测结合贝叶斯优化，大幅缩短快充协议筛选时间。" />
+            <attribute NAME="paperId" VALUE="paper-29f73fb4e5c3" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="Solid electrolyte screening｜Journal of the American Chemical Society 2024｜已有扩展" LINK="https://doi.org/10.1021/jacs.4c03849">
             <node TEXT="Accelerating Computational Materials Discovery with Machine Learning and Cloud High-Performance Computing: from Large-Scale Screening to Experimental Validation" />
             <node TEXT="机器学习与云计算筛选三千多万候选，合成验证新型固态电解质。" />
+            <attribute NAME="paperId" VALUE="paper-fc9ec454d170" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -378,14 +492,20 @@
           <node TEXT="Materials word embeddings｜Nature 2019｜较早入口" LINK="https://www.nature.com/articles/s41586-019-1335-8">
             <node TEXT="Unsupervised word embeddings capture latent knowledge from materials science literature" />
             <node TEXT="在摘要上训练的词向量能提前数年“预测”新热电材料。" />
+            <attribute NAME="paperId" VALUE="paper-c960c13a0bd7" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="Synthesis recipes｜Scientific Data 2019｜近年代表" LINK="https://www.nature.com/articles/s41597-019-0224-1">
             <node TEXT="Text-mined dataset of inorganic materials synthesis recipes" />
             <node TEXT="从文献中自动抽取三万多条固相合成配方。" />
+            <attribute NAME="paperId" VALUE="paper-4511ffebaf20" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="LLM-NERRE｜Nature Communications 2024｜已有扩展" LINK="https://www.nature.com/articles/s41467-024-45563-x">
             <node TEXT="Structured information extraction from scientific text with large language models" />
             <node TEXT="微调大语言模型把材料文献转为结构化的实体与关系。" />
+            <attribute NAME="paperId" VALUE="paper-f71c07091b01" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -397,10 +517,14 @@
           <node TEXT="LLM predictive chemistry｜Nature Machine Intelligence 2024｜近年代表" LINK="https://www.nature.com/articles/s42256-023-00788-1">
             <node TEXT="Leveraging large language models for predictive chemistry" />
             <node TEXT="把化学问题写成问答并微调 GPT，小数据下可比肩专用模型。" />
+            <attribute NAME="paperId" VALUE="paper-99d16c0456ad" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="ChemBench｜Nature Chemistry 2025｜已有扩展" LINK="https://www.nature.com/articles/s41557-025-01815-x">
             <node TEXT="A framework for evaluating the chemical knowledge and reasoning abilities of large language models against the expertise of chemists" />
             <node TEXT="两千多道题系统评测大模型的化学知识，并与化学家对比。" />
+            <attribute NAME="paperId" VALUE="paper-68ad95b7dd29" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -412,10 +536,14 @@
           <node TEXT="GPT-4 Reticular Chemist｜Angewandte Chemie International Edition 2023｜较早入口" LINK="https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202311983">
             <node TEXT="A GPT-4 Reticular Chemist for Guiding MOF Discovery" />
             <node TEXT="化学家与 GPT-4 对话协作，迭代完成材料合成与表征。" />
+            <attribute NAME="paperId" VALUE="paper-56f10c24ffce" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="ChemCrow｜Nature Machine Intelligence 2024｜近年代表" LINK="https://www.nature.com/articles/s42256-024-00832-8">
             <node TEXT="Augmenting large language models with chemistry tools" />
             <node TEXT="语言模型调用专业化学工具完成合成规划与分子设计。" />
+            <attribute NAME="paperId" VALUE="paper-187b8f495b64" />
+            <attribute NAME="primaryThemeId" VALUE="robotics-lab" />
           </node>
         </node>
       </node>
@@ -429,18 +557,26 @@
           <node TEXT="Mobile robotic chemist｜Nature 2020｜较早入口" LINK="https://www.nature.com/articles/s41586-020-2442-2">
             <node TEXT="A mobile robotic chemist" />
             <node TEXT="移动机器人在普通实验室中自主开展光催化材料优化。" />
+            <attribute NAME="paperId" VALUE="paper-9fb8da842ccc" />
+            <attribute NAME="primaryThemeId" VALUE="robotics-lab" />
           </node>
           <node TEXT="A-Lab｜Nature 2023｜近年代表" LINK="https://www.nature.com/articles/s41586-023-06734-w">
             <node TEXT="An autonomous laboratory for the accelerated synthesis of inorganic materials" />
             <node TEXT="结合计算、文献知识与主动学习，17 天内自主合成多种目标无机材料。" />
+            <attribute NAME="paperId" VALUE="paper-d55d509e2598" />
+            <attribute NAME="primaryThemeId" VALUE="robotics-lab" />
           </node>
           <node TEXT="Coscientist｜Nature 2023｜近年代表" LINK="https://www.nature.com/articles/s41586-023-06792-0">
             <node TEXT="Autonomous chemical research with large language models" />
             <node TEXT="语言模型规划并控制实验硬件，完成偶联反应的设计与优化。" />
+            <attribute NAME="paperId" VALUE="paper-56dffedbe26c" />
+            <attribute NAME="primaryThemeId" VALUE="robotics-lab" />
           </node>
           <node TEXT="Exploratory synthesis robots｜Nature 2024｜已有扩展" LINK="https://www.nature.com/articles/s41586-024-08173-7">
             <node TEXT="Autonomous mobile robots for exploratory synthetic chemistry" />
             <node TEXT="移动机器人共享仪器，并用多种表征数据做探索性合成决策。" />
+            <attribute NAME="paperId" VALUE="paper-2ae991ff0aee" />
+            <attribute NAME="primaryThemeId" VALUE="robotics-lab" />
           </node>
         </node>
       </node>
@@ -452,18 +588,26 @@
           <node TEXT="Stability examination｜npj Computational Materials 2020｜较早入口" LINK="https://www.nature.com/articles/s41524-020-00362-y">
             <node TEXT="A critical examination of compound stability predictions from machine-learned formation energies" />
             <node TEXT="形成能预测准确并不代表稳定性判断准确。" />
+            <attribute NAME="paperId" VALUE="paper-4277aaa9c518" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="Matbench Discovery｜Nature Machine Intelligence 2025｜近年代表" LINK="https://www.nature.com/articles/s42256-025-01055-1">
             <node TEXT="A framework to evaluate machine learning crystal stability predictions" />
             <node TEXT="用前瞻性筛选任务评估模型预测晶体稳定性的实际效果。" />
+            <attribute NAME="paperId" VALUE="paper-d48a94e297c7" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="GNoME perspective｜Chemistry of Materials 2024｜已有扩展" LINK="https://doi.org/10.1021/acs.chemmater.4c00643">
             <node TEXT="Artificial Intelligence Driving Materials Discovery? Perspective on the Article: Scaling Deep Learning for Materials Discovery" />
             <node TEXT="从化学角度质疑大规模预测材料的新颖性与实用性。" />
+            <attribute NAME="paperId" VALUE="paper-ebd28f4c22fa" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="A-Lab challenges｜PRX Energy 2024｜已有扩展" LINK="https://doi.org/10.1103/prxenergy.3.011002">
             <node TEXT="Challenges in High-Throughput Inorganic Materials Prediction and Autonomous Synthesis" />
             <node TEXT="复核自主实验室的结构表征，指出合成结论需要更严格的证据。" />
+            <attribute NAME="paperId" VALUE="paper-129a60d56233" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -472,101 +616,216 @@
       <node TEXT="从电子结构到原子模拟">
         <node TEXT="神经网络波函数 → 机器学习泛函 → 原子间势 → 通用势" />
         <node TEXT="Neural Network Wavefunctions｜神经网络波函数">
-          <node TEXT="FermiNet｜Physical Review Research 2020" LINK="https://doi.org/10.1103/physrevresearch.2.033429" />
-          <node TEXT="Psiformer｜ICLR 2023" LINK="https://openreview.net/forum?id=xveTeHVlF7j" />
+          <node TEXT="FermiNet｜Physical Review Research 2020" LINK="https://doi.org/10.1103/physrevresearch.2.033429">
+            <attribute NAME="paperId" VALUE="paper-ee7fa46fb8e9" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
+          <node TEXT="Psiformer｜ICLR 2023" LINK="https://openreview.net/forum?id=xveTeHVlF7j">
+            <attribute NAME="paperId" VALUE="paper-234d038c8d23" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
         <node TEXT="Machine-Learned Density Functionals｜机器学习密度泛函">
-          <node TEXT="DM21｜Science 2021" LINK="https://www.science.org/doi/10.1126/science.abj6511" />
+          <node TEXT="DM21｜Science 2021" LINK="https://www.science.org/doi/10.1126/science.abj6511">
+            <attribute NAME="paperId" VALUE="paper-ba719eeea21e" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
         <node TEXT="Equivariant Interatomic Potentials｜等变原子间势">
-          <node TEXT="NequIP｜Nature Communications 2022" LINK="https://www.nature.com/articles/s41467-022-29939-5" />
-          <node TEXT="MACE｜NeurIPS 2022" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/4a36c3c51af11ed9f34615b81edb5bbc-Abstract-Conference.html" />
+          <node TEXT="NequIP｜Nature Communications 2022" LINK="https://www.nature.com/articles/s41467-022-29939-5">
+            <attribute NAME="paperId" VALUE="paper-c05279b930ed" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
+          <node TEXT="MACE｜NeurIPS 2022" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/4a36c3c51af11ed9f34615b81edb5bbc-Abstract-Conference.html">
+            <attribute NAME="paperId" VALUE="paper-830c0cada1ab" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
         <node TEXT="Universal Interatomic Potentials｜通用原子间势">
-          <node TEXT="M3GNet｜Nature Computational Science 2022" LINK="https://www.nature.com/articles/s43588-022-00349-3" />
-          <node TEXT="CHGNet｜Nature Machine Intelligence 2023" LINK="https://www.nature.com/articles/s42256-023-00716-3" />
+          <node TEXT="M3GNet｜Nature Computational Science 2022" LINK="https://www.nature.com/articles/s43588-022-00349-3">
+            <attribute NAME="paperId" VALUE="paper-6009f5d8d2b5" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
+          <node TEXT="CHGNet｜Nature Machine Intelligence 2023" LINK="https://www.nature.com/articles/s42256-023-00716-3">
+            <attribute NAME="paperId" VALUE="paper-4bbb33af87d7" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
       </node>
       <node TEXT="从性质预测到材料生成">
         <node TEXT="晶体图网络 → 数据与基准 → 生成模型 → 条件逆向设计" />
         <node TEXT="Crystal Graph Networks｜晶体图神经网络">
-          <node TEXT="CGCNN｜Physical Review Letters 2018" LINK="https://doi.org/10.1103/physrevlett.120.145301" />
-          <node TEXT="ALIGNN｜npj Computational Materials 2021" LINK="https://www.nature.com/articles/s41524-021-00650-1" />
+          <node TEXT="CGCNN｜Physical Review Letters 2018" LINK="https://doi.org/10.1103/physrevlett.120.145301">
+            <attribute NAME="paperId" VALUE="paper-005c40d4baa6" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
+          <node TEXT="ALIGNN｜npj Computational Materials 2021" LINK="https://www.nature.com/articles/s41524-021-00650-1">
+            <attribute NAME="paperId" VALUE="paper-eb55e477d5bb" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
         <node TEXT="Materials Data &amp; Benchmarks｜材料数据与基准">
-          <node TEXT="Materials Project｜APL Materials 2013" LINK="https://doi.org/10.1063/1.4812323" />
-          <node TEXT="Matbench｜npj Computational Materials 2020" LINK="https://www.nature.com/articles/s41524-020-00406-3" />
+          <node TEXT="Materials Project｜APL Materials 2013" LINK="https://doi.org/10.1063/1.4812323">
+            <attribute NAME="paperId" VALUE="paper-7147b00ace1f" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
+          <node TEXT="Matbench｜npj Computational Materials 2020" LINK="https://www.nature.com/articles/s41524-020-00406-3">
+            <attribute NAME="paperId" VALUE="paper-4965949aaef3" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
         <node TEXT="Crystal Generative Models｜晶体生成模型">
-          <node TEXT="CDVAE｜ICLR 2022" LINK="https://openreview.net/forum?id=03RLpj-tc_" />
-          <node TEXT="DiffCSP｜NeurIPS 2023" LINK="https://proceedings.neurips.cc/paper_files/paper/2023/hash/38b787fc530d0b31825827e2cc306656-Abstract.html" />
+          <node TEXT="CDVAE｜ICLR 2022" LINK="https://openreview.net/forum?id=03RLpj-tc_">
+            <attribute NAME="paperId" VALUE="paper-24bc12cf7a00" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
+          <node TEXT="DiffCSP｜NeurIPS 2023" LINK="https://proceedings.neurips.cc/paper_files/paper/2023/hash/38b787fc530d0b31825827e2cc306656-Abstract.html">
+            <attribute NAME="paperId" VALUE="paper-10d14cbe9305" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
         <node TEXT="Conditional Inverse Design｜条件逆向设计">
-          <node TEXT="MatterGen｜Nature 2025" LINK="https://www.nature.com/articles/s41586-025-08628-5" />
+          <node TEXT="MatterGen｜Nature 2025" LINK="https://www.nature.com/articles/s41586-025-08628-5">
+            <attribute NAME="paperId" VALUE="paper-765cd183a8ba" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
       </node>
       <node TEXT="从预测到可信发现">
         <node TEXT="大规模筛选 → 稳定性检验 → 自主合成 → 独立复核" />
         <node TEXT="Large-Scale Materials Discovery｜大规模材料发现">
-          <node TEXT="GNoME｜Nature 2023" LINK="https://www.nature.com/articles/s41586-023-06735-9" />
+          <node TEXT="GNoME｜Nature 2023" LINK="https://www.nature.com/articles/s41586-023-06735-9">
+            <attribute NAME="paperId" VALUE="paper-fab26d57329d" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
         <node TEXT="Critical Evaluation of AI Discovery｜对 AI 发现结果的检验">
-          <node TEXT="Stability examination｜npj Computational Materials 2020" LINK="https://www.nature.com/articles/s41524-020-00362-y" />
-          <node TEXT="Matbench Discovery｜Nature Machine Intelligence 2025" LINK="https://www.nature.com/articles/s42256-025-01055-1" />
-          <node TEXT="GNoME perspective｜Chemistry of Materials 2024" LINK="https://doi.org/10.1021/acs.chemmater.4c00643" />
-          <node TEXT="A-Lab challenges｜PRX Energy 2024" LINK="https://doi.org/10.1103/prxenergy.3.011002" />
+          <node TEXT="Stability examination｜npj Computational Materials 2020" LINK="https://www.nature.com/articles/s41524-020-00362-y">
+            <attribute NAME="paperId" VALUE="paper-4277aaa9c518" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
+          <node TEXT="Matbench Discovery｜Nature Machine Intelligence 2025" LINK="https://www.nature.com/articles/s42256-025-01055-1">
+            <attribute NAME="paperId" VALUE="paper-d48a94e297c7" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
+          <node TEXT="GNoME perspective｜Chemistry of Materials 2024" LINK="https://doi.org/10.1021/acs.chemmater.4c00643">
+            <attribute NAME="paperId" VALUE="paper-ebd28f4c22fa" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
+          <node TEXT="A-Lab challenges｜PRX Energy 2024" LINK="https://doi.org/10.1103/prxenergy.3.011002">
+            <attribute NAME="paperId" VALUE="paper-129a60d56233" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
         <node TEXT="Autonomous Laboratories｜自主实验室">
-          <node TEXT="A-Lab｜Nature 2023" LINK="https://www.nature.com/articles/s41586-023-06734-w" />
+          <node TEXT="A-Lab｜Nature 2023" LINK="https://www.nature.com/articles/s41586-023-06734-w">
+            <attribute NAME="paperId" VALUE="paper-d55d509e2598" />
+            <attribute NAME="primaryThemeId" VALUE="robotics-lab" />
+          </node>
         </node>
       </node>
       <node TEXT="从反应数据到自动合成">
         <node TEXT="反应预测 → 逆合成规划 → 条件优化 → 自主实验" />
         <node TEXT="Reaction Outcome Prediction｜反应结果预测">
-          <node TEXT="Molecular Transformer｜ACS Central Science 2019" LINK="https://doi.org/10.1021/acscentsci.9b00576" />
+          <node TEXT="Molecular Transformer｜ACS Central Science 2019" LINK="https://doi.org/10.1021/acscentsci.9b00576">
+            <attribute NAME="paperId" VALUE="paper-c2a1c765e8d3" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
         <node TEXT="Retrosynthesis &amp; Synthesis Planning｜逆合成与合成规划">
-          <node TEXT="3N-MCTS｜Nature 2018" LINK="https://www.nature.com/articles/nature25978" />
-          <node TEXT="AI-planned flow synthesis｜Science 2019" LINK="https://www.science.org/doi/10.1126/science.aax1566" />
+          <node TEXT="3N-MCTS｜Nature 2018" LINK="https://www.nature.com/articles/nature25978">
+            <attribute NAME="paperId" VALUE="paper-f658cc3f3b6c" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
+          <node TEXT="AI-planned flow synthesis｜Science 2019" LINK="https://www.science.org/doi/10.1126/science.aax1566">
+            <attribute NAME="paperId" VALUE="paper-8dc9773aedd7" />
+            <attribute NAME="primaryThemeId" VALUE="robotics-lab" />
+          </node>
         </node>
         <node TEXT="Reaction Optimization｜反应条件优化">
-          <node TEXT="Bayesian reaction optimization｜Nature 2021" LINK="https://www.nature.com/articles/s41586-021-03213-y" />
+          <node TEXT="Bayesian reaction optimization｜Nature 2021" LINK="https://www.nature.com/articles/s41586-021-03213-y">
+            <attribute NAME="paperId" VALUE="paper-f563dae3432c" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
         <node TEXT="Autonomous Laboratories｜自主实验室">
-          <node TEXT="Mobile robotic chemist｜Nature 2020" LINK="https://www.nature.com/articles/s41586-020-2442-2" />
-          <node TEXT="Coscientist｜Nature 2023" LINK="https://www.nature.com/articles/s41586-023-06792-0" />
+          <node TEXT="Mobile robotic chemist｜Nature 2020" LINK="https://www.nature.com/articles/s41586-020-2442-2">
+            <attribute NAME="paperId" VALUE="paper-9fb8da842ccc" />
+            <attribute NAME="primaryThemeId" VALUE="robotics-lab" />
+          </node>
+          <node TEXT="Coscientist｜Nature 2023" LINK="https://www.nature.com/articles/s41586-023-06792-0">
+            <attribute NAME="paperId" VALUE="paper-56dffedbe26c" />
+            <attribute NAME="primaryThemeId" VALUE="robotics-lab" />
+          </node>
         </node>
       </node>
       <node TEXT="从文献到智能体">
         <node TEXT="文本挖掘 → 大模型预测 → 知识评测 → 化学智能体" />
         <node TEXT="Materials Text Mining｜材料文本挖掘">
-          <node TEXT="Materials word embeddings｜Nature 2019" LINK="https://www.nature.com/articles/s41586-019-1335-8" />
-          <node TEXT="LLM-NERRE｜Nature Communications 2024" LINK="https://www.nature.com/articles/s41467-024-45563-x" />
+          <node TEXT="Materials word embeddings｜Nature 2019" LINK="https://www.nature.com/articles/s41586-019-1335-8">
+            <attribute NAME="paperId" VALUE="paper-c960c13a0bd7" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
+          <node TEXT="LLM-NERRE｜Nature Communications 2024" LINK="https://www.nature.com/articles/s41467-024-45563-x">
+            <attribute NAME="paperId" VALUE="paper-f71c07091b01" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
         <node TEXT="LLMs for Chemical Prediction &amp; Evaluation｜化学预测与评测中的大语言模型">
-          <node TEXT="LLM predictive chemistry｜Nature Machine Intelligence 2024" LINK="https://www.nature.com/articles/s42256-023-00788-1" />
-          <node TEXT="ChemBench｜Nature Chemistry 2025" LINK="https://www.nature.com/articles/s41557-025-01815-x" />
+          <node TEXT="LLM predictive chemistry｜Nature Machine Intelligence 2024" LINK="https://www.nature.com/articles/s42256-023-00788-1">
+            <attribute NAME="paperId" VALUE="paper-99d16c0456ad" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
+          <node TEXT="ChemBench｜Nature Chemistry 2025" LINK="https://www.nature.com/articles/s41557-025-01815-x">
+            <attribute NAME="paperId" VALUE="paper-68ad95b7dd29" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
         <node TEXT="Chemistry Agents｜化学智能体">
-          <node TEXT="GPT-4 Reticular Chemist｜Angewandte Chemie International Edition 2023" LINK="https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202311983" />
-          <node TEXT="ChemCrow｜Nature Machine Intelligence 2024" LINK="https://www.nature.com/articles/s42256-024-00832-8" />
+          <node TEXT="GPT-4 Reticular Chemist｜Angewandte Chemie International Edition 2023" LINK="https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202311983">
+            <attribute NAME="paperId" VALUE="paper-56f10c24ffce" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="ChemCrow｜Nature Machine Intelligence 2024" LINK="https://www.nature.com/articles/s42256-024-00832-8">
+            <attribute NAME="paperId" VALUE="paper-187b8f495b64" />
+            <attribute NAME="primaryThemeId" VALUE="robotics-lab" />
+          </node>
         </node>
       </node>
       <node TEXT="从催化到能源器件">
         <node TEXT="主动学习筛选 → 催化数据集 → 吸附能加速 → 电池闭环优化" />
         <node TEXT="Adsorption Energy Search｜吸附能与构型搜索">
-          <node TEXT="Intermetallic active learning｜Nature Catalysis 2018" LINK="https://www.nature.com/articles/s41929-018-0142-1" />
-          <node TEXT="AdsorbML｜npj Computational Materials 2023" LINK="https://www.nature.com/articles/s41524-023-01121-5" />
+          <node TEXT="Intermetallic active learning｜Nature Catalysis 2018" LINK="https://www.nature.com/articles/s41929-018-0142-1">
+            <attribute NAME="paperId" VALUE="paper-0c3672a01758" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
+          <node TEXT="AdsorbML｜npj Computational Materials 2023" LINK="https://www.nature.com/articles/s41524-023-01121-5">
+            <attribute NAME="paperId" VALUE="paper-270fa92b51f0" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
         <node TEXT="Catalyst Datasets &amp; Models｜催化数据集与模型">
-          <node TEXT="OC20｜ACS Catalysis 2021" LINK="https://doi.org/10.1021/acscatal.0c04525" />
-          <node TEXT="OC22｜ACS Catalysis 2023" LINK="https://doi.org/10.1021/acscatal.2c05426" />
+          <node TEXT="OC20｜ACS Catalysis 2021" LINK="https://doi.org/10.1021/acscatal.0c04525">
+            <attribute NAME="paperId" VALUE="paper-cf7f8f29e1a4" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
+          <node TEXT="OC22｜ACS Catalysis 2023" LINK="https://doi.org/10.1021/acscatal.2c05426">
+            <attribute NAME="paperId" VALUE="paper-dcd79726f4f3" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
         <node TEXT="Battery &amp; Electrolyte Discovery｜电池与电解质发现">
-          <node TEXT="Battery cycle life｜Nature Energy 2019" LINK="https://www.nature.com/articles/s41560-019-0356-8" />
-          <node TEXT="Fast-charging optimization｜Nature 2020" LINK="https://www.nature.com/articles/s41586-020-1994-5" />
+          <node TEXT="Battery cycle life｜Nature Energy 2019" LINK="https://www.nature.com/articles/s41560-019-0356-8">
+            <attribute NAME="paperId" VALUE="paper-c63fcdae068f" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
+          <node TEXT="Fast-charging optimization｜Nature 2020" LINK="https://www.nature.com/articles/s41586-020-1994-5">
+            <attribute NAME="paperId" VALUE="paper-29f73fb4e5c3" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
       </node>
     </node>
+    <node TEXT="阅读集合保留原有脉络；当前主分类见 paper-catalog.json。链接按 paperId 引用，不重复计数。 / Reading collection: current primary classifications live in paper-catalog.json; references do not add papers." />
   </node>
 </map>

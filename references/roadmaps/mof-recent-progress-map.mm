@@ -14,10 +14,14 @@
           <node TEXT="序列控制骨架｜Nature Chemistry 2025｜实验" LINK="https://www.nature.com/articles/s41557-024-01717-4">
             <node TEXT="Synthesis of pillar-layered metal–organic frameworks with variable backbones through sequence control" />
             <node TEXT="通过序列控制改变柱层状框架骨架；研究的是结构组装路径与可达网络。" />
+            <attribute NAME="paperId" VALUE="paper-c24b91ad986c" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="配体去对称化｜Chemical Science 2025｜实验" LINK="https://pubs.rsc.org/en/content/articlehtml/2025/sc/d5sc05365j">
             <node TEXT="Linker desymmetrisation unlocks new topologies, defective clusters, and catalytic activity in zirconium- and rare-earth metal–organic frameworks" />
             <node TEXT="去对称化配体连接几何带来新的拓扑和簇环境，并研究催化功能。" />
+            <attribute NAME="paperId" VALUE="paper-e649b44d4773" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -31,15 +35,21 @@
           <node TEXT="UiO-66 相关无序｜Nature Communications 2023｜实验" LINK="https://www.nature.com/articles/s41467-023-41936-w">
             <node TEXT="Synthetic control of correlated disorder in UiO-66 frameworks" />
             <node TEXT="建立可调控相关无序的合成路线，关注缺陷域的形成与生长。" />
+            <attribute NAME="paperId" VALUE="paper-eeee010e1fee" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="TRUMOF-1｜Nature Materials 2024｜实验＋粗粒度计算" LINK="https://www.nature.com/articles/s41563-024-01960-7">
             <node TEXT="Enhanced elastic stability of a topologically disordered crystalline metal–organic framework" />
             <node TEXT="比较 TRUMOF-1 与 MOF-5 的高压行为；拓扑非周期性可增强弹性稳定性，不能将它简单等同于缺陷含量。" />
+            <attribute NAME="paperId" VALUE="paper-91235c67a479" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="光可逆缺陷络合｜Nature Communications 2026｜实验" LINK="https://www.nature.com/articles/s41467-026-78352-9">
             <node TEXT="Photoreversible defect complexation dynamically modulates guest adsorption in metal-organic frameworks" />
             <node TEXT="利用光可逆络合调节客体可接近的金属位点，扩展吸附控制方式。" />
             <node TEXT="在线发表：2026-10-15" />
+            <attribute NAME="paperId" VALUE="paper-9e80cce82263" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -54,11 +64,15 @@
             <node TEXT="Direct synthesis of amorphous metal–organic frameworks from nanoclusters" />
             <node TEXT="以预制纳米簇和刚性配体直接构造非晶网络，研究动力学、组成与缺陷的关联。" />
             <node TEXT="在线发表：2026-04-08" />
+            <attribute NAME="paperId" VALUE="paper-0da1c7af90b8" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="熔剂介导玻璃重构｜Nature Materials 2026｜实验" LINK="https://www.nature.com/articles/s41563-026-02712-5">
             <node TEXT="Flux-mediated ligand exchange restructures metal–organic framework glasses" />
             <node TEXT="熔剂降低加工温度并诱导配体交换，使玻璃中的局域配位与整体连接可调。" />
             <node TEXT="在线发表：2026-08-24" />
+            <attribute NAME="paperId" VALUE="paper-afede6b91f4a" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -74,14 +88,20 @@
           <node TEXT="QMOF｜Matter 2021｜DFT 数据＋机器学习" LINK="https://www.sciencedirect.com/science/article/pii/S2590238521000709">
             <node TEXT="Machine learning the quantum-chemical properties of metal–organic frameworks for accelerated materials discovery" />
             <node TEXT="构建量子化学性质数据，支持电子性质学习；性质标签主要来自计算。" />
+            <attribute NAME="paperId" VALUE="paper-683effb49077" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="跨实验室复现｜Advanced Materials 2024｜跨实验室实验" LINK="https://onlinelibrary.wiley.com/doi/full/10.1002/adma.202304832">
             <node TEXT="How Reproducible is the Synthesis of Zr–Porphyrin Metal–Organic Frameworks? An Interlaboratory Study" />
             <node TEXT="检验 Zr–卟啉 MOF 合成的复现性，显示实验协议和隐含变量对材料结果的影响。" />
+            <attribute NAME="paperId" VALUE="paper-fad8294f4e78" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="CoRE MOF DB｜Matter 2025｜结构数据库＋预测标签" LINK="https://www.sciencedirect.com/science/article/pii/S2590238525001833">
             <node TEXT="CoRE MOF DB: A curated experimental metal-organic framework database with machine-learned properties for integrated material-process screening" />
             <node TEXT="更新实验 MOF 的整理与可计算性信息，并连接机器学习性质和材料–工艺筛选。" />
+            <attribute NAME="paperId" VALUE="paper-dfbd870b7735" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -95,14 +115,20 @@
           <node TEXT="MOFTransformer｜Nature Machine Intelligence 2023｜计算＋机器学习" LINK="https://www.nature.com/articles/s42256-023-00628-2">
             <node TEXT="A multi-modal pre-training transformer for universal transfer learning in metal–organic frameworks" />
             <node TEXT="联合原子图和能量网格，通过预训练迁移至多种 MOF 性质任务。" />
+            <attribute NAME="paperId" VALUE="paper-a3a6220b2043" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="PXRD＋前驱体｜Nature Communications 2025｜机器学习" LINK="https://www.nature.com/articles/s41467-025-60796-0">
             <node TEXT="Connecting metal-organic framework synthesis to applications using multimodal machine learning" />
             <node TEXT="结合 PXRD 谱与化学前驱体文本，建立合成时信息到应用相关性质的预测路径。" />
+            <attribute NAME="paperId" VALUE="paper-fcb1e8e70e97" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="SpbNet｜Nature Communications 2026｜计算＋机器学习" LINK="https://www.nature.com/articles/s41467-026-69245-y">
             <node TEXT="A data-efficient foundation model for porous materials based on expert-guided supervised learning" />
             <node TEXT="以客体–框架相互作用的 PES 基函数和几何知识监督预训练；覆盖 MOF 等多类多孔材料，不是框架动力学势函数。" />
+            <attribute NAME="paperId" VALUE="paper-e08ec8c5c7fe" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -116,18 +142,26 @@
           <node TEXT="DigiMOF｜Chemistry of Materials 2023｜文献数据" LINK="https://pubs.acs.org/doi/10.1021/acs.chemmater.3c00788">
             <node TEXT="DigiMOF: A Database of Metal–Organic Framework Synthesis Information Generated via Text Mining" />
             <node TEXT="用化学文本挖掘整理 MOF 合成信息，提供前驱体、溶剂、方法和拓扑等字段。" />
+            <attribute NAME="paperId" VALUE="paper-b848709ec894" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="LLM-NERRE｜Nature Communications 2024｜文献数据＋模型" LINK="https://www.nature.com/articles/s41467-024-45563-x">
             <node TEXT="Structured information extraction from scientific text with large language models" />
             <node TEXT="包括 MOF 专项任务，联合提取实体和关系，并进行归一化。" />
+            <attribute NAME="paperId" VALUE="paper-f71c07091b01" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="MOF-ChemUnity｜JACS 2025｜知识流程＋模型" LINK="https://pubs.acs.org/doi/10.1021/jacs.5c11789">
             <node TEXT="MOF-ChemUnity: Literature-Informed Large Language Models for Metal–Organic Framework Research" />
             <node TEXT="研究 MOF 名称匹配、性质与合成抽取、跨文档链接及文献支持的问答流程。" />
+            <attribute NAME="paperId" VALUE="paper-8ddf961d3261" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="MOFMeld｜npj Artificial Intelligence 2026｜计算＋模型" LINK="https://www.nature.com/articles/s44387-026-00106-1">
             <node TEXT="MOFMeld: a structure–language fusion framework for MOF property prediction in carbon capture" />
             <node TEXT="针对碳捕集相关性质，将晶体表示、MOF 文献知识和语言模型关联。" />
+            <attribute NAME="paperId" VALUE="paper-1c68b872589e" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -143,18 +177,26 @@
           <node TEXT="MOFDiff｜ICLR 2024｜计算生成＋分子模拟" LINK="https://proceedings.iclr.cc/paper_files/paper/2024/hash/47547ee84e3fbbcbbbbad7c1fd9a973b-Abstract-Conference.html">
             <node TEXT="MOFDiff: Coarse-grained Diffusion for Metal-Organic Framework Design" />
             <node TEXT="生成构筑单元身份与坐标，再组装全原子结构；用模拟评价候选，不能据此直接确认可合成。" />
+            <attribute NAME="paperId" VALUE="paper-2f00e86abcaf" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="MOFFlow｜ICLR 2025｜结构预测" LINK="https://proceedings.iclr.cc/paper_files/paper/2025/hash/f392c6bbb14548df50092f10c9db440f-Abstract-Conference.html">
             <node TEXT="MOFFlow: Flow Matching for Structure Prediction of Metal-Organic Frameworks" />
             <node TEXT="把金属节点和配体视为刚体，在 SE(3) 空间预测组装结构；任务与自由提出新化学组成不同。" />
+            <attribute NAME="paperId" VALUE="paper-bb72fd80036c" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="SDF 条件扩散｜Nature Communications 2025｜计算生成" LINK="https://www.nature.com/articles/s41467-024-55390-9">
             <node TEXT="Multi-modal conditional diffusion model using signed distance functions for metal-organic frameworks generation" />
             <node TEXT="用符号距离函数与多模态条件表示实现 MOF 生成。" />
+            <attribute NAME="paperId" VALUE="paper-1c90a97570f0" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="Deep dreaming｜Nature Communications 2025｜计算逆向设计" LINK="https://www.nature.com/articles/s41467-025-59952-3">
             <node TEXT="Inverse design of metal-organic frameworks using deep dreaming approaches" />
             <node TEXT="通过学习到的性质关系引导 MOF 表示变化，实现目标导向的逆向搜索。" />
+            <attribute NAME="paperId" VALUE="paper-e27480193c26" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -168,11 +210,15 @@
           <node TEXT="LVGP-MOBBO｜npj Computational Materials 2023｜计算优化" LINK="https://www.nature.com/articles/s41524-023-01125-1">
             <node TEXT="Rapid design of top-performing metal-organic frameworks with qualitative representations of building blocks" />
             <node TEXT="将类别构筑单元表示与多目标批量 BO 结合，减少候选搜索评估量。" />
+            <attribute NAME="paperId" VALUE="paper-d3552ed612e8" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="AIRS｜Nature Synthesis 2026｜自动化实验＋算法" LINK="https://www.nature.com/articles/s44160-025-00939-9">
             <node TEXT="Algorithmic iterative reticular synthesis of zeolitic imidazolate framework crystals" />
             <node TEXT="结合自动化合成、图像识别和反应结果迭代探索 ZIF 结晶空间；2025-11 在线发表，2026 年卷期。" />
             <node TEXT="在线发表：2025-11-25" />
+            <attribute NAME="paperId" VALUE="paper-0f91a3b1946e" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -186,10 +232,14 @@
           <node TEXT="GPT-4 Reticular Chemist｜Angewandte Chemie International Edition 2023｜人机协同实验" LINK="https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202311983">
             <node TEXT="A GPT-4 Reticular Chemist for Guiding MOF Discovery" />
             <node TEXT="由 GPT-4 提议、研究者实施实验并反馈结果，获得新的同网状 MOF；有明确人工环节。" />
+            <attribute NAME="paperId" VALUE="paper-56f10c24ffce" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="ChatMOF｜Nature Communications 2024｜工具集成＋计算" LINK="https://www.nature.com/articles/s41467-024-48998-4">
             <node TEXT="ChatMOF: an artificial intelligence system for predicting and generating metal-organic frameworks using large language models" />
             <node TEXT="将语言模型与检索、预测和候选搜索工具连接；展示的是计算工具流程。" />
+            <attribute NAME="paperId" VALUE="paper-f08488f16be0" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -205,10 +255,14 @@
           <node TEXT="MOFSimplify｜Scientific Data 2022｜文献数据＋机器学习" LINK="https://www.nature.com/articles/s41597-022-01181-0">
             <node TEXT="MOFSimplify, machine learning models with extracted stability data of three thousand metal–organic frameworks" />
             <node TEXT="提取活化和热稳定性记录并训练预测模型；不同稳定性标签对应不同实验问题。" />
+            <attribute NAME="paperId" VALUE="paper-18c512b831d3" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="WS24｜JACS 2024｜数据＋机器学习" LINK="https://pubs.acs.org/doi/full/10.1021/jacs.4c05879">
             <node TEXT="Metal–Organic Framework Stability in Water and Harsh Environments from Data-Driven Models Trained on the Diverse WS24 Data Set" />
             <node TEXT="扩展水及苛刻环境的稳定性数据与模型，关注更广泛化学条件。" />
+            <attribute NAME="paperId" VALUE="paper-b7201bfa0acd" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -222,14 +276,20 @@
           <node TEXT="ELM-11 转变动力学｜Nature Communications 2023｜原位实验＋动力学模型" LINK="https://www.nature.com/articles/s41467-023-42448-3">
             <node TEXT="Generalised analytical method unravels framework-dependent kinetics of adsorption-induced structural transition in flexible metal–organic frameworks" />
             <node TEXT="用时间分辨原位衍射和动力学模型研究 CO₂ 诱导门开，区分不同框架的转变速率。" />
+            <attribute NAME="paperId" VALUE="paper-285927793878" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="CALF-20 柔性｜Nature Communications 2024｜实验＋原子模拟" LINK="https://www.nature.com/articles/s41467-024-48136-0">
             <node TEXT="Gas adsorption and framework flexibility of CALF-20 explored via experiments and simulations" />
             <node TEXT="以实验–模拟反馈解释 CALF-20 吸附与柔性，连接工业相关材料与分子机制。" />
+            <attribute NAME="paperId" VALUE="paper-1823c800f610" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="晶胞到颗粒协同｜Journal of Materials Chemistry A 2024｜多尺度计算" LINK="https://pubs.rsc.org/en/content/articlehtml/2024/ta/d4ta04222k">
             <node TEXT="Elucidating the particle size-dependent guest-induced structural transition of flexible metal–organic frameworks by exploring cooperative nature" />
             <node TEXT="把晶胞分子模拟与 Ising 晶格模型连接，显式考虑相邻单元作用及颗粒尺寸。" />
+            <attribute NAME="paperId" VALUE="paper-bb45d3ec8d9c" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -243,14 +303,20 @@
           <node TEXT="温度驱动主动学习｜npj Computational Materials 2024｜DFT＋机器学习势" LINK="https://www.nature.com/articles/s41524-024-01427-y">
             <node TEXT="Quantum-accurate machine learning potentials for metal-organic frameworks using temperature driven active learning" />
             <node TEXT="以温度驱动主动学习为代表性 MOF 建势，并比较结构、振动与实验。" />
+            <attribute NAME="paperId" VALUE="paper-702f9d49b356" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="可迁移势探索｜ACS Nano 2025｜计算＋机器学习势" LINK="https://pubs.acs.org/doi/10.1021/acsnano.4c12369">
             <node TEXT="Toward a Generalizable Machine-Learned Potential for Metal–Organic Frameworks" />
             <node TEXT="在多种 MOF 上评价势函数和振动、热力学性质，研究迁移能力。" />
+            <attribute NAME="paperId" VALUE="paper-1839f42e2122" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="簇到无序框架｜Chemistry of Materials 2025｜多尺度计算" LINK="https://pubs.acs.org/doi/full/10.1021/acs.chemmater.5c00821">
             <node TEXT="Cluster-Based Machine Learning Potentials to Describe Disordered Metal–Organic Frameworks up to the Mesoscale" />
             <node TEXT="采用簇参考数据建立势函数，将无序 MOF 的建模推向更大尺度。" />
+            <attribute NAME="paperId" VALUE="paper-b65a0761262b" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -266,14 +332,20 @@
           <node TEXT="CALF-20｜Science 2021｜材料实验＋放大" LINK="https://www.science.org/doi/10.1126/science.abi7281">
             <node TEXT="A scalable metal-organic framework as a durable physisorbent for carbon dioxide capture" />
             <node TEXT="将耐久性、可放大制备与 CO₂ 物理吸附结合，是面向应用的代表案例。" />
+            <attribute NAME="paperId" VALUE="paper-8cdcd4ffdcca" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="水促进直接空气捕集｜JACS 2024｜实验" LINK="https://pubs.acs.org/doi/10.1021/jacs.3c14125">
             <node TEXT="Water-Enhanced Direct Air Capture of Carbon Dioxide in Metal–Organic Frameworks" />
             <node TEXT="研究胺功能化 MOF-808 在湿度参与下的直接空气捕集。" />
+            <attribute NAME="paperId" VALUE="paper-41c5d5d72c87" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="末端 Zn–H 捕集位点｜Science 2024｜实验" LINK="https://www.science.org/doi/10.1126/science.adk5697">
             <node TEXT="High-temperature carbon dioxide capture in a porous material with terminal zinc hydride sites" />
             <node TEXT="通过末端锌氢位点拓展高温 CO₂ 捕集化学；与单纯提高低温物理吸附量是不同设计目标。" />
+            <attribute NAME="paperId" VALUE="paper-dbb4f4770516" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -287,11 +359,15 @@
           <node TEXT="单个位点协同｜Science 2025｜实验＋机制" LINK="https://www.science.org/doi/10.1126/science.ady2607">
             <node TEXT="Multigas adsorption with single-site cooperativity in a metal–organic framework" />
             <node TEXT="展示多种气体在同一框架中的单个位点协同吸附；提供区别于仅用静态孔径解释的机制。" />
+            <attribute NAME="paperId" VALUE="paper-950f5a0261c8" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="TYUT-18｜Nature Communications 2026｜实验＋计算" LINK="https://www.nature.com/articles/s41467-026-71550-5">
             <node TEXT="Sequential ethane filling induced structural transitions in a flexible–robust metal–organic framework for ethylene purification" />
             <node TEXT="将乙烷的顺序填充、不同门开压力与乙烯纯化联系起来。" />
             <node TEXT="在线发表：2026-04-08" />
+            <attribute NAME="paperId" VALUE="paper-eef16eee2aca" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -305,18 +381,26 @@
           <node TEXT="消除晶格缺陷｜Nature Materials 2023｜实验＋计算" LINK="https://www.nature.com/articles/s41563-023-01541-0">
             <node TEXT="Eliminating lattice defects in metal–organic framework molecular-sieving membranes" />
             <node TEXT="将原子尺度晶格缺陷的消除与膜分子筛分联系起来。" />
+            <attribute NAME="paperId" VALUE="paper-5d739d67e922" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="鳞片状膜结构｜Nature Communications 2024｜实验" LINK="https://www.nature.com/articles/s41467-024-54898-4">
             <node TEXT="Metal-organic framework membranes with scale-like structure for efficient propylene/propane separation" />
             <node TEXT="通过膜层的鳞片状结构设计研究丙烯/丙烷分离及耐受性。" />
+            <attribute NAME="paperId" VALUE="paper-ba95d54e6be8" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="大面积柔性支撑膜｜Angewandte Chemie International Edition 2024｜膜与模块实验" LINK="https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202404058">
             <node TEXT="Large-Area Ultrathin Metal–Organic Framework Membranes Fabricated on Flexible Polymer Supports for Gas Separations" />
             <node TEXT="将超薄 MOF 膜制于柔性聚合物支撑，并展示卷式模块。" />
+            <attribute NAME="paperId" VALUE="paper-2e7901f803b4" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="非经典结晶制膜｜Science Advances 2025｜实验" LINK="https://www.science.org/doi/10.1126/sciadv.adz5237">
             <node TEXT="Scalable metal-organic framework membranes through nonclassical crystallization for molecular separation" />
             <node TEXT="通过非经典结晶路线研究可扩展的晶态框架膜制备与分子分离。" />
+            <attribute NAME="paperId" VALUE="paper-853800172396" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -332,14 +416,20 @@
           <node TEXT="环境自适应器件｜Nature Communications 2022｜器件实验" LINK="https://www.nature.com/articles/s41467-022-32642-0">
             <node TEXT="Environmentally adaptive MOF-based device enables continuous self-optimizing atmospheric water harvesting" />
             <node TEXT="根据环境变化调整运行，强调材料与器件控制的共同作用。" />
+            <attribute NAME="paperId" VALUE="paper-1bec3917ab70" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="Death Valley 户外验证｜Nature Water 2023｜户外器件实验" LINK="https://www.nature.com/articles/s44221-023-00103-7">
             <node TEXT="MOF water harvester produces water from Death Valley desert air in ambient sunlight" />
             <node TEXT="在实际干旱环境测试太阳能 MOF 取水器。" />
+            <attribute NAME="paperId" VALUE="paper-bdb1dd1ddc8d" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="FO@HK 快循环｜Nature Communications 2024｜材料＋户外器件" LINK="https://www.nature.com/articles/s41467-024-53853-7">
             <node TEXT="Time-efficient atmospheric water harvesting using Fluorophenyl oligomer incorporated MOFs" />
             <node TEXT="改善 HKUST-1 的水稳定性和吸附速率，并验证太阳驱动循环产水。" />
+            <attribute NAME="paperId" VALUE="paper-f3fa6d972808" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -353,10 +443,14 @@
           <node TEXT="PFOA 浓缩–降解｜Nature Water 2024｜实验" LINK="https://www.nature.com/articles/s44221-024-00343-1">
             <node TEXT="A robust pyrazolate metal–organic framework for integrated perfluorooctanoic acid concentration and degradation" />
             <node TEXT="将耐受水环境的框架与 PFOA 浓缩、降解过程结合。" />
+            <attribute NAME="paperId" VALUE="paper-5ee07b7a3e8e" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="UiO-66 界面工程｜Advanced Materials 2025｜实验" LINK="https://onlinelibrary.wiley.com/doi/10.1002/adma.202413120">
             <node TEXT="Trace Adsorptive Removal of PFAS from Water by Optimizing the UiO-66 MOF Interface" />
             <node TEXT="调节界面疏水性和静电作用，研究痕量 PFAS 的吸附速率与再生。" />
+            <attribute NAME="paperId" VALUE="paper-108c114307ec" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -370,11 +464,15 @@
           <node TEXT="NU-1501 系列｜Science 2020｜实验" LINK="https://www.science.org/doi/10.1126/science.aaz8881">
             <node TEXT="Balancing volumetric and gravimetric uptake in highly porous materials for clean energy" />
             <node TEXT="展示高孔隙率材料中重量与体积储量的协同设计，是较早入口。" />
+            <attribute NAME="paperId" VALUE="paper-2bece603df7d" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="red 拓扑 CU-6｜Nature Synthesis 2026｜实验＋结构分析" LINK="https://www.nature.com/articles/s44160-026-01163-9">
             <node TEXT="Hierarchically porous metal–organic frameworks with red topology for hydrogen and methane storage" />
             <node TEXT="用构象可适应配体构筑多级孔 red 网络，评价氢和甲烷储存及温压摆动下可交付容量。" />
             <node TEXT="在线发表：2026-09-28" />
+            <attribute NAME="paperId" VALUE="paper-c0550b3fe7e7" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -390,18 +488,26 @@
           <node TEXT="MOF 内单 Pt 位点｜Nature Synthesis 2024｜实验" LINK="https://www.nature.com/articles/s44160-024-00585-7">
             <node TEXT="A one-pot strategy for anchoring single Pt atoms in MOFs with diverse coordination environments" />
             <node TEXT="在可定义的 MOF 配位环境中锚定单 Pt 原子，比较催化和耐烧结行为。" />
+            <attribute NAME="paperId" VALUE="paper-c6750eb581ba" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="耐酸 Bi-MOF 电解器｜Nature Communications 2024｜材料＋电解器实验" LINK="https://www.nature.com/articles/s41467-024-51475-7">
             <node TEXT="An acid-tolerant metal-organic framework for industrial CO2 electrolysis using a proton exchange membrane" />
             <node TEXT="将耐酸 MOF 设计与质子交换膜电解器集成，研究酸性 CO₂ 制甲酸条件。" />
+            <attribute NAME="paperId" VALUE="paper-cf1706b6efbe" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="Cu 双位点＋半导体｜Nature Catalysis 2025｜实验" LINK="https://www.nature.com/articles/s41929-025-01369-8">
             <node TEXT="Reticular copper dual sites embedded with semiconductor particles for selective CO2-to-C2H4 photoreduction" />
             <node TEXT="把半导体单元嵌入有配体缺陷的铜 MOF，耦合电荷过程与双铜位点。" />
+            <attribute NAME="paperId" VALUE="paper-31bed07ad2d2" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="Ni-MOF 工作态重构｜Nature Communications 2025｜实验＋工作态表征" LINK="https://www.nature.com/articles/s41467-025-55891-1">
             <node TEXT="In-situ restructuring of Ni-based metal organic frameworks for photocatalytic CO2 hydrogenation" />
             <node TEXT="表征催化过程发生的结构重构，区分起始框架与形成的活性表面物种。" />
+            <attribute NAME="paperId" VALUE="paper-4da7a8e819be" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -415,15 +521,21 @@
           <node TEXT="氧化还原–导电关联｜Nature Communications 2023｜实验" LINK="https://www.nature.com/articles/s41467-023-40110-6">
             <node TEXT="Experimental manifestation of redox-conductivity in metal-organic frameworks and its implication for semiconductor/insulator switching" />
             <node TEXT="用氧化还原活性框架研究导电变化和半导体/绝缘体切换。" />
+            <attribute NAME="paperId" VALUE="paper-93305bb4b603" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="气氛与表观导电｜Communications Materials 2024｜实验" LINK="https://www.nature.com/articles/s43246-024-00620-2">
             <node TEXT="Atmospheric modulation of apparent electrical conductivity in a metal−organic framework" />
             <node TEXT="指出气氛会显著影响表观电导；讨论导电机制时需要区分不同载流子贡献。" />
+            <attribute NAME="paperId" VALUE="paper-ad58a4f4e821" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="各向异性网状化学｜Nature Chemistry 2026｜实验＋理论" LINK="https://www.nature.com/articles/s41557-026-02251-1">
             <node TEXT="Programming semiconducting two-dimensional conjugated metal–organic frameworks via anisotropic reticular chemistry" />
             <node TEXT="利用配体位点反应性差异编程拓扑和双金属节点，结合单晶电学研究电荷输运。" />
             <node TEXT="在线发表：2026-09-24" />
+            <attribute NAME="paperId" VALUE="paper-781cb4727ca1" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -437,14 +549,20 @@
           <node TEXT="MFM-808-SO₄｜JACS 2023｜实验" LINK="https://pubs.acs.org/doi/10.1021/jacs.3c03943">
             <node TEXT="Ultra-fast Proton Conduction and Photocatalytic Water Splitting in a Pillared Metal–Organic Framework" />
             <node TEXT="通过单晶转化与硫酸化构建质子迁移路径；论文同时研究光催化功能。" />
+            <attribute NAME="paperId" VALUE="paper-36f2c2ebfa9e" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="TTFTP-La 混合导电｜JACS 2025｜实验" LINK="https://pubs.acs.org/doi/10.1021/jacs.4c13792">
             <node TEXT="Mixed Ionic and Electronic Conductivity in a Tetrathiafulvalene-Phosphonate Metal–Organic Framework" />
             <node TEXT="研究由 TTF–膦酸配体和镧离子组成的质子–电子双导电框架。" />
+            <attribute NAME="paperId" VALUE="paper-7cc4d3e34ba5" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="MOF–HOF 缠结｜Nature Synthesis 2025｜实验" LINK="https://www.nature.com/articles/s44160-025-00738-2">
             <node TEXT="Isotopological entanglement of a metal–organic framework and a hydrogen-bonded organic framework for proton conduction" />
             <node TEXT="利用同拓扑 MOF 与 HOF 缠结构筑质子传导环境；属于明确的混合框架体系。" />
+            <attribute NAME="paperId" VALUE="paper-17dd6a9e52ac" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -460,15 +578,21 @@
           <node TEXT="快速绿色合成机理｜Chemistry of Materials 2024｜原位实验" LINK="https://pubs.acs.org/doi/10.1021/acs.chemmater.4c00879">
             <node TEXT="The Mechanism of Rapid and Green Metal–Organic Framework Synthesis by In Situ Spectroscopy and Diffraction" />
             <node TEXT="用原位光谱和衍射研究常温水相 MOF-74 快速合成机制。" />
+            <attribute NAME="paperId" VALUE="paper-49757d2be019" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="常温光化学合成｜Nature Communications 2026｜实验" LINK="https://www.nature.com/articles/s41467-026-70927-w">
             <node TEXT="Room temperature photochemical synthesis of metal–organic frameworks for enhanced photocatalysis" />
             <node TEXT="光驱动路线在温和条件下调控钴–卟啉框架的配位和形貌。" />
+            <attribute NAME="paperId" VALUE="paper-75bd287a15b1" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="超临界机械化学｜Nature Communications 2026｜工艺实验" LINK="https://www.nature.com/articles/s41467-026-73803-9">
             <node TEXT="Sustainable supercritical-mechanochemical process" />
             <node TEXT="将金属氧化物到 MOF 的合成、分离和活化结合到准连续路线。" />
             <node TEXT="在线发表：2026-05-28" />
+            <attribute NAME="paperId" VALUE="paper-db83c70fb499" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -482,14 +606,20 @@
           <node TEXT="纯 MOF 微打印｜ACS Applied Materials &amp; Interfaces 2022｜成型实验" LINK="https://pubs.acs.org/doi/10.1021/acsami.1c22582">
             <node TEXT="Meniscus-Guided 3D Microprinting of Pure Metal–Organic Frameworks with High Gas-Uptake Performance" />
             <node TEXT="以弯月面引导打印制备纯 MOF 单块结构并评价气体吸附。" />
+            <attribute NAME="paperId" VALUE="paper-aa3aa887fe38" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="单块 ZIF-8 致密化｜Small 2025｜实验" LINK="https://onlinelibrary.wiley.com/doi/abs/10.1002/smll.202500510">
             <node TEXT="Understanding Metal–Organic Framework Densification: Solvent Effects and the Growth of Colloidal Primary Nanoparticles in Monolithic ZIF-8" />
             <node TEXT="研究溶剂、胶体初级颗粒生长与单块 MOF 致密化的关系。" />
+            <attribute NAME="paperId" VALUE="paper-2a3a7c228d24" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="单晶介孔 MOF｜Nature Chemistry 2025｜实验＋模拟" LINK="https://www.nature.com/articles/s41557-024-01693-9">
             <node TEXT="Uniform single-crystal mesoporous metal–organic frameworks" />
             <node TEXT="通过协同组装协调结晶与胶束动力学，在微孔框架中构筑有序介孔。" />
+            <attribute NAME="paperId" VALUE="paper-3d62f893edb1" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -503,10 +633,14 @@
           <node TEXT="CALF-20 VSA｜Chemical Engineering Journal 2023｜工艺模拟＋实验" LINK="https://www.sciencedirect.com/science/article/pii/S138589472205029X">
             <node TEXT="CO2/N2 separation by vacuum swing adsorption using a metal–organic framework, CALF-20: Multi-objective optimization and experimental validation" />
             <node TEXT="对 CALF-20 真空变压吸附循环做多目标优化及实验验证，考察不同循环配置。" />
+            <attribute NAME="paperId" VALUE="paper-39802fd0d7ea" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="PrISMa｜Nature 2024｜计算平台＋案例验证" LINK="https://www.nature.com/articles/s41586-024-07683-8">
             <node TEXT="A holistic platform for accelerating sorbent-based carbon capture" />
             <node TEXT="集成材料、工艺、技术经济与生命周期评价；适用于包括 MOF 在内的多类吸附材料。" />
+            <attribute NAME="paperId" VALUE="paper-7879ce83ecb5" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
@@ -515,128 +649,317 @@
       <node TEXT="结构：从网络蓝图到局域结构与无序">
         <node TEXT="连接规则 → 局域关联与非周期性 → 无序网络与可加工玻璃" />
         <node TEXT="拓扑引导的网状设计">
-          <node TEXT="序列控制骨架｜Nature Chemistry 2025" LINK="https://www.nature.com/articles/s41557-024-01717-4" />
-          <node TEXT="配体去对称化｜Chemical Science 2025" LINK="https://pubs.rsc.org/en/content/articlehtml/2025/sc/d5sc05365j" />
+          <node TEXT="序列控制骨架｜Nature Chemistry 2025" LINK="https://www.nature.com/articles/s41557-024-01717-4">
+            <attribute NAME="paperId" VALUE="paper-c24b91ad986c" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="配体去对称化｜Chemical Science 2025" LINK="https://pubs.rsc.org/en/content/articlehtml/2025/sc/d5sc05365j">
+            <attribute NAME="paperId" VALUE="paper-e649b44d4773" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
         <node TEXT="缺陷与非周期结构">
-          <node TEXT="UiO-66 相关无序｜Nature Communications 2023" LINK="https://www.nature.com/articles/s41467-023-41936-w" />
-          <node TEXT="TRUMOF-1｜Nature Materials 2024" LINK="https://www.nature.com/articles/s41563-024-01960-7" />
-          <node TEXT="光可逆缺陷络合｜Nature Communications 2026" LINK="https://www.nature.com/articles/s41467-026-78352-9" />
+          <node TEXT="UiO-66 相关无序｜Nature Communications 2023" LINK="https://www.nature.com/articles/s41467-023-41936-w">
+            <attribute NAME="paperId" VALUE="paper-eeee010e1fee" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="TRUMOF-1｜Nature Materials 2024" LINK="https://www.nature.com/articles/s41563-024-01960-7">
+            <attribute NAME="paperId" VALUE="paper-91235c67a479" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="光可逆缺陷络合｜Nature Communications 2026" LINK="https://www.nature.com/articles/s41467-026-78352-9">
+            <attribute NAME="paperId" VALUE="paper-9e80cce82263" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
         <node TEXT="非晶 MOF 与 MOF 玻璃">
-          <node TEXT="纳米簇直合成｜Nature Communications 2026" LINK="https://www.nature.com/articles/s41467-026-71378-z" />
-          <node TEXT="熔剂介导玻璃重构｜Nature Materials 2026" LINK="https://www.nature.com/articles/s41563-026-02712-5" />
+          <node TEXT="纳米簇直合成｜Nature Communications 2026" LINK="https://www.nature.com/articles/s41467-026-71378-z">
+            <attribute NAME="paperId" VALUE="paper-0da1c7af90b8" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="熔剂介导玻璃重构｜Nature Materials 2026" LINK="https://www.nature.com/articles/s41563-026-02712-5">
+            <attribute NAME="paperId" VALUE="paper-afede6b91f4a" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
       </node>
       <node TEXT="发现：从数据到有反馈的材料搜索">
         <node TEXT="可用数据与表示 → 目标导向候选 → 有预算的评价与反馈" />
         <node TEXT="可复用数据与实验复现">
-          <node TEXT="QMOF｜Matter 2021" LINK="https://www.sciencedirect.com/science/article/pii/S2590238521000709" />
-          <node TEXT="跨实验室复现｜Advanced Materials 2024" LINK="https://onlinelibrary.wiley.com/doi/full/10.1002/adma.202304832" />
-          <node TEXT="CoRE MOF DB｜Matter 2025" LINK="https://www.sciencedirect.com/science/article/pii/S2590238525001833" />
+          <node TEXT="QMOF｜Matter 2021" LINK="https://www.sciencedirect.com/science/article/pii/S2590238521000709">
+            <attribute NAME="paperId" VALUE="paper-683effb49077" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="跨实验室复现｜Advanced Materials 2024" LINK="https://onlinelibrary.wiley.com/doi/full/10.1002/adma.202304832">
+            <attribute NAME="paperId" VALUE="paper-fad8294f4e78" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="CoRE MOF DB｜Matter 2025" LINK="https://www.sciencedirect.com/science/article/pii/S2590238525001833">
+            <attribute NAME="paperId" VALUE="paper-dfbd870b7735" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
         <node TEXT="多模态 MOF 表示学习">
-          <node TEXT="MOFTransformer｜Nature Machine Intelligence 2023" LINK="https://www.nature.com/articles/s42256-023-00628-2" />
-          <node TEXT="PXRD＋前驱体｜Nature Communications 2025" LINK="https://www.nature.com/articles/s41467-025-60796-0" />
-          <node TEXT="SpbNet｜Nature Communications 2026" LINK="https://www.nature.com/articles/s41467-026-69245-y" />
+          <node TEXT="MOFTransformer｜Nature Machine Intelligence 2023" LINK="https://www.nature.com/articles/s42256-023-00628-2">
+            <attribute NAME="paperId" VALUE="paper-a3a6220b2043" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="PXRD＋前驱体｜Nature Communications 2025" LINK="https://www.nature.com/articles/s41467-025-60796-0">
+            <attribute NAME="paperId" VALUE="paper-fcb1e8e70e97" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="SpbNet｜Nature Communications 2026" LINK="https://www.nature.com/articles/s41467-026-69245-y">
+            <attribute NAME="paperId" VALUE="paper-e08ec8c5c7fe" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
         <node TEXT="生成与逆向设计">
-          <node TEXT="MOFDiff｜ICLR 2024" LINK="https://proceedings.iclr.cc/paper_files/paper/2024/hash/47547ee84e3fbbcbbbbad7c1fd9a973b-Abstract-Conference.html" />
-          <node TEXT="MOFFlow｜ICLR 2025" LINK="https://proceedings.iclr.cc/paper_files/paper/2025/hash/f392c6bbb14548df50092f10c9db440f-Abstract-Conference.html" />
-          <node TEXT="SDF 条件扩散｜Nature Communications 2025" LINK="https://www.nature.com/articles/s41467-024-55390-9" />
-          <node TEXT="Deep dreaming｜Nature Communications 2025" LINK="https://www.nature.com/articles/s41467-025-59952-3" />
+          <node TEXT="MOFDiff｜ICLR 2024" LINK="https://proceedings.iclr.cc/paper_files/paper/2024/hash/47547ee84e3fbbcbbbbad7c1fd9a973b-Abstract-Conference.html">
+            <attribute NAME="paperId" VALUE="paper-2f00e86abcaf" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="MOFFlow｜ICLR 2025" LINK="https://proceedings.iclr.cc/paper_files/paper/2025/hash/f392c6bbb14548df50092f10c9db440f-Abstract-Conference.html">
+            <attribute NAME="paperId" VALUE="paper-bb72fd80036c" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="SDF 条件扩散｜Nature Communications 2025" LINK="https://www.nature.com/articles/s41467-024-55390-9">
+            <attribute NAME="paperId" VALUE="paper-1c90a97570f0" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="Deep dreaming｜Nature Communications 2025" LINK="https://www.nature.com/articles/s41467-025-59952-3">
+            <attribute NAME="paperId" VALUE="paper-e27480193c26" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
         <node TEXT="预算受限的设计与合成搜索">
-          <node TEXT="LVGP-MOBBO｜npj Computational Materials 2023" LINK="https://www.nature.com/articles/s41524-023-01125-1" />
-          <node TEXT="AIRS｜Nature Synthesis 2026" LINK="https://www.nature.com/articles/s44160-025-00939-9" />
+          <node TEXT="LVGP-MOBBO｜npj Computational Materials 2023" LINK="https://www.nature.com/articles/s41524-023-01125-1">
+            <attribute NAME="paperId" VALUE="paper-d3552ed612e8" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="AIRS｜Nature Synthesis 2026" LINK="https://www.nature.com/articles/s44160-025-00939-9">
+            <attribute NAME="paperId" VALUE="paper-0f91a3b1946e" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
         <node TEXT="语言模型辅助的 MOF 发现">
-          <node TEXT="GPT-4 Reticular Chemist｜Angewandte Chemie International Edition 2023" LINK="https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202311983" />
-          <node TEXT="ChatMOF｜Nature Communications 2024" LINK="https://www.nature.com/articles/s41467-024-48998-4" />
+          <node TEXT="GPT-4 Reticular Chemist｜Angewandte Chemie International Edition 2023" LINK="https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202311983">
+            <attribute NAME="paperId" VALUE="paper-56f10c24ffce" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="ChatMOF｜Nature Communications 2024" LINK="https://www.nature.com/articles/s41467-024-48998-4">
+            <attribute NAME="paperId" VALUE="paper-f08488f16be0" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
       </node>
       <node TEXT="动态：从单结构到条件相关的状态与转变">
         <node TEXT="失效模式与运行条件 → 多状态与颗粒协同 → 机器学习势支持的动态模拟" />
         <node TEXT="条件相关的稳定性评价">
-          <node TEXT="MOFSimplify｜Scientific Data 2022" LINK="https://www.nature.com/articles/s41597-022-01181-0" />
-          <node TEXT="WS24｜JACS 2024" LINK="https://pubs.acs.org/doi/full/10.1021/jacs.4c05879" />
+          <node TEXT="MOFSimplify｜Scientific Data 2022" LINK="https://www.nature.com/articles/s41597-022-01181-0">
+            <attribute NAME="paperId" VALUE="paper-18c512b831d3" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="WS24｜JACS 2024" LINK="https://pubs.acs.org/doi/full/10.1021/jacs.4c05879">
+            <attribute NAME="paperId" VALUE="paper-b7201bfa0acd" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
         <node TEXT="多状态热力学与转变动力学">
-          <node TEXT="ELM-11 转变动力学｜Nature Communications 2023" LINK="https://www.nature.com/articles/s41467-023-42448-3" />
-          <node TEXT="CALF-20 柔性｜Nature Communications 2024" LINK="https://www.nature.com/articles/s41467-024-48136-0" />
-          <node TEXT="晶胞到颗粒协同｜Journal of Materials Chemistry A 2024" LINK="https://pubs.rsc.org/en/content/articlehtml/2024/ta/d4ta04222k" />
+          <node TEXT="ELM-11 转变动力学｜Nature Communications 2023" LINK="https://www.nature.com/articles/s41467-023-42448-3">
+            <attribute NAME="paperId" VALUE="paper-285927793878" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="CALF-20 柔性｜Nature Communications 2024" LINK="https://www.nature.com/articles/s41467-024-48136-0">
+            <attribute NAME="paperId" VALUE="paper-1823c800f610" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="晶胞到颗粒协同｜Journal of Materials Chemistry A 2024" LINK="https://pubs.rsc.org/en/content/articlehtml/2024/ta/d4ta04222k">
+            <attribute NAME="paperId" VALUE="paper-bb45d3ec8d9c" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
         <node TEXT="机器学习势与多尺度动力学">
-          <node TEXT="温度驱动主动学习｜npj Computational Materials 2024" LINK="https://www.nature.com/articles/s41524-024-01427-y" />
-          <node TEXT="可迁移势探索｜ACS Nano 2025" LINK="https://pubs.acs.org/doi/10.1021/acsnano.4c12369" />
-          <node TEXT="簇到无序框架｜Chemistry of Materials 2025" LINK="https://pubs.acs.org/doi/full/10.1021/acs.chemmater.5c00821" />
+          <node TEXT="温度驱动主动学习｜npj Computational Materials 2024" LINK="https://www.nature.com/articles/s41524-024-01427-y">
+            <attribute NAME="paperId" VALUE="paper-702f9d49b356" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="可迁移势探索｜ACS Nano 2025" LINK="https://pubs.acs.org/doi/10.1021/acsnano.4c12369">
+            <attribute NAME="paperId" VALUE="paper-1839f42e2122" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="簇到无序框架｜Chemistry of Materials 2025" LINK="https://pubs.acs.org/doi/full/10.1021/acs.chemmater.5c00821">
+            <attribute NAME="paperId" VALUE="paper-b65a0761262b" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
       </node>
       <node TEXT="分离：从吸附机制到可运行过程">
         <node TEXT="气源与位点化学 → 协同和竞争 → 膜/循环 → 系统评价" />
         <node TEXT="运行条件下的 CO₂ 捕集">
-          <node TEXT="CALF-20｜Science 2021" LINK="https://www.science.org/doi/10.1126/science.abi7281" />
-          <node TEXT="水促进直接空气捕集｜JACS 2024" LINK="https://pubs.acs.org/doi/10.1021/jacs.3c14125" />
-          <node TEXT="末端 Zn–H 捕集位点｜Science 2024" LINK="https://www.science.org/doi/10.1126/science.adk5697" />
+          <node TEXT="CALF-20｜Science 2021" LINK="https://www.science.org/doi/10.1126/science.abi7281">
+            <attribute NAME="paperId" VALUE="paper-8cdcd4ffdcca" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="水促进直接空气捕集｜JACS 2024" LINK="https://pubs.acs.org/doi/10.1021/jacs.3c14125">
+            <attribute NAME="paperId" VALUE="paper-41c5d5d72c87" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="末端 Zn–H 捕集位点｜Science 2024" LINK="https://www.science.org/doi/10.1126/science.adk5697">
+            <attribute NAME="paperId" VALUE="paper-dbb4f4770516" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
         <node TEXT="协同吸附与选择性">
-          <node TEXT="单个位点协同｜Science 2025" LINK="https://www.science.org/doi/10.1126/science.ady2607" />
-          <node TEXT="TYUT-18｜Nature Communications 2026" LINK="https://www.nature.com/articles/s41467-026-71550-5" />
+          <node TEXT="单个位点协同｜Science 2025" LINK="https://www.science.org/doi/10.1126/science.ady2607">
+            <attribute NAME="paperId" VALUE="paper-950f5a0261c8" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="TYUT-18｜Nature Communications 2026" LINK="https://www.nature.com/articles/s41467-026-71550-5">
+            <attribute NAME="paperId" VALUE="paper-eef16eee2aca" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
         <node TEXT="MOF 膜的缺陷、界面与模块">
-          <node TEXT="消除晶格缺陷｜Nature Materials 2023" LINK="https://www.nature.com/articles/s41563-023-01541-0" />
-          <node TEXT="鳞片状膜结构｜Nature Communications 2024" LINK="https://www.nature.com/articles/s41467-024-54898-4" />
-          <node TEXT="大面积柔性支撑膜｜Angewandte Chemie International Edition 2024" LINK="https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202404058" />
-          <node TEXT="非经典结晶制膜｜Science Advances 2025" LINK="https://www.science.org/doi/10.1126/sciadv.adz5237" />
+          <node TEXT="消除晶格缺陷｜Nature Materials 2023" LINK="https://www.nature.com/articles/s41563-023-01541-0">
+            <attribute NAME="paperId" VALUE="paper-5d739d67e922" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="鳞片状膜结构｜Nature Communications 2024" LINK="https://www.nature.com/articles/s41467-024-54898-4">
+            <attribute NAME="paperId" VALUE="paper-ba95d54e6be8" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="大面积柔性支撑膜｜Angewandte Chemie International Edition 2024" LINK="https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202404058">
+            <attribute NAME="paperId" VALUE="paper-2e7901f803b4" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="非经典结晶制膜｜Science Advances 2025" LINK="https://www.science.org/doi/10.1126/sciadv.adz5237">
+            <attribute NAME="paperId" VALUE="paper-853800172396" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
         <node TEXT="材料–工艺协同设计">
-          <node TEXT="CALF-20 VSA｜Chemical Engineering Journal 2023" LINK="https://www.sciencedirect.com/science/article/pii/S138589472205029X" />
-          <node TEXT="PrISMa｜Nature 2024" LINK="https://www.nature.com/articles/s41586-024-07683-8" />
+          <node TEXT="CALF-20 VSA｜Chemical Engineering Journal 2023" LINK="https://www.sciencedirect.com/science/article/pii/S138589472205029X">
+            <attribute NAME="paperId" VALUE="paper-39802fd0d7ea" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="PrISMa｜Nature 2024" LINK="https://www.nature.com/articles/s41586-024-07683-8">
+            <attribute NAME="paperId" VALUE="paper-7879ce83ecb5" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
       </node>
       <node TEXT="功能：从孔与配位到反应和载流子路径">
         <node TEXT="局域反应环境、电子通道、质子通道是相关但不同的设计问题" />
         <node TEXT="活性位点与反应环境设计">
-          <node TEXT="MOF 内单 Pt 位点｜Nature Synthesis 2024" LINK="https://www.nature.com/articles/s44160-024-00585-7" />
-          <node TEXT="耐酸 Bi-MOF 电解器｜Nature Communications 2024" LINK="https://www.nature.com/articles/s41467-024-51475-7" />
-          <node TEXT="Cu 双位点＋半导体｜Nature Catalysis 2025" LINK="https://www.nature.com/articles/s41929-025-01369-8" />
-          <node TEXT="Ni-MOF 工作态重构｜Nature Communications 2025" LINK="https://www.nature.com/articles/s41467-025-55891-1" />
+          <node TEXT="MOF 内单 Pt 位点｜Nature Synthesis 2024" LINK="https://www.nature.com/articles/s44160-024-00585-7">
+            <attribute NAME="paperId" VALUE="paper-c6750eb581ba" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="耐酸 Bi-MOF 电解器｜Nature Communications 2024" LINK="https://www.nature.com/articles/s41467-024-51475-7">
+            <attribute NAME="paperId" VALUE="paper-cf1706b6efbe" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="Cu 双位点＋半导体｜Nature Catalysis 2025" LINK="https://www.nature.com/articles/s41929-025-01369-8">
+            <attribute NAME="paperId" VALUE="paper-31bed07ad2d2" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="Ni-MOF 工作态重构｜Nature Communications 2025" LINK="https://www.nature.com/articles/s41467-025-55891-1">
+            <attribute NAME="paperId" VALUE="paper-4da7a8e819be" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
         <node TEXT="电子结构与导电机制">
-          <node TEXT="氧化还原–导电关联｜Nature Communications 2023" LINK="https://www.nature.com/articles/s41467-023-40110-6" />
-          <node TEXT="气氛与表观导电｜Communications Materials 2024" LINK="https://www.nature.com/articles/s43246-024-00620-2" />
-          <node TEXT="各向异性网状化学｜Nature Chemistry 2026" LINK="https://www.nature.com/articles/s41557-026-02251-1" />
+          <node TEXT="氧化还原–导电关联｜Nature Communications 2023" LINK="https://www.nature.com/articles/s41467-023-40110-6">
+            <attribute NAME="paperId" VALUE="paper-93305bb4b603" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="气氛与表观导电｜Communications Materials 2024" LINK="https://www.nature.com/articles/s43246-024-00620-2">
+            <attribute NAME="paperId" VALUE="paper-ad58a4f4e821" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="各向异性网状化学｜Nature Chemistry 2026" LINK="https://www.nature.com/articles/s41557-026-02251-1">
+            <attribute NAME="paperId" VALUE="paper-781cb4727ca1" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
         <node TEXT="质子与混合导电">
-          <node TEXT="MFM-808-SO₄｜JACS 2023" LINK="https://pubs.acs.org/doi/10.1021/jacs.3c03943" />
-          <node TEXT="TTFTP-La 混合导电｜JACS 2025" LINK="https://pubs.acs.org/doi/10.1021/jacs.4c13792" />
-          <node TEXT="MOF–HOF 缠结｜Nature Synthesis 2025" LINK="https://www.nature.com/articles/s44160-025-00738-2" />
+          <node TEXT="MFM-808-SO₄｜JACS 2023" LINK="https://pubs.acs.org/doi/10.1021/jacs.3c03943">
+            <attribute NAME="paperId" VALUE="paper-36f2c2ebfa9e" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="TTFTP-La 混合导电｜JACS 2025" LINK="https://pubs.acs.org/doi/10.1021/jacs.4c13792">
+            <attribute NAME="paperId" VALUE="paper-7cc4d3e34ba5" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="MOF–HOF 缠结｜Nature Synthesis 2025" LINK="https://www.nature.com/articles/s44160-025-00738-2">
+            <attribute NAME="paperId" VALUE="paper-17dd6a9e52ac" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
       </node>
       <node TEXT="应用：从可制备材料到可制造系统">
         <node TEXT="制造路线与可处理形态 → 运行窗口和器件 → 能量、经济与环境表现" />
         <node TEXT="制造约束下的合成">
-          <node TEXT="快速绿色合成机理｜Chemistry of Materials 2024" LINK="https://pubs.acs.org/doi/10.1021/acs.chemmater.4c00879" />
-          <node TEXT="常温光化学合成｜Nature Communications 2026" LINK="https://www.nature.com/articles/s41467-026-70927-w" />
-          <node TEXT="超临界机械化学｜Nature Communications 2026" LINK="https://www.nature.com/articles/s41467-026-73803-9" />
+          <node TEXT="快速绿色合成机理｜Chemistry of Materials 2024" LINK="https://pubs.acs.org/doi/10.1021/acs.chemmater.4c00879">
+            <attribute NAME="paperId" VALUE="paper-49757d2be019" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="常温光化学合成｜Nature Communications 2026" LINK="https://www.nature.com/articles/s41467-026-70927-w">
+            <attribute NAME="paperId" VALUE="paper-75bd287a15b1" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="超临界机械化学｜Nature Communications 2026" LINK="https://www.nature.com/articles/s41467-026-73803-9">
+            <attribute NAME="paperId" VALUE="paper-db83c70fb499" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
         <node TEXT="成型与多级传质">
-          <node TEXT="纯 MOF 微打印｜ACS Applied Materials &amp; Interfaces 2022" LINK="https://pubs.acs.org/doi/10.1021/acsami.1c22582" />
-          <node TEXT="单块 ZIF-8 致密化｜Small 2025" LINK="https://onlinelibrary.wiley.com/doi/abs/10.1002/smll.202500510" />
-          <node TEXT="单晶介孔 MOF｜Nature Chemistry 2025" LINK="https://www.nature.com/articles/s41557-024-01693-9" />
+          <node TEXT="纯 MOF 微打印｜ACS Applied Materials &amp; Interfaces 2022" LINK="https://pubs.acs.org/doi/10.1021/acsami.1c22582">
+            <attribute NAME="paperId" VALUE="paper-aa3aa887fe38" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="单块 ZIF-8 致密化｜Small 2025" LINK="https://onlinelibrary.wiley.com/doi/abs/10.1002/smll.202500510">
+            <attribute NAME="paperId" VALUE="paper-2a3a7c228d24" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="单晶介孔 MOF｜Nature Chemistry 2025" LINK="https://www.nature.com/articles/s41557-024-01693-9">
+            <attribute NAME="paperId" VALUE="paper-3d62f893edb1" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
         <node TEXT="空气取水">
-          <node TEXT="环境自适应器件｜Nature Communications 2022" LINK="https://www.nature.com/articles/s41467-022-32642-0" />
-          <node TEXT="Death Valley 户外验证｜Nature Water 2023" LINK="https://www.nature.com/articles/s44221-023-00103-7" />
-          <node TEXT="FO@HK 快循环｜Nature Communications 2024" LINK="https://www.nature.com/articles/s41467-024-53853-7" />
+          <node TEXT="环境自适应器件｜Nature Communications 2022" LINK="https://www.nature.com/articles/s41467-022-32642-0">
+            <attribute NAME="paperId" VALUE="paper-1bec3917ab70" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="Death Valley 户外验证｜Nature Water 2023" LINK="https://www.nature.com/articles/s44221-023-00103-7">
+            <attribute NAME="paperId" VALUE="paper-bdb1dd1ddc8d" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="FO@HK 快循环｜Nature Communications 2024" LINK="https://www.nature.com/articles/s41467-024-53853-7">
+            <attribute NAME="paperId" VALUE="paper-f3fa6d972808" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
         <node TEXT="可释放气体储存">
-          <node TEXT="NU-1501 系列｜Science 2020" LINK="https://www.science.org/doi/10.1126/science.aaz8881" />
-          <node TEXT="red 拓扑 CU-6｜Nature Synthesis 2026" LINK="https://www.nature.com/articles/s44160-026-01163-9" />
+          <node TEXT="NU-1501 系列｜Science 2020" LINK="https://www.science.org/doi/10.1126/science.aaz8881">
+            <attribute NAME="paperId" VALUE="paper-2bece603df7d" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="red 拓扑 CU-6｜Nature Synthesis 2026" LINK="https://www.nature.com/articles/s44160-026-01163-9">
+            <attribute NAME="paperId" VALUE="paper-c0550b3fe7e7" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
         </node>
         <node TEXT="材料–工艺协同设计">
-          <node TEXT="CALF-20 VSA｜Chemical Engineering Journal 2023" LINK="https://www.sciencedirect.com/science/article/pii/S138589472205029X" />
-          <node TEXT="PrISMa｜Nature 2024" LINK="https://www.nature.com/articles/s41586-024-07683-8" />
+          <node TEXT="CALF-20 VSA｜Chemical Engineering Journal 2023" LINK="https://www.sciencedirect.com/science/article/pii/S138589472205029X">
+            <attribute NAME="paperId" VALUE="paper-39802fd0d7ea" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
+          </node>
+          <node TEXT="PrISMa｜Nature 2024" LINK="https://www.nature.com/articles/s41586-024-07683-8">
+            <attribute NAME="paperId" VALUE="paper-7879ce83ecb5" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
+          </node>
         </node>
       </node>
     </node>
@@ -646,10 +969,14 @@
           <node TEXT="Ln 局部配位环境｜ACS Applied Materials &amp; Interfaces 2024 · 配位表征与吸附机制" LINK="https://pubs.acs.org/doi/10.1021/acsami.4c09445">
             <node TEXT="Local Coordination Environment of Lanthanides Adsorbed onto Cr- and Zr-based Metal–Organic Frameworks" />
             <node TEXT="研究 Nd、Gd、Lu 在 Cr-MIL-101、UiO-66、UiO-68 及其衍生物中的局部配位环境，区分金属氧簇、缺陷与膦酸基团的吸附作用。重点理解哪些位点真正结合稀土，以及官能化如何改变位点竞争。" />
+            <attribute NAME="paperId" VALUE="paper-d93899ed8a5f" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="PMIDA–MIL-101｜ACS Applied Materials &amp; Interfaces 2026 · 配体负载、吸附与再生" LINK="https://pubs.acs.org/doi/10.1021/acsami.6c16452">
             <node TEXT="Aqueous Adsorption of Rare Earth Elements by Organophosphonate-Ligand-Modified Metal–Organic Frameworks: The Role of Ligand Loading in Surface Complexation" />
             <node TEXT="在 MIL-101 中改变 PMIDA 配体负载量，结合吸附实验与分子动力学研究 Nd、Gd、Dy 的络合及 Fe(III) 竞争。更高负载会增强配位，却不带来成比例的容量提升，并揭示强结合与酸洗再生之间的权衡。" />
+            <attribute NAME="paperId" VALUE="paper-0595bd10b10a" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -658,10 +985,14 @@
           <node TEXT="NCU-1 纳米捕获｜Nature Communications 2024 · MOF 轻重稀土分离" LINK="https://www.nature.com/articles/s41467-024-45810-1">
             <node TEXT="Rationally designed nanotrap structures for efficient separation of rare earth elements over a single step" />
             <node TEXT="利用 NCU-1 中未配位羧基、三唑氮和孔道共同构成稀土纳米捕获位点，研究局部几何对轻稀土选择性的影响。结合二元离子对与尾矿体系，考察捕获位点设计如何转化为分离表现。" />
+            <attribute NAME="paperId" VALUE="paper-9b507b5f63cf" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
           <node TEXT="ATZ-BTC-Zn｜Advanced Functional Materials 2025 · 稀土离子交换与选择性分离" LINK="https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.202419093">
             <node TEXT="Efficient Separation of Adjacent Rare Earths in One Step by Using Ion-microporous Metal–Organic Frameworks" />
             <node TEXT="在离子微孔 MOF ATZ-BTC-Zn 中结合纳米捕获口袋、离子传输通道和可交换反离子，研究稀土离子的选择性捕获与分离。阅读时需逐一核对所测离子对，区分相邻元素与非相邻元素的证据。" />
+            <attribute NAME="paperId" VALUE="paper-0feae3aceef3" />
+            <attribute NAME="primaryThemeId" VALUE="mof" />
           </node>
         </node>
       </node>
@@ -670,13 +1001,18 @@
           <node TEXT="Hans-LanM 二聚体｜Nature 2023 · 非 MOF 对照：蛋白质识别与柱分离" LINK="https://www.nature.com/articles/s41586-023-05945-5">
             <node TEXT="Enhanced rare-earth separation with a metal-sensitive lanmodulin dimer" />
             <node TEXT="研究镧系结合蛋白如何将微小离子尺寸差异放大为配位、氢键网络及二聚化差异，并用于 Nd/Dy 柱分离。作为非 MOF 对照，为柔性识别位点与协同性设计提供启发。" />
+            <attribute NAME="paperId" VALUE="paper-704d26e29605" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
           <node TEXT="LanM 固定化分离｜ACS Central Science 2021 · 非 MOF 对照：复杂进料与分离工艺" LINK="https://pubs.acs.org/doi/10.1021/acscentsci.1c00724">
             <node TEXT="Bridging Hydrometallurgy and Biochemistry: A Protein-Based Process for Recovery and Separation of Rare Earth Elements" />
             <node TEXT="将镧系结合蛋白固定化用于稀土回收与柱分离，研究复杂进料中的捕集、分组和目标离子对分离。作为非 MOF 工艺对照，帮助区分高吸附亲和力与高纯度、高回收率分离之间的要求。" />
+            <attribute NAME="paperId" VALUE="paper-3552d0a1a4b4" />
+            <attribute NAME="primaryThemeId" VALUE="chemistry-materials" />
           </node>
         </node>
       </node>
     </node>
+    <node TEXT="阅读集合保留原有脉络；当前主分类见 paper-catalog.json。链接按 paperId 引用，不重复计数。 / Reading collection: current primary classifications live in paper-catalog.json; references do not add papers." />
   </node>
 </map>

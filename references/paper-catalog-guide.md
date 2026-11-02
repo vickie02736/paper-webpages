@@ -1,12 +1,34 @@
 # Updating the paper catalogue
 
-The homepage reads [`paper-catalog.json`](paper-catalog.json) and builds the six expandable menus automatically.
+The homepage reads `paper-catalog.json` (schema `v: 2`). The catalogue has six primary themes and 451 unique paper records. Each record occurs in exactly one `themes[].p`; related methods and reading routes reference its immutable `id`. Primary theme counts sum to the global paper total. Route and related-reading references never increase it.
 
-The default count separates available explainers, unique papers (deduplicated across themes by their source link), and total theme listings. A paper listed in two themes contributes one unique paper and two listings; the theme counts add up to the listing total.
+## Primary classification
 
-It fetches the published catalogue with cache-bypassing requests on initial load, when the explainer filter is toggled, when the page returns to the foreground or the window regains focus, and every 60 seconds while in the foreground. This synchronizes published catalogue data without scanning page directories: new explainers still need a `p` entry and the publication workflow below.
+The navigation order is MOF, AI, general chemistry/materials, robotics/lab automation, mathematics/modelling foundations, and life sciences/drug discovery/medicine. `theme.id` is stable; `n` is an identical compatibility key. Display names, roles and descriptions use `{zh,en}`. The homepage creates its theme shells from these definitions rather than hard-coded labels.
 
-Run `node scripts/check-catalog.cjs` with Playwright available to check automatic refresh, filter counts, state preservation and failure recovery. It accepts the same `PAPER_PLAYWRIGHT_MODULE`, `PAPER_CHROMIUM_EXECUTABLE`, `PAPER_BASE_URL` and `PAPER_QA_DIR` overrides as the explainer browser checks.
+MOF-specific models, simulations and experiments belong to `mof`. Cross-material interatomic potentials and representations belong to `chemistry-materials`; general algorithms to `ai`; general experimental execution platforms to `robotics-lab`; mathematical analyses to `mathematics`. The combined `life-medicine` theme retains distinct biological, drug and medical tasks. Editorial boundary decisions and all original entries are recorded in `taxonomy-migration.json`.
+
+Inside MOF, **MOF Stability / MOF 稳定性** is separate from machine-learning potentials and molecular simulation. **Rare-Earth Adsorption & Separation / 稀土吸附与分离** contains MOF coordination-site, adsorption-mechanism and selective-separation work. LanM proteins remain non-MOF comparisons in general chemistry/materials and are reachable through MOF’s related readings.
+
+Each `theme.groups[]` has an immutable `id` and `categoryId`, with bilingual `category` and `topic` objects. Each paper has `topicId` plus a compatibility index `g`. `theme.g` and `theme.ge` are generated compatibility labels in the same order; update them with structured groups. The renderer uses structured labels, so slashes inside names cannot split a category incorrectly. Keep IDs unchanged when changing display names or moving array positions.
+
+## Paper identity, tags and references
+
+Keep each paper’s `id` unchanged. The initial IDs were minted from exact source URLs; do not regenerate them after a source-link or title correction. Search source URL, DOI and preprint aliases before adding a paper. A newly discovered version of the same work should extend the existing record’s aliases, not become another primary record. `u` remains the authoritative source link and the bibliographic metadata key.
+
+`aliases` preserves old names and taxonomy labels for search. `legacyContexts` retains each original theme, bilingual group label and perspective-specific introduction; it is searchable. The migration ledger maps every original occurrence to one paper and primary category. New material does not require invented legacy contexts; use an empty array when there is no prior record.
+
+`tagIds` refers to `taxonomyTags`: object, method, task and application are separate dimensions, each with a bilingual name. Assign tags only when supported by the paper. The UI combines same-dimension choices with OR and different dimensions with AND. Publication metadata tags in the older top-level `tags` translation map are independent of these research tags. Spell out machine-learning interatomic potentials and retain MLP/MLIP aliases; do not confuse that meaning with multilayer perceptrons.
+
+`relatedPaperIds` lists references whose primary home is another theme. `researchRoutes[]` contains three curated routes with bilingual questions, stages, notes and `paperIds`. These reference links display the primary theme and open the unique entry. A reference does not claim that a method has already been validated in a different domain.
+
+## Search and state
+
+Search includes both languages, theme/category names, tags, old context, aliases, authors, affiliations and dates. Supported query parameters are `q`, `lang`, `explainers=1`, `theme=<id>`, repeated `tag=<id>` and `paper=<id>`. A direct paper link isolates one record; changing the global search or clearing filters releases it. Preserve other URL parameters and anchors. Language defaults to Chinese and uses the existing `atlas-lang` preference.
+
+The catalogue refreshes on load, focus, foreground return, explainer-filter change, and every 60 seconds while visible. A malformed schema, duplicate primary identity or broken route reference must retain the last working catalogue. Stable IDs preserve category expansion across translation and metadata refreshes. Related readings do not inflate search or theme counts.
+
+## Publication dates and explainers
 
 When a new explainer is ready:
 
@@ -23,25 +45,18 @@ The script preserves existing valid `explainerCreatedAt` values. For a missing v
 
 For later updates, commit the explainer changes first, run `node scripts/update-explainer-updates.cjs`, check and commit the generated catalogue, then push. The script also continues to generate `explainerUpdates` from each `papers/<slug>/` directory's latest Git commit, including its local resources, for compatibility with the publication workflow; those update timestamps do not determine the homepage's recent list. Update times without Git history fall back to the first-publication date at midnight UTC, and earlier commit times are clamped to that date. Uncommitted edits are not included, so run the script after committing the page content; existing creation times and first-publication dates stay unchanged.
 
-Within a theme, each paper appears once, under its topic in the roadmap's main categories. The "reading route" branches at the end of each roadmap only re-reference those papers, so they are not added to the catalogue.
-
-A paper may also be listed in more than one theme. Use exactly the same `u` link in every theme so the homepage recognises it as the same paper, and write each `d` and `e` introduction from the perspective of its own theme. The homepage then shows "也收录于 / Also listed in" with the other theme and branch, counts the paper once in the overall total, and reuses an explainer: setting `p` in any one theme is enough for every listing to show it.
-
-Leave `p` empty for papers that have an indexed source but no explainer page yet. The homepage will show "讲解页制作中 / Webpage coming soon" and keep the original-paper link visible.
-
 ## Chinese and English
 
-The homepage shows Chinese by default and switches to English with the language button. Every entry therefore carries both languages:
+Each paper retains `s`, `se` where needed, `t`, `m`, `d` and `e`. Every new theme, category, topic, tag and route requires complete `zh` and `en` labels. The old `tags` and `venues` maps translate publication metadata. Keep the source title and exact original URL. Set `p` on the one primary paper record; references reuse it automatically.
 
-| Field | Chinese | English |
-|---|---|---|
-| Paper introduction | `d` | `e` |
-| Short name | `s` | `se`, only when `s` contains Chinese |
-| Group label (`Category｜Question / Topic`) | theme `g` | theme `ge`, same order and format as `g` |
-| Tag after " · " in `m` | as written | top-level `tags` map, keyed by the full text after the first " · " |
-| Venue before " · " in `m` | as written | top-level `venues` map, only for venues written in Chinese |
+## Checks
 
-When adding a paper, fill in `e` (and `se` if needed); when using a new tag or adding a subtopic, add the matching entry to `tags` or `ge`. Anything missing falls back to the Chinese text in English mode.
+- `node scripts/check-taxonomy.cjs --data-only`: all original identities, contexts, counts, metadata, paths and structured references.
+- `node scripts/check-catalog.cjs`: automatic refresh, combined search, failure recovery, immutable creation ordering, language and responsive layouts.
+- `node scripts/check-taxonomy.cjs`: the data checks plus MOF stability/REE, typed tags, aliases, route links and responsive screenshots. Serve the repository locally and set `PAPER_BASE_URL` (default `http://127.0.0.1:8768/`).
+- `node scripts/build-paper-metadata.cjs --check` and `node scripts/check-paper-metadata.cjs`: preserve bibliographic records and author/affiliation/date searches.
+
+Browser checks accept `PAPER_PLAYWRIGHT_MODULE`, `PAPER_CHROMIUM_EXECUTABLE`, `PAPER_BASE_URL` where supported, and `PAPER_QA_DIR`. The taxonomy migration baseline is immutable; a future intentional collection-size change must update the count contract together with an explicit inventory audit, not simply weaken the preservation checks.
 
 ## Authors, affiliations and paper dates
 

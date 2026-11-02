@@ -57,7 +57,7 @@ let server;
     assert((await row.locator('.atlas-biblio-dates').textContent()).includes('Published 2024-02'));
     assert((await row.locator('.atlas-biblio-dates').textContent()).includes('Accepted 2023-12-12'));
     assert((await row.locator('.atlas-biblio-dates').textContent()).includes('Preprint posted 2023'));
-    await page.locator('[data-theme="AI / ML"] .theme-search input').fill('伦敦大学学院');
+    await page.locator('[data-theme="' + data.themes[0].id + '"] .theme-search input').fill('伦敦大学学院');
     assert(await rows.count(), 'Theme search includes affiliations');
     data.paperMetadata[paper.u] = {...clone(fixture), authors:[...fixture.authors, {name:'Refreshed Author', affiliations:['1']}]};
     await details.locator('summary').focus();
@@ -76,7 +76,7 @@ let server;
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'Homepage overflow ' + width);
       await row.screenshot({path:path.join(out, 'metadata-home-' + width + '.png')});
     }
-    await page.locator('[data-theme="AI / ML"] .theme-search input').fill('');
+    await page.locator('[data-theme="' + data.themes[0].id + '"] .theme-search input').fill('');
     for (const [query, source] of [
       ['Douwe Kiela', '6b493230205f780e1bc26945df7481e5'],
       ['University College London', '6b493230205f780e1bc26945df7481e5'],

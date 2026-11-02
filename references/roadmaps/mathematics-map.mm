@@ -12,18 +12,26 @@
           <node TEXT="mathlib｜CPP 2020｜较早入口" LINK="https://doi.org/10.1145/3372885.3373824">
             <node TEXT="The lean mathematical library" />
             <node TEXT="社区共建的 Lean 统一数学库，是当前 AI 形式化证明的主要语料。" />
+            <attribute NAME="paperId" VALUE="paper-cdb6e616aebe" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Lean 4｜CADE 2021｜较早入口" LINK="https://doi.org/10.1007/978-3-030-79876-5_37">
             <node TEXT="The Lean 4 Theorem Prover and Programming Language" />
             <node TEXT="证明助手与函数式编程语言合一，便于编写自动化策略。" />
+            <attribute NAME="paperId" VALUE="paper-dc69298c80e4" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="miniF2F｜ICLR 2022｜近年代表" LINK="https://openreview.net/forum?id=9ZPegFuFTFv">
             <node TEXT="MiniF2F: a cross-system benchmark for formal Olympiad-level mathematics" />
             <node TEXT="488 道奥赛与高中竞赛题，在多个证明助手中形式化。" />
+            <attribute NAME="paperId" VALUE="paper-31bf08657cd5" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="LeanDojo｜NeurIPS 2023｜已有扩展" LINK="https://proceedings.neurips.cc/paper_files/paper/2023/hash/4441469427094f8873d0fecb0c4e1cee-Abstract-Datasets_and_Benchmarks.html">
             <node TEXT="LeanDojo: Theorem Proving with Retrieval-Augmented Language Models" />
             <node TEXT="开源 Lean 交互工具链与数据集，并提出检索前提的证明器 ReProver。" />
+            <attribute NAME="paperId" VALUE="paper-0abc7c656641" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -35,18 +43,26 @@
           <node TEXT="GPT-f｜arXiv 2020｜预印本" LINK="https://arxiv.org/abs/2009.03393">
             <node TEXT="Generative Language Modeling for Automated Theorem Proving" />
             <node TEXT="首批把 Transformer 语言模型用于 Metamath 证明生成，部分证明被收录进官方库。" />
+            <attribute NAME="paperId" VALUE="paper-a8fcd32e743b" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="HTPS｜NeurIPS 2022｜近年代表" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/a8901c5e85fb8e1823bbf0f755053672-Abstract-Conference.html">
             <node TEXT="HyperTree Proof Search for Neural Theorem Proving" />
             <node TEXT="借鉴 AlphaZero 的超树搜索与在线训练，提高形式化证明成功率。" />
+            <attribute NAME="paperId" VALUE="paper-2449dc2f0a95" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Draft, Sketch, and Prove｜ICLR 2023｜已有扩展" LINK="https://openreview.net/forum?id=SMa9EAovKMC">
             <node TEXT="Draft, Sketch, and Prove: Guiding Formal Theorem Provers with Informal Proofs" />
             <node TEXT="先写非形式化证明，再转成形式化草图，由自动证明器补全细节。" />
+            <attribute NAME="paperId" VALUE="paper-fff9e724dc7b" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="DeepSeek-Prover-V1.5｜ICLR 2025｜已有扩展" LINK="https://proceedings.iclr.cc/paper_files/paper/2025/hash/b3b55c366d641c07180c40e4f978f311-Abstract-Conference.html">
             <node TEXT="DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search" />
             <node TEXT="用证明助手反馈做强化学习，并结合蒙特卡洛树搜索探索证明路径。" />
+            <attribute NAME="paperId" VALUE="paper-928f966d529b" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -58,14 +74,20 @@
           <node TEXT="Autoformalization｜NeurIPS 2022｜较早入口" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/d0c6bc641a56bebee9d985b937307367-Abstract-Conference.html">
             <node TEXT="Autoformalization with Large Language Models" />
             <node TEXT="大型语言模型能把部分竞赛题陈述正确翻译成 Isabelle 形式化语言。" />
+            <attribute NAME="paperId" VALUE="paper-3b8e43323aa2" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="AlphaGeometry｜Nature 2024｜近年代表" LINK="https://www.nature.com/articles/s41586-023-06747-5">
             <node TEXT="Solving olympiad geometry without human demonstrations" />
             <node TEXT="用上亿条合成数据训练语言模型提出辅助构造，结合符号推理求解几何题。" />
+            <attribute NAME="paperId" VALUE="paper-3600df4d2084" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="AlphaProof｜Nature 2026｜2026 扩展" LINK="https://www.nature.com/articles/s41586-025-09833-y">
             <node TEXT="Olympiad-level formal mathematical reasoning with reinforcement learning" />
             <node TEXT="在 Lean 中自动形式化大量题目并做强化学习，IMO 2024 达到银牌水平。" />
+            <attribute NAME="paperId" VALUE="paper-4b41c946f89e" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -79,18 +101,26 @@
           <node TEXT="MATH｜NeurIPS 2021｜较早入口" LINK="https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/be83ab3ecd0db773eb2dc1b0a17836a1-Abstract-round2.html">
             <node TEXT="Measuring Mathematical Problem Solving With the MATH Dataset" />
             <node TEXT="一万多道竞赛题与逐步解答，是数学推理的主要基准之一。" />
+            <attribute NAME="paperId" VALUE="paper-a0ee18bd2d58" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="GSM8K｜arXiv 2021｜预印本" LINK="https://arxiv.org/abs/2110.14168">
             <node TEXT="Training Verifiers to Solve Math Word Problems" />
             <node TEXT="发布 GSM8K 小学应用题集，并用验证器从多个候选解中挑选答案。" />
+            <attribute NAME="paperId" VALUE="paper-edaaae1b9494" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Minerva｜NeurIPS 2022｜近年代表" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/18abbeef8cfe9203fdf9053c9c4fe191-Abstract-Conference.html">
             <node TEXT="Solving Quantitative Reasoning Problems with Language Models" />
             <node TEXT="在数学与科学网页、论文上继续预训练，大幅提升定量推理。" />
+            <attribute NAME="paperId" VALUE="paper-6fee4ca55181" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Llemma｜ICLR 2024｜已有扩展" LINK="https://proceedings.iclr.cc/paper_files/paper/2024/hash/b225f5c7cd13615e9558c3931fa4e66f-Abstract-Conference.html">
             <node TEXT="Llemma: An Open Language Model for Mathematics" />
             <node TEXT="公开数学语料 Proof-Pile-2 与开源数学基础模型。" />
+            <attribute NAME="paperId" VALUE="paper-9fb5bdaba960" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -102,14 +132,20 @@
           <node TEXT="Let's Verify｜ICLR 2024｜近年代表" LINK="https://proceedings.iclr.cc/paper_files/paper/2024/hash/aca97732e30bcf1303bc22ac3924fd16-Abstract-Conference.html">
             <node TEXT="Let's Verify Step by Step" />
             <node TEXT="发布 PRM800K 步骤级标注，过程监督优于只看结果的监督。" />
+            <attribute NAME="paperId" VALUE="paper-1b3f01b9f1f4" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Math-Shepherd｜ACL 2024｜已有扩展" LINK="https://aclanthology.org/2024.acl-long.510/">
             <node TEXT="Math-Shepherd: Verify and Reinforce LLMs Step-by-step without Human Annotations" />
             <node TEXT="用后续采样能否得到正确答案自动估计步骤质量，无需人工标注。" />
+            <attribute NAME="paperId" VALUE="paper-fa24a29129a1" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="DeepSeekMath｜arXiv 2024｜预印本" LINK="https://arxiv.org/abs/2402.03300">
             <node TEXT="DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models" />
             <node TEXT="大规模数学语料预训练，并提出组相对策略优化 GRPO。" />
+            <attribute NAME="paperId" VALUE="paper-3e01248237a0" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -121,14 +157,20 @@
           <node TEXT="STaR｜NeurIPS 2022｜较早入口" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/639a9a172c044fbb64175b5fad42e9a5-Abstract-Conference.html">
             <node TEXT="STaR: Bootstrapping Reasoning With Reasoning" />
             <node TEXT="用模型自己生成且答案正确的推理链迭代微调自身。" />
+            <attribute NAME="paperId" VALUE="paper-bb51d7569633" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
           </node>
           <node TEXT="Test-time compute｜ICLR 2025｜近年代表" LINK="https://proceedings.iclr.cc/paper_files/paper/2025/hash/1b623663fd9b874366f3ce019fdfdd44-Abstract-Conference.html">
             <node TEXT="Scaling LLM Test-Time Compute Optimally Can be More Effective than Scaling Parameters for Reasoning" />
             <node TEXT="按题目难度分配推理时计算，可抵过更大的模型。" />
+            <attribute NAME="paperId" VALUE="paper-8edc3f61ebb1" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
           </node>
           <node TEXT="DeepSeek-R1｜Nature 2025｜2026 扩展" LINK="https://www.nature.com/articles/s41586-025-09422-z">
             <node TEXT="DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning" />
             <node TEXT="只用可验证奖励的大规模强化学习，就能激发长链推理与自我反思。" />
+            <attribute NAME="paperId" VALUE="paper-b7585011e5b5" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
           </node>
         </node>
       </node>
@@ -142,14 +184,20 @@
           <node TEXT="Ramanujan Machine｜Nature 2021｜较早入口" LINK="https://www.nature.com/articles/s41586-021-03229-4">
             <node TEXT="Generating conjectures on fundamental constants with the Ramanujan Machine" />
             <node TEXT="自动搜索连分数公式，提出关于基本常数的新猜想。" />
+            <attribute NAME="paperId" VALUE="paper-f86298d7374c" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="AI-guided intuition｜Nature 2021｜近年代表" LINK="https://www.nature.com/articles/s41586-021-04086-x">
             <node TEXT="Advancing mathematics by guiding human intuition with AI" />
             <node TEXT="在纽结理论与表示论中用机器学习指引数学家发现新定理。" />
+            <attribute NAME="paperId" VALUE="paper-e089ccf7a8bf" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Murmurations｜Experimental Mathematics 2025｜已有扩展" LINK="https://doi.org/10.1080/10586458.2024.2382361">
             <node TEXT="Murmurations of elliptic curves" />
             <node TEXT="机器学习实验揭示椭圆曲线系数平均值中的振荡现象。" />
+            <attribute NAME="paperId" VALUE="paper-762e1a931b50" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -161,18 +209,26 @@
           <node TEXT="Wagner constructions｜arXiv 2021｜预印本" LINK="https://arxiv.org/abs/2104.14516">
             <node TEXT="Constructions in combinatorics via neural networks" />
             <node TEXT="用交叉熵强化学习自动找到多个图论猜想的反例。" />
+            <attribute NAME="paperId" VALUE="paper-fc7f8c4f05ca" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="FunSearch｜Nature 2024｜近年代表" LINK="https://www.nature.com/articles/s41586-023-06924-6">
             <node TEXT="Mathematical discoveries from program search with large language models" />
             <node TEXT="语言模型与评估器迭代演化程序，得到帽集问题的新构造。" />
+            <attribute NAME="paperId" VALUE="paper-5d0733c554b9" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="PatternBoost｜arXiv 2024｜预印本" LINK="https://arxiv.org/abs/2411.00566">
             <node TEXT="PatternBoost: Constructions in Mathematics with a Little Help from AI" />
             <node TEXT="交替使用局部搜索与 Transformer 生成，构造极值组合对象。" />
+            <attribute NAME="paperId" VALUE="paper-560a2909b775" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="AlphaEvolve｜arXiv 2025｜预印本" LINK="https://arxiv.org/abs/2506.13131">
             <node TEXT="AlphaEvolve: A coding agent for scientific and algorithmic discovery" />
             <node TEXT="演化式编码智能体改进 4×4 复矩阵乘法与多个数学构造的已知界。" />
+            <attribute NAME="paperId" VALUE="paper-0551ab86adc7" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
           </node>
         </node>
       </node>
@@ -184,18 +240,26 @@
           <node TEXT="Symbolic integration｜ICLR 2020｜较早入口" LINK="https://openreview.net/forum?id=S1eZYeHFDS">
             <node TEXT="Deep Learning For Symbolic Mathematics" />
             <node TEXT="把积分与常微分方程求解当作序列翻译任务。" />
+            <attribute NAME="paperId" VALUE="paper-eebb9f7abc4d" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="AlphaTensor｜Nature 2022｜近年代表" LINK="https://www.nature.com/articles/s41586-022-05172-4">
             <node TEXT="Discovering faster matrix multiplication algorithms with reinforcement learning" />
             <node TEXT="把矩阵乘法算法设计变成张量分解游戏，刷新若干规模的最少乘法数。" />
+            <attribute NAME="paperId" VALUE="paper-6c431df293aa" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="AlphaDev｜Nature 2023｜已有扩展" LINK="https://www.nature.com/articles/s41586-023-06004-9">
             <node TEXT="Faster sorting algorithms discovered using deep reinforcement learning" />
             <node TEXT="在汇编层面搜索出更快的短序列排序算法，被并入 LLVM 标准库。" />
+            <attribute NAME="paperId" VALUE="paper-94c208ff19a3" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
           </node>
           <node TEXT="Lyapunov functions｜NeurIPS 2024｜已有扩展" LINK="https://proceedings.neurips.cc/paper_files/paper/2024/hash/aa280e73c4e23e765fde232571116d3b-Abstract-Conference.html">
             <node TEXT="Global Lyapunov functions: a long-standing open problem in mathematics, with symbolic transformers" />
             <node TEXT="用合成数据训练 Transformer 为非多项式动力系统寻找李雅普诺夫函数。" />
+            <attribute NAME="paperId" VALUE="paper-9c0bc646052f" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -209,14 +273,20 @@
           <node TEXT="Adam｜ICLR 2015｜较早入口" LINK="https://arxiv.org/abs/1412.6980">
             <node TEXT="Adam: A Method for Stochastic Optimization" />
             <node TEXT="用梯度一阶与二阶矩的指数滑动估计自适应调整步长。" />
+            <attribute NAME="paperId" VALUE="paper-e41b8a2c1c77" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
           </node>
           <node TEXT="AMSGrad｜ICLR 2018｜近年代表" LINK="https://openreview.net/forum?id=ryQu7f-RZ">
             <node TEXT="On the Convergence of Adam and Beyond" />
             <node TEXT="构造 Adam 不收敛的反例，并提出带长期记忆的修正 AMSGrad。" />
+            <attribute NAME="paperId" VALUE="paper-831820aeb003" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
           </node>
           <node TEXT="AdamW｜ICLR 2019｜已有扩展" LINK="https://openreview.net/forum?id=Bkg6RiCqY7">
             <node TEXT="Decoupled Weight Decay Regularization" />
             <node TEXT="指出 Adam 中 L2 正则不等于权重衰减，并将两者解耦。" />
+            <attribute NAME="paperId" VALUE="paper-c475351b2997" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
           </node>
         </node>
       </node>
@@ -228,14 +298,20 @@
           <node TEXT="Edge of Stability｜ICLR 2021｜较早入口" LINK="https://openreview.net/forum?id=jh-rTtvkGeM">
             <node TEXT="Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability" />
             <node TEXT="全批量梯度下降中锐度会上升到 2/学习率附近并停留。" />
+            <attribute NAME="paperId" VALUE="paper-eaf7b85335d0" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="SAM｜ICLR 2021｜近年代表" LINK="https://openreview.net/forum?id=6Tm1mposlrM">
             <node TEXT="Sharpness-Aware Minimization for Efficiently Improving Generalization" />
             <node TEXT="最小化邻域内最坏损失，寻找更平坦的极小值。" />
+            <attribute NAME="paperId" VALUE="paper-f7756bca34a2" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
           </node>
           <node TEXT="Self-stabilization｜ICLR 2023｜已有扩展" LINK="https://openreview.net/forum?id=nhKHA59gXz">
             <node TEXT="Self-Stabilization: The Implicit Bias of Gradient Descent at the Edge of Stability" />
             <node TEXT="用三阶项解释梯度下降如何自动把锐度拉回稳定阈值。" />
+            <attribute NAME="paperId" VALUE="paper-157b9b32db9f" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -247,14 +323,20 @@
           <node TEXT="Implicit bias｜JMLR 2018｜较早入口" LINK="https://jmlr.org/papers/v19/18-188.html">
             <node TEXT="The Implicit Bias of Gradient Descent on Separable Data" />
             <node TEXT="线性可分数据上梯度下降方向收敛到最大间隔解。" />
+            <attribute NAME="paperId" VALUE="paper-344f2ea0d6d8" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="GD over-parameterized｜ICLR 2019｜近年代表" LINK="https://openreview.net/forum?id=S1eK3i09YQ">
             <node TEXT="Gradient Descent Provably Optimizes Over-parameterized Neural Networks" />
             <node TEXT="足够宽的两层 ReLU 网络上梯度下降线性收敛到零训练损失。" />
+            <attribute NAME="paperId" VALUE="paper-20213ae17359" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Over-parameterization theory｜ICML 2019｜已有扩展" LINK="https://proceedings.mlr.press/v97/allen-zhu19a.html">
             <node TEXT="A Convergence Theory for Deep Learning via Over-Parameterization" />
             <node TEXT="把全局收敛结果推广到深层全连接、卷积和残差网络。" />
+            <attribute NAME="paperId" VALUE="paper-5de614fe98e2" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -268,14 +350,20 @@
           <node TEXT="NTK｜NeurIPS 2018｜较早入口" LINK="https://proceedings.neurips.cc/paper_files/paper/2018/hash/5a4be1fa34e62bb8a6ec6b91d2462f5a-Abstract.html">
             <node TEXT="Neural Tangent Kernel: Convergence and Generalization in Neural Networks" />
             <node TEXT="无限宽网络的梯度下降等价于固定核的核回归。" />
+            <attribute NAME="paperId" VALUE="paper-313ca9c70a4f" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Wide networks as linear models｜NeurIPS 2019｜近年代表" LINK="https://proceedings.neurips.cc/paper_files/paper/2019/hash/0d1a9651497a38d8b1c3871c84528bd4-Abstract.html">
             <node TEXT="Wide Neural Networks of Any Depth Evolve as Linear Models Under Gradient Descent" />
             <node TEXT="宽网络训练中可用初始点处的一阶泰勒展开近似。" />
+            <attribute NAME="paperId" VALUE="paper-45a0b54d4dad" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Tensor Programs IV｜ICML 2021｜已有扩展" LINK="https://proceedings.mlr.press/v139/yang21c.html">
             <node TEXT="Tensor Programs IV: Feature Learning in Infinite-Width Neural Networks" />
             <node TEXT="指出 NTK 极限不学习特征，提出保持特征学习的最大更新参数化。" />
+            <attribute NAME="paperId" VALUE="paper-a364e1db5ce0" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -287,18 +375,26 @@
           <node TEXT="Rethinking generalization｜ICLR 2017｜较早入口" LINK="https://openreview.net/forum?id=Sy8gdB9xx">
             <node TEXT="Understanding deep learning requires rethinking generalization" />
             <node TEXT="网络能记住随机标签，说明传统复杂度度量无法解释泛化。" />
+            <attribute NAME="paperId" VALUE="paper-b0145844a753" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Double descent｜PNAS 2019｜近年代表" LINK="https://doi.org/10.1073/pnas.1903070116">
             <node TEXT="Reconciling modern machine-learning practice and the classical bias–variance trade-off" />
             <node TEXT="提出越过插值阈值后测试误差再次下降的双下降曲线。" />
+            <attribute NAME="paperId" VALUE="paper-899d871fb1ec" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Benign overfitting｜PNAS 2020｜已有扩展" LINK="https://doi.org/10.1073/pnas.1907378117">
             <node TEXT="Benign overfitting in linear regression" />
             <node TEXT="给出线性回归中插值解仍能良好泛化的充要条件。" />
+            <attribute NAME="paperId" VALUE="paper-c3d17bfcba39" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Deep double descent｜ICLR 2020｜已有扩展" LINK="https://openreview.net/forum?id=B1g5sA4twr">
             <node TEXT="Deep Double Descent: Where Bigger Models and More Data Hurt" />
             <node TEXT="在现代深度网络中观察到随模型规模、训练轮数变化的双下降。" />
+            <attribute NAME="paperId" VALUE="paper-8c2df44a4158" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -310,18 +406,26 @@
           <node TEXT="Grokking｜arXiv 2022｜预印本" LINK="https://arxiv.org/abs/2201.02177">
             <node TEXT="Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets" />
             <node TEXT="小型算法数据集上网络在过拟合很久之后突然泛化。" />
+            <attribute NAME="paperId" VALUE="paper-bbc68f5d5617" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Grokking progress measures｜ICLR 2023｜近年代表" LINK="https://openreview.net/forum?id=9XFSbDPmdW">
             <node TEXT="Progress measures for grokking via mechanistic interpretability" />
             <node TEXT="逆向工程出模加法网络使用的傅里叶算法，解释顿悟过程。" />
+            <attribute NAME="paperId" VALUE="paper-3b7dcba21d6c" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Chinchilla｜NeurIPS 2022｜已有扩展" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/c1e2faff6f588870935f114ebe04a3e5-Abstract-Conference.html">
             <node TEXT="An empirical analysis of compute-optimal large language model training" />
             <node TEXT="给定计算预算时，模型参数与训练词元数应同比增长。" />
+            <attribute NAME="paperId" VALUE="paper-5d037c4e6f49" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
           </node>
           <node TEXT="Explaining scaling laws｜PNAS 2024｜已有扩展" LINK="https://doi.org/10.1073/pnas.2311878121">
             <node TEXT="Explaining neural scaling laws" />
             <node TEXT="区分方差受限与分辨率受限两种区间，从理论上解释幂律缩放。" />
+            <attribute NAME="paperId" VALUE="paper-5ca11b94987a" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -335,14 +439,20 @@
           <node TEXT="Score matching｜JMLR 2005｜较早入口" LINK="https://jmlr.org/papers/v6/hyvarinen05a.html">
             <node TEXT="Estimation of Non-Normalized Statistical Models by Score Matching" />
             <node TEXT="匹配对数密度的梯度，绕开难以计算的归一化常数。" />
+            <attribute NAME="paperId" VALUE="paper-bfb796b51e5c" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Score SDE｜ICLR 2021｜近年代表" LINK="https://openreview.net/forum?id=PxTIG12RRHS">
             <node TEXT="Score-Based Generative Modeling through Stochastic Differential Equations" />
             <node TEXT="用连续时间 SDE 统一扩散与分数模型，并给出概率流常微分方程。" />
+            <attribute NAME="paperId" VALUE="paper-3f96625b9dae" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
           </node>
           <node TEXT="Sampling is as easy as learning the score｜ICLR 2023｜已有扩展" LINK="https://openreview.net/forum?id=zyLVMgsZ0U_">
             <node TEXT="Sampling is as easy as learning the score: theory for diffusion models with minimal data assumptions" />
             <node TEXT="只要分数估计足够准，扩散模型就能以多项式复杂度采样。" />
+            <attribute NAME="paperId" VALUE="paper-f8794f6ffaed" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -354,18 +464,26 @@
           <node TEXT="Benamou–Brenier｜Numerische Mathematik 2000｜较早入口" LINK="https://doi.org/10.1007/s002110050002">
             <node TEXT="A computational fluid mechanics solution to the Monge-Kantorovich mass transfer problem" />
             <node TEXT="把最优传输写成沿时间演化的密度与速度场的最小动能问题。" />
+            <attribute NAME="paperId" VALUE="paper-bf8e308b03cf" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Sinkhorn distances｜NeurIPS 2013｜较早入口" LINK="https://proceedings.neurips.cc/paper_files/paper/2013/hash/af21d0c97db2e27e13572cbf59eb343d-Abstract.html">
             <node TEXT="Sinkhorn Distances: Lightspeed Computation of Optimal Transport" />
             <node TEXT="加入熵正则后可用 Sinkhorn 迭代快速近似最优传输。" />
+            <attribute NAME="paperId" VALUE="paper-c258738250e7" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
           </node>
           <node TEXT="Rectified Flow｜ICLR 2023｜已有扩展" LINK="https://openreview.net/forum?id=XVjTT1nw5z">
             <node TEXT="Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" />
             <node TEXT="学习尽量走直线的传输路径，便于少步采样；与同期的流匹配思路相近。" />
+            <attribute NAME="paperId" VALUE="paper-8c87d43c8563" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
           </node>
           <node TEXT="Stochastic interpolants｜ICLR 2023｜已有扩展" LINK="https://openreview.net/forum?id=li7qeBbCR1t">
             <node TEXT="Building Normalizing Flows with Stochastic Interpolants" />
             <node TEXT="用两分布之间的随机插值定义速度场，统一流与扩散。" />
+            <attribute NAME="paperId" VALUE="paper-acc63d079a92" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -377,14 +495,20 @@
           <node TEXT="Polynomial convergence｜NeurIPS 2022｜较早入口" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/8ff87c96935244b63503f542472462b3-Abstract-Conference.html">
             <node TEXT="Convergence for score-based generative modeling with polynomial complexity" />
             <node TEXT="首批给出分数生成模型多项式复杂度的收敛保证。" />
+            <attribute NAME="paperId" VALUE="paper-afd6962ab53d" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Low-dimensional data｜ICML 2023｜近年代表" LINK="https://proceedings.mlr.press/v202/chen23o.html">
             <node TEXT="Score Approximation, Estimation and Distribution Recovery of Diffusion Models on Low-Dimensional Data" />
             <node TEXT="数据位于低维子空间时，样本复杂度取决于内在维数。" />
+            <attribute NAME="paperId" VALUE="paper-d577e58651be" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Nearly d-linear bounds｜ICLR 2024｜已有扩展" LINK="https://proceedings.iclr.cc/paper_files/paper/2024/hash/9edce07129d2ec4c511a8783eb3d81b5-Abstract-Conference.html">
             <node TEXT="Nearly $d$-Linear Convergence Bounds for Diffusion Models via Stochastic Localization" />
             <node TEXT="用随机局部化给出对维数近线性依赖的收敛界。" />
+            <attribute NAME="paperId" VALUE="paper-b5a5bc3f9139" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -398,14 +522,20 @@
           <node TEXT="Geometric deep learning｜IEEE Signal Processing Magazine 2017｜较早入口" LINK="https://doi.org/10.1109/msp.2017.2693418">
             <node TEXT="Geometric Deep Learning: Going beyond Euclidean data" />
             <node TEXT="系统梳理图与流形上的深度学习方法。" />
+            <attribute NAME="paperId" VALUE="paper-19daa0d5f989" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="G-CNN｜ICML 2016｜近年代表" LINK="https://proceedings.mlr.press/v48/cohenc16.html">
             <node TEXT="Group Equivariant Convolutional Networks" />
             <node TEXT="把卷积推广到旋转、反射等离散群，提高参数效率。" />
+            <attribute NAME="paperId" VALUE="paper-d1dfb2ab7dd3" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
           </node>
           <node TEXT="Homogeneous spaces｜NeurIPS 2019｜已有扩展" LINK="https://proceedings.neurips.cc/paper_files/paper/2019/hash/b9cfe8b6042cf759dc4c0cccb27a6737-Abstract.html">
             <node TEXT="A General Theory of Equivariant CNNs on Homogeneous Spaces" />
             <node TEXT="用纤维丛与诱导表示统一刻画齐性空间上的等变卷积。" />
+            <attribute NAME="paperId" VALUE="paper-d3f40b1c3d44" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -417,14 +547,20 @@
           <node TEXT="Universal equivariant GNNs｜NeurIPS 2019｜较早入口" LINK="https://proceedings.neurips.cc/paper_files/paper/2019/hash/ea9268cb43f55d1d12380fb6ea5bf572-Abstract.html">
             <node TEXT="Universal Invariant and Equivariant Graph Neural Networks" />
             <node TEXT="证明一类不变与等变图网络对连续函数具有通用逼近能力。" />
+            <attribute NAME="paperId" VALUE="paper-01306ab84db7" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="EGNN｜ICML 2021｜近年代表" LINK="https://proceedings.mlr.press/v139/satorras21a.html">
             <node TEXT="E(n) Equivariant Graph Neural Networks" />
             <node TEXT="只用相对距离更新坐标与特征，简洁实现 E(n) 等变。" />
+            <attribute NAME="paperId" VALUE="paper-f77c75a7a67b" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
           </node>
           <node TEXT="Scalars are universal｜NeurIPS 2021｜已有扩展" LINK="https://proceedings.neurips.cc/paper_files/paper/2021/hash/f1b0775946bc0329b35b823b86eeb5f5-Abstract.html">
             <node TEXT="Scalars are universal: Equivariant machine learning, structured like classical physics" />
             <node TEXT="证明任意 O(d) 等变函数都可由内积等不变标量构造。" />
+            <attribute NAME="paperId" VALUE="paper-114f75294548" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -436,14 +572,20 @@
           <node TEXT="GIN｜ICLR 2019｜较早入口" LINK="https://openreview.net/forum?id=ryGs6iA5Km">
             <node TEXT="How Powerful are Graph Neural Networks?" />
             <node TEXT="证明消息传递网络至多与 1-WL 检验一样强，并给出达到上界的 GIN。" />
+            <attribute NAME="paperId" VALUE="paper-098371bafe80" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="k-GNN｜AAAI 2019｜近年代表" LINK="https://doi.org/10.1609/aaai.v33i01.33014602">
             <node TEXT="Weisfeiler and Leman Go Neural: Higher-order Graph Neural Networks" />
             <node TEXT="建立 GNN 与 WL 的等价性，并提出对应高阶 WL 的 k-GNN。" />
+            <attribute NAME="paperId" VALUE="paper-33c451a206c6" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Provably powerful graph networks｜NeurIPS 2019｜已有扩展" LINK="https://proceedings.neurips.cc/paper_files/paper/2019/hash/bb04af0f7ecaee4aae62035497da1387-Abstract.html">
             <node TEXT="Provably Powerful Graph Networks" />
             <node TEXT="用矩阵乘法构造达到 3-WL 表达能力的图网络。" />
+            <attribute NAME="paperId" VALUE="paper-9a760177cede" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -457,14 +599,20 @@
           <node TEXT="Diagonal Ramsey 2009｜Annals of Mathematics 2009｜较早入口" LINK="https://doi.org/10.4007/annals.2009.170.941">
             <node TEXT="A new upper bound for diagonal Ramsey numbers" />
             <node TEXT="对 Erdős–Szekeres 上界做出超多项式改进。" />
+            <attribute NAME="paperId" VALUE="paper-8c4fd7677b05" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Exponential Ramsey improvement｜Annals of Mathematics 2026｜近年代表" LINK="https://doi.org/10.4007/annals.2026.203.3.4">
             <node TEXT="An exponential improvement for diagonal Ramsey" />
             <node TEXT="首次把对角 Ramsey 数上界的底数从 4 降到 4−ε。" />
+            <attribute NAME="paperId" VALUE="paper-e144d18a3d02" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="r(4,t)｜Annals of Mathematics 2024｜已有扩展" LINK="https://doi.org/10.4007/annals.2024.199.2.8">
             <node TEXT="The asymptotics of r(4,t)" />
             <node TEXT="确定 r(4,t) 的阶，上下界只差对数因子。" />
+            <attribute NAME="paperId" VALUE="paper-124d195a01f8" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -476,22 +624,32 @@
           <node TEXT="Sensitivity conjecture｜Annals of Mathematics 2019｜较早入口" LINK="https://doi.org/10.4007/annals.2019.190.3.6">
             <node TEXT="Induced subgraphs of hypercubes and a proof of the Sensitivity Conjecture" />
             <node TEXT="用带符号邻接矩阵的两页证明解决了敏感度猜想。" />
+            <attribute NAME="paperId" VALUE="paper-cbf1f5c79607" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Sunflower lemma｜Annals of Mathematics 2021｜近年代表" LINK="https://doi.org/10.4007/annals.2021.194.3.5">
             <node TEXT="Improved bounds for the sunflower lemma" />
             <node TEXT="把 Erdős–Rado 向日葵引理的界改进到约 (log k)^k 量级。" />
+            <attribute NAME="paperId" VALUE="paper-ed5d9e470bf6" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Fractional expectation thresholds｜Annals of Mathematics 2021｜近年代表" LINK="https://doi.org/10.4007/annals.2021.194.2.2">
             <node TEXT="Thresholds versus fractional expectation-thresholds" />
             <node TEXT="证明 Talagrand 的分数期望阈值猜想，是 Kahn–Kalai 猜想的弱形式。" />
+            <attribute NAME="paperId" VALUE="paper-4eee69c65dce" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Union-closed sets｜arXiv 2022｜预印本" LINK="https://arxiv.org/abs/2211.09055">
             <node TEXT="A constant lower bound for the union-closed sets conjecture" />
             <node TEXT="用信息熵方法首次给出并封闭集合猜想的常数比例下界。" />
+            <attribute NAME="paperId" VALUE="paper-dd40373114d1" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Kahn–Kalai conjecture｜Journal of the American Mathematical Society 2024｜已有扩展" LINK="https://doi.org/10.1090/jams/1028">
             <node TEXT="A proof of the Kahn–Kalai conjecture" />
             <node TEXT="证明阈值至多是期望阈值的对数倍，解决 Kahn–Kalai 猜想。" />
+            <attribute NAME="paperId" VALUE="paper-66ced7ae3e58" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -503,14 +661,20 @@
           <node TEXT="Kelley–Meka｜FOCS 2023｜近年代表" LINK="https://doi.org/10.1109/focs57990.2023.00059">
             <node TEXT="Strong Bounds for 3-Progressions" />
             <node TEXT="把无三项等差数列集合的密度上界改进到拟多项式级别。" />
+            <attribute NAME="paperId" VALUE="paper-4599f5c49fe8" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Marton's conjecture｜Annals of Mathematics 2025｜已有扩展" LINK="https://doi.org/10.4007/annals.2025.201.2.5">
             <node TEXT="On a conjecture of Marton" />
             <node TEXT="在特征 2 情形证明多项式 Freiman–Ruzsa 猜想，并很快完成 Lean 形式化。" />
+            <attribute NAME="paperId" VALUE="paper-2a0fe40e87d6" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Szemerédi bounds｜arXiv 2024｜预印本" LINK="https://arxiv.org/abs/2402.17995">
             <node TEXT="Improved Bounds for Szemerédi's Theorem" />
             <node TEXT="对 k≥5 的 Szemerédi 定理给出首个类型更强的定量改进。" />
+            <attribute NAME="paperId" VALUE="paper-b8ba83143e71" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -524,18 +688,26 @@
           <node TEXT="Bounded prime gaps｜Annals of Mathematics 2014｜较早入口" LINK="https://doi.org/10.4007/annals.2014.179.3.7">
             <node TEXT="Bounded gaps between primes" />
             <node TEXT="首次证明存在无穷多对间隔不超过七千万的素数。" />
+            <attribute NAME="paperId" VALUE="paper-bed0de999ddb" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Small prime gaps｜Annals of Mathematics 2015｜近年代表" LINK="https://doi.org/10.4007/annals.2015.181.1.7">
             <node TEXT="Small gaps between primes" />
             <node TEXT="用多维筛法把间隔降到 600，并推广到多个素数。" />
+            <attribute NAME="paperId" VALUE="paper-abbd33a34fb7" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Large value estimates｜Annals of Mathematics 2026｜2026 扩展" LINK="https://doi.org/10.4007/annals.2026.203.2.6">
             <node TEXT="New large value estimates for Dirichlet polynomials" />
             <node TEXT="改进 Ingham 以来的零点密度估计，推进短区间素数分布。" />
+            <attribute NAME="paperId" VALUE="paper-ce54d07311fb" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Symmetric power functoriality｜Publications mathématiques de l'IHÉS 2021｜已有扩展" LINK="https://doi.org/10.1007/s10240-021-00127-3">
             <node TEXT="Symmetric power functoriality for holomorphic modular forms" />
             <node TEXT="证明全纯模形式的对称幂函子性，属于朗兰兹纲领的重要进展。" />
+            <attribute NAME="paperId" VALUE="paper-b72c89c004fa" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -547,18 +719,26 @@
           <node TEXT="Sphere packing in dimension 8｜Annals of Mathematics 2017｜较早入口" LINK="https://doi.org/10.4007/annals.2017.185.3.7">
             <node TEXT="The sphere packing problem in dimension 8" />
             <node TEXT="用模形式构造辅助函数，证明 E8 格是 8 维最密球堆积。" />
+            <attribute NAME="paperId" VALUE="paper-ee4c8488311b" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Sphere packing in dimension 24｜Annals of Mathematics 2017｜近年代表" LINK="https://doi.org/10.4007/annals.2017.185.3.8">
             <node TEXT="The sphere packing problem in dimension 24" />
             <node TEXT="把同一方法推广到 24 维，证明 Leech 格最优。" />
+            <attribute NAME="paperId" VALUE="paper-e19d671ac5af" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Conway knot｜Annals of Mathematics 2020｜已有扩展" LINK="https://doi.org/10.4007/annals.2020.191.2.5">
             <node TEXT="The Conway knot is not slice" />
             <node TEXT="用纽结迹技巧解决 Conway 纽结是否切片这一长期问题。" />
+            <attribute NAME="paperId" VALUE="paper-411096b68e3c" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Geometric Langlands｜arXiv 2024｜预印本" LINK="https://arxiv.org/abs/2405.03599">
             <node TEXT="Proof of the geometric Langlands conjecture I: construction of the functor" />
             <node TEXT="几何朗兰兹猜想证明系列的第一篇，构造朗兰兹函子。" />
+            <attribute NAME="paperId" VALUE="paper-7c24c4d8c87b" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -570,14 +750,20 @@
           <node TEXT="Decoupling conjecture｜Annals of Mathematics 2015｜较早入口" LINK="https://doi.org/10.4007/annals.2015.182.1.9">
             <node TEXT="The proof of the $l^2$ Decoupling Conjecture" />
             <node TEXT="证明 ℓ² 解耦猜想，成为调和分析与数论共用的新工具。" />
+            <attribute NAME="paperId" VALUE="paper-a5a151e91be7" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Vinogradov mean value｜Annals of Mathematics 2016｜近年代表" LINK="https://doi.org/10.4007/annals.2016.184.2.7">
             <node TEXT="Proof of the main conjecture in Vinogradov's mean value theorem for degrees higher than three" />
             <node TEXT="用解耦方法证明 Vinogradov 平均值定理的主猜想。" />
+            <attribute NAME="paperId" VALUE="paper-c02060b6bc77" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
           <node TEXT="Kakeya in three dimensions｜arXiv 2025｜预印本" LINK="https://arxiv.org/abs/2502.17655">
             <node TEXT="Volume estimates for unions of convex sets, and the Kakeya set conjecture in three dimensions" />
             <node TEXT="证明三维 Kakeya 集的 Hausdorff 维数必为 3。" />
+            <attribute NAME="paperId" VALUE="paper-6e20dbfca0bb" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
           </node>
         </node>
       </node>
@@ -586,96 +772,205 @@
       <node TEXT="从形式化到自动证明">
         <node TEXT="形式化库 → 证明搜索 → 自动形式化与奥赛 → 可验证强化学习" />
         <node TEXT="Formal Libraries &amp; Benchmarks｜形式化数学库与评测">
-          <node TEXT="mathlib｜CPP 2020" LINK="https://doi.org/10.1145/3372885.3373824" />
-          <node TEXT="LeanDojo｜NeurIPS 2023" LINK="https://proceedings.neurips.cc/paper_files/paper/2023/hash/4441469427094f8873d0fecb0c4e1cee-Abstract-Datasets_and_Benchmarks.html" />
+          <node TEXT="mathlib｜CPP 2020" LINK="https://doi.org/10.1145/3372885.3373824">
+            <attribute NAME="paperId" VALUE="paper-cdb6e616aebe" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
+          <node TEXT="LeanDojo｜NeurIPS 2023" LINK="https://proceedings.neurips.cc/paper_files/paper/2023/hash/4441469427094f8873d0fecb0c4e1cee-Abstract-Datasets_and_Benchmarks.html">
+            <attribute NAME="paperId" VALUE="paper-0abc7c656641" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
         </node>
         <node TEXT="Neural Proof Search｜神经证明搜索">
-          <node TEXT="HTPS｜NeurIPS 2022" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/a8901c5e85fb8e1823bbf0f755053672-Abstract-Conference.html" />
-          <node TEXT="DeepSeek-Prover-V1.5｜ICLR 2025" LINK="https://proceedings.iclr.cc/paper_files/paper/2025/hash/b3b55c366d641c07180c40e4f978f311-Abstract-Conference.html" />
+          <node TEXT="HTPS｜NeurIPS 2022" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/a8901c5e85fb8e1823bbf0f755053672-Abstract-Conference.html">
+            <attribute NAME="paperId" VALUE="paper-2449dc2f0a95" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
+          <node TEXT="DeepSeek-Prover-V1.5｜ICLR 2025" LINK="https://proceedings.iclr.cc/paper_files/paper/2025/hash/b3b55c366d641c07180c40e4f978f311-Abstract-Conference.html">
+            <attribute NAME="paperId" VALUE="paper-928f966d529b" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
         </node>
         <node TEXT="Olympiad Reasoning &amp; Autoformalization｜奥赛级推理与自动形式化">
-          <node TEXT="Autoformalization｜NeurIPS 2022" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/d0c6bc641a56bebee9d985b937307367-Abstract-Conference.html" />
-          <node TEXT="AlphaProof｜Nature 2026" LINK="https://www.nature.com/articles/s41586-025-09833-y" />
+          <node TEXT="Autoformalization｜NeurIPS 2022" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/d0c6bc641a56bebee9d985b937307367-Abstract-Conference.html">
+            <attribute NAME="paperId" VALUE="paper-3b8e43323aa2" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
+          <node TEXT="AlphaProof｜Nature 2026" LINK="https://www.nature.com/articles/s41586-025-09833-y">
+            <attribute NAME="paperId" VALUE="paper-4b41c946f89e" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
         </node>
         <node TEXT="Reinforcement Learning &amp; Test-Time Compute｜强化学习与测试时计算">
-          <node TEXT="DeepSeek-R1｜Nature 2025" LINK="https://www.nature.com/articles/s41586-025-09422-z" />
+          <node TEXT="DeepSeek-R1｜Nature 2025" LINK="https://www.nature.com/articles/s41586-025-09422-z">
+            <attribute NAME="paperId" VALUE="paper-b7585011e5b5" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
+          </node>
         </node>
       </node>
       <node TEXT="从解题到发现">
         <node TEXT="数学基准 → 过程监督 → 构造搜索 → 新定理与新算法" />
         <node TEXT="Math Pretraining &amp; Benchmarks｜数学预训练与评测">
-          <node TEXT="MATH｜NeurIPS 2021" LINK="https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/be83ab3ecd0db773eb2dc1b0a17836a1-Abstract-round2.html" />
-          <node TEXT="Minerva｜NeurIPS 2022" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/18abbeef8cfe9203fdf9053c9c4fe191-Abstract-Conference.html" />
+          <node TEXT="MATH｜NeurIPS 2021" LINK="https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/be83ab3ecd0db773eb2dc1b0a17836a1-Abstract-round2.html">
+            <attribute NAME="paperId" VALUE="paper-a0ee18bd2d58" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
+          <node TEXT="Minerva｜NeurIPS 2022" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/18abbeef8cfe9203fdf9053c9c4fe191-Abstract-Conference.html">
+            <attribute NAME="paperId" VALUE="paper-6fee4ca55181" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
         </node>
         <node TEXT="Process Supervision &amp; Reward Models｜过程监督与奖励模型">
-          <node TEXT="Let's Verify｜ICLR 2024" LINK="https://proceedings.iclr.cc/paper_files/paper/2024/hash/aca97732e30bcf1303bc22ac3924fd16-Abstract-Conference.html" />
+          <node TEXT="Let's Verify｜ICLR 2024" LINK="https://proceedings.iclr.cc/paper_files/paper/2024/hash/aca97732e30bcf1303bc22ac3924fd16-Abstract-Conference.html">
+            <attribute NAME="paperId" VALUE="paper-1b3f01b9f1f4" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
         </node>
         <node TEXT="Program Search for Constructions｜程序搜索与组合构造">
-          <node TEXT="FunSearch｜Nature 2024" LINK="https://www.nature.com/articles/s41586-023-06924-6" />
-          <node TEXT="AlphaEvolve｜arXiv 2025" LINK="https://arxiv.org/abs/2506.13131" />
+          <node TEXT="FunSearch｜Nature 2024" LINK="https://www.nature.com/articles/s41586-023-06924-6">
+            <attribute NAME="paperId" VALUE="paper-5d0733c554b9" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
+          <node TEXT="AlphaEvolve｜arXiv 2025" LINK="https://arxiv.org/abs/2506.13131">
+            <attribute NAME="paperId" VALUE="paper-0551ab86adc7" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
+          </node>
         </node>
         <node TEXT="ML-Guided Conjectures｜机器学习引导猜想">
-          <node TEXT="AI-guided intuition｜Nature 2021" LINK="https://www.nature.com/articles/s41586-021-04086-x" />
+          <node TEXT="AI-guided intuition｜Nature 2021" LINK="https://www.nature.com/articles/s41586-021-04086-x">
+            <attribute NAME="paperId" VALUE="paper-e089ccf7a8bf" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
         </node>
       </node>
       <node TEXT="从训练动力学到泛化">
         <node TEXT="优化器 → 稳定性边缘 → 无限宽极限 → 良性过拟合与缩放律" />
         <node TEXT="Adaptive Optimizers｜自适应优化器">
-          <node TEXT="Adam｜ICLR 2015" LINK="https://arxiv.org/abs/1412.6980" />
-          <node TEXT="AdamW｜ICLR 2019" LINK="https://openreview.net/forum?id=Bkg6RiCqY7" />
+          <node TEXT="Adam｜ICLR 2015" LINK="https://arxiv.org/abs/1412.6980">
+            <attribute NAME="paperId" VALUE="paper-e41b8a2c1c77" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
+          </node>
+          <node TEXT="AdamW｜ICLR 2019" LINK="https://openreview.net/forum?id=Bkg6RiCqY7">
+            <attribute NAME="paperId" VALUE="paper-c475351b2997" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
+          </node>
         </node>
         <node TEXT="Edge of Stability &amp; Sharpness｜稳定性边缘与锐度">
-          <node TEXT="Edge of Stability｜ICLR 2021" LINK="https://openreview.net/forum?id=jh-rTtvkGeM" />
-          <node TEXT="SAM｜ICLR 2021" LINK="https://openreview.net/forum?id=6Tm1mposlrM" />
+          <node TEXT="Edge of Stability｜ICLR 2021" LINK="https://openreview.net/forum?id=jh-rTtvkGeM">
+            <attribute NAME="paperId" VALUE="paper-eaf7b85335d0" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
+          <node TEXT="SAM｜ICLR 2021" LINK="https://openreview.net/forum?id=6Tm1mposlrM">
+            <attribute NAME="paperId" VALUE="paper-f7756bca34a2" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
+          </node>
         </node>
         <node TEXT="Infinite-Width Limits｜无限宽极限">
-          <node TEXT="NTK｜NeurIPS 2018" LINK="https://proceedings.neurips.cc/paper_files/paper/2018/hash/5a4be1fa34e62bb8a6ec6b91d2462f5a-Abstract.html" />
-          <node TEXT="Tensor Programs IV｜ICML 2021" LINK="https://proceedings.mlr.press/v139/yang21c.html" />
+          <node TEXT="NTK｜NeurIPS 2018" LINK="https://proceedings.neurips.cc/paper_files/paper/2018/hash/5a4be1fa34e62bb8a6ec6b91d2462f5a-Abstract.html">
+            <attribute NAME="paperId" VALUE="paper-313ca9c70a4f" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
+          <node TEXT="Tensor Programs IV｜ICML 2021" LINK="https://proceedings.mlr.press/v139/yang21c.html">
+            <attribute NAME="paperId" VALUE="paper-a364e1db5ce0" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
         </node>
         <node TEXT="Double Descent &amp; Benign Overfitting｜双下降与良性过拟合">
-          <node TEXT="Double descent｜PNAS 2019" LINK="https://doi.org/10.1073/pnas.1903070116" />
-          <node TEXT="Benign overfitting｜PNAS 2020" LINK="https://doi.org/10.1073/pnas.1907378117" />
+          <node TEXT="Double descent｜PNAS 2019" LINK="https://doi.org/10.1073/pnas.1903070116">
+            <attribute NAME="paperId" VALUE="paper-899d871fb1ec" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
+          <node TEXT="Benign overfitting｜PNAS 2020" LINK="https://doi.org/10.1073/pnas.1907378117">
+            <attribute NAME="paperId" VALUE="paper-c3d17bfcba39" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
         </node>
         <node TEXT="Grokking &amp; Scaling Laws｜顿悟与缩放律">
-          <node TEXT="Grokking progress measures｜ICLR 2023" LINK="https://openreview.net/forum?id=9XFSbDPmdW" />
-          <node TEXT="Chinchilla｜NeurIPS 2022" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/c1e2faff6f588870935f114ebe04a3e5-Abstract-Conference.html" />
+          <node TEXT="Grokking progress measures｜ICLR 2023" LINK="https://openreview.net/forum?id=9XFSbDPmdW">
+            <attribute NAME="paperId" VALUE="paper-3b7dcba21d6c" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
+          <node TEXT="Chinchilla｜NeurIPS 2022" LINK="https://proceedings.neurips.cc/paper_files/paper/2022/hash/c1e2faff6f588870935f114ebe04a3e5-Abstract-Conference.html">
+            <attribute NAME="paperId" VALUE="paper-5d037c4e6f49" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
+          </node>
         </node>
       </node>
       <node TEXT="从对称性到生成">
         <node TEXT="几何深度学习 → 等变网络 → 扩散与流 → 收敛理论" />
         <node TEXT="Geometric Deep Learning｜几何深度学习">
-          <node TEXT="G-CNN｜ICML 2016" LINK="https://proceedings.mlr.press/v48/cohenc16.html" />
-          <node TEXT="Homogeneous spaces｜NeurIPS 2019" LINK="https://proceedings.neurips.cc/paper_files/paper/2019/hash/b9cfe8b6042cf759dc4c0cccb27a6737-Abstract.html" />
+          <node TEXT="G-CNN｜ICML 2016" LINK="https://proceedings.mlr.press/v48/cohenc16.html">
+            <attribute NAME="paperId" VALUE="paper-d1dfb2ab7dd3" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
+          </node>
+          <node TEXT="Homogeneous spaces｜NeurIPS 2019" LINK="https://proceedings.neurips.cc/paper_files/paper/2019/hash/b9cfe8b6042cf759dc4c0cccb27a6737-Abstract.html">
+            <attribute NAME="paperId" VALUE="paper-d3f40b1c3d44" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
         </node>
         <node TEXT="Equivariant Networks &amp; Universality｜等变网络与通用性">
-          <node TEXT="EGNN｜ICML 2021" LINK="https://proceedings.mlr.press/v139/satorras21a.html" />
-          <node TEXT="Scalars are universal｜NeurIPS 2021" LINK="https://proceedings.neurips.cc/paper_files/paper/2021/hash/f1b0775946bc0329b35b823b86eeb5f5-Abstract.html" />
+          <node TEXT="EGNN｜ICML 2021" LINK="https://proceedings.mlr.press/v139/satorras21a.html">
+            <attribute NAME="paperId" VALUE="paper-f77c75a7a67b" />
+            <attribute NAME="primaryThemeId" VALUE="ai" />
+          </node>
+          <node TEXT="Scalars are universal｜NeurIPS 2021" LINK="https://proceedings.neurips.cc/paper_files/paper/2021/hash/f1b0775946bc0329b35b823b86eeb5f5-Abstract.html">
+            <attribute NAME="paperId" VALUE="paper-114f75294548" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
         </node>
         <node TEXT="Optimal Transport &amp; Flow Matching｜最优传输与流匹配">
-          <node TEXT="Benamou–Brenier｜Numerische Mathematik 2000" LINK="https://doi.org/10.1007/s002110050002" />
-          <node TEXT="Stochastic interpolants｜ICLR 2023" LINK="https://openreview.net/forum?id=li7qeBbCR1t" />
+          <node TEXT="Benamou–Brenier｜Numerische Mathematik 2000" LINK="https://doi.org/10.1007/s002110050002">
+            <attribute NAME="paperId" VALUE="paper-bf8e308b03cf" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
+          <node TEXT="Stochastic interpolants｜ICLR 2023" LINK="https://openreview.net/forum?id=li7qeBbCR1t">
+            <attribute NAME="paperId" VALUE="paper-acc63d079a92" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
         </node>
         <node TEXT="Convergence Theory of Diffusion Models｜扩散模型收敛理论">
-          <node TEXT="Nearly d-linear bounds｜ICLR 2024" LINK="https://proceedings.iclr.cc/paper_files/paper/2024/hash/9edce07129d2ec4c511a8783eb3d81b5-Abstract-Conference.html" />
+          <node TEXT="Nearly d-linear bounds｜ICLR 2024" LINK="https://proceedings.iclr.cc/paper_files/paper/2024/hash/9edce07129d2ec4c511a8783eb3d81b5-Abstract-Conference.html">
+            <attribute NAME="paperId" VALUE="paper-b5a5bc3f9139" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
         </node>
       </node>
       <node TEXT="AI 与纯数学的交汇">
         <node TEXT="构造搜索 → 组合极值 → 形式化验证 → 长期猜想" />
         <node TEXT="Program Search for Constructions｜程序搜索与组合构造">
-          <node TEXT="Wagner constructions｜arXiv 2021" LINK="https://arxiv.org/abs/2104.14516" />
-          <node TEXT="PatternBoost｜arXiv 2024" LINK="https://arxiv.org/abs/2411.00566" />
+          <node TEXT="Wagner constructions｜arXiv 2021" LINK="https://arxiv.org/abs/2104.14516">
+            <attribute NAME="paperId" VALUE="paper-fc7f8c4f05ca" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
+          <node TEXT="PatternBoost｜arXiv 2024" LINK="https://arxiv.org/abs/2411.00566">
+            <attribute NAME="paperId" VALUE="paper-560a2909b775" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
         </node>
         <node TEXT="Ramsey Theory｜Ramsey 理论">
-          <node TEXT="Exponential Ramsey improvement｜Annals of Mathematics 2026" LINK="https://doi.org/10.4007/annals.2026.203.3.4" />
+          <node TEXT="Exponential Ramsey improvement｜Annals of Mathematics 2026" LINK="https://doi.org/10.4007/annals.2026.203.3.4">
+            <attribute NAME="paperId" VALUE="paper-e144d18a3d02" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
         </node>
         <node TEXT="Additive Combinatorics｜加性组合">
-          <node TEXT="Kelley–Meka｜FOCS 2023" LINK="https://doi.org/10.1109/focs57990.2023.00059" />
-          <node TEXT="Marton's conjecture｜Annals of Mathematics 2025" LINK="https://doi.org/10.4007/annals.2025.201.2.5" />
+          <node TEXT="Kelley–Meka｜FOCS 2023" LINK="https://doi.org/10.1109/focs57990.2023.00059">
+            <attribute NAME="paperId" VALUE="paper-4599f5c49fe8" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
+          <node TEXT="Marton's conjecture｜Annals of Mathematics 2025" LINK="https://doi.org/10.4007/annals.2025.201.2.5">
+            <attribute NAME="paperId" VALUE="paper-2a0fe40e87d6" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
         </node>
         <node TEXT="Harmonic Analysis &amp; PDE｜调和分析与偏微分方程">
-          <node TEXT="Kakeya in three dimensions｜arXiv 2025" LINK="https://arxiv.org/abs/2502.17655" />
+          <node TEXT="Kakeya in three dimensions｜arXiv 2025" LINK="https://arxiv.org/abs/2502.17655">
+            <attribute NAME="paperId" VALUE="paper-6e20dbfca0bb" />
+            <attribute NAME="primaryThemeId" VALUE="mathematics" />
+          </node>
         </node>
       </node>
     </node>
+    <node TEXT="阅读集合保留原有脉络；当前主分类见 paper-catalog.json。链接按 paperId 引用，不重复计数。 / Reading collection: current primary classifications live in paper-catalog.json; references do not add papers." />
   </node>
 </map>

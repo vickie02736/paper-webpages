@@ -4,16 +4,22 @@ Interactive, visual explanations of scientific papers and research concepts.
 
 **Open the homepage:** [Research Atlas](https://vickie02736.github.io/paper-webpages/) · [English version](https://vickie02736.github.io/paper-webpages/?lang=en)
 
-This repository collects the paper explainer webpages and research maps created by Kewei Zhu. The explainers are static HTML pages with shared local styles and navigation, so they can be opened through GitHub Pages without ChatGPT sign-in. Each paper lives in its own folder under [`papers/`](papers/), while the six research themes are stored under [`references/roadmaps/`](references/roadmaps/).
+This repository collects the paper explainer webpages and research maps created by Kewei Zhu. The explainers are static HTML pages with shared local styles and navigation, so they can be opened through GitHub Pages without ChatGPT sign-in. Each paper lives in its own folder under [`papers/`](papers/), while the primary catalogue is stored in [`references/paper-catalog.json`](references/paper-catalog.json), alongside the preserved research reading maps.
 
-## Six research themes
+## Research around MOF + AI
 
-- [Artificial Intelligence & Machine Learning — Methods, Systems, Agents and Evaluation](references/roadmaps/ai-top-conference-map.mm)
-- [Metal–Organic Frameworks — Recent Progress Map](references/roadmaps/mof-recent-progress-map.mm)
-- [Robotics — Recent Progress Map](references/roadmaps/robotics-recent-progress-map.mm)
-- [AI for Chemistry / Materials — Machine Learning for Chemistry and Materials Map](references/roadmaps/ai-chemistry-materials-map.mm)
-- [AI for Life Sciences — Drug Discovery, Biology and Medicine Map](references/roadmaps/ai-life-sciences-map.mm)
-- [Mathematics — AI for Math, Math for AI and Pure Mathematics Map](references/roadmaps/mathematics-map.mm)
+Six primary themes organize 451 papers, with one primary record per paper:
+
+- [Metal–Organic Frameworks / 金属有机框架](https://vickie02736.github.io/paper-webpages/?theme=mof): 68 papers. Includes separate **MOF Stability / MOF 稳定性** and **Rare-Earth Adsorption & Separation / 稀土吸附与分离** subcategories.
+- [Artificial Intelligence & Computing / 人工智能与计算](https://vickie02736.github.io/paper-webpages/?theme=ai): 90 papers.
+- [General Chemistry & Materials / 通用化学与材料](https://vickie02736.github.io/paper-webpages/?theme=chemistry-materials): 73 papers.
+- [Robotics & Lab Automation / 机器人与实验自动化](https://vickie02736.github.io/paper-webpages/?theme=robotics-lab): 72 papers.
+- [Mathematics & Modelling Foundations / 数学与建模基础](https://vickie02736.github.io/paper-webpages/?theme=mathematics): 78 papers.
+- [Life Sciences, Drug Discovery & Medicine / 生命科学、药物与医学](https://vickie02736.github.io/paper-webpages/?theme=life-medicine): 70 papers.
+
+Three [curated reading routes](https://vickie02736.github.io/paper-webpages/#routes) connect these themes: high-throughput MOF screening and inverse design, MOF machine-learning potentials and simulation, and automated MOF experiments. They reference existing papers, without adding duplicate catalogue records. MOF also retains five related methods/comparisons whose primary home is general chemistry and materials.
+
+The library supports collecting ideas and developing research judgment. The five reading prompts ask about the question, mechanism, evidence, limits and possible transfer to MOF research. The existing [FreeMind reading collections](references/roadmaps/) retain their original explanatory context and filenames.
 
 ## Paper explainers
 
@@ -68,14 +74,22 @@ Start with the central idea, then explore the mechanism, evidence, limitations, 
 
 The repository is public so that the webpages can be shared and deployed. The accompanying `robots.txt` and homepage `noindex` metadata ask search engines not to crawl or index the deployed site, but public GitHub repositories and public URLs can still be discovered or indexed.
 
-The homepage reads `references/paper-catalog.json` to build expandable paper menus from the six FreeMind roadmaps. When a new explainer is added, its `p` field can point to the local HTML page so the menu changes from “Webpage coming soon” to “Explainer”.
+The homepage reads `references/paper-catalog.json` to build primary themes and structured subcategories. The FreeMind maps are reading collections, rather than the canonical classification tree. When a new explainer is added, its `p` field can point to the local HTML page so the menu changes from “Webpage coming soon” to “Explainer”.
 
 The homepage is bilingual. It opens in Chinese; the `EN` / `中文` button in the header switches languages, and the choice is remembered in the browser. Add `?lang=en` to a link to open the English version directly, and `?q=` to open it with a search already filled in (for example `?lang=en&q=protein+design`).
 
-Select **Only papers with explainers / 仅显示已有讲解** beside the catalogue search to show papers with an available explainer. This filter combines with the global and theme searches, includes explainers shared across themes, and can be linked directly with `?explainers=1`.
+Select **Only papers with explainers / 仅显示已有讲解** beside the catalogue search to show papers with an available explainer. This filter combines with the global and theme searches, uses each paper’s single explainer link, and can be linked directly with `?explainers=1`.
 
 With a search active, the explainer filter shows matching / total explainer counts; **Clear search / 清除搜索** clears global and theme queries while keeping the current filter setting. Published catalogue updates sync automatically while preserving searches, the filter, language and expanded sections; a failed refresh keeps the current results.
 
 The **Explainers from the past week / 近一周的讲解页** section includes explainers first created within the last seven UTC calendar days, ordered by their precise creation time, including creations on the same day; updating an existing page does not return it to the list or move it to the top. Before publishing, run `node scripts/update-explainer-updates.cjs` after committing the explainer changes to initialise missing creation timestamps from Git history while preserving existing creation times and first-publication dates; see the [catalogue guide](references/paper-catalog-guide.md).
 
 The homepage and all 15 explainers share expandable publication-time author/affiliation bylines and separate Published, Accepted and Preprint posted dates. Search includes full author lists, reliable Chinese/English institution names and acronyms. Metadata is maintained once per source URL in the catalogue; see the [schema and generation steps](references/paper-catalog-guide.md#authors-affiliations-and-paper-dates) and [unverified-information ledger](references/paper-metadata-audit.md).
+
+## Classification and filters
+
+Use the primary-theme selector and the expandable cross-disciplinary tags alongside global or within-theme search. Tags have separate object, method, task and application dimensions: selections within one dimension use OR; different dimensions use AND. For example, `?theme=mof&tag=application%3Aree` selects MOF rare-earth adsorption/separation, and `?tag=object%3Amof&tag=method%3Amlip` selects MOF interatomic potentials. `MLP`, `MLIP` and the old `AIRS` abbreviation are searchable aliases; the synthesis paper now displays its original abbreviation, AIRES.
+
+A paper reference uses `?paper=<stable-id>` and opens the primary entry. Existing `?q=`, `?lang=`, `?explainers=1`, `#themes`, `#recent` and all explainer paths remain valid. Related readings and routes show the primary theme and do not affect the 451-paper total. A migration ledger preserves all 463 old listings: [`taxonomy-migration.json`](references/taxonomy-migration.json).
+
+Run `node scripts/check-taxonomy.cjs --data-only` for migration and schema checks. Browser checks are described in the [catalogue guide](references/paper-catalog-guide.md).
