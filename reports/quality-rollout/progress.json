@@ -72,23 +72,28 @@
       "papers": [
         {
           "slug": "uio66-dangling-linkers",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "437739d0e3ef7a3e214076c1a1c360ebe048ffd7"
         },
         {
           "slug": "ree-mof-critical-review",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "437739d0e3ef7a3e214076c1a1c360ebe048ffd7"
         },
         {
           "slug": "ree-mof-targeted-review",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "437739d0e3ef7a3e214076c1a1c360ebe048ffd7"
         },
         {
           "slug": "ree-porous-framework-review",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "437739d0e3ef7a3e214076c1a1c360ebe048ffd7"
         },
         {
           "slug": "ree-mof-protocol",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "437739d0e3ef7a3e214076c1a1c360ebe048ffd7"
         }
       ]
     },
@@ -97,23 +102,23 @@
       "papers": [
         {
           "slug": "functionalized-cr-mil101",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "acrylic-mil101-scandium",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "dual-functional-uio66-gd",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "uio66-zif8-ree",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "organophosphorus-mil101",
-          "status": "queued"
+          "status": "validated-for-publication"
         }
       ]
     },

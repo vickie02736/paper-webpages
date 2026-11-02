@@ -39,3 +39,17 @@ JS syntax and page-only static checks pass. `/tmp/gd-qa.cjs` passes all five mat
 
 - `dual-functional-uio66-gd.html` SHA-256: `c61a002c51f6e0ca04f70c7b7d9b02ad5b82db701e2768ad055191e5c266c559`
 - `dual-functional-uio66-gd--ie8b05220_si_001.pdf` SHA-256: `74911581aa0421147b830b4b955efe4ce034238a5e3bc4b3e0d47e2863524a28`
+
+## High-school teaching revision — 2026-11-02
+
+P1 prerequisite / mathematical meaning: synthesis lists TPA/TMA and ED without a novice definition; capacity labels Q0 but its saturation meaning needs a worked point. Explain feed names and input/output flow, derive half-loading and contrast capacity with time.
+
+New method guide: Source: Main §§2.2–3.2, Scheme 1; SI-1 and Tables S1–S2.
+
+New evidence comparison: Source: Main Table 1; SI Eq. S4 and Table S2. The half-loading point follows directly from this equation.
+
+Reread main synthesis and §3.2 text, SI1 and EqS4/TableS2. 39.5mg/g and6.99mg/L are derived from Q0=79,b=.143 and labeled model calculations. Preserved kinetic figure ambiguity and missing isotherm-pH specificity; no unique O/N geometry or rate improvement inferred.
+
+Reader task: Check: does a 4.94-fold fitted capacity increase imply 4.94-fold faster uptake? No. Capacity compares endpoint amounts; kinetics compares progress toward them. The article’s text reports slower equilibration for the ED material, with the kinetic-figure labeling issue retained.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

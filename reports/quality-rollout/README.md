@@ -17,3 +17,5 @@ Deployments target the existing GitHub Pages source, main branch, repository roo
 - Batch 2: [before audit](batch-2-before.md), [science / teaching / technical review](batch-2-review.md), [browser checks](batch-2-technical.json).
 
 - Batch 3: [before audit](batch-3-before.md), [science / teaching / technical review](batch-3-review.md), [browser checks](batch-3-technical.json).
+
+- Batch 4: [before audit](batch-4-before.md), [science / teaching / technical review](batch-4-review.md), [browser checks](batch-4-technical.json).

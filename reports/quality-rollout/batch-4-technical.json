@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "batch": 4,
+  "pages": [
+    "functionalized-cr-mil101",
+    "acrylic-mil101-scandium",
+    "dual-functional-uio66-gd",
+    "uio66-zif8-ree",
+    "organophosphorus-mil101"
+  ],
+  "viewportLanguageDepthCombinations": 90,
+  "sectionAnchorChecks": 882,
+  "checks": [
+    "default foundations/evidence, progressive method and details",
+    "Chinese/English rendered text",
+    "keyboard Enter/Space, focus and native checkpoint",
+    "language/depth preserve expanded state and scroll",
+    "all section anchors; no page overflow or local HTTP/page errors",
+    "direct English reload"
+  ],
+  "screenshots": "/tmp/mof-quality-batch-4",
+  "limits": [
+    "source accuracy and teaching audit are separate",
+    "no human comprehension or real screen-reader test",
+    "no new image loading controls in these additions"
+  ]
+}

@@ -45,3 +45,17 @@ All80displayacross2materials×2feeds×4REEstates5bars0–3dimensionlessLOGscale.
 uio66-zif8-ree-publisher.html SHA256 b518a14ffb03d08bd3b5c9d51a29191f42767ce059f320be159c3735a36c0b3d
 
 uio66-zif8-ree-si.doc SHA256 96ca2eacde5262f1a7df01d238925d35be75368cfb0a2d3f034e5ca893217ef2
+
+## High-school teaching revision — 2026-11-02
+
+P1 background / formula chain: assembly assumes PVP/U6N/ZIF identities; competition starts with nested q/C and log. Add named objects, preparation rationale, two-stage quotient explanation and correct zero baseline before reading all80 cells.
+
+New method guide: Source: Main §§2.2, 3.1, Scheme 1 and Figs. 1–2; SI assembly and characterization.
+
+New evidence comparison: Source: SI Eq. 11 and Tables S10–S11; feed definitions in main Fig. 10A–B.
+
+Rechecked main assembly/Fig10 captions, visually inspected SI Eq11 on renderedp7 and read TablesS1–S7/S10–S11. Kept unspecified log base; no back-transformed beta or universal composite superiority. The original unit correction mg/g→mmol/g remains and no source data are changed.
+
+Reader task: Check: does exceeding U6N establish superiority over both parents? No. The SI single-ion Langmuir tables give ZIF-8 higher capacity parameters for all four REEs than the selected core–shell material. Acid response, capacity and reuse require separate comparisons with both baselines.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

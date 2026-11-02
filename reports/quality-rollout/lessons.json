@@ -2210,5 +2210,751 @@
     },
     "audit": "P1 terminology / process evidence: recovery correctly says digestion but leaves a novice to reconstruct the Cu/REE liquid-solid routes. Reuse says “不解吸” without contrasting the omitted regeneration step. Add instrument definition, material-flow sequence and loading-versus-regeneration comparison.",
     "science": "Reread final main Procedure4/Fig3 and Fig6C/Procedure3 plus relevant SI. Acid digestion and hydroxide precipitation are preserved with stated conditions; no quantitative Cu-free claim. SourceData loading interpretation retained and no original arrays refitted. Existing SI leaching discrepancies remain separate."
+  },
+  "functionalized-cr-mil101": {
+    "lead": [
+      "给孔道加结合基团，可能让稀土吸附增加，即使气体能进入的表面积下降。这篇论文比较五种 Cr-MIL-101，关键是同时看接在哪里、吸的是谁，以及再生后还剩什么。",
+      "Adding binding groups can increase rare-earth uptake even as gas-accessible area falls. This paper compares five Cr-MIL-101 materials, asking where groups attach, which ion is captured and what survives regeneration."
+    ],
+    "foundationTitle": [
+      "孔道提供空间，化学基团提供结合环境",
+      "Pores provide space; chemical groups provide binding environments"
+    ],
+    "foundation": [
+      "Cr-MIL-101 是铬（Cr）节点与有机连接体构成的多孔框架。功能化是在框架上引入额外化学基团。它可能增加离子的结合位置，同时占用部分孔空间；因此“面积最大”不等于“吸附最多”。",
+      "Cr-MIL-101 is a porous framework of chromium (Cr) nodes and organic linkers. Functionalization adds chemical groups. This can introduce ion-binding environments while occupying pore space, so the largest area need not give the most uptake."
+    ],
+    "terms": [
+      [
+        [
+          "PMIDA",
+          "PMIDA"
+        ],
+        [
+          "含羧酸、膦酸和氮的有机分子，本研究把它接到含氨基的连接体上。名称表示分子身份，不是证明每个部位都已结合 Gd。",
+          "An organic molecule containing carboxylic-acid, phosphonic-acid and nitrogen groups, attached here to amino-bearing linkers. Its name identifies the molecule, not proof that every group binds Gd."
+        ]
+      ],
+      [
+        [
+          "ED 与 DETA",
+          "ED and DETA"
+        ],
+        [
+          "分别为乙二胺和二乙烯三胺，含可参与结合的氮。本研究的接入路线与 PMIDA 不同：利用脱水后的 Cr 位点。",
+          "Ethylenediamine and diethylenetriamine contain nitrogen that can participate in binding. Their introduction here uses dehydrated Cr sites, a different route from PMIDA."
+        ]
+      ],
+      [
+        [
+          "BET 与 qₑ",
+          "BET and qₑ"
+        ],
+        [
+          "BET 是由气体吸附估计的每克可达表面积；qₑ 是平衡时每克吸附剂上的目标质量。前者用 m²/g，后者用 mg/g，测量对象不同。",
+          "BET estimates gas-accessible area per gram; qₑ is target mass per gram of sorbent at equilibrium. Their units, m²/g and mg/g, describe different objects."
+        ]
+      ]
+    ],
+    "problem": [
+      "读完应能解释为什么增加结合能力与减少孔面积可同时发生，并用表 2 核对“最好”的材料是否随稀土改变。",
+      "You should explain how stronger uptake and reduced pore area can coexist, and use Table 2 to check whether the best material changes with the REE."
+    ],
+    "methodTarget": "routes",
+    "methodTitle": [
+      "两条接入路线，为何不能合画成同一种结构？",
+      "Why must the attachment routes remain distinct?"
+    ],
+    "steps": [
+      [
+        [
+          "先确定支撑框架",
+          "Identify the support"
+        ],
+        [
+          "母体是 Cr 节点与 BDC 连接体；含氨基版本从氨基化连接体制备，为下一步提供接枝位置。",
+          "The parent contains Cr nodes and BDC linkers. An amino-bearing version is prepared with aminated linkers to provide attachment positions for the next step."
+        ]
+      ],
+      [
+        [
+          "在连接体上接 PMIDA",
+          "Attach PMIDA to linkers"
+        ],
+        [
+          "DCC 是促成连接反应的试剂，帮助氨基与 PMIDA 的羧酸形成酰胺键。参与连接的部位与剩余可参与吸附的基团需要区分。",
+          "DCC is a coupling reagent that helps an amino group react with a PMIDA carboxylic acid to form an amide bond. Distinguish the attachment group from remaining groups available for adsorption."
+        ]
+      ],
+      [
+        [
+          "另一路在 Cr 位点引入胺",
+          "Introduce amines through Cr sites by another route"
+        ],
+        [
+          "ED/DETA 用脱水 Cr 位点接入。比较酸再生后行为时，要把这种连接方式与 PMIDA 的路线一起考虑。",
+          "ED/DETA are introduced through dehydrated Cr sites. Their different attachment route matters when comparing behavior after acid regeneration."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "流程解释制备关系，不是新测得的原子结构。光谱与元素分析支持功能化，但不唯一确定全部吸附 Gd 的局部几何。",
+      "The flow explains preparation relationships, not a newly resolved atomic structure. Spectra and elemental analysis support functionalization without uniquely locating all adsorbed Gd geometries."
+    ],
+    "methodSource": [
+      "出处：正文制备、图 1 与方案 1；SI-1、SI-2 和相关表征。",
+      "Source: Main preparation, Fig. 1 and Scheme 1; SI-1, SI-2 and associated characterization."
+    ],
+    "evidenceTarget": "models",
+    "evidenceTitle": [
+      "本次实验最多能提供多少 Gd？",
+      "How much Gd is available in this experiment?"
+    ],
+    "comparison": [
+      [
+        [
+          "进料给出的上限",
+          "Ceiling imposed by the feed"
+        ],
+        [
+          "筛选用 100 mg/L、15 mL 溶液和 15 mg 吸附剂。开始只有 100 × 0.015 = 1.5 mg Gd，全部吸走也只得到 100 mg/g。",
+          "The screening uses 100 mg/L, 15 mL solution and 15 mg sorbent. Only 100 × 0.015 = 1.5 mg Gd is initially available, giving at most 100 mg/g even if all is captured."
+        ]
+      ],
+      [
+        [
+          "材料拟合给出的参数",
+          "Parameter estimated by the material model"
+        ],
+        [
+          "表 2 的 PMIDA 筛选结果为 87.7 mg/g；表 3 的 Langmuir qₘ 为 90.0 mg/g。前者是这次条件下的读数，后者由等温线拟合，含义不同。",
+          "Table 2 reports 87.7 mg/g for PMIDA in screening; Table 3 gives a Langmuir qₘ of 90.0 mg/g. The first is uptake under the screening conditions; the second is fitted from an isotherm."
+        ]
+      ]
+    ],
+    "equation": [
+      "qₑ = (C₀ − Cₑ)V/m；进料上限 C₀V/m = 100 mg/g",
+      "qₑ = (C₀ − Cₑ)V/m; feed ceiling C₀V/m = 100 mg/g"
+    ],
+    "equationMeaning": [
+      "C₀、Cₑ 是初始和最终平衡浓度（mg/L），V 用 L，m 用 g。这里 15 mL = 0.015 L，15 mg = 0.015 g。公式假设体积不变且浓度损失归于吸附；空白对照用于排查其他去向。",
+      "C₀ and Cₑ are initial and final equilibrium concentrations in mg/L; V is in L and m in g. Here 15 mL = 0.015 L and 15 mg = 0.015 g. The balance assumes constant volume and concentration loss due to adsorption; blanks test other destinations."
+    ],
+    "inference": [
+      "100 mg/g 是这一进料量的上限，不能当成材料的固有饱和容量。模型曲线也不能单凭拟合优度证明微观位点完全一致。",
+      "100 mg/g is the ceiling for this feed inventory, not an intrinsic material saturation capacity. A good curve fit likewise does not prove microscopically identical sites."
+    ],
+    "evidenceSource": [
+      "出处：正文实验条件、式 1、表 2–3；SI-3。上限为按原文条件计算。",
+      "Source: Main experimental conditions, Eq. 1 and Tables 2–3; SI-3. The ceiling is calculated from reported conditions."
+    ],
+    "question": [
+      "自测：PMIDA 对 Gd 容量最高，能否说它对所有被测稀土都最高？",
+      "Check: does the highest Gd uptake make PMIDA best for every tested REE?"
+    ],
+    "answer": [
+      "不能。表 2 中 DETA 对 La、Ce、Nd 的筛选容量高于 PMIDA，PMIDA 对 Sm、Gd 更高。要按离子与实验类型读表，不能把摘要的总体排序当成每一列的结果。",
+      "No. Table 2 gives higher DETA screening uptake for La, Ce and Nd, while PMIDA is higher for Sm and Gd. Read the actual ion and experiment rather than extending the abstract’s general ordering to every column."
+    ],
+    "depthSections": {},
+    "audit": "P1 terminology / denominator: routes names DCC, ED, DETA and PMIDA before unpacking roles; models distinguishes 87.7 and90.0 but does not show feed inventory. Add preparation-purpose flow and a 15mg/15mL mass balance. Preserve all25 screening values and ion-dependent ranking.",
+    "science": "Rechecked main preparation/Scheme1, Eq1 and Tables2–3 plus SI1–3. Feed ceiling100mg/g is derived from reported100mg/L,15mL,15mg, not a fitted capacity. PMIDA attachment remains linker-amide rather than Cr-node grafting. Approx90% remains an adsorbed-ion composition with unresolved mass/mole convention."
+  },
+  "acrylic-mil101-scandium": {
+    "lead": [
+      "加入更多羧酸基团后，材料对钪的捕集提高了；但容量、稀土之间的偏好和酸洗后的耐受性，需要三套不同证据。",
+      "Adding carboxylic-acid groups improves scandium capture, but uptake, preference among rare earths and survival of acid washing require different evidence."
+    ],
+    "foundationTitle": [
+      "钪离子、结合基团与水在竞争什么？",
+      "What competes among scandium, binding groups and water?"
+    ],
+    "foundation": [
+      "Sc(III) 表示带三个正电荷的钪离子；它在水中被水分子包围。AA 是丙烯酸，带有羧酸基团。作者把 AA 引入多孔 MIL-101，希望增加可参与结合的部位，但这些部位也受酸碱性和孔道可达性的影响。",
+      "Sc(III) is scandium with three positive charges, surrounded by water in solution. AA is acrylic acid, which carries a carboxylic-acid group. The authors introduce AA into porous MIL-101 to add binding environments, whose use also depends on acidity and pore access."
+    ],
+    "terms": [
+      [
+        [
+          "羧酸与质子",
+          "Carboxylic acid and protons"
+        ],
+        [
+          "羧酸基团可失去 H⁺，变成带负电的羧酸根。改变 pH 会改变这种状态，也会改变金属离子在水中的化学形态。",
+          "A carboxylic-acid group can lose H⁺ to form a negatively charged carboxylate. Changing pH affects this state and the metal ion’s solution chemistry."
+        ]
+      ],
+      [
+        [
+          "测得容量与拟合极限",
+          "Measured uptake and fitted limit"
+        ],
+        [
+          "一定进料下的平衡量受可提供金属量限制；Langmuir qmax 则是按一系列浓度拟合的模型参数。不能把二者直接当作重复实验的差异。",
+          "Equilibrium uptake at one feed is limited by available metal. Langmuir qmax is a parameter fitted across concentrations. Their difference is not simply disagreement between replicate tests."
+        ]
+      ],
+      [
+        [
+          "Sel 是对数指标",
+          "Sel is logarithmic"
+        ],
+        [
+          "本文对两个分配比的比值取 log，压缩倍数差异。比值为 1 时 Sel 为 0；原文未明确底数，所以不把 Sel 反算成精确倍数。",
+          "The paper applies log to a ratio of two distribution measures, compressing multiplicative differences. A ratio of 1 gives Sel = 0. The base is unspecified, so Sel is not converted back to an exact fold preference."
+        ]
+      ]
+    ],
+    "problem": [
+      "读完应能把材料名称中的两个投料数、三种容量，以及混合体系的 Sel 放回各自的实验设计中。",
+      "You should place the two feed numbers in a material name, three uptake values and mixed-system Sel within their own experimental designs."
+    ],
+    "methodTarget": "synthesis",
+    "methodTitle": [
+      "两个数字来自两次不同的加料",
+      "The two numbers come from different additions"
+    ],
+    "steps": [
+      [
+        [
+          "先形成含 AA 的框架材料",
+          "First prepare the AA-containing framework material"
+        ],
+        [
+          "合成阶段加入 AA，x = 0.072 g 表示此阶段投入的 AA 质量。它不是最终材料 7.2% 或每个节点的占位率。",
+          "AA is added during synthesis; x = 0.072 g is the AA feed mass at that stage. It is not a final 7.2% composition or a node occupancy."
+        ]
+      ],
+      [
+        [
+          "再取定量材料继续修饰",
+          "Then modify a defined amount further"
+        ],
+        [
+          "取 0.1 g AA-0.072@MIL-101，再加入 y 克 AA 进行后续聚合。y = 0.075 g 与第一阶段的 x 使用不同的投料基准。",
+          "Take 0.1 g AA-0.072@MIL-101 and add y grams of AA for subsequent polymerization. y = 0.075 g and first-stage x refer to different feed bases."
+        ]
+      ],
+      [
+        [
+          "量基团，也量孔和吸附",
+          "Measure groups, pores and uptake"
+        ],
+        [
+          "滴定估计酸性基团，气体吸附估计可达表面积，钪实验测捕集。随加料变化的共同趋势，不自动证明只有某一个变量起作用。",
+          "Titration estimates acidic groups, gas sorption estimates accessible area and Sc experiments measure capture. Covarying trends with feed amount do not isolate a single causal variable."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "投料不等于最终保留量；下面的样品选择只切换各自已报告的表 1 数据，不把选定配方的全部混合物与再生结果赋给其他配方。",
+      "Feed is not final retained loading. Sample selection below switches reported Table 1 values, not all mixture and regeneration results from the selected formulation onto other formulations."
+    ],
+    "methodSource": [
+      "出处：正文第 2.2–2.3 节、方案 1 和表 1；SI 表征与等温线。",
+      "Source: Main §§2.2–2.3, Scheme 1 and Table 1; SI characterization and isotherms."
+    ],
+    "evidenceTarget": "capacity",
+    "evidenceTitle": [
+      "三个容量为什么可以同时正确？",
+      "Why can three uptake values all be valid?"
+    ],
+    "comparison": [
+      [
+        [
+          "一次条件下的量",
+          "Uptake under one set of conditions"
+        ],
+        [
+          "62.45 mg/g 是表 1 筛选结果；40.19 mg/g 来自初始 Sc 45 mg/L、303 K 的动力学实验。可用进料、过程和条件不同。",
+          "62.45 mg/g is the Table 1 screening result; 40.19 mg/g comes from the kinetic run at initial Sc 45 mg/L and 303 K. Available feed, procedure and conditions differ."
+        ]
+      ],
+      [
+        [
+          "多浓度拟合的参数",
+          "Parameter fitted across concentrations"
+        ],
+        [
+          "90.21 mg/g 是 Langmuir qmax。模型用不同平衡浓度下的吸附量推测其渐近极限，不是说每杯溶液都能达到这个值。",
+          "90.21 mg/g is Langmuir qmax. The model uses uptake at different equilibrium concentrations to estimate an asymptotic limit, not a loading achieved in every solution."
+        ]
+      ]
+    ],
+    "inference": [
+      "因此不能用 90.21 ÷ 40.19 当成材料改性提升倍数：这里是同一材料、不同测量或模型含义。真实提升要在匹配条件下比较改性前后。",
+      "Thus 90.21 ÷ 40.19 is not a functionalization improvement factor: it compares different measurements or model meanings for the same material. Improvement requires matched-condition comparison before and after modification."
+    ],
+    "evidenceSource": [
+      "出处：正文表 1、表 2、表 3；SI 图 S1。选择性对数定义见正文式 8 和 SI 表 S1。",
+      "Source: Main Tables 1–3 and SI Fig. S1. The logarithmic selectivity definition is in main Eq. 8 and SI Table S1."
+    ],
+    "question": [
+      "自测：Sc/La 的 Sel = 2.31，可以读成 2.31 倍或 2.31% 回收吗？",
+      "Check: can Sc/La Sel = 2.31 mean 2.31-fold preference or 2.31% recovery?"
+    ],
+    "answer": [
+      "都不能。它是分配比之比的对数，不是直接比值或百分数。正值支持该条件下偏向 Sc，但原文底数未明，不能据此给精确倍数，更不能推出产品纯度。",
+      "Neither. It is the logarithm of a distribution-ratio ratio, not a direct ratio or percentage. Its positive sign favors Sc under those conditions, but the unspecified base prevents an exact fold value and it does not establish product purity."
+    ],
+    "depthSections": {
+      "mechanism": 2
+    },
+    "audit": "P1 naming / inference: synthesis explains x/y but begins with unexpanded AA; capacity lists three values without explicitly ruling out a false improvement ratio. Add material chemistry and operation purposes, then compare measured uptake and fitted limits. Keep Sel logarithm visible before the chart.",
+    "science": "Rechecked main preparation/Table1–3 and Eq8, plus SI TableS1/S2 and FigS1. All75 Sel entries remain unchanged; no base assumption or back-transform. Three capacities remain tied to their distinct protocols. No quantitative leaching limit is invented from the absent AA peak."
+  },
+  "dual-functional-uio66-gd": {
+    "lead": [
+      "同时加入含氧和含氮的结合基团后，UiO-66 的拟合 Gd 容量提高，但达到平衡更慢。论文的价值在于让“装多少”和“多久装好”一起接受检验。",
+      "Adding oxygen- and nitrogen-containing groups increases fitted Gd capacity in UiO-66 but slows equilibration. The study asks us to examine how much can load alongside how long loading takes."
+    ],
+    "foundationTitle": [
+      "更多结合环境，不自动意味着更快的通道",
+      "More binding environments do not automatically give faster transport"
+    ],
+    "foundation": [
+      "UiO-66 是锆节点与有机连接体构成的多孔材料。Gd³⁺ 是水中的钆离子。本研究先引入额外羧酸基团，再用乙二胺（ED）修饰，试图增加含氧、含氮的结合环境，同时改变了孔内空间。",
+      "UiO-66 is a porous material of zirconium nodes and organic linkers. Gd³⁺ is the gadolinium ion in solution. The study first adds extra carboxylic-acid groups and then ethylenediamine (ED), seeking more oxygen/nitrogen binding environments while also changing pore space."
+    ],
+    "terms": [
+      [
+        [
+          "平衡",
+          "Equilibrium"
+        ],
+        [
+          "在给定条件下，液体和固体间的净转移不再造成明显浓度变化。平衡量与达到平衡的速度是两个问题。",
+          "Under the specified conditions, net transfer between liquid and solid no longer gives an appreciable concentration change. Equilibrium loading and the speed of reaching it differ."
+        ]
+      ],
+      [
+        [
+          "Q₀ 与 Cₑ",
+          "Q₀ and Cₑ"
+        ],
+        [
+          "Q₀ 是 Langmuir 模型的容量极限参数，单位 mg/g；Cₑ 是接触后平衡液体浓度，单位 mg/L。Cₑ 不是开始加入的浓度。",
+          "Q₀ is the Langmuir capacity-limit parameter in mg/g; Cₑ is the liquid concentration after equilibration in mg/L. Cₑ is not the initial concentration."
+        ]
+      ],
+      [
+        [
+          "BET 面积",
+          "BET area"
+        ],
+        [
+          "由氮气吸附估计每克固体可达表面积。水合 Gd 的进入与结合还受溶液和基团影响，不能只按气体面积比例预测。",
+          "Accessible area per gram estimated from nitrogen sorption. Entry and binding of hydrated Gd also depend on solution chemistry and groups, not simply a gas-area ratio."
+        ]
+      ]
+    ],
+    "problem": [
+      "读完应能解释：为什么 79 mg/g 不能当成任意浓度下的吸附量，为什么容量提升与吸附变慢并不矛盾。",
+      "You should explain why 79 mg/g is not uptake at every concentration and why improved capacity can coexist with slower equilibration."
+    ],
+    "methodTarget": "synthesis",
+    "methodTitle": [
+      "先给可修饰的位置，再检验它的代价",
+      "Create attachment opportunities, then test their cost"
+    ],
+    "steps": [
+      [
+        [
+          "混合两种连接体投料",
+          "Mix two linker feeds"
+        ],
+        [
+          "TPA 是对苯二甲酸，TMA 是均苯三甲酸。用部分 TMA 替代 TPA，作者获得带额外羧酸基团的材料；10/25 是投料标签。",
+          "TPA is terephthalic acid and TMA is trimesic acid. Partial replacement with TMA yields materials with extra carboxylic-acid groups; 10/25 are feed labels."
+        ]
+      ],
+      [
+        [
+          "再引入 ED",
+          "Then introduce ED"
+        ],
+        [
+          "作者用光谱与元素分析支持 ED 的接入及酰胺连接解释。直接给母体加 ED 的对照有助于检查前一步为何重要。",
+          "Spectra and elemental analysis support ED introduction and the authors’ amide-attachment interpretation. Direct ED treatment of the parent helps test the role of the preceding step."
+        ]
+      ],
+      [
+        [
+          "容量、孔道、时间一起比较",
+          "Compare capacity, pores and time together"
+        ],
+        [
+          "改性增加结合环境，也可能影响扩散。正文分别报告 COOH(25) 与其 ED 材料约 4 h 和 6 h 达到完全平衡，不用容量大小代替速度。",
+          "Modification adds binding environments and may affect diffusion. The main text reports about 4 h and 6 h to full equilibrium for COOH(25) and its ED derivative, respectively; capacity is not a proxy for speed."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "这解释了设计与对照的目的，不证明每个最终位点的连接几何。正文动力学图的标注疑点保留，不据此新拟合速度曲线。",
+      "This explains design and controls, not every final site geometry. Ambiguities in the kinetic figure remain disclosed, with no new rate curve fitted from it."
+    ],
+    "methodSource": [
+      "出处：正文第 2.2–3.2 节、方案 1；SI-1 和表 S1–S2。",
+      "Source: Main §§2.2–3.2, Scheme 1; SI-1 and Tables S1–S2."
+    ],
+    "evidenceTarget": "capacity",
+    "evidenceTitle": [
+      "模型中的 79，并不是所有条件下都能装到 79",
+      "A model value of 79 does not mean loading 79 under every condition"
+    ],
+    "comparison": [
+      [
+        [
+          "容量极限参数",
+          "Capacity-limit parameter"
+        ],
+        [
+          "UiO-66-COOH(25)-ED 的 Q₀ = 79 mg/g，来自模型拟合。原始 UiO-66 为 16 mg/g；79/16 ≈ 4.94 是这些参数之比。",
+          "UiO-66-COOH(25)-ED has fitted Q₀ = 79 mg/g versus 16 mg/g for pristine UiO-66. The ratio 79/16 ≈ 4.94 compares these parameters."
+        ]
+      ],
+      [
+        [
+          "给定平衡浓度的模型量",
+          "Model uptake at a given equilibrium concentration"
+        ],
+        [
+          "Langmuir 模型还需要亲和参数 b 和 Cₑ。如果 bCₑ = 1，qₑ 只有 Q₀ 的一半。极限值不等于每次测量的结果。",
+          "The Langmuir model also needs affinity parameter b and Cₑ. If bCₑ = 1, qₑ is only half of Q₀. A limit is not the result of every measurement."
+        ]
+      ]
+    ],
+    "equation": [
+      "qₑ = Q₀bCₑ/(1 + bCₑ)；bCₑ = 1 时 qₑ = 39.5 mg/g",
+      "qₑ = Q₀bCₑ/(1 + bCₑ); at bCₑ = 1, qₑ = 39.5 mg/g"
+    ],
+    "equationMeaning": [
+      "qₑ、Q₀ 用 mg/g，b 用 L/mg，Cₑ 用 mg/L，因此 bCₑ 无单位。SI 给 b = 0.143 L/mg，半量点对应 Cₑ 约 6.99 mg/L。这是已发表参数的教学演算，不是新增实验点。",
+      "qₑ and Q₀ use mg/g, b uses L/mg and Cₑ uses mg/L, making bCₑ dimensionless. With SI b = 0.143 L/mg, half loading occurs at Cₑ ≈ 6.99 mg/L. This is a teaching calculation from published parameters, not a new measured point."
+    ],
+    "inference": [
+      "模型假定有限、等效的结合位置；拟合好不独立证明真实孔中所有位点相同。选择性还需要混合离子实验，不能从单离子 Q₀ 推出。",
+      "The model assumes finite equivalent binding sites; a good fit does not independently establish identical sites in real pores. Selectivity requires mixed-ion evidence and does not follow from single-ion Q₀."
+    ],
+    "evidenceSource": [
+      "出处：正文表 1；SI 式 S4 和表 S2。半量点由该式直接计算。",
+      "Source: Main Table 1; SI Eq. S4 and Table S2. The half-loading point follows directly from this equation."
+    ],
+    "question": [
+      "自测：改性后容量约提高 4.94 倍，能否推断吸附也快了 4.94 倍？",
+      "Check: does a 4.94-fold fitted capacity increase imply 4.94-fold faster uptake?"
+    ],
+    "answer": [
+      "不能。容量比较终点量，动力学比较随时间到达终点的过程。本文文字反而报告 ED 材料平衡更慢；相应动力学图的标注问题也需要保留。",
+      "No. Capacity compares endpoint amounts; kinetics compares progress toward them. The article’s text reports slower equilibration for the ED material, with the kinetic-figure labeling issue retained."
+    ],
+    "depthSections": {
+      "kinetics": 2
+    },
+    "audit": "P1 prerequisite / mathematical meaning: synthesis lists TPA/TMA and ED without a novice definition; capacity labels Q0 but its saturation meaning needs a worked point. Explain feed names and input/output flow, derive half-loading and contrast capacity with time.",
+    "science": "Reread main synthesis and §3.2 text, SI1 and EqS4/TableS2. 39.5mg/g and6.99mg/L are derived from Q0=79,b=.143 and labeled model calculations. Preserved kinetic figure ambiguity and missing isotherm-pH specificity; no unique O/N geometry or rate improvement inferred."
+  },
+  "uio66-zif8-ree": {
+    "lead": [
+      "把较耐酸的框架与高吸附的框架组合，可能改善某些条件下的表现，但不能默认超过每一个母体。本文需要把组装、进料量和选择性定义分别读清。",
+      "Combining frameworks can improve performance under some conditions, but does not automatically beat every parent. This paper requires separate reading of assembly, feed inventory and the selectivity definition."
+    ],
+    "foundationTitle": [
+      "先认识两种框架与中间的聚合物",
+      "Meet the two frameworks and the polymer used between them"
+    ],
+    "foundation": [
+      "U6N 是 UiO-66-NH₂，含锆节点和带氨基的有机连接体；ZIF-8 是锌与咪唑类连接体形成的多孔网络。PVP 是聚乙烯吡咯烷酮，一种用于辅助组装的聚合物。复合物不是把两种粉末的优点简单相加。",
+      "U6N is UiO-66-NH₂, with zirconium nodes and amino-bearing organic linkers; ZIF-8 is a porous zinc–imidazolate network. PVP, polyvinylpyrrolidone, is the polymer used to assist assembly. A composite does not simply add the advantages of two powders."
+    ],
+    "terms": [
+      [
+        [
+          "核与壳",
+          "Core and shell"
+        ],
+        [
+          "作者依据显微形貌描述一种核外长出片状壳的组装。它说明颗粒尺度的分布，不等于已解析所有界面化学键。",
+          "The authors describe a core with a lamellar outer shell from microscopy. This concerns particle-scale arrangement, not a complete atomic map of interface bonds."
+        ]
+      ],
+      [
+        [
+          "吸附量与进料量",
+          "Uptake and feed inventory"
+        ],
+        [
+          "mg/g 是每克固体上的稀土质量。浓度下降能换算吸附量的前提，是知道体积、固体质量以及是否存在其他损失。",
+          "mg/g is REE mass per gram of solid. Converting a concentration drop requires volume, solid mass and checks for other losses."
+        ]
+      ],
+      [
+        [
+          "对数选择性",
+          "Logarithmic selectivity"
+        ],
+        [
+          "把目标与竞争者的分配比相除，再取 log。相等的分配得到 0，不是 1；这与常见直接分离因子有不同基线。",
+          "Divide target partitioning by competitor partitioning, then take log. Equal partitioning gives 0, not 1, unlike a direct separation factor."
+        ]
+      ]
+    ],
+    "problem": [
+      "读完应能说明：复合材料在哪个基线和条件下改善，以及 SI 中 0.71 为什么仍指向稀土偏好。",
+      "You should identify the baseline and conditions under which the composite improves, and explain why SI value 0.71 still points toward REE preference."
+    ],
+    "methodTarget": "assembly",
+    "methodTitle": [
+      "组装步骤改变的是哪一层关系？",
+      "What relationship does each assembly step change?"
+    ],
+    "steps": [
+      [
+        [
+          "分散 U6N 与 PVP",
+          "Disperse U6N with PVP"
+        ],
+        [
+          "先让已有 U6N 颗粒与聚合物接触，提供后续组装环境。名称中的 20/30/40/50 是 PVP 投料 mg，不是最终质量百分数。",
+          "Bring existing U6N particles into contact with the polymer to provide the assembly environment. The labels 20/30/40/50 are PVP feed masses in mg, not final mass percentages."
+        ]
+      ],
+      [
+        [
+          "引入 ZIF-8 前驱物",
+          "Introduce ZIF-8 precursors"
+        ],
+        [
+          "加入锌盐和 2-甲基咪唑。作者观察 PVP 与溶剂条件共同影响两种组装形貌；它们不是只改变一个孤立变量的所有对照。",
+          "Add zinc salt and 2-methylimidazole. PVP and solvent conditions jointly affect the two observed arrangements; these comparisons do not isolate a single variable in every case."
+        ]
+      ],
+      [
+        [
+          "分别看形貌、成分与性能",
+          "Examine morphology, composition and performance separately"
+        ],
+        [
+          "显微图看颗粒位置，衍射与光谱识别组分，吸附实验检验功能。看到两种组分并不直接证明界面如何结合稀土。",
+          "Microscopy locates particle features; diffraction and spectra identify components; adsorption tests function. Detecting both components does not directly establish how the interface binds REEs."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "流程是对正文制备和表征的解释，不构造未经坐标验证的原子级核壳图。不同 PVP 投料和反向组装的容量仍保留各自数据。",
+      "This flow interprets preparation and characterization without inventing an atomistic core–shell structure. Each PVP feed and inverse assembly retains its own capacity data."
+    ],
+    "methodSource": [
+      "出处：正文第 2.2、3.1 节，方案 1 与图 1–2；SI 组装与表征。",
+      "Source: Main §§2.2, 3.1, Scheme 1 and Figs. 1–2; SI assembly and characterization."
+    ],
+    "evidenceTarget": "competition",
+    "evidenceTitle": [
+      "先看“比了什么”，再看“有没有取对数”",
+      "Read what is divided, then whether a logarithm is applied"
+    ],
+    "comparison": [
+      [
+        [
+          "第一层：每个离子的分配",
+          "First: partitioning of each ion"
+        ],
+        [
+          "qₑ/Cₑ 比较每克固体留下的量与液体剩余浓度。两离子使用一致单位、同一个竞争体系，才可进一步比较。",
+          "qₑ/Cₑ compares loading per gram with concentration remaining in liquid. Use consistent units and the same competition system for both ions before comparing them."
+        ]
+      ],
+      [
+        [
+          "第二层：比值取 log",
+          "Second: apply log to the ratio"
+        ],
+        [
+          "SI 式 11 再对两者比值取 log。比值为 1 时，log(1)=0；正值表示偏向稀土。0.71 不能按“直接比值小于 1”解释。",
+          "SI Eq. 11 then applies log to their ratio. A ratio of 1 gives log(1)=0; a positive result favors the REE. Thus 0.71 must not be read as a direct ratio below 1."
+        ]
+      ]
+    ],
+    "equation": [
+      "SelREE/X = log[(qₑ/Cₑ)REE ÷ (qₑ/Cₑ)X]",
+      "SelREE/X = log[(qₑ/Cₑ)REE ÷ (qₑ/Cₑ)X]"
+    ],
+    "equationMeaning": [
+      "qₑ 用 mg/g，Cₑ 用 mg/L，因此单个 qₑ/Cₑ 用 L/g；两者相除后单位抵消。X 是共存金属。原式没有给出 log 底数，本页不把值反变换成精确倍数。",
+      "qₑ uses mg/g and Cₑ mg/L, so each qₑ/Cₑ has units L/g; the ratio cancels those units. X is a competing metal. The source does not specify the log base, so values are not back-transformed to exact fold preferences."
+    ],
+    "inference": [
+      "这些值仍不是去除百分数或最终产品纯度。切换两种进料时，是稀土从 20 增至 40 mg/L、其他金属维持 20 mg/L；不能把该差异说成竞争金属浓度增加。",
+      "These values are neither removal percentages nor final product purity. Across the two feeds, REEs increase from 20 to 40 mg/L while other metals remain at 20 mg/L; this must not be described as increasing competitor concentration."
+    ],
+    "evidenceSource": [
+      "出处：SI 式 11、表 S10–S11；正文图 10A–B 的进料说明。",
+      "Source: SI Eq. 11 and Tables S10–S11; feed definitions in main Fig. 10A–B."
+    ],
+    "question": [
+      "自测：复合物超过 U6N，就证明超过两种母体了吗？",
+      "Check: does exceeding U6N establish superiority over both parents?"
+    ],
+    "answer": [
+      "没有。SI 单离子 Langmuir 表中，ZIF-8 对四种稀土的容量参数都高于所选核壳材料。复合的耐酸表现、容量与再生需分别比较，不能只选较低的基线。",
+      "No. The SI single-ion Langmuir tables give ZIF-8 higher capacity parameters for all four REEs than the selected core–shell material. Acid response, capacity and reuse require separate comparisons with both baselines."
+    ],
+    "depthSections": {
+      "units": 2,
+      "mechanism": 2
+    },
+    "audit": "P1 background / formula chain: assembly assumes PVP/U6N/ZIF identities; competition starts with nested q/C and log. Add named objects, preparation rationale, two-stage quotient explanation and correct zero baseline before reading all80 cells.",
+    "science": "Rechecked main assembly/Fig10 captions, visually inspected SI Eq11 on renderedp7 and read TablesS1–S7/S10–S11. Kept unspecified log base; no back-transformed beta or universal composite superiority. The original unit correction mg/g→mmol/g remains and no source data are changed."
+  },
+  "organophosphorus-mil101": {
+    "lead": [
+      "把含磷萃取剂放进多孔框架后，可以改变对铒的偏好；但框架仍有衍射峰，不代表萃取剂也留在原位。本文把捕集、选择性与组分流失放在一起检验。",
+      "Placing phosphorus-containing extractants in a porous framework changes erbium preference, but retained diffraction does not guarantee extractant retention. This study connects capture, selectivity and component loss."
+    ],
+    "foundationTitle": [
+      "同一颗粒里，有支架也有功能分子",
+      "One particle contains both a support and functional molecules"
+    ],
+    "foundation": [
+      "MIL-101 的 Cr 节点与有机连接体提供多孔支架。加入的含磷有机分子提供新的结合环境。REE 是稀土元素，本文重点比较 Nd、Gd、Er（钕、钆、铒）；Er³⁺ 指带三正电荷的铒离子。",
+      "Cr nodes and organic linkers in MIL-101 provide the porous support. Added phosphorus-containing organic molecules provide new binding environments. REEs are rare-earth elements; Nd, Gd and Er denote neodymium, gadolinium and erbium, with Er³⁺ the triply charged erbium ion."
+    ],
+    "terms": [
+      [
+        [
+          "C、H、T",
+          "C, H and T"
+        ],
+        [
+          "分别代表 Cyanex-272、HDEHP 和 TBP 三种含磷萃取剂。C/H 有可失去质子的酸性基团；TBP 是中性分子，不能把三者的机制画成完全相同。",
+          "Cyanex-272, HDEHP and TBP are three phosphorus-containing extractants. C/H have acidic groups that can lose protons; TBP is neutral, so their mechanisms must not be drawn identically."
+        ]
+      ],
+      [
+        [
+          "萃取剂与固体吸附剂",
+          "Extractant and solid sorbent"
+        ],
+        [
+          "萃取剂常用于帮助离子转入另一相；这里将其引入多孔固体。最终效果取决于它是否可达、是否保留，以及水溶液条件。",
+          "An extractant helps transfer ions into another phase; here it is introduced into a porous solid. Performance depends on accessibility, retention and solution conditions."
+        ]
+      ],
+      [
+        [
+          "浸出",
+          "Leaching"
+        ],
+        [
+          "材料中的组分进入周围液体。测溶液的 Cr 可追踪含铬组分，P 可追踪含磷组分；元素浓度不自动给出完整分子身份。",
+          "Components enter the surrounding liquid. Solution Cr tracks chromium-containing components and P phosphorus-containing components; elemental concentration does not identify complete molecules by itself."
+        ]
+      ]
+    ],
+    "problem": [
+      "读完应能解释：为什么同样保留 PXRD 峰，酸再生后的三种材料仍可有不同的吸附表现。",
+      "You should explain why the three materials can differ in post-acid uptake despite retaining PXRD features."
+    ],
+    "methodTarget": "materials",
+    "methodTitle": [
+      "先固定功能分子，再分别检查支架和分子",
+      "Introduce functional molecules, then check support and molecules separately"
+    ],
+    "steps": [
+      [
+        [
+          "制备改性液",
+          "Prepare the modification mixture"
+        ],
+        [
+          "材料名中的“50”是相对于甲苯的改性剂投料质量百分数。它不是最终固体中实测 50% 萃取剂。",
+          "“50” is the modifier feed mass percentage relative to toluene. It is not a measured 50% extractant content in the final solid."
+        ]
+      ],
+      [
+        [
+          "接触、洗涤、表征",
+          "Contact, wash and characterize"
+        ],
+        [
+          "将功能分子引入 MIL-101 后，用孔隙、光谱与组分信息检查变化。不同批次或正文/SI 的面积差异仍分别记录。",
+          "After introducing functional molecules into MIL-101, examine pores, spectra and composition. Batch differences and main/SI area discrepancies remain separately recorded."
+        ]
+      ],
+      [
+        [
+          "经过吸附和酸再生再检查",
+          "Recheck after adsorption and acid regeneration"
+        ],
+        [
+          "不仅看固体衍射，也看含磷基团光谱和液体元素浓度。支架有序、功能分子保留与吸附恢复是三种证据。",
+          "Examine solid diffraction, phosphorus-group spectra and solution elemental concentrations. Support order, functional-molecule retention and recovered uptake are three distinct observations."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "这不是保证分子永久固定的路线。T50 在首次再生后吸附明显失败，不能因剩余衍射峰把它归为功能完全稳定。",
+      "This route does not guarantee permanent immobilization. T50 loses uptake after the first regeneration and cannot be called fully functionally stable from retained diffraction alone."
+    ],
+    "methodSource": [
+      "出处：正文第 2.2、3.7 节；SI S1–S3、图 S12–S14。",
+      "Source: Main §§2.2, 3.7; SI S1–S3 and Figs. S12–S14."
+    ],
+    "evidenceTarget": "leaching",
+    "evidenceTitle": [
+      "溶液中测到 P，能推出多少萃取剂丢失？",
+      "What does measured solution P reveal about extractant loss?"
+    ],
+    "comparison": [
+      [
+        [
+          "测到的量：元素浓度",
+          "Measured quantity: elemental concentration"
+        ],
+        [
+          "SI 表 S4 中，T50 在 pH 1.03 的溶液 P 为 29958.7 μg/L，即 29.9587 mg/L。这是每升液体中的磷元素质量。",
+          "SI Table S4 gives solution P of 29958.7 μg/L for T50 at pH 1.03, or 29.9587 mg/L. This is elemental phosphorus mass per liter of liquid."
+        ]
+      ],
+      [
+        [
+          "想知道的量：原负载损失比例",
+          "Desired quantity: fraction of original loading lost"
+        ],
+        [
+          "还需要液体体积、原始固体中 P 总量，以及释放物种或分子是否完整的信息。一个浓度数值本身没有“原负载总量”的分母。",
+          "This also needs liquid volume, original total P in the solid and information about released species or molecular integrity. A concentration alone lacks the original-loading denominator."
+        ]
+      ]
+    ],
+    "equation": [
+      "29958.7 μg/L ÷ 1000 = 29.9587 mg/L",
+      "29958.7 μg/L ÷ 1000 = 29.9587 mg/L"
+    ],
+    "equationMeaning": [
+      "1000 μg = 1 mg。这只换单位，没有把 P 换成 TBP 分子质量，也没有把浓度换成百分数。",
+      "1000 μg equals 1 mg. This only changes units; it neither converts P into TBP molecular mass nor concentration into percentage loss."
+    ],
+    "inference": [
+      "P 浸出与酸循环中的功能下降是互补线索；不同实验的 pH、处理和时间仍需匹配，不能把一条 pH 浸出曲线当作酸循环的完整因果证明。",
+      "P leaching and functional loss during acid cycling are complementary clues, but pH, treatment and time must be matched. A leaching-versus-pH series is not a complete causal demonstration of cycling failure."
+    ],
+    "evidenceSource": [
+      "出处：SI 表 S4 的 T50–P 行；正文图 4c 及 SI 图 S12–S14 为独立再生证据。",
+      "Source: T50–P row in SI Table S4; main Fig. 4c and SI Figs. S12–S14 provide separate regeneration evidence."
+    ],
+    "question": [
+      "自测：衍射峰保留，为什么还需测含磷基团和溶液 P？",
+      "Check: why measure phosphorus groups and solution P when diffraction peaks remain?"
+    ],
+    "answer": [
+      "衍射主要观察仍有序的固体支架；功能分子可能流失而不抹去支架全部峰。光谱、液体组分与下一轮吸附分别补充功能保留的证据。",
+      "Diffraction mainly probes the ordered solid support. Functional molecules can be lost without erasing all support peaks. Spectra, liquid composition and next-run uptake add evidence about functional retention."
+    ],
+    "depthSections": {
+      "mechanism": 2
+    },
+    "audit": "P1 object distinction / unit meaning: C/H/T labels and “骨架保留” need an explicit two-component material model. Leaching graph already warns about percent conversion, but does not show why elemental concentration lacks the denominator. Add preparation/check flow and a sourced μg-to-mg example.",
+    "science": "Reread main materials/regeneration and full SI TableS4 plus S12–S14 captions. 29.9587mg/L is exact unit conversion of29958.7μg/L P, not TBP concentration or release fraction. Kept pH-leaching and regeneration conditions separate and preserved reported zero/missing-value distinctions."
   }
 }

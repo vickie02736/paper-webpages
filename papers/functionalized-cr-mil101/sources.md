@@ -48,3 +48,17 @@ Page-only static and JS syntax pass. Browser checks pass at1440/768/390px, allfi
 
 - `functionalized-cr-mil101.html`: SHA-256 `ac233ee89090be7db28c485b9fb99c8450659fe66b8889d415d26ada91fdae3e`; 2301773 bytes.
 - `functionalized-cr-mil101--am8b07130_si_001.pdf`: SHA-256 `61d2f000e8da8842ab21b605c1bf8faaa300374074131066155fbc62b4cf4846`; 1540611 bytes.
+
+## High-school teaching revision — 2026-11-02
+
+P1 terminology / denominator: routes names DCC, ED, DETA and PMIDA before unpacking roles; models distinguishes 87.7 and90.0 but does not show feed inventory. Add preparation-purpose flow and a 15mg/15mL mass balance. Preserve all25 screening values and ion-dependent ranking.
+
+New method guide: Source: Main preparation, Fig. 1 and Scheme 1; SI-1, SI-2 and associated characterization.
+
+New evidence comparison: Source: Main experimental conditions, Eq. 1 and Tables 2–3; SI-3. The ceiling is calculated from reported conditions.
+
+Rechecked main preparation/Scheme1, Eq1 and Tables2–3 plus SI1–3. Feed ceiling100mg/g is derived from reported100mg/L,15mL,15mg, not a fitted capacity. PMIDA attachment remains linker-amide rather than Cr-node grafting. Approx90% remains an adsorbed-ion composition with unresolved mass/mole convention.
+
+Reader task: Check: does the highest Gd uptake make PMIDA best for every tested REE? No. Table 2 gives higher DETA screening uptake for La, Ce and Nd, while PMIDA is higher for Sm and Gd. Read the actual ion and experiment rather than extending the abstract’s general ordering to every column.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

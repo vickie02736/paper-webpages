@@ -58,7 +58,7 @@
   }
   ce.addEventListener('input', renderMaterial);
   document.querySelectorAll('[data-mixture]').forEach(button => button.addEventListener('click', () => { mixture = button.dataset.mixture; renderMixture(); }));
-  window.AtlasPaper.init({
+  window.AtlasPaper.init({depth:window.PaperLesson.depth,
     shortTitle:'UiO-66–COOH–ED',
     title:{zh:'双官能团 UiO-66：Gd 容量与选择性',en:'Dual-functional UiO-66: Gd uptake and selectivity'},
     sections:[{id:'core',zh:'核心问题',en:'Core idea'},{id:'synthesis',zh:'合成路线',en:'Preparation'},{id:'capacity',zh:'容量与孔隙',en:'Uptake and pores'},{id:'kinetics',zh:'动力学',en:'Kinetics'},{id:'ph',zh:'pH 与机制',en:'pH and mechanism'},{id:'selectivity',zh:'混合选择性',en:'Selectivity'},{id:'regeneration',zh:'酸洗再生',en:'Regeneration'},{id:'limits',zh:'边界与联系',en:'Limits'},{id:'sources',zh:'来源',en:'Sources'}],

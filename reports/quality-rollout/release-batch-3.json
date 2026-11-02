@@ -1,0 +1,44 @@
+{
+  "commit": "437739d0e3ef7a3e214076c1a1c360ebe048ffd7",
+  "pagesBuild": "built",
+  "onlineChecks": [
+    {
+      "path": "papers/uio66-dangling-linkers/",
+      "status": 200,
+      "newLessonMarkers": true
+    },
+    {
+      "path": "papers/ree-mof-critical-review/",
+      "status": 200,
+      "newLessonMarkers": true
+    },
+    {
+      "path": "papers/ree-mof-targeted-review/",
+      "status": 200,
+      "newLessonMarkers": true
+    },
+    {
+      "path": "papers/ree-porous-framework-review/",
+      "status": 200,
+      "newLessonMarkers": true
+    },
+    {
+      "path": "papers/ree-mof-protocol/",
+      "status": 200,
+      "newLessonMarkers": true
+    },
+    {
+      "path": "assets/paper-lesson.js",
+      "sha256Matches": true
+    },
+    {
+      "path": "assets/paper-lesson.css",
+      "sha256Matches": true
+    },
+    {
+      "path": "references/paper-catalog.json",
+      "entriesPresent": true,
+      "firstDatesAndCreationTimesUnchanged": true
+    }
+  ]
+}
