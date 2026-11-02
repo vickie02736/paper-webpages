@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "sourceStatus": "Final main and all15rendered SI pages read",
+  "checks": [
+    "12sections/14states/3widths×2languages",
+    "Table2 allratios/fixedscale",
+    "Table3 all15orbitaldescriptorvalues",
+    "sourcefit/slopenumbers",
+    "hypotheticalD/β default/equality/zero/undefinedboundarycases",
+    "keyboard/focus/ARIA/language/reload/state/details/anchors/console/overflow"
+  ],
+  "audit": [
+    {
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 12,
+      "scientificStates": 14
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 12,
+      "scientificStates": 14
+    },
+    {
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 12,
+      "scientificStates": 14
+    },
+    {
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 12,
+      "scientificStates": 14
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 12,
+      "scientificStates": 14
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 12,
+      "scientificStates": 14
+    }
+  ]
+}

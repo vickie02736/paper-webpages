@@ -1,0 +1,1 @@
+PASS: page-only static; 11 sections × 1440/768/390 × zh/en; all 18 states, key conditions and source locations; static language visibility, details, keyboard/focus, language/state, direct English/reload; no console errors or overflow. Final screenshots inspected. Catalog/publication pending.

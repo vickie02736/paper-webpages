@@ -1,0 +1,2745 @@
+{
+  "status": "28 source-complete pages integrated and validated for the publication batch",
+  "baselineCommit": "1241aac2be108821e6ea612892c1c69f98a2cb24",
+  "baselineCatalogSha256": "f95d77cd589e3e9a5d66a8a0e2b43c5e6bf83e23fea724b98d8f1724c6badf31",
+  "expectedFinalPaperCount": 479,
+  "expectedFinalExplainerCount": 43,
+  "draftCount": 28,
+  "sourceCompleteDraftCount": 28,
+  "partialDraftCount": 0,
+  "checkedAt": "2026-11-02",
+  "publicationDates": "All 28 first published on 2026-11-02; one batch creation instant: 2026-11-02T14:53:43.309Z",
+  "records": [
+    {
+      "number": 1,
+      "slug": "water-stability-review",
+      "doi": "10.1021/cr5002589",
+      "id": "paper-221e08ac59f1",
+      "u": "https://doi.org/10.1021/cr5002589",
+      "t": "Water Stability and Adsorption in Metal–Organic Frameworks",
+      "year": 2014,
+      "venue": "Chemical Reviews",
+      "themeId": "mof",
+      "g": 6,
+      "topicId": "mof-mof-stability-2f7e0250012b",
+      "tagIds": [
+        "object:mof",
+        "task:stability"
+      ],
+      "plannedPath": "./papers/water-stability-review/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Nicholas C. Burtch",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Himanshu Jasuja",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Krista S. Walton",
+            "affiliations": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "School of Chemical & Biomolecular Engineering, Georgia Institute of Technology, 311 Ferst Drive NW, Atlanta, Georgia 30332, United States"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2014-09-29",
+            "source": "https://doi.org/10.1021/cr5002589"
+          },
+          "accepted": {
+            "status": "notDisclosed",
+            "source": "https://doi.org/10.1021/cr5002589"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1021/cr5002589",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators. Inspected primary article/history does not disclose an acceptance date."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "publishedInIssue: 2014-10-22; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "slug": "mof-stability-three-axes",
+      "doi": "10.1038/natrevmats.2015.18",
+      "id": "paper-6b85694e25b7",
+      "u": "https://doi.org/10.1038/natrevmats.2015.18",
+      "t": "Chemical, thermal and mechanical stabilities of metal–organic frameworks",
+      "year": 2016,
+      "venue": "Nature Reviews Materials",
+      "themeId": "mof",
+      "g": 6,
+      "topicId": "mof-mof-stability-2f7e0250012b",
+      "tagIds": [
+        "object:mof",
+        "task:stability"
+      ],
+      "plannedPath": "./papers/mof-stability-three-axes/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Ashlee J. Howarth",
+            "affiliations": [
+              "a"
+            ],
+            "equalContribution": true
+          },
+          {
+            "name": "Yangyang Liu",
+            "affiliations": [
+              "a"
+            ],
+            "equalContribution": true
+          },
+          {
+            "name": "Peng Li",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Zhanyong Li",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Timothy C. Wang",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Joseph T. Hupp",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Omar K. Farha",
+            "affiliations": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Department of Chemistry, Northwestern University, 2145 Sheridan Road, Evanston, Illinois 60208–3113, USA"
+          },
+          {
+            "id": "b",
+            "name": "Department of Chemistry, Faculty of Science, King Abdulaziz University, Jeddah, Saudi Arabia"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2016-02-09",
+            "source": "https://doi.org/10.1038/natrevmats.2015.18"
+          },
+          "accepted": {
+            "status": "notDisclosed",
+            "source": "https://doi.org/10.1038/natrevmats.2015.18"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/natrevmats.2015.18",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators. Inspected primary article/history does not disclose an acceptance date."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "issueMonth: 2016-03; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "slug": "hydrolytic-stability-grading",
+      "doi": "10.1039/C5DT04049C",
+      "id": "paper-ced75e4adc82",
+      "u": "https://doi.org/10.1039/C5DT04049C",
+      "t": "Parameterizing and grading hydrolytic stability in metal–organic frameworks",
+      "year": 2016,
+      "venue": "Dalton Transactions",
+      "themeId": "mof",
+      "g": 6,
+      "topicId": "mof-mof-stability-2f7e0250012b",
+      "tagIds": [
+        "object:mof",
+        "task:stability"
+      ],
+      "plannedPath": "./papers/hydrolytic-stability-grading/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Benjamin S. Gelfand",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "George K. H. Shimizu",
+            "affiliations": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Department of Chemistry, University of Calgary, Calgary, Alberta T2N 1N4, Canada"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2015-11-27",
+            "source": "https://doi.org/10.1039/C5DT04049C"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2015-11-27",
+            "source": "https://doi.org/10.1039/C5DT04049C"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1039/C5DT04049C",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "issueYear: 2016; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "slug": "mof-kinetic-stability",
+      "doi": "10.1038/s41578-019-0140-1",
+      "id": "paper-2af8157bc18f",
+      "u": "https://doi.org/10.1038/s41578-019-0140-1",
+      "t": "Kinetic stability of metal–organic frameworks for corrosive and coordinating gas capture",
+      "year": 2019,
+      "venue": "Nature Reviews Materials",
+      "themeId": "mof",
+      "g": 6,
+      "topicId": "mof-mof-stability-2f7e0250012b",
+      "tagIds": [
+        "object:mof",
+        "task:stability"
+      ],
+      "plannedPath": "./papers/mof-kinetic-stability/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Adam J. Rieth",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Ashley M. Wright",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Mircea Dincă",
+            "affiliations": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Department of Chemistry, Massachusetts Institute of Technology, Cambridge, MA, USA"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2019-09-13",
+            "source": "https://doi.org/10.1038/s41578-019-0140-1"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2019-08-14",
+            "source": "https://doi.org/10.1038/s41578-019-0140-1"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41578-019-0140-1",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "issueDate: 2019-11; retained separately from first online publication.",
+          "versionOfRecord: 2019-09-13; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 5,
+      "slug": "uio66-buffer-stability",
+      "doi": "10.1039/D0QI00973C",
+      "id": "paper-348cc5da1302",
+      "u": "https://doi.org/10.1039/D0QI00973C",
+      "t": "Metal–organic frameworks vs. buffers: case study of UiO-66 stability",
+      "year": 2021,
+      "venue": "Inorganic Chemistry Frontiers",
+      "themeId": "mof",
+      "g": 6,
+      "topicId": "mof-mof-stability-2f7e0250012b",
+      "tagIds": [
+        "object:mof",
+        "task:stability"
+      ],
+      "plannedPath": "./papers/uio66-buffer-stability/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Daniel Bůžek",
+            "affiliations": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "name": "Slavomír Adamec",
+            "affiliations": [
+              "b"
+            ]
+          },
+          {
+            "name": "Kamil Lang",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Jan Demel",
+            "affiliations": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Institute of Inorganic Chemistry of the Czech Academy of Sciences, 250 68 Husinec-Řež, Czech Republic"
+          },
+          {
+            "id": "b",
+            "name": "Faculty of Environment, Jan Evangelista Purkyně University, 400 96 Ústí nad Labem, Czech Republic"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2020-12-07",
+            "source": "https://doi.org/10.1039/D0QI00973C"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2020-11-09",
+            "source": "https://doi.org/10.1039/D0QI00973C"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1039/D0QI00973C",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "issueYear: 2021; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "slug": "water-stable-mof-design",
+      "doi": "10.1039/D3SC06076D",
+      "id": "paper-d7d61323bda0",
+      "u": "https://doi.org/10.1039/D3SC06076D",
+      "t": "Water-stable metal–organic frameworks (MOFs): rational construction and carbon dioxide capture",
+      "year": 2024,
+      "venue": "Chemical Science",
+      "themeId": "mof",
+      "g": 6,
+      "topicId": "mof-mof-stability-2f7e0250012b",
+      "tagIds": [
+        "object:mof",
+        "task:stability"
+      ],
+      "plannedPath": "./papers/water-stable-mof-design/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Cao Xiao",
+            "affiliations": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "name": "Jindou Tian",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Qihui Chen",
+            "affiliations": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "name": "Maochun Hong",
+            "affiliations": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "State Key Laboratory of Structural Chemistry, Fujian Institute of Research on the Structure of Matter, Chinese Academy of Sciences, Fuzhou 350002, P. R. China"
+          },
+          {
+            "id": "b",
+            "name": "University of Chinese Academy of Sciences, Beijing 100049, P. R. China"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2024-01-10",
+            "source": "https://doi.org/10.1039/D3SC06076D"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2024-01-03",
+            "source": "https://doi.org/10.1039/D3SC06076D"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1039/D3SC06076D",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "issueDate: 2024-02-07; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "slug": "hydrolytic-stability-benchmark",
+      "doi": "10.1021/acs.chemmater.5c02564",
+      "id": "paper-dc3bfa8818f8",
+      "u": "https://doi.org/10.1021/acs.chemmater.5c02564",
+      "t": "Hydrolytic Stability of Metal–Organic Frameworks: An Experimental Study",
+      "year": 2025,
+      "venue": "Chemistry of Materials",
+      "themeId": "mof",
+      "g": 6,
+      "topicId": "mof-mof-stability-2f7e0250012b",
+      "tagIds": [
+        "object:mof",
+        "task:stability"
+      ],
+      "plannedPath": "./papers/hydrolytic-stability-benchmark/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Ankit K. Yadav",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Mitchell S. Kenny",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Emmanuel N. Musa",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Timothy J. Walz",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Andrzej Gładysiak",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Kyriakos C. Stylianou",
+            "affiliations": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Materials Discovery Laboratory (MaD Lab), Department of Chemistry, Oregon State University, Corvallis, Oregon 97331, United States"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2025-12-03",
+            "source": "https://doi.org/10.1021/acs.chemmater.5c02564"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2025-11-17",
+            "source": "https://doi.org/10.1021/acs.chemmater.5c02564"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1021/acs.chemmater.5c02564",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "issueDate: 2025-12-23; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 8,
+      "slug": "water-stable-mof-discovery",
+      "doi": "10.1021/acsami.5c09320",
+      "id": "paper-cb6df443175f",
+      "u": "https://doi.org/10.1021/acsami.5c09320",
+      "t": "Data-Driven Discovery of Water-Stable Metal–Organic Frameworks with High Water Uptake Capacity",
+      "year": 2025,
+      "venue": "ACS Applied Materials & Interfaces",
+      "themeId": "mof",
+      "g": 6,
+      "topicId": "mof-mof-stability-2f7e0250012b",
+      "tagIds": [
+        "object:mof",
+        "task:stability"
+      ],
+      "plannedPath": "./papers/water-stable-mof-discovery/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Akash K. Ball",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Gianmarco G. Terrones",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Shuwen Yue",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Heather J. Kulik",
+            "affiliations": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Department of Chemical Engineering, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, United States"
+          },
+          {
+            "id": "b",
+            "name": "Department of Chemistry, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, United States"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2025-06-05",
+            "source": "https://doi.org/10.1021/acsami.5c09320"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2025-05-26",
+            "source": "https://doi.org/10.1021/acsami.5c09320"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1021/acsami.5c09320",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "issueDate: 2025-06-18; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 9,
+      "slug": "mof-hydrolysis-atomistic",
+      "doi": "10.1016/j.cplett.2025.142314",
+      "id": "paper-89945697a092",
+      "u": "https://doi.org/10.1016/j.cplett.2025.142314",
+      "t": "Stability by design: Atomistic insights into hydrolysis-driven MOF degradation",
+      "year": 2025,
+      "venue": "Chemical Physics Letters",
+      "themeId": "mof",
+      "g": 6,
+      "topicId": "mof-mof-stability-2f7e0250012b",
+      "tagIds": [
+        "object:mof",
+        "task:stability"
+      ],
+      "plannedPath": "./papers/mof-hydrolysis-atomistic/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Ashok Yacham",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Tarak K. Patra",
+            "affiliations": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "name": "Jithin John Varghese",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Richa Sharma",
+            "affiliations": [
+              "c"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Department of Chemical Engineering, Indian Institute of Technology Madras, Chennai 600036, India"
+          },
+          {
+            "id": "b",
+            "name": "Center for Atomistic Modeling and Materials Design, Indian Institute of Technology Madras, Chennai 600036, India"
+          },
+          {
+            "id": "c",
+            "name": "MIT Open Learning, Massachusetts Institute of Technology, Cambridge 02139, MA, USA"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2025-08-05",
+            "source": "https://doi.org/10.1016/j.cplett.2025.142314"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2025-07-31",
+            "source": "https://doi.org/10.1016/j.cplett.2025.142314"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.cplett.2025.142314",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "versionOfRecord: 2025-08-07; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 10,
+      "slug": "water-dual-impact",
+      "doi": "10.1039/D5CP04782J",
+      "id": "paper-5b6ba65eca5b",
+      "u": "https://doi.org/10.1039/D5CP04782J",
+      "t": "Dual impact of water on stability of metal–organic frameworks",
+      "year": 2026,
+      "venue": "Physical Chemistry Chemical Physics",
+      "themeId": "mof",
+      "g": 6,
+      "topicId": "mof-mof-stability-2f7e0250012b",
+      "tagIds": [
+        "object:mof",
+        "task:stability"
+      ],
+      "plannedPath": "./papers/water-dual-impact/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Fatemeh Keshavarz",
+            "affiliations": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Department of Physics, School of Engineering Science, LUT University, Yliopistonkatu 34, FI-53850, Lappeenranta, Finland"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2026-02-03",
+            "source": "https://doi.org/10.1039/D5CP04782J"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2026-02-02",
+            "source": "https://doi.org/10.1039/D5CP04782J"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1039/D5CP04782J",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "issueDate: 2026-03-04; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 11,
+      "slug": "uio66-dangling-linkers",
+      "doi": "10.1038/s41467-026-70247-z",
+      "id": "paper-2c6f3f176e70",
+      "u": "https://doi.org/10.1038/s41467-026-70247-z",
+      "t": "Water-generated dangling linkers in a metal-organic framework",
+      "year": 2026,
+      "venue": "Nature Communications",
+      "themeId": "mof",
+      "g": 6,
+      "topicId": "mof-mof-stability-2f7e0250012b",
+      "tagIds": [
+        "object:mof",
+        "task:stability"
+      ],
+      "plannedPath": "./papers/uio66-dangling-linkers/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Yao Fu",
+            "affiliations": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "name": "Yifeng Yao",
+            "affiliations": [
+              "c"
+            ]
+          },
+          {
+            "name": "Subhradip Paul",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Kenji Mochizuki",
+            "affiliations": [
+              "c"
+            ]
+          },
+          {
+            "name": "Gaël De Paëpe",
+            "affiliations": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Univ. Grenoble Alpes, CEA, IRIG-MEM, Grenoble, France"
+          },
+          {
+            "id": "b",
+            "name": "Department of Chemistry, Fudan University, Shanghai, PR China"
+          },
+          {
+            "id": "c",
+            "name": "Department of Chemistry, Zhejiang University, Hangzhou, PR China"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2026-03-11",
+            "source": "https://doi.org/10.1038/s41467-026-70247-z"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2026-02-20",
+            "source": "https://doi.org/10.1038/s41467-026-70247-z"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-70247-z",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "versionOfRecord: 2026-04-27; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 12,
+      "slug": "mil100-water-matrices",
+      "doi": "10.1016/j.eti.2026.104987",
+      "id": "paper-886b2ed1184d",
+      "u": "https://doi.org/10.1016/j.eti.2026.104987",
+      "t": "Strong and Stable? Evaluating the stability of MIL-100(Fe) Metal-organic Framework in Water Matrices",
+      "year": 2026,
+      "venue": "Environmental Technology & Innovation",
+      "themeId": "mof",
+      "g": 6,
+      "topicId": "mof-mof-stability-2f7e0250012b",
+      "tagIds": [
+        "object:mof",
+        "task:stability"
+      ],
+      "plannedPath": "./papers/mil100-water-matrices/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Aoife Quinlivan",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Andrea Laybourn",
+            "affiliations": [
+              "b",
+              "c"
+            ]
+          },
+          {
+            "name": "Rachel L. Gomes",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Food Water Waste Research Group, Faculty of Engineering, University of Nottingham, University Park Campus, Nottingham NG7 2RD, United Kingdom"
+          },
+          {
+            "id": "b",
+            "name": "Advanced Materials Research Group, Faculty of Engineering, University of Nottingham, University Park Campus, Nottingham NG7 2RD, United Kingdom"
+          },
+          {
+            "id": "c",
+            "name": "Institute of Process Research and Development & School of Chemistry, University of Leeds, Leeds LS2 9JT, United Kingdom"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2026-05-15",
+            "source": "https://doi.org/10.1016/j.eti.2026.104987"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2026-05-13",
+            "source": "https://doi.org/10.1016/j.eti.2026.104987"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.eti.2026.104987",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "versionOfRecord: 2026-11-02; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 13,
+      "slug": "ree-mof-critical-review",
+      "doi": "10.1016/j.ccr.2026.218197",
+      "id": "paper-78410171ea16",
+      "u": "https://doi.org/10.1016/j.ccr.2026.218197",
+      "t": "Rethinking MOFs for REE recovery: Role of functional groups, selectivity limitations, and possible future directions",
+      "year": 2026,
+      "venue": "Coordination Chemistry Reviews",
+      "themeId": "mof",
+      "g": 27,
+      "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+      "tagIds": [
+        "object:mof",
+        "application:ree"
+      ],
+      "plannedPath": "./papers/ree-mof-critical-review/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Prathmesh Bhadane",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Deepti Kalsi",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Department of Chemistry, Indian Institute of Technology, Bombay, Powai, Mumbai 400076, India"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2026-06-12",
+            "source": "https://doi.org/10.1016/j.ccr.2026.218197"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2026-06-07",
+            "source": "https://doi.org/10.1016/j.ccr.2026.218197"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.ccr.2026.218197",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "versionOfRecord: 2026-06-12; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 14,
+      "slug": "ree-mof-targeted-review",
+      "doi": "10.1016/j.cej.2025.172100",
+      "id": "paper-65127ef99328",
+      "u": "https://doi.org/10.1016/j.cej.2025.172100",
+      "t": "Recent advances in targeted adsorption of rare earth elements using metal-organic frameworks",
+      "year": 2026,
+      "venue": "Chemical Engineering Journal",
+      "themeId": "mof",
+      "g": 27,
+      "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+      "tagIds": [
+        "object:mof",
+        "application:ree"
+      ],
+      "plannedPath": "./papers/ree-mof-targeted-review/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Heru Agung Saputra",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Rosy Amalia Kurnia Putri",
+            "affiliations": [
+              "b"
+            ]
+          },
+          {
+            "name": "Eleazer L. Vivas",
+            "affiliations": [
+              "c"
+            ]
+          },
+          {
+            "name": "Herman",
+            "affiliations": [
+              "d"
+            ]
+          },
+          {
+            "name": "Amru Daulay",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Fika Rofiek Mufakhir",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yayat Iman Supriyatna",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Hendra Prasetia",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Suyanti",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Sudibyo",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Ulin Herlina",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Asnan Rinovian",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Sudiyarmanto",
+            "affiliations": [
+              "b"
+            ]
+          },
+          {
+            "name": "Fajar Nurjaman",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Widi Astuti",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Research Center for Mineral Technology, National Research and Innovation Agency (BRIN-Indonesia), Tanjung Bintang, Lampung Selatan, 35361, Indonesia"
+          },
+          {
+            "id": "b",
+            "name": "Research Center for Molecular Chemistry, National Research and Innovation Agency (BRIN-Indonesia), South Tangerang, 15314, Indonesia"
+          },
+          {
+            "id": "c",
+            "name": "Department of Civil Engineering, College of Engineering, Batangas State University - The National Engineering University, Alangilan, Batangas City, Batangas, 4200, Philippines"
+          },
+          {
+            "id": "d",
+            "name": "Department of Pharmaceutical Chemistry, Faculty of Pharmacy, Mulawarman University, Gunung Kelua, 75119, Indonesia"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2025-12-20",
+            "source": "https://doi.org/10.1016/j.cej.2025.172100"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2025-12-18",
+            "source": "https://doi.org/10.1016/j.cej.2025.172100"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.cej.2025.172100",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "versionOfRecord: 2026-01-02; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 15,
+      "slug": "ree-porous-framework-review",
+      "doi": "10.1016/j.seppur.2026.139438",
+      "id": "paper-6c2d739a60d9",
+      "u": "https://doi.org/10.1016/j.seppur.2026.139438",
+      "t": "Selective adsorption of rare earth metals by porous frameworks: recent advances and future directions",
+      "year": 2026,
+      "venue": "Separation and Purification Technology",
+      "themeId": "mof",
+      "g": 27,
+      "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+      "tagIds": [
+        "object:mof",
+        "application:ree"
+      ],
+      "plannedPath": "./papers/ree-porous-framework-review/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Yuehua Chen",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Shuaiqi Gao",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yiqing Xue",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yujiao Yuan",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Kelei Zhuo",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Huiyong Wang",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Jianji Wang",
+            "affiliations": [
+              "a",
+              "b"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Key Laboratory of Green Chemical Media and Reactions, Ministry of Education, Henan Key Laboratory for Green Media and Reactions, Henan International Joint Laboratory of Green Chemistry, Collaborative Innovation Center of Henan Province for Green Manufacturing of Fine Chemicals, School of Chemistry and Chemical Engineering, Henan Normal University, Xinxiang, Henan 453007, PR China"
+          },
+          {
+            "id": "b",
+            "name": "College of Chemistry and Molecular Sciences, Longzihu New Energy Laboratory, Henan University, Zhengzhou, Henan 450000, PR China"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2026-07-21",
+            "source": "https://doi.org/10.1016/j.seppur.2026.139438"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2026-07-20",
+            "source": "https://doi.org/10.1016/j.seppur.2026.139438"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.seppur.2026.139438",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "versionOfRecord: 2026-07-25; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 16,
+      "slug": "ree-mof-protocol",
+      "doi": "10.1038/s41596-026-01425-y",
+      "id": "paper-c79d78098549",
+      "u": "https://doi.org/10.1038/s41596-026-01425-y",
+      "t": "Selective heavy-metal sequestration and rare-earth element recovery using metal–organic frameworks",
+      "year": 2026,
+      "venue": "Nature Protocols",
+      "themeId": "mof",
+      "g": 27,
+      "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+      "tagIds": [
+        "object:mof",
+        "application:ree"
+      ],
+      "plannedPath": "./papers/ree-mof-protocol/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Dhruv Menon",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Prathmesh Bhadane",
+            "affiliations": [
+              "b"
+            ]
+          },
+          {
+            "name": "Priya Mahato",
+            "affiliations": [
+              "b"
+            ]
+          },
+          {
+            "name": "Prateek Goyal",
+            "affiliations": [
+              "b"
+            ]
+          },
+          {
+            "name": "Iseult Lynch",
+            "affiliations": [
+              "c",
+              "d"
+            ]
+          },
+          {
+            "name": "Swaroop Chakraborty",
+            "affiliations": [
+              "c",
+              "d"
+            ]
+          },
+          {
+            "name": "Superb K. Misra",
+            "affiliations": [
+              "b"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Department of Chemical Engineering and Biotechnology, University of Cambridge, Cambridge, UK"
+          },
+          {
+            "id": "b",
+            "name": "Department of Materials Engineering, Indian Institute of Technology Gandhinagar, Palaj, India"
+          },
+          {
+            "id": "c",
+            "name": "School of Geography, Earth and Environmental Sciences, University of Birmingham, Birmingham, UK"
+          },
+          {
+            "id": "d",
+            "name": "Centre for Environmental Research and Justice (CERJ), University of Birmingham, Birmingham, UK"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2026-08-24",
+            "source": "https://doi.org/10.1038/s41596-026-01425-y"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2026-07-02",
+            "source": "https://doi.org/10.1038/s41596-026-01425-y"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41596-026-01425-y",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": []
+      }
+    },
+    {
+      "number": 17,
+      "slug": "cmpo-mil101-ree",
+      "doi": "10.1007/s10853-016-9807-9",
+      "id": "paper-711775168ac8",
+      "u": "https://doi.org/10.1007/s10853-016-9807-9",
+      "t": "Functionalized metal-organic-framework CMPO@MIL-101(Cr) as a stable and selective rare earth adsorbent",
+      "year": 2016,
+      "venue": "Journal of Materials Science",
+      "themeId": "mof",
+      "g": 26,
+      "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+      "tagIds": [
+        "object:mof",
+        "application:ree"
+      ],
+      "plannedPath": "./papers/cmpo-mil101-ree/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Jeroen de Decker",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Jeriffa de Clercq",
+            "affiliations": [
+              "b"
+            ]
+          },
+          {
+            "name": "Pieter Vermeir",
+            "affiliations": [
+              "c"
+            ]
+          },
+          {
+            "name": "Pascal van der Voort",
+            "affiliations": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Department of Inorganic and Physical Chemistry, Center for Ordered Materials, Organometallics and Catalysis (COMOC), Ghent University, Krijgslaan 281-S3, 9000 Ghent, Belgium"
+          },
+          {
+            "id": "b",
+            "name": "Department of Chemical Engineering and Technical Chemistry, Industrial Catalysis and Adsorption Technology (INCAT), Ghent University, Valentin Vaerwyckweg 1, 9000 Ghent, Belgium"
+          },
+          {
+            "id": "c",
+            "name": "Department of Applied Biosciences, Ghent University, Valentin Vaerwyckweg 1, 9000 Ghent, Belgium"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2016-02-11",
+            "source": "https://doi.org/10.1007/s10853-016-9807-9"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2016-02-02",
+            "source": "https://doi.org/10.1007/s10853-016-9807-9"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1007/s10853-016-9807-9",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": []
+      }
+    },
+    {
+      "number": 18,
+      "slug": "functionalized-cr-mil101",
+      "doi": "10.1021/acsami.8b07130",
+      "id": "paper-1ade2cb16f05",
+      "u": "https://doi.org/10.1021/acsami.8b07130",
+      "t": "Selective Adsorption of Rare Earth Elements over Functionalized Cr-MIL-101",
+      "year": 2018,
+      "venue": "ACS Applied Materials & Interfaces",
+      "themeId": "mof",
+      "g": 26,
+      "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+      "tagIds": [
+        "object:mof",
+        "application:ree"
+      ],
+      "plannedPath": "./papers/functionalized-cr-mil101/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Yu-Ri Lee",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Kwangsun Yu",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Seenu Ravi",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Wha-Seung Ahn",
+            "affiliations": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Department of Chemistry and Chemical Engineering, Inha University, Incheon, Republic of Korea"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2018-07-03",
+            "source": "https://doi.org/10.1021/acsami.8b07130"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2018-06-20",
+            "source": "https://doi.org/10.1021/acsami.8b07130"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1021/acsami.8b07130",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "issueYear: 2018; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 19,
+      "slug": "acrylic-mil101-scandium",
+      "doi": "10.1021/acsami.9b00476",
+      "id": "paper-88e2a9eb1e15",
+      "u": "https://doi.org/10.1021/acsami.9b00476",
+      "t": "Acrylic Acid-Functionalized Metal–Organic Frameworks for Sc(III) Selective Adsorption",
+      "year": 2019,
+      "venue": "ACS Applied Materials & Interfaces",
+      "themeId": "mof",
+      "g": 26,
+      "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+      "tagIds": [
+        "object:mof",
+        "application:ree"
+      ],
+      "plannedPath": "./papers/acrylic-mil101-scandium/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Zhenning Lou",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Xin Xiao",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Mengnan Huang",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yuejiao Wang",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Zhiqiang Xing",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Ying Xiong",
+            "affiliations": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "College of Chemistry, Liaoning University, Shenyang 110036, China"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2019-03-11",
+            "source": "https://doi.org/10.1021/acsami.9b00476"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2019-03-10",
+            "source": "https://doi.org/10.1021/acsami.9b00476"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1021/acsami.9b00476",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "issueYear: 2019; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 20,
+      "slug": "dual-functional-uio66-gd",
+      "doi": "10.1021/acs.iecr.8b05220",
+      "id": "paper-f4c810ae7f5a",
+      "u": "https://doi.org/10.1021/acs.iecr.8b05220",
+      "t": "Gd3+ Adsorption over Carboxylic- and Amino-Group Dual-Functionalized UiO-66",
+      "year": 2019,
+      "venue": "Industrial & Engineering Chemistry Research",
+      "themeId": "mof",
+      "g": 26,
+      "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+      "tagIds": [
+        "object:mof",
+        "application:ree"
+      ],
+      "plannedPath": "./papers/dual-functional-uio66-gd/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Imteaz Ahmed",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yu-Ri Lee",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Kwangsun Yu",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Samiran Bhattacharjee",
+            "affiliations": [
+              "b"
+            ]
+          },
+          {
+            "name": "Wha-Seung Ahn",
+            "affiliations": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Department of Chemistry and Chemical Engineering, Inha University, Incheon 402-751, Republic of Korea"
+          },
+          {
+            "id": "b",
+            "name": "Centre for Advanced Research in Sciences (CARS), University of Dhaka, Dhaka 1000, Bangladesh"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2019-01-30",
+            "source": "https://doi.org/10.1021/acs.iecr.8b05220"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2019-01-14",
+            "source": "https://doi.org/10.1021/acs.iecr.8b05220"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1021/acs.iecr.8b05220",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "publishedInIssue: 2019-02-13; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 21,
+      "slug": "uio66-zif8-ree",
+      "doi": "10.1016/j.cej.2020.124023",
+      "id": "paper-7675f21b3fe2",
+      "u": "https://doi.org/10.1016/j.cej.2020.124023",
+      "t": "3D-agaric like core-shell architecture UiO-66-NH2@ZIF-8 with robust stability for highly efficient REEs recovery",
+      "year": 2020,
+      "venue": "Chemical Engineering Journal",
+      "themeId": "mof",
+      "g": 27,
+      "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+      "tagIds": [
+        "object:mof",
+        "application:ree"
+      ],
+      "plannedPath": "./papers/uio66-zif8-ree/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Mengmeng Zhang",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Kun Yang",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Junshuo Cui",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Haibiao Yu",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yuejiao Wang",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Weijun Shan",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Zhenning Lou",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Ying Xiong",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "College of Chemistry, Key Laboratory of Rare-scattered Elements of Liaoning Province, Liaoning University, Shenyang 110036, PR China"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2020-01-07",
+            "source": "https://doi.org/10.1016/j.cej.2020.124023"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2020-01-03",
+            "source": "https://doi.org/10.1016/j.cej.2020.124023"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.cej.2020.124023",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "versionOfRecord: 2020-01-11; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 22,
+      "slug": "organophosphorus-mil101",
+      "doi": "10.1016/j.micromeso.2020.110747",
+      "id": "paper-6257ab0c37da",
+      "u": "https://doi.org/10.1016/j.micromeso.2020.110747",
+      "t": "Selective recovery and separation of rare earth elements by organophosphorus modified MIL-101(Cr)",
+      "year": 2021,
+      "venue": "Microporous and Mesoporous Materials",
+      "themeId": "mof",
+      "g": 27,
+      "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+      "tagIds": [
+        "object:mof",
+        "application:ree"
+      ],
+      "plannedPath": "./papers/organophosphorus-mil101/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Vitalii Kavun",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Monique A. van der Veen",
+            "affiliations": [
+              "b"
+            ]
+          },
+          {
+            "name": "Eveliina Repo",
+            "affiliations": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Department of Separation Science, LUT University, Yliopistonkatu 34, 53850, Lappeenranta, Finland"
+          },
+          {
+            "id": "b",
+            "name": "Catalysis Engineering, Department of Chemical Engineering, Delft University of Technology, Van der Maasweg 9, 2629 HZ, Delft, the Netherlands"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2020-11-04",
+            "source": "https://doi.org/10.1016/j.micromeso.2020.110747"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2020-11-02",
+            "source": "https://doi.org/10.1016/j.micromeso.2020.110747"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.micromeso.2020.110747",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "issueYear: 2021; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 23,
+      "slug": "dga-mil101-europium",
+      "doi": "10.1016/j.mineng.2021.106831",
+      "id": "paper-35fec6c33691",
+      "u": "https://doi.org/10.1016/j.mineng.2021.106831",
+      "t": "Promising priority separation of europium from lanthanide by novel DGA-functionalized metal organic frameworks",
+      "year": 2021,
+      "venue": "Minerals Engineering",
+      "themeId": "mof",
+      "g": 26,
+      "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+      "tagIds": [
+        "object:mof",
+        "application:ree"
+      ],
+      "plannedPath": "./papers/dga-mil101-europium/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Wanqing Lin",
+            "affiliations": [
+              "a",
+              "b",
+              "c",
+              "d"
+            ]
+          },
+          {
+            "name": "Zhigang Zhao",
+            "affiliations": [
+              "b",
+              "c",
+              "d",
+              "e"
+            ]
+          },
+          {
+            "name": "Fan Yang",
+            "affiliations": [
+              "b",
+              "c",
+              "d",
+              "e"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Zhaoli Liu",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Fengzhi Tan",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Meiying Xie",
+            "affiliations": [
+              "d"
+            ]
+          },
+          {
+            "name": "Ying Ma",
+            "affiliations": [
+              "e"
+            ]
+          },
+          {
+            "name": "Lingyi Meng",
+            "affiliations": [
+              "b",
+              "d"
+            ]
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "College of Chemical Engineering & Technology, Dalian Polytechnic University, Dalian 116034, China"
+          },
+          {
+            "id": "b",
+            "name": "CAS Key Laboratory of Design and Assembly of Functional Nanostructures, and Fujian Provincial Key Laboratory of Nanomaterials, Fujian Institute of Research on the Structure of Matter, Chinese Academy of Sciences, Fuzhou 350002, China"
+          },
+          {
+            "id": "c",
+            "name": "Fujian Province Joint Innovation Key Laboratory of Fuel and Materials in Clean Nuclear Energy System, Fujian Institute of Research on the Structure of Matter, Chinese Academy of Sciences, Fuzhou 350002, China"
+          },
+          {
+            "id": "d",
+            "name": "Xiamen Institute of Rare Earth Materials, Haixi Institute, Chinese Academy of Sciences, Xiamen 361021, China"
+          },
+          {
+            "id": "e",
+            "name": "State Key Laboratory of Baiyunobo Rare Earth Resource Researches and Comprehensive Utilization, Baotou 014030, China"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2021-03-02",
+            "source": "https://doi.org/10.1016/j.mineng.2021.106831"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2021-02-09",
+            "source": "https://doi.org/10.1016/j.mineng.2021.106831"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.mineng.2021.106831",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "versionOfRecord: 2021-03-02; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 24,
+      "slug": "mil101-sba15-lu-y",
+      "doi": "10.1016/j.chemosphere.2021.130869",
+      "id": "paper-7ff6292a1b69",
+      "u": "https://doi.org/10.1016/j.chemosphere.2021.130869",
+      "t": "Recovery of rare earth elements (Lu, Y) by adsorption using functionalized SBA-15 and MIL-101 (Cr)",
+      "year": 2021,
+      "venue": "Chemosphere",
+      "themeId": "mof",
+      "g": 27,
+      "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+      "tagIds": [
+        "object:mof",
+        "application:ree"
+      ],
+      "plannedPath": "./papers/mil101-sba15-lu-y/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Seongchul Ryu",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Charith Fonseka",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Gayathri Naidu",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Paripurnanda Loganathan",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Hee Moon",
+            "affiliations": [
+              "b"
+            ]
+          },
+          {
+            "name": "Jaya Kandasamy",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Saravanamuthu Vigneswaran",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Faculty of Engineering and IT, University of Technology Sydney, P.O. Box 123, Broadway, Ultimo, NSW, 2007, Australia"
+          },
+          {
+            "id": "b",
+            "name": "School of Chemical Engineering, Chonnam National University, 77 Yongbong-ro, Gwangju, 61186, Republic of Korea"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2021-05-22",
+            "source": "https://doi.org/10.1016/j.chemosphere.2021.130869"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2021-05-09",
+            "source": "https://doi.org/10.1016/j.chemosphere.2021.130869"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.chemosphere.2021.130869",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "versionOfRecord: 2021-05-31; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 25,
+      "slug": "dtpa-mil101-ammonium",
+      "doi": "10.1016/j.envres.2024.119890",
+      "id": "paper-f57322217a5a",
+      "u": "https://doi.org/10.1016/j.envres.2024.119890",
+      "t": "Selectively recovering rare earth elements with carboxyl immobilized metal-organic framework from ammonium-rich wastewater",
+      "year": 2024,
+      "venue": "Environmental Research",
+      "themeId": "mof",
+      "g": 26,
+      "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+      "tagIds": [
+        "object:mof",
+        "application:ree"
+      ],
+      "plannedPath": "./papers/dtpa-mil101-ammonium/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Tianyu Gao",
+            "affiliations": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          {
+            "name": "Zhigong Liu",
+            "affiliations": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          {
+            "name": "Meng Zhang",
+            "affiliations": [
+              "d"
+            ]
+          },
+          {
+            "name": "Qiang Wang",
+            "affiliations": [
+              "d"
+            ]
+          },
+          {
+            "name": "Fubing Yao",
+            "affiliations": [
+              "a",
+              "b",
+              "c"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Feiping Zhao",
+            "affiliations": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          {
+            "name": "Haiying Wang",
+            "affiliations": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          {
+            "name": "Chong-Jian Tang",
+            "affiliations": [
+              "a",
+              "b",
+              "c"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "State Key Laboratory of Advanced Metallurgy for Non-ferrous Metals, Changsha, 410083, China"
+          },
+          {
+            "id": "b",
+            "name": "School of Metallurgy and Environment, Central South University, Changsha, 410083, China"
+          },
+          {
+            "id": "c",
+            "name": "Chinese National Engineering Research Center for Control & Treatment of Heavy Metal Pollution, Changsha, 410083, China"
+          },
+          {
+            "id": "d",
+            "name": "Jiangxi Academy of Eco-Environment and Planning, Nanchang, 330039, China"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2024-08-30",
+            "source": "https://doi.org/10.1016/j.envres.2024.119890"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2024-08-28",
+            "source": "https://doi.org/10.1016/j.envres.2024.119890"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.envres.2024.119890",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "versionOfRecord: 2024-09-06; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 26,
+      "slug": "hkust1-lutetium",
+      "doi": "10.1111/nyas.70074",
+      "id": "paper-71eb3b0922a9",
+      "u": "https://doi.org/10.1111/nyas.70074",
+      "t": "High Capacity and Efficient Adsorption of Lutetium(III) by the Metal–Organic Framework HKUST-1 in Simulated Medical Wastewater",
+      "year": 2025,
+      "venue": "Annals of the New York Academy of Sciences",
+      "themeId": "mof",
+      "g": 26,
+      "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+      "tagIds": [
+        "object:mof",
+        "application:ree"
+      ],
+      "plannedPath": "./papers/hkust1-lutetium/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Yi Zhang",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Xiangni Pan",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yehuizi Wu",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Zixian Huang",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Zhizeng Pan",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yuezhou Wei",
+            "affiliations": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "name": "Xiangbiao Yin",
+            "affiliations": [
+              "a",
+              "c"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "School of Nuclear Science and Technology, University of South China, Hengyang, China"
+          },
+          {
+            "id": "b",
+            "name": "School of Nuclear Science and Engineering, Shanghai Jiao Tong University, Shanghai, China"
+          },
+          {
+            "id": "c",
+            "name": "Key Laboratory of Advanced Nuclear Energy Design and Safety, Ministry of Education, University of South China, Hengyang, China"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2025-09-10",
+            "source": "https://doi.org/10.1111/nyas.70074"
+          },
+          "accepted": {
+            "status": "notDisclosed",
+            "source": "https://doi.org/10.1111/nyas.70074"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1111/nyas.70074",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators. Inspected primary article/history does not disclose an acceptance date."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "issueDate: 2025-10; retained separately from first online publication.",
+          "Main byline places Zixian Huang before Zhizeng Pan; SI reverses them. Main order adopted."
+        ]
+      }
+    },
+    {
+      "number": 27,
+      "slug": "defect-phosphate-uio66-yb",
+      "doi": "10.1016/j.ces.2025.122638",
+      "id": "paper-8e84b4642f67",
+      "u": "https://doi.org/10.1016/j.ces.2025.122638",
+      "t": "Simultaneous defect engineering and phosphoric acid functionalization of UiO-66 for enhanced adsorption of Yb(III)",
+      "year": 2026,
+      "venue": "Chemical Engineering Science",
+      "themeId": "mof",
+      "g": 26,
+      "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+      "tagIds": [
+        "object:mof",
+        "application:ree"
+      ],
+      "plannedPath": "./papers/defect-phosphate-uio66-yb/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Chengyu Sun",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yihao Ji",
+            "affiliations": [
+              "a"
+            ]
+          },
+          {
+            "name": "Wenyan Huang",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Fuli Deng",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Yi Zhang",
+            "affiliations": [
+              "a",
+              "b"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Key Laboratory of Green Chemical Process of Ministry of Education, Hubei Key Laboratory for Novel Reactor and Green Chemical Technology, Engineering Research Center of Phosphorus Resources Development and Utilization of Ministry of Education, School of Chemical Engineering and Pharmacy, Wuhan Institute of Technology, Wuhan 430073, China"
+          },
+          {
+            "id": "b",
+            "name": "Hubei Three Gorges Laboratory, Yichang 443007, China"
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2025-09-19",
+            "source": "https://doi.org/10.1016/j.ces.2025.122638"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2025-09-17",
+            "source": "https://doi.org/10.1016/j.ces.2025.122638"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.ces.2025.122638",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "versionOfRecord: 2025-09-22; retained separately from first online publication."
+        ]
+      }
+    },
+    {
+      "number": 28,
+      "slug": "boroxine-mof-ree",
+      "doi": "10.1016/j.cej.2026.180021",
+      "id": "paper-01eefcf3f286",
+      "u": "https://doi.org/10.1016/j.cej.2026.180021",
+      "t": "Constructing two-dimensional boroxine metal-organic frameworks with ion-exchange nanotrap for ultrahigh-selective recovery of rare earth elements",
+      "year": 2026,
+      "venue": "Chemical Engineering Journal",
+      "themeId": "mof",
+      "g": 27,
+      "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+      "tagIds": [
+        "object:mof",
+        "application:ree"
+      ],
+      "plannedPath": "./papers/boroxine-mof-ree/",
+      "draftExists": true,
+      "sourceComplete": true,
+      "metadata": {
+        "authors": [
+          {
+            "name": "Shuang Zhang",
+            "affiliations": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "name": "Jia Chen",
+            "affiliations": [
+              "b"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Jing He",
+            "affiliations": [
+              "b"
+            ]
+          },
+          {
+            "name": "Shuaishuai Wang",
+            "affiliations": [
+              "c"
+            ]
+          },
+          {
+            "name": "Zhigang Gu",
+            "affiliations": [
+              "d"
+            ]
+          },
+          {
+            "name": "Lina Li",
+            "affiliations": [
+              "e"
+            ]
+          },
+          {
+            "name": "Jianhua Wang",
+            "affiliations": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Hongdeng Qiu",
+            "affiliations": [
+              "b",
+              "c"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "a",
+            "name": "Department of Chemistry, College of Sciences, Northeastern University, Shenyang, 110819, China"
+          },
+          {
+            "id": "b",
+            "name": "CAS Key Laboratory of Chemistry of Northwestern Plant Resources and Key Laboratory for Natural Medicine of Gansu Province, Lanzhou Institute of Chemical Physics, Chinese Academy of Sciences, Lanzhou, 730000, China"
+          },
+          {
+            "id": "c",
+            "name": "Key Laboratory of Rare Earths, Ganjiang Innovation Academy, Chinese Academy of Sciences, Ganzhou, 341000, China"
+          },
+          {
+            "id": "d",
+            "name": "State Key Laboratory of Structural Chemistry, Fujian Institute of Research on the Structure of Matter, Chinese Academy of Sciences, Fuzhou, 350002, China."
+          },
+          {
+            "id": "e",
+            "name": "Shanghai Synchrotron Radiation Facility, Shanghai Advanced Research Institute, Chinese Academy of Sciences, Shanghai, 201200, China."
+          }
+        ],
+        "dates": {
+          "published": {
+            "status": "verified",
+            "value": "2026-07-28",
+            "source": "https://doi.org/10.1016/j.cej.2026.180021"
+          },
+          "accepted": {
+            "status": "verified",
+            "value": "2026-07-26",
+            "source": "https://doi.org/10.1016/j.cej.2026.180021"
+          }
+        },
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.cej.2026.180021",
+            "fields": [
+              "authors",
+              "affiliations",
+              "dates.published",
+              "dates.accepted"
+            ],
+            "locator": "Complete primary article: ordered main byline and explicit affiliation markers; first-online publication/history. See the local source ledger for version and locators."
+          }
+        ],
+        "checkedAt": "2026-11-02",
+        "notes": [
+          "versionOfRecord: 2026-07-30; retained separately from first online publication."
+        ]
+      }
+    }
+  ],
+  "integratedAt": "2026-11-02T14:53:43.309Z"
+}

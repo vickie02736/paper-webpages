@@ -2,16 +2,16 @@
 
 Generated from `paper-catalog.json`; checked dates and field-level source locators are stored with each record. This ledger concerns bibliographic metadata only.
 
-核对结果：作者名单 451/451；单位 445/451；完整作者—单位对应 391/451。已核实发表日期 400 篇、录用日期 134 篇、首次预印本日期 211 篇；另有 123 篇的已检查官方记录未披露录用日期。下列 232 篇仍有至少一个未核实字段，不能视为全部信息已经核实。
+核对结果：作者名单 479/479；单位 473/479；完整作者—单位对应 419/479。已核实发表日期 428 篇、录用日期 159 篇、首次预印本日期 211 篇；另有 126 篇的已检查官方记录未披露录用日期。下列 232 篇仍有至少一个未核实字段，不能视为全部信息已经核实。
 
-- papers: 451
-- authors: 451
-- affiliations: 445
-- completeMappings: 391
-- published: 400
-- accepted: 134
+- papers: 479
+- authors: 479
+- affiliations: 473
+- completeMappings: 419
+- published: 428
+- accepted: 159
 - preprint: 211
-- acceptanceNotDisclosed: 123
+- acceptanceNotDisclosed: 126
 
 Dates use the precision published by the source. “Not disclosed” means the inspected official record does not disclose the date; “unverified” means the available evidence does not establish it. Preprint dates are separate from formal publication and acceptance. No conference notification date is substituted for a paper’s acceptance date. Author affiliation mappings are imported only when the source explicitly associates them.
 

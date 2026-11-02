@@ -8,9 +8,9 @@ This repository collects the paper explainer webpages and research maps created 
 
 ## Research around MOF + AI
 
-Six primary themes organize 451 papers, with one primary record per paper:
+Six primary themes organize 479 papers, with one primary record per paper:
 
-- [Metal–Organic Frameworks / 金属有机框架](https://vickie02736.github.io/paper-webpages/?theme=mof): 68 papers. Includes separate **MOF Stability / MOF 稳定性** and **Rare-Earth Adsorption & Separation / 稀土吸附与分离** subcategories.
+- [Metal–Organic Frameworks / 金属有机框架](https://vickie02736.github.io/paper-webpages/?theme=mof): 96 papers. Includes separate **MOF Stability / MOF 稳定性** and **Rare-Earth Adsorption & Separation / 稀土吸附与分离** subcategories.
 - [Artificial Intelligence & Computing / 人工智能与计算](https://vickie02736.github.io/paper-webpages/?theme=ai): 90 papers.
 - [General Chemistry & Materials / 通用化学与材料](https://vickie02736.github.io/paper-webpages/?theme=chemistry-materials): 73 papers.
 - [Robotics & Lab Automation / 机器人与实验自动化](https://vickie02736.github.io/paper-webpages/?theme=robotics-lab): 72 papers.
@@ -46,6 +46,39 @@ The library supports collecting ideas and developing research judgment. The exis
 
 
 - [FrontierCS 2 — A Benchmark for Computer Science R&D](papers/frontier-cs/) — PDF-audited task/judge diagrams, complete 12-agent results, three case studies and 29 related efforts
+
+## MOF stability and rare-earth expansion
+
+28 additional bilingual explainers cover 12 stability papers and 16 rare-earth adsorption/separation papers. All final main articles and listed supplementary materials were read; evidence ledgers distinguish experimental reports, model results and teaching calculations.
+
+- [Water stability review](papers/water-stability-review/)
+- [Three axes of stability](papers/mof-stability-three-axes/)
+- [Hydrolytic stability grading](papers/hydrolytic-stability-grading/)
+- [Kinetic stability](papers/mof-kinetic-stability/)
+- [UiO-66 in buffers](papers/uio66-buffer-stability/)
+- [Water-stable MOF design](papers/water-stable-mof-design/)
+- [Hydrolytic stability benchmark](papers/hydrolytic-stability-benchmark/)
+- [Discovering water-stable MOFs](papers/water-stable-mof-discovery/)
+- [Atomistic hydrolysis](papers/mof-hydrolysis-atomistic/)
+- [Water’s dual impact](papers/water-dual-impact/)
+- [UiO-66 dangling linkers](papers/uio66-dangling-linkers/)
+- [MIL-100 water matrices](papers/mil100-water-matrices/)
+- [Rethinking REE recovery](papers/ree-mof-critical-review/)
+- [Targeted MOF adsorption](papers/ree-mof-targeted-review/)
+- [MOF/COF selectivity](papers/ree-porous-framework-review/)
+- [REE MOF protocol](papers/ree-mof-protocol/)
+- [CMPO–MIL-101](papers/cmpo-mil101-ree/)
+- [Functionalized Cr-MIL-101](papers/functionalized-cr-mil101/)
+- [Acrylic MIL-101 and Sc](papers/acrylic-mil101-scandium/)
+- [Dual-functional UiO-66 and Gd](papers/dual-functional-uio66-gd/)
+- [UiO-66/ZIF-8 REE uptake](papers/uio66-zif8-ree/)
+- [Organophosphorus MIL-101](papers/organophosphorus-mil101/)
+- [DGA–MIL-101 and Eu](papers/dga-mil101-europium/)
+- [MIL-101/SBA-15 and Lu/Y](papers/mil101-sba15-lu-y/)
+- [DTPA–MIL-101 in ammonium](papers/dtpa-mil101-ammonium/)
+- [HKUST-1 and Lu](papers/hkust1-lutetium/)
+- [Defect/phosphate UiO-66 and Yb](papers/defect-phosphate-uio66-yb/)
+- [Boroxine MOF and REEs](papers/boroxine-mof-ree/)
 
 ## Repository layout
 

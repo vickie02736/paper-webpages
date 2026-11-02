@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "sourceStatus": "Complete final main and all SI read; local draft awaiting batch catalogue/publication.",
+  "metadataMode": "Candidate metadata injected for local QA; production bundle unchanged",
+  "checks": [
+    "all11sections and22scientific states at3widths×2languages",
+    "exact mainTable2 values/units/fixedaxes",
+    "SI S4 all48 Cr/P values and fixed element-specific scales",
+    "mass-balance default,endpoints,undefinedzero and keyboardinput",
+    "language visibility,choice/input/details retention",
+    "keyboard/focus,anchors,Englishreload,console,overflow"
+  ],
+  "audit": [
+    {
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 11,
+      "scientificStates": 22
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 11,
+      "scientificStates": 22
+    },
+    {
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 11,
+      "scientificStates": 22
+    },
+    {
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 11,
+      "scientificStates": 22
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 11,
+      "scientificStates": 22
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 11,
+      "scientificStates": 22
+    }
+  ]
+}

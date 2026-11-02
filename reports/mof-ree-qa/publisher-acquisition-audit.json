@@ -1,0 +1,114 @@
+[
+  {
+    "number": 9,
+    "slug": "mof-hydrolysis-atomistic",
+    "metadataComplete": true,
+    "mainCharacters": 31574,
+    "supplementLinks": [
+      {
+        "label": "Download: Download Word document (10MB)",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0009261425004543-mmc1.docx"
+      }
+    ]
+  },
+  {
+    "number": 13,
+    "slug": "ree-mof-critical-review",
+    "metadataComplete": true,
+    "mainCharacters": 99823,
+    "supplementLinks": []
+  },
+  {
+    "number": 14,
+    "slug": "ree-mof-targeted-review",
+    "metadataComplete": true,
+    "mainCharacters": 83845,
+    "supplementLinks": []
+  },
+  {
+    "number": 15,
+    "slug": "ree-porous-framework-review",
+    "metadataComplete": true,
+    "mainCharacters": 86810,
+    "supplementLinks": []
+  },
+  {
+    "number": 21,
+    "slug": "uio66-zif8-ree",
+    "metadataComplete": true,
+    "mainCharacters": 41337,
+    "supplementLinks": [
+      {
+        "label": "Download: Download Word document (2MB)",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S1385894720300140-mmc1.doc"
+      }
+    ]
+  },
+  {
+    "number": 22,
+    "slug": "organophosphorus-mil101",
+    "metadataComplete": false,
+    "mainCharacters": 37315,
+    "supplementLinks": [
+      {
+        "label": "Download: Download Word document (21MB)",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S1387181120307472-mmc1.docx"
+      }
+    ]
+  },
+  {
+    "number": 23,
+    "slug": "dga-mil101-europium",
+    "metadataComplete": true,
+    "mainCharacters": 26237,
+    "supplementLinks": [
+      {
+        "label": "Download: Download Word document (761KB)",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0892687521000601-mmc1.docx"
+      }
+    ]
+  },
+  {
+    "number": 24,
+    "slug": "mil101-sba15-lu-y",
+    "metadataComplete": true,
+    "mainCharacters": 34327,
+    "supplementLinks": []
+  },
+  {
+    "number": 25,
+    "slug": "dtpa-mil101-ammonium",
+    "metadataComplete": true,
+    "mainCharacters": 38370,
+    "supplementLinks": [
+      {
+        "label": "Download: Download Word document (3MB)",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S001393512401795X-mmc1.docx"
+      }
+    ]
+  },
+  {
+    "number": 27,
+    "slug": "defect-phosphate-uio66-yb",
+    "metadataComplete": true,
+    "mainCharacters": 43735,
+    "supplementLinks": [
+      {
+        "label": "Download: Download Word document (3MB)",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0009250925014599-mmc1.docx"
+      }
+    ]
+  },
+  {
+    "number": 28,
+    "slug": "boroxine-mof-ree",
+    "metadataComplete": true,
+    "mainCharacters": 42753,
+    "supplementLinks": [
+      {
+        "label": "Download: Download Word document (23MB)",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S1385894726074826-mmc1.docx"
+      }
+    ]
+  }
+]

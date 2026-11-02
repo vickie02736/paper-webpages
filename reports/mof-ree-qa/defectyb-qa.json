@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "sourceStatus": "Complete final main and12renderedSIpages read/viewed",
+  "checks": [
+    "13sections/13branches/3widths×2languages",
+    "5conditionalcapacityvalues0–150mg/g",
+    "all9physicalvalueswithunits",
+    "4kineticqevaluesfixedaxisandconflictexplicit",
+    "6directselectivityratios0–5notlog/equalbaseline1",
+    "10thermodynamicvaluesand4cyclevalues/denominators",
+    "TGAteachingdefault/endpoints/keyboard",
+    "keyboard/focus/ARIA/language/reload/state/details/anchors/console/overflow"
+  ],
+  "audit": [
+    {
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 13,
+      "scientificBranches": 13
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 13,
+      "scientificBranches": 13
+    },
+    {
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 13,
+      "scientificBranches": 13
+    },
+    {
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 13,
+      "scientificBranches": 13
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 13,
+      "scientificBranches": 13
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 13,
+      "scientificBranches": 13
+    }
+  ]
+}

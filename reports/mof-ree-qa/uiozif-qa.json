@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "sourceStatus": "Complete final main and21 rendered SIpages read/viewed,Eq11visuallychecked",
+  "checks": [
+    "12sections/30outputstates/3widths×2languages",
+    "7materials28capacity/28R²/14area valuesfixedaxis",
+    "all80log-selectivitycells/16states0–3dimensionlessLOGscale",
+    "positiveSel vs zero baseline not β<1 interpretation",
+    "unitconversion0/340.95/500/213.48mg g endpointsdefaultandkeyboard",
+    "water/mechanism/reuseallbranches",
+    "keyboard/focus/ARIA/language/reload/state/details/anchors/console/overflow"
+  ],
+  "audit": [
+    {
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 12,
+      "scientificOutputStates": 30
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 12,
+      "scientificOutputStates": 30
+    },
+    {
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 12,
+      "scientificOutputStates": 30
+    },
+    {
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 12,
+      "scientificOutputStates": 30
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 12,
+      "scientificOutputStates": 30
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 12,
+      "scientificOutputStates": 30
+    }
+  ]
+}

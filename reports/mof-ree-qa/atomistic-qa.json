@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "sourceStatus": "Preprint-main local draft; final version and SI pending; unpublished.",
+  "metadataMode": "Candidate bundle used only in local test route",
+  "checks": [
+    "all9sections/15scientificstates at1440/768/390 inzh/en",
+    "Table2 barrier/adsorption signs/units/times andfixedaxes",
+    "teachingratio evaluated independently with SI-unit gas constant",
+    "sliderendpoint/keyboard/state/language visibility",
+    "keyboard/focus/details/anchors/Englishreload/console/overflow"
+  ],
+  "audit": [
+    {
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 9,
+      "scientificStates": 15
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 9,
+      "scientificStates": 15
+    },
+    {
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 9,
+      "scientificStates": 15
+    },
+    {
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 9,
+      "scientificStates": 15
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 9,
+      "scientificStates": 15
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 9,
+      "scientificStates": 15
+    }
+  ]
+}

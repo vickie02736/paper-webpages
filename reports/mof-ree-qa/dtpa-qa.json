@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "sourceStatus": "Complete final main/17renderedSIpages/18SIfigures/6tables/6texts read",
+  "checks": [
+    "13sections/20branches/3widths×2languages",
+    "temperature12q/4BETvaluesfixedaxis",
+    "loadingall9physicalvalues",
+    "Tables1/2all9means/errors/R²fixedaxis",
+    "all4NH4Nfeedlevelsandconcentrationratios",
+    "all12thermoreportvalues",
+    "fixedRmassbalance doseexerciseendpoints/default/keyboard",
+    "keyboard/focus/ARIA/language/reload/state/details/anchors/console/overflow"
+  ],
+  "audit": [
+    {
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 13,
+      "scientificChoiceBranches": 20
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 13,
+      "scientificChoiceBranches": 20
+    },
+    {
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 13,
+      "scientificChoiceBranches": 20
+    },
+    {
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 13,
+      "scientificChoiceBranches": 20
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 13,
+      "scientificChoiceBranches": 20
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 13,
+      "scientificChoiceBranches": 20
+    }
+  ]
+}

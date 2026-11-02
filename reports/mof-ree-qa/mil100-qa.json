@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "sourceStatus": "Final main and all SI read; catalogue/publication pending",
+  "metadataMode": "candidate bundle injected",
+  "checks": [
+    "11sections,17states,3widths×2languages",
+    "Table1 BET means/errors,ratios and fixedscale",
+    "main vs SI iron values/errors and fixedscale",
+    "all7SI S6drift pairs",
+    "pH activity-ratio exercise defaults/endpoints/keyboard",
+    "language/reload/state/details/ARIA/focus/anchors/console/overflow"
+  ],
+  "audit": [
+    {
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 11,
+      "scientificStates": 17
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 11,
+      "scientificStates": 17
+    },
+    {
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 11,
+      "scientificStates": 17
+    },
+    {
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 11,
+      "scientificStates": 17
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 11,
+      "scientificStates": 17
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 11,
+      "scientificStates": 17
+    }
+  ]
+}

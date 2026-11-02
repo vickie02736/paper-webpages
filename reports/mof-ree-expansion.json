@@ -1,0 +1,2435 @@
+{
+  "objective": "Create, verify, index and publish all 28 bilingual interactive explainers after reading full articles and all scientific supporting materials.",
+  "sourceCache": "/tmp/mof-ree-sources",
+  "baseline": {
+    "commit": "1241aac2be108821e6ea612892c1c69f98a2cb24",
+    "paperCount": 451,
+    "explainerCount": 15,
+    "existingExplainers": {
+      "./papers/e5-mistral/": "2026-10-27",
+      "./papers/pmida-mil101/": "2026-10-26",
+      "./papers/ln-local-coordination/": "2026-10-26",
+      "./papers/nv-embed/": "2026-10-25",
+      "./papers/deeprag/": "2026-10-20",
+      "./papers/self-rag/": "2026-10-20",
+      "./papers/rag/": "2026-10-20",
+      "./papers/ncu1-nanotraps/": "2026-10-27",
+      "./papers/atz-btc-zn/": "2026-10-27",
+      "./papers/hans-lanm-dimer/": "2026-10-27",
+      "./papers/moftransformer/": "2026-10-28",
+      "./papers/mof-snap-active-learning/": "2026-10-28",
+      "./papers/calf20-flexibility/": "2026-10-28",
+      "./papers/lanm-protein-process/": "2026-10-27",
+      "./papers/frontier-cs/": "2026-11-01"
+    },
+    "existingCreatedAt": {
+      "./papers/e5-mistral/": "2026-10-27T20:06:21.000Z",
+      "./papers/pmida-mil101/": "2026-10-26T21:40:28.000Z",
+      "./papers/ln-local-coordination/": "2026-10-26T10:14:28.000Z",
+      "./papers/nv-embed/": "2026-10-25T21:38:11.000Z",
+      "./papers/deeprag/": "2026-10-20T22:50:36.000Z",
+      "./papers/self-rag/": "2026-10-20T22:50:19.000Z",
+      "./papers/rag/": "2026-10-20T22:50:02.000Z",
+      "./papers/ncu1-nanotraps/": "2026-10-27T20:53:24.000Z",
+      "./papers/atz-btc-zn/": "2026-10-27T21:32:47.000Z",
+      "./papers/hans-lanm-dimer/": "2026-10-27T22:26:16.000Z",
+      "./papers/moftransformer/": "2026-10-28T19:55:49.000Z",
+      "./papers/mof-snap-active-learning/": "2026-10-28T20:02:35.000Z",
+      "./papers/calf20-flexibility/": "2026-10-28T00:00:00.000Z",
+      "./papers/lanm-protein-process/": "2026-10-27T22:59:41.000Z",
+      "./papers/frontier-cs/": "2026-11-01T21:14:42.000Z"
+    }
+  },
+  "papers": [
+    {
+      "number": 1,
+      "slug": "water-stability-review",
+      "doi": "10.1021/cr5002589",
+      "year": 2014,
+      "journal": "Chemical Reviews",
+      "title": "Water Stability and Adsorption in Metal–Organic Frameworks",
+      "topic": "stability",
+      "body": "complete scientific publisher HTML, all 6 main tables and 31 figures read/visually checked",
+      "supplements": "complete 36-page SI read; all S1–S24 tables including image-only S1; all pages visually checked; no separate appendix listed",
+      "evidence": "complete ledger; historical category/confidence distinction and conflicting SI reports retained",
+      "page": "complete bilingual interactive explainer; 11 sections, 5 application states, 4 categories, 6 SI dossiers, 3 coating strategies",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/water-stability-review/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "received": "2014-05-14",
+        "publishedOnline": "2014-09-29",
+        "publishedInIssue": "2014-10-22",
+        "authors": [
+          {
+            "name": "Nicholas C. Burtch",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Himanshu Jasuja",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Krista S. Walton",
+            "affiliationIds": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "School of Chemical & Biomolecular Engineering, Georgia Institute of Technology, 311 Ferst Drive NW, Atlanta, Georgia 30332, United States"
+        }
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "pageLevelQA": "page-only static and bilingual 1440/768/390 checks pass; all 18 states, language visibility, details, keyboard/focus/state and reload; final screenshots inspected; catalog pending"
+    },
+    {
+      "number": 2,
+      "slug": "mof-stability-three-axes",
+      "doi": "10.1038/natrevmats.2015.18",
+      "year": 2016,
+      "journal": "Nature Reviews Materials",
+      "title": "Chemical, thermal and mechanical stabilities of metal–organic frameworks",
+      "topic": "stability",
+      "body": "complete 12-page scientific review text and figure captions read from 15-page PDF; Figs 1–6 and Box 1 visually checked",
+      "supplements": "publisher lists 6 figure PowerPoint exports only; no independent scientific SI listed",
+      "evidence": "claim ledger complete; Figs 1–6 and Box 1 visually checked; source-specific evidence boundaries retained",
+      "page": "complete bilingual interactive explainer; three axes and three-scenario report checker",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/mof-stability-three-axes/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "publishedOnline": "2016-02-09",
+        "accepted": null,
+        "issueMonth": "2016-03",
+        "authors": [
+          {
+            "name": "Ashlee J. Howarth",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yangyang Liu",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Peng Li",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Zhanyong Li",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Timothy C. Wang",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Joseph T. Hupp",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Omar K. Farha",
+            "affiliationIds": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "Department of Chemistry, Northwestern University, 2145 Sheridan Road, Evanston, Illinois 60208–3113, USA",
+          "b": "Department of Chemistry, Faculty of Science, King Abdulaziz University, Jeddah, Saudi Arabia"
+        },
+        "equalContributors": [
+          "Ashlee J. Howarth",
+          "Yangyang Liu"
+        ]
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "pageLevelQA": "page-only static and bilingual 1440/768/390 browser checks pass; all controls/keyboard/state/sections; screenshots inspected; final catalog integration pending"
+    },
+    {
+      "number": 3,
+      "slug": "hydrolytic-stability-grading",
+      "doi": "10.1039/C5DT04049C",
+      "year": 2016,
+      "journal": "Dalton Transactions",
+      "title": "Parameterizing and grading hydrolytic stability in metal–organic frameworks",
+      "topic": "stability",
+      "body": "full scientific text read; publisher PDF acquired",
+      "supplements": "publisher lists author-manuscript alternative only; no independent scientific SI or appendix",
+      "evidence": "claim ledger complete for draft; Tables 2–3 visually verified; source label inconsistencies documented",
+      "page": "complete bilingual interactive explainer; qualitative report builder",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/hydrolytic-stability-grading/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "accepted": "2015-11-27",
+        "publishedOnline": "2015-11-27",
+        "issueYear": 2016,
+        "authors": [
+          {
+            "name": "Benjamin S. Gelfand",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "George K. H. Shimizu",
+            "affiliationIds": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "Department of Chemistry, University of Calgary, Calgary, Alberta T2N 1N4, Canada"
+        }
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "pageLevelQA": "page-only static and browser 1440/768/390 bilingual interactions pass; representative screenshots viewed; catalog integration pending"
+    },
+    {
+      "number": 4,
+      "slug": "mof-kinetic-stability",
+      "doi": "10.1038/s41578-019-0140-1",
+      "year": 2019,
+      "journal": "Nature Reviews Materials",
+      "title": "Kinetic stability of metal–organic frameworks for corrosive and coordinating gas capture",
+      "topic": "stability",
+      "body": "complete 18-page publisher article scientific text/captions and Tables 1–5 read; Figs 1–6 visually checked",
+      "supplements": "full UCL-authorized publisher HTML lists no SI or appendix; PDF has no embedded attachments",
+      "evidence": "complete ledger with phase/hydrolysis distinction, 12 NH3 values and review-source limitations",
+      "page": "complete bilingual explainer: 3 barrier routes, 6 gas branches, 3 NH3 modes/4 materials",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/mof-kinetic-stability/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "accepted": "2019-08-14",
+        "publishedOnline": "2019-09-13",
+        "versionOfRecord": "2019-09-13",
+        "issueDate": "2019-11",
+        "authors": [
+          {
+            "name": "Adam J. Rieth",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Ashley M. Wright",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Mircea Dincă",
+            "affiliationIds": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "Department of Chemistry, Massachusetts Institute of Technology, Cambridge, MA, USA"
+        }
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "pageLevelQA": "page-only static and bilingual 1440/768/390 checks pass; all routes/gases/capacities/bars; energy geometry, keyboard/focus/details/state; mobile diagram adjusted to retain both endpoints; catalog integration pending"
+    },
+    {
+      "number": 5,
+      "slug": "uio66-buffer-stability",
+      "doi": "10.1039/D0QI00973C",
+      "year": 2021,
+      "journal": "Inorganic Chemistry Frontiers",
+      "title": "Metal–organic frameworks vs. buffers: case study of UiO-66 stability",
+      "topic": "stability",
+      "body": "full scientific text read",
+      "supplements": "all 9 pages read and visually reviewed",
+      "evidence": "claim ledger complete for draft; main Figures 2/4/9 checked",
+      "page": "complete bilingual interactive explainer; 30 measured conditions",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/uio66-buffer-stability/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "accepted": "2020-11-09",
+        "publishedOnline": "2020-12-07",
+        "issueYear": 2021,
+        "authors": [
+          {
+            "name": "Daniel Bůžek",
+            "affiliationIds": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "name": "Slavomír Adamec",
+            "affiliationIds": [
+              "b"
+            ]
+          },
+          {
+            "name": "Kamil Lang",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Jan Demel",
+            "affiliationIds": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "Institute of Inorganic Chemistry of the Czech Academy of Sciences, 250 68 Husinec-Řež, Czech Republic",
+          "b": "Faculty of Environment, Jan Evangelista Purkyně University, 400 96 Ústí nad Labem, Czech Republic"
+        }
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "pageLevelQA": "page-only static pass; browser 1440/768/390, all 30 condition states, bilingual state and direct-English reload, keyboard, no overflow or console errors pass; representative screenshots viewed; final catalog integration and scientific display audit pending"
+    },
+    {
+      "number": 6,
+      "slug": "water-stable-mof-design",
+      "doi": "10.1039/D3SC06076D",
+      "year": 2024,
+      "journal": "Chemical Science",
+      "title": "Water-stable metal–organic frameworks (MOFs): rational construction and carbon dioxide capture",
+      "topic": "stability",
+      "body": "complete 41-page article plus publisher cover read; sections 1–4, all captions and Tables 1–4 read; Figs 1–44/Schemes 1–4 visually inspected",
+      "supplements": "publisher full text and PMC XML list no separate SI/appendix; original-study attachments are outside review scope",
+      "evidence": "ledger and review-source boundaries complete; MUF-16 Ni prose/table difference retained",
+      "page": "complete bilingual explainer: 4 design strategies/8 examples, 16-state evidence checklist, 3 capacity groups",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/water-stable-mof-design/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "received": "2023-11-13",
+        "accepted": "2024-01-03",
+        "publishedOnline": "2024-01-10",
+        "issueDate": "2024-02-07",
+        "authors": [
+          {
+            "name": "Cao Xiao",
+            "affiliationIds": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "name": "Jindou Tian",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Qihui Chen",
+            "affiliationIds": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "name": "Maochun Hong",
+            "affiliationIds": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "State Key Laboratory of Structural Chemistry, Fujian Institute of Research on the Structure of Matter, Chinese Academy of Sciences, Fuzhou 350002, P. R. China",
+          "b": "University of Chinese Academy of Sciences, Beijing 100049, P. R. China"
+        }
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "pageLevelQA": "page-only static and all bilingual 1440/768/390 checks pass; 4 branches, 16 checklist states, 9 capacity/bar checks, details/keyboard/reset/state/focus; representative screenshots viewed; catalog metadata/integration pending"
+    },
+    {
+      "number": 7,
+      "slug": "hydrolytic-stability-benchmark",
+      "doi": "10.1021/acs.chemmater.5c02564",
+      "year": 2025,
+      "journal": "Chemistry of Materials",
+      "title": "Hydrolytic Stability of Metal–Organic Frameworks: An Experimental Study",
+      "topic": "stability",
+      "body": "full scientific text read",
+      "supplements": "all181 SI pages read and visually checked; methods, Tables S1–S7, all51 synthesis/characterization sections and Figures S1–S51; no separate appendix listed",
+      "evidence": "full claim/figure audit complete; source discrepancies recorded in bilingual page and ledger",
+      "page": "complete bilingual interactive explainer",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/hydrolytic-stability-benchmark/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "publishedOnline": "2025-12-03",
+        "issueDate": "2025-12-23",
+        "accepted": "2025-11-17",
+        "authors": [
+          {
+            "name": "Ankit K. Yadav",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Mitchell S. Kenny",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Emmanuel N. Musa",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Timothy J. Walz",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Andrzej Gładysiak",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Kyriakos C. Stylianou",
+            "affiliationIds": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "Materials Discovery Laboratory (MaD Lab), Department of Chemistry, Oregon State University, Corvallis, Oregon 97331, United States"
+        },
+        "source": "Cached complete official ACS article, author/institution metadata and history; datePublished online differs from citation_publication_date issue date."
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "pageLevelQA": "page-only static pass; all8 sections at1440/768/390 in zh/en; all51 material choices, all4 metrics, calculator/search/sort/keyboard/focus/state/URL/console/overflow pass; screenshots viewed"
+    },
+    {
+      "number": 8,
+      "slug": "water-stable-mof-discovery",
+      "doi": "10.1021/acsami.5c09320",
+      "year": 2025,
+      "journal": "ACS Applied Materials & Interfaces",
+      "title": "Data-Driven Discovery of Water-Stable Metal–Organic Frameworks with High Water Uptake Capacity",
+      "topic": "stability",
+      "body": "complete publisher HTML scientific text, captions and Figs 1–7 read/visually checked",
+      "supplements": "complete 44-page SI read and visually checked (Tables S1–S19/Figs S1–S22); author Zenodo ZIP checksum/READMEs/screening notebook/CSV counts checked; bounded code review, no rerun",
+      "evidence": "complete sources.md; final SI tables used; main/SI/archive screening counts kept distinct; rigid GCMC, water pressure and split/UQ boundaries explicit",
+      "page": "complete bilingual explainer complete; 10 sections and 5 interactive modules",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/water-stable-mof-discovery/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "received": "2025-05-11",
+        "revised": "2025-05-20",
+        "accepted": "2025-05-26",
+        "publishedOnline": "2025-06-05",
+        "issueDate": "2025-06-18",
+        "authors": [
+          {
+            "name": "Akash K. Ball",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Gianmarco G. Terrones",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Shuwen Yue",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Heather J. Kulik",
+            "affiliationIds": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "Department of Chemical Engineering, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, United States",
+          "b": "Department of Chemistry, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, United States"
+        }
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "pageLevelQA": "PASS page-only static and discovery-qa.cjs: 1440/768/390 zh/en all sections, all model/count/candidate values and common scales, keyboard/details/state/focus, English reload; screenshots saved and representative contact viewed; final catalog-dependent metadata check pending"
+    },
+    {
+      "number": 9,
+      "slug": "mof-hydrolysis-atomistic",
+      "doi": "10.1016/j.cplett.2025.142314",
+      "year": 2025,
+      "journal": "Chemical Physics Letters",
+      "title": "Stability by design: Atomistic insights into hydrolysis-driven MOF degradation",
+      "topic": "stability",
+      "body": "complete final publisher main text read and compared with earlier full-text version; main figures/tables visually checked",
+      "supplements": "complete official SI read: energy definition/all5FESfigures including floating textboxes",
+      "evidence": "complete final+SI ledger; measured/fitted/modeled quantities and remaining scientific discrepancies explicitly distinguished",
+      "page": "complete local bilingual page;batchcatalogue/publicationpending",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/mof-hydrolysis-atomistic/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedPreprintMetadata": {
+        "url": "https://arxiv.org/abs/2507.16197",
+        "version": "v1",
+        "submitted": "2025-07-22",
+        "history": "Only v1 listed in current official arXiv record checked2026-11-02",
+        "authors": [
+          "Ashok Yacham",
+          "Tarak K. Patra",
+          "Jithin John Varghese",
+          "Richa Sharma"
+        ],
+        "authorAffiliations": [
+          {
+            "name": "Ashok Yacham",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Tarak K. Patra",
+            "affiliationIds": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "name": "Jithin John Varghese",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Richa Sharma",
+            "affiliationIds": [
+              "c"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": {
+          "a": "Department of Chemical Engineering, Indian Institute of Technology Madras, Chennai 600036, India",
+          "b": "Center for Atomistic Modeling and Materials Design, Indian Institute of Technology Madras, Chennai 600036, India",
+          "c": "Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA"
+        }
+      },
+      "accessAudit": {
+        "checkedAt": "2026-11-02T05:03:03.031597+00:00",
+        "locationIndexResult": {
+          "n": 9,
+          "slug": "mof-hydrolysis-atomistic",
+          "oa": {
+            "is_oa": false,
+            "oa_status": "closed",
+            "oa_url": null,
+            "any_repository_has_fulltext": false
+          },
+          "locations": []
+        },
+        "note": "OpenAlex metadata is a location aid, not a full-text or SI reading record; publisher/author files verified independently."
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "verifiedMetadata": {
+        "received": "2025-05-28",
+        "revised": "2025-07-31",
+        "accepted": "2025-07-31",
+        "publishedOnline": "2025-08-05",
+        "versionOfRecord": "2025-08-07",
+        "authors": [
+          {
+            "name": "Ashok Yacham",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Tarak K. Patra",
+            "affiliationIds": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "name": "Jithin John Varghese",
+            "affiliationIds": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Richa Sharma",
+            "affiliationIds": [
+              "c"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": {
+          "a": "Department of Chemical Engineering, Indian Institute of Technology Madras, Chennai 600036, India",
+          "b": "Center for Atomistic Modeling and Materials Design, Indian Institute of Technology Madras, Chennai 600036, India",
+          "c": "MIT Open Learning, Massachusetts Institute of Technology, Cambridge 02139, MA, USA"
+        }
+      },
+      "publisherAcquisition": {
+        "checkedAt": "2026-11-02T13:32:59.549327+00:00",
+        "method": "native Chrome UCL access; Save Page Complete and normal SI link downloads",
+        "mainFile": "/tmp/mof-ree-sources/mof-hydrolysis-atomistic-publisher.html",
+        "mainSHA256": "a177cc252fb2e6489bfdd00a4d4bab3b748161d1774d56486aa5caa9fefa467a",
+        "mainScientificCharacters": 31574,
+        "supplementLinks": [
+          {
+            "label": "Download: Download Word document (10MB)",
+            "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0009261425004543-mmc1.docx"
+          }
+        ],
+        "listedIndependentSI": true,
+        "readingStatus": "acquired; full scientific reading still required except papers9/22 and12 recorded separately"
+      },
+      "pageLevelQA": "PASS full browser numeric/state audit at1440/768/390 inzh/en;representative screenshots visually reviewed"
+    },
+    {
+      "number": 10,
+      "slug": "water-dual-impact",
+      "doi": "10.1039/D5CP04782J",
+      "year": 2026,
+      "journal": "Physical Chemistry Chemical Physics",
+      "title": "Dual impact of water on stability of metal–organic frameworks",
+      "topic": "stability",
+      "body": "complete full scientific text and captions read; 10-page publisher PDF acquired; Figs 1–5 visually checked",
+      "supplements": "complete 23-page SI read; Figs S1–S5/Tables S1–S8 checked; all 72 ZIP data files parsed",
+      "evidence": "complete draft ledger; Table S1 columns and path-level references checked; model/method/coordinate-label limits documented",
+      "page": "complete bilingual interactive explainer; 160 energy states, 3 path selectors",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/water-dual-impact/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "received": "2025-12-09",
+        "accepted": "2026-02-02",
+        "publishedOnline": "2026-02-03",
+        "issueDate": "2026-03-04",
+        "authors": [
+          {
+            "name": "Fatemeh Keshavarz",
+            "affiliationIds": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "Department of Physics, School of Engineering Science, LUT University, Yliopistonkatu 34, FI-53850, Lappeenranta, Finland"
+        }
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "pageLevelQA": "page-only static and bilingual 1440/768/390 browser checks pass; all controls/details/keyboard/state; representative screenshots inspected; catalog integration pending"
+    },
+    {
+      "number": 11,
+      "slug": "uio66-dangling-linkers",
+      "doi": "10.1038/s41467-026-70247-z",
+      "year": 2026,
+      "journal": "Nature Communications",
+      "title": "Water-generated dangling linkers in a metal-organic framework",
+      "topic": "stability",
+      "body": "complete scientific text/captions and 9-page publisher PDF read; Figs 1–3 visually checked",
+      "supplements": "complete 22-page SI and 13-page transparent peer-review read; Tables S1–S4/Figs S1–S16 checked",
+      "evidence": "complete ledger; quantitative DP state separated from chemical-shift reference; all 11 SI variants checked",
+      "page": "complete bilingual explainer: 5 samples, integral calculator, 4 NMR branches, 11 candidates",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/uio66-dangling-linkers/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "received": "2025-07-02",
+        "accepted": "2026-02-20",
+        "publishedOnline": "2026-03-11",
+        "versionOfRecord": "2026-04-27",
+        "authors": [
+          {
+            "name": "Yao Fu",
+            "affiliationIds": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "name": "Yifeng Yao",
+            "affiliationIds": [
+              "c"
+            ]
+          },
+          {
+            "name": "Subhradip Paul",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Kenji Mochizuki",
+            "affiliationIds": [
+              "c"
+            ]
+          },
+          {
+            "name": "Gaël De Paëpe",
+            "affiliationIds": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "Univ. Grenoble Alpes, CEA, IRIG-MEM, Grenoble, France",
+          "b": "Department of Chemistry, Fudan University, Shanghai, PR China",
+          "c": "Department of Chemistry, Zhejiang University, Hangzhou, PR China"
+        }
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "pageLevelQA": "page-only static and bilingual 1440/768/390 browser checks pass; all states/controls/details/keyboard/state; corrected plot text contrast; representative screenshots inspected; catalog integration pending"
+    },
+    {
+      "number": 12,
+      "slug": "mil100-water-matrices",
+      "doi": "10.1016/j.eti.2026.104987",
+      "year": 2026,
+      "journal": "Environmental Technology & Innovation",
+      "title": "Strong and Stable? Evaluating the stability of MIL-100(Fe) Metal-organic Framework in Water Matrices",
+      "topic": "stability",
+      "body": "complete final publisher HTML main read;Table1/Figs1–5 andgraphicalabstract visuallychecked;full scientific text acquired without needing PDF",
+      "supplements": "complete official5MB DOCX SI read; rendered14pages all viewed; TablesS1–S8/FigsS1–S7 checked",
+      "evidence": "complete reading notes with material main/SI leaching,BET,alkalinity and TGA discrepancies disclosed; no invented corrections",
+      "page": "complete local bilingual page;batchcatalogue/publicationpending",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/mil100-water-matrices/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "accessAudit": {
+        "checkedAt": "2026-11-02T05:03:03.031597+00:00",
+        "locationIndexResult": {
+          "n": 12,
+          "slug": "mil100-water-matrices",
+          "oa": {
+            "is_oa": true,
+            "oa_status": "gold",
+            "oa_url": "https://doi.org/10.1016/j.eti.2026.104987",
+            "any_repository_has_fulltext": false
+          },
+          "locations": [
+            {
+              "is_oa": true,
+              "landing_page_url": "https://doi.org/10.1016/j.eti.2026.104987",
+              "pdf_url": null,
+              "version": "publishedVersion",
+              "license": "cc-by-nc-nd"
+            },
+            {
+              "is_oa": false,
+              "landing_page_url": "https://orcid.org/0000-0003-4093-2243>",
+              "pdf_url": null,
+              "version": "acceptedVersion",
+              "license": null
+            }
+          ]
+        },
+        "note": "OpenAlex metadata is a location aid, not a full-text or SI reading record; publisher/author files verified independently."
+      },
+      "verifiedMetadata": {
+        "received": "2026-02-05",
+        "revised": "2026-05-01",
+        "accepted": "2026-05-13",
+        "publishedOnline": "2026-05-15",
+        "versionOfRecord": "2026-11-02",
+        "authors": [
+          {
+            "name": "Aoife Quinlivan",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Andrea Laybourn",
+            "affiliationIds": [
+              "b",
+              "c"
+            ]
+          },
+          {
+            "name": "Rachel L. Gomes",
+            "affiliationIds": [
+              "a"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": {
+          "a": "Food Water Waste Research Group, Faculty of Engineering, University of Nottingham, University Park Campus, Nottingham NG7 2RD, United Kingdom",
+          "b": "Advanced Materials Research Group, Faculty of Engineering, University of Nottingham, University Park Campus, Nottingham NG7 2RD, United Kingdom",
+          "c": "Institute of Process Research and Development & School of Chemistry, University of Leeds, Leeds LS2 9JT, United Kingdom"
+        }
+      },
+      "pageLevelQA": "PASS full browser numeric/state audit at1440/768/390 inzh/en;representative screenshots visually reviewed",
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts."
+    },
+    {
+      "number": 13,
+      "slug": "ree-mof-critical-review",
+      "doi": "10.1016/j.ccr.2026.218197",
+      "year": 2026,
+      "journal": "Coordination Chemistry Reviews",
+      "title": "Rethinking MOFs for REE recovery: Role of functional groups, selectivity limitations, and possible future directions",
+      "topic": "ree",
+      "body": "complete final main scientifically read;all figures/tables visually checked",
+      "supplements": "publisher lists no separate SI;body contains no Supplementary/Appendix/Supporting Information pointers",
+      "evidence": "complete sources.md;review synthesis,primary studies and interpretive limits distinguished",
+      "page": "complete local 12 section bilingual draft/11 branches",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/ree-mof-critical-review/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "accessAudit": {
+        "checkedAt": "2026-11-02T05:03:03.031597+00:00",
+        "locationIndexResult": {
+          "n": 13,
+          "slug": "ree-mof-critical-review",
+          "oa": {
+            "is_oa": false,
+            "oa_status": "closed",
+            "oa_url": null,
+            "any_repository_has_fulltext": false
+          },
+          "locations": []
+        },
+        "note": "OpenAlex metadata is a location aid, not a full-text or SI reading record; publisher/author files verified independently."
+      },
+      "verifiedMetadata": {
+        "received": "2026-04-28",
+        "accepted": "2026-06-07",
+        "publishedOnline": "2026-06-12",
+        "versionOfRecord": "2026-06-12",
+        "authors": [
+          {
+            "name": "Prathmesh Bhadane",
+            "affiliationIds": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Deepti Kalsi",
+            "affiliationIds": [
+              "a"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": {
+          "a": "Department of Chemistry, Indian Institute of Technology, Bombay, Powai, Mumbai 400076, India"
+        }
+      },
+      "publisherAcquisition": {
+        "checkedAt": "2026-11-02T13:32:59.758715+00:00",
+        "method": "native Chrome UCL access; Save Page Complete and normal SI link downloads",
+        "mainFile": "/tmp/mof-ree-sources/ree-mof-critical-review-publisher.html",
+        "mainSHA256": "aa945c917075380dd2c137d32f87427d748bac6498f993e5a305c52b282ae33d",
+        "mainScientificCharacters": 99823,
+        "supplementLinks": [],
+        "listedIndependentSI": false,
+        "readingStatus": "acquired; full scientific reading still required except papers9/22 and12 recorded separately"
+      },
+      "pageLevelQA": "PASS:all sections/branches,3widths×2languages,numeric outputs/scales and source distinctions,keyboard/focus/ARIA/state/reload/anchors/overflow/console;representative screenshots saved and viewed",
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts."
+    },
+    {
+      "number": 14,
+      "slug": "ree-mof-targeted-review",
+      "doi": "10.1016/j.cej.2025.172100",
+      "year": 2026,
+      "journal": "Chemical Engineering Journal",
+      "title": "Recent advances in targeted adsorption of rare earth elements using metal-organic frameworks",
+      "topic": "ree",
+      "body": "complete final main scientifically read;all figures/tables visually checked",
+      "supplements": "publisher lists no separate SI;body contains no Supplementary/Appendix/Supporting Information pointers",
+      "evidence": "complete sources.md;review synthesis,primary studies and interpretive limits distinguished",
+      "page": "complete local 11 section bilingual draft/11 branches",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/ree-mof-targeted-review/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "accessAudit": {
+        "checkedAt": "2026-11-02T05:03:03.031597+00:00",
+        "locationIndexResult": {
+          "n": 14,
+          "slug": "ree-mof-targeted-review",
+          "oa": {
+            "is_oa": false,
+            "oa_status": "closed",
+            "oa_url": null,
+            "any_repository_has_fulltext": false
+          },
+          "locations": []
+        },
+        "note": "OpenAlex metadata is a location aid, not a full-text or SI reading record; publisher/author files verified independently."
+      },
+      "verifiedMetadata": {
+        "received": "2025-11-24",
+        "revised": "2025-12-17",
+        "accepted": "2025-12-18",
+        "publishedOnline": "2025-12-20",
+        "versionOfRecord": "2026-01-02",
+        "authors": [
+          {
+            "name": "Heru Agung Saputra",
+            "affiliationIds": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Rosy Amalia Kurnia Putri",
+            "affiliationIds": [
+              "b"
+            ]
+          },
+          {
+            "name": "Eleazer L. Vivas",
+            "affiliationIds": [
+              "c"
+            ]
+          },
+          {
+            "name": "Herman",
+            "affiliationIds": [
+              "d"
+            ]
+          },
+          {
+            "name": "Amru Daulay",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Fika Rofiek Mufakhir",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yayat Iman Supriyatna",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Hendra Prasetia",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Suyanti",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Sudibyo",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Ulin Herlina",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Asnan Rinovian",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Sudiyarmanto",
+            "affiliationIds": [
+              "b"
+            ]
+          },
+          {
+            "name": "Fajar Nurjaman",
+            "affiliationIds": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Widi Astuti",
+            "affiliationIds": [
+              "a"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": {
+          "a": "Research Center for Mineral Technology, National Research and Innovation Agency (BRIN-Indonesia), Tanjung Bintang, Lampung Selatan, 35361, Indonesia",
+          "b": "Research Center for Molecular Chemistry, National Research and Innovation Agency (BRIN-Indonesia), South Tangerang, 15314, Indonesia",
+          "c": "Department of Civil Engineering, College of Engineering, Batangas State University - The National Engineering University, Alangilan, Batangas City, Batangas, 4200, Philippines",
+          "d": "Department of Pharmaceutical Chemistry, Faculty of Pharmacy, Mulawarman University, Gunung Kelua, 75119, Indonesia"
+        }
+      },
+      "publisherAcquisition": {
+        "checkedAt": "2026-11-02T13:32:59.913912+00:00",
+        "method": "native Chrome UCL access; Save Page Complete and normal SI link downloads",
+        "mainFile": "/tmp/mof-ree-sources/ree-mof-targeted-review-publisher.html",
+        "mainSHA256": "817c867dbbb6c5e5c894b7e38c4e1c23230a58022a6964baf6abc11a3e3fe2b4",
+        "mainScientificCharacters": 83845,
+        "supplementLinks": [],
+        "listedIndependentSI": false,
+        "readingStatus": "acquired; full scientific reading still required except papers9/22 and12 recorded separately"
+      },
+      "pageLevelQA": "PASS:all sections/branches,3widths×2languages,numeric outputs/scales and source distinctions,keyboard/focus/ARIA/state/reload/anchors/overflow/console;representative screenshots saved and viewed",
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts."
+    },
+    {
+      "number": 15,
+      "slug": "ree-porous-framework-review",
+      "doi": "10.1016/j.seppur.2026.139438",
+      "year": 2026,
+      "journal": "Separation and Purification Technology",
+      "title": "Selective adsorption of rare earth metals by porous frameworks: recent advances and future directions",
+      "topic": "ree",
+      "body": "complete final main scientifically read;all figures/tables visually checked",
+      "supplements": "publisher lists no separate SI;body contains no Supplementary/Appendix/Supporting Information pointers",
+      "evidence": "complete sources.md;review synthesis,primary studies and interpretive limits distinguished",
+      "page": "complete local 11 section bilingual draft/13 branches",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/ree-porous-framework-review/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "accessAudit": {
+        "checkedAt": "2026-11-02T05:03:03.031597+00:00",
+        "locationIndexResult": {
+          "n": 15,
+          "slug": "ree-porous-framework-review",
+          "oa": {
+            "is_oa": false,
+            "oa_status": "closed",
+            "oa_url": null,
+            "any_repository_has_fulltext": false
+          },
+          "locations": []
+        },
+        "note": "OpenAlex metadata is a location aid, not a full-text or SI reading record; publisher/author files verified independently."
+      },
+      "verifiedMetadata": {
+        "received": "2026-04-15",
+        "revised": "2026-07-01",
+        "accepted": "2026-07-20",
+        "publishedOnline": "2026-07-21",
+        "versionOfRecord": "2026-07-25",
+        "authors": [
+          {
+            "name": "Yuehua Chen",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Shuaiqi Gao",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yiqing Xue",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yujiao Yuan",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Kelei Zhuo",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Huiyong Wang",
+            "affiliationIds": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Jianji Wang",
+            "affiliationIds": [
+              "a",
+              "b"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": {
+          "a": "Key Laboratory of Green Chemical Media and Reactions, Ministry of Education, Henan Key Laboratory for Green Media and Reactions, Henan International Joint Laboratory of Green Chemistry, Collaborative Innovation Center of Henan Province for Green Manufacturing of Fine Chemicals, School of Chemistry and Chemical Engineering, Henan Normal University, Xinxiang, Henan 453007, PR China",
+          "b": "College of Chemistry and Molecular Sciences, Longzihu New Energy Laboratory, Henan University, Zhengzhou, Henan 450000, PR China"
+        }
+      },
+      "publisherAcquisition": {
+        "checkedAt": "2026-11-02T13:33:00.131096+00:00",
+        "method": "native Chrome UCL access; Save Page Complete and normal SI link downloads",
+        "mainFile": "/tmp/mof-ree-sources/ree-porous-framework-review-publisher.html",
+        "mainSHA256": "09b975fa9b55d3552392a2a06b528313e44cc5e152f282b5d172c24aef7b0873",
+        "mainScientificCharacters": 86810,
+        "supplementLinks": [],
+        "listedIndependentSI": false,
+        "readingStatus": "acquired; full scientific reading still required except papers9/22 and12 recorded separately"
+      },
+      "pageLevelQA": "PASS:all sections/branches,3widths×2languages,numeric outputs/scales and source distinctions,keyboard/focus/ARIA/state/reload/anchors/overflow/console;representative screenshots saved and viewed",
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts."
+    },
+    {
+      "number": 16,
+      "slug": "ree-mof-protocol",
+      "doi": "10.1038/s41596-026-01425-y",
+      "year": 2026,
+      "journal": "Nature Protocols",
+      "title": "Selective heavy-metal sequestration and rare-earth element recovery using metal–organic frameworks",
+      "topic": "ree",
+      "body": "complete42-page final publisher PDF read; Figs1–8/Tables1–4/Boxes1–3/Extended Data1–6 visually checked",
+      "supplements": "complete16-page SI read/visually checked; Notes1–3/Figs1–15/Tables1–3; five original XLSX/14 sheets read-only audited with original errors retained",
+      "evidence": "complete sources ledger; all small numeric tables checked; spectra bounded audit; protocol/source-data discrepancies retained",
+      "page": "complete bilingual explainer:9 sections,4 procedure/3 stability/2 capacity/2 loading/2 recovery branches and metric calculator",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/ree-mof-protocol/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "received": "2025-09-17",
+        "accepted": "2026-07-02",
+        "publishedOnline": "2026-08-24",
+        "authors": [
+          {
+            "name": "Dhruv Menon",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Prathmesh Bhadane",
+            "affiliationIds": [
+              "b"
+            ]
+          },
+          {
+            "name": "Priya Mahato",
+            "affiliationIds": [
+              "b"
+            ]
+          },
+          {
+            "name": "Prateek Goyal",
+            "affiliationIds": [
+              "b"
+            ]
+          },
+          {
+            "name": "Iseult Lynch",
+            "affiliationIds": [
+              "c",
+              "d"
+            ]
+          },
+          {
+            "name": "Swaroop Chakraborty",
+            "affiliationIds": [
+              "c",
+              "d"
+            ]
+          },
+          {
+            "name": "Superb K. Misra",
+            "affiliationIds": [
+              "b"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "Department of Chemical Engineering and Biotechnology, University of Cambridge, Cambridge, UK",
+          "b": "Department of Materials Engineering, Indian Institute of Technology Gandhinagar, Palaj, India",
+          "c": "School of Geography, Earth and Environmental Sciences, University of Birmingham, Birmingham, UK",
+          "d": "Centre for Environmental Research and Justice (CERJ), University of Birmingham, Birmingham, UK"
+        }
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "pageLevelQA": "page-only static and bilingual1440/768/390 checks pass; all9 sections/13 branches; exact chart values/scales; calculator units/invalid/Ce0/range; keyboard/focus/state/reload/anchors/resources/console/overflow; representative viewport screenshots viewed; catalog pending"
+    },
+    {
+      "number": 17,
+      "slug": "cmpo-mil101-ree",
+      "doi": "10.1007/s10853-016-9807-9",
+      "year": 2016,
+      "journal": "Journal of Materials Science",
+      "title": "Functionalized metal-organic-framework CMPO@MIL-101(Cr) as a stable and selective rare earth adsorbent",
+      "topic": "ree",
+      "body": "complete 8-page publisher PDF read",
+      "supplements": "complete DOCX read; rendered to 4 pages and every page viewed, including native chart",
+      "evidence": "draft ledger complete, support/product batch and metric distinctions retained",
+      "page": "complete bilingual interactive explainer; 4-stage route, kinetic/mass-balance teaching, 3 stability contexts",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/cmpo-mil101-ree/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "accepted": "2016-02-02",
+        "publishedOnline": "2016-02-11",
+        "authors": [
+          {
+            "name": "Jeroen de Decker",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Jeriffa de Clercq",
+            "affiliationIds": [
+              "b"
+            ]
+          },
+          {
+            "name": "Pieter Vermeir",
+            "affiliationIds": [
+              "c"
+            ]
+          },
+          {
+            "name": "Pascal van der Voort",
+            "affiliationIds": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "Department of Inorganic and Physical Chemistry, Center for Ordered Materials, Organometallics and Catalysis (COMOC), Ghent University, Krijgslaan 281-S3, 9000 Ghent, Belgium",
+          "b": "Department of Chemical Engineering and Technical Chemistry, Industrial Catalysis and Adsorption Technology (INCAT), Ghent University, Valentin Vaerwyckweg 1, 9000 Ghent, Belgium",
+          "c": "Department of Applied Biosciences, Ghent University, Valentin Vaerwyckweg 1, 9000 Ghent, Belgium"
+        }
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "pageLevelQA": "page-only static, browser 1440/768/390 bilingual controls/keyboard/state pass; representative screenshots viewed"
+    },
+    {
+      "number": 18,
+      "slug": "functionalized-cr-mil101",
+      "doi": "10.1021/acsami.8b07130",
+      "year": 2018,
+      "journal": "ACS Applied Materials & Interfaces",
+      "title": "Selective Adsorption of Rare Earth Elements over Functionalized Cr-MIL-101",
+      "topic": "ree",
+      "body": "full scientific text read, including block-child-p methods/equations",
+      "supplements": "all 13 pages read; all 7 SI figures and model equations visually reviewed",
+      "evidence": "claim ledger with table/prose ranking conflict and regeneration discrepancy",
+      "page": "complete bilingual interactive explainer; 25 measured capacities and 5 pairs of fits",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/functionalized-cr-mil101/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "accepted": "2018-06-20",
+        "publishedOnline": "2018-07-03",
+        "issueYear": 2018,
+        "authors": [
+          {
+            "name": "Yu-Ri Lee",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Kwangsun Yu",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Seenu Ravi",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Wha-Seung Ahn",
+            "affiliationIds": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "Department of Chemistry and Chemical Engineering, Inha University, Incheon, Republic of Korea"
+        }
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "pageLevelQA": "page-only static and 1440/768/390 browser checks pass; final catalog integration pending"
+    },
+    {
+      "number": 19,
+      "slug": "acrylic-mil101-scandium",
+      "doi": "10.1021/acsami.9b00476",
+      "year": 2019,
+      "journal": "ACS Applied Materials & Interfaces",
+      "title": "Acrylic Acid-Functionalized Metal–Organic Frameworks for Sc(III) Selective Adsorption",
+      "topic": "ree",
+      "body": "full scientific text read, including block-child-p methods and equations",
+      "supplements": "all 8 SI pages read and rendered; all 5 figures and 2 tables visually reviewed",
+      "evidence": "ledger complete for draft; 6 screening compositions, 4 fitted maxima, 75 selectivity coefficients and 8 elution rates mapped",
+      "page": "complete bilingual interactive explainer; composition and pH explorers",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/acrylic-mil101-scandium/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "accepted": "2019-03-10",
+        "publishedOnline": "2019-03-11",
+        "issueYear": 2019,
+        "authors": [
+          {
+            "name": "Zhenning Lou",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Xin Xiao",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Mengnan Huang",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yuejiao Wang",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Zhiqiang Xing",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Ying Xiong",
+            "affiliationIds": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "College of Chemistry, Liaoning University, Shenyang 110036, China"
+        }
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "pageLevelQA": "page-only static and browser 1440/768/390 in both languages pass; all choices, keyboard, preserved state, no overflow/errors; catalog integration pending"
+    },
+    {
+      "number": 20,
+      "slug": "dual-functional-uio66-gd",
+      "doi": "10.1021/acs.iecr.8b05220",
+      "year": 2019,
+      "journal": "Industrial & Engineering Chemistry Research",
+      "title": "Gd3+ Adsorption over Carboxylic- and Amino-Group Dual-Functionalized UiO-66",
+      "topic": "ree",
+      "body": "full scientific publisher HTML read including block-child-p",
+      "supplements": "all 16 SI pages read; all figures/tables visually checked",
+      "evidence": "draft ledger complete; source discrepancies retained",
+      "page": "complete bilingual interactive explainer; 5-material comparison, Langmuir teaching curve, 2 competitive contexts",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/dual-functional-uio66-gd/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "accepted": "2019-01-14",
+        "publishedOnline": "2019-01-30",
+        "publishedInIssue": "2019-02-13",
+        "authors": [
+          {
+            "name": "Imteaz Ahmed",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yu-Ri Lee",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Kwangsun Yu",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Samiran Bhattacharjee",
+            "affiliationIds": [
+              "b"
+            ]
+          },
+          {
+            "name": "Wha-Seung Ahn",
+            "affiliationIds": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "Department of Chemistry and Chemical Engineering, Inha University, Incheon 402-751, Republic of Korea",
+          "b": "Centre for Advanced Research in Sciences (CARS), University of Dhaka, Dhaka 1000, Bangladesh"
+        }
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "pageLevelQA": "page-only static and browser 1440/768/390 bilingual interactions pass; representative screenshots viewed; final catalog pending"
+    },
+    {
+      "number": 21,
+      "slug": "uio66-zif8-ree",
+      "doi": "10.1016/j.cej.2020.124023",
+      "year": 2020,
+      "journal": "Chemical Engineering Journal",
+      "title": "3D-agaric like core-shell architecture UiO-66-NH2@ZIF-8 with robust stability for highly efficient REEs recovery",
+      "topic": "ree",
+      "body": "complete final main read;Tables1–2,Figs1–10,Schemes1–2,GA visually checked",
+      "supplements": "complete official DOC SI converted/rendered21pages allviewed;Eq1–11,FigsS1–S3,TablesS1–S11 read",
+      "evidence": "complete sources.md;log-selectivity Eq11 verified visually;capacity/unit/fit/thermo/cycle discrepancies explicit",
+      "page": "complete local12section bilingual draft,30 scientific output states",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/uio66-zif8-ree/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "accessAudit": {
+        "checkedAt": "2026-11-02T05:03:03.031597+00:00",
+        "locationIndexResult": {
+          "n": 21,
+          "slug": "uio66-zif8-ree",
+          "oa": {
+            "is_oa": false,
+            "oa_status": "closed",
+            "oa_url": null,
+            "any_repository_has_fulltext": false
+          },
+          "locations": []
+        },
+        "note": "OpenAlex metadata is a location aid, not a full-text or SI reading record; publisher/author files verified independently."
+      },
+      "verifiedMetadata": {
+        "received": "2019-10-01",
+        "revised": "2019-12-29",
+        "accepted": "2020-01-03",
+        "publishedOnline": "2020-01-07",
+        "versionOfRecord": "2020-01-11",
+        "authors": [
+          {
+            "name": "Mengmeng Zhang",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Kun Yang",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Junshuo Cui",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Haibiao Yu",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yuejiao Wang",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Weijun Shan",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Zhenning Lou",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Ying Xiong",
+            "affiliationIds": [
+              "a"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": {
+          "a": "College of Chemistry, Key Laboratory of Rare-scattered Elements of Liaoning Province, Liaoning University, Shenyang 110036, PR China"
+        }
+      },
+      "publisherAcquisition": {
+        "checkedAt": "2026-11-02T13:33:00.240804+00:00",
+        "method": "native Chrome UCL access; Save Page Complete and normal SI link downloads",
+        "mainFile": "/tmp/mof-ree-sources/uio66-zif8-ree-publisher.html",
+        "mainSHA256": "b518a14ffb03d08bd3b5c9d51a29191f42767ce059f320be159c3735a36c0b3d",
+        "mainScientificCharacters": 41337,
+        "supplementLinks": [
+          {
+            "label": "Download: Download Word document (2MB)",
+            "url": "https://ars.els-cdn.com/content/image/1-s2.0-S1385894720300140-mmc1.doc"
+          }
+        ],
+        "listedIndependentSI": true,
+        "readingStatus": "acquired; full scientific reading still required except papers9/22 and12 recorded separately"
+      },
+      "pageLevelQA": "PASS:12sections/30outputstates at1440/768/390px zh/en;all28capacity/28R²/14area/80log-selectivity values andscales,unitexercise,keyboard/focus/ARIA/details/state/reload/anchors/console/overflow;representativescreenshotsviewed",
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts."
+    },
+    {
+      "number": 22,
+      "slug": "organophosphorus-mil101",
+      "doi": "10.1016/j.micromeso.2020.110747",
+      "year": 2021,
+      "journal": "Microporous and Mesoporous Materials",
+      "title": "Selective recovery and separation of rare earth elements by organophosphorus modified MIL-101(Cr)",
+      "topic": "ree",
+      "body": "complete final publisher main text read and compared with earlier full-text version; main figures/tables visually checked",
+      "supplements": "complete official21MB DOCX SI read:methods/6tables/14figures; omittedS8EMF independently converted and viewed",
+      "evidence": "complete final+SI ledger; measured/fitted/modeled quantities and remaining scientific discrepancies explicitly distinguished",
+      "page": "complete local bilingual page;batchcatalogue/publicationpending",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/organophosphorus-mil101/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "received": "2020-04-29",
+        "accepted": "2020-11-02",
+        "publishedOnline": "2020-11-04",
+        "issueYear": 2021,
+        "authors": [
+          {
+            "name": "Vitalii Kavun",
+            "affiliationIds": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Monique A. van der Veen",
+            "affiliationIds": [
+              "b"
+            ]
+          },
+          {
+            "name": "Eveliina Repo",
+            "affiliationIds": [
+              "a"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "Department of Separation Science, LUT University, Yliopistonkatu 34, 53850, Lappeenranta, Finland",
+          "b": "Catalysis Engineering, Department of Chemical Engineering, Delft University of Technology, Van der Maasweg 9, 2629 HZ, Delft, the Netherlands"
+        }
+      },
+      "additionalBodySource": "LUT author final draft25pp downloaded via normal browser event; no SI or embedded attachment. Main final9pp previously read. https://lutpub.lut.fi/handle/10024/161810",
+      "accessAudit": {
+        "checkedAt": "2026-11-02T05:03:03.031597+00:00",
+        "locationIndexResult": {
+          "n": 22,
+          "slug": "organophosphorus-mil101",
+          "oa": {
+            "is_oa": true,
+            "oa_status": "bronze",
+            "oa_url": "https://ars.els-cdn.com/content/image/1-s2.0-S1387181120307472-fx1_lrg.jpg",
+            "any_repository_has_fulltext": true
+          },
+          "locations": [
+            {
+              "is_oa": true,
+              "landing_page_url": "https://doi.org/10.1016/j.micromeso.2020.110747",
+              "pdf_url": "https://ars.els-cdn.com/content/image/1-s2.0-S1387181120307472-fx1_lrg.jpg",
+              "version": "publishedVersion",
+              "license": null
+            },
+            {
+              "is_oa": true,
+              "landing_page_url": "https://lutpub.lut.fi/handle/10024/161810",
+              "pdf_url": null,
+              "version": "submittedVersion",
+              "license": "cc-by-nc-nd"
+            },
+            {
+              "is_oa": false,
+              "landing_page_url": "http://resolver.tudelft.nl/uuid:395bde82-2655-413f-86b5-7d65afc6a09a",
+              "pdf_url": null,
+              "version": "submittedVersion",
+              "license": null
+            },
+            {
+              "is_oa": true,
+              "landing_page_url": "http://resolver.tudelft.nl/uuid:395bde82-2655-413f-86b5-7d65afc6a09a",
+              "pdf_url": null,
+              "version": "submittedVersion",
+              "license": "other-oa"
+            }
+          ]
+        },
+        "note": "OpenAlex metadata is a location aid, not a full-text or SI reading record; publisher/author files verified independently."
+      },
+      "additionalRepositoryAudit": {
+        "url": "https://research.tudelft.nl/en/publications/selective-recovery-and-separation-of-rare-earth-elements-by-organ/",
+        "result": "Official portal lists one final-published main PDF (2.88 MB); no SI attachment. Main text was already read from author thesis. Portal PDF fetch returned 403; this is not a new full-text reading record.",
+        "checkedAt": "2026-11-02"
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "publisherAcquisition": {
+        "checkedAt": "2026-11-02T13:33:00.407652+00:00",
+        "method": "native Chrome UCL access; Save Page Complete and normal SI link downloads",
+        "mainFile": "/tmp/mof-ree-sources/organophosphorus-mil101-publisher.html",
+        "mainSHA256": "2d60ed40ed7d629fe0d2d924a61ddb38d247cf022cd1d3645eed78358a9c662e",
+        "mainScientificCharacters": 37315,
+        "supplementLinks": [
+          {
+            "label": "Download: Download Word document (21MB)",
+            "url": "https://ars.els-cdn.com/content/image/1-s2.0-S1387181120307472-mmc1.docx"
+          }
+        ],
+        "listedIndependentSI": true,
+        "readingStatus": "acquired; full scientific reading still required except papers9/22 and12 recorded separately"
+      },
+      "pageLevelQA": "PASS full browser numeric/state audit at1440/768/390 inzh/en;representative screenshots visually reviewed"
+    },
+    {
+      "number": 23,
+      "slug": "dga-mil101-europium",
+      "doi": "10.1016/j.mineng.2021.106831",
+      "year": 2021,
+      "journal": "Minerals Engineering",
+      "title": "Promising priority separation of europium from lanthanide by novel DGA-functionalized metal organic frameworks",
+      "topic": "ree",
+      "body": "complete final publisher HTML read, all scientific sections and Tables1–3/Figs1–10/graphicalabstract visually checked",
+      "supplements": "entire official DOCX SI read and all15rendered pages viewed;TablesS1–S2/FigsS1–S9 checked",
+      "evidence": "complete local sources.md evidence and14state map; main/SI orbital labels,kineticqe,recipe ambiguity andretention discrepancies explicit",
+      "page": "complete local bilingual page;batchcatalogue/publicationpending",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/dga-mil101-europium/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "accessAudit": {
+        "checkedAt": "2026-11-02T05:03:03.031597+00:00",
+        "locationIndexResult": {
+          "n": 23,
+          "slug": "dga-mil101-europium",
+          "oa": {
+            "is_oa": false,
+            "oa_status": "closed",
+            "oa_url": null,
+            "any_repository_has_fulltext": false
+          },
+          "locations": []
+        },
+        "note": "OpenAlex metadata is a location aid, not a full-text or SI reading record; publisher/author files verified independently."
+      },
+      "verifiedMetadata": {
+        "received": "2020-09-19",
+        "revised": "2021-01-11",
+        "accepted": "2021-02-09",
+        "publishedOnline": "2021-03-02",
+        "versionOfRecord": "2021-03-02",
+        "authors": [
+          {
+            "name": "Wanqing Lin",
+            "affiliationIds": [
+              "a",
+              "b",
+              "c",
+              "d"
+            ]
+          },
+          {
+            "name": "Zhigang Zhao",
+            "affiliationIds": [
+              "b",
+              "c",
+              "d",
+              "e"
+            ]
+          },
+          {
+            "name": "Fan Yang",
+            "affiliationIds": [
+              "b",
+              "c",
+              "d",
+              "e"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Zhaoli Liu",
+            "affiliationIds": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Fengzhi Tan",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Meiying Xie",
+            "affiliationIds": [
+              "d"
+            ]
+          },
+          {
+            "name": "Ying Ma",
+            "affiliationIds": [
+              "e"
+            ]
+          },
+          {
+            "name": "Lingyi Meng",
+            "affiliationIds": [
+              "b",
+              "d"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "College of Chemical Engineering & Technology, Dalian Polytechnic University, Dalian 116034, China",
+          "b": "CAS Key Laboratory of Design and Assembly of Functional Nanostructures, and Fujian Provincial Key Laboratory of Nanomaterials, Fujian Institute of Research on the Structure of Matter, Chinese Academy of Sciences, Fuzhou 350002, China",
+          "c": "Fujian Province Joint Innovation Key Laboratory of Fuel and Materials in Clean Nuclear Energy System, Fujian Institute of Research on the Structure of Matter, Chinese Academy of Sciences, Fuzhou 350002, China",
+          "d": "Xiamen Institute of Rare Earth Materials, Haixi Institute, Chinese Academy of Sciences, Xiamen 361021, China",
+          "e": "State Key Laboratory of Baiyunobo Rare Earth Resource Researches and Comprehensive Utilization, Baotou 014030, China"
+        }
+      },
+      "publisherAcquisition": {
+        "checkedAt": "2026-11-02T13:33:00.508253+00:00",
+        "method": "native Chrome UCL access; Save Page Complete and normal SI link downloads",
+        "mainFile": "/tmp/mof-ree-sources/dga-mil101-europium-publisher.html",
+        "mainSHA256": "482b324894b8b6a736bf5250c27719b8c2f91f63f752041d790a9518caa1a6d7",
+        "mainScientificCharacters": 26237,
+        "supplementLinks": [
+          {
+            "label": "Download: Download Word document (761KB)",
+            "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0892687521000601-mmc1.docx"
+          }
+        ],
+        "listedIndependentSI": true,
+        "readingStatus": "acquired; full scientific reading still required except papers9/22 and12 recorded separately"
+      },
+      "pageLevelQA": "PASS browser numeric/stateaudit at1440/768/390 inzh/en;representative screenshots visuallyreviewed",
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts."
+    },
+    {
+      "number": 24,
+      "slug": "mil101-sba15-lu-y",
+      "doi": "10.1016/j.chemosphere.2021.130869",
+      "year": 2021,
+      "journal": "Chemosphere",
+      "title": "Recovery of rare earth elements (Lu, Y) by adsorption using functionalized SBA-15 and MIL-101 (Cr)",
+      "topic": "ree",
+      "body": "complete final publisher main read;Tables1–4/Figures1–8 andgraphicalabstract allvisuallychecked",
+      "supplements": "no separate SI listed on publisher page;no mmc link or supplementary/appendix/supportinginformation mention in full body",
+      "evidence": "sources.md complete reading/data/interactionmap,including model asymptotes,timeunits,kineticqe versusLangmuirQm andd100 conflicts",
+      "page": "complete local11section bilingual draft,15choicebranches andreportedfitcalculator",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/mil101-sba15-lu-y/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "accessAudit": {
+        "checkedAt": "2026-11-02T05:03:03.031597+00:00",
+        "locationIndexResult": {
+          "n": 24,
+          "slug": "mil101-sba15-lu-y",
+          "oa": {
+            "is_oa": false,
+            "oa_status": "closed",
+            "oa_url": null,
+            "any_repository_has_fulltext": false
+          }
+        },
+        "note": "OpenAlex metadata is a location aid, not a full-text or SI reading record; publisher/author files verified independently."
+      },
+      "verifiedMetadata": {
+        "received": "2021-03-12",
+        "revised": "2021-04-28",
+        "accepted": "2021-05-09",
+        "publishedOnline": "2021-05-22",
+        "versionOfRecord": "2021-05-31",
+        "authors": [
+          {
+            "name": "Seongchul Ryu",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Charith Fonseka",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Gayathri Naidu",
+            "affiliationIds": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Paripurnanda Loganathan",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Hee Moon",
+            "affiliationIds": [
+              "b"
+            ]
+          },
+          {
+            "name": "Jaya Kandasamy",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Saravanamuthu Vigneswaran",
+            "affiliationIds": [
+              "a"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": {
+          "a": "Faculty of Engineering and IT, University of Technology Sydney, P.O. Box 123, Broadway, Ultimo, NSW, 2007, Australia",
+          "b": "School of Chemical Engineering, Chonnam National University, 77 Yongbong-ro, Gwangju, 61186, Republic of Korea"
+        }
+      },
+      "publisherAcquisition": {
+        "checkedAt": "2026-11-02T13:33:00.661842+00:00",
+        "method": "native Chrome UCL access; Save Page Complete and normal SI link downloads",
+        "mainFile": "/tmp/mof-ree-sources/mil101-sba15-lu-y-publisher.html",
+        "mainSHA256": "60b3ae1f607239962e0945f2b21592eef2ee14221744b4870217577e02f92add",
+        "mainScientificCharacters": 34327,
+        "supplementLinks": [],
+        "listedIndependentSI": false,
+        "readingStatus": "acquired; full scientific reading still required except papers9/22 and12 recorded separately"
+      },
+      "pageLevelQA": "PASS browser numeric/stateaudit at1440/768/390 inzh/en;representative screenshots visuallyreviewed",
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts."
+    },
+    {
+      "number": 25,
+      "slug": "dtpa-mil101-ammonium",
+      "doi": "10.1016/j.envres.2024.119890",
+      "year": 2024,
+      "journal": "Environmental Research",
+      "title": "Selectively recovering rare earth elements with carboxyl immobilized metal-organic framework from ammonium-rich wastewater",
+      "topic": "ree",
+      "body": "complete final main read;Tables1–3/Figs1–5 allvisuallychecked",
+      "supplements": "entire official DOCX SI read;17renderedpages allviewed;TextsS1–S6,TablesS1–S6,FigsS1–S18 checked(actual18despitecontents17)",
+      "evidence": "complete sources.md readingmap and20choicebranches;condition,pH,caption,fitlabel,unit,thermodynamicdiscrepanciesexplicit",
+      "page": "complete local13section bilingual draft",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/dtpa-mil101-ammonium/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "accessAudit": {
+        "checkedAt": "2026-11-02T05:03:03.031597+00:00",
+        "locationIndexResult": {
+          "n": 25,
+          "slug": "dtpa-mil101-ammonium",
+          "oa": {
+            "is_oa": false,
+            "oa_status": "closed",
+            "oa_url": null,
+            "any_repository_has_fulltext": false
+          },
+          "locations": [
+            {
+              "is_oa": false,
+              "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/39218338",
+              "pdf_url": null,
+              "version": "publishedVersion",
+              "license": null
+            }
+          ]
+        },
+        "note": "OpenAlex metadata is a location aid, not a full-text or SI reading record; publisher/author files verified independently."
+      },
+      "verifiedMetadata": {
+        "received": "2024-05-15",
+        "revised": "2024-08-10",
+        "accepted": "2024-08-28",
+        "publishedOnline": "2024-08-30",
+        "versionOfRecord": "2024-09-06",
+        "authors": [
+          {
+            "name": "Tianyu Gao",
+            "affiliationIds": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          {
+            "name": "Zhigong Liu",
+            "affiliationIds": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          {
+            "name": "Meng Zhang",
+            "affiliationIds": [
+              "d"
+            ]
+          },
+          {
+            "name": "Qiang Wang",
+            "affiliationIds": [
+              "d"
+            ]
+          },
+          {
+            "name": "Fubing Yao",
+            "affiliationIds": [
+              "a",
+              "b",
+              "c"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Feiping Zhao",
+            "affiliationIds": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          {
+            "name": "Haiying Wang",
+            "affiliationIds": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          {
+            "name": "Chong-Jian Tang",
+            "affiliationIds": [
+              "a",
+              "b",
+              "c"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": {
+          "a": "State Key Laboratory of Advanced Metallurgy for Non-ferrous Metals, Changsha, 410083, China",
+          "b": "School of Metallurgy and Environment, Central South University, Changsha, 410083, China",
+          "c": "Chinese National Engineering Research Center for Control & Treatment of Heavy Metal Pollution, Changsha, 410083, China",
+          "d": "Jiangxi Academy of Eco-Environment and Planning, Nanchang, 330039, China"
+        }
+      },
+      "publisherAcquisition": {
+        "checkedAt": "2026-11-02T13:33:00.788246+00:00",
+        "method": "native Chrome UCL access; Save Page Complete and normal SI link downloads",
+        "mainFile": "/tmp/mof-ree-sources/dtpa-mil101-ammonium-publisher.html",
+        "mainSHA256": "38cbb4137dd67ce26ec47d7141c0dc23efea048f6ca166227184bc45ec31848c",
+        "mainScientificCharacters": 38370,
+        "supplementLinks": [
+          {
+            "label": "Download: Download Word document (3MB)",
+            "url": "https://ars.els-cdn.com/content/image/1-s2.0-S001393512401795X-mmc1.docx"
+          }
+        ],
+        "listedIndependentSI": true,
+        "readingStatus": "acquired; full scientific reading still required except papers9/22 and12 recorded separately"
+      },
+      "pageLevelQA": "PASS: 13 sections/20 choice branches at 1440/768/390px in zh/en; all numeric values, scales, dose boundaries, keyboard, focus, state/language preservation, anchors, overflow and console checked; representative screenshots viewed",
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts."
+    },
+    {
+      "number": 26,
+      "slug": "hkust1-lutetium",
+      "doi": "10.1111/nyas.70074",
+      "year": 2025,
+      "journal": "Annals of the New York Academy of Sciences",
+      "title": "High Capacity and Efficient Adsorption of Lutetium(III) by the Metal–Organic Framework HKUST-1 in Simulated Medical Wastewater",
+      "topic": "ree",
+      "body": "complete12-page final PDF and authorized publisher HTML read; all7figures and3tables visually checked",
+      "supplements": "official3-page DOCX downloaded; cover and all FiguresS1–S3 including S2a–f read/visually checked; no other appendix listed",
+      "evidence": "complete evidence/display ledger papers/hkust1-lutetium/sources.md; source discrepancies retained",
+      "page": "local bilingual10-section draft with18 scientific branches and trace-mass-balance slider",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/hkust1-lutetium/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "verifiedMetadata": {
+        "publishedOnline": "2025-09-10",
+        "issueDate": "2025-10",
+        "authors": [
+          {
+            "name": "Yi Zhang",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Xiangni Pan",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yehuizi Wu",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Zixian Huang",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Zhizeng Pan",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yuezhou Wei",
+            "affiliationIds": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "name": "Xiangbiao Yin",
+            "affiliationIds": [
+              "a",
+              "c"
+            ]
+          }
+        ],
+        "affiliations": {
+          "a": "School of Nuclear Science and Technology, University of South China, Hengyang, China",
+          "b": "School of Nuclear Science and Engineering, Shanghai Jiao Tong University, Shanghai, China",
+          "c": "Key Laboratory of Advanced Nuclear Energy Design and Safety, Ministry of Education, University of South China, Hengyang, China"
+        },
+        "accepted": "not disclosed in inspected official article/PDF",
+        "notes": "Main byline places Zixian Huang before Zhizeng Pan; SI reverses them. Main order adopted."
+      },
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts.",
+      "pageLevelQA": "PASS page-only static/JS and10sections/18branches zh/en at1440/768/390; calculator/scales/state/keyboard/focus/resources/anchors/console/overflow; representative screenshots reviewed; shared byline/catalog pending"
+    },
+    {
+      "number": 27,
+      "slug": "defect-phosphate-uio66-yb",
+      "doi": "10.1016/j.ces.2025.122638",
+      "year": 2026,
+      "journal": "Chemical Engineering Science",
+      "title": "Simultaneous defect engineering and phosphoric acid functionalization of UiO-66 for enhanced adsorption of Yb(III)",
+      "topic": "ree",
+      "body": "complete final main read;Figures1–10/Scheme1 allvisuallychecked",
+      "supplements": "complete officialDOCXSI read;all12renderedpages viewed;characterization/TGA/FigsS1–S11/TablesS1–S5",
+      "evidence": "complete sources.md;capacity-selectivitytradeoff,TGAassumptions,kineticqdiscrepancy,retentionEq11inversionexplicit",
+      "page": "complete local13section bilingual draft/13choicebranches",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/defect-phosphate-uio66-yb/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "accessAudit": {
+        "checkedAt": "2026-11-02T05:03:03.031597+00:00",
+        "locationIndexResult": {
+          "n": 27,
+          "slug": "defect-phosphate-uio66-yb",
+          "oa": {
+            "is_oa": false,
+            "oa_status": "closed",
+            "oa_url": null,
+            "any_repository_has_fulltext": false
+          },
+          "locations": []
+        },
+        "note": "OpenAlex metadata is a location aid, not a full-text or SI reading record; publisher/author files verified independently."
+      },
+      "verifiedMetadata": {
+        "received": "2025-03-27",
+        "revised": "2025-08-14",
+        "accepted": "2025-09-17",
+        "publishedOnline": "2025-09-19",
+        "versionOfRecord": "2025-09-22",
+        "authors": [
+          {
+            "name": "Chengyu Sun",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Yihao Ji",
+            "affiliationIds": [
+              "a"
+            ]
+          },
+          {
+            "name": "Wenyan Huang",
+            "affiliationIds": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Fuli Deng",
+            "affiliationIds": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Yi Zhang",
+            "affiliationIds": [
+              "a",
+              "b"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": {
+          "a": "Key Laboratory of Green Chemical Process of Ministry of Education, Hubei Key Laboratory for Novel Reactor and Green Chemical Technology, Engineering Research Center of Phosphorus Resources Development and Utilization of Ministry of Education, School of Chemical Engineering and Pharmacy, Wuhan Institute of Technology, Wuhan 430073, China",
+          "b": "Hubei Three Gorges Laboratory, Yichang 443007, China"
+        }
+      },
+      "publisherAcquisition": {
+        "checkedAt": "2026-11-02T13:33:00.911280+00:00",
+        "method": "native Chrome UCL access; Save Page Complete and normal SI link downloads",
+        "mainFile": "/tmp/mof-ree-sources/defect-phosphate-uio66-yb-publisher.html",
+        "mainSHA256": "28f22c5af581e313b0ee291d4cf192b8d0d3b604f1dfddf21807150fa2057dfd",
+        "mainScientificCharacters": 43735,
+        "supplementLinks": [
+          {
+            "label": "Download: Download Word document (3MB)",
+            "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0009250925014599-mmc1.docx"
+          }
+        ],
+        "listedIndependentSI": true,
+        "readingStatus": "acquired; full scientific reading still required except papers9/22 and12 recorded separately"
+      },
+      "pageLevelQA": "PASS:13sections/13branches at1440/768/390px zh/en;allcapacity/physical/kinetic/selectivity/thermo/reusevalues/scales,retentiondenominators,TGAexercise,keyboard/focus/ARIA/details/state/reload/anchors/console/overflow;representativescreenshotsviewed",
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts."
+    },
+    {
+      "number": 28,
+      "slug": "boroxine-mof-ree",
+      "doi": "10.1016/j.cej.2026.180021",
+      "year": 2026,
+      "journal": "Chemical Engineering Journal",
+      "title": "Constructing two-dimensional boroxine metal-organic frameworks with ion-exchange nanotrap for ultrahigh-selective recovery of rare earth elements",
+      "topic": "ree",
+      "body": "complete final main read;all6figures+GA viewed",
+      "supplements": "complete official SI read;40renderedpages viewed;FigsS1–S22/TablesS1–S15/Eqs1–10",
+      "evidence": "complete sources.md;negativeKL,sacrificialroute,logSFdisplay,actualfeedsandcocaptureexplicit",
+      "page": "complete local11section bilingual draft/11branches",
+      "catalog": "integrated into MOF topic with immutable ID and complete bilingual summary",
+      "qa": "PASS page-specific scientific/number/scale/branch QA and final full static/catalogue/production-metadata/all-explainer browser checks at 1440/768/390 px in Chinese and English; representative screenshots saved and visually inspected.",
+      "publication": {
+        "target": "GitHub Pages, origin/main, root directory",
+        "url": "https://vickie02736.github.io/paper-webpages/papers/boroxine-mof-ree/",
+        "verification": "After push, require successful build of the exact final commit, then verify all 28 live pages, catalogue links, production assets and creation-time recent ordering."
+      },
+      "accessAudit": {
+        "checkedAt": "2026-11-02T05:03:03.031597+00:00",
+        "locationIndexResult": {
+          "n": 28,
+          "slug": "boroxine-mof-ree",
+          "oa": {
+            "is_oa": false,
+            "oa_status": "closed",
+            "oa_url": null,
+            "any_repository_has_fulltext": false
+          },
+          "locations": []
+        },
+        "note": "OpenAlex metadata is a location aid, not a full-text or SI reading record; publisher/author files verified independently."
+      },
+      "verifiedMetadata": {
+        "received": "2026-06-03",
+        "revised": "2026-07-16",
+        "accepted": "2026-07-26",
+        "publishedOnline": "2026-07-28",
+        "versionOfRecord": "2026-07-30",
+        "authors": [
+          {
+            "name": "Shuang Zhang",
+            "affiliationIds": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "name": "Jia Chen",
+            "affiliationIds": [
+              "b"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Jing He",
+            "affiliationIds": [
+              "b"
+            ]
+          },
+          {
+            "name": "Shuaishuai Wang",
+            "affiliationIds": [
+              "c"
+            ]
+          },
+          {
+            "name": "Zhigang Gu",
+            "affiliationIds": [
+              "d"
+            ]
+          },
+          {
+            "name": "Lina Li",
+            "affiliationIds": [
+              "e"
+            ]
+          },
+          {
+            "name": "Jianhua Wang",
+            "affiliationIds": [
+              "a"
+            ],
+            "corresponding": true
+          },
+          {
+            "name": "Hongdeng Qiu",
+            "affiliationIds": [
+              "b",
+              "c"
+            ],
+            "corresponding": true
+          }
+        ],
+        "affiliations": {
+          "a": "Department of Chemistry, College of Sciences, Northeastern University, Shenyang, 110819, China",
+          "b": "CAS Key Laboratory of Chemistry of Northwestern Plant Resources and Key Laboratory for Natural Medicine of Gansu Province, Lanzhou Institute of Chemical Physics, Chinese Academy of Sciences, Lanzhou, 730000, China",
+          "c": "Key Laboratory of Rare Earths, Ganjiang Innovation Academy, Chinese Academy of Sciences, Ganzhou, 341000, China",
+          "d": "State Key Laboratory of Structural Chemistry, Fujian Institute of Research on the Structure of Matter, Chinese Academy of Sciences, Fuzhou, 350002, China.",
+          "e": "Shanghai Synchrotron Radiation Facility, Shanghai Advanced Research Institute, Chinese Academy of Sciences, Shanghai, 201200, China."
+        }
+      },
+      "publisherAcquisition": {
+        "checkedAt": "2026-11-02T13:33:01.035601+00:00",
+        "method": "native Chrome UCL access; Save Page Complete and normal SI link downloads",
+        "mainFile": "/tmp/mof-ree-sources/boroxine-mof-ree-publisher.html",
+        "mainSHA256": "0152f694f86e1a6e0612c3391bb9b22ed16f88c71edbd2b4a5a72a2f3e659edd",
+        "mainScientificCharacters": 42753,
+        "supplementLinks": [
+          {
+            "label": "Download: Download Word document (23MB)",
+            "url": "https://ars.els-cdn.com/content/image/1-s2.0-S1385894726074826-mmc1.docx"
+          }
+        ],
+        "listedIndependentSI": true,
+        "readingStatus": "acquired; full scientific reading still required except papers9/22 and12 recorded separately"
+      },
+      "pageLevelQA": "PASS:11sections/11branches,allnumericoutputs/logSFdisplay,3widths×2languages,keyboard/state/details/anchors/reload/overflow/console;representative screenshots saved and viewed",
+      "sharedMetadataQA": "PASS production metadata bundle: ordered authors, explicit affiliation mappings, first-online/accepted or non-disclosure dates; keyboard disclosure/focus, language/state and all 43 explainer mounts."
+    }
+  ],
+  "updatedAt": "2026-11-02T13:33:01.037031+00:00",
+  "accessBlocker": {
+    "status": "resolved for final main texts and publisher-listed SI",
+    "checkedAt": "2026-11-02T13:33:01.037026+00:00",
+    "note": "Native Chrome UCL access recovered;12previouslymissing papers have complete main HTML and all publisher-linked SI acquired. PDF download interstitials no longer block scientific reading. No independent SI listed on3reviews orLu/Ypaper; body references still to audit. Reading/page/catalogue/publication work continues."
+  },
+  "catalogPreparation": {
+    "file": "reports/mof-ree-catalog-candidates.json",
+    "status": "28primarybibliographies and28source-completepages integrated;alloriginal451records/463contexts/15dates preserved",
+    "verifiedPrimaryBibliographies": 28,
+    "verifiedPreprintOnly": 0,
+    "draftBylinesToValidate": 28,
+    "updatedAt": "2026-11-02T14:53:43.309Z"
+  },
+  "integration": {
+    "timestamp": "2026-11-02T14:53:43.309Z",
+    "originalPapersPreserved": 451,
+    "originalContextsPreserved": 463,
+    "newPapers": 28,
+    "finalPapers": 479,
+    "newExplainers": 28,
+    "finalExplainers": 43,
+    "newStability": 12,
+    "newREE": 16,
+    "originalPublicationDatesPreserved": true,
+    "originalCreationTimesPreserved": true,
+    "validation": {
+      "static": "PASS all 43 explainer pages in full catalogue-aware mode",
+      "taxonomy": "PASS original 451 records/463 contexts/15 paths and immutable dates preserved; 28 explicitly inventoried additions",
+      "catalogue": "PASS counts/search/date-order/state/error/refresh/3-width bilingual regression",
+      "productionMetadata": "PASS generator check and browser search/dates/focus/affiliation/all 43 mounts",
+      "explainers": "PASS all 43 pages; 3,649 interaction actions; three widths, both languages, preserved state and denied storage",
+      "scientific": "PASS all 28 page-specific source/branch/number/scale audits; representative screenshots visually inspected"
+    }
+  }
+}

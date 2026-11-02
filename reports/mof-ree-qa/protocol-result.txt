@@ -1,0 +1,1 @@
+PASS: all9 sections/hero/details at1440/768/390 in zh/en; all13 scientific branches at each viewport/language; exact chart values/scales; calculator units/presets/invalid/zero/out-of-range; keyboard/focus/state preservation; direct English reload/anchors/resources/console/overflow. Catalogue integration pending.

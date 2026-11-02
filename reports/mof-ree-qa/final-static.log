@@ -1,0 +1,2 @@
+PASS all 43 explainer static checks including catalogue integration.
+PASS node scripts/build-paper-metadata.cjs --check.

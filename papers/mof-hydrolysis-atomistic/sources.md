@@ -1,0 +1,27 @@
+# Final main and complete SI evidence ledger
+
+## Final batch verification
+
+Catalogue integrated on 2026-11-02. Complete article/SI review and page-specific scientific QA are recorded below. Final production checks pass: all 43 pages pass the full static checker and browser regression (3,649 interaction actions); catalogue, taxonomy and production bibliography checks also pass. Earlier draft/pending notes describe development stages and are superseded by this verification. Deployment is verified against the final pushed commit in GitHub Pages build history.
+
+DOI https://doi.org/10.1016/j.cplett.2025.142314
+
+Final publisher HTML read in full, saved through native Chrome on2026-11-02. Main §§1–4, Table1 lattice values and Table2 energy/time rows compared against previously read17-page arXivv1; numerical rows retained. Main figures1–4 and graphical abstract individually visually inspected. Preprint is a secondary version, no longer the sole basis.
+
+Official SI https://ars.els-cdn.com/content/image/1-s2.0-S0009261425004543-mmc1.docx downloaded via native Chrome. Complete XML text includes floating textboxes not exposed by python-docx paragraphs. Renderer produced only1page and omitted floating illustrations, so this output alone was not treated as complete. All textboxes/captions extracted and read; all5 unique PNGs inspected directly. Media image3=S1IRMOF10(700ps), image1=S2IRMOF14(1500ps), image7=S3MOF177(1500ps), image5=S4ZIF4(3000ps), image9=S5ZnMOF74(700ps); paired duplicate media hashes not extra figures. All trajectories/FES/configurations inspected, no atom redraw.
+
+SI defines Eads=E(MOF+water)-E(MOF)-E(water), each mean potential energy; no added zero-point/entropy correction claimed. Final Table2 retains +28.14kcal/mol ZIF4, not silently changed. SI does not resolve the reason for the sign or provide statistical error/convergence evidence. Figures illustrate biased paths, not unbiased reaction clocks or bulk lifetimes. Main statements of±1kcal/mol retain undefined uncertainty interpretation.
+
+Metadata from expanded publisher history: received2025-05-28,revised/accepted2025-07-31,firstonline2025-08-05,VOR2025-08-07. Author order/mappings unchanged; final affiliationc is MIT Open Learning, Massachusetts Institute of Technology, Cambridge02139,MA,USA. RichaSharmacorresponding from SI.
+
+## Display and interaction mapping
+
+- Idea/method/path: final§§1–3,Fig1,SIenergydefinitionandS1–S5. Low-water single-event scope,3nsNVT300K,.25fs,bias100,width.1Å,reported5kJheightper1000steps,upperwalls. SeparateNPT300K1bar.5ns. No claim Gaussianheightunitmol−1 was printed. Textpath3states and distance definitions preserve separateO/Nprotonation; no atomicredraw.
+- Barrier selector7states/fixedbarplot: finalTable2;9/15/19/11/13/33/35kcal/mol forIRMOF1/10/14,MOF177,ZnMOF74,ZIF90,ZIF4;fixed0–40scale. Eads−5.40/−5.40/−4.62/−6.09/−11.70/−16.05/+28.14kcal/mol. Reportedtimes1.06e−10/3.8e−6/3.1e−3/4.6e−9/1.3e−7/4.9e7/1.4e9h,notexperimentalservice.
+- Time selector3states: final§3EyringequationandTable2;biased450/2200psnotunbiasedwaitingtime;firstorder300Klocalestimateversusunmeasuredservice. Finalconclusion'sbroadstableatroomtemperatureclaiminconsistentwithshortmodeledtimes,disclosed.
+- Sensitivityslider: teachingratioτ2/τ1=exp(ΔΔG/RT),T300K,R.00198720425864083kcal/molK;0–5step.1. Sameprefactorassumption,noabsolutelifetime;0=1,1≈5.351,5=4389.5949. Doesn'tinterpretundefined±1asCI.
+- Correlationselector2states: finalFig4A/Bincludes7new+2priorredpointsZIF7/8,R²~.85;Fig4Conly3IRMOF,R²1. No inventedpointcoordinates/refit/generalcausality.
+- Limits/source: finalSIreadandstillunresolveduncertaintiesratherthanaccessgaps. NoREE/liquidimmersion/regenerationtestinpaper.
+
+mof-hydrolysis-atomistic-publisher.html SHA256 a177cc252fb2e6489bfdd00a4d4bab3b748161d1774d56486aa5caa9fefa467a
+mof-hydrolysis-atomistic-si.docx SHA256 513f7cf0f17b67f552dd025c0625961850eb2070fa76b86dc5ee8a740bfa8094

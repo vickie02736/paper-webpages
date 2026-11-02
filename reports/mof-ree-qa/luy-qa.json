@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "sourceStatus": "Complete main and all4tables/8figures/graphicalabstract read; publisher lists no SI",
+  "checks": [
+    "11sections/15branches/3widths×2languages",
+    "allTable1values andfixedscales",
+    "all8fittedQm andR²/0–350scale",
+    "4material-ioncurvepairscalculatedatCe0/20/40/500exactoriginalequations/0–80scale",
+    "mass/molarunitconversionandratio",
+    "all12SDMnumbersunits/R²",
+    "keyboard/focus/ARIA/language/reload/state/details/anchors/console/overflow"
+  ],
+  "audit": [
+    {
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 11,
+      "scientificChoiceBranches": 15
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 11,
+      "scientificChoiceBranches": 15
+    },
+    {
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 11,
+      "scientificChoiceBranches": 15
+    },
+    {
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 11,
+      "scientificChoiceBranches": 15
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 11,
+      "scientificChoiceBranches": 15
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 11,
+      "scientificChoiceBranches": 15
+    }
+  ]
+}

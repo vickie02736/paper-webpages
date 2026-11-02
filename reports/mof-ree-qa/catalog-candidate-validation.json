@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "mode": "in-memory candidate validation using unchanged production metadata builder; catalogue and public assets untouched",
+  "candidateRecords": 28,
+  "draftRecords": 28,
+  "offlineBundleRecords": 43,
+  "metadataBuilderOutput": [
+    {
+      "papers": 479,
+      "authors": 479,
+      "affiliations": 473,
+      "completeMappings": 419,
+      "published": 428,
+      "accepted": 159,
+      "preprint": 211,
+      "acceptanceNotDisclosed": 126,
+      "explainers": 43,
+      "recordsWithGaps": 232
+    }
+  ]
+}

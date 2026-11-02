@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "audit": [
+    {
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 11,
+      "branches": 11
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 11,
+      "branches": 11
+    },
+    {
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 11,
+      "branches": 11
+    },
+    {
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 11,
+      "branches": 11
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "sections": 11,
+      "branches": 11
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "sections": 11,
+      "branches": 11
+    }
+  ],
+  "checks": [
+    "all11branches/allsections/3widths×2languages",
+    "4materialvalues/3kineticdatasets",
+    "negativeKLwarning/2Qmbars0–500",
+    "18ordinarySFvalues/logdisplay1–10000",
+    "12actualSFvalues0–40",
+    "6computedimpurityratios/2removalpercentages",
+    "2Znreleasebars0–250mgL",
+    "Figure6exactprocessconditions",
+    "keyboard/focus/state/details/anchors/reload/overflow/console"
+  ]
+}

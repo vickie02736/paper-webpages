@@ -1,0 +1,879 @@
+{
+  "status": "PASS",
+  "mode": "local browser route supplies the in-memory validated candidate metadata bundle; public assets unchanged",
+  "scenarios": 108,
+  "checks": [
+    "ordered authors and explicit affiliation markers",
+    "complete institution strings",
+    "first-online and accepted dates or explicit non-disclosure",
+    "no horizontal overflow",
+    "native keyboard disclosure, visible focus, open-state retention on language switch",
+    "no browser errors"
+  ],
+  "results": [
+    {
+      "slug": "water-stability-review",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 1
+    },
+    {
+      "slug": "water-stability-review",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 1
+    },
+    {
+      "slug": "water-stability-review",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 1
+    },
+    {
+      "slug": "water-stability-review",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 1
+    },
+    {
+      "slug": "water-stability-review",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 1
+    },
+    {
+      "slug": "water-stability-review",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 1
+    },
+    {
+      "slug": "mof-stability-three-axes",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 2
+    },
+    {
+      "slug": "mof-stability-three-axes",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 2
+    },
+    {
+      "slug": "mof-stability-three-axes",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 2
+    },
+    {
+      "slug": "mof-stability-three-axes",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 2
+    },
+    {
+      "slug": "mof-stability-three-axes",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 2
+    },
+    {
+      "slug": "mof-stability-three-axes",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 2
+    },
+    {
+      "slug": "hydrolytic-stability-grading",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 2,
+      "affiliations": 1
+    },
+    {
+      "slug": "hydrolytic-stability-grading",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 2,
+      "affiliations": 1
+    },
+    {
+      "slug": "hydrolytic-stability-grading",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 2,
+      "affiliations": 1
+    },
+    {
+      "slug": "hydrolytic-stability-grading",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 2,
+      "affiliations": 1
+    },
+    {
+      "slug": "hydrolytic-stability-grading",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 2,
+      "affiliations": 1
+    },
+    {
+      "slug": "hydrolytic-stability-grading",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 2,
+      "affiliations": 1
+    },
+    {
+      "slug": "mof-kinetic-stability",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 1
+    },
+    {
+      "slug": "mof-kinetic-stability",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 1
+    },
+    {
+      "slug": "mof-kinetic-stability",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 1
+    },
+    {
+      "slug": "mof-kinetic-stability",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 1
+    },
+    {
+      "slug": "mof-kinetic-stability",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 1
+    },
+    {
+      "slug": "mof-kinetic-stability",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 1
+    },
+    {
+      "slug": "uio66-buffer-stability",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "uio66-buffer-stability",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "uio66-buffer-stability",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "uio66-buffer-stability",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "uio66-buffer-stability",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "uio66-buffer-stability",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "water-stable-mof-design",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "water-stable-mof-design",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "water-stable-mof-design",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "water-stable-mof-design",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "water-stable-mof-design",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "water-stable-mof-design",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "hydrolytic-stability-benchmark",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 6,
+      "affiliations": 1
+    },
+    {
+      "slug": "hydrolytic-stability-benchmark",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 6,
+      "affiliations": 1
+    },
+    {
+      "slug": "hydrolytic-stability-benchmark",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 6,
+      "affiliations": 1
+    },
+    {
+      "slug": "hydrolytic-stability-benchmark",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 6,
+      "affiliations": 1
+    },
+    {
+      "slug": "hydrolytic-stability-benchmark",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 6,
+      "affiliations": 1
+    },
+    {
+      "slug": "hydrolytic-stability-benchmark",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 6,
+      "affiliations": 1
+    },
+    {
+      "slug": "water-stable-mof-discovery",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "water-stable-mof-discovery",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "water-stable-mof-discovery",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "water-stable-mof-discovery",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "water-stable-mof-discovery",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "water-stable-mof-discovery",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 2
+    },
+    {
+      "slug": "mof-hydrolysis-atomistic",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 3
+    },
+    {
+      "slug": "mof-hydrolysis-atomistic",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 3
+    },
+    {
+      "slug": "mof-hydrolysis-atomistic",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 3
+    },
+    {
+      "slug": "mof-hydrolysis-atomistic",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 3
+    },
+    {
+      "slug": "mof-hydrolysis-atomistic",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 3
+    },
+    {
+      "slug": "mof-hydrolysis-atomistic",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 3
+    },
+    {
+      "slug": "water-dual-impact",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 1,
+      "affiliations": 1
+    },
+    {
+      "slug": "water-dual-impact",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 1,
+      "affiliations": 1
+    },
+    {
+      "slug": "water-dual-impact",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 1,
+      "affiliations": 1
+    },
+    {
+      "slug": "water-dual-impact",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 1,
+      "affiliations": 1
+    },
+    {
+      "slug": "water-dual-impact",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 1,
+      "affiliations": 1
+    },
+    {
+      "slug": "water-dual-impact",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 1,
+      "affiliations": 1
+    },
+    {
+      "slug": "uio66-dangling-linkers",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 5,
+      "affiliations": 3
+    },
+    {
+      "slug": "uio66-dangling-linkers",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 5,
+      "affiliations": 3
+    },
+    {
+      "slug": "uio66-dangling-linkers",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 5,
+      "affiliations": 3
+    },
+    {
+      "slug": "uio66-dangling-linkers",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 5,
+      "affiliations": 3
+    },
+    {
+      "slug": "uio66-dangling-linkers",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 5,
+      "affiliations": 3
+    },
+    {
+      "slug": "uio66-dangling-linkers",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 5,
+      "affiliations": 3
+    },
+    {
+      "slug": "ree-mof-protocol",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 4
+    },
+    {
+      "slug": "ree-mof-protocol",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 4
+    },
+    {
+      "slug": "ree-mof-protocol",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 4
+    },
+    {
+      "slug": "ree-mof-protocol",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 4
+    },
+    {
+      "slug": "ree-mof-protocol",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 4
+    },
+    {
+      "slug": "ree-mof-protocol",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 4
+    },
+    {
+      "slug": "cmpo-mil101-ree",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 3
+    },
+    {
+      "slug": "cmpo-mil101-ree",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 3
+    },
+    {
+      "slug": "cmpo-mil101-ree",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 3
+    },
+    {
+      "slug": "cmpo-mil101-ree",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 3
+    },
+    {
+      "slug": "cmpo-mil101-ree",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 3
+    },
+    {
+      "slug": "cmpo-mil101-ree",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 3
+    },
+    {
+      "slug": "functionalized-cr-mil101",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 1
+    },
+    {
+      "slug": "functionalized-cr-mil101",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 1
+    },
+    {
+      "slug": "functionalized-cr-mil101",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 1
+    },
+    {
+      "slug": "functionalized-cr-mil101",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 1
+    },
+    {
+      "slug": "functionalized-cr-mil101",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 1
+    },
+    {
+      "slug": "functionalized-cr-mil101",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 4,
+      "affiliations": 1
+    },
+    {
+      "slug": "acrylic-mil101-scandium",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 6,
+      "affiliations": 1
+    },
+    {
+      "slug": "acrylic-mil101-scandium",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 6,
+      "affiliations": 1
+    },
+    {
+      "slug": "acrylic-mil101-scandium",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 6,
+      "affiliations": 1
+    },
+    {
+      "slug": "acrylic-mil101-scandium",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 6,
+      "affiliations": 1
+    },
+    {
+      "slug": "acrylic-mil101-scandium",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 6,
+      "affiliations": 1
+    },
+    {
+      "slug": "acrylic-mil101-scandium",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 6,
+      "affiliations": 1
+    },
+    {
+      "slug": "dual-functional-uio66-gd",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 5,
+      "affiliations": 2
+    },
+    {
+      "slug": "dual-functional-uio66-gd",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 5,
+      "affiliations": 2
+    },
+    {
+      "slug": "dual-functional-uio66-gd",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 5,
+      "affiliations": 2
+    },
+    {
+      "slug": "dual-functional-uio66-gd",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 5,
+      "affiliations": 2
+    },
+    {
+      "slug": "dual-functional-uio66-gd",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 5,
+      "affiliations": 2
+    },
+    {
+      "slug": "dual-functional-uio66-gd",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 5,
+      "affiliations": 2
+    },
+    {
+      "slug": "organophosphorus-mil101",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 2
+    },
+    {
+      "slug": "organophosphorus-mil101",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 2
+    },
+    {
+      "slug": "organophosphorus-mil101",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 2
+    },
+    {
+      "slug": "organophosphorus-mil101",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 2
+    },
+    {
+      "slug": "organophosphorus-mil101",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 2
+    },
+    {
+      "slug": "organophosphorus-mil101",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 3,
+      "affiliations": 2
+    },
+    {
+      "slug": "hkust1-lutetium",
+      "width": 1440,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 3
+    },
+    {
+      "slug": "hkust1-lutetium",
+      "width": 1440,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 3
+    },
+    {
+      "slug": "hkust1-lutetium",
+      "width": 768,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 3
+    },
+    {
+      "slug": "hkust1-lutetium",
+      "width": 768,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 3
+    },
+    {
+      "slug": "hkust1-lutetium",
+      "width": 390,
+      "lang": "zh",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 3
+    },
+    {
+      "slug": "hkust1-lutetium",
+      "width": 390,
+      "lang": "en",
+      "status": "PASS",
+      "authors": 7,
+      "affiliations": 3
+    }
+  ]
+}
