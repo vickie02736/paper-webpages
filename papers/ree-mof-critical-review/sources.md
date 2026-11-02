@@ -119,3 +119,17 @@ HTML SHA256 aa945c917075380dd2c137d32f87427d748bac6498f993e5a305c52b282ae33d
     ]
   }
 }
+
+## High-school teaching revision — 2026-11-02
+
+P1 terminology / quantitative inference: metrics introduces q, Kd and SF together; purity explains ratios but not actual masses for a novice. Evidence labels FT-IR/XPS/XAS need measurement purposes. Add metric denominators, the 1 mg/100 mg worked balance and a fit-versus-mechanism chain.
+
+New method guide: Source: Review §3.2.6 on limited mechanism characterization; §§3.2–3.3.
+
+New evidence comparison: Basis: Review §3.3 partition metrics and §4.2 downstream recovery gaps; all numbers derive from the page’s existing teaching assumptions.
+
+Reread final review §§3.2.6, 3.3 and 4.2. The 47.87% calculation derives from existing hypothetical Kd assumptions (10/11 and 100/101 masses), not new primary data. No independent SI is listed. Review discrepancies and underlying-source limits remain visible.
+
+Reader task: Check: does a good pseudo-second-order fit alone prove chemical coordination? No. It describes a macroscopic time curve, and different processes can fit similarly. Relevant spectroscopy, composition and controls must constrain the mechanism and test precipitation or material change.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

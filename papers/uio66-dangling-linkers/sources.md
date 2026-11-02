@@ -44,3 +44,17 @@ Page-only static and JS syntax checks pass. Browser checks pass in both language
 - `uio66-dangling-linkers.pdf`: `88a3e6f4dd9e2764eea8436401438713da0d0da4dc203fb59e5dd069908e90d7`
 - `uio66-dangling-linkers--41467_2026_70247_MOESM1_ESM.pdf`: `399b3198257af38a53d0f91af8def38ee7a43e5eb50626837d7d37b6330c6690`
 - `uio66-dangling-linkers--41467_2026_70247_MOESM2_ESM.pdf`: `0c2ab380b7c3e99beb82f3b2a980c2398a34033d15d836ec9c77ec1fd3054ebd`
+
+## High-school teaching revision — 2026-11-02
+
+P1 background / inference: core uses PXRD, solid-state NMR and dangling carboxylates before explaining measured objects. Evidence needs an observation→proximity→candidate-model chain; “约30%” needs explicit end-versus-linker counting. Preserve original Fig.3a and its guide.
+
+New method guide: Source: Main Figs. 1–3; SI Figs. S4–S12 and Tables S1–S3; separate quantification in Fig. S13.
+
+New evidence comparison: Source: Final SI Fig. S13; main structural interpretation and Fig. 3. Review-stage fractions do not replace the final result.
+
+Reread main Figs.1–3 discussion and SI S1/S3/S13 descriptions. Kept final 160-water quantitative DP experiment distinct from CP/DNP and 320-water shift comparisons. No whole-linker leaching percentage is inferred. One-year redried evidence remains limited to recovery; no new atomic drawing.
+
+Reader task: Check: does recovery after drying prove an unchanged wet structure for a year? No. SI Fig. S3 measures a sample redried after a year of hydrated storage. It supports recovery after drying, not unchanged wet-state connections, leaching or adsorption performance throughout storage.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

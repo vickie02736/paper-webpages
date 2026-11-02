@@ -1,0 +1,44 @@
+{
+  "commit": "0423e3f04242d910c153423f3722c8227d14d4b8",
+  "pagesBuild": "built",
+  "onlineChecks": [
+    {
+      "path": "papers/mof-stability-three-axes/",
+      "status": 200,
+      "newLessonMarkers": true
+    },
+    {
+      "path": "papers/mof-kinetic-stability/",
+      "status": 200,
+      "newLessonMarkers": true
+    },
+    {
+      "path": "papers/water-stable-mof-design/",
+      "status": 200,
+      "newLessonMarkers": true
+    },
+    {
+      "path": "papers/hydrolytic-stability-benchmark/",
+      "status": 200,
+      "newLessonMarkers": true
+    },
+    {
+      "path": "papers/water-dual-impact/",
+      "status": 200,
+      "newLessonMarkers": true
+    },
+    {
+      "path": "assets/paper-lesson.js",
+      "sha256Matches": true
+    },
+    {
+      "path": "assets/paper-lesson.css",
+      "sha256Matches": true
+    },
+    {
+      "path": "references/paper-catalog.json",
+      "entriesPresent": true,
+      "firstDatesAndCreationTimesUnchanged": true
+    }
+  ]
+}

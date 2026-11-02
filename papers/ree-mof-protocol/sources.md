@@ -61,3 +61,17 @@ Scientific reading and bounded workbook audit complete. Bilingual draft has nine
 - `ree-mof-protocol--41596_2026_1425_MOESM4_ESM.xlsx`: `90515903d38f005c810584d1d1192606da9cb050a06d3656527907b50ba36dbf`
 - `ree-mof-protocol--41596_2026_1425_MOESM5_ESM.xlsx`: `b9b888782be67fc078169004a74fbd747c1e618aadf2921f43555ebed63f57e0`
 - `ree-mof-protocol--41596_2026_1425_MOESM6_ESM.xlsx`: `0e2f990c70ffb049d5bcf6e9d1b32e4c639d37bb65fbb3af888ac2abb4790e55`
+
+## High-school teaching revision — 2026-11-02
+
+P1 terminology / process evidence: recovery correctly says digestion but leaves a novice to reconstruct the Cu/REE liquid-solid routes. Reuse says “不解吸” without contrasting the omitted regeneration step. Add instrument definition, material-flow sequence and loading-versus-regeneration comparison.
+
+New method guide: Source: Main Procedure 4, Fig. 3 and recovery results; SI product characterization.
+
+New evidence comparison: Source: Main Fig. 6C, Procedures 3–4 and Source Data for Fig. 6C.
+
+Reread final main Procedure4/Fig3 and Fig6C/Procedure3 plus relevant SI. Acid digestion and hydroxide precipitation are preserved with stated conditions; no quantitative Cu-free claim. SourceData loading interpretation retained and no original arrays refitted. Existing SI leaching discrepancies remain separate.
+
+Reader task: Check: why do four high-removal loadings not prove four successful regenerations? Because the adsorbed REEs were not removed between loadings. This does not test desorption, regenerant damage, post-regeneration selectivity or final product purity.
+
+Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.

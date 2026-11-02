@@ -1478,5 +1478,737 @@
     },
     "audit": "P1 background / reasoning: core immediately introduces periodic/truncated DFT; paths warns about references without walking through the INT0→TS0 subtraction. Define the modeled objects, separate model roles and add a worked reference-invariant barrier calculation.",
     "science": "Reread main methods and Fig. 3 pathway text (INT0 25.2 below reactants, TS0 2.8 above), SI methods/Fig. S3 and model limitations. Added 28.0 is an explicit arithmetic derivation, not a measured barrier or lifetime. Spin/model and coordinate-header discrepancies are retained, with original data unchanged."
+  },
+  "uio66-dangling-linkers": {
+    "lead": [
+      "看起来仍是同一种晶体，内部连接却可能已经改变。这篇论文用局部测量发现：UiO-66 吸水后，部分连接体的一端松开，除水后又能恢复。",
+      "A solid can retain its crystalline appearance while local connections change. Local measurements here support partial one-end detachment of UiO-66 linkers after hydration and recovery after water removal."
+    ],
+    "foundationTitle": [
+      "先分清“整根离开”和“一端松开”",
+      "Distinguish a whole linker leaving from one end detaching"
+    ],
+    "foundation": [
+      "UiO-66 是锆（Zr）节点与 BDC 有机连接体构成的多孔固体。BDC 两端带氧的羧酸根基团负责连接节点。这里的“悬挂”指一端局部脱离原来的金属结合，而另一端仍相连的结构解释，不等于整根连接体已进入水中。",
+      "UiO-66 is a porous solid built from zirconium (Zr) nodes and BDC organic linkers. Oxygen-containing carboxylate groups at the two ends connect nodes. “Dangling” describes an interpretation in which one end locally detaches while the other stays attached; it does not mean the entire linker entered the water."
+    ],
+    "terms": [
+      [
+        [
+          "PXRD：看长程排列",
+          "PXRD: long-range packing"
+        ],
+        [
+          "粉末 X 射线衍射测不同角度的散射强度。许多规则排列的原子共同产生峰；局部少量连接改变不一定抹去这些峰。",
+          "Powder X-ray diffraction measures scattering intensity at different angles. Many regularly arranged atoms collectively produce peaks; local connection changes need not erase them."
+        ]
+      ],
+      [
+        [
+          "固态 NMR：看局部环境",
+          "Solid-state NMR: local environments"
+        ],
+        [
+          "核磁共振在磁场中用射频激发可观测原子核。不同周围电子环境会改变共振位置，称化学位移；新峰提示出现不同局部环境。",
+          "Nuclear magnetic resonance uses radiofrequency excitation of observable nuclei in a magnetic field. Local electronic environments change resonance positions, called chemical shifts; a new peak indicates a distinct local environment."
+        ]
+      ],
+      [
+        [
+          "水数与端点比例",
+          "Water count and fraction of ends"
+        ],
+        [
+          "H₂O/u.c. 是每个晶胞的平均水分子数，u.c. 是重复晶体结构单元。悬挂比例则以羧酸端点为分母；两者都不是整份材料溶解的百分数。",
+          "H₂O/u.c. is the average number of water molecules per unit cell, the repeating crystal unit. The dangling fraction counts carboxylate ends. Neither is the percentage of the whole solid dissolved."
+        ]
+      ]
+    ],
+    "problem": [
+      "研究的缺口是：常规晶体指纹仍在时，局部连接是否完全没变？因此必须把整体排列与局部环境的证据一起读。",
+      "The gap is whether local connections remain unchanged when the usual crystal fingerprint persists. Long-range and local evidence must therefore be read together."
+    ],
+    "methodTarget": "evidence",
+    "methodTitle": [
+      "不是一个新峰就确定一种结构",
+      "One new peak does not uniquely identify a structure"
+    ],
+    "steps": [
+      [
+        [
+          "1 · 比较干湿状态",
+          "1 · Compare dry and hydrated states"
+        ],
+        [
+          "在含水增加的样品中，羧酸碳出现新 C4 信号，而 PXRD 仍类似。先得到“局部环境改变、整体有序仍在”的观察。",
+          "With increased hydration, a new carboxyl-carbon C4 signal appears while PXRD remains similar. The observation is local change alongside retained long-range order."
+        ]
+      ],
+      [
+        [
+          "2 · 约束邻近关系",
+          "2 · Constrain nearby groups"
+        ],
+        [
+          "多维 NMR 检查哪些氢和碳在空间上相关，再结合不同实验的信号与距离敏感性。相关峰支持邻近关系，不等于直接拍到一根键。",
+          "Multidimensional NMR tests spatial relationships among hydrogen and carbon signals, combining experiments with different sensitivities. Correlations support proximity; they do not photograph a bond."
+        ]
+      ],
+      [
+        [
+          "3 · 用候选结构解释多种信号",
+          "3 · Test candidate structures against several signals"
+        ],
+        [
+          "DFT（密度泛函理论）计算候选排列的能量和 NMR 特征。朝向 μ₃–OH（其中的 O 与三个 Zr 相连）的 A-I 模型较符合联合证据；能量低本身仍不够。",
+          "DFT (density functional theory) estimates candidate energies and NMR signatures. The A-I model oriented toward μ₃–OH (whose O connects three Zr atoms) better fits the combined evidence; low energy alone is insufficient."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "这三步表示证据推理的层次，实验并非同一份样品依次经历的单线过程。DNP（动态核极化）增强信号，不能把增强倍数当成悬挂端含量。",
+      "These steps describe an inference chain, not a single specimen passing sequentially through every experiment. DNP (dynamic nuclear polarization) enhances signals; its enhancement is not the abundance of dangling ends."
+    ],
+    "methodSource": [
+      "出处：正文图 1–3；SI 图 S4–S12、表 S1–S3；定量另见图 S13。",
+      "Source: Main Figs. 1–3; SI Figs. S4–S12 and Tables S1–S3; separate quantification in Fig. S13."
+    ],
+    "evidenceTarget": "fraction",
+    "evidenceTitle": [
+      "约 30% 的分母到底是什么？",
+      "What exactly is the denominator of about 30%?"
+    ],
+    "comparison": [
+      [
+        [
+          "数的是羧酸碳环境",
+          "Count carboxyl-carbon environments"
+        ],
+        [
+          "160 H₂O/u.c. 样品的定量直接极化 NMR，将悬挂端 C4 与原有端 C1 的面积比较，得到约 30% 与 70%。它针对所有被计数的羧酸端。",
+          "Quantitative direct-polarization NMR of the 160 H₂O/u.c. sample compares dangling-end C4 and original-end C1 areas, giving about 30% and 70% of the counted carboxylate ends."
+        ]
+      ],
+      [
+        [
+          "不能直接数成溶出连接体",
+          "Do not relabel this as leached linkers"
+        ],
+        [
+          "一根 BDC 有两个端点。端点环境变化与整根分子离开框架是不同事件；本实验比例也不是孔体积损失或材料质量损失。",
+          "A BDC linker has two ends. A changed end environment differs from an entire molecule leaving the framework; this fraction is also not pore-volume or material-mass loss."
+        ]
+      ]
+    ],
+    "inference": [
+      "SI 图 S13 使用羧酸碳标记、室温直接极化（直接激发碳核测量）和 200 s 循环延迟（信号恢复的特征时间 T₁ 测得为 38 s），让信号充分恢复。不能用其他 CP 或 DNP 谱的原始面积直接替代这一量化。",
+      "SI Fig. S13 uses carboxyl-carbon labeling, room-temperature direct polarization (direct carbon excitation) and a 200 s recycle delay (measured signal-recovery time T₁: 38 s) to allow signal recovery. Raw areas from other CP or DNP spectra cannot directly replace this quantification."
+    ],
+    "evidenceSource": [
+      "出处：最终版 SI 图 S13；正文结构解释和图 3。早期审稿比例不替代最终结果。",
+      "Source: Final SI Fig. S13; main structural interpretation and Fig. 3. Review-stage fractions do not replace the final result."
+    ],
+    "question": [
+      "自测：干燥后谱图恢复，能否证明湿态一年都没有局部变化？",
+      "Check: does recovery after drying prove an unchanged wet structure for a year?"
+    ],
+    "answer": [
+      "不能。SI 图 S3 是吸水保存一年后再次干燥的测量。它支持干燥后可恢复，不直接测量整个保存期的湿态连接、浸出或吸附性能。",
+      "No. SI Fig. S3 measures a sample redried after a year of hydrated storage. It supports recovery after drying, not unchanged wet-state connections, leaching or adsorption performance throughout storage."
+    ],
+    "depthSections": {
+      "models": 3,
+      "methods": 3
+    },
+    "audit": "P1 background / inference: core uses PXRD, solid-state NMR and dangling carboxylates before explaining measured objects. Evidence needs an observation→proximity→candidate-model chain; “约30%” needs explicit end-versus-linker counting. Preserve original Fig.3a and its guide.",
+    "science": "Reread main Figs.1–3 discussion and SI S1/S3/S13 descriptions. Kept final 160-water quantitative DP experiment distinct from CP/DNP and 320-water shift comparisons. No whole-linker leaching percentage is inferred. One-year redried evidence remains limited to recovery; no new atomic drawing."
+  },
+  "ree-mof-critical-review": {
+    "lead": [
+      "能从水中吸走稀土，还没有回答能否得到可用的稀土产品。这篇批判性综述逐一追问选择性、机理证据、材料寿命和最终回收。",
+      "Removing rare earths from water does not yet establish a usable rare-earth product. This critical review questions selectivity, mechanistic evidence, material durability and final recovery."
+    ],
+    "foundationTitle": [
+      "从一杯混合溶液，到一个合格产品",
+      "From a mixed solution to a usable product"
+    ],
+    "foundation": [
+      "稀土元素（REE）是一组性质相近的元素；在这里通常以带电离子存在于水中。MOF 的孔内结合位置可以留下这些离子，但也可能留下杂质。吸附后的固体还需处理，才能取得目标产品。",
+      "Rare-earth elements (REEs) have similar chemical properties; here they typically occur as charged ions in water. Binding sites in MOF pores can retain them but may also retain impurities. The loaded solid still needs processing to yield a target product."
+    ],
+    "terms": [
+      [
+        [
+          "容量 q",
+          "Capacity q"
+        ],
+        [
+          "单位质量吸附剂留下多少目标物，常用 mg/g。它回答“装了多少”，分母是吸附剂质量，不能直接读成产品含稀土百分数。",
+          "Target mass retained per sorbent mass, often mg/g. It answers how much is loaded; the denominator is sorbent mass, not product mass for a purity percentage."
+        ]
+      ],
+      [
+        [
+          "分离因子 SF",
+          "Separation factor SF"
+        ],
+        [
+          "比较目标与竞争离子在固液两相间分配的偏好。它是比值，还需要知道进料组成和液固比才能讨论共捕集多少。",
+          "A ratio comparing target and competitor partitioning between solid and liquid. Feed composition and liquid-to-solid ratio are also needed to assess co-captured amounts."
+        ]
+      ],
+      [
+        [
+          "回收率与纯度",
+          "Recovery and purity"
+        ],
+        [
+          "回收率以进料中的目标总量为分母；纯度以最终产品总量为分母。损失少不保证杂质少，杂质少也不保证目标都找回。",
+          "Recovery divides target obtained by target initially fed. Purity divides target in the final product by total product amount. Low loss does not guarantee low contamination, or vice versa."
+        ]
+      ]
+    ],
+    "problem": [
+      "要检验的核心是：每一种漂亮读数到底支持哪一步？下面保留综述指出的缺口和互相冲突的汇总值，不把建议当成已完成的工程流程。",
+      "The key task is to identify which step each impressive reading actually supports. The page retains the review’s gaps and conflicting summary values, without presenting proposals as a completed engineering process."
+    ],
+    "methodTarget": "evidence",
+    "methodTitle": [
+      "为什么拟合、光谱和对照要一起用？",
+      "Why combine fits, spectra and controls?"
+    ],
+    "steps": [
+      [
+        [
+          "1 · 先描述整体规律",
+          "1 · Describe the overall trend"
+        ],
+        [
+          "动力学拟合描述吸附量随时间变化，等温线拟合描述平衡量随浓度变化。曲线贴合说明数学模型能描述这些数据，不直接识别原子结合方式。",
+          "Kinetic fits describe uptake versus time; isotherm fits describe equilibrium loading versus concentration. A good fit describes these data mathematically but does not identify atomic binding by itself."
+        ]
+      ],
+      [
+        [
+          "2 · 看局部环境是否变化",
+          "2 · Look for local changes"
+        ],
+        [
+          "红外光谱（FT-IR）看分子振动，X 射线光电子能谱（XPS）看表面电子环境；变化可支持基团参与，却通常不能唯一确定配位数与几何。",
+          "Infrared spectroscopy (FT-IR) probes molecular vibrations; X-ray photoelectron spectroscopy (XPS) probes surface electronic environments. Changes can support group involvement but usually do not uniquely determine coordination number and geometry."
+        ]
+      ],
+      [
+        [
+          "3 · 排除替代解释",
+          "3 · Test alternative explanations"
+        ],
+        [
+          "比较无功能团、不同节点与无材料空白等对照，并结合 X 射线吸收谱（XAS）的局部距离等信息。需要问：沉淀、背景离子或框架变化是否也能解释结果？",
+          "Compare controls such as no functional group, different nodes and no sorbent, alongside local information from X-ray absorption spectroscopy (XAS). Ask whether precipitation, background ions or framework change could also explain the result."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "这是综述要求加强的证据组合，不表示每篇被引研究都完成了这些测量。本页未独立重读全部被引原论文。",
+      "This is the stronger evidence combination advocated by the review, not a claim that each cited study performed it. This page does not independently reread every cited primary paper."
+    ],
+    "methodSource": [
+      "出处：综述第 3.2.6 节，机理表征不足；第 3.2–3.3 节。",
+      "Source: Review §3.2.6 on limited mechanism characterization; §§3.2–3.3."
+    ],
+    "evidenceTarget": "purity",
+    "evidenceTitle": [
+      "很少比例的杂质，也能是很大的质量",
+      "A small impurity fraction can still be a large mass"
+    ],
+    "comparison": [
+      [
+        [
+          "目标：假设初始 1 mg",
+          "Target: suppose the feed contains 1 mg"
+        ],
+        [
+          "沿用下方教学模型，Kd,A = 10000 mL/g、V/m = 1000 mL/g，捕集约 90.91%，即 0.9091 mg。",
+          "Using the teaching model below, Kd,A = 10000 mL/g and V/m = 1000 mL/g give about 90.91% capture, or 0.9091 mg."
+        ]
+      ],
+      [
+        [
+          "杂质：假设初始 100 mg",
+          "Impurity: suppose the feed contains 100 mg"
+        ],
+        [
+          "Kd,B = 10 mL/g，只捕集约 0.9901%，却仍有 0.9901 mg 杂质进入固体，略多于目标。",
+          "Kd,B = 10 mL/g captures only about 0.9901%, yet this loads 0.9901 mg impurity, slightly more than the target."
+        ]
+      ]
+    ],
+    "equation": [
+      "捕集物中 A 的质量占比 = 0.9091 ÷ (0.9091 + 0.9901) ≈ 47.87%",
+      "A mass fraction in captured material = 0.9091 ÷ (0.9091 + 0.9901) ≈ 47.87%"
+    ],
+    "equationMeaning": [
+      "这是恒定线性分配的假想两组分计算。Kd 为分配系数，V/m 为液体体积除以吸附剂质量；两者同用 mL/g。SF = 1000 不变，但进料中杂质更多，所以捕集物组成改变。",
+      "This is a hypothetical two-component calculation with constant linear partitioning. Kd is the distribution coefficient and V/m the liquid volume per sorbent mass, both in mL/g. SF stays 1000, but excess feed impurity changes the captured composition."
+    ],
+    "inference": [
+      "这不是论文实验，也不是最终产品纯度预测：模型忽略有限容量和竞争饱和，后续洗涤、解吸和沉淀还会改变组成。它只解释为何 SF 不能独立代替纯度。",
+      "This is neither a reported experiment nor a final-purity prediction: the model neglects finite capacity and competitive saturation, and washing, elution and precipitation can change composition. It only explains why SF alone cannot substitute for purity."
+    ],
+    "evidenceSource": [
+      "依据：综述第 3.3 节的分配指标和第 4.2 节的下游回收缺口；数值均为本页原有教学假设的演算。",
+      "Basis: Review §3.3 partition metrics and §4.2 downstream recovery gaps; all numbers derive from the page’s existing teaching assumptions."
+    ],
+    "question": [
+      "自测：拟二级动力学拟合很好，能否单独证明化学配位？",
+      "Check: does a good pseudo-second-order fit alone prove chemical coordination?"
+    ],
+    "answer": [
+      "不能。它描述宏观时间曲线，多种过程可能产生相近拟合。需要相关光谱、组分与对照来约束机制，并排查沉淀或材料变化。",
+      "No. It describes a macroscopic time curve, and different processes can fit similarly. Relevant spectroscopy, composition and controls must constrain the mechanism and test precipitation or material change."
+    ],
+    "depthSections": {
+      "alternatives": 2
+    },
+    "audit": "P1 terminology / quantitative inference: metrics introduces q, Kd and SF together; purity explains ratios but not actual masses for a novice. Evidence labels FT-IR/XPS/XAS need measurement purposes. Add metric denominators, the 1 mg/100 mg worked balance and a fit-versus-mechanism chain.",
+    "science": "Reread final review §§3.2.6, 3.3 and 4.2. The 47.87% calculation derives from existing hypothetical Kd assumptions (10/11 and 100/101 masses), not new primary data. No independent SI is listed. Review discrepancies and underlying-source limits remain visible."
+  },
+  "ree-mof-targeted-review": {
+    "lead": [
+      "先把稀土从杂质里富集出来，和把钕从其他稀土里分出来，是不同任务。这篇综述按目标重新组织 MOF 设计，并提出两阶段分离思路。",
+      "Enriching rare earths from impurities and separating neodymium from other rare earths are different tasks. This review organizes MOF design around the target and proposes a two-stage separation strategy."
+    ],
+    "foundationTitle": [
+      "先画清楚进料与目标出口",
+      "Identify the feed and the desired outlet first"
+    ],
+    "foundation": [
+      "稀土元素（REE）在水中通常带电，并被水分子围绕。它们彼此性质相近，所以“优先捕集稀土”不一定能区分稀土内部的成员。MOF 是带孔的连接网络，功能团则是安排在网络上的特定化学基团。",
+      "Rare-earth elements (REEs) are typically charged and surrounded by water in solution. Their similar chemistry means preferential REE capture need not distinguish individual REEs. A MOF is a porous connected network; functional groups are specific chemical groups placed on it."
+    ],
+    "terms": [
+      [
+        [
+          "群组分离",
+          "Group separation"
+        ],
+        [
+          "目标是把多种稀土一起从 Fe、Al 等背景中富集。输出可以是稀土混合物，还不是某一种纯稀土。",
+          "Enrich several REEs together from backgrounds such as Fe and Al. The output may remain an REE mixture, not one pure rare earth."
+        ]
+      ],
+      [
+        [
+          "单元素分离",
+          "Individual separation"
+        ],
+        [
+          "目标是区分性质很接近的稀土离子。必须给出竞争对象；钕对铁的证据不能替代钕对镨的证据。",
+          "Distinguish closely related REE ions. Name the competitor: evidence for Nd versus Fe cannot replace evidence for Nd versus Pr."
+        ]
+      ],
+      [
+        [
+          "后合成修饰",
+          "Post-synthetic modification"
+        ],
+        [
+          "先形成框架，再加入或改变基团。这可能改变结合环境，也可能堵孔、造成浸出或改变骨架；需要重新表征。",
+          "Form the framework first, then add or modify groups. This can change binding but also block pores, leach or alter the framework, requiring renewed characterization."
+        ]
+      ]
+    ],
+    "problem": [
+      "本页要回答：一个材料设计改善的是哪一步、用什么混合物证明，以及后面的回收有没有完成？",
+      "The task is to identify which step a design improves, which mixture demonstrates it and whether downstream recovery is complete."
+    ],
+    "methodTarget": "route",
+    "methodTitle": [
+      "两阶段路线：每一阶段留下什么、放走什么",
+      "A two-stage route: what is retained or passed onward?"
+    ],
+    "steps": [
+      [
+        [
+          "1 · 先定群组富集目标",
+          "1 · Define group enrichment"
+        ],
+        [
+          "从复杂进料中优先留下稀土、减少非稀土背景。要同时量进入固体的目标与杂质；浓度下降本身不证明选择性。",
+          "Preferentially retain REEs from a complex feed while reducing non-REE background. Quantify both targets and impurities entering the solid; concentration loss alone does not establish selectivity."
+        ]
+      ],
+      [
+        [
+          "2 · 制备下一阶段进料",
+          "2 · Prepare the next-stage feed"
+        ],
+        [
+          "从负载材料释放或转移稀土，记录损失、酸碱用量与新组成。第一阶段吸得多，不保证可得到适合下一阶段的溶液。",
+          "Release or transfer REEs from the loaded material, recording losses, chemical use and the new composition. High first-stage loading does not guarantee a suitable next-stage feed."
+        ]
+      ],
+      [
+        [
+          "3 · 再区分稀土成员",
+          "3 · Separate individual REEs"
+        ],
+        [
+          "对富集后的稀土混合物，检验定向基团或印迹位点的实际分离，再量最终产品的纯度和回收率。",
+          "Test targeted groups or imprinted sites on the enriched REE mixture, then measure final product purity and recovery."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "综述提出这条混合路线；没有在同一个端到端实验中证明所有候选材料组合。中间转移与物料衡算是验证此建议所需的步骤。",
+      "The review proposes this hybrid route; it does not demonstrate every candidate pairing in one end-to-end experiment. Intermediate transfer and mass balances are requirements for validating the proposal."
+    ],
+    "methodSource": [
+      "出处：综述第 4 节两阶段建议和表 2；下游检验步骤按该建议作教学整理。",
+      "Source: Review §4 two-stage proposal and Table 2; downstream checks are a teaching organization of its validation needs."
+    ],
+    "evidenceTarget": "shaping",
+    "evidenceTitle": [
+      "粉末变成颗粒后，容量的分母也要说清",
+      "When powder becomes a bead, specify the capacity denominator"
+    ],
+    "comparison": [
+      [
+        [
+          "按 MOF 质量归一",
+          "Normalize by MOF mass"
+        ],
+        [
+          "便于研究活性材料本身，但若颗粒含粘结剂或聚合物，仅报每克 MOF 的数值会隐藏装置实际装填的总质量。",
+          "Useful for studying the active material itself, but reporting only per gram of MOF hides total packed mass when beads include binder or polymer."
+        ]
+      ],
+      [
+        [
+          "按整个复合物归一",
+          "Normalize by total composite mass"
+        ],
+        [
+          "更接近装填材料的总量，但不能直接与纯粉末的每克容量比较而忽略活性组分比例、孔可达性和传质。",
+          "Closer to the total packed material, but not directly comparable with pure-powder capacity without accounting for active fraction, access and transport."
+        ]
+      ]
+    ],
+    "equation": [
+      "教学假设：50% 质量为 MOF，MOF 吸附 100 mg/g → 复合物吸附 50 mg/g",
+      "Teaching assumption: 50% MOF by mass, MOF uptake 100 mg/g → composite uptake 50 mg/g"
+    ],
+    "equationMeaning": [
+      "假设另一半完全不吸附，成形也不改变 MOF 的吸附。1 g 复合物含 0.5 g MOF，因此留下 0.5 × 100 = 50 mg。这不是综述中某种颗粒的测量。",
+      "Assume the other half does not adsorb and shaping does not change MOF uptake. One gram of composite contains 0.5 g MOF, retaining 0.5 × 100 = 50 mg. This is not a measured bead from the review."
+    ],
+    "inference": [
+      "现实中成形可能改善操作和机械性，也可能改变孔道与扩散，因此还需复合物的实际测量。不同文献的分母和进料条件不能悄悄混用。",
+      "Real shaping can improve handling and mechanics but alter pores and diffusion, so actual composite measurements remain necessary. Denominators and feed conditions from different studies must not be silently mixed."
+    ],
+    "evidenceSource": [
+      "依据：综述第 2.4 节复合材料、第 3 节成形实例；数值为明确虚构的分母演示。",
+      "Basis: Review §2.4 composites and shaped-material examples in §3; numbers are explicitly hypothetical denominator teaching."
+    ],
+    "question": [
+      "自测：稀土／铁分离很好，能否说明能制得高纯钕？",
+      "Check: does strong REE/iron separation establish high-purity neodymium?"
+    ],
+    "answer": [
+      "不能。它可能只富集稀土群组。还需检验钕对共存稀土的分离、后续释放和产品组成，并记录每一步目标损失。",
+      "No. It may only enrich REEs as a group. Nd separation from coexisting REEs, subsequent release and product composition still need testing, with target losses tracked at each step."
+    ],
+    "depthSections": {
+      "families": 2
+    },
+    "audit": "P1 background / process inference: “群组/单元素” and six design strategies need explicit feed/output definitions. “成形…牺牲位点” lacks a denominator example. Add a proposed-route flow with transfer losses and a labeled hypothetical composite calculation.",
+    "science": "Reread review §§2.4, 3 and the two-stage paragraph/Table2 in §4. Kept proposed architecture separate from tested processes. The 50%-MOF calculation is hypothetical with inert-binder/no-access-change assumptions; no original capacity or disputed review value is changed. No independent SI listed."
+  },
+  "ree-porous-framework-review": {
+    "lead": [
+      "同样叫“选择性”，可能是在比较谁被吸住，也可能是在比较谁穿过膜。这篇 MOF／COF 综述需要先分清材料、竞争对象和测量方式。",
+      "“Selectivity” can compare what is captured or what passes through a membrane. This MOF/COF review first requires distinguishing the material, competitor and measurement mode."
+    ],
+    "foundationTitle": [
+      "多孔框架不是只有一种连接，也不是只有一种用法",
+      "Porous frameworks differ in bonding and use"
+    ],
+    "foundation": [
+      "MOF 用金属与有机连接体组成网络；COF 主要由有机单元通过共价键连接。两者都可以有孔，但不能据“共价”二字就保证耐水。本文既讨论粉末吸附，也讨论膜中的传输与分离。",
+      "MOFs connect metals and organic linkers; COFs mainly connect organic building blocks through covalent bonds. Both can be porous, but “covalent” alone does not guarantee water resistance. The review covers powder adsorption as well as membrane transport and separation."
+    ],
+    "terms": [
+      [
+        [
+          "配位结合",
+          "Coordination binding"
+        ],
+        [
+          "基团上的氧或氮等部位可参与与金属离子的结合。离子原先周围的水、其他竞争物和 pH 也会影响这个过程。",
+          "Sites such as oxygen or nitrogen in a group can bind a metal ion. Its surrounding water, competitors and pH also influence the process."
+        ]
+      ],
+      [
+        [
+          "印迹",
+          "Imprinting"
+        ],
+        [
+          "制作材料时引入目标作模板，再移除模板，希望留下更适合目标的环境。必须验证模板已去净及对照材料的表现。",
+          "Introduce a target as a template during preparation, then remove it to leave a potentially better-matched environment. Template removal and non-imprinted controls require verification."
+        ]
+      ],
+      [
+        [
+          "膜的两侧",
+          "Two sides of a membrane"
+        ],
+        [
+          "进料来到膜的一侧；穿过膜的液体是透过液，未穿过的部分是截留侧。离子没有透过，不代表都已经储存在膜内。",
+          "Feed reaches one side; liquid that crosses is permeate and material remaining upstream is on the retained side. An ion not passing through is not necessarily stored in the membrane."
+        ]
+      ]
+    ],
+    "problem": [
+      "本页的阅读任务是把每个“选择性”数值放回它的物料去向中，并保留不同研究的 pH、竞争者和再生条件。",
+      "The reading task is to place each selectivity value back into its material-flow context while retaining each study’s pH, competitors and regeneration conditions."
+    ],
+    "methodTarget": "imprinting",
+    "methodTitle": [
+      "怎样把“有空腔”变成可检验的识别主张",
+      "How to test a claim of template recognition"
+    ],
+    "steps": [
+      [
+        [
+          "1 · 制备并去模板",
+          "1 · Prepare and remove the template"
+        ],
+        [
+          "模板参与形成结合环境，随后用规定处理移除。若有模板残留，测得的目标含量可能包含原先就有的目标。",
+          "The template helps form a binding environment and is then removed by a defined treatment. Residual template can contribute target that was already present before adsorption."
+        ]
+      ],
+      [
+        [
+          "2 · 比较非印迹材料",
+          "2 · Compare a non-imprinted control"
+        ],
+        [
+          "尽量匹配其他制备与测试条件。差异才更能关联到印迹步骤，而不是不同面积、化学组分或酸洗损伤。",
+          "Match other preparation and test conditions as closely as possible. Differences can then be related more convincingly to imprinting rather than area, composition or acid-treatment damage."
+        ]
+      ],
+      [
+        [
+          "3 · 加入真正的竞争者",
+          "3 · Add relevant competitors"
+        ],
+        [
+          "分别测目标与竞争离子的分配，并检查模板清除和循环后材料。高单离子容量本身不能证明识别。",
+          "Measure partitioning of both target and competitors, and check template removal and the cycled solid. High single-ion capacity alone does not prove recognition."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "这是依据综述的印迹实例提出的读证据方式，不宣称本页已独立验证所有被引 COF。孔的气体测量尺寸也不能直接当作水合离子的硬筛孔。",
+      "This organizes evidence reading around the review’s imprinting examples; it does not claim independent verification of all cited COFs. Gas-derived pore dimensions also are not automatically hard apertures for hydrated ions."
+    ],
+    "methodSource": [
+      "出处：综述第 4.2 节印迹 COF 及第 5 节机理；对照要求为讲解者整理。",
+      "Source: Review §4.2 imprinted COFs and §5 mechanisms; control requirements are organized by the explainer."
+    ],
+    "evidenceTarget": "measurement",
+    "evidenceTitle": [
+      "留在吸附剂上，与没有穿过膜，不能画等号",
+      "Being adsorbed and not crossing a membrane are different"
+    ],
+    "comparison": [
+      [
+        [
+          "批次吸附",
+          "Batch adsorption"
+        ],
+        [
+          "比较接触前后液体浓度，再用液体体积与吸附剂质量换算 mg/g。应排除沉淀、容器损失和材料本身释放。",
+          "Compare liquid concentration before and after contact, then use liquid volume and sorbent mass to obtain mg/g. Exclude precipitation, vessel loss and release from the material."
+        ]
+      ],
+      [
+        [
+          "膜截留",
+          "Membrane rejection"
+        ],
+        [
+          "常见截留率用 1 − 透过液浓度/进料浓度表示。高截留可让离子留在上游溶液；还要测流量、膜内积累和两侧物料。",
+          "A common rejection definition is 1 minus permeate concentration divided by feed concentration. High rejection can retain ions upstream in solution; flow, membrane accumulation and material on both sides also matter."
+        ]
+      ]
+    ],
+    "inference": [
+      "这里的截留率是通用读图定义；采用具体论文数值时仍需核对其定义与条件。不能把 90% 膜截留改写成“膜吸附了 90% 的进料稀土”，也不能把透过选择性直接当作 Kd 比值。",
+      "The rejection expression is a general reading definition; numerical use requires the specific paper’s definition and conditions. A 90% membrane rejection must not be relabeled as adsorption of 90% of feed REEs, nor transport selectivity as a Kd ratio."
+    ],
+    "evidenceSource": [
+      "出处：综述第 3.2 节膜实例和第 5 节机理；此处不重新绘制未独立核实的膜性能数值。",
+      "Source: Review §3.2 membrane examples and §5 mechanisms; no unverified membrane-performance dataset is replotted here."
+    ],
+    "question": [
+      "自测：COF 由共价键连接，就能默认耐强酸强碱吗？",
+      "Check: does covalent bonding make every COF resistant to strong acid and base?"
+    ],
+    "answer": [
+      "不能。不同连接化学对水和酸碱的响应不同，例如硼氧类连接可能水解。必须查具体连接、处理条件、时长及处理后的结构与功能。",
+      "No. Linkage chemistry changes response to water, acid and base; boron–oxygen linkages can hydrolyze, for example. Check the actual linkage, treatment, duration and post-treatment structure and function."
+    ],
+    "depthSections": {
+      "smart": 2
+    },
+    "audit": "P1 background / flow reasoning: “MOF配位网络/COF共价连接” and “膜拒绝/透过” assume chemical and process knowledge. Define the connections and membrane streams, then make imprinting controls and adsorption-versus-rejection evidence explicit.",
+    "science": "Reread review §§2.2, 3.2, 4.2 and 5. Generic rejection definition is separated from paper-specific metrics; no membrane numbers converted into uptake. Preserved UiO-66/ZIF-8 labeling conflict and lamp-feed identity discrepancy. No independent SI; cited primary studies are not all independently reread."
+  },
+  "ree-mof-protocol": {
+    "lead": [
+      "让稀土从水里消失，只是流程的一站。这篇实验程序把材料制备、捕集、重复加载和产品回收连起来；其中的酸消解回收会消耗原框架。",
+      "Making rare earths disappear from water is only one stage. This protocol connects material preparation, capture, repeated loading and product recovery; its acid-digestion recovery consumes the original framework."
+    ],
+    "foundationTitle": [
+      "跟着稀土走，也跟着框架中的铜走",
+      "Track both the rare earth and framework copper"
+    ],
+    "foundation": [
+      "这里的 Cu 基 MOF 是含铜连接网络，REE 是待回收的稀土离子。测液体中的 REE 下降可以估计捕集，但材料可能释放 Cu；最后的产品也可能夹杂其他物质。因此每一站都需要说明物质去了哪里。",
+      "The Cu-based MOF here is a copper-containing connected network; REEs are the ions being recovered. A decrease in liquid REE can estimate capture, but the sorbent may release Cu and the final product may contain other species. Each stage must therefore locate the material."
+    ],
+    "terms": [
+      [
+        [
+          "ICP-OES",
+          "ICP-OES"
+        ],
+        [
+          "电感耦合等离子体发射光谱将液体样品中的元素激发并读特征光，用标准液校准浓度。它数元素，不直接识别原来的分子结构。",
+          "Inductively coupled plasma optical emission spectroscopy excites sample elements and reads characteristic light, calibrated with standards to obtain concentration. It measures elements, not their original molecular structures."
+        ]
+      ],
+      [
+        [
+          "解吸与消解",
+          "Desorption and digestion"
+        ],
+        [
+          "解吸把目标从表面释放，可能保留吸附剂；消解则破坏材料使组分进入溶液。本文的最终酸处理属于后者。",
+          "Desorption releases a target from a surface and may preserve the sorbent. Digestion breaks down the material into solution. The final acid treatment here is the latter."
+        ]
+      ],
+      [
+        [
+          "沉淀与分离",
+          "Precipitation and separation"
+        ],
+        [
+          "把溶液条件调到生成难溶固体，再把固体与液体分开。固体出现不自动证明高纯或所有目标都已回收。",
+          "Change solution conditions to form a poorly soluble solid, then separate it from liquid. Formation of a solid does not by itself establish high purity or complete target recovery."
+        ]
+      ]
+    ],
+    "problem": [
+      "读完应能说出：连续处理四份新溶液与“再生四次”有什么区别；哪一步取回稀土，却失去原来的 MOF。",
+      "You should distinguish four successive fresh-solution loadings from four regeneration cycles, and identify the step that retrieves REEs while sacrificing the MOF."
+    ],
+    "methodTarget": "recovery",
+    "methodTitle": [
+      "产品回收中的三条物料去向",
+      "Follow material through product recovery"
+    ],
+    "steps": [
+      [
+        [
+          "1 · 负载固体进入酸液",
+          "1 · Put the loaded solid into acid"
+        ],
+        [
+          "程序 4 用 1% HNO₃、80 °C、12 h 消解。稀土和框架 Cu 进入液体；这一步不能画成原 MOF 洗净后返回下一轮。",
+          "Procedure 4 digests the solid in 1% HNO₃ at 80 °C for 12 h. REEs and framework Cu enter the liquid; this step cannot be drawn as a washed MOF returning intact to another cycle."
+        ]
+      ],
+      [
+        [
+          "2 · 调整溶液化学",
+          "2 · Change solution chemistry"
+        ],
+        [
+          "加入 NH₄OH 后，目标路径是形成稀土氢氧化物沉淀，而 Cu 主要留在含氨上清液。需要分析两相，而不是只看沉淀颜色。",
+          "After NH₄OH addition, the intended route forms REE hydroxide precipitates while Cu stays mainly in the ammonia-containing supernatant. Analyze both phases rather than judging precipitate color."
+        ]
+      ],
+      [
+        [
+          "3 · 取得并评价产品",
+          "3 · Obtain and assess the product"
+        ],
+        [
+          "分离、洗涤及后续处理会改变回收量与杂质。最终需报进料目标有多少进入产品、产品里还有什么，以及铜废液如何处理。",
+          "Separation, washing and further treatment affect yield and impurities. Report how much feed target reaches the product, what else the product contains and how the Cu-containing liquid is handled."
+        ]
+      ]
+    ],
+    "methodBoundary": [
+      "这是物料去向导读，不能代替论文中的完整实验操作与安全条件。Cu“主要留在液体”不意味着产品已被证明绝对无 Cu。",
+      "This is a material-flow guide, not a replacement for the complete experimental and safety instructions. Cu remaining mainly in liquid does not establish an absolutely Cu-free product."
+    ],
+    "methodSource": [
+      "出处：正文程序 4、图 3 与回收结果；SI 产品表征。",
+      "Source: Main Procedure 4, Fig. 3 and recovery results; SI product characterization."
+    ],
+    "evidenceTarget": "reuse",
+    "evidenceTitle": [
+      "两种“再用一次”，中间步骤不一样",
+      "Two kinds of reuse have different intermediate steps"
+    ],
+    "comparison": [
+      [
+        [
+          "连续加载：逐步装满",
+          "Successive loading: progressively fill sites"
+        ],
+        [
+          "图 6C 使用同一份 BNMG-1 接触新溶液，各次加载之间不解吸。四次高去除说明这些加载条件下仍有可用捕集能力。",
+          "Fig. 6C exposes the same BNMG-1 to fresh solutions without desorption between loadings. Four high-removal loadings support remaining uptake ability under those loading conditions."
+        ]
+      ],
+      [
+        [
+          "再生循环：取出后再装",
+          "Regeneration cycle: unload and reload"
+        ],
+        [
+          "需要在两次吸附之间释放目标，并检查再生后的固体与下一轮表现。它额外检验释放过程及材料承受再生的能力。",
+          "Requires release between adsorption runs, then checking the regenerated solid and its next-run performance. It additionally tests unloading and resistance to regeneration."
+        ]
+      ]
+    ],
+    "inference": [
+      "原图 6C 条件为每次 10 mg/L 初始浓度、500 mg/L 吸附剂、12 h。不能把这些连续加载柱条重新命名为四次酸洗再生。程序 4 的破坏性回收也与保留框架的循环不同。",
+      "Fig. 6C uses 10 mg/L initial concentration, 500 mg/L sorbent and 12 h per loading. These bars must not be renamed four acid-regeneration cycles. Destructive recovery in Procedure 4 also differs from framework-preserving cycling."
+    ],
+    "evidenceSource": [
+      "出处：正文图 6C、程序 3–4；Source Data 图 6C。",
+      "Source: Main Fig. 6C, Procedures 3–4 and Source Data for Fig. 6C."
+    ],
+    "question": [
+      "自测：四次连续加载去除率都高，为什么不能推出四次再生成功？",
+      "Check: why do four high-removal loadings not prove four successful regenerations?"
+    ],
+    "answer": [
+      "因为中间没有取出已吸附的稀土。它没有测试解吸率、再生剂造成的损伤或再生后的选择性；也不说明最终产品纯度。",
+      "Because the adsorbed REEs were not removed between loadings. This does not test desorption, regenerant damage, post-regeneration selectivity or final product purity."
+    ],
+    "depthSections": {
+      "capacities": 2
+    },
+    "audit": "P1 terminology / process evidence: recovery correctly says digestion but leaves a novice to reconstruct the Cu/REE liquid-solid routes. Reuse says “不解吸” without contrasting the omitted regeneration step. Add instrument definition, material-flow sequence and loading-versus-regeneration comparison.",
+    "science": "Reread final main Procedure4/Fig3 and Fig6C/Procedure3 plus relevant SI. Acid digestion and hydroxide precipitation are preserved with stated conditions; no quantitative Cu-free claim. SourceData loading interpretation retained and no original arrays refitted. Existing SI leaching discrepancies remain separate."
   }
 }

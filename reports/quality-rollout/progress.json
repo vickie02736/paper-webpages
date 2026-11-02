@@ -42,23 +42,28 @@
       "papers": [
         {
           "slug": "mof-stability-three-axes",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "0423e3f04242d910c153423f3722c8227d14d4b8"
         },
         {
           "slug": "mof-kinetic-stability",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "0423e3f04242d910c153423f3722c8227d14d4b8"
         },
         {
           "slug": "water-stable-mof-design",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "0423e3f04242d910c153423f3722c8227d14d4b8"
         },
         {
           "slug": "hydrolytic-stability-benchmark",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "0423e3f04242d910c153423f3722c8227d14d4b8"
         },
         {
           "slug": "water-dual-impact",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "0423e3f04242d910c153423f3722c8227d14d4b8"
         }
       ]
     },
@@ -67,23 +72,23 @@
       "papers": [
         {
           "slug": "uio66-dangling-linkers",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "ree-mof-critical-review",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "ree-mof-targeted-review",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "ree-porous-framework-review",
-          "status": "queued"
+          "status": "validated-for-publication"
         },
         {
           "slug": "ree-mof-protocol",
-          "status": "queued"
+          "status": "validated-for-publication"
         }
       ]
     },
