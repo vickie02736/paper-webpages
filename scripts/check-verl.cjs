@@ -51,6 +51,7 @@ const out=process.env.PAPER_QA_DIR||'/tmp/verl-specific-qa';fs.mkdirSync(out,{re
  for(const item of collection.items.filter(i=>i.type==='document'))assert(recentPaths.some(p=>p.endsWith(item.path.slice(1))));
  await p.locator('#only-explainers').check();assert.equal(await p.locator('#catalog .paper-row').count(),55);
  // All verl articles belong to the AI catalogue and participate in its normal search.
+ await p.goto(base+'?q=verl&lang=en');await p.waitForFunction(()=>!document.querySelector('#only-explainers').disabled);assert.equal(await p.locator('#catalog .paper-row').count(),12);assert.equal(await p.locator('#catalog .document-row').count(),3);
  for(const width of [1440,768,390])for(const lang of ['zh','en']){
   await p.setViewportSize({width,height:1000});await p.goto(base+'?theme=ai&q=verl&lang='+lang+'#themes');await p.waitForFunction(()=>!document.querySelector('#only-explainers').disabled);
   assert.equal(await p.locator('#theme-ai .paper-row:visible').count(),12);assert.equal(await p.locator('#theme-ai .document-row:visible').count(),3);

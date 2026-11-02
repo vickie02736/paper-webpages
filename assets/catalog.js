@@ -158,7 +158,7 @@
       };
       const tokens = function (query) { return normalize(query).split(/\s+/).filter(Boolean); };
       const matches = function (paper, terms) {
-        return terms.every(function (term) { return /^(airs|aires|mlp|mlip|ree)$/.test(term) ? paper.searchWords.has(term) : paper.haystack.includes(term); });
+        return terms.every(function (term) { return /^(airs|aires|mlp|mlip|ree|verl)$/.test(term) ? paper.searchWords.has(term) : paper.haystack.includes(term); });
       };
       const paperKey = function (paper) { return paper.id; };
       const themeTitle = function (name) {

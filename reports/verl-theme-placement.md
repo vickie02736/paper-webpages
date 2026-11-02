@@ -2,7 +2,7 @@
 
 User-requested navigation correction, 2026-11-02, based on published commit `fe5e64526d166f9dc6beae99fa9a1cf4227b3753`.
 
-All verl articles now appear directly in **Artificial Intelligence & Computing**, under Training & Adaptation. SPIN, SPPO and DRO use Preference Optimization; GKD/OPD uses Knowledge Distillation; the remaining papers and three documentation articles use Reinforcement Learning & Language Model Post-training. Searching `verl`, globally or within AI, finds the 12 paper entries and 3 documentation entries without opening an intermediate collection.
+All verl articles now appear directly in **Artificial Intelligence & Computing**, under Training & Adaptation. SPIN, SPPO and DRO use Preference Optimization; GKD/OPD uses Knowledge Distillation; the remaining papers and three documentation articles use Reinforcement Learning & Language Model Post-training. Searching `verl`, globally or within AI, finds the 12 paper entries and 3 documentation entries without opening an intermediate collection. The `verl` query matches a whole token, so words containing those letters do not introduce unrelated articles.
 
 DeepSeekMath moves from Mathematics to AI; its paper ID, title, source, metadata, explainer URL and legacy context remain unchanged. Mathematics retains a related-reading reference. The precise classification delta is inventoried in [verl-theme-placement.json](verl-theme-placement.json); the original migration and addition audit files are preserved.
 
