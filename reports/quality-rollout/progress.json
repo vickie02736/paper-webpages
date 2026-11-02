@@ -132,23 +132,28 @@
       "papers": [
         {
           "slug": "dga-mil101-europium",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "43c344846cda72d9144ddaa2ab8f296550a21a47"
         },
         {
           "slug": "mil101-sba15-lu-y",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "43c344846cda72d9144ddaa2ab8f296550a21a47"
         },
         {
           "slug": "dtpa-mil101-ammonium",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "43c344846cda72d9144ddaa2ab8f296550a21a47"
         },
         {
           "slug": "hkust1-lutetium",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "43c344846cda72d9144ddaa2ab8f296550a21a47"
         },
         {
           "slug": "boroxine-mof-ree",
-          "status": "validated-for-publication"
+          "status": "published",
+          "commit": "43c344846cda72d9144ddaa2ab8f296550a21a47"
         }
       ]
     }
@@ -156,5 +161,16 @@
   "limitations": [
     "Teaching audit is not a human learning-outcome test",
     "No real screen-reader session has been performed"
-  ]
+  ],
+  "completion": {
+    "publishedPilots": 3,
+    "publishedAdditionalPages": 25,
+    "deferredPages": [],
+    "contentReleaseCommit": "43c344846cda72d9144ddaa2ab8f296550a21a47",
+    "fullSitePagesChecked": 43,
+    "finalBrowserActions": 5751,
+    "all25OriginalMainTextRetained": true,
+    "humanComprehensionTest": false,
+    "realScreenReaderTest": false
+  }
 }

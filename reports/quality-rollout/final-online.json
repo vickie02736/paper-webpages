@@ -1,0 +1,246 @@
+{
+  "commit": "43c344846cda72d9144ddaa2ab8f296550a21a47",
+  "pagesBuild": "built",
+  "all28PageHTMLMatches": true,
+  "onlineChecks": [
+    {
+      "path": "papers/uio66-buffer-stability/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/water-stable-mof-discovery/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/water-stability-review/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/hydrolytic-stability-grading/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/mof-hydrolysis-atomistic/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/mil100-water-matrices/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/cmpo-mil101-ree/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/defect-phosphate-uio66-yb/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/mof-stability-three-axes/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/mof-kinetic-stability/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/water-stable-mof-design/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/hydrolytic-stability-benchmark/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/water-dual-impact/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/uio66-dangling-linkers/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/ree-mof-critical-review/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/ree-mof-targeted-review/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/ree-porous-framework-review/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/ree-mof-protocol/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/functionalized-cr-mil101/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/acrylic-mil101-scandium/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/dual-functional-uio66-gd/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/uio66-zif8-ree/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/organophosphorus-mil101/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/dga-mil101-europium/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/mil101-sba15-lu-y/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/dtpa-mil101-ammonium/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/hkust1-lutetium/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/boroxine-mof-ree/index.html",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "assets/paper-lesson.css",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "assets/paper-lesson.js",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "references/paper-catalog.json",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/uio66-buffer-stability/data.js",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/water-stable-mof-discovery/data.js",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/water-stability-review/data.js",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/cmpo-mil101-ree/data.js",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/mof-kinetic-stability/data.js",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/water-stable-mof-design/data.js",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/hydrolytic-stability-benchmark/data.js",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/water-dual-impact/data.js",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/uio66-dangling-linkers/data.js",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/ree-mof-protocol/data.js",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/functionalized-cr-mil101/data.js",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/acrylic-mil101-scandium/data.js",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/dual-functional-uio66-gd/data.js",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/water-stability-review/assets/figure-28.png",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/water-stable-mof-discovery/assets/structures/iqecis.json",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "papers/water-stable-mof-discovery/assets/structures/yezkul.json",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": ".agents/skills/paper-webpage/SKILL.md",
+      "gitHubSourceMatches": true
+    }
+  ]
+}
