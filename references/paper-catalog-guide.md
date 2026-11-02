@@ -1,6 +1,6 @@
 # Updating the paper catalogue
 
-The homepage reads `paper-catalog.json` (schema `v: 2`). The catalogue has six primary themes and 479 unique paper records. Each record occurs in exactly one `themes[].p`; related methods and reading routes reference its immutable `id`. Primary theme counts sum to the global paper total. Route and related-reading references never increase it.
+The homepage reads `paper-catalog.json` (schema `v: 2`). The catalogue has six primary themes and 490 unique paper records. Each record occurs in exactly one `themes[].p`; related methods and reading routes reference its immutable `id`. Primary theme counts sum to the global paper total. Route and related-reading references never increase it.
 
 ## Primary classification
 
@@ -81,6 +81,14 @@ node scripts/build-paper-metadata.cjs --check
 node scripts/check-paper-metadata.cjs
 ```
 
-The generator validates coverage, source links, affiliation references, date precision and chronology. It writes the offline 43-page subset to `assets/paper-metadata.js` and the current missing-information ledger to [`paper-metadata-audit.md`](paper-metadata-audit.md). Commit both generated files with the catalogue. Do not hand-edit the subset. Also run the existing catalogue and explainer regressions when publishing.
+The generator validates coverage, source links, affiliation references, date precision and chronology. It writes the offline 55-paper-page subset to `assets/paper-metadata.js` and the current missing-information ledger to [`paper-metadata-audit.md`](paper-metadata-audit.md). Commit both generated files with the catalogue. Do not hand-edit the subset. Also run the existing catalogue and explainer regressions when publishing.
 
 Pages load `bibliography.css`, `bibliography.js` and the generated `paper-metadata.js` before `paper.js`. The shared controller mounts one byline under the title and remounts it after dynamic body rebuilds. Native details, stable paper keys and captured state preserve expansion/focus during language changes, depth changes and catalogue refresh. A short summary shows the first author and first mapped affiliation, with additional affiliations available in the complete list.
+
+## Explainer collections
+
+Optional `collections` records provide navigation without adding papers. Each collection has `id`, `themeId`, local `path`, bilingual `title` and `summary`, and `items`. Items contain stable `id`, explainer `path`, `type` (`paper` or `document`), bilingual `title` and `summary`, and original `source`. Paper items additionally reference an existing `paperId` whose explainer path matches. Documentation items never have a paper ID or bibliography record.
+
+The verl collection includes 12 paper pages and 3 documentation pages. Its navigation page is not another explainer. The paper-only filter counts 55 linked papers; the publication maps contain 58 independent explainers. Recent explainers resolve documentation through collections and remain unique by path. Collections carry language into internal links and appear in their primary theme. Malformed collection data retains the last valid catalogue.
+
+`reports/verl-catalog-additions.json` inventories 11 new papers, the sole allowed DeepSeekMath link change, and the 3 document pages against the immutable pre-verl commit. The older taxonomy and MOF audits remain in force.

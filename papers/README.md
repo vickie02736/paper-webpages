@@ -71,3 +71,7 @@ For validation, run the paper-webpage static checker for every changed slug, the
 ## Shared paper bibliography
 
 Every explainer loads `../assets/bibliography.css`, `bibliography.js` and generated `paper-metadata.js` (adjusted to its directory depth). `paper.js` mounts the shared byline below the title and supports language/depth rebuilds. The local metadata subset is generated from the homepage catalogue, so paper dates and author affiliations agree across both views. Follow the [catalogue metadata guide](../references/paper-catalog-guide.md#authors-affiliations-and-paper-dates); unresolved fields are recorded in the [gap ledger](../references/paper-metadata-audit.md).
+
+## verl algorithm explainers
+
+[Browse all 15 independent pages](../collections/verl-algorithms/) — 12 bilingual paper studies and 3 documentation studies, each with its own interactive lab and evidence ledger.

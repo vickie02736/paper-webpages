@@ -1,0 +1,88 @@
+{
+  "baselineCommit": "f29995b9ba1cfdb22d52088ca4586566eefc3b35",
+  "baselinePapers": 479,
+  "baselinePaperExplainers": 43,
+  "records": [
+    {
+      "id": "paper-40de426bfa4c",
+      "u": "https://arxiv.org/abs/1707.06347",
+      "path": "./papers/ppo/",
+      "topicId": "ai-training-adaptation-rl-post-training"
+    },
+    {
+      "id": "paper-fcdb65137747",
+      "u": "https://arxiv.org/abs/2503.14476",
+      "path": "./papers/dapo/",
+      "topicId": "ai-training-adaptation-rl-post-training"
+    },
+    {
+      "id": "paper-6ffdfad37a93",
+      "u": "https://arxiv.org/abs/2401.01335",
+      "path": "./papers/spin/",
+      "topicId": "ai-training-adaptation-a1d5d1227056"
+    },
+    {
+      "id": "paper-d67416e99e5d",
+      "u": "https://arxiv.org/abs/2405.00675",
+      "path": "./papers/sppo/",
+      "topicId": "ai-training-adaptation-a1d5d1227056"
+    },
+    {
+      "id": "paper-dadc82d5e35f",
+      "u": "https://arxiv.org/abs/2505.22617",
+      "path": "./papers/entropy-mechanism/",
+      "topicId": "ai-training-adaptation-rl-post-training"
+    },
+    {
+      "id": "paper-1eaf50da3920",
+      "u": "https://arxiv.org/abs/2505.23585",
+      "path": "./papers/opo/",
+      "topicId": "ai-training-adaptation-rl-post-training"
+    },
+    {
+      "id": "paper-164d63e308ca",
+      "u": "https://arxiv.org/abs/2504.02546",
+      "path": "./papers/gpg/",
+      "topicId": "ai-training-adaptation-rl-post-training"
+    },
+    {
+      "id": "paper-41819c7f3763",
+      "u": "https://arxiv.org/abs/2602.07078",
+      "path": "./papers/otb/",
+      "topicId": "ai-training-adaptation-rl-post-training"
+    },
+    {
+      "id": "paper-3054c58de7b2",
+      "u": "https://arxiv.org/abs/2602.04879",
+      "path": "./papers/dppo/",
+      "topicId": "ai-training-adaptation-rl-post-training"
+    },
+    {
+      "id": "paper-7457adf1086a",
+      "u": "https://arxiv.org/abs/2306.13649",
+      "path": "./papers/on-policy-distillation/",
+      "topicId": "ai-training-adaptation-03cb846c39b9"
+    },
+    {
+      "id": "paper-f455a78c2611",
+      "u": "https://arxiv.org/abs/2405.19107",
+      "path": "./papers/direct-reward-optimization/",
+      "topicId": "ai-training-adaptation-a1d5d1227056"
+    }
+  ],
+  "updatedRecords": [
+    {
+      "id": "paper-3e01248237a0",
+      "allowedFields": [
+        "p"
+      ],
+      "p": "./papers/grpo/"
+    }
+  ],
+  "documentPages": [
+    "./papers/verl-algorithm-baselines/",
+    "./papers/rollout-correction/",
+    "./papers/rollout-correction-math/"
+  ],
+  "collectionPath": "./collections/verl-algorithms/"
+}

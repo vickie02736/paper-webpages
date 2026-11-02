@@ -199,7 +199,7 @@
         try { url = new URL(raw, location.href); } catch (_) { return; }
         if (url.origin !== location.origin || !['http:', 'https:', 'file:'].includes(url.protocol)) return;
         const home = new URL('../../', location.href);
-        if (url.pathname !== home.pathname && !url.pathname.startsWith(home.pathname + 'papers/')) return;
+        if (url.pathname !== home.pathname && !url.pathname.startsWith(home.pathname + 'papers/') && !url.pathname.startsWith(home.pathname + 'collections/')) return;
         url.searchParams.set('lang', lang === 'both' && !url.pathname.includes('/papers/') ? 'zh' : lang);
         link.href = url.href;
       });

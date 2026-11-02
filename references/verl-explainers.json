@@ -1,0 +1,2002 @@
+[
+  {
+    "slug": "ppo",
+    "short": "PPO",
+    "arxiv": "1707.06347",
+    "doc": "ppo",
+    "title": {
+      "zh": "PPO：限制一次更新的诱惑",
+      "en": "PPO: limiting the incentive for a large update"
+    },
+    "lead": {
+      "zh": "对已经获益的动作，停止奖励过大的概率变化。裁剪改变优化目标，却不把整个策略锁在一个硬边界内。",
+      "en": "Stop rewarding excessively large probability changes in the beneficial direction. Clipping changes the objective; it does not put the entire policy inside a hard boundary."
+    },
+    "background": {
+      "zh": "普通策略梯度用采样回报决定动作概率的升降，但同一批数据反复优化可能让新策略远离采样策略。TRPO 用约束优化控制更新，PPO 则探索能直接用小批量一阶优化的代理目标。原论文研究连续控制和 Atari，语言模型训练是后续应用。",
+      "en": "Ordinary policy gradients increase or decrease action probabilities according to sampled returns. Reusing a batch can move the new policy far from the sampling policy. TRPO controls updates through constrained optimization; PPO seeks a surrogate suitable for minibatch first-order optimization. The original experiments concern continuous control and Atari, with language-model training a later application."
+    },
+    "mechanism": [
+      {
+        "zh": "先用旧策略收集轨迹，再计算优势，固定这批数据进行多轮小批量更新，最后刷新采样策略。旧概率是采样时的锚点，不等同于语言模型对齐中长期冻结的参考模型。",
+        "en": "Collect trajectories using the old policy, estimate advantages, optimize the fixed batch over several minibatch epochs, and then refresh the sampling policy. Old probabilities anchor the collected batch; they are distinct from a long-term frozen reference model used in language-model alignment."
+      },
+      {
+        "zh": "正优势表示动作好于基线，负优势表示低于基线。取两个目标的较小者，仅在变化方向有利且越界时停止提供额外激励。概率变化若让目标恶化，惩罚仍然保留。",
+        "en": "A positive advantage means better than baseline; a negative one means worse. Taking the smaller objective removes additional incentive only when a beneficial change crosses its boundary. Changes that worsen the objective remain penalized."
+      }
+    ],
+    "formula": "r = πθ(a|s) / πold(a|s)\nLclip = E[min(rA, clip(r, 1−ε, 1+ε) A)]",
+    "math": [
+      {
+        "zh": "πθ 是待训练策略，πold 是采样策略，r 是同一个状态和动作上的概率比，A 是固定优势，ε 是裁剪宽度。A>0 且 r>1+ε 时目标为 (1+ε)A；A<0 且 r<1−ε 时为 (1−ε)A。其余区域保留 rA。",
+        "en": "πθ is the trainable policy, πold the sampling policy, r their probability ratio at the same state and action, A a fixed advantage, and ε the clip width. For A>0 and r>1+ε, the objective is (1+ε)A; for A<0 and r<1−ε, it is (1−ε)A. Otherwise it remains rA."
+      },
+      {
+        "zh": "Actor–critic 实现用 δt=rewardt+γV(st+1)−V(st)，再对后续 TD 残差按 (γλ) 的幂加权得到 GAE。价值误差和熵奖励可加入联合目标。本文还比较了自适应 KL 惩罚版本，因此 PPO 是一组方法，不只是一条裁剪公式。",
+        "en": "The actor–critic implementation forms δt=rewardt+γV(st+1)−V(st), then sums later TD residuals with powers of γλ to obtain GAE. Value error and an entropy bonus can enter the joint objective. The paper also studies adaptive KL penalties, so PPO is a family rather than only a clipping formula."
+      }
+    ],
+    "evidence": [
+      {
+        "zh": "表 1 将 7 个连续控制环境各运行 3 个种子，并在环境内将随机策略归零、最佳结果归一，再平均 21 次运行。ε=0.2 的得分是 0.82，无裁剪或惩罚为 −0.39；这是归一化回报，不是成功率。",
+        "en": "Table 1 uses three seeds on each of seven continuous-control environments. Scores are normalized within each environment so the random policy is zero and the best result is one, then averaged across 21 runs. ε=0.2 scores 0.82 versus −0.39 without clipping or penalties. These are normalized returns, not success rates."
+      },
+      {
+        "zh": "Atari 表 2 的结论取决于指标：PPO 在全训练期平均回报上赢得 30/49 个游戏，而最后 100 回合指标上赢得 19 个，ACER 赢得 28 个。样本效率和最终表现不能合并成一个“全面胜出”的判断。",
+        "en": "Atari Table 2 depends on the metric: PPO wins 30 of 49 games on mean reward over training, but 19 on the final-100-episode metric, where ACER wins 28. Sample efficiency and final performance support different conclusions."
+      }
+    ],
+    "limits": [
+      {
+        "zh": "裁剪不保证所有动作概率比或 KL 都被限制。参数共享和多步优化仍可改变未采样动作；演示中的平台只表示该采样项对 r 的导数为零。",
+        "en": "Clipping guarantees neither a bound on every action ratio nor a KL constraint. Shared parameters and repeated updates can alter unsampled actions; the demo plateau only means this sampled term has zero derivative with respect to r."
+      },
+      {
+        "zh": "迁移到 LLM 时还要区分 token/序列聚合、奖励 KL 与损失 KL，以及推理引擎和训练引擎的概率失配。原论文的控制任务证据不直接证明某种 LLM 配置最优。",
+        "en": "LLM implementations must additionally distinguish token versus sequence aggregation, reward versus loss KL, and probability mismatch between inference and training engines. Control-task evidence does not establish an optimal LLM configuration."
+      }
+    ],
+    "implementation": {
+      "zh": "verl 的 PPO 通常使用 GAE 和 critic。配置附注只解释角色；数值实验仍以原论文为准。",
+      "en": "PPO in verl normally uses GAE and a critic. The implementation note explains their roles; experimental claims refer to the original paper."
+    },
+    "locator": "§§2–5; equations 7, 9, 11–12; Algorithm 1; §6.1 Table 1; §6.4 Table 2",
+    "rows": [
+      [
+        "ε = 0.1",
+        0.76
+      ],
+      [
+        "ε = 0.2",
+        0.82
+      ],
+      [
+        "ε = 0.3",
+        0.7
+      ]
+    ],
+    "metric": {
+      "zh": "归一化回报（所选裁剪设置）",
+      "en": "Normalized return (selected clipping settings)"
+    },
+    "evidencePage": 6,
+    "version": "1707.06347v2",
+    "source": "https://arxiv.org/abs/1707.06347v2",
+    "sourceTitle": "Proximal Policy Optimization Algorithms",
+    "authors": [
+      "John Schulman",
+      "Filip Wolski",
+      "Prafulla Dhariwal",
+      "Alec Radford",
+      "Oleg Klimov"
+    ],
+    "preprint": "2017-07-20",
+    "pdfSha256": "e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b",
+    "docUrl": "https://verl.readthedocs.io/en/latest/algo/ppo.html",
+    "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
+    "docSha256": "48fe658d2c04ddef720daa978f8723746035fda62ac647fd28a8b97ea03b7c16",
+    "claimLocators": {
+      "background": "§§2–5; Eqs.7,9,11–12; Algorithm 1",
+      "mechanism": "§§2–5; Eqs.7,9,11–12; Algorithm 1",
+      "math": "§§2–5; Eqs.7,9,11–12; Algorithm 1",
+      "evidence": "§6.1 Table 1; §6.4 Table 2",
+      "limits": "Interpretive analysis of assumptions and scope in §§2–5; Eqs.7,9,11–12; Algorithm 1; empirical limits in §6.1 Table 1; §6.4 Table 2",
+      "implementation": "Pinned verl docs/algo/ppo.md; implementation-specific settings"
+    },
+    "foundation": {
+      "zh": "把策略理解为“给每种下一步分配概率的规则”。语言模型的一步通常输出一个 token，即文本的小片段。奖励是对表现的评分；优势表示结果比基线好多少。概率从 0.2 增至 0.3，概率比是 0.3÷0.2=1.5，而不是增加 1.5 个百分点。这里用这些量决定如何调整模型。",
+      "en": "A policy is a rule assigning probabilities to possible next actions. A language model usually emits a token, a small text fragment, at each step. Reward scores performance; advantage measures performance relative to a baseline. Moving probability from 0.2 to 0.3 gives a ratio of 0.3/0.2=1.5, not a 1.5-percentage-point increase. These quantities guide model updates."
+    },
+    "readingQuestion": {
+      "zh": "若 A=−1、r=0.5、ε=0.2，PPO 的目标及其局部导数是什么？",
+      "en": "With A=−1, r=0.5, and ε=0.2, what are the PPO objective and its local derivative?"
+    },
+    "readingAnswer": {
+      "zh": "min(−0.5,−0.8)=−0.8。处在负优势的下侧平台，对 r 的局部导数为 0；这不意味着整个神经网络的全部梯度为 0。",
+      "en": "min(−0.5,−0.8)=−0.8. This is the lower plateau for a negative advantage, so the local derivative with respect to r is zero. It does not make every neural-network gradient zero."
+    }
+  },
+  {
+    "slug": "grpo",
+    "short": "GRPO",
+    "arxiv": "2402.03300",
+    "doc": "grpo",
+    "title": {
+      "zh": "GRPO：同题答案互作基线",
+      "en": "GRPO: answers to one question provide a baseline"
+    },
+    "lead": {
+      "zh": "从同一问题的多个答案中估计相对优势，省去单独的价值网络；组内归一化也会改变不同问题的权重。",
+      "en": "Estimate relative advantages from several answers to the same question, avoiding a separate value network. Group normalization also changes the weighting of questions."
+    },
+    "background": {
+      "zh": "DeepSeekMath 的主线包括数学语料挖掘、继续预训练、指令微调和强化学习。模型从 DeepSeek-Coder-Base-v1.5 7B 出发，数学语料规模为 120B token；最终推理表现不能全部归因于 GRPO。",
+      "en": "DeepSeekMath combines mathematical corpus mining, continued pretraining, instruction tuning, and reinforcement learning. It starts from DeepSeek-Coder-Base-v1.5 7B and mines 120B mathematical tokens. Its final reasoning performance cannot all be attributed to GRPO."
+    },
+    "mechanism": [
+      {
+        "zh": "为一个问题采样 G 个答案，按结果或过程打分。结果监督下，整条答案共享归一化后的奖励优势；过程监督下，需要根据后续步骤奖励构造 token 优势，不能直接套用相同的单一标量。",
+        "en": "Sample G answers for a question and score outcomes or intermediate steps. Under outcome supervision, all tokens in an answer share a normalized reward advantage. Process supervision constructs token advantages from subsequent step rewards rather than broadcasting one scalar."
+      },
+      {
+        "zh": "原始 GRPO 在每个答案内部平均 token 损失，再跨答案平均，并在目标中加入相对参考策略的 KL 项。参考模型、采样旧模型、当前可训练模型具有不同作用，即使没有 critic，也不能把这三个角色混为一谈。",
+        "en": "Original GRPO averages token losses within each answer and then averages answers, while adding a KL term relative to a reference policy. The reference, old sampling, and current trainable policies have different roles even though no critic is used."
+      }
+    ],
+    "formula": "Ai = (Ri − mean(R)) / std(R)\nJ = E[(1/G) Σi (1/Ti) Σt {min(ri,t Ai, clip(ri,t) Ai) − β DKL}]",
+    "math": [
+      {
+        "zh": "Ri 是第 i 个答案的奖励，Ti 为有效 token 数，ri,t=πθ/πold。优势只说明组内相对位置：全对与全错两种组都没有结果奖励对比信号。演示使用总体标准差，零方差时显式返回零，并说明这只涉及奖励梯度，KL 项仍可能产生更新。",
+        "en": "Ri is answer i’s reward, Ti its valid token count, and ri,t=πθ/πold. Advantages encode relative rank within a group: both all-correct and all-wrong groups lack outcome-reward contrast. The demo uses population standard deviation and explicitly returns zero at zero variance. This concerns the reward gradient; a KL term may still update the policy."
+      },
+      {
+        "zh": "DrGRPO 的讨论属于后续研究：去掉组内标准差缩放，并用固定尺度替代逐答案长度平均。verl 的默认 token-mean 又与原始论文的序列等权聚合不同；这三种设置必须分别标明。",
+        "en": "DrGRPO is subsequent work: it removes group standard-deviation scaling and replaces per-answer length averaging with a fixed scale. The default token-mean aggregation in verl also differs from the original paper’s equal weighting of sequences. These three settings must be distinguished."
+      }
+    ],
+    "evidence": [
+      {
+        "zh": "表 5 的无工具 CoT 结果中，DeepSeekMath-Instruct 7B 的 MATH 得分为 46.8%，RL 模型为 51.7%；GSM8K 从 82.9% 到 88.2%。这里比较的是同一体系的指令模型和 RL 模型。",
+        "en": "In Table 5’s tool-free CoT results, DeepSeekMath-Instruct 7B scores 46.8% on MATH and the RL model scores 51.7%; GSM8K rises from 82.9% to 88.2%. This compares the instruction and RL stages of the same system."
+      },
+      {
+        "zh": "论文还讨论在线与离线、结果与过程监督、迭代 RL，并指出代码预训练和数学数据质量也影响性能。64 次采样的自一致性结果 60.9% 使用额外推理预算，不能和单次解答 51.7% 混作同一指标。",
+        "en": "The paper studies online versus offline training, outcome versus process supervision, and iterative RL, alongside code pretraining and corpus quality. The 60.9% self-consistency result uses 64 samples and extra inference compute; it is not the same metric as 51.7% for a single solution."
+      }
+    ],
+    "limits": [
+      {
+        "zh": "二值奖励的标准差随问题难度变化，归一化因而隐含重加权。没有 critic 降低模型驻留开销，但增加组采样仍有计算成本。",
+        "en": "Binary-reward standard deviation varies with question difficulty, so normalization implicitly reweights questions. Removing a critic reduces resident-model overhead, but group sampling still costs compute."
+      }
+    ],
+    "implementation": {
+      "zh": "verl 使用 adv_estimator=grpo 和组采样 n>1。核对 loss_agg_mode、norm_adv_by_std_in_grpo 与 KL 配置后，才能判断运行的是哪个变体。",
+      "en": "verl uses adv_estimator=grpo and group sampling n>1. Inspect loss_agg_mode, norm_adv_by_std_in_grpo, and KL settings before identifying the variant."
+    },
+    "locator": "§§2–4; §4.1 equations 3–5; Table 5; §5 and Appendix A; verl GRPO Advanced Extensions",
+    "rows": [
+      [
+        "DeepSeekMath-Instruct 7B",
+        46.8
+      ],
+      [
+        "DeepSeekMath-RL 7B",
+        51.7
+      ]
+    ],
+    "metric": {
+      "zh": "MATH：无工具 CoT 准确率（%）",
+      "en": "MATH: tool-free CoT accuracy (%)"
+    },
+    "evidencePage": 12,
+    "version": "2402.03300v3",
+    "source": "https://arxiv.org/abs/2402.03300v3",
+    "sourceTitle": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models",
+    "authors": [
+      "Zhihong Shao",
+      "Peiyi Wang",
+      "Qihao Zhu",
+      "Runxin Xu",
+      "Junxiao Song",
+      "Xiao Bi",
+      "Haowei Zhang",
+      "Mingchuan Zhang",
+      "Y. K. Li",
+      "Y. Wu",
+      "Daya Guo"
+    ],
+    "preprint": "2024-02-05",
+    "pdfSha256": "6cc20b3c5b8d25b8b53868fc4ec1792c144f07d67bdf7395138efd4422197e7b",
+    "docUrl": "https://verl.readthedocs.io/en/latest/algo/grpo.html",
+    "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
+    "docSha256": "d43fb13fba50523c0a39fec81e56bb300dd4468ddfd331b193a9a6bedf646b9c",
+    "claimLocators": {
+      "background": "§§2–3 data/pretraining; §4.1 Eqs.3–5",
+      "mechanism": "§§2–3 data/pretraining; §4.1 Eqs.3–5",
+      "math": "§§2–3 data/pretraining; §4.1 Eqs.3–5",
+      "evidence": "Table 5; §5 and Appendix A",
+      "limits": "Interpretive analysis of assumptions and scope in §§2–3 data/pretraining; §4.1 Eqs.3–5; empirical limits in Table 5; §5 and Appendix A",
+      "implementation": "Pinned verl docs/algo/grpo.md; implementation-specific settings"
+    },
+    "foundation": {
+      "zh": "同一道题生成多份答案，就能用同组答案互相作参照。奖励 [0,0,1,1] 的平均为 0.5：两个错误答案低于平均，两个正确答案高于平均。再除以标准差，是把这组差值按自身离散程度缩放；它不会创造新的正确性标签。",
+      "en": "Generate multiple answers to one question and use them as each other’s reference. Rewards [0,0,1,1] have mean 0.5: wrong answers are below the mean, correct answers above it. Dividing by standard deviation rescales the differences by the group’s spread; it creates no new correctness labels."
+    },
+    "readingQuestion": {
+      "zh": "为什么全对的一组也可能没有 GRPO 更新信号？",
+      "en": "Why can an all-correct group provide no GRPO update signal?"
+    },
+    "readingAnswer": {
+      "zh": "因为组内奖励相同，每条奖励减去组均值都为零，标准差也为零。这里将优势置零；“全对”说明本组成功，却不告诉算法哪条答案应相对其他答案增加概率。",
+      "en": "All rewards equal their group mean, so centered rewards and standard deviation are zero. The demo sets advantages to zero. Success alone does not identify which answer should become more probable relative to the others."
+    }
+  },
+  {
+    "slug": "dapo",
+    "short": "DAPO",
+    "arxiv": "2503.14476",
+    "doc": "dapo",
+    "title": {
+      "zh": "DAPO：让长推理训练继续学习",
+      "en": "DAPO: keeping long-reasoning training productive"
+    },
+    "lead": {
+      "zh": "把裁剪、有效问题采样、token 权重和超长奖励一起纳入设计，解决长链推理中的探索与训练稳定性问题。",
+      "en": "Jointly design clipping, informative prompt sampling, token weighting, and overlength rewards to address exploration and stability in long-reasoning training."
+    },
+    "background": {
+      "zh": "朴素 GRPO 在长推理中可能出现熵坍缩、零优势组比例增加、长答案权重失衡，以及截断造成的奖励噪声。DAPO 的贡献是一个可复现的训练系统及其组件，而不只是一条新损失。",
+      "en": "Naive GRPO can suffer entropy collapse, an increasing share of zero-advantage groups, imbalanced long-answer weighting, and reward noise from truncation. DAPO contributes a reproducible training system and its components, rather than only a new loss."
+    },
+    "mechanism": [
+      {
+        "zh": "Clip-Higher 分开设置 εlow 和 εhigh，增加正优势动作向上的空间。动态采样过滤全对或全错的奖励组并补采，直到积累足够有效问题；这会改变训练批次的组成并产生额外采样。",
+        "en": "Clip-Higher separates εlow and εhigh, increasing upward room for positively advantaged actions. Dynamic sampling filters all-correct or all-wrong reward groups and resamples until enough informative prompts are collected, changing batch composition and incurring extra generation."
+      },
+      {
+        "zh": "有效 token 统一平均，使长答案内的每个 token 不再被逐答案平均额外稀释。超长过滤与软惩罚处理截断噪声：一个控制损失掩码，另一个改变奖励，它们不能混写为同一操作。",
+        "en": "Averaging all valid tokens avoids the extra dilution imposed on tokens in long answers by per-answer averaging. Overlong filtering and soft punishment address truncation noise through different mechanisms: one changes the loss mask, the other changes the reward."
+      }
+    ],
+    "formula": "J = E[Σi,t min(ri,t Ai, clip(ri,t, 1−εlow, 1+εhigh) Ai) / Σi Ti]\nRlength = −clip((T−(L−B))/B, 0, 1)",
+    "math": [
+      {
+        "zh": "第一式省略采样条件和奖励模型以突出聚合。第二式是缓冲区内的教学写法：L 为最大长度，B 为缓冲宽度，T 为生成长度，惩罚系数取 1；硬截断及其 mask 另行处理。",
+        "en": "The first expression suppresses sampling conditions and reward-model details to highlight aggregation. The second is a teaching form for the buffer: L is maximum length, B buffer width, T generated length, and penalty coefficient one. Hard truncation and its mask are handled separately."
+      },
+      {
+        "zh": "动态采样条件对二值正确性为 0<正确答案数<G。对于一般实数奖励，应检查组内是否有变化，不可简单套用正确率阈值。演示同时显示裁剪目标、组是否保留和长度惩罚。",
+        "en": "For binary correctness, dynamic sampling keeps groups with 0<number correct<G. General real-valued rewards require checking within-group variation rather than applying a correctness threshold. The demo shows clipping, group retention, and length penalty together."
+      }
+    ],
+    "evidence": [
+      {
+        "zh": "表 1 在 Qwen2.5-32B 上逐项叠加技术，AIME 2024 avg@32 从朴素 GRPO 的 30 到完整 DAPO 的 50。该表不是每次只移除一个组件的独立消融；相邻差值受此前所有组件影响。",
+        "en": "Table 1 progressively adds techniques on Qwen2.5-32B, increasing AIME 2024 avg@32 from 30 for naive GRPO to 50 for full DAPO. This is not an independent leave-one-component-out ablation; each difference depends on earlier components."
+      },
+      {
+        "zh": "论文报告的 50 与 verl 文档复现表的 52 来自不同记录，页面采用论文 v2 的表 1。训练步数减少也不自动等于等比例 GPU 时数减少，需考虑动态采样和序列长度。",
+        "en": "The paper’s 50 and the verl reproduction table’s 52 belong to different records; this page uses Table 1 of paper v2. Fewer training steps do not automatically mean proportionally fewer GPU hours because sampling and sequence length matter."
+      }
+    ],
+    "limits": [
+      {
+        "zh": "启发式之间有交互，收益依赖模型、数据与上下文预算。扩大上裁剪边界不是保证探索改善的定理，也不能保证所有模型免于熵坍缩。",
+        "en": "The heuristics interact and their gains depend on model, data, and context budget. A larger upper clipping boundary is not a theorem guaranteeing better exploration or preventing entropy collapse for every model."
+      }
+    ],
+    "implementation": {
+      "zh": "重点核对 clip_ratio_low/high、filter_groups、token-mean 及 overlong_buffer。verl recipe 未把原文中的每一种过滤实验都做成相同默认。",
+      "en": "Inspect clip_ratio_low/high, filter_groups, token-mean, and overlong_buffer. The verl recipe does not make every filtering experiment in the paper an identical default."
+    },
+    "locator": "§§3.1–3.4 equations 8–14; Algorithm 1; §4.1–4.3 Table 1; verl DAPO FAQ",
+    "rows": [
+      [
+        "GRPO",
+        30
+      ],
+      [
+        "+ Overlong Filtering",
+        36
+      ],
+      [
+        "+ Clip-Higher",
+        38
+      ],
+      [
+        "+ Soft Punishment",
+        41
+      ],
+      [
+        "+ Token Loss",
+        42
+      ],
+      [
+        "+ Dynamic Sampling",
+        50
+      ]
+    ],
+    "metric": {
+      "zh": "AIME 2024 avg@32（%，逐项叠加）",
+      "en": "AIME 2024 avg@32 (%, cumulative additions)"
+    },
+    "evidencePage": 9,
+    "version": "2503.14476v2",
+    "source": "https://arxiv.org/abs/2503.14476v2",
+    "sourceTitle": "DAPO: An Open-Source LLM Reinforcement Learning System at Scale",
+    "authors": [
+      "Qiying Yu",
+      "Zheng Zhang",
+      "Ruofei Zhu",
+      "Yufeng Yuan",
+      "Xiaochen Zuo",
+      "Yu Yue",
+      "Weinan Dai",
+      "Tiantian Fan",
+      "Gaohong Liu",
+      "Lingjun Liu",
+      "Xin Liu",
+      "Haibin Lin",
+      "Zhiqi Lin",
+      "Bole Ma",
+      "Guangming Sheng",
+      "Yuxuan Tong",
+      "Chi Zhang",
+      "Mofan Zhang",
+      "Wang Zhang",
+      "Hang Zhu",
+      "Jinhua Zhu",
+      "Jiaze Chen",
+      "Jiangjie Chen",
+      "Chengyi Wang",
+      "Hongli Yu",
+      "Yuxuan Song",
+      "Xiangpeng Wei",
+      "Hao Zhou",
+      "Jingjing Liu",
+      "Wei-Ying Ma",
+      "Ya-Qin Zhang",
+      "Lin Yan",
+      "Mu Qiao",
+      "Yonghui Wu",
+      "Mingxuan Wang"
+    ],
+    "preprint": "2025-03-18",
+    "pdfSha256": "f01e4fd347530cadd68e5c36b1998532a6d1adb272c817e73b927453c26e9d79",
+    "docUrl": "https://verl.readthedocs.io/en/latest/algo/dapo.html",
+    "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
+    "docSha256": "4ad9287e2d91dcf492e4a83f3711df4206d20444e5006c03f92208d7d14de0f9",
+    "claimLocators": {
+      "background": "§§3.1–3.4 Eqs.8–14; Algorithm 1",
+      "mechanism": "§§3.1–3.4 Eqs.8–14; Algorithm 1",
+      "math": "§§3.1–3.4 Eqs.8–14; Algorithm 1",
+      "evidence": "§4.2 Table 1; §4.3 training dynamics",
+      "limits": "Interpretive analysis of assumptions and scope in §§3.1–3.4 Eqs.8–14; Algorithm 1; empirical limits in §4.2 Table 1; §4.3 training dynamics",
+      "implementation": "Pinned verl docs/algo/dapo.md; implementation-specific settings"
+    },
+    "foundation": {
+      "zh": "语言模型按概率逐个生成 token，答案可长可短。训练会提高相对好答案的概率。“裁剪”是限制某个样本继续推动目标的程度；“过滤”是决定样本是否进入更新；“惩罚”则先改变评分。三者作用在不同位置，因此不能把一个按钮当成另一个的替代。",
+      "en": "A language model generates tokens probabilistically, producing answers of different lengths. Training increases the probability of relatively good answers. Clipping limits a sample’s incentive in the objective; filtering decides whether it contributes; a penalty changes its score. These act at different stages and are not interchangeable."
+    },
+    "readingQuestion": {
+      "zh": "教学例 L=100、B=20 中，长度 90 的惩罚是多少？全对组会因此保留下来吗？",
+      "en": "With teaching values L=100 and B=20, what is the penalty at length 90? Does it keep an all-correct group?"
+    },
+    "readingAnswer": {
+      "zh": "长度惩罚为 −(90−80)/20=−0.5。组过滤是另一个判断：按演示的二值正确性规则，全对组仍被丢弃。",
+      "en": "The length penalty is −(90−80)/20=−0.5. Group filtering is separate: under the demo’s binary-correctness rule, an all-correct group is still dropped."
+    }
+  },
+  {
+    "slug": "spin",
+    "short": "SPIN",
+    "arxiv": "2401.01335",
+    "doc": "spin",
+    "title": {
+      "zh": "SPIN：用旧模型生成新的对手",
+      "en": "SPIN: turn the previous model into an opponent"
+    },
+    "lead": {
+      "zh": "反复区分固定的人类示范与当前模型生成的答案，持续利用已有 SFT 数据，而不必每轮购买新的偏好标注。",
+      "en": "Repeatedly distinguish fixed human demonstrations from model-generated answers, extracting more value from existing SFT data without collecting new preference labels every round."
+    },
+    "background": {
+      "zh": "额外 SFT 可能较快达到平台。SPIN 从已有 SFT 模型与示范数据出发，把当前模型作为对手；“不需要新增标注”并不等于“完全不需要人类数据”。目标是匹配示范分布，不是自动发现超越示范的真理。",
+      "en": "Extra SFT can plateau quickly. SPIN starts with an SFT model and demonstration data, treating the current model as an opponent. No additional annotation does not mean no human data. The target is the demonstration distribution, not automatic discovery of truth beyond it."
+    },
+    "mechanism": [
+      {
+        "zh": "每一轮冻结旧模型，对示范中的问题生成答案。人类示范 y 和旧模型生成 y′ 构成训练对；新模型优化后成为下一轮对手。原始 SPIN 不通过外部奖励模型为两条生成答案重新排序。",
+        "en": "Freeze the old model each round and generate answers to demonstration prompts. Human answer y and generated answer y′ form the training pair; the updated model becomes the next opponent. Original SPIN does not use an external reward model to rerank two generated answers."
+      },
+      {
+        "zh": "自博弈的判别函数可写成新旧策略的对数概率比。选择 logistic 损失时，形式类似 DPO；差别在数据对的来源、迭代更新及目标分布。相似的损失表达式不意味着整个算法等价。",
+        "en": "The self-play discriminator can be written as a log probability ratio between new and old policies. With a logistic loss its form resembles DPO, but pair construction, iterative updates, and the target distribution differ. Similar loss expressions do not make the full algorithms identical."
+      }
+    ],
+    "formula": "z = λ[log πθ(y|x)/πold(y|x) − log πθ(y′|x)/πold(y′|x)]\nL = E[log(1 + exp(−z))]",
+    "math": [
+      {
+        "zh": "x 来自示范提示，y 来自示范答案，y′ 由当前轮旧模型采样，λ 控制更新尺度。提升示范相对旧模型的概率比、压低生成答案的相对概率比，会增大 z 并降低损失。",
+        "en": "x is a demonstration prompt, y its demonstration answer, y′ an old-policy sample, and λ the update scale. Raising the demonstration’s relative probability ratio and lowering the generated answer’s ratio increases z and reduces loss."
+      },
+      {
+        "zh": "式 4.7 的一般形式允许凸递减损失。定理 5.2、5.4 的最优性结论依赖可表达目标分布和相应优化假设；有限神经网络、有限样本和近似优化不继承一个无条件的收敛保证。",
+        "en": "Equation 4.7 allows a general convex decreasing loss. The optimality conclusions in Theorems 5.2 and 5.4 rely on representability of the target distribution and optimization assumptions. Finite neural networks, samples, and approximate optimization do not inherit an unconditional convergence guarantee."
+      }
+    ],
+    "evidence": [
+      {
+        "zh": "论文从 zephyr-7b-sft-full 出发，使用 Ultrachat200k 的 50k 子集，迭代后 Open LLM Leaderboard 六项平均从 58.14 到 63.16，MT-Bench 从 5.94 到 6.78。两个指标有不同量尺。",
+        "en": "Starting from zephyr-7b-sft-full and a 50k subset of Ultrachat200k, the paper raises the six-task Open LLM Leaderboard average from 58.14 to 63.16 and MT-Bench from 5.94 to 6.78. These metrics use different scales."
+      },
+      {
+        "zh": "附录 B 分列数据量、更多 SFT 与迭代轮次的比较，也列出各任务 few-shot 设置。只看综合均值会掩盖任务间差异；生成训练对本身也有时间成本。",
+        "en": "Appendix B compares data quantity, additional SFT, and iteration count and lists each task’s few-shot protocol. Aggregate scores can hide task differences, and generating training pairs has its own time cost."
+      }
+    ],
+    "limits": [
+      {
+        "zh": "示范错误或覆盖不足会限制目标分布。模型与自身对抗不会凭空增加可靠监督；还需检查过拟合、生成多样性及对未见任务的迁移。",
+        "en": "Errors or gaps in demonstrations constrain the target distribution. Self-play does not create reliable supervision from nothing; overfitting, diversity, and transfer to unseen tasks still require evaluation."
+      }
+    ],
+    "implementation": {
+      "zh": "verl 的 SPIN recipe 说明其使用在线 DPO、奖励排序和可更新参考模型。这是受 SPIN 启发的实现；页面把这些机制放在单独附注，避免归给原论文。",
+      "en": "The verl SPIN recipe describes online DPO, reward-based ranking, and an updatable reference model. These are implementation choices inspired by SPIN and are separated from the original paper."
+    },
+    "locator": "§4 equation 4.7 and Algorithm 1; §5 Theorems 5.2/5.4; §6; Appendix B Tables 3–5; verl SPIN Our Online DPO Implementation",
+    "rows": [
+      [
+        "SFT",
+        58.14
+      ],
+      [
+        "SPIN",
+        63.16
+      ]
+    ],
+    "metric": {
+      "zh": "Open LLM Leaderboard 六项平均",
+      "en": "Open LLM Leaderboard six-task average"
+    },
+    "evidencePage": 16,
+    "version": "2401.01335v3",
+    "source": "https://arxiv.org/abs/2401.01335v3",
+    "sourceTitle": "Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models",
+    "authors": [
+      "Zixiang Chen",
+      "Yihe Deng",
+      "Huizhuo Yuan",
+      "Kaixuan Ji",
+      "Quanquan Gu"
+    ],
+    "preprint": "2024-01-02",
+    "pdfSha256": "796c894bd81eedeb9b4048b62a1849281782b93345966c6aafc4701ead6e6cc4",
+    "docUrl": "https://verl.readthedocs.io/en/latest/algo/spin.html",
+    "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
+    "docSha256": "3673dabbb432d594ec47c923474632183f8d73fded6ec25a62aadd9cdc881e49",
+    "claimLocators": {
+      "background": "§4 Eq.4.7 and Algorithm 1; §5 Theorems 5.2/5.4",
+      "mechanism": "§4 Eq.4.7 and Algorithm 1; §5 Theorems 5.2/5.4",
+      "math": "§4 Eq.4.7 and Algorithm 1; §5 Theorems 5.2/5.4",
+      "evidence": "§6; Appendix B Tables 2–5",
+      "limits": "Interpretive analysis of assumptions and scope in §4 Eq.4.7 and Algorithm 1; §5 Theorems 5.2/5.4; empirical limits in §6; Appendix B Tables 2–5",
+      "implementation": "Pinned verl docs/algo/spin.md; implementation-specific settings"
+    },
+    "foundation": {
+      "zh": "SFT 是用“问题—示范答案”教模型模仿；这里的示范来自已有数据。SPIN 每轮再让旧模型回答这些问题，把它的答案作为比较对象。训练输入因此是问题、示范和模型答案三者，而不是让两个模型自由辩论后自动决定事实。",
+      "en": "Supervised fine-tuning teaches a model to imitate prompt–demonstration pairs. SPIN reuses those demonstrations and asks the previous model to answer their prompts, providing a comparison. Training therefore receives the prompt, demonstration, and model answer; it is not an unrestricted debate that automatically determines truth."
+    },
+    "readingQuestion": {
+      "zh": "新一轮是否必须购买新的偏好标签？这是否意味着没有人类监督？",
+      "en": "Does each new round require new preference labels? Does that imply no human supervision?"
+    },
+    "readingAnswer": {
+      "zh": "原始 SPIN 复用固定示范并重新生成对手答案，所以不要求每轮新增偏好标签。但示范本身仍提供人类监督，其质量和覆盖限制目标分布。",
+      "en": "Original SPIN reuses fixed demonstrations and regenerates opponent answers, avoiding new preference labels each round. The demonstrations still supply human supervision, whose quality and coverage constrain the target."
+    }
+  },
+  {
+    "slug": "sppo",
+    "short": "SPPO",
+    "arxiv": "2405.00675",
+    "doc": "sppo",
+    "title": {
+      "zh": "SPPO：偏好可以形成循环",
+      "en": "SPPO: preferences can form cycles"
+    },
+    "lead": {
+      "zh": "直接建模答案之间的胜率，把偏好对齐写成常和博弈，通过自博弈逼近不容易被对手利用的策略。",
+      "en": "Model pairwise win probabilities directly, formulate alignment as a constant-sum game, and use self-play to approach a less exploitable policy."
+    },
+    "background": {
+      "zh": "一个固定标量奖励天然给答案排序，但真实偏好可能出现 A 胜 B、B 胜 C、C 胜 A。SPPO 用一般偏好概率建立博弈，避免预先要求所有比较都能由 Bradley–Terry 标量奖励解释。",
+      "en": "A fixed scalar reward orders answers, while preferences can cycle: A beats B, B beats C, and C beats A. SPPO uses general preference probabilities without requiring every comparison to follow a Bradley–Terry scalar reward."
+    },
+    "mechanism": [
+      {
+        "zh": "每轮从当前策略采样多个答案，以偏好 oracle 估计每个答案对当前策略的胜率。论文实验使用 PairRM；它提供了外部偏好信号，不能把该方法说成完全没有裁判。",
+        "en": "Sample several answers each round and use a preference oracle to estimate each answer’s win probability against the current policy. The experiments use PairRM, an external preference signal; the method is not judge-free."
+      },
+      {
+        "zh": "理想指数权重更新提高胜率高的答案权重，再将目标策略拟合到语言模型。实际平方损失以 1/2 为中心近似归一化项。理论中的策略混合与有限轮神经网络训练必须区分。",
+        "en": "An ideal exponential-weights update increases the weight of high-win-probability answers, then fits the target policy with a language model. The practical squared loss centers at 1/2 as an approximation to the normalization term. The theoretical policy mixture differs from finite-round neural training."
+      }
+    ],
+    "formula": "win(y, πold) = Ey′∼πold[P(y ≻ y′)]\nL ≈ E[(log(πθ(y|x)/πold(y|x)) − η(win−1/2))²]",
+    "math": [
+      {
+        "zh": "η 为更新尺度，P 为偏好概率，πold 是本轮对手。理想式中的 log Z 由采样估计或用 η/2 近似，后者不是对任意偏好和步长都精确成立的恒等式。",
+        "en": "η is an update scale, P a preference probability, and πold the current opponent. The ideal log Z normalization is estimated or approximated by η/2; the latter is not an exact identity for arbitrary preferences and step sizes."
+      },
+      {
+        "zh": "演示采用三种策略的循环胜率矩阵。改变对手混合比例后，各候选胜率随之改变；均匀混合使三者胜率均为 1/2。它展示博弈直觉，并不模拟神经网络的实际收敛。",
+        "en": "The demo uses a cyclic win matrix over three strategies. Changing the opponent mixture changes each candidate’s win rate; the uniform mixture gives each a rate of 1/2. This illustrates the game, not neural-network convergence."
+      }
+    ],
+    "evidence": [
+      {
+        "zh": "表 1 中 Mistral-7B-Instruct-v0.2 的 AlpacaEval 2.0 长度控制胜率为 17.11%，SPPO 第三轮为 28.53%；普通胜率为 31.02%，两者不可互换。",
+        "en": "Table 1 reports AlpacaEval 2.0 length-controlled win rates of 17.11% for Mistral-7B-Instruct-v0.2 and 28.53% for SPPO iteration 3. The ordinary win rate is 31.02%; these metrics are not interchangeable."
+      },
+      {
+        "zh": "表 3 的通用能力平均并非每轮都单调上升。best-of-16 又引入推理时重排，必须与单次生成结果分别比较。verl 的 MATH 复现使用另一种模型和评测设置。",
+        "en": "The general-capability average in Table 3 does not rise monotonically every round. Best-of-16 introduces inference-time reranking and must be compared separately from single-generation results. The verl MATH reproduction uses a different model and evaluation protocol."
+      }
+    ],
+    "limits": [
+      {
+        "zh": "oracle 的偏差、有限比较次数以及 log Z 近似均可影响训练。理想博弈中的保证不能直接当作真实人类偏好下的安全性或全任务提升保证。",
+        "en": "Oracle bias, finite comparisons, and the log Z approximation can affect training. Guarantees in the ideal game do not establish safety under real human preferences or gains on every task."
+      }
+    ],
+    "implementation": {
+      "zh": "verl SPPO 复现报告的是其内部 MATH 评测，不能当作原文 AlpacaEval 的复现。",
+      "en": "The verl SPPO recipe reports its internal MATH evaluation, not a reproduction of the original AlpacaEval experiment."
+    },
+    "locator": "§4 equations 4.2–4.6; Algorithm 1; §5 Tables 1/3; Appendix A; verl SPPO Reproduce the Experiment",
+    "rows": [
+      [
+        "Mistral Instruct",
+        17.11
+      ],
+      [
+        "SPPO Iter1",
+        24.79
+      ],
+      [
+        "SPPO Iter2",
+        26.89
+      ],
+      [
+        "SPPO Iter3",
+        28.53
+      ]
+    ],
+    "metric": {
+      "zh": "AlpacaEval 2.0 长度控制胜率（%）",
+      "en": "AlpacaEval 2.0 length-controlled win rate (%)"
+    },
+    "evidencePage": 16,
+    "version": "2405.00675v5",
+    "source": "https://arxiv.org/abs/2405.00675v5",
+    "sourceTitle": "Self-Play Preference Optimization for Language Model Alignment",
+    "authors": [
+      "Yue Wu",
+      "Zhiqing Sun",
+      "Huizhuo Yuan",
+      "Kaixuan Ji",
+      "Yiming Yang",
+      "Quanquan Gu"
+    ],
+    "preprint": "2024-05-01",
+    "pdfSha256": "cd41f7714748f65b520fd05a429ce848b11cfdb26adf01070d5de79511719265",
+    "docUrl": "https://verl.readthedocs.io/en/latest/algo/sppo.html",
+    "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
+    "docSha256": "7b12370f82df6cc529b468362c2662f2cd5eba0c1fc38bf90553ca6653c199a7",
+    "claimLocators": {
+      "background": "§4 Eqs.4.2–4.6; Algorithm 1",
+      "mechanism": "§4 Eqs.4.2–4.6; Algorithm 1",
+      "math": "§4 Eqs.4.2–4.6; Algorithm 1",
+      "evidence": "§5 Table 1 (PDF p.16); Table 3",
+      "limits": "Interpretive analysis of assumptions and scope in §4 Eqs.4.2–4.6; Algorithm 1; empirical limits in §5 Table 1 (PDF p.16); Table 3",
+      "implementation": "Pinned verl docs/algo/sppo.md; implementation-specific settings"
+    },
+    "foundation": {
+      "zh": "偏好概率表示比较两份答案时，其中一份获选的机会。它不必能压缩成每份答案一个分数：例如读者偏好 A 胜 B、B 胜 C，却又偏好 C 胜 A。博弈中的“混合策略”就是按一组概率选择不同答案或策略，用来减少被某个对手针对的程度。",
+      "en": "A preference probability is the chance that one answer is chosen over another. It need not reduce to one score per answer: A can beat B, B beat C, and C beat A. A mixed strategy randomly chooses among alternatives according to specified probabilities, reducing vulnerability to a particular opponent."
+    },
+    "readingQuestion": {
+      "zh": "教学矩阵中，如果对手只选择 A，哪个候选胜率最高？",
+      "en": "In the teaching matrix, which candidate has the highest win rate against an opponent that always chooses A?"
+    },
+    "readingAnswer": {
+      "zh": "C 的胜率为 0.8，A 为 0.5，B 为 0.2。换一个对手混合，排序就可能改变；这正是固定标量排序难以表达的部分。",
+      "en": "C wins with probability 0.8, versus 0.5 for A and 0.2 for B. Changing the opponent mixture can change the ranking, which a fixed scalar ordering struggles to represent."
+    }
+  },
+  {
+    "slug": "entropy-mechanism",
+    "short": "Entropy Mechanism",
+    "arxiv": "2505.22617",
+    "doc": "entropy",
+    "title": {
+      "zh": "熵机制：探索为何过早耗尽",
+      "en": "Entropy mechanisms: why exploration runs out early"
+    },
+    "lead": {
+      "zh": "策略越来越确信已有答案时，训练可能失去探索空间。论文从概率与更新的协方差解释熵变化，并选择性约束高协方差 token。",
+      "en": "As a policy becomes more confident in familiar answers, training may lose exploration capacity. The paper relates entropy changes to covariance between probabilities and updates, then selectively constrains high-covariance tokens."
+    },
+    "background": {
+      "zh": "熵衡量一个分布的不确定性，不直接衡量答案质量。该研究观察到多次推理 RL 实验中熵快速下降，随后性能饱和。其拟合关系 R=−a exp(H)+b 是特定训练条件下的经验描述，不能当作所有模型的普适定律。",
+      "en": "Entropy measures distributional uncertainty, not answer quality. The study observes rapid entropy decline followed by performance saturation in multiple reasoning-RL runs. Its fit R=−a exp(H)+b describes particular training conditions rather than a universal law for all models."
+    },
+    "mechanism": [
+      {
+        "zh": "softmax 概率由 logits 决定。若更新进一步偏向已经高概率的动作，分布可能更集中；若提高稀有动作的概率，熵可能增加。影响还取决于完整分布与更新方向，不能只根据单个 token 的奖励下结论。",
+        "en": "Softmax probabilities are determined by logits. Updates favoring already-probable actions can concentrate the distribution, whereas increasing rare-action probabilities can raise entropy. The effect depends on the full distribution and update direction, not only one token’s reward."
+      },
+      {
+        "zh": "Clip-Cov 选择性屏蔽某些高协方差 token 的更新，KL-Cov 对高协方差 token 加入约束。论文也比较普通熵奖励和参考 KL：稳定熵本身并不保证更高性能。",
+        "en": "Clip-Cov selectively masks updates for certain high-covariance tokens, while KL-Cov constrains high-covariance tokens. The paper also compares ordinary entropy bonuses and reference KL: stabilizing entropy alone does not guarantee better performance."
+      }
+    ],
+    "formula": "H(p) = −Σa pa log pa\npa = exp(za) / Σb exp(zb)\nΔH ≈ −Cov a∼p(log pa, Δza)",
+    "math": [
+      {
+        "zh": "这里 log 使用自然对数，熵单位为 nat。最后一式为 softmax 在小 logit 扰动下的一阶教学展开：dp= p(dz−Epdz)，代入 dH=−Σ log(p)dp 得到协方差形式。有限步长时，页面直接计算更新前后的熵，而不把一阶近似当作精确值。",
+        "en": "Logs are natural and entropy is in nats. The final expression is a first-order teaching expansion for a small softmax-logit perturbation: substitute dp=p(dz−Epdz) into dH=−Σlog(p)dp. For finite steps, the page computes entropy before and after the update directly rather than treating the approximation as exact."
+      },
+      {
+        "zh": "演示只有两个动作，分别控制初始概率与一个 logit 的增量。它解释熵变化的方向；完整 Clip-Cov/KL-Cov 还需要批次统计、选择阈值和损失定义，不能从这个二动作图复现实验结果。",
+        "en": "The demo has two actions and controls the initial probability and one logit increment. It explains the direction of entropy change. Full Clip-Cov/KL-Cov additionally require batch statistics, selection thresholds, and a loss definition; the two-action demo does not reproduce reported experiments."
+      },
+      {
+        "zh": "原文 Eq.10 在一批采样 token 上定义 Cᵢ=(log πᵢ−平均 log π)(Aᵢ−平均 A)。Clip-Cov 在指定协方差区间内随机选取一小部分 token，将其梯度置零；KL-Cov 选择协方差排名最高的一小部分，并对这些位置加入旧策略到当前策略的 KL 惩罚（Eqs.11–14）。这与简单扩大 PPO 概率比裁剪区间不同。",
+        "en": "Equation 10 defines Cᵢ=(log πᵢ−mean log π)(Aᵢ−mean A) over sampled tokens. Clip-Cov randomly selects a small fraction within a specified covariance range and zeros their gradients. KL-Cov selects a top-ranked fraction and applies an old-to-current-policy KL penalty at those positions (Eqs.11–14). This differs from simply widening PPO’s probability-ratio clip interval."
+      }
+    ],
+    "evidence": [
+      {
+        "zh": "表 2 的 Qwen2.5-32B 七基准平均为：GRPO 45.8、Clip-Higher 47.2、Clip-Cov 50.3、KL-Cov 52.2。AIME 和 AMC 使用 avg@32；总平均跨不同基准，不能称为单一数据集准确率。",
+        "en": "Table 2’s seven-benchmark average for Qwen2.5-32B is 45.8 for GRPO, 47.2 for Clip-Higher, 50.3 for Clip-Cov, and 52.2 for KL-Cov. AIME and AMC use avg@32. The aggregate spans benchmarks and is not a single-dataset accuracy."
+      },
+      {
+        "zh": "并非每个单项都由同一种方法最好：32B 的 MATH-500 上 Clip-Cov 为 87.0、KL-Cov 为 84.6。论文的约束方法具有不同取舍，不能由总平均推断每项提升。",
+        "en": "Different methods lead on different benchmarks: for 32B MATH-500, Clip-Cov scores 87.0 and KL-Cov 84.6. Their tradeoffs differ; aggregate improvements do not imply improvements on every component."
+      }
+    ],
+    "limits": [
+      {
+        "zh": "熵与性能之间的相关性、拟合和机制分析各有适用范围。高熵可能对应多样的好答案，也可能对应无效或随机输出；需联合评估质量、长度和采样预算。",
+        "en": "Correlation, curve fitting, and mechanistic analysis have different scopes. High entropy can reflect diverse good answers or ineffective random output. Quality, length, and sampling budget must be evaluated together."
+      }
+    ],
+    "implementation": {
+      "zh": "verl 提供熵机制 recipe。采用其中的批次选择与损失配置时，应注明版本；不能仅调整 entropy_coeff 就称为复现 Clip-Cov。",
+      "en": "verl provides an entropy-mechanism recipe. Its batch-selection and loss settings should be versioned; changing entropy_coeff alone does not reproduce Clip-Cov."
+    },
+    "locator": "§2.4 empirical fit; §3.1 entropy dynamics; §4.1–4.3; Table 2; Figures 9–10",
+    "rows": [
+      [
+        "GRPO",
+        45.8
+      ],
+      [
+        "Clip-Higher",
+        47.2
+      ],
+      [
+        "Clip-Cov",
+        50.3
+      ],
+      [
+        "KL-Cov",
+        52.2
+      ]
+    ],
+    "metric": {
+      "zh": "Qwen2.5-32B 七基准平均分",
+      "en": "Qwen2.5-32B seven-benchmark mean score"
+    },
+    "evidencePage": 12,
+    "version": "2505.22617v1",
+    "source": "https://arxiv.org/abs/2505.22617v1",
+    "sourceTitle": "The Entropy Mechanism of Reinforcement Learning for Reasoning Language Models",
+    "authors": [
+      "Ganqu Cui",
+      "Yuchen Zhang",
+      "Jiacheng Chen",
+      "Lifan Yuan",
+      "Zhi Wang",
+      "Yuxin Zuo",
+      "Haozhan Li",
+      "Yuchen Fan",
+      "Huayu Chen",
+      "Weize Chen",
+      "Zhiyuan Liu",
+      "Hao Peng",
+      "Lei Bai",
+      "Wanli Ouyang",
+      "Yu Cheng",
+      "Bowen Zhou",
+      "Ning Ding"
+    ],
+    "preprint": "2025-05-28",
+    "pdfSha256": "8663280efe90c34f801776cbe5051dd3b700327d27940310e3a17f183e5f4f51",
+    "docUrl": "https://verl.readthedocs.io/en/latest/algo/entropy.html",
+    "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
+    "docSha256": "37290607b2ababf5ed32cbfd21bfd51a1fc1c8ba0761c1505079f1ca6710bae1",
+    "claimLocators": {
+      "background": "§2.4 empirical fit; §3.1 entropy dynamics; §4.1–4.2 Eqs.10–14",
+      "mechanism": "§2.4 empirical fit; §3.1 entropy dynamics; §4.1–4.2 Eqs.10–14",
+      "math": "§2.4 empirical fit; §3.1 entropy dynamics; §4.1–4.2 Eqs.10–14",
+      "evidence": "§4.3 Table 2 (PDF p.12); Figures 9–10",
+      "limits": "Interpretive analysis of assumptions and scope in §2.4 empirical fit; §3.1 entropy dynamics; §4.1–4.2 Eqs.10–14; empirical limits in §4.3 Table 2 (PDF p.12); Figures 9–10",
+      "implementation": "Pinned verl docs/algo/entropy.md; implementation-specific settings"
+    },
+    "foundation": {
+      "zh": "若下一步只可能选两种动作，[0.5,0.5] 比 [0.99,0.01] 更难预测。熵把这种不确定程度变成一个数；它不判断哪个答案正确。logit 是生成概率前的可调分数，softmax 把分数转为和为 1 的概率。提高一个 logit，通常会提高对应动作的概率。",
+      "en": "With two possible actions, [0.5,0.5] is less predictable than [0.99,0.01]. Entropy quantifies that uncertainty, not correctness. Logits are adjustable scores converted by softmax into probabilities summing to one. Increasing one logit generally increases that action’s probability."
+    },
+    "readingQuestion": {
+      "zh": "从 p=0.5 出发，只提高动作 1 的 logit，熵会上升还是下降？",
+      "en": "Starting at p=0.5, does increasing only action 1’s logit raise or lower entropy?"
+    },
+    "readingAnswer": {
+      "zh": "分布从最均匀状态偏向动作 1，熵下降。但这个变化并不能判断动作 1 是否正确，也不能单独证明训练性能提高或下降。",
+      "en": "The distribution moves away from uniform toward action 1, lowering entropy. This neither determines whether action 1 is correct nor establishes a performance gain or loss."
+    }
+  },
+  {
+    "slug": "opo",
+    "short": "OPO",
+    "arxiv": "2505.23585",
+    "doc": "opo",
+    "title": {
+      "zh": "OPO：基线应当怎样加权",
+      "en": "OPO: how should a baseline be weighted?"
+    },
+    "lead": {
+      "zh": "严格使用当前策略采样，再以梯度方差为目标选择奖励基线。实用版本用答案长度近似梯度能量权重。",
+      "en": "Sample strictly from the current policy, then choose a reward baseline to reduce gradient variance. The practical version approximates gradient-energy weights using answer lengths."
+    },
+    "background": {
+      "zh": "基线不只是一个平均分。不同轨迹的梯度大小不同，简单均值未必最小化估计方差。同时，一批数据多次更新后便不再严格来自当前参数，可能加剧策略漂移。OPO 同时研究这两个问题。",
+      "en": "A baseline is more than an average score. Trajectories have different gradient magnitudes, so a simple mean need not minimize estimator variance. Repeatedly updating on one batch also breaks exact sampling from current parameters and can increase policy drift. OPO studies both issues."
+    },
+    "mechanism": [
+      {
+        "zh": "固定提示，理论最优标量基线用轨迹 score-function 梯度平方范数对奖励加权。直接计算每条轨迹的梯度代价高，作者进一步假设不同 token 梯度近似正交且其范数分布相同。",
+        "en": "For a fixed prompt, the optimal scalar baseline weights rewards by squared score-function gradient norms. Computing a separate gradient for each trajectory is costly, so the authors assume approximately orthogonal token gradients with similarly distributed norms."
+      },
+      {
+        "zh": "在这些近似下，轨迹能量与长度成比例，基线变成长度加权奖励。每个提示采样一组答案，构造优势并执行一次当前策略更新；去掉标准差归一化、KL 和熵正则的原始设置需单独说明。",
+        "en": "Under these approximations, trajectory energy is proportional to length and the baseline becomes a length-weighted reward. Sample a group for each prompt, form advantages, and perform a current-policy update. The original setting omits standard-deviation normalization, KL, and entropy regularization."
+      }
+    ],
+    "formula": "b* = E[R ‖∇ log π(y|x)‖²] / E[‖∇ log π(y|x)‖²]\nb̂ = Σi Ti Ri / Σi Ti; Ai = Ri − b̂",
+    "math": [
+      {
+        "zh": "令 g=∇logπ。对 E[‖g‖²(R−b)²] 关于 b 求导并令其为零，即得到第一式；其成立依赖基线不改变期望梯度的条件。第二式是作者的长度近似与有限组估计，不能直接宣称是任意神经网络下的精确最优基线。",
+        "en": "Let g=∇logπ. Differentiating E[‖g‖²(R−b)²] with respect to b and setting it to zero gives the first expression, under conditions ensuring the baseline preserves the expected gradient. The second is the authors’ length approximation and finite-group estimate, not the exact optimum for every neural network."
+      },
+      {
+        "zh": "当长度相同，长度加权基线退化为普通均值；全组奖励相同，则优势全为零。将样本自身用于估计基线会引入有限样本依赖，不能把总体期望下的理论结论不加说明地套到每个小组。",
+        "en": "Equal lengths recover the ordinary mean; identical rewards yield zero advantages. Including a sample in its own baseline estimate creates finite-sample dependence, so population-level theory should not be transferred unqualified to every small group."
+      }
+    ],
+    "evidence": [
+      {
+        "zh": "表 2 对同一 SFT 起点使用严格同策略训练，比较基线设置。AIME 2024 pass@1 为 GRPO 67.96%、OPO 68.50%；AIME 2025 pass@1 则为 50.21% 与 50.00%，并非全面领先。",
+        "en": "Table 2 uses exact on-policy training from the same SFT starting point and compares baseline settings. AIME 2024 pass@1 is 67.96% for GRPO and 68.50% for OPO; AIME 2025 pass@1 is 50.21% and 50.00%, so OPO does not lead everywhere."
+      },
+      {
+        "zh": "AIME 2025 pass@16 为 81.33% 与 85.33%。结果取最后五个检查点的平均；pass@16 表示至少一次成功的估计，不等于一次输出的准确率，也不是多数投票得分。",
+        "en": "AIME 2025 pass@16 is 81.33% versus 85.33%. Results average the final five checkpoints. Pass@16 estimates at least one success, not single-output accuracy or majority-vote performance."
+      }
+    ],
+    "limits": [
+      {
+        "zh": "长度是能量代理，复杂的梯度相关性会破坏近似。严格同策略限制数据复用，需同时考虑吞吐和样本效率。论文表 1 的 on/off-policy 设置还改变熵正则，不能当作只变一个因素的对照。",
+        "en": "Length is an energy proxy and gradient correlations can invalidate the approximation. Exact on-policy training restricts reuse, creating throughput and sample-efficiency tradeoffs. Table 1’s on/off-policy comparison also changes entropy regularization, so it is not a one-factor comparison."
+      }
+    ],
+    "implementation": {
+      "zh": "verl 使用 adv_estimator=opo。核对整个采样批次对应一次优化更新的语义，不能仅凭 mini-batch 与 batch 的表面数字判断严格同策略成立。",
+      "en": "verl uses adv_estimator=opo. Verify that one sampled batch corresponds to one optimization update; matching nominal minibatch and batch numbers alone does not establish exact on-policy behavior."
+    },
+    "locator": "§3.1–3.3 equations 5–12; Algorithm 1; §4.1–4.2 Tables 1/2; Appendix A",
+    "rows": [
+      [
+        "GRPO",
+        81.33
+      ],
+      [
+        "OPO",
+        85.33
+      ]
+    ],
+    "metric": {
+      "zh": "AIME 2025 pass@16（%，末五检查点平均）",
+      "en": "AIME 2025 pass@16 (%, final-five-checkpoint average)"
+    },
+    "evidencePage": 6,
+    "version": "2505.23585v2",
+    "source": "https://arxiv.org/abs/2505.23585v2",
+    "sourceTitle": "On-Policy RL with Optimal Reward Baseline",
+    "authors": [
+      "Yaru Hao",
+      "Li Dong",
+      "Xun Wu",
+      "Shaohan Huang",
+      "Zewen Chi",
+      "Furu Wei"
+    ],
+    "preprint": "2025-05-29",
+    "pdfSha256": "bc324dd15fade123c4e74f17a6fc9b33e29dfe57f84ef58d42959244085aefac",
+    "docUrl": "https://verl.readthedocs.io/en/latest/algo/opo.html",
+    "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
+    "docSha256": "b6a574fc42a6585c347535753e8a0c3df9c9ff5d56edd66cfac2ec8757d9a8fb",
+    "claimLocators": {
+      "background": "§3 optimal baseline, Eqs.7–12; Appendix A",
+      "mechanism": "§3 optimal baseline, Eqs.7–12; Appendix A",
+      "math": "§3 optimal baseline, Eqs.7–12; Appendix A",
+      "evidence": "§4.2 Tables 1–2 (PDF p.6); Appendix B",
+      "limits": "Interpretive analysis of assumptions and scope in §3 optimal baseline, Eqs.7–12; Appendix A; empirical limits in §4.2 Tables 1–2 (PDF p.6); Appendix B",
+      "implementation": "Pinned verl docs/algo/opo.md; implementation-specific settings"
+    },
+    "foundation": {
+      "zh": "策略梯度根据评分调整生成概率。减去一个合适的基线，可以减少更新的随机波动而保留目标信号。普通均值给每份答案相同权重；加权均值则先乘权重，再除以权重之和。比如奖励 [0,1]、长度 [10,30]，长度加权基线为 30÷40=0.75。",
+      "en": "Policy gradients adjust generation probabilities using scores. Subtracting an appropriate baseline can reduce random update fluctuations while preserving the desired signal. An ordinary mean weights answers equally; a weighted mean divides the weighted sum by total weight. Rewards [0,1] with lengths [10,30] give a length-weighted baseline of 30/40=0.75."
+    },
+    "readingQuestion": {
+      "zh": "所有回答等长时，长度加权基线与普通均值有什么关系？",
+      "en": "How does the length-weighted baseline compare with the ordinary mean when all answers have equal length?"
+    },
+    "readingAnswer": {
+      "zh": "共同长度在分子与分母中约掉，两者相等。长度不同才会改变权重；这种改变是否接近最优，仍取决于梯度代理的假设。",
+      "en": "The common length cancels between numerator and denominator, giving the ordinary mean. Unequal lengths change weights, but proximity to the optimum still depends on the gradient-proxy assumptions."
+    }
+  },
+  {
+    "slug": "verl-algorithm-baselines",
+    "short": "Algorithm Baselines",
+    "arxiv": null,
+    "doc": "baseline",
+    "title": {
+      "zh": "读懂基线：比较之前先对齐条件",
+      "en": "Reading baselines: align conditions before comparing"
+    },
+    "lead": {
+      "zh": "一个分数必须连同模型、数据集、指标、后端和评测协议一起阅读。这里整理 verl 的公开运行记录，不把异构配置排成算法排行榜。",
+      "en": "Read a score together with model, dataset, metric, backend, and evaluation protocol. This guide organizes public verl runs without ranking heterogeneous configurations as algorithms."
+    },
+    "background": {
+      "zh": "verl 的 Algorithm Baselines 是复现入口集合。表格混合了不同模型规模、训练方式和硬件，且部分行另有 MATH、GEO3k 等数据集标注。页面以文档专题标识，不虚构论文作者或会议。",
+      "en": "Algorithm Baselines in verl is a collection of reproduction entry points. It mixes model sizes, training methods, and hardware, with some rows explicitly using MATH or GEO3k. This is a documentation guide, not a fabricated paper citation."
+    },
+    "mechanism": [
+      {
+        "zh": "先固定数据集与基础模型，再检查训练数据、评测提取器、采样次数、最大长度和是否使用工具。后端变化也可能伴随数值差异、不同脚本或其他参数，单个分数不能确定原因。",
+        "en": "First fix the dataset and base model, then check training data, answer extraction, sample count, maximum length, and tool access. Backend changes may accompany numerical differences, different scripts, or other parameters; one score cannot identify causality."
+      },
+      {
+        "zh": "下面的筛选器保存文档中的模型、方法、分数和日志链接。选到没有记录的组合时显示空状态。相同数据集和模型仍只是必要条件，不能自动证明所有实验设置相同。",
+        "en": "The selector preserves the documentation’s model, method, score, and log links. A combination without records shows an empty state. A matching model and dataset is necessary but does not prove all experimental conditions match."
+      }
+    ],
+    "formula": "Comparison = model × dataset × metric × evaluation protocol × training conditions",
+    "math": [
+      {
+        "zh": "分数差 Δ=s2−s1 只有在量尺相同时才有意义。百分制准确率从 50 到 55 是提高 5 个百分点，相对提升为 10%；两个口径需要分别标明。",
+        "en": "A difference Δ=s2−s1 is meaningful only on a common scale. Accuracy rising from 50 to 55 is a five-percentage-point increase and a 10% relative increase; these are different quantities."
+      },
+      {
+        "zh": "GSM8K 表中部分旧运行只提取 #### 后的答案。格式不匹配会降低分数，因此推理能力变化与答案提取失败必须区分。文档的版本和日志链接比“最高分”更有解释价值。",
+        "en": "Some older GSM8K runs extract only answers after ####. Format mismatches can lower scores, so changes in reasoning ability must be distinguished from answer-extraction failure. Documentation versions and log links are more informative than a highest-score label."
+      }
+    ],
+    "evidence": [
+      {
+        "zh": "Qwen2-7B-Instruct 的 GSM8K 记录包括 GRPO 89.0、FSDP2 89.8、Megatron 89.6，以及 GPG 88.0。这些是文档提供的运行分数，页面不据此推导后端或算法的显著优劣。",
+        "en": "GSM8K records for Qwen2-7B-Instruct include GRPO 89.0, FSDP2 89.8, Megatron 89.6, and GPG 88.0. These are documented run scores; this page does not infer statistically significant backend or algorithm superiority."
+      },
+      {
+        "zh": "Qwen2.5-7B-Instruct 的 SPPO 65.6 明确来自 MATH，不能与同模型 SPIN 的 GSM8K 92 画在同一个准确率排行榜。每行链接指向原脚本或日志，便于检查未列出的条件。",
+        "en": "SPPO’s 65.6 for Qwen2.5-7B-Instruct is explicitly on MATH and cannot be ranked alongside SPIN’s GSM8K 92. Each row links to its source script or log so omitted conditions can be inspected."
+      }
+    ],
+    "limits": [
+      {
+        "zh": "文档没有为每条记录给出随机种子方差、置信区间和完全匹配的预算。缺失字段保持未知，不补算无依据的显著性或平均排名。",
+        "en": "The documentation does not supply seed variance, confidence intervals, or fully matched budgets for every record. Missing information remains unknown; unsupported significance tests and aggregate rankings are not invented."
+      }
+    ],
+    "implementation": {
+      "zh": "原文入口保留运行脚本、日志及评测脚注。本页面不执行训练，也不声称这些结果在当前环境复现。",
+      "en": "Source links retain run scripts, logs, and evaluation notes. This page runs no training and does not claim the results were reproduced in the current environment."
+    },
+    "locator": "verl Algorithm Baselines: GSM8k table; DAPO math-17k; Notes [1]–[2]",
+    "rows": [],
+    "metric": null,
+    "evidencePage": null,
+    "source": "https://verl.readthedocs.io/en/latest/algo/baseline.html",
+    "sourceTitle": "Algorithm Baselines",
+    "version": "documentation snapshot 2026-11-02",
+    "docUrl": "https://verl.readthedocs.io/en/latest/algo/baseline.html",
+    "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
+    "docSha256": "5496008fe6255626c2a57d87ca5f713075f8643f78dffc2485c6a1eca868deb1",
+    "baselines": [
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "google/gemma-2-2b-it",
+        "method": "hf checkpoint",
+        "score": "23.9",
+        "url": "https://huggingface.co/google/gemma-2-2b-it#benchmark-results"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "google/gemma-2-2b-it",
+        "method": "SFT",
+        "score": "52.06",
+        "url": "https://github.com/eric-haibin-lin/verl-data/blob/experiments/gsm8k/gemma-2-2b-it-sft-0.411.log"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "google/gemma-2-2b-it",
+        "method": "SFT + PPO",
+        "score": "64.02",
+        "url": "https://github.com/eric-haibin-lin/verl-data/blob/experiments/gsm8k/gemma-2-2b-it-ppo-bsz512_4-prompt1024-resp-512-0.640.log"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "method": "hf checkpoint",
+        "score": "49.6",
+        "url": "https://qwen.ai/blog?id=qwen2.5-llm"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "method": "PPO",
+        "score": "56.7",
+        "url": "https://github.com/eric-haibin-lin/verl-data/blob/experiments/gsm8k/Qwen2.5-0.5B-bsz256_2-prompt1024-resp512-0.567.log"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "method": "PRIME",
+        "score": "58.7",
+        "url": "https://github.com/verl-project/verl-recipe/blob/main//prime/run_prime_qwen.sh"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "method": "GRPO-LoRA",
+        "score": "54.3",
+        "url": "https://github.com/eric-haibin-lin/verl-data/blob/experiments/gsm8k/Qwen2.5-0.5B-bsz64_2-prompt512-resp1024-lorarank32-score0.543.log"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2.5-1.5B-Instruct",
+        "method": "GRPO-LoRA",
+        "score": "77.9",
+        "url": "https://github.com/eric-haibin-lin/verl-data/blob/experiments/gsm8k/Qwen2.5-1.5B-bsz64_2-prompt512-resp1024-lorarank32-score0.779.log"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2.5-3B-Instruct",
+        "method": "GRPO-LoRA",
+        "score": "86.1",
+        "url": "https://github.com/eric-haibin-lin/verl-data/blob/experiments/gsm8k/Qwen2.5-3B-bsz64_2-prompt512-resp1024-lorarank32-score0.861.log"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "deepseek-ai/deepseek-llm-7b-chat",
+        "method": "PPO (Megatron)",
+        "score": "69.5 [1]",
+        "url": "https://github.com/eric-haibin-lin/verl-data/blob/experiments/gsm8k/deepseek-llm-7b-chat-megatron-bsz256_4-prompt512-resp512-0.695.log"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2-7B-Instruct",
+        "method": "GRPO",
+        "score": "89",
+        "url": "https://github.com/verl-project/verl/blob/a65c9157bc0b85b64cd753de19f94e80a11bd871/examples/grpo_trainer/run_qwen2-7b_seq_balance.sh"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2-7B-Instruct",
+        "method": "GRPO (FSDP2)",
+        "score": "89.8",
+        "url": "https://github.com/eric-haibin-lin/verl-data/blob/experiments/gsm8k/qwen2-7b-fsdp2.log"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2-7B-Instruct",
+        "method": "GRPO (Megatron)",
+        "score": "89.6",
+        "url": "https://github.com/eric-haibin-lin/verl-data/blob/experiments/gsm8k/qwen2-7b_math_megatron.log"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "method": "ReMax",
+        "score": "97",
+        "url": "https://github.com/eric-haibin-lin/verl/blob/main/examples/remax_trainer/run_qwen2.5-3b_seq_balance.sh"
+      },
+      {
+        "dataset": "MATH",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "method": "SPPO",
+        "score": "65.6 (MATH)",
+        "url": "https://github.com/verl-project/verl-recipe/tree/main/sppo/README.md"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "method": "GRPO-LoRA",
+        "score": "93.4",
+        "url": "https://github.com/eric-haibin-lin/verl-data/blob/experiments/gsm8k/Qwen2.5-7B-bsz64_8-prompt512-resp1024-lorarank32-score0.934.log"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Mixtral-8x22B-Instruct-v0.1",
+        "method": "Instruct model",
+        "score": "83.7",
+        "url": "https://qwen.ai/blog?id=qwen2.5-llm"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Mixtral-8x22B-Instruct-v0.1",
+        "method": "RLOO (Megatron)",
+        "score": "92.3",
+        "url": "https://api.wandb.ai/links/ppo_dev/sbuiuf2d"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "method": "SPIN",
+        "score": "92",
+        "url": "https://github.com/verl-project/verl-recipe/tree/main/spin/README.md"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2-7B-Instruct",
+        "method": "GPG",
+        "score": "88",
+        "url": "https://github.com/diqiuzhuanzhuan/verldata/blob/main/run_logs/qwen2-7b_math.log"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2-7B-Instruct",
+        "method": "GPG (Megatron)",
+        "score": "88",
+        "url": "https://github.com/diqiuzhuanzhuan/verldata/blob/main/run_logs/qwen2-7b_math_megatron.log"
+      },
+      {
+        "dataset": "GEO3k",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+        "method": "GRPO (Megatron)",
+        "score": "65.4 (GEO3k)",
+        "url": "https://github.com/verl-project/verl/blob/main/examples/grpo_trainer/run_qwen2_5_vl_7b_megatron.sh"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "AMD MI300",
+        "model": "deepseek-ai/deepseek-llm-7b-chat",
+        "method": "PPO",
+        "score": "70.5 [1]",
+        "url": "https://github.com/yushengsu-thu/verl_training_log/blob/main/gsm8k/ppo_run_deepseek7b_llm.log"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "AMD MI300",
+        "model": "deepseek-ai/deepseek-llm-7b-chat",
+        "method": "GRPO",
+        "score": "71.4 [1]",
+        "url": "https://github.com/yushengsu-thu/verl_training_log/blob/main/gsm8k/grpo_run_deepseek7b_llm.log"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2.5-14B-Instruct",
+        "method": "GRPO-LoRA",
+        "score": "94.6",
+        "url": "https://github.com/eric-haibin-lin/verl-data/blob/experiments/gsm8k/Qwen2.5-14B-bsz64_8-prompt512-resp1024-lorarank32-score0.946.log"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2.5-32B-Instruct",
+        "method": "GRPO-LoRA",
+        "score": "95.8",
+        "url": "https://github.com/eric-haibin-lin/verl-data/blob/experiments/gsm8k/Qwen2.5-32B-bsz64_8-prompt512-resp1024-lorarank32-score0.958.log"
+      },
+      {
+        "dataset": "GSM8K",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2.5-72B-Instruct",
+        "method": "GRPO-LoRA",
+        "score": "96.0",
+        "url": "https://github.com/eric-haibin-lin/verl-data/blob/experiments/gsm8k/Qwen2.5-72B-bs64_8-prompt512-resp1024-lorarank32-score0.960.log"
+      },
+      {
+        "dataset": "AIME 2024",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2.5-Math-7B (32k)",
+        "method": "DAPO",
+        "score": "36.3",
+        "url": "https://github.com/verl-project/verl-recipe/blob/main//dapo/test_dapo_7b_math.sh"
+      },
+      {
+        "dataset": "AIME 2024",
+        "hardware": "NVIDIA GPU",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "method": "DAPO + Code Interpreter",
+        "score": "40.0",
+        "url": "https://github.com/verl-project/verl-recipe/blob/main//retool/run_qwen2_7b_dapo.sh"
+      },
+      {
+        "dataset": "LeetCode",
+        "hardware": "NVIDIA GPU",
+        "model": "PRIME-RL/Eurus-2-7B-SFT",
+        "method": "RPIME",
+        "score": "36.1",
+        "url": "https://github.com/verl-project/verl-recipe/blob/main//prime/run_prime_qwen_code.sh"
+      }
+    ],
+    "claimLocators": {
+      "background": "GSM8k, DAPO math-17k, Coding related datasets; Notes [1]–[2]",
+      "mechanism": "GSM8k, DAPO math-17k, Coding related datasets; Notes [1]–[2]",
+      "math": "GSM8k, DAPO math-17k, Coding related datasets; Notes [1]–[2]",
+      "evidence": "All 30 table rows; original per-row command/log links; documentation update 2025-06-18",
+      "limits": "Interpretive analysis of assumptions and scope in GSM8k, DAPO math-17k, Coding related datasets; Notes [1]–[2]; empirical limits in All 30 table rows; original per-row command/log links; documentation update 2025-06-18",
+      "implementation": "Pinned verl docs/algo/baseline.md; implementation-specific settings"
+    },
+    "foundation": {
+      "zh": "训练集用于更新模型，测试集用于检查它在另一些题上的表现。测试分数必须连同模型、题目、答案提取规则和采样预算阅读。100 道题中答对 60 道得到 60%，但更换题目或允许多次作答后，另一个 60% 就未必是同一难度的比较。",
+      "en": "Training data updates a model; test data checks performance on other questions. Interpret scores with the model, questions, answer-extraction rules, and sampling budget. Correctly solving 60 of 100 questions gives 60%, but changing questions or allowing repeated attempts changes what another 60% means."
+    },
+    "readingQuestion": {
+      "zh": "能把表中 MATH 的 65.6 与 GSM8K 的 64.02 直接比较，判断算法更好吗？",
+      "en": "Can MATH’s 65.6 and GSM8K’s 64.02 directly establish which algorithm is better?"
+    },
+    "readingAnswer": {
+      "zh": "不能。评测题集、模型与训练条件不同。先筛到相同评测集与模型，再核对日志中的采样、长度和评分规则；这些条件不齐，仍只能把它们当作各自的运行记录。",
+      "en": "No. The evaluation sets, models, and training conditions differ. Filter to the same evaluation set and model, then inspect sampling, length, and scoring in the logs. Without matched conditions they remain separate run records."
+    }
+  },
+  {
+    "slug": "gpg",
+    "short": "GPG",
+    "arxiv": "2504.02546",
+    "doc": "gpg",
+    "title": {
+      "zh": "GPG：重新检查策略梯度的权重",
+      "en": "GPG: reconsider the weights in policy gradients"
+    },
+    "lead": {
+      "zh": "保留直接策略梯度，去掉组内标准差缩放，并按有效样本比例校正梯度幅度。简单目标仍需要认真处理批次统计。",
+      "en": "Keep direct policy gradients, remove group standard-deviation scaling, and correct gradient magnitude for the fraction of informative samples. A simple objective still requires careful batch statistics."
+    },
+    "background": {
+      "zh": "GRPO 中全同奖励组没有组内梯度，且标准差归一化改变问题权重。GPG 论文 v4 研究直接 log-probability 目标、有效梯度缩放，以及极端批次下的阈值控制。它并不是只给 GRPO 换一个名字。",
+      "en": "In GRPO, groups with identical rewards contribute no within-group gradient, while standard-deviation normalization changes question weighting. GPG v4 studies a direct log-probability objective, informative-gradient scaling, and thresholding for extreme batches. It is more than a renamed GRPO."
+    },
+    "mechanism": [
+      {
+        "zh": "先对每个问题的奖励减去组均值，不再强制除以组标准差。对固定的优势，使用 −logπ·A 的损失，原始方案不需要 critic、参考模型和 PPO 的概率比裁剪。",
+        "en": "Center each question’s rewards by its group mean without mandatory division by the group standard deviation. With fixed advantages, use the loss −logπ·A. The original method omits a critic, reference model, and PPO probability-ratio clipping."
+      },
+      {
+        "zh": "若批次中一部分组全对或全错，作者用 α=B/(B−M) 恢复有效样本的平均梯度尺度。这里 B 和 M 必须采用相同计数单位；变长序列和分布式聚合还需要核对实际权重。",
+        "en": "If some groups are all correct or all wrong, the authors use α=B/(B−M) to recover the mean-gradient scale over informative samples. B and M must use consistent counting units; variable sequence lengths and distributed aggregation additionally require checking actual weights."
+      }
+    ],
+    "formula": "Ai = Ri − mean(Rgroup)\nL = −α Σi,t log πθ(yi,t|x,yi,<t) Ai / Σi Ti\nα = B/(B−M)",
+    "math": [
+      {
+        "zh": "B 是批次样本数，M 为零信息样本数。所有组都退化时 B−M=0，不能除零；演示标记无学习信号并将有效更新置零，而不是显示无穷大。",
+        "en": "B is the batch sample count and M the uninformative count. If all groups are degenerate, B−M=0; division is invalid. The demo marks no learning signal and sets the effective update to zero rather than displaying infinity."
+      },
+      {
+        "zh": "当所有组大小相同，按组计数可展示相同的缩放直觉。α 修正的是有效批次幅度；剔除退化组、有限样本基线和数据重用仍可能改变估计性质，因此不能把它笼统表述为原始总体目标的无偏估计器。",
+        "en": "With equal group sizes, group counts illustrate the same scaling. α corrects effective batch magnitude. Degenerate-group selection, finite-sample baselines, and data reuse still affect the estimator, so it should not be described unconditionally as unbiased for the original population objective."
+      }
+    ],
+    "evidence": [
+      {
+        "zh": "表 1 的 Qwen2.5-Math-7B 五任务均分中，无标准差缩放、无 AGE 的 GPG 为 43.9，加入 AGE 为 47.8，再加入阈值设置为 48.3。只删标准差并没有带来完整方法的收益。",
+        "en": "In Table 1’s five-task mean for Qwen2.5-Math-7B, GPG without standard-deviation scaling or AGE scores 43.9; adding AGE gives 47.8 and adding the threshold setting gives 48.3. Removing normalization alone does not yield the full improvement."
+      },
+      {
+        "zh": "原表中的基线行拼作 GPRO，结合正文应读作 GRPO。页面保留这一校对说明。多模态实验另用视觉模型和数据集，不能与数学五任务均分合并。",
+        "en": "The baseline row is printed as GPRO, interpreted as GRPO from the surrounding text; this transcription note is retained. Multimodal experiments use other models and datasets and are not merged with the five-task mathematical average."
+      }
+    ],
+    "limits": [
+      {
+        "zh": "有效样本很少时 α 会增大噪声风险，阈值选择和全局聚合很重要。直接目标也不自动解决旧策略数据带来的分布失配；应与 rollout correction 联合理解。",
+        "en": "When few samples are informative, α can amplify noise; thresholding and global aggregation matter. A direct objective does not automatically correct stale-policy data and should be understood alongside rollout correction."
+      }
+    ],
+    "implementation": {
+      "zh": "verl 使用 adv_estimator=gpg 与 loss_mode=gpg。本文精读 arXiv v4；较早文档的简述不等于实现了 v4 全部消融中的设置。",
+      "en": "verl uses adv_estimator=gpg and loss_mode=gpg. This guide reads arXiv v4; an earlier documentation summary does not establish implementation of every v4 ablation setting."
+    },
+    "locator": "§2.2 equations 5–8; Table 1; §3.4–3.5; Appendix A distributed aggregation",
+    "rows": [
+      [
+        "GPG, α=1",
+        43.9
+      ],
+      [
+        "GPG + AGE",
+        47.8
+      ],
+      [
+        "GPG + AGE + threshold",
+        48.3
+      ]
+    ],
+    "metric": {
+      "zh": "Qwen2.5-Math-7B 五任务平均",
+      "en": "Qwen2.5-Math-7B five-task mean"
+    },
+    "evidencePage": 4,
+    "version": "2504.02546v4",
+    "source": "https://arxiv.org/abs/2504.02546v4",
+    "sourceTitle": "GPG: A Simple and Strong Reinforcement Learning Baseline for Model Reasoning",
+    "authors": [
+      "Xiangxiang Chu",
+      "Hailang Huang",
+      "Xiao Zhang",
+      "Fei Wei",
+      "Yong Wang"
+    ],
+    "preprint": "2025-04-03",
+    "pdfSha256": "023f1aeb679c9dfe117f23963b9787f750a7261e9793a012842775139fb38745",
+    "docUrl": "https://verl.readthedocs.io/en/latest/algo/gpg.html",
+    "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
+    "docSha256": "6dd7057afb564295c94f2f92e05e7d57f9a6e25de24af8088b0290f896f6ca04",
+    "claimLocators": {
+      "background": "§2.2 Eqs.5–8; advantage normalization and AGE",
+      "mechanism": "§2.2 Eqs.5–8; advantage normalization and AGE",
+      "math": "§2.2 Eqs.5–8; advantage normalization and AGE",
+      "evidence": "Table 1 (PDF p.4); §3 experiments and ablations",
+      "limits": "Interpretive analysis of assumptions and scope in §3 Eqs.5–7; advantage normalization and AGE; empirical limits in Table 1 (PDF p.4); §4 ablations",
+      "implementation": "Pinned verl docs/algo/gpg.md; implementation-specific settings"
+    },
+    "foundation": {
+      "zh": "梯度可以理解为“参数朝哪个方向微调，会让目标增加”。GPG 用答案的组内相对评分乘以 log 概率的梯度。若奖励 [0,0,1,1]，中心化信号为 [−0.5,−0.5,0.5,0.5]。乘批次系数可以改变整体强度，但不会凭空把错误答案标成正确。",
+      "en": "A gradient indicates which small parameter changes increase an objective. GPG multiplies log-probability gradients by within-group relative scores. Rewards [0,0,1,1] give centered signals [−0.5,−0.5,0.5,0.5]. A batch multiplier changes overall strength; it does not create new correctness labels."
+    },
+    "readingQuestion": {
+      "zh": "B=8、M=4 时 α 是多少？若 M=8 呢？",
+      "en": "What is α for B=8 and M=4? What if M=8?"
+    },
+    "readingAnswer": {
+      "zh": "α=8/(8−4)=2。M=8 时没有有信号的组，分母为零，应跳过更新；不能把无限系数解释为“学习更强”。",
+      "en": "α=8/(8−4)=2. At M=8 no informative group remains and the denominator is zero, so the update should be skipped. An infinite multiplier does not mean stronger learning."
+    }
+  },
+  {
+    "slug": "rollout-correction",
+    "short": "Rollout Correction",
+    "arxiv": null,
+    "doc": "rollout_corr",
+    "title": {
+      "zh": "Rollout 校正：谁真正生成了数据",
+      "en": "Rollout correction: who actually generated the data?"
+    },
+    "lead": {
+      "zh": "把真实采样分布、PPO 的旧策略锚点和当前策略分开，分别处理数据分布偏移与优化更新。",
+      "en": "Separate the actual sampling distribution, PPO’s old-policy anchor, and the current policy to handle data-distribution shift and optimization updates independently."
+    },
+    "background": {
+      "zh": "即使权重相同，推理和训练引擎也可能因精度、算子或实现而给出不同概率。异步采样还引入时间滞后。把训练端重算的旧概率当作实际采样概率，会混淆两个不同的概率比。",
+      "en": "Even identical weights can yield different probabilities across inference and training engines because of precision, kernels, or implementation. Asynchronous sampling also introduces staleness. Treating recomputed training probabilities as actual sampling probabilities confuses two ratios."
+    },
+    "mechanism": [
+      {
+        "zh": "记 μ 为真实 rollout 策略，πold 为 PPO 锚点，πθ 为当前策略。解耦模式用 πold/μ 校正数据分布，再以 πθ/πold 控制 PPO 更新；bypass 模式直接把 μ 当作锚点。",
+        "en": "Let μ be the actual rollout policy, πold the PPO anchor, and πθ the current policy. Decoupled mode corrects data with πold/μ and controls PPO updates with πθ/πold. Bypass mode uses μ directly as the anchor."
+      },
+      {
+        "zh": "重要性采样给样本连续权重，拒绝采样给样本保留/排除掩码。截断权重和排除离群值可以降低极端样本影响，但也改变估计目标；二者不是无条件消除偏差的魔法。",
+        "en": "Importance sampling gives continuous weights; rejection sampling provides a keep/drop mask. Truncating weights or excluding outliers limits their influence but changes the estimator. Neither unconditionally removes bias."
+      }
+    ],
+    "formula": "w = πold(a|s)/μ(a|s); r = πθ(a|s)/πold(a|s)\nw · r = πθ(a|s)/μ(a|s)\nwTIS = min(w, C); m = 1[l ≤ w ≤ u]",
+    "math": [
+      {
+        "zh": "三个概率必须针对同一提示、前缀、token 和相同定义的采样分布。重要性比要求分母对目标支持集为正；例如 top-k 截断丢失支持时，不能用一个有限权重恢复从未采到的动作。",
+        "en": "All probabilities must refer to the same prompt, prefix, token, and consistently defined sampling distribution. Importance ratios require positive behavior probability wherever the target has support. A finite weight cannot recover actions excluded by top-k truncation."
+      },
+      {
+        "zh": "演示只展示单个固定状态的比值分解。完整自回归轨迹涉及前缀分布，序列权重通常是多个条件比值的乘积；相关推导在独立数学页展开。",
+        "en": "The demo decomposes ratios at one fixed state. Complete autoregressive trajectories involve prefix distributions, and sequence weights generally multiply conditional ratios; the separate mathematics page develops this distinction."
+      }
+    ],
+    "evidence": [
+      {
+        "zh": "官方使用文档分为解耦、bypass 和策略梯度模式，并把 IS 权重与 RS 掩码分开配置。本文依据文档与固定提交的实现核查这些分支，不制作虚构的收益柱图。",
+        "en": "The official usage guide distinguishes decoupled, bypass, and policy-gradient modes and configures IS weights separately from RS masks. This guide checks those branches against documentation and a pinned implementation, without inventing performance bars."
+      },
+      {
+        "zh": "研究背景包括作者的训练—推理失配分析，以及 Trust Region Masking for Long-Horizon LLM Reinforcement Learning。它们提供理论或实验背景；具体某个预设是否适合新模型仍需运行验证。",
+        "en": "Background includes the authors’ training–inference mismatch analysis and Trust Region Masking for Long-Horizon LLM Reinforcement Learning. They supply theory or experiments, but a preset’s suitability for a new model still requires validation."
+      }
+    ],
+    "limits": [
+      {
+        "zh": "校正无法修复错误奖励、token 对齐错误或缺失采样概率。序列很长时，权重乘积可出现重尾；有限样本下可能由极少数样本支配梯度。",
+        "en": "Correction cannot repair faulty rewards, token misalignment, or missing sampling probabilities. Long sequences can create heavy-tailed products of weights, allowing a few samples to dominate finite-batch gradients."
+      }
+    ],
+    "implementation": {
+      "zh": "先确定采样概率来源，再选模式、粒度和阈值；监控权重、拒绝比例及有效样本情况。文档预设和参数名以 sources 中固定提交为准。",
+      "en": "Establish the source of sampling probabilities before selecting mode, granularity, and thresholds. Monitor weights, rejection rates, and effective sample behavior. Presets and parameter names are tied to the commit recorded in sources."
+    },
+    "locator": "verl rollout_corr: Overview, Key Design Principle, Operating Modes, IS/RS configuration; linked author analysis and arXiv:2512.23075",
+    "rows": [],
+    "metric": null,
+    "evidencePage": null,
+    "source": "https://verl.readthedocs.io/en/latest/algo/rollout_corr.html",
+    "sourceTitle": "Rollout Correction",
+    "version": "documentation snapshot 2026-11-02",
+    "docUrl": "https://verl.readthedocs.io/en/latest/algo/rollout_corr.html",
+    "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
+    "docSha256": "c569c2652d79c2fba6b4a957de7a8ac99ff96a3b66b867b7b09c07aad5299192",
+    "extraSources": [
+      {
+        "url": "https://arxiv.org/abs/2110.00641",
+        "zh": "基础参考：Batch size-invariance for policy optimization",
+        "en": "Foundation: Batch size-invariance for policy optimization",
+        "locator": "Section 2, decoupled clipped and KL-penalized objectives: separate behavior and proximal policies."
+      },
+      {
+        "url": "https://arxiv.org/html/2512.23075v1",
+        "zh": "后续分析：Trust Region Masking",
+        "en": "Later analysis: Trust Region Masking",
+        "locator": "Sections 2–5: autoregressive context distributions, sequence-level versus token-level control. The teaching page does not claim to reproduce TRM training."
+      }
+    ],
+    "claimLocators": {
+      "background": "Usage guide: Three Policies; IS; RS; Bypass versus Decoupled PPO",
+      "mechanism": "Usage guide: Three Policies; IS; RS; Bypass versus Decoupled PPO",
+      "math": "Usage guide: Three Policies; IS; RS; Bypass versus Decoupled PPO",
+      "evidence": "Usage guide: presets, diagnostics, implementation notes; no new training results",
+      "limits": "Interpretive analysis of assumptions and scope in Usage guide: Three Policies; IS; RS; Bypass versus Decoupled PPO; empirical limits in Usage guide: presets, diagnostics, implementation notes; no new training results",
+      "implementation": "Pinned verl docs/algo/rollout_corr.md; implementation-specific settings"
+    },
+    "foundation": {
+      "zh": "假设某种回答实际以 20% 的概率被抽到，而希望研究的策略会以 30% 抽到它。重要性权重 0.3÷0.2=1.5，使该样本在加权平均中更有分量。这里还需区分生成数据的策略、作为更新锚点的旧策略，以及正在学习的新策略。",
+      "en": "Suppose an answer is actually sampled with probability 20%, but the target policy would sample it with probability 30%. An importance weight of 0.3/0.2=1.5 gives it more influence in a weighted average. Distinguish the policy generating data, the old update anchor, and the policy currently learning."
+    },
+    "readingQuestion": {
+      "zh": "μ=0.2、πold=0.3、πθ=0.4 时，两个比率的乘积是多少？",
+      "en": "With μ=0.2, πold=0.3, and πθ=0.4, what is the product of the two ratios?"
+    },
+    "readingAnswer": {
+      "zh": "(0.3/0.2)×(0.4/0.3)=2，等于当前概率除以实际采样概率。旧概率约掉；但一旦分别裁剪或加 mask，这种代数抵消就不能用来声称目标仍完全相同。",
+      "en": "(0.3/0.2)×(0.4/0.3)=2, equal to current probability divided by sampling probability. The old probability cancels algebraically, but separate clipping or masks change the objective."
+    }
+  },
+  {
+    "slug": "rollout-correction-math",
+    "short": "Rollout Correction Math",
+    "arxiv": null,
+    "doc": "rollout_corr_math",
+    "title": {
+      "zh": "校正的数学：换测度与长序列方差",
+      "en": "The mathematics: change of measure and long-sequence variance"
+    },
+    "lead": {
+      "zh": "重要性采样的核心是把一个分布下的期望改写到另一个分布；token、前缀与整条序列的权重对应不同估计问题。",
+      "en": "Importance sampling rewrites an expectation under one distribution using another. Token, prefix, and full-sequence weights correspond to different estimation problems."
+    },
+    "background": {
+      "zh": "只比较最后一个 token 的条件概率，通常不足以修正整条轨迹的分布。自回归生成的状态就是已经生成的前缀，因此此前动作也影响当前状态出现的概率。",
+      "en": "Comparing only the final token’s conditional probability generally cannot correct a whole trajectory distribution. In autoregressive generation the state is the generated prefix, whose probability depends on earlier actions."
+    },
+    "mechanism": [
+      {
+        "zh": "若目标 π 的支持包含在行为分布 μ 的支持中，则 Eπ[f]=Eμ[(π/μ)f]。在相同初始状态和环境转移下，轨迹密度比中的环境项消去，留下动作概率比的连乘。",
+        "en": "If the target π is supported by behavior distribution μ, then Eπ[f]=Eμ[(π/μ)f]. With the same initial distribution and transitions, environment factors cancel from a trajectory-density ratio, leaving a product of action-probability ratios."
+      },
+      {
+        "zh": "三策略解耦进一步把 πθ/μ 分为 πθ/πold 与 πold/μ。PPO 的裁剪已经改变原始重要性采样目标；随后叠加权重截断或拒绝掩码，应逐项说明引入的近似。",
+        "en": "Three-policy decoupling factors πθ/μ into πθ/πold and πold/μ. PPO clipping already changes the original importance-sampling objective. Additional weight truncation or rejection masks introduce further approximations that should be identified separately."
+      }
+    ],
+    "formula": "W(τ) = ∏t π(at|st)/μ(at|st) = exp(Σt log ρt)\nESS = (Σi Wi)² / Σi Wi²\nEμ[min(W,C) f] ≠ Eπ[f]  (in general)",
+    "math": [
+      {
+        "zh": "使用 log 空间累加能缓解数值溢出，但不消除统计重尾。ESS 是批次权重集中的诊断量，不是对相关样本真实独立数量的精确计数；当所有权重为零时应报告不可定义。",
+        "en": "Summing in log space reduces numerical overflow but does not eliminate statistical heavy tails. ESS diagnoses concentration of batch weights; it is not an exact count of independent correlated samples. It is undefined when all weights are zero."
+      },
+      {
+        "zh": "演示设每步条件概率比相同，只改变比值与序列长度，显示逐 token 比值、序列乘积和截断后乘积。这是量级示意，不是假设真实语言模型每步比值恒定，也不是训练曲线。",
+        "en": "The demo assumes an identical conditional ratio at each step and varies ratio and length to show token, sequence-product, and truncated weights. This illustrates scale; it neither assumes real LLM ratios are constant nor represents a training curve."
+      }
+    ],
+    "evidence": [
+      {
+        "zh": "文档从 REINFORCE 推导到 PPO 和三策略框架。实际 token 级校正可能是稳定性与偏差之间的工程折中，不能因为每个条件比值都计算正确就声称完整轨迹估计无偏。",
+        "en": "The document develops REINFORCE, PPO, and the three-policy framework. Token-level correction may be an engineering bias–stability compromise. Correct conditional ratios alone do not make a full-trajectory estimator unbiased."
+      },
+      {
+        "zh": "作者分析讨论偏差、χ² 散度相关的方差以及长序列尾部风险。页面把数学恒等式、在假设下的推导和实现启发式分开，阈值滑块只计算已写明的公式。",
+        "en": "The authors’ analysis discusses bias, variance associated with χ² divergence, and long-sequence tail risk. Mathematical identities, conditional derivations, and implementation heuristics are separated here; sliders evaluate only the stated formulas."
+      }
+    ],
+    "limits": [
+      {
+        "zh": "裁剪可降低方差却引入偏差；self-normalized IS 也有有限样本偏差。实际策略更新还涉及优势估计、参数依赖及 stop-gradient，不能仅检查权重公式就完成正确性证明。",
+        "en": "Clipping can reduce variance while adding bias; self-normalized IS also has finite-sample bias. Actual updates involve advantage estimation, parameter dependence, and stop-gradient choices, so checking the weight formula alone is not a correctness proof."
+      }
+    ],
+    "implementation": {
+      "zh": "与使用指南互链。πold 是 PPO 锚点而非长期参考策略；在数学符号和代码命名之间保持这一对应。",
+      "en": "Cross-linked to the usage guide. πold is the PPO anchor rather than a long-term reference policy; keep that distinction when mapping symbols to code."
+    },
+    "locator": "verl rollout_corr_math §§1.1–2.4 and Algorithmic Components; author blog series Parts 1–3; arXiv:2512.23075",
+    "rows": [],
+    "metric": null,
+    "evidencePage": null,
+    "source": "https://verl.readthedocs.io/en/latest/algo/rollout_corr_math.html",
+    "sourceTitle": "Rollout Correction Math",
+    "version": "documentation snapshot 2026-11-02",
+    "docUrl": "https://verl.readthedocs.io/en/latest/algo/rollout_corr_math.html",
+    "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
+    "docSha256": "da6b8d6b7d2c872f9dcb983f29de3f906b1eef625f6af4d4b8ad908b0458b2f4",
+    "extraSources": [
+      {
+        "url": "https://arxiv.org/abs/2110.00641",
+        "zh": "基础参考：Batch size-invariance for policy optimization",
+        "en": "Foundation: Batch size-invariance for policy optimization",
+        "locator": "Section 2, decoupled clipped and KL-penalized objectives: separate behavior and proximal policies."
+      },
+      {
+        "url": "https://arxiv.org/html/2512.23075v1",
+        "zh": "后续分析：Trust Region Masking",
+        "en": "Later analysis: Trust Region Masking",
+        "locator": "Sections 2–5: autoregressive context distributions, sequence-level versus token-level control. The teaching page does not claim to reproduce TRM training."
+      }
+    ],
+    "claimLocators": {
+      "background": "Math guide §§1.1–1.3 and §2; Hilton et al. §2; TRM §§2–5",
+      "mechanism": "Math guide §§1.1–1.3 and §2; Hilton et al. §2; TRM §§2–5",
+      "math": "Math guide §§1.1–1.3 and §2; Hilton et al. §2; TRM §§2–5",
+      "evidence": "Math guide §§3–4: aggregation, rejection, and diagnostics; no new training results",
+      "limits": "Interpretive analysis of assumptions and scope in Math guide §§1.1–1.3 and §2; Hilton et al. §2; TRM §§2–5; empirical limits in Math guide §§3–4: aggregation, rejection, and diagnostics; no new training results",
+      "implementation": "Pinned verl docs/algo/rollout_corr_math.md; implementation-specific settings"
+    },
+    "foundation": {
+      "zh": "条件概率是在“此前已经生成这些文字”的前提下，下一步取某个 token 的概率。整段文字的概率是每一步条件概率的乘积。因此，每一步看起来很小的概率偏差，也可能随着回答变长而累积；对数把乘积变为和，只改善数值计算，不消除统计风险。",
+      "en": "A conditional probability describes the next token given the text already generated. A sequence probability multiplies those conditional probabilities. Small per-step probability differences can accumulate over a long answer. Logarithms turn products into sums, improving arithmetic without removing statistical risk."
+    },
+    "readingQuestion": {
+      "zh": "每个 token 的比率为 1.1，20 步序列的权重是否还是 1.1？",
+      "en": "If each token ratio is 1.1, is the weight of a 20-step sequence still 1.1?"
+    },
+    "readingAnswer": {
+      "zh": "不是，序列权重为 1.1²⁰≈6.7275。截断到 3 会限制该样本的贡献，但也改变原本加权期望，通常引入偏差。",
+      "en": "No. The sequence weight is 1.1²⁰≈6.7275. Capping it at 3 limits the sample’s contribution but changes the weighted expectation and generally introduces bias."
+    }
+  },
+  {
+    "slug": "otb",
+    "short": "OTB",
+    "arxiv": "2602.07078",
+    "doc": "otb",
+    "title": {
+      "zh": "OTB：让基线随 token 改变",
+      "en": "OTB: a baseline that changes across tokens"
+    },
+    "lead": {
+      "zh": "用生成过程累计的梯度能量估计每个位置的奖励基线，减少长序列中的方差，并避免把 padding 当作真实样本。",
+      "en": "Estimate a reward baseline at each position using accumulated gradient energy, reducing long-sequence variance while avoiding treatment of padding as real samples."
+    },
+    "background": {
+      "zh": "组均值给整条答案一个相同优势，但不同 token 的不确定性和梯度规模不一样。全局最优基线还可能依赖未来 token 的能量。OTB 推导 token 层次的基线，再用前向概率构造可计算代理。",
+      "en": "Group means assign the same advantage throughout an answer, although token uncertainty and gradient magnitude vary. A global optimal baseline may also depend on energy from future tokens. OTB derives token-level baselines and implements a tractable proxy using forward probabilities."
+    },
+    "mechanism": [
+      {
+        "zh": "对于采样 token y，softmax log 概率对 logits 的梯度是 one-hot(y)−p，其平方范数为 1−2p(y)+Σv p(v)²。将这些非负量累计到当前 token，得到 realized-energy 代理。",
+        "en": "For sampled token y, the gradient of its softmax log probability with respect to logits is one-hot(y)−p. Its squared norm is 1−2p(y)+Σv p(v)². Accumulating these nonnegative quantities through the current token gives a realized-energy proxy."
+      },
+      {
+        "zh": "在同题多条回答之间，用累计能量加权当前位置的回报。仅有效 token 参与基线和输出优势；已经结束的回答不靠 padding EOS 稀释仍在生成的回答。",
+        "en": "Across answers to the same question, weight the return at a position by accumulated energy. Only valid tokens contribute to the baseline and output advantage; padding EOS from completed answers must not dilute answers still being generated."
+      }
+    ],
+    "formula": "wt = 1 − 2p(yt) + Σv p(v)²; Wt = Σj≤t wj\nB̂t = Σi mi,t Wi,t Gi,t / (Σi mi,t Wi,t + ε)\nAi,t = mi,t (Gi,t − B̂t)",
+    "math": [
+      {
+        "zh": "G 是当前位置的 reward-to-go，m 是有效 token 掩码，ε 为数值稳定项。末端二值奖励的演示把相同结果奖励传播到此前有效 token；密集奖励或多轮工具任务必须重新定义 reward-to-go 和掩码。",
+        "en": "G is reward-to-go, m the valid-token mask, and ε a numerical stabilizer. The terminal-binary-reward demo propagates the outcome to preceding valid tokens. Dense-reward or multi-turn tool tasks require the appropriate reward-to-go and mask definitions."
+      },
+      {
+        "zh": "logit 梯度并非整个网络的精确梯度。论文利用最后层及 RMSNorm 的结构解释代理，并讨论向主干推广所需假设。总体基线理论与同组有限样本估计的性质分开说明。",
+        "en": "Logit gradients are not exact full-network gradients. The paper motivates the proxy using the final layer and RMSNorm, and discusses assumptions for extending it through the backbone. Population-baseline theory is distinct from properties of finite-group estimates."
+      }
+    ],
+    "evidence": [
+      {
+        "zh": "表 1 报告训练全程的峰值。Qwen3-8B-Base 单轮任务中 AIME25：GRPO 25.31、OPO 27.29、OTB 30.31；MATH500 对应 90.50、93.31、93.43。不能把这些值描述为同一步或最终检查点结果。",
+        "en": "Table 1 reports peaks over the full training process. In single-turn Qwen3-8B-Base training, AIME25 scores are 25.31 for GRPO, 27.29 for OPO, and 30.31 for OTB; MATH500 scores are 90.50, 93.31, and 93.43. These are neither a common-step comparison nor final-checkpoint results."
+      },
+      {
+        "zh": "工具推理行使用 Qwen2.5-7B 和不同任务协议，单独阅读。论文还研究小组大小、训练坍缩及 token 消耗；这些图提供稳定性背景，不意味着所有奖励和模型条件下都获得同等节省。",
+        "en": "Tool-integrated rows use Qwen2.5-7B and a different protocol and must be read separately. Group-size, collapse, and token-consumption analyses provide stability context rather than guaranteeing identical savings across rewards and models."
+      }
+    ],
+    "limits": [
+      {
+        "zh": "代理、掩码和基线依赖的处理决定实现含义。组大小为 1 时基线接近自身回报，学习信号可退化；极小权重和全 padding 状态也必须显式处理。",
+        "en": "Proxy choices, masking, and baseline dependence determine implementation semantics. With group size one, the baseline approaches its own return and learning signal can vanish. Tiny weights and all-padding states require explicit handling."
+      }
+    ],
+    "implementation": {
+      "zh": "verl 要求 calculate_sum_pi_squared，且文档要求关闭不返回 logits 的 fused kernels。启用 rollout IS 时还会对能量权重使用 IS 权重平方；页面演示固定为同策略情形。",
+      "en": "verl requires calculate_sum_pi_squared, and the documentation disables fused kernels that do not expose logits. With rollout IS, energy weights also use squared IS weights. The demo deliberately fixes the on-policy case."
+    },
+    "locator": "§§3–5 equations 6–13; Figure 6; §6 Table 1; Appendices theoretical assumptions and training settings; verl OTB",
+    "rows": [
+      [
+        "GRPO",
+        25.31
+      ],
+      [
+        "OPO",
+        27.29
+      ],
+      [
+        "OTB",
+        30.31
+      ]
+    ],
+    "metric": {
+      "zh": "Qwen3-8B-Base AIME25 峰值分数（%）",
+      "en": "Qwen3-8B-Base peak AIME25 score (%)"
+    },
+    "evidencePage": 6,
+    "version": "2602.07078v2",
+    "source": "https://arxiv.org/abs/2602.07078v2",
+    "sourceTitle": "The Optimal Token Baseline: Variance Reduction for Long-Horizon LLM-RL",
+    "authors": [
+      "Yingru Li",
+      "Jiawei Xu",
+      "Ziniu Li",
+      "Jiacai Liu",
+      "Wei Liu",
+      "Yuxuan Tong",
+      "Longtao Zheng",
+      "Zhenghai Xue",
+      "Yaxiang Zhang",
+      "Tianle Cai",
+      "Ge Zhang",
+      "Qian Liu",
+      "Baoxiang Wang"
+    ],
+    "preprint": "2026-02-06",
+    "pdfSha256": "bd012a787932b405658a7eca4d82b85eb300e992d3b25cf2a39eb91880f980fe",
+    "docUrl": "https://verl.readthedocs.io/en/latest/algo/otb.html",
+    "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
+    "docSha256": "f84c0c13652a3266bbed518321fec7896bf5883b5be47967bfd13ce580dccd4a",
+    "claimLocators": {
+      "background": "§§3–5 Eqs.6–13; Figure 6; §5.3 proxy assumptions",
+      "mechanism": "§§3–5 Eqs.6–13; Figure 6; §5.3 proxy assumptions",
+      "math": "§§3–5 Eqs.6–13; Figure 6; §5.3 proxy assumptions",
+      "evidence": "§6.1 Table 1 (PDF p.6); §6.4; Appendix F",
+      "limits": "Interpretive analysis of assumptions and scope in §§3–5 Eqs.6–13; Figure 6; §5.3 proxy assumptions; empirical limits in §6.1 Table 1 (PDF p.6); §6.4; Appendix F",
+      "implementation": "Pinned verl docs/algo/otb.md; implementation-specific settings"
+    },
+    "foundation": {
+      "zh": "同一批答案的长度不同，为了放进矩形数组，短答案后面会补 padding。补位不是真实生成的动作，必须从计算中排除。OTB 还让基线随 token 位置变化，使用到该位置为止累积的“梯度能量”代理，而不把整条长答案都当成一个均匀对象。",
+      "en": "Answers have different lengths, so short ones receive padding to fit rectangular arrays. Padding is not a generated action and must be excluded. OTB also varies the baseline by token position using a cumulative gradient-energy proxy instead of treating a long response as one uniform object."
+    },
+    "readingQuestion": {
+      "zh": "当只有轨迹 1 还有有效 token、它的回报为 1 时，此位置的基线和优势是什么？",
+      "en": "If only trajectory 1 has a valid token remaining and its return is 1, what are the baseline and advantages there?"
+    },
+    "readingAnswer": {
+      "zh": "只剩一条带非零权重的轨迹，基线为 1，轨迹 1 优势为 0；轨迹 2 是 padding，权重与优势都为 0。这也说明有效样本太少会让信号退化。",
+      "en": "With one nonzero-weight trajectory, the baseline is 1 and its advantage is zero. Trajectory 2 is padding, with zero weight and advantage. Too few valid samples can therefore eliminate the signal."
+    }
+  },
+  {
+    "slug": "dppo",
+    "short": "DPPO",
+    "arxiv": "2602.04879",
+    "doc": "dppo",
+    "title": {
+      "zh": "DPPO：从概率比走向散度",
+      "en": "DPPO: from probability ratios to divergence"
+    },
+    "lead": {
+      "zh": "同样的概率比，在低概率和高概率 token 上代表不同的分布变化。DPPO 使用散度近似定义更新掩码。",
+      "en": "The same probability ratio represents different distributional changes for rare and common tokens. DPPO defines an update mask using an approximation to divergence."
+    },
+    "background": {
+      "zh": "相对变化与绝对分布变化并不相同。一个概率从 0.001 变成 0.002，比例翻倍但质量变化很小；高概率动作的较小比例变化却可能对应较大质量移动。论文在有限时域语言模型设置中重新推导信赖域界。",
+      "en": "Relative change and distributional change differ. Moving a probability from 0.001 to 0.002 doubles its ratio while moving little mass. A smaller relative change to a common action can move much more mass. The paper revisits trust-region bounds for finite-horizon language-model tasks."
+    },
+    "mechanism": [
+      {
+        "zh": "完整词表散度计算代价高。Binary 近似把采样 token 与其余词表合并成两类；Top-K 近似保留更多概率信息。这些粗粒化散度是完整散度的下界，不是精确的完整词表度量。",
+        "en": "Full-vocabulary divergence is expensive. The Binary approximation groups the sampled token against the rest of the vocabulary; Top-K retains more probability information. These coarse-grained divergences lower-bound the full divergence rather than measuring it exactly."
+      },
+      {
+        "zh": "掩码会结合优势方向：超出散度阈值且更新继续沿有利方向远离旧策略时抑制该项；回到锚点方向的更新仍允许。这里 DPPO 指 Divergence PPO，不是名称相近的 Diffusion Policy Optimization。",
+        "en": "The mask also considers advantage direction: it suppresses a term outside the divergence threshold when the beneficial update would move further from the old policy, while allowing updates back toward the anchor. DPPO here means Divergence PPO, not Diffusion Policy Optimization."
+      }
+    ],
+    "formula": "DTV = |p−q|\nDKL = p log(p/q) + (1−p) log((1−p)/(1−q))\nmask = 1 if D≤δ or A(q−p)≤0; otherwise 0",
+    "math": [
+      {
+        "zh": "p 为旧策略对采样 token 的概率，q 为当前概率。KL 方向固定为旧到新。演示将概率限制在 (0,1) 内避免 log(0)，同时显示 r=q/p、Binary-TV、Binary-KL 和更新掩码；阈值不同量纲，不能直接当作相同强度。",
+        "en": "p is the old probability of the sampled token and q the current probability. KL runs from old to new. The demo keeps probabilities inside (0,1) to avoid log(0), displaying r=q/p, Binary-TV, Binary-KL, and the update mask. Thresholds use different scales and are not equivalent strengths."
+      },
+      {
+        "zh": "理论界、散度近似和实际动态 mask 是三个层次。散度下界超过阈值可提示真实变化较大；下界较小却不能证明完整策略的散度同样小。",
+        "en": "The theoretical bound, divergence approximation, and practical dynamic mask are three levels. A lower bound above a threshold indicates substantial true change, but a small lower bound does not prove the full-policy divergence is small."
+      }
+    ],
+    "evidence": [
+      {
+        "zh": "论文对 Qwen3-30B-A3B-Base 的数学 RL 比较了有无 router replay、LoRA 和多种目标。原图中的训练稳定性与推理—训练失配应一起阅读，不能只截取最高点。",
+        "en": "Mathematical-RL experiments on Qwen3-30B-A3B-Base compare router-replay settings, LoRA, and several objectives. Training stability and inference–training mismatch should be read together rather than selecting only peak points."
+      },
+      {
+        "zh": "附录 F.3 比较 Binary 与 Top-K，F.4 检查散度阈值敏感性，F.5 扩展模型与任务；表 2 另给出 UltraFeedback 上 Qwen3-4B-Instruct-2507 的 RLHF 结果。本文链接原始证据页，避免从曲线估读精确数值。",
+        "en": "Appendix F.3 compares Binary and Top-K, F.4 studies threshold sensitivity, and F.5 extends models and tasks. Table 2 separately reports RLHF on Qwen3-4B-Instruct-2507 with UltraFeedback. The original evidence page is linked rather than inventing exact values from curves."
+      },
+      {
+        "zh": "表 2 采用 step 150 的检查点：初始模型、GRPO 与 DPPO 的长度控制胜率为 59.39%、77.05% 和 80.90%。作者报告后续检查点奖励更高却在 AlpacaEval 上更差，说明训练奖励和外部评测不能互相替代。",
+        "en": "Table 2 uses step-150 checkpoints: length-controlled win rates are 59.39%, 77.05%, and 80.90% for the initial model, GRPO, and DPPO. Later checkpoints earn higher training rewards but worse AlpacaEval scores, showing that learned rewards and external evaluation are not interchangeable."
+      }
+    ],
+    "limits": [
+      {
+        "zh": "近似散度可能漏掉词表其他部分的变化，阈值也需要具体任务验证。实验覆盖不等于所有模型和任务的普适保证；理论证明中的条件应和神经网络实现的近似保持区分。",
+        "en": "Approximate divergences can miss changes elsewhere in the vocabulary, and thresholds require task-specific validation. Experimental coverage is not a universal guarantee; theoretical assumptions remain distinct from approximations in neural implementations."
+      }
+    ],
+    "implementation": {
+      "zh": "verl 文档实现 Binary-TV 与 Binary-KL（loss_mode=dppo_tv/dppo_kl）；Top-K 需查看原始仓库，不能把文档未实现的变体说成现成配置。",
+      "en": "The verl documentation implements Binary-TV and Binary-KL (loss_mode=dppo_tv/dppo_kl). Top-K is in the original repository and should not be presented as an available verl configuration."
+    },
+    "locator": "§§3–4.4 equations 11–16; §7; Appendix B; Appendix F.3–F.5; Table 2",
+    "rows": [
+      [
+        "Initial model",
+        59.39
+      ],
+      [
+        "GRPO",
+        77.05
+      ],
+      [
+        "DPPO",
+        80.9
+      ]
+    ],
+    "metric": {
+      "zh": "Qwen3-4B-Instruct-2507：AlpacaEval 2.0 长度控制胜率（%，step 150）",
+      "en": "Qwen3-4B-Instruct-2507: AlpacaEval 2.0 length-controlled win rate (%, step 150)"
+    },
+    "evidencePage": 24,
+    "version": "2602.04879v3",
+    "source": "https://arxiv.org/abs/2602.04879v3",
+    "sourceTitle": "Rethinking the Trust Region in LLM Reinforcement Learning",
+    "authors": [
+      "Penghui Qi",
+      "Xiangxin Zhou",
+      "Zichen Liu",
+      "Tianyu Pang",
+      "Chao Du",
+      "Min Lin",
+      "Wee Sun Lee"
+    ],
+    "preprint": "2026-02-04",
+    "pdfSha256": "e27a6333f8e3b7790145d25e1be19bf7e6164c9c4ae1651ccc2640bf8302eb3c",
+    "docUrl": "https://verl.readthedocs.io/en/latest/algo/dppo.html",
+    "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
+    "docSha256": "293272e4588b437a8ef70c2ecf29c28c6fc9dd990c71e6e2a696f7aff8b75ad2",
+    "claimLocators": {
+      "background": "§§3–4.4 Eqs.11–16; Appendix B",
+      "mechanism": "§§3–4.4 Eqs.11–16; Appendix B",
+      "math": "§§3–4.4 Eqs.11–16; Appendix B",
+      "evidence": "§7; Appendix F.1 Table 2 (PDF p.24), F.3–F.5",
+      "limits": "Interpretive analysis of assumptions and scope in §§3–4.4 Eqs.11–16; Appendix B; empirical limits in §7; Appendix F.1 Table 2 (PDF p.24), F.3–F.5",
+      "implementation": "Pinned verl docs/algo/dppo.md; implementation-specific settings"
+    },
+    "foundation": {
+      "zh": "把一个动作的概率从 1% 提到 2%，概率比翻倍，但只移动了 1 个百分点。把 80% 降到 60%，比例变化较小，却移动了 20 个百分点。散度试图衡量整个分布改变多少；二分类近似把“选中 token”和“所有其他 token”分成两类。",
+      "en": "Increasing an action’s probability from 1% to 2% doubles its ratio but moves one percentage point. Reducing 80% to 60% changes the ratio less while moving twenty points. Divergence measures distributional change; the binary approximation groups the chosen token against every other token."
+    },
+    "readingQuestion": {
+      "zh": "p=0.05、q=0.1、A>0、TV 阈值 0.1 时，DPPO 与 ε=0.2 的 PPO 是否都抑制该项？",
+      "en": "With p=0.05, q=0.1, A>0, and TV threshold 0.1, do both DPPO and PPO with ε=0.2 suppress the term?"
+    },
+    "readingAnswer": {
+      "zh": "PPO 的比率为 2，超过 1.2，进入平台；Binary-TV=|0.05−0.1|=0.05，小于 0.1，DPPO 仍允许该项。此例只比较指定阈值，不说明所有设置下谁更好。",
+      "en": "PPO sees ratio 2 above 1.2 and plateaus. Binary-TV is |0.05−0.1|=0.05, below 0.1, so DPPO permits the term. This compares specified thresholds, not universal algorithm quality."
+    }
+  },
+  {
+    "slug": "on-policy-distillation",
+    "short": "OPD / GKD",
+    "arxiv": "2306.13649",
+    "doc": "opd",
+    "title": {
+      "zh": "同策略蒸馏：在学生走过的路上教它",
+      "en": "On-policy distillation: teach along the student’s path"
+    },
+    "lead": {
+      "zh": "学生先生成自己的轨迹，教师再对这些前缀给出分布反馈。训练时见到的状态因而更接近学生推理时真正遇到的状态。",
+      "en": "The student generates its own trajectories and the teacher supplies distributional feedback on those prefixes, making training states closer to what the student actually encounters at inference."
+    },
+    "background": {
+      "zh": "传统序列蒸馏主要使用教师答案，学生训练时很少见到自身错误造成的前缀。GKD 把数据分布选择和散度选择一起设计：不仅问“模仿什么分布”，还问“在哪些状态上模仿”。",
+      "en": "Conventional sequence distillation mainly uses teacher answers, so the student seldom trains on prefixes caused by its own mistakes. GKD jointly designs the state distribution and the divergence: both what distribution to imitate and where to imitate it."
+    },
+    "mechanism": [
+      {
+        "zh": "GKD 用比例 λ 混合学生生成数据与固定监督数据。在选定前缀上计算教师与学生的 token 分布差异，然后直接对学生参数反向传播；采样到的序列在这一步视为固定。",
+        "en": "GKD mixes student-generated and fixed supervised data using fraction λ. At the chosen prefixes it computes token-distribution differences and directly backpropagates through student parameters, treating the sampled sequence as fixed for that update."
+      },
+      {
+        "zh": "后续 Thinking Machines 与 verl 的 PG OPD 把 logν(y)−logπ(y) 作为采样 token 的反馈，再进行策略梯度。其 stop-gradient、奖励符号和采样分布不能与 GKD 的直接散度梯度混写。",
+        "en": "Subsequent Thinking Machines and verl PG OPD use logν(y)−logπ(y) as sampled-token feedback for a policy-gradient update. Stop-gradient choices, reward signs, and sampling distributions must be distinguished from GKD’s direct divergence gradient."
+      }
+    ],
+    "formula": "DF = Σv νv log(νv/πv); DR = Σv πv log(πv/νv)\nLGKD = (1−λ) Edata[D] + λ Ey∼π[D]\nrPG(y) = sg[log ν(y) − log π(y)]",
+    "math": [
+      {
+        "zh": "ν 为教师、π 为学生。forward KL 更重视覆盖教师概率质量，reverse KL 常呈寻模态倾向，但效果取决于任务和解码。单个采样的 log 概率差可为负，KL 的非负性只适用于完整期望。",
+        "en": "ν is the teacher and π the student. Forward KL emphasizes coverage of teacher mass, while reverse KL often favors modes, but the outcome depends on task and decoding. An individual sampled log-probability difference can be negative; KL nonnegativity applies to the full expectation."
+      },
+      {
+        "zh": "演示用“教师常见前缀”和“学生错误前缀”两种教学状态，保持教师在各状态的条件分布不同。切换状态后重新计算完整二分类散度，说明监督分布会随前缀变化，而不是把教师固定成一个无条件标签。",
+        "en": "The demo uses two teaching states: a typical teacher prefix and a student-error prefix, with different teacher conditionals. Switching state recomputes complete binary divergences, illustrating prefix-dependent supervision rather than an unconditional teacher label."
+      }
+    ],
+    "evidence": [
+      {
+        "zh": "原论文评测 XSum 摘要、WMT 翻译、GSM8K 算术推理和 FLAN 指令蒸馏。不同任务分别采用 ROUGE、BLEU 或准确率，不在一个共同刻度上排名。",
+        "en": "The original paper evaluates XSum summarization, WMT translation, GSM8K arithmetic reasoning, and FLAN instruction distillation. These use ROUGE, BLEU, or accuracy and are not ranked on one common scale."
+      },
+      {
+        "zh": "图 10 是 FLAN T5-XL 到 T5-Base 的指令蒸馏，对 MMLU 与 BBH 的任务均分报告增益；该设置中 reverse KL 优于 forward KL。GSM8K 则使用外部计算器，并比较不同 on-policy 比例，需保留这一评测条件。",
+        "en": "Figure 10 studies instruction distillation from FLAN T5-XL to T5-Base and reports gains in task-averaged MMLU and BBH. Reverse KL outperforms forward KL in that setting. GSM8K uses an external calculator and compares on-policy fractions; that protocol must be retained."
+      }
+    ],
+    "limits": [
+      {
+        "zh": "教师也可能在学生错误前缀上给出不可靠反馈；词表、分词器和概率接口影响可用信号。减少状态分布失配并不保证学生纠正所有错误，也不保证超越教师。",
+        "en": "The teacher can be unreliable on erroneous student prefixes, and vocabulary, tokenizer, and probability interfaces constrain the available signal. Reducing state mismatch does not guarantee correction of every mistake or surpassing the teacher."
+      }
+    ],
+    "implementation": {
+      "zh": "verl 区分 GKD OPD 与 PG OPD，并支持多教师路由。此页以 2024 GKD 为核心，2025 博文与 2026 文档单独标明，不把后续工程能力归给原论文。",
+      "en": "verl distinguishes GKD OPD from PG OPD and supports teacher routing. This page centers on 2024 GKD, labeling the 2025 blog and 2026 documentation separately rather than attributing later engineering features to the original paper."
+    },
+    "locator": "§3.1 Algorithm 1; §3.2; §§4.1–4.4 Figures 7/9/10; Appendix A.4/A.6/A.7; Thinking Machines 2025; verl OPD Loss Variants",
+    "rows": [],
+    "metric": null,
+    "evidencePage": 9,
+    "version": "2306.13649v3",
+    "source": "https://arxiv.org/abs/2306.13649v3",
+    "sourceTitle": "On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes",
+    "authors": [
+      "Rishabh Agarwal",
+      "Nino Vieillard",
+      "Yongchao Zhou",
+      "Piotr Stanczyk",
+      "Sabela Ramos",
+      "Matthieu Geist",
+      "Olivier Bachem"
+    ],
+    "preprint": "2023-06-23",
+    "pdfSha256": "a81c71fa0cd15506642092790d854347f030c29ee1d6aa643b55aa51348e6869",
+    "docUrl": "https://verl.readthedocs.io/en/latest/algo/opd.html",
+    "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
+    "docSha256": "0b81ce31f08a243ad96a53a4d78bfce2b2b5b6d367a0e673500a96bb95bc651c",
+    "extraSources": [
+      {
+        "url": "https://thinkingmachines.ai/blog/on-policy-distillation/",
+        "zh": "后续方法：Thinking Machines（2025）",
+        "en": "Later method: Thinking Machines (2025)",
+        "locator": "Implementation / Loss function: reverse KL; pseudocode; sampled student tokens with teacher feedback. This is a separate later source, not a GKD result."
+      }
+    ],
+    "claimLocators": {
+      "background": "§3.1 Algorithm 1; §3.2 divergences; later Thinking Machines loss/pseudocode separately",
+      "mechanism": "§3.1 Algorithm 1; §3.2 divergences; later Thinking Machines loss/pseudocode separately",
+      "math": "§3.1 Algorithm 1; §3.2 divergences; later Thinking Machines loss/pseudocode separately",
+      "evidence": "§§4.1–4.4; Figures 7–10; Appendices A.4/A.6/A.7",
+      "limits": "Interpretive analysis of assumptions and scope in §3.1 Algorithm 1; §3.2 divergences; later Thinking Machines loss/pseudocode separately; empirical limits in §§4.1–4.4; Figures 7–10; Appendices A.4/A.6/A.7",
+      "implementation": "Pinned verl docs/algo/opd.md; implementation-specific settings"
+    },
+    "foundation": {
+      "zh": "蒸馏是让较小的学生模型学习教师的输出分布。分布不只是一个“标准答案”，还包含每个候选 token 的概率。同策略的关键在于由学生先写出前缀，再请教师对这个前缀点评，因此教师能看到学生实际会犯错的状态。",
+      "en": "Distillation trains a smaller student to learn a teacher’s output distribution: probabilities for candidate tokens, not only one correct answer. On-policy distillation lets the student generate prefixes first, then asks the teacher for feedback on those prefixes, including states caused by student errors."
+    },
+    "readingQuestion": {
+      "zh": "某个采样 token 的 log 教师概率减 log 学生概率为负，是否违反 KL 非负性？",
+      "en": "Does a negative sampled-token log teacher/student probability gap violate nonnegative KL?"
+    },
+    "readingAnswer": {
+      "zh": "不违反。单个 token 的差值可为负，KL 非负性描述完整分布上的期望；而这里的反馈还是 reverse KL 的负向信号，必须同时核对方向和采样分布。",
+      "en": "No. An individual token’s difference may be negative; KL nonnegativity concerns an expectation over the full distribution. This feedback also uses the negative reverse-KL direction, so both sign and sampling distribution matter."
+    }
+  },
+  {
+    "slug": "direct-reward-optimization",
+    "short": "DRO",
+    "arxiv": "2405.19107",
+    "doc": "dro",
+    "title": {
+      "zh": "DRO：单条反馈也能用于对齐",
+      "en": "DRO: alignment from single-response feedback"
+    },
+    "lead": {
+      "zh": "从提示、回答、标量反馈三元组出发，以正则化最优策略的关系构造平方目标；在实现中必须保留 soft advantage 的含义。",
+      "en": "Start from prompt–response–scalar-feedback triples and derive a squared objective from the regularized optimal policy, preserving the meaning of the soft advantage in implementations."
+    },
+    "background": {
+      "zh": "DPO 通常需要成对偏好，而用户的点赞或评分往往只对应单条回答。Richemond 等人的 DRO 研究这种离线反馈，联合学习策略与 soft value；它与若干同名的点式对齐或扩散模型方法不是同一篇工作。",
+      "en": "DPO usually needs preference pairs, whereas a user’s rating often concerns one answer. Richemond and colleagues study offline feedback with joint policy and soft-value learning. This is distinct from similarly named pointwise-alignment or diffusion-model methods."
+    },
+    "mechanism": [
+      {
+        "zh": "KL 正则化最优策略满足 π*∝πref exp(r/τ)，其中归一化项可写成 exp(V*/τ)。对这一关系取对数，得到奖励、soft value 和策略 log-ratio 之间的方程，再最小化残差平方。",
+        "en": "The KL-regularized optimum satisfies π*∝πref exp(r/τ), with normalizer exp(V*/τ). Taking logs relates reward, soft value, and the policy log ratio; DRO minimizes the squared residual of that relationship."
+      },
+      {
+        "zh": "原始 DRO-V 同时学习 Vϕ 与 πθ。对策略求导，可重写为奖励减 value 的 log 概率项与二次 log-ratio 惩罚。verl 接收外部构造的优势，并不在这个损失函数内部自动训练原文的 value 网络。",
+        "en": "Original DRO-V learns both Vϕ and πθ. Its policy derivative can be rewritten using a reward-minus-value log-probability term and a quadratic log-ratio penalty. verl receives externally constructed advantages; its loss does not automatically train the paper’s value network."
+      }
+    ],
+    "formula": "LDRO-V = ½ E[(R − Vϕ(x) − τ log(πθ(y|x)/πref(y|x)))²]\nJverl = Σt [log πθ(yt|st) At − β/2 · (log πθ − log πold)²]",
+    "math": [
+      {
+        "zh": "R 是标量反馈，τ>0 为正则尺度，Vϕ 近似与正则化策略有关的 soft value，不能随意替换为任何均值而声称目标不变。第二式采用 verl 的记号；πold 与原始 πref 的角色需由调用方明确。",
+        "en": "R is scalar feedback, τ>0 a regularization scale, and Vϕ approximates a policy-dependent soft value. Arbitrarily replacing it with a mean does not preserve the objective. The second expression uses verl notation; the caller must establish the roles of πold and the original πref."
+      },
+      {
+        "zh": "演示固定 A 和旧概率，改变当前概率与 β，显示奖励项、二次项及总目标。这只比较固定优势下的单 token 目标形状，不重现 DRO-V 的 value 学习、离线数据分布或整体训练。",
+        "en": "The demo fixes A and the old probability and varies current probability and β to show reward, quadratic, and total terms. It compares a single-token objective with fixed advantages, not DRO-V’s value learning, offline distribution, or full training."
+      },
+      {
+        "zh": "原文附录 B 还提出 DRO-P：消去最优 soft value 后，得到残差的条件方差目标。精确估计该方差需要同一提示下的多条回答；实际 Algorithm 2 为适配单回答数据，在批次维度近似这一方差（Eq.15）。因此，DRO-V、DRO-P 的批次近似和 verl 接收外部优势的损失应分别识别，不能由目标形式相似就断言实现等价。",
+        "en": "Appendix B also proposes DRO-P. Eliminating the optimal soft value yields a conditional variance of the residual. Estimating that variance exactly requires multiple responses per prompt; practical Algorithm 2 approximates it across a batch to accommodate single-response data (Eq.15). DRO-V, DRO-P’s batch approximation, and verl’s externally supplied advantages are distinct; similar objective expressions do not establish implementation equivalence."
+      }
+    ],
+    "evidence": [
+      {
+        "zh": "原文图 1/2 对 UltraFeedback 条件下的 T5-L 与 T5-XL 进行配对比较：DRO-V 对 KTO 胜率分别为 63.4%±1.0% 与 57.5%±0.8%。误差是五个 1000 提示评测折的标准差，不是置信区间。",
+        "en": "Figures 1/2 report pairwise evaluation of T5-L and T5-XL in the UltraFeedback setting: DRO-V versus KTO wins 63.4%±1.0% and 57.5%±0.8%. Errors are standard deviations over five evaluation folds of 1,000 prompts, not confidence intervals."
+      },
+      {
+        "zh": "§4.1 和附录研究策略/value 学习率、正则尺度、初始化和参数共享。KTO 基线进行了正则参数搜索，DRO-V 使用默认值；结果仅支持已报告模型与评测协议，不能等同于 verl 当前大模型训练结果。",
+        "en": "Section 4.1 and appendices study policy/value learning rates, regularization, initialization, and parameter sharing. KTO receives a regularization search while DRO-V uses a default. Findings support the reported models and evaluation, not current large-model verl runs."
+      }
+    ],
+    "limits": [
+      {
+        "zh": "离线数据覆盖、奖励质量和 value 近似误差仍影响优化。二次惩罚约束的是采样 log-ratio，不等于精确完整分布 KL，也不能独自保证任意 off-policy 数据上的稳定性。",
+        "en": "Offline coverage, reward quality, and value-approximation error still matter. The quadratic term penalizes sampled log ratios, not exact full-distribution KL, and alone does not guarantee stability for arbitrary off-policy data."
+      }
+    ],
+    "implementation": {
+      "zh": "verl 要求 loss_mode=dro 且 dro_beta>0，优势由调用方构造。sources 同时记录原文与代码目标，避免把实现中的外部输入当成原文已自动解决的组件。",
+      "en": "verl requires loss_mode=dro and dro_beta>0; the caller constructs advantages. Sources record both paper and code objectives so external inputs are not mistaken for automatically supplied components."
+    },
+    "locator": "§3.1–3.3 equations 1–8; §4.1 Figures 1–5; Appendices B/C; verl compute_policy_loss_dro",
+    "rows": [
+      [
+        "T5-L",
+        63.4
+      ],
+      [
+        "T5-XL",
+        57.5
+      ]
+    ],
+    "metric": {
+      "zh": "DRO-V 对 KTO 配对胜率（%，误差见正文）",
+      "en": "DRO-V versus KTO pairwise win rate (%, errors in text)"
+    },
+    "evidencePage": 8,
+    "version": "2405.19107v1",
+    "source": "https://arxiv.org/abs/2405.19107v1",
+    "sourceTitle": "Offline Regularised Reinforcement Learning for Large Language Models Alignment",
+    "authors": [
+      "Pierre Harvey Richemond",
+      "Yunhao Tang",
+      "Daniel Guo",
+      "Daniele Calandriello",
+      "Mohammad Gheshlaghi Azar",
+      "Rafael Rafailov",
+      "Bernardo Avila Pires",
+      "Eugene Tarassov",
+      "Lucas Spangher",
+      "Will Ellsworth",
+      "Aliaksei Severyn",
+      "Jonathan Mallinson",
+      "Lior Shani",
+      "Gil Shamir",
+      "Rishabh Joshi",
+      "Tianqi Liu",
+      "Remi Munos",
+      "Bilal Piot"
+    ],
+    "preprint": "2024-05-29",
+    "pdfSha256": "26a3bd02786e1ca349f55abe4e233f73d7dad99c48d57aaecb67b3af6ab80173",
+    "docUrl": "https://verl.readthedocs.io/en/latest/algo/dro.html",
+    "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
+    "docSha256": "189efbee81d5ae55252684867e8b64da391fc0d711f57f734e175bb58c28a0a1",
+    "claimLocators": {
+      "background": "§§3.1–3.3 Eqs.1–8; verl compute_policy_loss_dro",
+      "mechanism": "§§3.1–3.3 Eqs.1–8; verl compute_policy_loss_dro",
+      "math": "§§3.1–3.3 Eqs.1–8; verl compute_policy_loss_dro; Appendix B Eq.15 and Algorithm 2 (DRO-P)",
+      "evidence": "§4.1 Figures 1–5 (PDF pp.8–9); Appendices B/C",
+      "limits": "Interpretive analysis of assumptions and scope in §§3.1–3.3 Eqs.1–8; verl compute_policy_loss_dro; empirical limits in §4.1 Figures 1–5 (PDF pp.8–9); Appendices B/C",
+      "implementation": "Pinned verl docs/algo/dro.md; implementation-specific settings"
+    },
+    "extraSources": [
+      {
+        "url": "https://github.com/verl-project/verl/blob/3fdf2b548882a8aeccf0842c2150d9c9f1790a55/verl/trainer/ppo/core_algos.py",
+        "zh": "代码核对：compute_policy_loss_dro",
+        "en": "Code verification: compute_policy_loss_dro",
+        "locator": "Function compute_policy_loss_dro: beta>0; pg_losses=−(log_prob*advantages−0.5*beta*log_ratio.square()); response-mask aggregation and optional IS weights."
+      }
+    ],
+    "foundation": {
+      "zh": "偏好对通常给同一问题的两份答案排序；单条反馈则只给一份答案打分或点赞。DRO 研究怎样用后一类数据更新模型。参考策略提供概率锚点，正则项约束偏离；soft value 是与问题及策略相关的学习量，不是随意选取的常数。",
+      "en": "Preference pairs rank two answers to one prompt; single-response feedback rates or approves just one answer. DRO studies learning from the latter. A reference policy supplies a probability anchor, regularization discourages deviation, and the soft value is a learned prompt- and policy-related quantity rather than an arbitrary constant."
+    },
+    "readingQuestion": {
+      "zh": "当前概率等于旧概率时，二次 log-ratio 惩罚是多少？整个训练目标也为零吗？",
+      "en": "When current and old probabilities match, what is the quadratic log-ratio penalty? Is the whole objective also zero?"
+    },
+    "readingAnswer": {
+      "zh": "log(π/πold)=log 1=0，因此惩罚为零。奖励项 log π·A 通常仍非零；没有惩罚不等于没有更新信号。",
+      "en": "log(π/πold)=log 1=0, so the penalty vanishes. The reward term log π·A is generally nonzero; zero penalty does not imply zero learning signal."
+    }
+  }
+]

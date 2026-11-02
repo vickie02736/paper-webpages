@@ -68,7 +68,7 @@ async function eventually(check, label) {
     const fullKeys = explainerKeys(full);
     const mofRows = full.themes.find(theme => theme.n === 'mof').p.filter(paper => fullKeys.has(key(paper))).length;
     const outsideMofTotal = new Set(full.themes.filter(theme => theme.n !== 'mof').flatMap(theme => theme.p.filter(paper => fullKeys.has(key(paper))).map(key))).size;
-    const recentTotal = Object.keys(full.explainers).filter(pagePath => full.themes.some(theme => theme.p.some(paper => paper.p === pagePath))).length;
+    const recentTotal = Object.keys(full.explainers).filter(pagePath => full.themes.some(theme => theme.p.some(paper => paper.p === pagePath)) || (full.collections || []).some(c => c.items.some(item => item.path === pagePath))).length;
     const zhStatus = (matched, total) => matched === total ? '共 ' + total + ' 篇论文已有讲解' : '当前匹配 ' + matched + ' / 共 ' + total + ' 篇讲解';
     const enStatus = (matched, total) => matched === total ? total + ' papers with explainers' : 'Matching ' + matched + ' / ' + total + ' papers with explainers';
     const defaultStatus = (data, lang = 'zh') => {

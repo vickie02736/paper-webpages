@@ -2,15 +2,15 @@
 
 Generated from `paper-catalog.json`; checked dates and field-level source locators are stored with each record. This ledger concerns bibliographic metadata only.
 
-核对结果：作者名单 479/479；单位 473/479；完整作者—单位对应 419/479。已核实发表日期 428 篇、录用日期 159 篇、首次预印本日期 211 篇；另有 126 篇的已检查官方记录未披露录用日期。下列 232 篇仍有至少一个未核实字段，不能视为全部信息已经核实。
+核对结果：作者名单 490/490；单位 484/490；完整作者—单位对应 429/490。已核实发表日期 432 篇、录用日期 159 篇、首次预印本日期 222 篇；另有 126 篇的已检查官方记录未披露录用日期。下列 243 篇仍有至少一个未核实字段，不能视为全部信息已经核实。
 
-- papers: 479
-- authors: 479
-- affiliations: 473
-- completeMappings: 419
-- published: 428
+- papers: 490
+- authors: 490
+- affiliations: 484
+- completeMappings: 429
+- published: 432
 - accepted: 159
-- preprint: 211
+- preprint: 222
 - acceptanceNotDisclosed: 126
 
 Dates use the precision published by the source. “Not disclosed” means the inspected official record does not disclose the date; “unverified” means the available evidence does not establish it. Preprint dates are separate from formal publication and acceptance. No conference notification date is substituted for a paper’s acceptance date. Author affiliation mappings are imported only when the source explicitly associates them.
@@ -92,6 +92,17 @@ Dates use the precision published by the source. “Not disclosed” means the i
 - [Sharpness-Aware Minimization for Efficiently Improving Generalization](https://openreview.net/forum?id=6Tm1mposlrM): accepted. Unrecognised source page; not imported
 - [Score-Based Generative Modeling through Stochastic Differential Equations](https://openreview.net/forum?id=PxTIG12RRHS): accepted. Unrecognised source page; not imported
 - [Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow](https://openreview.net/forum?id=XVjTT1nw5z): published, accepted. Unrecognised source page; not imported
+- [Proximal Policy Optimization Algorithms](https://arxiv.org/abs/1707.06347): published, accepted
+- [DAPO: An Open-Source LLM Reinforcement Learning System at Scale](https://arxiv.org/abs/2503.14476): published, accepted. Author names follow first appearance in the adopted PDF Contributions block (deduplicated). The arXiv abstract byline omits Juncai Liu and Ru Zhang; both appear in the cited PDF infrastructure contributor list.
+- [Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](https://arxiv.org/abs/2401.01335): published, accepted
+- [Self-Play Preference Optimization for Language Model Alignment](https://arxiv.org/abs/2405.00675): published, accepted
+- [The Entropy Mechanism of Reinforcement Learning for Reasoning Language Models](https://arxiv.org/abs/2505.22617): published, accepted
+- [On-Policy RL with Optimal Reward Baseline](https://arxiv.org/abs/2505.23585): published, accepted
+- [GPG: A Simple and Strong Reinforcement Learning Baseline for Model Reasoning](https://arxiv.org/abs/2504.02546): accepted
+- [The Optimal Token Baseline: Variance Reduction for Long-Horizon LLM-RL](https://arxiv.org/abs/2602.07078): author–affiliation mapping, accepted. The cited PDF has no numbered affiliation markers for Yingru Li or Qian Liu. Their affiliations are intentionally left unverified.
+- [Rethinking the Trust Region in LLM Reinforcement Learning](https://arxiv.org/abs/2602.04879): accepted
+- [On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes](https://arxiv.org/abs/2306.13649): accepted
+- [Offline Regularised Reinforcement Learning for Large Language Models Alignment](https://arxiv.org/abs/2405.19107): published, accepted
 - [Equiformer: Equivariant Graph Attention Transformer for 3D Atomistic Graphs](https://openreview.net/pdf?id=KwmPfARgOTD): accepted. Original source unavailable: 403
 - [Ab initio solution of the many-electron Schrödinger equation with deep neural networks](https://doi.org/10.1103/physrevresearch.2.033429): accepted
 - [A Self-Attention Ansatz for Ab-initio Quantum Chemistry](https://openreview.net/forum?id=xveTeHVlF7j): published, accepted. Unrecognised source page; not imported

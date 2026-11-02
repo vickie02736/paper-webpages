@@ -126,3 +126,7 @@ Use the primary-theme selector and the expandable cross-disciplinary tags alongs
 A paper reference uses `?paper=<stable-id>` and opens the primary entry. Existing `?q=`, `?lang=`, `?explainers=1`, `#themes`, `#recent` and all explainer paths remain valid. Related readings show the primary theme and do not affect the 451-paper total. A migration ledger preserves all 463 old listings: [`taxonomy-migration.json`](references/taxonomy-migration.json).
 
 Run `node scripts/check-taxonomy.cjs --data-only` for migration and schema checks. Browser checks are described in the [catalogue guide](references/paper-catalog-guide.md).
+
+## verl algorithm explainers
+
+[Browse all 15 independent pages](collections/verl-algorithms/) — 12 bilingual paper studies and 3 documentation studies, each with its own interactive lab and evidence ledger.

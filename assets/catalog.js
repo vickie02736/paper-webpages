@@ -141,7 +141,7 @@
       };
       const safeUrl = function (value) {
         if (!/^https:\/\//.test(value) && !/^\.\//.test(value)) return '#';
-        if (/^\.\/papers\//.test(value)) {
+        if (/^\.\/(papers|collections)\//.test(value)) {
           const url = new URL(value, window.location.href);
           url.searchParams.set('lang', lang);
           return url.href;
@@ -331,6 +331,19 @@
           for(const [id,tag] of Object.entries(data.taxonomyTags))if(tag.id!==id||!['object','method','task','application'].includes(tag.type)||!bilingual(tag.name))throw new Error('tag');
           for(const theme of data.themes)if(theme.relatedPaperIds.some(id=>!seen.has(id)||theme.p.some(p=>p.id===id)))throw new Error('related');
           for(const route of data.researchRoutes)if(!/^[-a-z0-9]+$/.test(route.id)||!bilingual(route.name)||!bilingual(route.question)||!Array.isArray(route.stages)||route.stages.some(s=>!bilingual(s.name)||!bilingual(s.note)||!Array.isArray(s.paperIds)||s.paperIds.some(id=>!seen.has(id))))throw new Error('route');
+          if(data.collections!==undefined){
+            if(!Array.isArray(data.collections))throw new Error('collections');
+            const collectionIds=new Set();
+            for(const collection of data.collections){
+              if(!collection||!/^[-a-z0-9]+$/.test(collection.id)||collectionIds.has(collection.id)||!themes.has(collection.themeId)||!/^\.\/collections\/[a-z0-9-]+\/$/.test(collection.path)||!bilingual(collection.title)||!bilingual(collection.summary)||!Array.isArray(collection.items))throw new Error('collection');
+              collectionIds.add(collection.id);const paths=new Set();
+              for(const item of collection.items){
+                if(!item||!/^[-a-z0-9]+$/.test(item.id)||!/^\.\/papers\/[a-z0-9-]+\/$/.test(item.path)||paths.has(item.path)||!['paper','document'].includes(item.type)||!bilingual(item.title)||!bilingual(item.summary)||!/^https:\/\//.test(item.source))throw new Error('collection item');
+                paths.add(item.path);
+                if(item.type==='paper'&&!data.themes.some(t=>t.p.some(p=>p.id===item.paperId&&p.p===item.path))||item.type==='document'&&item.paperId)throw new Error('collection paper identity');
+              }
+            }
+          }
           return data;
         }).finally(function () { window.clearTimeout(timeout); });
       };
@@ -414,6 +427,11 @@
             if (searching && !preserveOpen) root.open = shown[name].length > 0;
             root.classList.toggle('no-match', searching && !shown[name].length);
             root.querySelector('.theme-description').textContent=textOf(byName[name].description);
+            let collectionLinks=root.querySelector('.collection-links');
+            const collections=(data.collections||[]).filter(c=>c.themeId===name);
+            if(!collectionLinks){collectionLinks=document.createElement('div');collectionLinks.className='collection-links';root.querySelector('.theme-description').after(collectionLinks);}
+            collectionLinks.hidden=!collections.length;
+            collectionLinks.innerHTML=collections.map(c=>'<p><a class="button" href="'+safeUrl(c.path)+'">'+esc(textOf(c.title))+' ↗</a><br><span>'+esc(textOf(c.summary))+'</span></p>').join('');
           });
           if (!searching && openBeforeSearch) {
             themeRoots.forEach(function (root, i) { root.open = Boolean(openBeforeSearch[root.dataset.theme]); });
@@ -438,6 +456,9 @@
               if (paper) entry = {theme: theme, paper: paper};
               return Boolean(paper);
             });
+            if(!entry){
+              for(const collection of data.collections||[]){const document=collection.items.find(item=>item.path===path);if(document){entry={document:document,collection:collection};break;}}
+            }
             return {path: path, created: first, entry: entry};
           }).filter(function (item) {
             return item.entry && !isNaN(item.created) && item.created >= today - 6 * day && item.created <= now;
@@ -447,6 +468,10 @@
           const focused = document.activeElement;
           const focusHref = recentList.contains(focused) ? focused.getAttribute('href') : null;
           const html = items.map(function (item) {
+            if(item.entry.document){
+              const doc=item.entry.document;
+              return '<div class="recent-item"><div><h4>'+esc(textOf(doc.title))+'</h4><p class="recent-meta">'+(lang==='en'?'Documentation study':'文档专题')+' · <time datetime="'+item.created.toISOString()+'">'+esc(t('createdOn')(item.created))+'</time></p></div><a class="button" href="'+safeUrl(item.path)+'" target="_blank" rel="noopener">'+esc(t('openExplainer'))+'</a></div>';
+            }
             const paper = item.entry.paper;
             return '<div class="recent-item"><div><h4 lang="en">' + esc(paper.t) + '</h4><p class="recent-meta"><b>' + esc(shortName(paper)) + '</b> · ' +
               esc(themeTitle(item.entry.theme.n)) + ' · <time datetime="' + item.created.toISOString() + '">' + esc(t('createdOn')(item.created)) + '</time></p>' + PaperBibliography.html(data.paperMetadata?.[paper.u], lang, 'recent:' + paper.u) + '</div>' +

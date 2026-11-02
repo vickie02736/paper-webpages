@@ -94,6 +94,8 @@ let server;
     // All explainers must mount exactly one component; rebuilt pages retain its state.
     for (const slug of fs.readdirSync(path.join(root,'papers')).filter(s => fs.existsSync(path.join(root,'papers',s,'index.html')))) {
       await page.goto(base + '/papers/' + slug + '/?lang=en');
+      const documentPaths=(catalog.collections||[]).flatMap(c=>c.items).filter(i=>i.type==='document').map(i=>i.path);
+      if(documentPaths.includes('./papers/'+slug+'/')){assert.equal(await page.locator('main .atlas-bibliography').count(),0,slug+': documentation must not invent a byline');continue;}
       const panel = page.locator('main > .atlas-bibliography, main .hero .atlas-bibliography');
       assert.equal(await page.locator('main .atlas-bibliography').count(), 1, slug + ': one byline');
       const summary = panel.locator('summary');
