@@ -37,14 +37,16 @@ for(const t of verlBaseline.themes)for(const original of t.p){
  if(original.id===verl.updatedRecords[0].id)expected.p=verl.updatedRecords[0].p;
  assert.deepEqual(sources.get(original.u),expected,'Every pre-verl record is preserved except the inventoried GRPO link and user-requested AI placement');
 }
-for(const key of ['paperMetadata','explainers','explainerCreatedAt'])for(const[k,v]of Object.entries(verlBaseline[key]))assert.deepEqual(catalog[key][k],v,'Pre-verl '+key+' preserved');
+const metadataFixes=JSON.parse(fs.readFileSync(path.join(root,'reports/explainer-audit/metadata-corrections.json'),'utf8')).corrections;
+const corrected=(key,k,v)=>{const fix=key==='paperMetadata'&&metadataFixes.find(c=>c.u===k);if(!fix)return v;const e=structuredClone(v);for(const a of e.authors)if(a.name in fix.authorAffiliations)a.affiliations=fix.authorAffiliations[a.name];for(const[i,loc]of Object.entries(fix.sourceLocators||{}))e.sources[i].locator=loc;return e;};
+for(const key of ['paperMetadata','explainers','explainerCreatedAt'])for(const[k,v]of Object.entries(verlBaseline[key]))assert.deepEqual(catalog[key][k],corrected(key,k,v),'Pre-verl '+key+' preserved');
 for(const addition of verl.records){const actual=sources.get(addition.u);assert(actual);assert.equal(actual.id,addition.id);assert.equal(actual.p,addition.path);assert.equal(actual.topicId,addition.topicId);assert(!verlBaseline.themes.some(t=>t.p.some(p=>p.id===addition.id)));}
 for(const t of baseline.themes)for(const p of t.p){const expected=applyPlacement(structuredClone(p));if(p.id===verl.updatedRecords[0].id)expected.p=verl.updatedRecords[0].p;assert.deepEqual(sources.get(p.u),expected,'Original audit baseline retained with explicit placement correction');}
 const rl=JSON.parse(fs.readFileSync(path.join(root,'reports/rl-foundations-additions.json'),'utf8'));
 const rlBaseline=JSON.parse(execFileSync('git',['show',rl.baselineCommit+':references/paper-catalog.json'],{cwd:root,encoding:'utf8',maxBuffer:20*1024*1024}));
 assert.equal(rl.records.length,2);assert.equal(rlBaseline.themes.flatMap(t=>t.p).length,490);
 for(const t of rlBaseline.themes)for(const p of t.p)assert.deepEqual(sources.get(p.u),p,'Every pre-TRM paper record unchanged');
-for(const key of ['paperMetadata','explainers','explainerCreatedAt'])for(const[k,v]of Object.entries(rlBaseline[key]))assert.deepEqual(catalog[key][k],v,'Pre-TRM '+key+' preserved');
+for(const key of ['paperMetadata','explainers','explainerCreatedAt'])for(const[k,v]of Object.entries(rlBaseline[key]))assert.deepEqual(catalog[key][k],corrected(key,k,v),'Pre-TRM '+key+' preserved');
 assert.deepEqual(catalog.collections,rlBaseline.collections,'Original collection identities preserved');
 for(const addition of rl.records){const p=sources.get(addition.u);assert(p);assert.equal(p.id,addition.id);assert.equal(p.p,addition.path);assert.equal(p.topicId,addition.topicId);assert(!rlBaseline.themes.some(t=>t.p.some(old=>old.u===p.u)));}
 const collection=catalog.collections.find(c=>c.id==='verl-algorithms');assert(collection);
@@ -61,7 +63,7 @@ assert.deepEqual(catalog.themes.map(t=>[t.id,t.p.length]),[['mof',96],['ai',104]
 assert.equal(migration.mapping.length,451);
 assert.equal(migration.mapping.flatMap(m=>m.old).length,463);
 assert.equal(papers.flatMap(p=>p.legacyContexts).length,463);
-for(const key of ['paperMetadata','explainers','explainerCreatedAt'])for(const[k,v]of Object.entries(baseline[key]))assert.deepEqual(catalog[key][k],v,key+' baseline entries preserved');
+for(const key of ['paperMetadata','explainers','explainerCreatedAt'])for(const[k,v]of Object.entries(baseline[key]))assert.deepEqual(catalog[key][k],corrected(key,k,v),key+' baseline entries preserved');
 for(const key of ['tags','venues'])assert.deepEqual(catalog[key],before[key],key+' preserved');
 for(const theme of before.themes)for(const p of theme.p){
  const target=sources.get(p.u);assert(target,'Every original source survives');assert.equal(target.t,p.t);
