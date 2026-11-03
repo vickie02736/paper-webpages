@@ -47,7 +47,11 @@ const rlBaseline=JSON.parse(execFileSync('git',['show',rl.baselineCommit+':refer
 assert.equal(rl.records.length,2);assert.equal(rlBaseline.themes.flatMap(t=>t.p).length,490);
 for(const t of rlBaseline.themes)for(const p of t.p)assert.deepEqual(sources.get(p.u),p,'Every pre-TRM paper record unchanged');
 for(const key of ['paperMetadata','explainers','explainerCreatedAt'])for(const[k,v]of Object.entries(rlBaseline[key]))assert.deepEqual(catalog[key][k],corrected(key,k,v),'Pre-TRM '+key+' preserved');
-assert.deepEqual(catalog.collections,rlBaseline.collections,'Original collection identities preserved');
+// Explainer wording can evolve; identities, placement and links remain fixed.
+const explainerText=new Map(JSON.parse(fs.readFileSync(path.join(root,'references/verl-explainers.json'),'utf8')).map(d=>[d.slug,d]));
+const expectedCollections=structuredClone(rlBaseline.collections);
+for(const c of expectedCollections)for(const item of c.items){const d=explainerText.get(item.id);if(d){item.title=d.title;item.summary=d.lead;}}
+assert.deepEqual(catalog.collections,expectedCollections,'Collection identities preserved and wording synchronized with the editorial source');
 for(const addition of rl.records){const p=sources.get(addition.u);assert(p);assert.equal(p.id,addition.id);assert.equal(p.p,addition.path);assert.equal(p.topicId,addition.topicId);assert(!rlBaseline.themes.some(t=>t.p.some(old=>old.u===p.u)));}
 const collection=catalog.collections.find(c=>c.id==='verl-algorithms');assert(collection);
 assert.equal(collection.items.length,15);assert.equal(new Set(collection.items.map(i=>i.path)).size,15);

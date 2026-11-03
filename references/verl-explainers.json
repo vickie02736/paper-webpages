@@ -5,12 +5,12 @@
     "arxiv": "1707.06347",
     "doc": "ppo",
     "title": {
-      "zh": "PPO：限制一次更新的诱惑",
-      "en": "PPO: limiting the incentive for a large update"
+      "zh": "PPO：复用一批经验，为什么不能把策略改得太猛？",
+      "en": "PPO: why can reusing a batch lead to overly large policy updates?"
     },
     "lead": {
-      "zh": "对已经获益的动作，停止奖励过大的概率变化。裁剪改变优化目标，却不把整个策略锁在一个硬边界内。",
-      "en": "Stop rewarding excessively large probability changes in the beneficial direction. Clipping changes the objective; it does not put the entire policy inside a hard boundary."
+      "zh": "先从背景说起：模型通过试错收集经验，再调整各个动作的选择概率。同一批经验多学几遍能减少采样需求，但也可能把原本有用的策略改坏。PPO 怎样处理这个矛盾？",
+      "en": "Start with the setting: a model collects experience through trial and error, then adjusts action probabilities. Learning repeatedly from one batch can reduce the need for new samples, but can also damage a useful policy. How does PPO address this trade-off?"
     },
     "background": {
       "zh": "普通策略梯度用采样回报决定动作概率的升降，但同一批数据反复优化可能让新策略远离采样策略。TRPO 用约束优化控制更新，PPO 则探索能直接用小批量一阶优化的代理目标。原论文研究连续控制和 Atari，语言模型训练是后续应用。",
@@ -122,6 +122,100 @@
       "math": "§§2–5；公式 7、9、11–12；算法 1"
     },
     "lesson": {
+      "intro": [
+        {
+          "id": "ppo-star-s",
+          "title": {
+            "zh": "S · 情境：模型怎样从试错中学习？",
+            "en": "S · Situation: how does a model learn from trial and error?"
+          },
+          "paragraphs": [
+            {
+              "zh": "用游戏角色学过关作教学例子：角色看到当前画面，要选择向左、向右或跳跃。“策略”就是根据眼前情况，给这些动作分配选择概率的规则；游戏得分等反馈告诉它表现如何。训练的目标是让长期获得的总分更高。",
+              "en": "As a teaching example, imagine a game character learning to finish a level. Given the current screen, it chooses left, right or jump. A policy is the rule that assigns probabilities to these actions based on the situation. Feedback such as the game score indicates performance. Training aims to increase the total score over time."
+            },
+            {
+              "zh": "一次训练循环先让角色按当前策略玩一批游戏，记录看到的画面、选过的动作和得到的反馈，再利用这些记录调整策略。这批经验来自调整之前的“旧策略”，而不是调整之后的“新策略”。",
+              "en": "A training iteration first runs a batch of games under the current policy, recording observations, actions and feedback, then uses those records to update the policy. This experience comes from the old policy before the update, not the new policy after it."
+            }
+          ],
+          "source": {
+            "zh": "背景依据：PPO v2 摘要、§2.1、§5 算法 1。游戏角色是教学情境，不是论文中的一项实验。",
+            "en": "Background: PPO v2 abstract, §2.1 and §5 Algorithm 1. The game character is a teaching scenario, not a reported experiment."
+          },
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=1"
+        },
+        {
+          "id": "ppo-star-t",
+          "title": {
+            "zh": "T · 任务：既多用几遍经验，又别把策略改坏",
+            "en": "T · Task: learn more from each batch without damaging the policy"
+          },
+          "paragraphs": [
+            {
+              "zh": "收集经验需要与环境交互，所以只学一遍就丢掉这批数据很可惜。但反复学习也有风险：某个动作在这批记录里看起来好，可能含有偶然性。如果一再提高它的选择概率，新策略会越来越偏离收集这些记录的旧策略，过去的记录也就不再直接代表新策略会遇到的情况。",
+              "en": "Collecting experience requires interacting with the environment, so discarding a batch after one update wastes an opportunity to learn from it. Repeated updates also carry risk: an action that looks good in these records may partly owe its success to chance. Repeatedly raising its probability moves the new policy away from the policy that collected the data, so those records no longer directly represent what the new policy will encounter."
+            },
+            {
+              "zh": "PPO 要解决的问题是：能否在同一批经验上做多轮小批量更新，同时减少过大改动破坏表现的风险？已有的 TRPO 用约束优化限制策略变化；PPO 希望用普通的梯度优化就实现一种更简单的做法。",
+              "en": "PPO asks whether the same batch can support several epochs of minibatch updates while reducing the risk of damaging performance through excessive changes. TRPO already uses constrained optimization to limit policy changes. PPO seeks a simpler approach compatible with ordinary gradient optimization."
+            }
+          ],
+          "source": {
+            "zh": "依据：PPO v2 §1、§2.1–2.2。原文报告：直接在同一轨迹上反复优化普通策略梯度目标，经验上常导致破坏性的大幅更新。",
+            "en": "Source: PPO v2 §§1–2.2. The paper reports that repeated optimization of the ordinary policy-gradient objective on the same trajectory often causes destructively large updates in practice."
+          },
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=2"
+        },
+        {
+          "id": "ppo-star-a",
+          "title": {
+            "zh": "A · 行动：改写训练评分，避免鼓励过头的调整",
+            "en": "A · Action: change the objective so excessive adjustments stop earning credit"
+          },
+          "paragraphs": [
+            {
+              "zh": "本页重点讲 PPO-Clip。它先估计一个采样动作比该状态下的通常表现好多少，再比较：在同一状态，新策略选择这个动作的概率，是旧策略的多少倍？这个倍数就是后面公式里的概率比 r。",
+              "en": "This page focuses on PPO-Clip. It estimates how much better a sampled action is than usual behavior in that state, then compares the probability of that same action under the new and old policies. Their ratio is r in the formulas below."
+            },
+            {
+              "zh": "举个只用于教学的例子：旧策略选择某动作的概率为 20%，这条经验显示它比通常表现好。取裁剪宽度 ε=0.2，把概率从 20% 提到 24%，倍数刚好是 1.2；继续提到 30%，倍数变成 1.5，但这条样本在 PPO 裁剪目标里的得分不再增加。这里的 20% 是相对增幅，概率只从 20% 增到 24%，即增加 4 个百分点。",
+              "en": "For a teaching example, suppose the old policy chooses an action with probability 20%, and the sample estimates that action as better than usual. With clipping width ε=0.2, increasing its probability from 20% to 24% gives a ratio of 1.2. Raising it further to 30% gives 1.5, but no longer increases this sample’s contribution to the clipped PPO objective. The 20% increase is relative: moving from 20% to 24% adds 4 percentage points."
+            },
+            {
+              "zh": "所以，原来“限制更新的诱惑”具体指的是：不再让这条样本因为朝有利方向改得更多而得到更高的训练分数。它没有把真实概率强制锁在 24%；其他样本和共享参数仍可能让概率继续变化。若调整方向使这条样本的目标变差，公式里的 min 仍会保留这个更差的分数。",
+              "en": "This is the concrete meaning of removing the incentive for a large update: this sample stops earning a higher objective value from further changes in the estimated beneficial direction. The actual probability is not forcibly capped at 24%; other samples and shared parameters can still move it. If a change worsens this sample’s objective, the min in the formula retains that worse score."
+            }
+          ],
+          "source": {
+            "zh": "依据：PPO v2 §3，公式 7、图 1。20%→24%→30% 是固定正优势下的教学计算，不是实验数据或概率硬约束。",
+            "en": "Source: PPO v2 §3, Eq.7 and Figure 1. The 20%→24%→30% example is a teaching calculation with fixed positive advantage, not experimental data or a hard probability constraint."
+          },
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3"
+        },
+        {
+          "id": "ppo-star-r",
+          "title": {
+            "zh": "R · 结果：经验可以复用，但每次进步没有保证",
+            "en": "R · Result: experience can be reused, but improvement is not guaranteed"
+          },
+          "paragraphs": [
+            {
+              "zh": "算法据此交替进行“采样一批经验”和“在这批经验上更新多轮”。原论文在模拟机器人运动和 Atari 游戏中进行比较：在其连续控制测试中，PPO 优于所比较的方法；在 Atari 上，数据效率优于 A2C，与 ACER 相近。后面的证据章节会展开具体任务、指标与比较条件。",
+              "en": "The algorithm alternates between collecting a batch and optimizing on that batch for several epochs. The paper compares it on simulated robotic locomotion and Atari games: PPO outperforms the compared methods on its continuous-control tests; on Atari, its sample efficiency is better than A2C and similar to ACER. The evidence section below gives the tasks, metrics and comparison conditions."
+            },
+            {
+              "zh": "这说明该方法在这些实验中实用，不代表每次更新必然提高真实回报，也不代表新旧策略的整体差异被硬性限制。接下来读公式时，抓住三个问题：动作好不好，概率变了多少，什么情况下继续改变已经不再增加目标值。",
+              "en": "These results support the method’s practical value in those experiments. They do not guarantee that every update improves actual return or enforce a hard bound on the full policy change. As you read the formulas, keep three questions in mind: how good was the action, how much did its probability change, and when does further change stop increasing the objective?"
+            }
+          ],
+          "source": {
+            "zh": "依据：PPO v2 §1、§5 算法 1、§6.2–6.3；裁剪边界见 §3 图 1–2。实验结论不延伸为逐次更新保证。",
+            "en": "Source: PPO v2 §§1, 5 (Algorithm 1) and 6.2–6.3; clipping behavior in §3 Figures 1–2. Experimental findings are not a guarantee for individual updates."
+          },
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=1"
+        }
+      ],
       "background": [
         {
           "id": "ppo-start",
@@ -1064,7 +1158,8 @@
     ],
     "ledgerNotes": [
       "## Audit 2026-11-03\n\nRechecked PPO 1707.06347v2 against the PDF (SHA-256 unchanged), including visually inspected PDF pp. 3, 5, 6 and 8. Supplemented definitions with GAE 1506.02438v6 and retained the pinned verl documentation commit.\n\n- papers/ppo/index.html #math, Chinese/English: compact formula and GAE prose → symbol definitions, ratio interpretation, signed worked cases, batch averaging, chain-rule derivation, explicit GAE limits, joint-objective signs and directed KL. PPO §§2–5, Eqs.1–12, Figure 1 and Algorithm 1.\n- #ppo-loop, both languages: two prose method panels → retained panels plus five selectable stages; fixed old probabilities/advantages, K epochs and outer refresh are explicit. PPO Algorithm 1, p.5.\n- #lab: one objective curve → raw, clipped-candidate and min curves computed from the same inputs; explicit boundary lines, signed branches, kinks and zero advantage. PPO §3 Eq.7, Figure 1; synthetic inputs, not measured data.\n- #ppo-gae-lab: no worked trajectory → R=[0,0,1], V=[0.4,0.5,0.6,0], true termination, fixed critic values; default gamma=.9/lambda=.8 gives deltas [.05,.04,.4] and advantages [.28616,.328,.4]. Teaching data only.\n- #ppo-gae-sum: compact description without index caveat → explicit sum l=0..T-1-t and note that PPO v2 Eqs.10–11 print T-t+1 in the last exponent. Verified visually; consistent powers follow GAE §3 Eq.16. This is a stated reindexing, not silent transcription of the printed inconsistency.\n- #evidence: selected clip rows → preserved rows plus no-clip baseline, all remaining Table 1 rows in an expansion, full Table 2 at research depth; last-100-episode metric, 21-run aggregation, architecture and lack of tabulated uncertainty explicit. PPO pp.6,8.\n- #implementation: terse role note → token/prefix mapping and distinctions between original PPO and pinned verl extensions. No LLM performance claim added.\n- Original valid content and eight section anchors retained; original formula claims incorporated into the expanded derivation. See reports/ppo-formula-lesson.md for separate technical, scientific and editorial checks.",
-      "Source files retrieved 2026-11-03: 1707.06347v2.pdf from https://arxiv.org/pdf/1707.06347v2, SHA-256 e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b; 1506.02438v6.pdf from https://arxiv.org/pdf/1506.02438v6, SHA-256 5aa736ccf3517a1f36d0ca8146982e69beaf9a2bdccac2ae324f780743bc045e; verl-ppo.md from the pinned commit, SHA-256 48fe658d2c04ddef720daa978f8723746035fda62ac647fd28a8b97ea03b7c16. Public originals remain outside the repository in the persistent paper-source cache."
+      "Source files retrieved 2026-11-03: 1707.06347v2.pdf from https://arxiv.org/pdf/1707.06347v2, SHA-256 e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b; 1506.02438v6.pdf from https://arxiv.org/pdf/1506.02438v6, SHA-256 5aa736ccf3517a1f36d0ca8146982e69beaf9a2bdccac2ae324f780743bc045e; verl-ppo.md from the pinned commit, SHA-256 48fe658d2c04ddef720daa978f8723746035fda62ac647fd28a8b97ea03b7c16. Public originals remain outside the repository in the persistent paper-source cache.",
+      "## Audit 2026-11-03 — STAR opening\n\nRechecked the cached PPO 1707.06347v2 introduction, §§2–3, Algorithm 1 and the experimental conclusions in §6.\n\n- Hero title/lead, Chinese and English: the abstract metaphor about an update incentive → a concrete question about reusing a batch without overly large policy changes. Catalogue and README labels follow the same title.\n- #background, both languages: definitions before the research motivation → an added STAR sequence before the retained definitions. S explains policy-based trial and error; T establishes the data-reuse/update-size trade-off and TRPO context; A introduces the clipped objective with a declared fixed-positive-advantage teaching example (20% to 24% to 30%, epsilon 0.2); R states the paper’s scoped empirical conclusions and absence of per-update guarantees. Sources: PPO v2 abstract, §§1–3, §5 Algorithm 1, §§6.2–6.3.\n- The example’s 20% relative increase is explicitly distinguished from the 4-percentage-point absolute increase. Clipping changes one sample’s objective contribution and does not cap the actual probability. All previous lesson modules, original section anchors and evidence remain. No calculation logic or experimental values changed."
     ]
   },
   {

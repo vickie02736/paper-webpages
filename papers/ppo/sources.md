@@ -78,6 +78,40 @@ These are general definitions and worked teaching examples, not experimental obs
 
 ## Expanded teaching modules
 
+### #ppo-star-s — S · Situation: how does a model learn from trial and error?
+
+As a teaching example, imagine a game character learning to finish a level. Given the current screen, it chooses left, right or jump. A policy is the rule that assigns probabilities to these actions based on the situation. Feedback such as the game score indicates performance. Training aims to increase the total score over time.
+
+A training iteration first runs a batch of games under the current policy, recording observations, actions and feedback, then uses those records to update the policy. This experience comes from the old policy before the update, not the new policy after it.
+
+Background: PPO v2 abstract, §2.1 and §5 Algorithm 1. The game character is a teaching scenario, not a reported experiment.
+
+### #ppo-star-t — T · Task: learn more from each batch without damaging the policy
+
+Collecting experience requires interacting with the environment, so discarding a batch after one update wastes an opportunity to learn from it. Repeated updates also carry risk: an action that looks good in these records may partly owe its success to chance. Repeatedly raising its probability moves the new policy away from the policy that collected the data, so those records no longer directly represent what the new policy will encounter.
+
+PPO asks whether the same batch can support several epochs of minibatch updates while reducing the risk of damaging performance through excessive changes. TRPO already uses constrained optimization to limit policy changes. PPO seeks a simpler approach compatible with ordinary gradient optimization.
+
+Source: PPO v2 §§1–2.2. The paper reports that repeated optimization of the ordinary policy-gradient objective on the same trajectory often causes destructively large updates in practice.
+
+### #ppo-star-a — A · Action: change the objective so excessive adjustments stop earning credit
+
+This page focuses on PPO-Clip. It estimates how much better a sampled action is than usual behavior in that state, then compares the probability of that same action under the new and old policies. Their ratio is r in the formulas below.
+
+For a teaching example, suppose the old policy chooses an action with probability 20%, and the sample estimates that action as better than usual. With clipping width ε=0.2, increasing its probability from 20% to 24% gives a ratio of 1.2. Raising it further to 30% gives 1.5, but no longer increases this sample’s contribution to the clipped PPO objective. The 20% increase is relative: moving from 20% to 24% adds 4 percentage points.
+
+This is the concrete meaning of removing the incentive for a large update: this sample stops earning a higher objective value from further changes in the estimated beneficial direction. The actual probability is not forcibly capped at 24%; other samples and shared parameters can still move it. If a change worsens this sample’s objective, the min in the formula retains that worse score.
+
+Source: PPO v2 §3, Eq.7 and Figure 1. The 20%→24%→30% example is a teaching calculation with fixed positive advantage, not experimental data or a hard probability constraint.
+
+### #ppo-star-r — R · Result: experience can be reused, but improvement is not guaranteed
+
+The algorithm alternates between collecting a batch and optimizing on that batch for several epochs. The paper compares it on simulated robotic locomotion and Atari games: PPO outperforms the compared methods on its continuous-control tests; on Atari, its sample efficiency is better than A2C and similar to ACER. The evidence section below gives the tasks, metrics and comparison conditions.
+
+These results support the method’s practical value in those experiments. They do not guarantee that every update improves actual return or enforce a hard bound on the full policy change. As you read the formulas, keep three questions in mind: how good was the action, how much did its probability change, and when does further change stop increasing the objective?
+
+Source: PPO v2 §§1, 5 (Algorithm 1) and 6.2–6.3; clipping behavior in §3 Figures 1–2. Experimental findings are not a guarantee for individual updates.
+
 ### #ppo-start — Start with reward, return, value and advantage
 
 Imagine an agent making three decisions and receiving 1 point only if it succeeds at the end. State s is the information it sees; action a is its choice. Policy π assigns probabilities to the available actions in that state. Parameters θ are the adjustable numbers in its neural network.
@@ -330,5 +364,12 @@ Rechecked PPO 1707.06347v2 against the PDF (SHA-256 unchanged), including visual
 - #implementation: terse role note → token/prefix mapping and distinctions between original PPO and pinned verl extensions. No LLM performance claim added.
 - Original valid content and eight section anchors retained; original formula claims incorporated into the expanded derivation. See reports/ppo-formula-lesson.md for separate technical, scientific and editorial checks.
 - Source files retrieved 2026-11-03: 1707.06347v2.pdf from https://arxiv.org/pdf/1707.06347v2, SHA-256 e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b; 1506.02438v6.pdf from https://arxiv.org/pdf/1506.02438v6, SHA-256 5aa736ccf3517a1f36d0ca8146982e69beaf9a2bdccac2ae324f780743bc045e; verl-ppo.md from the pinned commit, SHA-256 48fe658d2c04ddef720daa978f8723746035fda62ac647fd28a8b97ea03b7c16. Public originals remain outside the repository in the persistent paper-source cache.
+## Audit 2026-11-03 — STAR opening
+
+Rechecked the cached PPO 1707.06347v2 introduction, §§2–3, Algorithm 1 and the experimental conclusions in §6.
+
+- Hero title/lead, Chinese and English: the abstract metaphor about an update incentive → a concrete question about reusing a batch without overly large policy changes. Catalogue and README labels follow the same title.
+- #background, both languages: definitions before the research motivation → an added STAR sequence before the retained definitions. S explains policy-based trial and error; T establishes the data-reuse/update-size trade-off and TRPO context; A introduces the clipped objective with a declared fixed-positive-advantage teaching example (20% to 24% to 30%, epsilon 0.2); R states the paper’s scoped empirical conclusions and absence of per-update guarantees. Sources: PPO v2 abstract, §§1–3, §5 Algorithm 1, §§6.2–6.3.
+- The example’s 20% relative increase is explicitly distinguished from the 4-percentage-point absolute increase. Clipping changes one sample’s objective contribution and does not cap the actual probability. All previous lesson modules, original section anchors and evidence remain. No calculation logic or experimental values changed.
 
 - [GAE paper: value, advantage and generalized advantage estimation](https://arxiv.org/abs/1506.02438v6): §2 Eqs. 4–5; §3 Eqs. 10–16. Supplementary definitions and derivations, not PPO experimental evidence.
