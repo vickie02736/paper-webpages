@@ -39,3 +39,13 @@ Reread final main methods/Eyring discussion and SI energy definition. Added only
 Reader task: Check: does reaction at 450 ps in a biased trajectory mean failure after 450 ps? No. Bias changes event timing, the event is local, and bulk failure has not been defined. Unbiased rates, propagation and functional loss require additional evidence.
 
 Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.
+
+## Audit 2026-11-03
+
+Rechecked against the cached final publisher text and SI: Table 2 (all seven barrier, Eads and time rows), §2 methods (AMS 2023.102, PLUMED, bias factor 100, 5 kJ / 0.1 Å Gaussians every 1000 steps, NVT 300 K 3 ns 0.25 fs; NPT 300 K 1 bar 0.5 ns), §3 (≈5 Å placement vs ≈3.5 Å IRMOF-1 start, 450/2200 ps initiation, path-maximum barrier without saddle point, first-order Eyring at 300 K), Fig. 4 caption (R² ≈ 0.85 for A/B with red ZIF-7/ZIF-8 from Yang et al.; R² = 1.0 for C), conclusion "all stable at room temperature", SI Figs. S1–S5 order. Teaching ratio exp(1/(R·300 K)) = 5.35 and the 5 kcal/mol endpoint 4389.6 recompute correctly.
+
+- P2, `index.html` hero byline (zh/en): `arXiv:2507.16197v1 · 2025-07-22` → `Chemical Physics Letters · 142314 · first online 2025-08-05 (preprint arXiv:2507.16197v1 · 2025-07-22)`. The page and this ledger are based on the final article; first-online date from the publisher history recorded above. Not part of the lesson layer.
+
+Second-pass corrections (site-wide audit):
+
+- Model panel, IRMOF-1 (`page.js`, zh/en): added a notice. τ = 1/k with k = (k_BT/h)·exp(−ΔG‡/RT) at 300 K reproduces the other six Table 2 times within ~1% (e.g. 15 kcal/mol → 3.8 × 10⁻⁶ h) but gives 1.6 × 10⁻¹⁰ h for 9 kcal/mol, not the tabulated 1.06 × 10⁻¹⁰ h. The reported value is retained.

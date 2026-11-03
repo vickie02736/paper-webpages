@@ -54,3 +54,14 @@ Reread main §§3.2–3.4, Table2/Eq6 and SI S7–S9. The 90/50 example derives 
 Reader task: Check: why is β not 1.8 when removal is 90% versus 50%? Because D also divides by each residual liquid fraction. Removing 90% leaves 10%, while removing 50% leaves 50%; calculate 9 and 1 first, then divide to obtain 9. Conditions must match, and these values are teaching assumptions.
 
 Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.
+
+## Audit 2026-11-03
+
+Rechecked against the cached publisher main text (§§2–3.5, Tables 1–3, Figs. 3, 7, 8, 9, 10 viewed as images) and the complete DOCX SI text (S1–S9, Tables S1–S2).
+
+- Corrected `#application` (zh and en): the low-uptake competitors in main Fig. 10 were listed as Ca, Zn, Cu and Fe. The Fig. 10 x-axis shows Eu, Y, Al, Ca, Cu, Mn and Zn; Fe is not plotted. The text now reads Al, Ca, Cu, Mn and Zn. The earlier reading-map line above (“CaZnCuFe lowbars”) is superseded by this correction. Not part of the lesson layer; `lessons.json` is unaffected.
+- Verified unchanged: Table 2 β 32.349/53.055/47.061 at equilibrium pH 3.49; Fig. 3 equilibrium pH 3.45 and orders; Table 1 C/N 7.403→8.433 and 90.13%; Table 3 descriptors and the SI S9 HOMO/LUMO label reversal; Fig. 7 slopes 1.0576 (R² 0.9976) and 0.51045 (R² 0.98082); SI Table S2 kinetics and the 3.01/2.906 prose ambiguity; SI S8 Langmuir slope 0.0303 → ~33 mg/g; Fig. 8 fifth desorption bar below 100%; Fig. 9 water slightly lower and 1 M HNO₃ substantially lower uptake; all condition rows; teaching D/β calculation (90/50 → 4500/500 mL/g, β = 9).
+
+Second-pass corrections (site-wide audit):
+
+- Selectivity section (zh/en): the condition conflict already recorded in this ledger is now disclosed on the page. SI §6 / Fig. S6 gives β 32.349/53.055/47.061 “when the ratio of solid to liquid is 2:1” at pH 3.82; the main text gives the same values at equilibrium pH 3.49.

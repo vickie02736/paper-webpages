@@ -58,3 +58,9 @@ Reread main Figs.1–3 discussion and SI S1/S3/S13 descriptions. Kept final 160-
 Reader task: Check: does recovery after drying prove an unchanged wet structure for a year? No. SI Fig. S3 measures a sample redried after a year of hydrated storage. It supports recovery after drying, not unchanged wet-state connections, leaching or adsorption performance throughout storage.
 
 Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.
+
+## Audit 2026-11-03
+
+Second-pass content audit of the site-wide explainer review (`reports/explainer-audit/content-findings.md`). Each correction cites its source location; claims not listed were rechecked and left unchanged.
+
+- 160 H₂O/u.c. state (`page.js`, zh/en): “C3 broadens” → “all peaks broaden … C3 exhibits two components” (main Results, Fig. 1c paragraph).

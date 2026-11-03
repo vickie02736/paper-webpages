@@ -59,3 +59,9 @@ Rechecked main assembly/Fig10 captions, visually inspected SI Eq11 on renderedp7
 Reader task: Check: does exceeding U6N establish superiority over both parents? No. The SI single-ion Langmuir tables give ZIF-8 higher capacity parameters for all four REEs than the selected core–shell material. Acid response, capacity and reuse require separate comparisons with both baselines.
 
 Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.
+
+## Audit 2026-11-03
+
+Second-pass content audit of the site-wide explainer review (`reports/explainer-audit/content-findings.md`). Each correction cites its source location; claims not listed were rechecked and left unchanged.
+
+- Competition panel formula (`page.js`): “Sel = log(DREE / DX)” used an undefined D; now written as SI Eq. 11, Sel = log[(qₑ/Cₑ)REE ÷ (qₑ/Cₑ)X].

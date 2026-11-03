@@ -58,3 +58,12 @@ Reread main §§3.3/3.6, SI TableS3 and FigS14 caption/series. Preserved NH4-N b
 Reader task: Check: does a small ammonium-nitrogen concentration change prove no ammonium on the solid? No. The percentage must be read with the large background, measurement uncertainty and measurements of both phases. Site occupancy or product composition needs relevant compositional analysis; a small concentration difference is insufficient.
 
 Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.
+
+## Audit 2026-11-03
+
+Rechecked against the cached publisher main text (§§1–4, Tables 1–3; Figs. 3 and 4 viewed, Fig. 3h enlarged) and the DOCX SI text (Tables S2–S6).
+
+- Corrected `#ph` notice (zh and en): the page said Fig. 3h’s red curve crosses zero between plotted pH 2 and 3, contradicting the prose IEP ≈ 3.5. In main Fig. 3h the MIL-101(Cr)-NH-DTPA series starts at pH 3 (≈ +2.9 mV, matching prose “2.87 mV at pH 3.0”) and is ≈ −4 mV at pH 4, so it crosses zero between pH 3 and 4, consistent with ≈ 3.5. The notice now states this agreement and keeps the real inconsistencies: the Fig. 3g axis is NH₄⁺ concentration despite a pH caption, and the uptake maximum is pH 4 in §3.5 but pH 3.5 in §3.7. The earlier reading-map line above (“Fig3hredcrossbetweenplotted2and3, prose2.87mVatpH3vsgraphat2”) is superseded. Remaining minor point, not edited: the prose “−10.73 mV at pH 6.0” reads closer to the plotted pH 7 point (≈ −10.8) than pH 6 (≈ −10.3).
+- Corrected `#ammonium` (zh and en, P2): “some La points are below 70%” → in Fig. 4d the final La removal is ≈ 0.66–0.69 at all four NH₄⁺-N levels, i.e. every La bar is below 70%.
+- Neither sentence is in the lesson layer; `lessons.json` is unaffected.
+- Verified unchanged: §3.2 temperature-series q values and SI Table S2 areas/volumes; Table 1 and Table 2 values, ± and R²; Table 1 footnote conditions; SI Table S3; §3.3 COOH 0.317→0.473 and conclusion 0.357; SI Tables S4–S6 lnK/ΔG/ΔH/ΔS and the −RTlnK check (Eu 298 K → −8.63 vs −7.43); Fig. 3i later bars just below 60 mg/g; batch/kinetic/ammonium conditions; dose and 1%/75% teaching arithmetic.

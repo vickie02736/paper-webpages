@@ -46,3 +46,10 @@ Checked 2026-11-01. The shared byline uses the ordered manuscript authors and ex
 - [Reviewed manuscript author superscripts and printed affiliation block; unresolved individual mappings remain unverified](https://arxiv.org/pdf/2405.17428v3) — affiliations.
 
 Paper dates: published = 2025-05-01; accepted = unverified; preprint = 2024-05-27. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.
+
+## Audit 2026-11-03
+
+Second-pass content audit of the site-wide explainer review (`reports/explainer-audit/content-findings.md`). Each correction cites its source location; claims not listed were rechecked and left unchanged.
+
+- Open-question card (zh/en): “some overlap with MTEB training practices” made precise per §4.1 p. 6: “certain datasets (e.g., MSMARCO) are training splits of the MTEB Benchmark, which we follow the existing practices”.
+- Markup/copy: the English attention-heads slider label used a full-width colon (“attention heads：”); now “attention heads:”. The zh label is unchanged.

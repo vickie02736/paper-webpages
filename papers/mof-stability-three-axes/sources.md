@@ -48,3 +48,9 @@ Reread the review thermal/mechanical discussions and Box 1. Definitions and capi
 Reader task: Check: why does a TGA plateau not establish intact pores? TGA measures net mass change. Rearrangement or pore collapse can occur without a corresponding large loss of matter. Diffraction and pore measurements, with heating conditions, are still needed.
 
 Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.
+
+## Audit 2026-11-03
+
+Second-pass content audit of the site-wide explainer review (`reports/explainer-audit/content-findings.md`). Each correction cites its source location; claims not listed were rechecked and left unchanged.
+
+- Shielding and catenation panel (zh/en): catenation was credited with limiting water access. The review attributes shielding of vulnerable bonds to hydrophobic substituents and node shielding (pp. 3–4); catenation “can enhance stability through favourable framework–framework interactions” and can impair large pore volumes (p. 7).

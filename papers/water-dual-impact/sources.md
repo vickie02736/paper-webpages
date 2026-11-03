@@ -61,3 +61,9 @@ Reread main methods and Fig. 3 pathway text (INT0 25.2 below reactants, TS0 2.8 
 Reader task: Check: if all levels shift upward by 10 kJ/mol, does the local barrier change? No. This is a hypothetical change of common reference: 12.8 − (−15.2) is still 28.0. The start-to-peak difference is unchanged. A level becoming positive or negative alone does not establish a barrierless reaction.
 
 Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.
+
+## Audit 2026-11-03
+
+Second-pass content audit of the site-wide explainer review (`reports/explainer-audit/content-findings.md`). Each correction cites its source location; claims not listed were rechecked and left unchanged.
+
+- Barrier lesson (zh/en): the worked example uses TS0, which the paper describes as a water-repositioning step that “does not induce any significant energy or structural changes” (§2.3). Added that the Zn–O cleavage step is INT0′→TS1 (−25.2 → −6.5 kJ/mol, 18.7 kJ/mol; Fig. 3).

@@ -59,3 +59,10 @@ Checked 2026-11-01. The shared byline uses the ordered manuscript authors and ex
 - [Author information; About this article / publication history](https://www.nature.com/articles/s41467-024-48136-0) — dates.published, dates.accepted, affiliations, authors.
 
 Paper dates: published = 2024-05-09; accepted = 2024-04-18. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.
+
+## Audit 2026-11-03
+
+Second-pass content audit of the site-wide explainer review (`reports/explainer-audit/content-findings.md`). Each correction cites its source location; claims not listed were rechecked and left unchanged.
+
+- Hero lead (zh/en): “in humid flue gas” overstated the scope. The article says the analysis “could explain why CALF-20 accepts CO2 over water at low RH” (p. 4), and the cited selectivity holds “up to 40% relative humidity” (p. 1).
+- Markup: the `#flexibility` section heading `<h2>` was not closed; fixed (no text change).

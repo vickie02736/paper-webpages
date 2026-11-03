@@ -46,3 +46,10 @@ Checked 2026-11-01. The shared byline uses the ordered manuscript authors and ex
 - [Author-submitted arXiv manuscript; ordered author list and first submission date (separate from formal publication)](https://arxiv.org/abs/2401.00368v3) — dates.preprint.
 
 Paper dates: published = 2024-08; accepted = unverified; preprint = 2023-12-31. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.
+
+## Audit 2026-11-03
+
+Second-pass content audit of the site-wide explainer review (`reports/explainer-audit/content-findings.md`). Each correction cites its source location; claims not listed were rechecked and left unchanged.
+
+- Loss card note (zh/en): hard-negative mining applies to public datasets without hard negatives in the full-data mixture (“we use mE5base to mine top 100 hard negatives”, Appendix A p. 12), not to synthetic templates.
+- Multilingual limit card (zh/en): the low-resource gap is the authors’ attribution (“We attribute this to the fact that Mistral-7B is predominantly pre-trained on English data”, §4.4 p. 7), now stated as such.

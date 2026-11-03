@@ -219,3 +219,9 @@ Checked 2026-11-01. The shared byline uses the ordered manuscript authors and ex
 - [Author information; About this article / publication history](https://www.nature.com/articles/s41524-024-01427-y) — dates.published, dates.accepted, affiliations, authors.
 
 Paper dates: published = 2024-10-08; accepted = 2024-09-26. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.
+
+## Audit 2026-11-03
+
+Second-pass content audit of the site-wide explainer review (`reports/explainer-audit/content-findings.md`). Each correction cites its source location; claims not listed were rechecked and left unchanged.
+
+- P1, collapsed VDOS discussion (zh/en): “low frequencies = collective framework motion” corrected. Article pp. 6–7: below 1700 cm⁻¹ the bands are carboxylate/phenylene stretches and C–H bending (1300–1650), ring deformation (600–1200) and Zn–O modes (200–600); collective atomic vibrations and lattice modes lie below 200 cm⁻¹ (MOF-5) and below 300 cm⁻¹ (ZIF-8).

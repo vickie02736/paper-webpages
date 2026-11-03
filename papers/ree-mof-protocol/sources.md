@@ -75,3 +75,9 @@ Reread final main Procedure4/Fig3 and Fig6C/Procedure3 plus relevant SI. Acid di
 Reader task: Check: why do four high-removal loadings not prove four successful regenerations? Because the adsorbed REEs were not removed between loadings. This does not test desorption, regenerant damage, post-regeneration selectivity or final product purity.
 
 Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.
+
+## Audit 2026-11-03
+
+Second-pass content audit of the site-wide explainer review (`reports/explainer-audit/content-findings.md`). Each correction cites its source location; claims not listed were rechecked and left unchanged.
+
+- Beads/cells paragraph (zh/en): “depends on dose and 24/48/72 h exposure” corrected. Supplementary Fig. 14 (SI p. 10) shows viability ~85–90% at every dose at 24/48 h and ~60–65% at every dose at 72 h; the caption reports no significant reduction during adsorption timescales. Values read from the plotted bars.

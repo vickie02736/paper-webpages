@@ -2564,8 +2564,8 @@
           "Mix two linker feeds"
         ],
         [
-          "TPA 是对苯二甲酸，TMA 是均苯三甲酸。用部分 TMA 替代 TPA，作者获得带额外羧酸基团的材料；10/25 是投料标签。",
-          "TPA is terephthalic acid and TMA is trimesic acid. Partial replacement with TMA yields materials with extra carboxylic-acid groups; 10/25 are feed labels."
+          "TPA 是对苯二甲酸，TMA 是偏苯三甲酸（1,2,4-苯三甲酸）。用部分 TMA 替代 TPA，作者获得带额外羧酸基团的材料；10/25 是投料标签。",
+          "TPA is terephthalic acid and TMA is trimellitic acid (benzene-1,2,4-tricarboxylic acid). Partial replacement with TMA yields materials with extra carboxylic-acid groups; 10/25 are feed labels."
         ]
       ],
       [
@@ -3118,8 +3118,8 @@
       "Support, groups and pores change together—not just pore size"
     ],
     "foundation": [
-      "SBA-15 是多孔二氧化硅，MIL-101(Cr) 是含铬的金属–有机框架。它们分别引入含膦酸基团和 PMIDA 相关基团来结合 Lu（镥）或 Y（钇）。两条路线不仅改变孔尺寸，也改变结合化学。",
-      "SBA-15 is porous silica and MIL-101(Cr) is a chromium metal–organic framework. They receive phosphonic-acid and PMIDA-related groups, respectively, to bind Lu (lutetium) or Y (yttrium). The routes differ in binding chemistry as well as pore dimensions."
+      "SBA-15 是多孔二氧化硅，MIL-101(Cr) 是含铬的金属–有机框架。它们分别引入 1,4-苯二甲酰二酰胺（1,4-PA，酰胺类）基团和含膦酸、羧酸的 PMIDA 相关基团来结合 Lu（镥）或 Y（钇）。两条路线不仅改变孔尺寸，也改变结合化学。",
+      "SBA-15 is porous silica and MIL-101(Cr) is a chromium metal–organic framework. They receive 1,4-phthaloyl diamide (1,4-PA, amide-type) groups and PMIDA-related groups bearing phosphonic and carboxylic acids, respectively, to bind Lu (lutetium) or Y (yttrium). The routes differ in binding chemistry as well as pore dimensions."
     ],
     "terms": [
       [

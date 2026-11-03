@@ -121,3 +121,13 @@ Both SI pages were reread as text and visually inspected this pass. The records 
 **Formulas and scope.** G, Δ, ‡, reactants/products/transition state, specified conditions and use of endpoint subtraction are explained before the existing mechanism formulas. GCMC and MD definitions precede their detailed simulation limitations. Basic terms remain visible; research depth reveals technical assumptions and application extensions. None of the new interactions calculates a physical trajectory or synthesizes experimental data.
 
 **Implementation:** all 11 section IDs, 18 original selection states, source links and `data.js` remain. Adds three cumulative reading depths, three figure-reading states and three inference responses. Image load/failure/retry and accessible bilingual alt/status are explicit. No shared resources or catalogue dates changed. See [current validation](../../reports/standards-high-school-transfer/review.md); these changes are local and do not modify the published version.
+
+## Audit 2026-11-03
+
+Scientific re-check against the cached publisher HTML/clean text and SI PDF (SHA-256 `5721993…7511`, unchanged). Verified unchanged: Table 1 rows; §4.1–4.4 category criteria; Tables S2/S4/S5/S6/S8/S16/S21 entries, confidence grades and printed page numbers for all six dossiers; §5.2.1–5.2.2 design numbers (480/510/530 °C → 10/20/50% BET; 550 °C ZnO@C; 34% RH 14 d; 2 h water; ~30% PECVD loss; 1 d core–shell); Fig. 28 and eqs. 1–2; Figs. 30–31 attribution; MIL-100(Cr) prose/table discrepancy.
+
+Corrections:
+
+- `data.js` material MIL-100(Fe) observation: “retained performance over 40 water-isobar cycles” → “slight water-capacity decrease over 40 cycles with no change in PXRD or subsequent BET” (zh/en). SI Table S5, p. S8, SI ref. 37.
+- `index.html` `#classes` asterisk callout and `data.js` category 0 rule: “acidic/basic/boiling water” → “acidic/basic/high-temperature water” (zh 沸水 → 高温水). Main §4.1 (“acidic/basic or high temperature conditions … 1 day”).
+- `index.html` `#affinity` details: “discussing types I, II, IV and V” → “1985 IUPAC classes … discussing types I–VI” (zh/en). Main §1.2 and Fig. 3 describe types I–VI.

@@ -154,7 +154,7 @@
   <div class="grid3">
     <div class="panel"><div class="eyebrow">LOCAL</div><h3 class="paired"><span class="zh">局部化学</span><span class="en">Local chemistry</span></h3><p class="paired"><span class="zh">原子类型、邻居和键距离由 CGCNN 变成逐原子的 embedding，保留金属簇与 linker 的差异。</span><span class="en">Atom types, neighbours and bond distances become atom-wise embeddings through CGCNN, retaining differences between metal clusters and linkers.</span></p></div>
     <div class="panel"><div class="eyebrow" style="color:var(--mof-purple)">GLOBAL</div><h3 class="paired"><span class="zh">全局孔结构</span><span class="en">Global pore structure</span></h3><p class="paired"><span class="zh">甲烷探针产生 3D energy grid，再切成 5 Å patch，表达可进入的空间与势能分布。</span><span class="en">A methane probe produces a 3D energy grid, split into 5 Å patches to describe accessible space and energy distribution.</span></p></div>
-    <div class="panel"><div class="eyebrow" style="color:var(--mof-amber)">TRANSFER</div><h3 class="paired"><span class="zh">迁移学习</span><span class="en">Transfer learning</span></h3><p class="paired"><span class="zh">先用无监督式的结构任务预训练，再用 5,000–20,000 个带标签样本微调性质头。</span><span class="en">Pre-train on structure-oriented tasks, then fine-tune a property head with only 5,000–20,000 labelled structures.</span></p></div>
+    <div class="panel"><div class="eyebrow" style="color:var(--mof-amber)">TRANSFER</div><h3 class="paired"><span class="zh">迁移学习</span><span class="en">Transfer learning</span></h3><p class="paired"><span class="zh">先用面向结构的任务预训练，再用 5,000–20,000 个带标签样本微调性质头。</span><span class="en">Pre-train on structure-oriented tasks, then fine-tune a property head with only 5,000–20,000 labelled structures.</span></p></div>
   </div>
 </section>
 
@@ -182,7 +182,7 @@
     <div class="panel task-card" id="taskCard"></div>
     <div class="panel">
       <div class="eyebrow paired"><span class="zh">共享的预测头</span><span class="en">Shared prediction head</span></div>
-      <div class="formula" style="margin-top:14px"><b>[CLS]</b> + atom tokens + <b>[SEP]</b> + 216 grid patches + <b>[VOL]</b><br><span style="color:var(--muted)">→ Transformer (L = 12, H = 768, A = 12) → MLP head</span></div>
+      <div class="formula" style="margin-top:14px"><b>[CLS]</b> + atom tokens + <b>[SEP]</b> + 216 grid patches + <b>[VOL]</b><br><span style="color:var(--muted)">→ Transformer (L = 12, H = 768, A = 12) → single dense-layer head</span></div>
       <p class="paired"><span class="zh">[VOL] 补回把能量网格统一到 30 Å 立方体时丢掉的原始晶胞体积信息。位置 embedding 与 modal-type embedding 逐元素相加。</span><span class="en">[VOL] restores original cell-volume information lost when energy grids are interpolated to a 30 Å cube. Position and modal-type embeddings are added element-wise.</span></p>
       <div class="callout note paired"><span class="zh">SI Note S2：只做 MTP 或 VFP 更有利于 H₂ uptake / diffusivity；MOC 更有利于 band gap；三任务一起时总体 MAE 最低。</span><span class="en">SI Note S2: MTP or VFP alone helps H₂ uptake / diffusivity, MOC helps band gap, and all three together give the lowest overall MAE.</span></div>
     </div>
@@ -230,9 +230,9 @@
   <div class="panel source-list">
     <ul>
       <li><a href="https://doi.org/10.1038/s42256-023-00628-2" target="_blank" rel="noopener">Nature Machine Intelligence · DOI 10.1038/s42256-023-00628-2</a></li>
-      <li><a href="https://doi.org/10.6084/m9.figshare.21155506" target="_blank" rel="noopener">Figshare · model, embeddings and fine-tuning data</a></li>
-      <li><a href="https://doi.org/10.6084/m9.figshare.21810147" target="_blank" rel="noopener">Figshare · 1 million hypothetical MOF CIF files</a></li>
-      <li><a href="https://github.com/hspark1212/MOFTransformer" target="_blank" rel="noopener">GitHub · MOFTransformer</a> · <a href="https://hspark1212.github.io/MOFTransformer" target="_blank" rel="noopener">documentation</a></li>
+      <li><a href="https://doi.org/10.6084/m9.figshare.21155506" target="_blank" rel="noopener">Figshare · <span class="paired"><span class="zh">模型、嵌入与微调数据</span><span class="en">model, embeddings and fine-tuning data</span></span></a></li>
+      <li><a href="https://doi.org/10.6084/m9.figshare.21810147" target="_blank" rel="noopener">Figshare · <span class="paired"><span class="zh">100 万个假想 MOF 的 CIF 文件</span><span class="en">1 million hypothetical MOF CIF files</span></span></a></li>
+      <li><a href="https://github.com/hspark1212/MOFTransformer" target="_blank" rel="noopener">GitHub · MOFTransformer</a> · <a href="https://hspark1212.github.io/MOFTransformer" target="_blank" rel="noopener"><span class="paired"><span class="zh">使用文档</span><span class="en">documentation</span></span></a></li>
     </ul>
     <p class="source paired"><span class="zh">主文页码按 Nature Machine Intelligence 文章页码记录；补充材料定位见同目录 sources.md。页面的 SVG、柱状图和交互反馈均为教学重绘或对表格的直接可视化。</span><span class="en">Page references use the article pagination in Nature Machine Intelligence; supplementary locations are listed in sources.md. SVGs, bars and feedback are teaching redraws or direct visualisations of reported tables.</span></p>
   </div>
@@ -266,7 +266,7 @@ function renderWalk(){
   '<div class="arrow">→</div>'+
   '<div class="node encoder-node'+active(state.walk>=2)+'"><strong>'+q('Transformer 编码器','Transformer encoder')+'</strong><small>12 blocks · H = 768 · A = 12</small></div>'+
   '<div class="arrow">→</div>'+
-  '<div class="node head-node'+active(state.walk===3)+'"><strong>'+q('[CLS] → MLP 性质头','[CLS] → MLP property head')+'</strong><small>'+q('迁移到目标性质','transfer to a target property')+'</small></div>';
+  '<div class="node head-node'+active(state.walk===3)+'"><strong>'+q('[CLS] → 单层全连接性质头','[CLS] → single dense-layer property head')+'</strong><small>'+q('迁移到目标性质','transfer to a target property')+'</small></div>';
  document.getElementById('walkDetail').innerHTML='<div class="eyebrow">'+q('步骤 '+(state.walk+1)+' / 4','STEP '+(state.walk+1)+' / 4')+'</div><h3>'+q(d.title[0],d.title[1])+'</h3><p>'+q(d.body[0],d.body[1])+'</p><dl><dt>'+q('证据','Evidence')+'</dt><dd>'+q(d.evidence[0],d.evidence[1])+'</dd></dl>';
  document.querySelectorAll('#walkSteps button').forEach(b=>b.classList.toggle('active',+b.dataset.walk===state.walk));
 }

@@ -58,3 +58,15 @@ Rechecked final main §3.6 trace conditions, §3.7/Fig7, reuse values and SI fig
 Reader task: Check: can high trace removal validate a capacity of 512.82 mg/g? No. This experiment supplies at most 0.4 mg/g and never approaches that capacity scale. The 512.82 mg/g value is a Langmuir parameter from another concentration series and must be judged using its data and model.
 
 Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.
+
+## Audit 2026-11-03
+
+Rechecked against the cached final PDF text (§§2–3.7, Tables 1–2), the PDF page 5 rendered at 400 dpi, the publisher figure assets for Figs. 3, 5 and 6, and the rendered SI page 2 (Figs. S1–S2).
+
+- Corrected the `#conditions` pH 3 branch (`page.js`, zh and en): it displayed 113.35 mg/g, and the inventory item 3 above stated that Fig. 3a annotates 3/113.35. The Fig. 3a bar label at pH 3 reads **111.35** mg/g (PDF p. 5 at 400 dpi and publisher asset nyas70074-fig-0003); 113.35 appears only in the §3.2 prose. The branch now shows the figure label 111.35, matching the other four values, which come only from Fig. 3a, and its note discloses the §3.2 value 113.35. Item 3 above is superseded on this point. Not in the lesson layer; `lessons.json` is unaffected.
+- Corrected a reagent typo in `#reuse` (zh and en, P2): “EDTACu” → “EDTA–Cu”, as written in §3.5.
+- Verified unchanged: synthesis amounts and conditions (§2.2); dose 5 mg/10 mL, 160 rpm, 120 min; BET 525.99 m²/g, 0.299 cm³/g, BJH 2.28 nm; Table 1 qm 512.82/500.00/375.94 (prose 375.93) and all displayed R²; 485.87 mg/g at 500 mg/L; Table 2 ΔG/ΔH/ΔS and the ΔH − TΔS = −75.599 check; SI S1 slope −2053.65 and Ea 17.074 kJ/mol (2053.65 × 8.314 ≈ 17.07 kJ/mol); three-REE 239.35/153.17/95.64 mg/g; seven-ion Lu ≈ 95 mg/g in Fig. 5a; cycles 312.25/120.52 mg/g and derived 64.27%/24.80%; Fig. 6b later points ≈ 3–7 µg/L with some above 5; trace 50 µg/L × 0.4 L / 0.05 g → 0.4 mg/g ceiling; XPS Cu 3.99→3.16 at%, Lu 0.11 at%; FTIR 538 cm⁻¹.
+
+Second-pass corrections (site-wide audit):
+
+- Thermodynamic discrepancy note (zh/en): added the explainer’s consistency check. The reported ΔG values (−6.217/−7.650/−9.995 kJ/mol at 303/313/323 K, Table 2) fall with temperature; a linear fit gives ΔS ≈ +0.189 kJ/(mol·K) and ΔH ≈ +51 kJ/mol, conflicting with the tabulated ΔH = −34.694 kJ/mol. Teaching calculation, not a sourced correction.

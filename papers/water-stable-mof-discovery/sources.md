@@ -85,3 +85,9 @@ Archive CSV raw row counts and final flags: US23634/1;CoRE8175/9;BW321058/34;hMO
 ## Local validation
 
 Original batch browser report and screenshots are in `reports/mof-ree-qa/discovery-*`; that batch has since been integrated. Current local revision checks are in `reports/discovery-quality-transfer/`. They are separate from this source audit and do not imply reader comprehension or publication.
+
+## Audit 2026-11-03
+
+Second-pass content audit of the site-wide explainer review (`reports/explainer-audit/content-findings.md`). Each correction cites its source location; claims not listed were rechecked and left unchanged.
+
+- Intuition paragraph in `#models` (zh/en): “the same MLP model” implied one trained model evaluated twice; the MLP is retrained on each split’s training set with that split’s selected features (ChemRxiv §2d; SI Table S10).

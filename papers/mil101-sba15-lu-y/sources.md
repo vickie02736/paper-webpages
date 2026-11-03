@@ -49,3 +49,10 @@ Reread main §2.3 SDM assumptions, Table2 (SBA-Y17.9/330.4), Fig6 and §3.2.2/Ta
 Reader task: Check: does a larger Sips Qₘ with high R² prove the sorbent holds more? No. It is a model estimate of a limit requiring near-saturation data and model checking. Agreement within the observed range does not independently validate a distant asymptote.
 
 Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.
+
+## Audit 2026-11-03
+
+Rechecked against the cached publisher main text (§§1–4, Tables 1–4); no independent SI is listed.
+
+- Corrected `#lesson-primer` (zh and en): the primer said SBA-15 receives phosphonic-acid groups. Main §1 and §2.1.1.1 state SBA-15 is grafted with 1,4-phthaloyl diamido-propyltriethoxysilane (1,4-PA-APTES, made from terephthaloyl dichloride and APTES), an amide-type ligand; the phosphonic group belongs to PMIDA on MIL-101 (§1, §3.1.2 FTIR ~900 cm⁻¹ –PO₃H₂, §3.2.1 “phosphonic, carboxylic, carbonyl and amine groups”). Text now names 1,4-PA (amide-type) for SBA-15 and PMIDA with phosphonic and carboxylic acids for MIL-101. This sentence is the `foundation[0]`/`foundation[1]` entry for this slug in `reports/quality-rollout/lessons.json`, which still holds the old wording and needs the same change.
+- Verified unchanged: Table 1 (810/0.93/8.11/2.06; 510/0.76/6.59/4.07; 1050/1.05/1.99/–) and wall-thickness recomputation; Table 2 all 24 values; Table 4 SDM and pseudo-order rows, including the h/s unit conflict and MOF–Y PSO qe 34.1 > Langmuir 25.3; conditions (0.01 g/50 mL, 2–40 mg/L, pH 5.0 ± 0.2, 25 ± 1 °C, 24 h; kinetics 5/10 mg/L, 120 rpm); regeneration (0.1 M HCl 6 h, 0.1 M NaOH, 100 °C, 10 mg/L, five cycles, >90%); ratios 3.73/1.41 and teaching molar conversion (0.3623/0.2846 mmol/g, 2.506/1.273).
