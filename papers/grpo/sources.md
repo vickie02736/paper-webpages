@@ -11,19 +11,19 @@
 
 ## Source locators
 
-§§2–4; §4.1 equations 3–5; Table 5; §5 and Appendix A; verl GRPO Advanced Extensions
+§§2–4; §4.1 equations 3–4; Table 5; §5 and Appendix A; verl GRPO Advanced Extensions
 
 ## Claim mapping
 
 ### background
 
-Source locator: §§2–3 data/pretraining; §4.1 Eqs.3–5
+Source locator: §§2–3 data/pretraining; §4.1 Eqs.3–4
 
 1. DeepSeekMath combines mathematical corpus mining, continued pretraining, instruction tuning, and reinforcement learning. It starts from DeepSeek-Coder-Base-v1.5 7B and mines 120B mathematical tokens. Its final reasoning performance cannot all be attributed to GRPO.
 
 ### mechanism
 
-Source locator: §§2–3 data/pretraining; §4.1 Eqs.3–5
+Source locator: §§2–3 data/pretraining; §4.1 Eqs.3–4
 
 1. Sample G answers for a question and score outcomes or intermediate steps. Under outcome supervision, all tokens in an answer share a normalized reward advantage. Process supervision constructs token advantages from subsequent step rewards rather than broadcasting one scalar.
 
@@ -31,9 +31,9 @@ Source locator: §§2–3 data/pretraining; §4.1 Eqs.3–5
 
 ### math
 
-Source locator: §§2–3 data/pretraining; §4.1 Eqs.3–5
+Source locator: §§2–3 data/pretraining; §4.1 Eqs.3–4
 
-1. Ri is answer i’s reward, Ti its valid token count, and ri,t=πθ/πold. Advantages encode relative rank within a group: both all-correct and all-wrong groups lack outcome-reward contrast. The demo uses population standard deviation and explicitly returns zero at zero variance. This concerns the reward gradient; a KL term may still update the policy.
+1. Ri is answer i’s reward, Ti its valid token count, and ri,t=πθ/πold; ε is the clip width and β the KL coefficient. Advantages encode relative rank within a group: both all-correct and all-wrong groups lack outcome-reward contrast. The demo uses population standard deviation and explicitly returns zero at zero variance. This concerns the reward gradient; a KL term may still update the policy.
 
 2. DrGRPO is subsequent work: it removes group standard-deviation scaling and replaces per-answer length averaging with a fixed scale. The default token-mean aggregation in verl also differs from the original paper’s equal weighting of sequences. These three settings must be distinguished.
 
@@ -47,7 +47,7 @@ Source locator: Table 5; §5 and Appendix A
 
 ### limits
 
-Source locator: Interpretive analysis of assumptions and scope in §§2–3 data/pretraining; §4.1 Eqs.3–5; empirical limits in Table 5; §5 and Appendix A
+Source locator: Interpretive analysis of assumptions and scope in §§2–3 data/pretraining; §4.1 Eqs.3–4; empirical limits in Table 5; §5 and Appendix A
 
 1. Binary-reward standard deviation varies with question difficulty, so normalization implicitly reweights questions. Removing a critic reduces resident-model overhead, but group sampling still costs compute.
 

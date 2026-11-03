@@ -43,7 +43,7 @@ Source locator: §2.4 empirical fit; §3.1 entropy dynamics; §4.1–4.2 Eqs.10�
 
 Source locator: §4.3 Table 2 (PDF p.12); Figures 9–10
 
-1. Table 2’s seven-benchmark average for Qwen2.5-32B is 45.8 for GRPO, 47.2 for Clip-Higher, 50.3 for Clip-Cov, and 52.2 for KL-Cov. AIME and AMC use avg@32. The aggregate spans benchmarks and is not a single-dataset accuracy.
+1. Table 2’s Avg. column for Qwen2.5-32B (weighting unstated in the paper; not the unweighted mean of the seven benchmarks, e.g. ≈45.2 for GRPO) is 45.8 for GRPO, 47.2 for Clip-Higher, 50.3 for Clip-Cov, and 52.2 for KL-Cov. AIME and AMC use avg@32. The aggregate spans benchmarks and is not a single-dataset accuracy.
 
 2. Different methods lead on different benchmarks: for 32B MATH-500, Clip-Cov scores 87.0 and KL-Cov 84.6. Their tradeoffs differ; aggregate improvements do not imply improvements on every component.
 
@@ -77,3 +77,7 @@ These are general definitions and worked teaching examples, not experimental obs
 - Evidence table (when present): exact transcribed values; the metric, model, comparison conditions, and source page are given beside the table. No values are inferred from plotted curves.
 - Limits and implementation notes distinguish paper claims, required assumptions, and later engineering choices.
 - Browser and numerical acceptance results are recorded in `reports/verl-validation.md`.
+
+## Version and audit notes
+
+- Audit 2026-11-03: Table 2 (PDF p.12) Avg. does not equal the unweighted mean of the seven listed columns (32B GRPO: 316.2/7 = 45.17 vs printed 45.8; KL-Cov 51.59 vs 52.2). The paper does not state the weighting; the page reports the printed Avg. column and labels it as reported.

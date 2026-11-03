@@ -43,7 +43,7 @@ Source locator: §5 Table 1 (PDF p.16); Table 3
 
 1. Table 1 reports AlpacaEval 2.0 length-controlled win rates of 17.11% for Mistral-7B-Instruct-v0.2 and 28.53% for SPPO iteration 3. The ordinary win rate is 31.02%; these metrics are not interchangeable.
 
-2. The general-capability average in Table 3 does not rise monotonically every round. Best-of-16 introduces inference-time reranking and must be compared separately from single-generation results. The verl MATH reproduction uses a different model and evaluation protocol.
+2. In Table 3 the Mistral-7B-SPPO general-capability average does not rise every round (66.67→66.75→66.40). Best-of-16 introduces inference-time reranking and must be compared separately from single-generation results. The verl MATH reproduction uses a different model and evaluation protocol.
 
 ### limits
 
@@ -76,4 +76,7 @@ These are general definitions and worked teaching examples, not experimental obs
 - Limits and implementation notes distinguish paper claims, required assumptions, and later engineering choices.
 - Browser and numerical acceptance results are recorded in `reports/verl-validation.md`.
 
-Version discrepancy: Table 1 of v5 prints 17.11 for the Mistral baseline; accompanying improvement annotations imply 17.10. We use the explicit table cell, and do not recompute the paper’s annotations.
+## Version and audit notes
+
+- Version discrepancy: Table 1 of v5 prints 17.11 for the Mistral baseline; accompanying improvement annotations imply 17.10. We use the explicit table cell, and do not recompute the paper’s annotations.
+- Version discrepancy: the v5 prose on PDF p.16 gives 28.52% for Mistral-7B-SPPO Iter3 (length-controlled), while Table 1 and its caption print 28.53. We use the table cell.
