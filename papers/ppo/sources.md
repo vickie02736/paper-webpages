@@ -33,9 +33,7 @@ Source locator: §§2–5; Eqs.7,9,11–12; Algorithm 1
 
 Source locator: §§2–5; Eqs.7,9,11–12; Algorithm 1
 
-1. πθ is the trainable policy, πold the sampling policy, r their probability ratio at the same state and action, A a fixed advantage, and ε the clip width. For A>0 and r>1+ε, the objective is (1+ε)A; for A<0 and r<1−ε, it is (1−ε)A. Otherwise it remains rA.
-
-2. The actor–critic implementation forms δt=rewardt+γV(st+1)−V(st), then sums later TD residuals with powers of γλ to obtain GAE. Value error and an entropy bonus can enter the joint objective. The paper also studies adaptive KL penalties, so PPO is a family rather than only a clipping formula.
+1. Read the core formula as follows: score each sampled action using probability ratio × advantage, compare that score with a clipped candidate, take the more conservative one, then average over a batch. This objective is maximized.
 
 ### evidence
 
@@ -77,3 +75,260 @@ These are general definitions and worked teaching examples, not experimental obs
 - Evidence table (when present): exact transcribed values; the metric, model, comparison conditions, and source page are given beside the table. No values are inferred from plotted curves.
 - Limits and implementation notes distinguish paper claims, required assumptions, and later engineering choices.
 - Browser and numerical acceptance results are recorded in `reports/verl-validation.md`.
+
+## Expanded teaching modules
+
+### #ppo-start — Start with reward, return, value and advantage
+
+Imagine an agent making three decisions and receiving 1 point only if it succeeds at the end. State s is the information it sees; action a is its choice. Policy π assigns probabilities to the available actions in that state. Parameters θ are the adjustable numbers in its neural network.
+
+Immediate reward Rₜ is the score at this step. Return Gₜ adds this and later rewards. The discount γ (gamma, from 0 to 1) weights future rewards: one step away gets γ, two steps away get γ². This page uses capital R for reward to distinguish it from probability ratio r.
+
+With rewards [0,0,1] and γ=0.9, the first reward is 0 but its return is 0+0.9×0+0.9²×1=0.81. A later outcome can therefore inform an earlier decision.
+
+Value V(s) estimates expected return from a state when following the policy. Q(s,a) estimates return after first choosing a and then following that policy. Advantage A=Q−V measures how much better that action is than usual behavior in the state; it is neither the immediate reward nor a success probability.
+
+The true Q and V are usually unknown. The actor assigns action probabilities; the critic predicts V. Sampled outcomes and value predictions produce an estimated advantage Â. The hat means an estimate, which can contain noise and error.
+
+```text
+Gₜ = Rₜ + γRₜ₊₁ + γ²Rₜ₊₂ + …
+A(s,a) = Q(s,a) − V(s)
+```
+
+Definitions: GAE v6, §2, Eqs. 4–5 (discounted values and advantage); the example is not an experiment.
+
+### #ppo-loop — One PPO iteration: what stays fixed and what changes?
+
+This is a teaching decomposition of the paper’s actor–critic algorithm. Select a stage to inspect its inputs and outputs. Arrows show data flow and the outer loop; no model is being trained.
+
+Source: PPO v2, p. 5, Eqs. 9, 11–12 and Algorithm 1.
+
+### #ppo-anchor-question — Why not reuse the first batch forever?
+
+
+
+### #ppo-symbols — Read the symbols before the operations
+
+
+
+Source: PPO v2, p. 3, Eqs. 6–7 and Figure 1; examples are teaching calculations.
+
+### #ppo-ratio — ① Probability ratio: how much more likely is the same action?
+
+r=new probability÷old probability. If old=0.2 and new=0.3, r=1.5: the probability is 1.5 times its old value, a 50% relative increase and a 10-percentage-point absolute increase. A ratio is not a probability and can exceed 1.
+
+r=1 means this action’s probability in this state is unchanged; r>1 means increased; r<1 means decreased. State and action must match and the old probability must be positive. Implementations often exponentiate the difference of log probabilities.
+
+Here log is the natural logarithm and exp(x)=eˣ is its inverse. Since log p−log q=log(p/q), subtracting logs and exponentiating is equivalent to dividing probabilities, often useful when probabilities are very small.
+
+```text
+rₜ(θ) = πθ(aₜ|sₜ) / πold(aₜ|sₜ)
+rₜ(θ) = exp(log πθ(aₜ|sₜ) − log πold(aₜ|sₜ))
+```
+
+Source: PPO v2, p. 3, Eqs. 6–7 and Figure 1; examples are teaching calculations.
+
+### #ppo-score — ② Why multiply by advantage? Start with unclipped rA
+
+A>0 means better than baseline: increasing its probability increases rA. For A<0, decreasing its probability makes rA less negative, also increasing the objective. A=0 supplies no actor update signal from this term.
+
+For A=−1, moving r from 1 to 0.5 changes rA from −1 to −0.5. Since −0.5>−1, maximization encourages choosing that action less often. “Beneficial” here means the direction indicated by the advantage estimate, not a guarantee of higher real returns.
+
+Source: PPO v2, p. 3, Eqs. 6–7 and Figure 1; examples are teaching calculations.
+
+### #ppo-clamp — ③ clip produces a candidate value
+
+With ε=0.2, the interval is [0.8,1.2]. clip returns 0.8 below that interval, 1.2 above it, and the input inside it. It changes a candidate ratio in the objective; it does not overwrite the model’s probabilities.
+
+A larger ε moves the plateau farther away, allowing a larger beneficial-direction change before extra incentive disappears. Actual update size is not determined by ε alone.
+
+```text
+clip(r, 1−ε, 1+ε) = min(max(r, 1−ε), 1+ε)
+```
+
+Source: PPO v2, p. 3, Eqs. 6–7 and Figure 1; examples are teaching calculations.
+
+### #ppo-min — ④ Why min as well? Retain the penalty for worsening changes
+
+Because the objective is maximized, taking the smaller value is conservative. With A=1 and r=1.5, the raw term is 1.5 and the clipped candidate is 1.2. Choosing 1.2 removes extra reward for increasing beyond the upper boundary.
+
+With A=−1 and r=0.5, the raw term is −0.5 and the clipped candidate is −0.8. min selects −0.8, the more negative number. Reducing r further no longer improves this sampled term, so the negative-advantage plateau is on the lower side.
+
+Conversely, A=−1 and r=1.5 makes a bad action more likely: min(−1.5,−1.2)=−1.5 retains the penalty. Using clip alone would plateau on both sides and erase the corrective signal in this worsening direction too.
+
+Source: PPO v2, p. 3, Eqs. 6–7 and Figure 1; examples are teaching calculations.
+
+### #ppo-piecewise — Work through all four cases
+
+
+
+```text
+ℓ(r,A) = (1+ε)A   if A>0 and r>1+ε
+ℓ(r,A) = (1−ε)A   if A<0 and r<1−ε
+ℓ(r,A) = rA       otherwise
+```
+
+Source: PPO v2, p. 3, Eqs. 6–7 and Figure 1; examples are teaching calculations.
+
+### #ppo-average — ⑤ From one term to a batch: average over samples
+
+Capital L is the batch objective; lowercase ℓ is one sampled term. Ê means add the terms and divide by sample count B. Terms 1.2 and −0.8 average to 0.2. This is a surrogate value, not a success rate or the actual reward of this iteration.
+
+Within an actor update on this batch, states, actions, old probabilities and advantages are fixed. Changing θ changes current probabilities and therefore r. A plateaued sampled term stops contributing a gradient, but other samples, value terms or entropy terms may still change shared parameters.
+
+Σ means summation, with i running from 1 to B. Training software usually minimizes a loss, so negate the objective: Jactor=−LCLIP. Minimizing Jactor is equivalent to maximizing LCLIP; it does not reverse the intended learning direction.
+
+```text
+LCLIP(θ) = (1/B) ∑ᵢ₌₁ᴮ ℓ(rᵢ(θ), Âᵢ)
+Jactor(θ) = −LCLIP(θ)
+```
+
+Source: PPO v2, p. 3, Eqs. 6–7 and Figure 1; examples are teaching calculations.
+
+### #ppo-gradient — From scores to parameter updates: why log and gradients?
+
+∇θ is the vector describing how the objective changes when each parameter changes slightly. Moving a small step along it is gradient ascent. Code usually uses descent, so it minimizes Jactor=−LCLIP. Learning rate η is distinct from clip width ε.
+
+Off the plateau, the chain rule gives ∇θ(rA)=A r ∇θ log πθ. Since ∇ log π=(∇π)/π, multiplying by r=πθ/πold gives the same derivative. At θ=θold, where r=1, this matches the ordinary policy-gradient term A∇ log π.
+
+At an active clipping boundary there is a kink and generally no unique derivative. A numerical library can choose a subgradient convention. This page labels the kink rather than presenting one software convention as the unique mathematical answer.
+
+```text
+θ ← θ + η ∇θLCLIP(θ)
+∇θ(rₜÂₜ) = Âₜ rₜ ∇θ log πθ(aₜ|sₜ)
+```
+
+Source: PPO v2, §2.1 Eqs. 1–2 and §3 Eqs. 6–7; the chain rule is a teaching derivation.
+
+### #ppo-importance — Why use old-policy data to evaluate a new policy?
+
+At a fixed state s, weighting old-policy actions by πθ/πold changes an action average into a new-policy average. This requires old-policy support wherever the new policy has probability.
+
+The new policy may also visit different states. Since these states still come from the old policy, rA is a local surrogate, not an exact correction of the new policy’s full trajectory distribution or a guarantee about real return. Clipping modifies this surrogate further.
+
+```text
+∑ₐ πold(a|s) [πθ(a|s)/πold(a|s)] A(s,a)
+= ∑ₐ πθ(a|s) A(s,a)
+```
+
+Source: PPO v2, §§2.2–3, Eqs. 3–7; the fixed-state reweighting identity is a teaching derivation.
+
+### #ppo-gae — Where advantage comes from: how much better than expected?
+
+The critic predicts future return V(sₜ). After acting, we observe reward Rₜ and reach a new state with estimated remaining return V(sₜ₊₁). Thus Rₜ+γV(sₜ₊₁) is an updated estimate. Subtracting the previous V(sₜ) gives temporal-difference (TD) residual δₜ.
+
+One residual can be noisy. Generalized advantage estimation (GAE) sums this and later residuals with powers of γλ. λ (lambda, from 0 to 1) controls the horizon: λ=0 uses only this step; larger λ weights later residuals more heavily. It does not simply enlarge every advantage because residuals can have either sign.
+
+```text
+δₜ = Rₜ + γV(sₜ₊₁) − V(sₜ)
+Âₜ = δₜ + γλδₜ₊₁ + (γλ)²δₜ₊₂ + …
+```
+
+Source: PPO v2, p. 5, Eqs. 9, 11–12 and Algorithm 1.
+
+### #ppo-gae-lab — Calculate a three-step trajectory
+
+Teaching assumptions: R=[0,0,1], V=[0.4,0.5,0.6,0], and true termination after step 3. Terminal value is 0. This recomputes advantages without retraining the critic; V remains fixed when γ changes.
+
+Source: PPO v2, p. 5, Eqs. 9, 11–12 and Algorithm 1.
+
+### #ppo-gae-sum — GAE summation limits and the final state
+
+Here t=0,…,T−1 indexes T actions and sT is the final state. Sum from l=0 to T−1−t; equivalently set ÂT=0 and recurse backward. At λ=1, intermediate value terms cancel, leaving discounted rewards plus the final-state bootstrap minus current value.
+
+At true termination V(sT)=0. If collection stops because its segment length is reached but the environment continues, retain V(sT) as an estimate of future return; truncation is not always termination. Smaller λ usually reduces dependence on distant random outcomes but relies more on possibly inaccurate values. This bias–variance tradeoff has no universally optimal setting.
+
+Version note: PPO v2 p. 5 Eqs. 10–11 print the final exponent as T−t+1, inconsistent with the preceding powers ending at index T−1. This page uses explicit summation limits with final exponent T−1−t, cross-checked against GAE §3 Eq. 16, rather than transcribing that typesetting.
+
+```text
+Âₜ = ∑ₗ₌₀ᵀ⁻¹⁻ᵗ (γλ)ˡ δₜ₊ₗ
+Âₜ = δₜ + γλÂₜ₊₁,    ÂT = 0
+λ=1: Âₜ = ∑ₗ₌₀ᵀ⁻¹⁻ᵗ γˡRₜ₊ₗ + γᵀ⁻ᵗV(sT) − V(sₜ)
+```
+
+Source: PPO v2, §5; GAE v6, §3, Eqs. 10–16.
+
+### #ppo-joint — The joint objective: policy, value error and entropy
+
+The policy term LCLIP favors actions with better estimated advantage. Value error LVF=(Vθ−Vtarget)² trains the critic and carries a minus sign because the combined objective is maximized. Vtarget is a fixed value-training target; a common construction adds fixed Â to the sampled value estimate, but implementations must be checked.
+
+Entropy H measures how spread out the action distribution is. For discrete actions, H=−Σπ log π; concentration on one action lowers entropy. A positive entropy coefficient encourages exploration without guaranteeing a good policy. c₁ and c₂ weight value error and entropy.
+
+This decomposes Eq. 9 for a shared-parameter joint objective. Actor and critic can also be optimized separately. The continuous-control experiments in §6.1 do not share their parameters and use no entropy bonus, so these terms are not mandatory in every PPO experiment.
+
+```text
+Ltotal = Êₜ[ℓₜCLIP − c₁(Vθ(sₜ)−Vₜtarget)² + c₂H(πθ(·|sₜ))]
+Jtotal = −Ltotal
+```
+
+Source: PPO v2, p. 5 Eq. 9 and p. 6 §6.1; H denotes the paper’s S.
+
+### #ppo-kl — PPO also includes a KL-penalty variant
+
+KL measures a difference between complete action distributions, rather than only one sampled action. The paper uses KL(πold∥πθ): old-policy probabilities weight log ratios of old to current probabilities. KL is nonnegative but asymmetric; reversing it generally changes the value.
+
+The KL-penalty objective subtracts β×KL; larger β penalizes the same distribution change more. In the paper, measured d>1.5dtarget doubles β and d<dtarget/1.5 halves it for the next update; otherwise β stays unchanged. This is a soft penalty, not a guarantee that d≤dtarget.
+
+TRPO approximately solves an optimization problem with a mean-KL constraint. PPO-Clip instead modifies the objective for multiple epochs of first-order minibatch optimization. KL against a long-term reference in LLM alignment has a different role; πold cannot simply be replaced by πref.
+
+```text
+KL(πold ∥ πθ) = ∑ₐ πold(a|s) log[πold(a|s)/πθ(a|s)]
+LKL = Êₜ[rₜÂₜ − β KL(πold(·|sₜ) ∥ πθ(·|sₜ))]
+```
+
+Source: PPO v2, §2.2 Eqs. 3–5; §4 Eq. 8 and the β adaptation rule.
+
+### #ppo-protocol — How were these scores obtained?
+
+Each environment is trained for one million timesteps. Mean total reward over the final 100 episodes is linearly normalized within that environment, then averaged over 21 runs: 7 environments × 3 random seeds. Policies use a two-layer MLP with 64 units per layer, tanh activations and Gaussian actions.
+
+0.82 is a normalized score in this comparison, not an 82% success rate or proof that ε=0.2 is universally optimal. The −0.39 no-clipping score reflects a very poor HalfCheetah result; the table provides no numerical uncertainties to turn into error bars.
+
+Source: PPO v2, p. 6 §6.1 and Table 1.
+
+### #ppo-kl-results — Expand the remaining KL comparisons in Table 1
+
+
+
+Source: PPO v2, Table 1; adaptive KL starts with β=1.
+
+### #ppo-atari — Table 2: learning quickly and finishing well are different
+
+For each of 49 Atari games, each metric is averaged over 3 trials before comparing A2C, ACER and PPO. The entries count games won, not rewards or success rates. Mean reward throughout training emphasizes learning speed; the last 100 episodes emphasize final performance.
+
+Source: PPO v2, p. 8 §6.4 and Table 2.
+
+### #ppo-check-min — Check: does A=−1, r=1.5, ε=0.2 reach a plateau?
+
+
+
+### #ppo-check-kl — Check: why can KL grow after a plateau appears?
+
+
+
+### #ppo-llm — Keep these roles distinct in language models
+
+For a language model, the state is usually the prompt and generated prefix, and the action is the next token. The actor gives token probabilities and the critic estimates future return from that prefix; reward may arrive only after the response ends. This is a role mapping, not a claim that the 2017 paper ran LLM experiments.
+
+This page explains basic PPO-Clip. verl also supports different advantage estimators, KL configurations and extensions such as dual-clip. Engineering choices about old_log_prob, actual rollout probabilities, reference probabilities and token/sequence aggregation must be checked separately; this teaching curve does not represent every configuration.
+
+Source: pinned verl docs/algo/ppo.md, Key Components and Advanced Extensions; original paper and later implementation are distinct.
+
+
+## Version and audit notes
+
+## Audit 2026-11-03
+
+Rechecked PPO 1707.06347v2 against the PDF (SHA-256 unchanged), including visually inspected PDF pp. 3, 5, 6 and 8. Supplemented definitions with GAE 1506.02438v6 and retained the pinned verl documentation commit.
+
+- papers/ppo/index.html #math, Chinese/English: compact formula and GAE prose → symbol definitions, ratio interpretation, signed worked cases, batch averaging, chain-rule derivation, explicit GAE limits, joint-objective signs and directed KL. PPO §§2–5, Eqs.1–12, Figure 1 and Algorithm 1.
+- #ppo-loop, both languages: two prose method panels → retained panels plus five selectable stages; fixed old probabilities/advantages, K epochs and outer refresh are explicit. PPO Algorithm 1, p.5.
+- #lab: one objective curve → raw, clipped-candidate and min curves computed from the same inputs; explicit boundary lines, signed branches, kinks and zero advantage. PPO §3 Eq.7, Figure 1; synthetic inputs, not measured data.
+- #ppo-gae-lab: no worked trajectory → R=[0,0,1], V=[0.4,0.5,0.6,0], true termination, fixed critic values; default gamma=.9/lambda=.8 gives deltas [.05,.04,.4] and advantages [.28616,.328,.4]. Teaching data only.
+- #ppo-gae-sum: compact description without index caveat → explicit sum l=0..T-1-t and note that PPO v2 Eqs.10–11 print T-t+1 in the last exponent. Verified visually; consistent powers follow GAE §3 Eq.16. This is a stated reindexing, not silent transcription of the printed inconsistency.
+- #evidence: selected clip rows → preserved rows plus no-clip baseline, all remaining Table 1 rows in an expansion, full Table 2 at research depth; last-100-episode metric, 21-run aggregation, architecture and lack of tabulated uncertainty explicit. PPO pp.6,8.
+- #implementation: terse role note → token/prefix mapping and distinctions between original PPO and pinned verl extensions. No LLM performance claim added.
+- Original valid content and eight section anchors retained; original formula claims incorporated into the expanded derivation. See reports/ppo-formula-lesson.md for separate technical, scientific and editorial checks.
+- Source files retrieved 2026-11-03: 1707.06347v2.pdf from https://arxiv.org/pdf/1707.06347v2, SHA-256 e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b; 1506.02438v6.pdf from https://arxiv.org/pdf/1506.02438v6, SHA-256 5aa736ccf3517a1f36d0ca8146982e69beaf9a2bdccac2ae324f780743bc045e; verl-ppo.md from the pinned commit, SHA-256 48fe658d2c04ddef720daa978f8723746035fda62ac647fd28a8b97ea03b7c16. Public originals remain outside the repository in the persistent paper-source cache.
+
+- [GAE paper: value, advantage and generalized advantage estimation](https://arxiv.org/abs/1506.02438v6): §2 Eqs. 4–5; §3 Eqs. 10–16. Supplementary definitions and derivations, not PPO experimental evidence.

@@ -14,6 +14,34 @@ def loc(d,key=None):
 def link(url,p):return f'<a href="{E(url)}" target="_blank" rel="noopener">{tr(p)}</a>'
 def paras(ps,extra=False):return '\n'.join(tr(p,'p','data-level="research"' if extra and i else '') for i,p in enumerate(ps))
 def section(id,z,e,body,index):return f'<section id="{id}" aria-labelledby="{id}-title"><div class="section-num">{index:02}</div>'+tr(pair(z,e),'h2',f'id="{id}-title"')+body+'</section>'
+def lesson(d,area):
+ out=''
+ for b in d.get('lesson',{}).get(area,[]):
+  attrs=f'id="{E(b["id"])}" class="ppo-lesson-block"'
+  if b.get('level'):attrs+=f' data-level="{E(b["level"])}"'
+  content=paras(b.get('paragraphs',[]))
+  if b.get('formula'):
+   formula=b['formula']
+   code=tr(formula,'code') if isinstance(formula,dict) else f'<code>{E(formula)}</code>'
+   content+=f'<pre class="ppo-equation" tabindex="0">{code}</pre>'
+  if b.get('table'):
+   t=b['table'];content+='<div class="table-scroll" tabindex="0"><table><caption class="ppo-sr-only">'+tr(b['title'])+'</caption><thead><tr>'+''.join(tr(h,'th','scope="col"') for h in t['headers'])+'</tr></thead><tbody>'
+   for row in t['rows']:content+='<tr>'+''.join(tr(c,'th' if j==0 else 'td','scope="row"' if j==0 else '') for j,c in enumerate(row))+'</tr>'
+   content+='</tbody></table></div>'
+  if b.get('kind')=='flow':
+   content+='<ol class="ppo-flow">'+''.join('<li><button type="button" data-ppo-step="'+str(i)+'" aria-pressed="'+str(i==0).lower()+'" aria-controls="ppo-step-detail">'+tr(step['title'])+'</button></li>' for i,step in enumerate(b['steps']))+'</ol><p id="ppo-step-detail" class="callout" aria-live="polite">'+tr(b['steps'][0]['text'])+'</p>'+tr(pair('第 5 步完成后 → 第 1 步重新采样','After step 5 → return to step 1 and sample again'),'p','class="ppo-loop-return"')
+  if b.get('kind')=='gae':
+   content+='<div class="ppo-gae-controls">'
+   for key,z,e,value in [('gamma','折扣因子 γ','Discount γ',.9),('lambda','残差衰减 λ','Residual decay λ',.8)]:
+    content+='<div><label for="ppo-'+key+'">'+tr(pair(z,e))+f' <output id="ppo-{key}-value" for="ppo-{key}">{value}</output></label><input id="ppo-{key}" type="range" min="0" max="1" step="0.01" value="{value}"></div>'
+   content+='<button type="button" id="ppo-gae-reset">'+tr(pair('重置轨迹演算','Reset trajectory calculation'))+'</button></div><div id="ppo-gae-results" aria-live="polite" aria-atomic="true"></div>'
+  if b.get('source'):content+='<p class="source-note">'+(link(b['sourceUrl'],b['source']) if b.get('sourceUrl') else tr(b['source']))+'</p>'
+  if b.get('kind') in ('details','checkpoint'):
+   if b.get('answer'):content+=tr(b['answer'],'p')
+   out+=f'<details {attrs}>'+tr(b['title'],'summary')+content+'</details>'
+  else:out+=f'<div {attrs}>'+tr(b['title'],'h3')+content+'</div>'
+ return out
+
 LABELS={'Initial model':pair('初始模型','Initial model'),'No clipping':pair('无裁剪','No clipping'),'No clipping / penalty':pair('无裁剪或惩罚','No clipping / penalty'),'+ Overlong Filtering':pair('+ 超长过滤','+ Overlong filtering'),'+ Clip-Higher':pair('+ 上侧裁剪放宽','+ Clip-Higher'),'+ Soft Punishment':pair('+ 超长软惩罚','+ Soft punishment'),'+ Token Loss':pair('+ token 聚合损失','+ Token loss'),'+ Dynamic Sampling':pair('+ 动态采样','+ Dynamic sampling'),'Mistral Instruct':pair('Mistral 指令模型','Mistral Instruct'),'SPPO Iter1':pair('SPPO 第 1 轮','SPPO iteration 1'),'SPPO Iter2':pair('SPPO 第 2 轮','SPPO iteration 2'),'SPPO Iter3':pair('SPPO 第 3 轮','SPPO iteration 3')}
 for i,d in enumerate(DATA):
  slug=d['slug'];folder=ROOT/'papers'/slug;folder.mkdir(parents=True,exist_ok=True)
@@ -21,9 +49,10 @@ for i,d in enumerate(DATA):
  d['docPinned']=pinned
  source=link(d['source'],pair('原论文 ↗' if d['arxiv'] else '原文档 ↗','Source paper ↗' if d['arxiv'] else 'Source documentation ↗'))
  hero=tr(pair('论文精读 · '+d['short'] if d['arxiv'] else '文档专题 · '+d['short'],'Paper close reading · '+d['short'] if d['arxiv'] else 'Documentation study · '+d['short']),'p','class="eyebrow"')+tr(d['title'],'h1')+tr(d['lead'],'p','class="reading-intro"')+f'<p class="source-note">{E(d["sourceTitle"])} · {E(d["version"])}</p><div class="source-links">{source}<a href="../../?theme=ai&amp;q=verl#themes">'+tr(pair('人工智能与计算','Artificial Intelligence & Computing'))+'</a></div>'
- body=section('background','研究问题','The research problem',tr(d['foundation'],'p','class="callout"')+tr(d['background'],'p'),1)
- body+=section('mechanism','方法怎样工作','How the method works','<ol class="mechanism-list">'+''.join(tr(p,'li') for p in d['mechanism'])+'</ol><p class="source-note">'+source+' · '+loc(d,'mechanism')+'</p>',2)
- body+=section('math','从符号到目标','From notation to objective',tr(d['math'][0],'p')+f'<pre class="formula" data-level="mechanism"><code>{E(d["formula"])}</code></pre>'+paras(d['math'][1:])+tr(pair('公式位置与假设见下方来源；这些简式保留教学所需的变量，省略项在正文说明。','See the source locators below for assumptions. These teaching expressions retain the relevant variables; omissions are explained in the text.'),'p','class="source-note"')+'<p class="source-note">'+source+' · '+loc(d,'math')+'</p>',3)
+ body=section('background','研究问题','The research problem',tr(d['foundation'],'p','class="callout"')+tr(d['background'],'p')+lesson(d,'background'),1)
+ body+=section('mechanism','方法怎样工作','How the method works','<ol class="mechanism-list">'+''.join(tr(p,'li') for p in d['mechanism'])+'</ol><p class="source-note">'+source+' · '+loc(d,'mechanism')+'</p>'+lesson(d,'mechanism'),2)
+ formula_attrs='tabindex="0"' if d.get('lesson') else 'data-level="mechanism"'
+ body+=section('math','从符号到目标','From notation to objective',tr(d['math'][0],'p')+f'<pre class="formula" {formula_attrs}><code>{E(d["formula"])}</code></pre>'+paras(d['math'][1:])+tr(pair('公式位置与假设见下方来源；这些简式保留教学所需的变量，省略项在正文说明。','See the source locators below for assumptions. These teaching expressions retain the relevant variables; omissions are explained in the text.'),'p','class="source-note"')+'<p class="source-note">'+source+' · '+loc(d,'math')+'</p>'+lesson(d,'math'),3)
  body+=section('lab','动手改变一个条件','Change a condition',tr(pair('教学计算 · 控件只计算本页注明的公式，不运行模型训练或论文实验。' if slug!='verl-algorithm-baselines' else '文档记录筛选 · 不跨数据集排名，保留原始日志与配置来源。','Teaching computation · These controls evaluate the stated formulas, not model training or paper experiments.' if slug!='verl-algorithm-baselines' else 'Documentation filters · Records retain original logs and configurations; there is no cross-dataset ranking.'),'p','class="lab-note"')+'<div class="lab-layout"><div id="lab-controls" class="lab-controls"></div><div id="lab-results" class="lab-results" aria-live="polite" aria-atomic="true"></div></div>',4)
  ev=paras(d['evidence'],True)
  if d['rows']:
@@ -31,9 +60,9 @@ for i,d in enumerate(DATA):
   for label,value in d['rows']:ev+='<tr><th scope="row">'+tr(LABELS.get(label,pair(label,label)))+f'</th><td>{value}</td></tr>'
   ev+='</tbody></table></div>'+tr(pair('数值转录自原文。指标、模型、聚合方式和误差含义见本节正文，不同表格之间不作统一排名。','Values transcribed from the source. Models, aggregation, metrics, and uncertainty are specified in this section; tables across pages are not one leaderboard.'),'p','class="source-note"')+'</figure>'
  if d['evidencePage']:ev+='<p>'+link('https://arxiv.org/pdf/'+d['version']+'#page='+str(d['evidencePage']),pair(f'对照原 PDF 第 {d["evidencePage"]} 页 ↗',f'Compare PDF page {d["evidencePage"]} ↗'))+'</p>'
- body+=section('evidence','怎样阅读证据','Reading the evidence',ev,5)
- body+=section('limits','适用条件与局限','Conditions and limitations',paras(d['limits'])+tr(d['readingQuestion'],'p','class="callout"')+'<details>'+tr(pair('展开推理','Show reasoning'),'summary')+tr(d['readingAnswer'],'p')+'</details>',6)
- body+=section('implementation','verl 实现附注','Implementation notes for verl',tr(d['implementation'],'p')+'<p>'+link(pinned,pair('固定版本的实现文档 ↗','Pinned implementation documentation ↗'))+'</p>',7)
+ body+=section('evidence','怎样阅读证据','Reading the evidence',ev+lesson(d,'evidence'),5)
+ body+=section('limits','适用条件与局限','Conditions and limitations',paras(d['limits'])+tr(d['readingQuestion'],'p','class="callout"')+'<details>'+tr(pair('展开推理','Show reasoning'),'summary')+tr(d['readingAnswer'],'p')+'</details>'+lesson(d,'limits'),6)
+ body+=section('implementation','verl 实现附注','Implementation notes for verl',tr(d['implementation'],'p')+'<p>'+link(pinned,pair('固定版本的实现文档 ↗','Pinned implementation documentation ↗'))+'</p>'+lesson(d,'implementation'),7)
  related=[]
  if slug=='rollout-correction':related=[DATA[10]]
  elif slug=='rollout-correction-math':related=[DATA[9]]
@@ -46,15 +75,21 @@ for i,d in enumerate(DATA):
  # Only runtime fields enter the embedded data block. Source evidence remains in the ledger.
  payload={k:d[k] for k in ['slug','short','title']}
  if 'baselines'in d:payload['baselines']=d['baselines']
+ if d.get('lesson'):payload['ppoSteps']=next(b['steps'] for b in d['lesson']['mechanism'] if b.get('kind')=='flow')
  serialized=json.dumps(payload,ensure_ascii=False).replace('<',chr(92)+'u003c')
  bibliography='<script src="../../assets/bibliography.js"></script><script src="../../assets/paper-metadata.js"></script>' if d['arxiv'] else ''
+ lesson_css='<link rel="stylesheet" href="../../assets/ppo-lesson.css">' if d.get('lesson') else ''
+ runtime_version='?v=ppo-20261103' if d.get('lesson') else ''
+ lesson_js='<script src="../../assets/ppo-lesson.js"></script>' if d.get('lesson') else ''
  doc=f'''<!doctype html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="robots" content="noindex, nofollow, noarchive"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{E(d['title']['zh'])} · Research Atlas</title><meta name="description" content="{E(d['lead']['zh'])}"><link rel="stylesheet" href="../../assets/verl.css"><link rel="stylesheet" href="../../assets/bibliography.css"><link rel="stylesheet" href="../../assets/paper.css"></head>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="robots" content="noindex, nofollow, noarchive"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{E(d['title']['zh'])} · Research Atlas</title><meta name="description" content="{E(d['lead']['zh'])}"><link rel="stylesheet" href="../../assets/verl.css"><link rel="stylesheet" href="../../assets/bibliography.css"><link rel="stylesheet" href="../../assets/paper.css">{lesson_css}</head>
 <body class="atlas-paper verl-page" data-paper="{slug}">{depth}<main id="main"><header class="hero">{hero}</header>{body}<footer><a href="../../">Research Atlas</a> · {E(d['short'])}</footer></main>
 <script id="page-data" type="application/json">{serialized}</script>
-{bibliography}<script src="../../assets/paper.js"></script><script src="../../assets/verl-math.js"></script><script src="../../assets/verl.js"></script></body></html>'''
+{bibliography}<script src="../../assets/paper.js"></script><script src="../../assets/verl-math.js"></script>{lesson_js}<script src="../../assets/verl.js{runtime_version}"></script></body></html>'''
  (folder/'index.html').write_text(doc)
  (folder/'README.md').write_text(f'# {d["short"]}\n\n[讲解页 / Explainer](index.html) · [人工智能与计算 / Artificial Intelligence & Computing](../../?theme=ai&q=verl#themes)\n\n{d["lead"]["zh"]}\n\n{d["lead"]["en"]}\n\n- Source: [{d["sourceTitle"]}]({d["source"]})\n- [Evidence ledger](sources.md)\n- Chinese / English; Intuition / Mechanism / Research; keyboard-operable teaching interaction.\n- Editorial source: `references/verl-explainers.json`; render with `python3 scripts/build-verl-explainers.py`.\n- Shared runtime: `assets/verl.js`, `assets/verl-math.js`; no external runtime services.\n')
+ if d.get('lesson'):
+  with (folder/'README.md').open('a') as f:f.write('- Expanded formula lesson: symbol guide, signed clipping cases, five-stage training walkthrough and three-step GAE calculation; dedicated assets `assets/ppo-lesson.css` and `assets/ppo-lesson.js`.\n- Supplementary source: GAE `1506.02438v6`; see the version note on the PPO v2 GAE exponent.\n- Acceptance: `node scripts/check-ppo-lesson.cjs` (set `PAPER_BASE_URL` to a local HTTP server).\n')
  ledger=f'# {d["short"]} — source and claim ledger\n\n## Source identity\n\n- Primary: [{d["sourceTitle"]}]({d["source"]})\n- Adopted version: `{d["version"]}`. Checked 2026-11-02.\n- Implementation: [verl {d["doc"]}]({pinned}), commit `{d["docCommit"]}`.\n- Documentation SHA-256: `{d["docSha256"]}`.\n'
  if d['arxiv']:ledger+=f'- PDF SHA-256: `{d["pdfSha256"]}`.\n- Experimental evidence page visually inspected: PDF p. {d["evidencePage"]}; original images are not republished.\n'
  ledger+=f'\n## Source locators\n\n{d["locator"]}\n\n## Claim mapping\n\n'
@@ -64,7 +99,17 @@ for i,d in enumerate(DATA):
   for j,p in enumerate(ps):ledger+=f'{j+1}. {p["en"]}\n\n'
  ledger+='## Foundations and reading task\n\n'+d['foundation']['en']+'\n\nQuestion: '+d['readingQuestion']['en']+'\n\nAnswer: '+d['readingAnswer']['en']+'\n\nThese are general definitions and worked teaching examples, not experimental observations. Reader comprehension has been editorially reviewed; no human rereading study was conducted.\n\n'
  ledger+='## Visual and interaction audit\n\n- Method panels: author-method paraphrases, mapped to the method/algorithm locators above; not an experimental workflow run.\n- Formula panel: teaching notation, with omitted conditions and approximations explained in both languages.\n- Interactive lab: synthetic inputs except the baseline documentation filter. Outputs are deterministic evaluations of the displayed formulas, not measured performance.\n- Evidence table (when present): exact transcribed values; the metric, model, comparison conditions, and source page are given beside the table. No values are inferred from plotted curves.\n- Limits and implementation notes distinguish paper claims, required assumptions, and later engineering choices.\n- Browser and numerical acceptance results are recorded in `reports/verl-validation.md`.\n'
- if d.get('ledgerNotes'):ledger+='\n## Version and audit notes\n\n'+''.join(f'- {n}\n' for n in d['ledgerNotes'])
+ if d.get('lesson'):
+  ledger+='\n## Expanded teaching modules\n\n'
+  for area,blocks in d['lesson'].items():
+   for b in blocks:
+    ledger+=f'### #{b["id"]} — {b["title"]["en"]}\n\n'
+    ledger+='\n\n'.join(p['en'] for p in b.get('paragraphs',[]))+'\n\n'
+    if b.get('formula'):
+     formula=b['formula']['en'] if isinstance(b['formula'],dict) else b['formula']
+     ledger+='```text\n'+formula+'\n```\n\n'
+    if b.get('source'):ledger+=b['source']['en']+'\n\n'
+ if d.get('ledgerNotes'):ledger+='\n## Version and audit notes\n\n'+''.join((n+'\n' if n.startswith('## Audit ') else f'- {n}\n') for n in d['ledgerNotes'])
  for s in d.get('extraSources',[]):ledger+=f'\n- [{s["en"]}]({s["url"]}): {s["locator"]}\n'
  (folder/'sources.md').write_text(ledger)
 # The collection is navigation, not a sixteenth explainer or fictitious paper.

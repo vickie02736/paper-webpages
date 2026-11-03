@@ -11,3 +11,6 @@ Stop rewarding excessively large probability changes in the beneficial direction
 - Chinese / English; Intuition / Mechanism / Research; keyboard-operable teaching interaction.
 - Editorial source: `references/verl-explainers.json`; render with `python3 scripts/build-verl-explainers.py`.
 - Shared runtime: `assets/verl.js`, `assets/verl-math.js`; no external runtime services.
+- Expanded formula lesson: symbol guide, signed clipping cases, five-stage training walkthrough and three-step GAE calculation; dedicated assets `assets/ppo-lesson.css` and `assets/ppo-lesson.js`.
+- Supplementary source: GAE `1506.02438v6`; see the version note on the PPO v2 GAE exponent.
+- Acceptance: `node scripts/check-ppo-lesson.cjs` (set `PAPER_BASE_URL` to a local HTTP server).
