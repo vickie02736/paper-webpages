@@ -12,6 +12,7 @@ Scientific content findings for the site-wide explainer audit. Batches: AI/RL (A
 |---|---|---|---|---|
 | dppo | P1 | 把信赖域锚点写成“旧策略／旧到新”；论文要求以原始采样策略 μ 为锚点 | §5.2 Takeaway 2；附录 E；§7 设置 | 已修正（正文、机制、滑块与曲线标签） |
 | dppo | P2 | 表 2 写 UltraFeedback，§7.2 与图 10 写 HH-RLHF | 表 2；§7.2；图 10 | 已在页面与证据记录披露 |
+| dppo | P1 | verl 的 dppo_tv/dppo_kl 以 old_log_prob 为锚点，只有开启 bypass_mode 才等于论文要求的 μ；默认关闭，示例脚本未开启 | verl 3fdf2b5：core_algos.py、ray_trainer.py、rollout_corr.md | 已在实现附注说明 |
 | spin | P1 | 63.16（第 3 轮，表 4）与 6.78（第 2 轮，表 6）并列为同一结果；λ 被写成“更新尺度” | 附录表 4、6（p.17）；式 4.3；注 5.5 | 已修正；证据页 16→17；行标签 “SPIN Iter3” |
 | spin | P2 | 数据量比较归到附录 B；两处表格范围互相矛盾 | §6.3 图 5；附录 B 表 1、2、4–6 | 已修正 |
 | entropy-mechanism | P1 | 表 2 Avg. 列被称作“七基准平均”，但不等于七列简单平均（32B GRPO 45.17 vs 45.8） | 表 2（p.12），本轮复算 | 已修正（标为论文报告值） |
@@ -39,13 +40,14 @@ Scientific content findings for the site-wide explainer audit. Batches: AI/RL (A
 | mof-snap-active-learning | P1 | 1700 cm⁻¹ 以下被说成集体骨架运动 | 正文 pp.6–7 VDOS 段 | 已修正（本轮对文章 PDF 复核） |
 | pmida-mil101 | P1 | 等温线条件写成 0.2 mmol L⁻¹ | §2.3；图 4 图注 | 已修正（并行） |
 | pmida-mil101 | P2 | 1.2 mmol g⁻¹ 时式 4 无法复现 3.71–4.44 | §3.2–3.3；SI 表 S4 | 已在数据核对注记披露 |
+| pmida-mil101 | P2 | 要点 01 称“保留较高比表面积”，未说明由 2108 降至 1260 m² g⁻¹ | §3.1 | 已修正 |
 | dga-mil101-europium | P1 | 低吸附竞争离子写入 Fe，图 10 无 Fe | 图 10 横轴 | 已修正（并行） |
 | dga-mil101-europium | P2 | β 值的条件在正文与 SI 图 S6 不同 | SI §6／图 S6 | 已在页面披露 |
 | dtpa-mil101-ammonium | P1 | Zeta 曲线过零点区间描述错误 | 图 3h（放大复读） | 已修正（并行） |
 | hkust1-lutetium | P1 | pH 3 值取正文 113.35，图 3a 标注为 111.35 | 图 3a（400 dpi） | 已修正（并行） |
 | hkust1-lutetium | P2 | ΔG 随温度变化方向与负 ΔH 矛盾未说明 | 表 2（讲解者复算） | 已补充 |
 | moftransformer | P1 | 中文把监督预训练任务写成“无监督式” | ChemRxiv v2 Pre-training | 已修正（并行） |
-| moftransformer | P2 | “MLP head” 实为单层全连接头 | 预印本 Methods | 已修正 |
+| moftransformer | P2 | 正式版正文与图 1 称 “MLP head”，Methods 写作单层全连接；第一轮按预印本改成“单层全连接头”丢掉了论文自己的名称 | 正式版 p.310、p.316 | 已修正：保留 “MLP head” 并注明 Methods 细节 |
 | deeprag | P2 | 开源承诺出自可复现性声明而非结论；两种 T 混为一谈；终止判断箭头顺序；Avg 图未标节选 | p.10；式 3；算法 1；§3.1；表 1 | 已修正；`sources.md` §5.2→§5.4（并行） |
 | rag | P2 | 作者推测写成事实（BART 补全、RAG-Token 组合线索）；高亮总是最后一根柱；未标节选基线 | §4.3；表 1–2 | 已修正 |
 | self-rag | P2 | 检索来源按任务不同；“六项全部最佳”有 ASQA str-em 例外；英文全角逗号 | §4.3；§5.1；表 2 | 已修正（逗号为并行修正） |
@@ -67,18 +69,25 @@ Scientific content findings for the site-wide explainer audit. Batches: AI/RL (A
 | hydrolytic-stability-grading | P2 | 证据记录中的磷酸缓冲液定位应为 §5.2 | §5.2 p.3673 | 已修正（仅 `sources.md`） |
 | ln-local-coordination、ncu1-nanotraps、hans-lanm-dimer、ree-mof-targeted-review、ree-porous-framework-review、cmpo-mil101-ree、functionalized-cr-mil101、acrylic-mil101-scandium、uio66-buffer-stability、water-stable-mof-design、hydrolytic-stability-benchmark、mil100-water-matrices、defect-phosphate-uio66-yb | — | 无需修改 | — | — |
 
+## 原文复核（UCL 访问）
+
+第一轮因付费或拦截无法读取的原文，已通过 UCL 机构访问取得并复核，原文缓存于 `~/paper-sources/<slug>/`（不入库），哈希记入各页 `sources.md`。
+
+| 页面 | 内容 | 结论 |
+|---|---|---|
+| atz-btc-zn | 尾矿 “pH 约 5.5”、Langmuir R² 0.831–0.999、合成用量 | 均与正文及 SI（§2、§2.1、表 S3）一致，页面不变 |
+| lanm-protein-process | 页首 “12 kDa” | 正文引言写明 “a small (12 kDa)”，页面不变 |
+| pmida-mil101 | 11.86% 解吸损失、TCS 所在 SI 表、表 S4 | SI §S13、表 S11、表 S4 均确认；正文引用的“表 S10”是原文笔误；“较高比表面积”已补充数值 |
+| moftransformer | “QMOF v13”、表 1、页码 | 正式版全部确认；性质头名称见上表 |
+| boroxine-mof-ree | 表 S10–S12 的赣州归属、表 S7–S8 条件 | 正文明确写赣州并引用表 S10–S12；10 mg L⁻¹ 等条件一致，页面不变 |
+| dppo | verl 锚点 | 已按固定版本代码确认，见上表 |
+
 ## 未修改，仅记录
 
 | 页面 | 内容 | 原因 |
 |---|---|---|
-| atz-btc-zn | 尾矿 “pH 约 5.5”、Langmuir R² 0.831–0.999、合成用量 | Wiley 正文与 SI 返回 403，证据记录无对应条目；需原文确认 |
-| lanm-protein-process | 页首 “12 kDa” | 两轮结论冲突（一轮称正文未给出，另一轮称已核对） |
-| pmida-mil101 | 11.86% 解吸损失、TCS 所在 SI 表（S10 或 S11）、“高比表面积”措辞 | SI 不可得 |
-| moftransformer | “QMOF v13” | ChemRxiv 被 Cloudflare 拦截，正式版付费 |
-| boroxine-mof-ree | 表 S10–S12 是否对应赣州样品 | 仅表 S14 写明赣州；正文可能另有说明，未核到 |
 | organophosphorus-mil101 | 循环后 P=O 特征“显著减弱”与正文“消失” | 图 S14 近乎平直，现有措辞可辩护 |
 | rag | 正文 “17%” 与表 4 的 11.7% | 原文自身不一致，页面采用表格 |
-| 付费期刊页（M4、M5 多篇） | 仅见于正文的数值 | 只与页面证据记录核对一致 |
 
 ## 限制
 

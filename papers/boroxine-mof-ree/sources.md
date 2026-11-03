@@ -43,3 +43,10 @@ Reread main sacrificial-material/irreversible-collapse statements, visually rech
 Reader task: Check: do Yb₂O₃ diffraction peaks establish purity and total recovery? No. Peaks support that crystalline phase, but do not quantify every trace impurity or close the feed-to-product Yb balance. Product elemental analysis, yield and Yb in mother liquor and washes are needed.
 
 Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.
+
+## Audit 2026-11-03 (publisher access)
+
+Rechecked against the ScienceDirect full text (Chem. Eng. J., PII S1385894726074826, via UCL access). No page changes.
+
+- Location attribution confirmed: “evaluated in the rare-earth metallurgical wastewater environment of Ganzhou, Jiangxi Province (Table S10-S12)” (main text, separation section).
+- Tables S7–S8 use “a mixed solution with a concentration of 10 mg L⁻¹ for each RE³⁺” (main text), matching the page; pH 3.5, 25 °C and 60 min follow the Methods and Fig. 3 captions.

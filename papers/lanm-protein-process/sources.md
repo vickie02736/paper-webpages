@@ -48,3 +48,9 @@ Checked 2026-11-01. The shared byline uses the ordered manuscript authors and ex
 - [Publisher full text archived in Europe PMC: article-meta contrib-group, aff, pub-date and history](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8614107/fullTextXML) — authors, affiliations, dates.published.
 
 Paper dates: published = 2021-10-08; accepted = notDisclosed. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.
+
+## Audit 2026-11-03 (publisher access)
+
+Rechecked the hero claim against the Europe PMC full text (PMC8614107).
+
+- “12 kDa LanM” confirmed: “the discovery of lanmodulin (LanM), a small (12 kDa) …” (Introduction). The two earlier audit passes disagreed; this resolves it. No page change.

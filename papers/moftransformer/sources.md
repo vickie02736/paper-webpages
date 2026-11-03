@@ -44,3 +44,11 @@ The Nature Machine Intelligence version of record is not open access from this e
 Second-pass corrections (site-wide audit):
 
 - Architecture formula and walk-through head node (zh/en): “MLP head” overstated the head. The preprint Methods say fine-tuning adds “a single dense layer to the class token”, and the MTP head likewise “consists of a single dense layer”.
+
+## Audit 2026-11-03 (publisher access)
+
+Rechecked against the Nature Machine Intelligence version of record (5, 309–318; PDF via UCL access, 19 pp., SHA-256 `d59dadcc83b09371…`).
+
+- Head wording (formula and walk-through node): the version of record names the head “multi-layer perception (MLP) head” (p. 310, Fig. 1b) while Methods (p. 316) and the MTP description (p. 312) specify a single dense layer on [CLS]. The earlier change to “single dense-layer head” (above) is superseded: the page keeps the paper’s “MLP head” label and adds the Methods detail.
+- “QMOF v13” confirmed: “obtained from the QMOF database (version 13) with the PBE functional” (p. 311; ref. 38, figshare 13147324.v13).
+- Table 1: all seven rows (values, baselines, dataset sizes, thermal MAE 45 vs 44 °C) match the version of record. Article page numbers cited above (Fig. 1 p. 311, pre-training p. 312, Table 1 pp. 312–314, Figs. 4–5 pp. 314–315, Methods pp. 316–317) are confirmed.
