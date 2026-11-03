@@ -41,3 +41,15 @@ Checked 2026-11-01. The shared byline uses the ordered manuscript authors and ex
 - [Official proceedings manuscript: no individual-paper acceptance date disclosed](https://proceedings.iclr.cc/paper_files/paper/2024/file/25f7be9694d7b32d5cc670927b8091e1-Paper-Conference.pdf) — dates.accepted.
 
 Paper dates: published = 2024-05-31; accepted = notDisclosed; preprint = 2023-10-17. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.
+
+## Audit 2026-11-03
+
+Re-checked against the ICLR 2024 proceedings PDF: all 24 Table 2 values in the six `#metricSelect` states (p.8), Eq. (3–4) (p.6), Appendix A.4 ISREL/ISSUP/ISUSE score definitions and the Yes/(Yes+No) > δ threshold (pp.18–19), Algorithm 1 ordering (p.4), §4.3 defaults (150k pairs, top five Contriever-MS MARCO, weights 1.0/1.0/0.5), Appendix Table 3 total 145,619, B.1 training (4×A100 80GB, 3 epochs), Appendix Figure 4 critic accuracy (Llama2-7B Retrieve 93.8%), and §5.2 / Figure 3a–c ablation statements. No numerical or formula changes were needed.
+
+- P2 · English copy for `static-22` began with a full-width Chinese comma (“，and calls the retriever …”); replaced with an ASCII comma. No scientific change.
+- Not changed, noted: the “best non-proprietary model on all six tasks” sentence restates the paper's §5.1 claim; in Table 2 ASQA str-em, retrieval Alpaca 13B (34.8) is higher than Self-RAG 13B (31.7), so the claim holds for the page's selected metrics but not for every Table 2 column.
+
+Second-pass corrections (site-wide audit):
+
+- Retriever card (zh/en): added the per-task retrieval sources behind the charted results (§4.3 p. 7: web-search top five for biographies and open-domain QA; GTR-XXL top five for ASQA). The zh string also no longer leaves “top five documents” in English.
+- Supported-claims card (zh/en): “best non-proprietary model on all six tasks” is the §5.1 claim; Table 2 ASQA str-em is an exception (Alpaca-13B + retrieval 34.8 vs Self-RAG 13B 31.7, p. 8). Now attributed and qualified.

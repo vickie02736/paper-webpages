@@ -27,13 +27,13 @@ Source locator: §§3–4.4 Eqs.11–16; Appendix B
 
 1. Full-vocabulary divergence is expensive. The Binary approximation groups the sampled token against the rest of the vocabulary; Top-K retains more probability information. These coarse-grained divergences lower-bound the full divergence rather than measuring it exactly.
 
-2. The mask also considers advantage direction: it suppresses a term outside the divergence threshold when the beneficial update would move further from the old policy, while allowing updates back toward the anchor. DPPO here means Divergence PPO, not Diffusion Policy Optimization.
+2. The mask also considers advantage direction: it suppresses a term outside the divergence threshold when the beneficial update would move further from the rollout policy μ, while allowing updates back toward the anchor. DPPO here means Divergence PPO, not Diffusion Policy Optimization.
 
 ### math
 
 Source locator: §§3–4.4 Eqs.11–16; Appendix B
 
-1. p is the old probability of the sampled token and q the current probability. KL runs from old to new. The demo keeps probabilities inside (0,1) to avoid log(0), displaying r=q/p, Binary-TV, Binary-KL, and the update mask. Thresholds use different scales and are not equivalent strengths.
+1. p is the rollout (behavior) policy μ’s probability of the sampled token and q the current training policy π’s probability; KL runs from μ to π. The paper anchors the trust region to the original rollout policy μ, not a recomputed old training-policy probability (§5.2 Takeaway 2; Appendix E). The demo keeps probabilities inside (0,1) to avoid log(0), displaying r=q/p, Binary-TV, Binary-KL, and the update mask. Thresholds use different scales and are not equivalent strengths.
 
 2. The theoretical bound, divergence approximation, and practical dynamic mask are three levels. A lower bound above a threshold indicates substantial true change, but a small lower bound does not prove the full-policy divergence is small.
 
@@ -43,7 +43,7 @@ Source locator: §7; Appendix F.1 Table 2 (PDF p.24), F.3–F.5
 
 1. Mathematical-RL experiments on Qwen3-30B-A3B-Base compare router-replay settings, LoRA, and several objectives. Training stability and inference–training mismatch should be read together rather than selecting only peak points.
 
-2. Appendix F.3 compares Binary and Top-K, F.4 studies threshold sensitivity, and F.5 extends models and tasks. Table 2 separately reports RLHF on Qwen3-4B-Instruct-2507 with UltraFeedback. The original evidence page is linked rather than inventing exact values from curves.
+2. Appendix F.3 compares Binary and Top-K, F.4 studies threshold sensitivity, and F.5 extends models and tasks. Table 2 separately reports RLHF on Qwen3-4B-Instruct-2507 with UltraFeedback (Table 2 states UltraFeedback; the §7.2 text and Figure 10 caption say HH-RLHF). The original evidence page is linked rather than inventing exact values from curves.
 
 3. Table 2 uses step-150 checkpoints: length-controlled win rates are 59.39%, 77.05%, and 80.90% for the initial model, GRPO, and DPPO. Later checkpoints earn higher training rewards but worse AlpacaEval scores, showing that learned rewards and external evaluation are not interchangeable.
 
@@ -77,3 +77,9 @@ These are general definitions and worked teaching examples, not experimental obs
 - Evidence table (when present): exact transcribed values; the metric, model, comparison conditions, and source page are given beside the table. No values are inferred from plotted curves.
 - Limits and implementation notes distinguish paper claims, required assumptions, and later engineering choices.
 - Browser and numerical acceptance results are recorded in `reports/verl-validation.md`.
+
+## Version and audit notes
+
+- Audit 2026-11-03: the trust-region anchor is the rollout (behavior) policy μ (§5.2 Takeaway 2; Appendix E; §7 setup), not a recomputed old policy. Page wording corrected from “old policy / old to new”.
+- Source inconsistency: Table 2 and Appendix F.1 name UltraFeedback for the Qwen3-4B-Instruct-2507 RLHF run, while §7.2 and the Figure 10 caption say HH-RLHF. The page follows Table 2 and discloses the conflict.
+- Not verified: whether verl’s dppo_tv/dppo_kl losses anchor to rollout log-probabilities or recomputed old_log_prob depends on the rollout-correction mode; the pinned doc does not state it and the code was not run.

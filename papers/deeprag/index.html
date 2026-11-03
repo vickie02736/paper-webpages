@@ -106,7 +106,7 @@ body.atlas-paper .trade-plot{margin-top:20px;background:repeating-linear-gradien
         <div class="flow">
           <div class="flow-row"><div class="node blue"><span data-i18n="flow-question">原始问题</span><br/><small><span data-i18n="flow-complex">复杂问题</span></small></div><div class="arrow">→</div><div class="node"><span data-i18n="flow-subquery">原子子问题</span><br/><small><span data-i18n="flow-atomic">原子子问题</span></small></div></div>
           <div class="flow-row"><div class="node mint"><span data-i18n="flow-internal">内部知识</span><br/><small><span data-i18n="flow-parametric">参数化</span></small></div><div class="node"><span data-i18n="flow-or">或</span></div><div class="node mint"><span data-i18n="flow-retrieval">外部检索</span><br/><small><span data-i18n="flow-retrieve-small">检索</span></small></div><div class="arrow">→</div><div class="node blue"><span data-i18n="flow-answer">中间答案</span></div></div>
-          <div class="flow-row"><div class="node"><span data-i18n="flow-continue">继续分解</span></div><div class="arrow">↗</div><div class="node mint"><span data-i18n="flow-enough">满足条件？</span></div><div class="arrow">→</div><div class="node blue"><span data-i18n="flow-final">最终答案</span></div></div>
+          <div class="flow-row"><div class="node mint"><span data-i18n="flow-enough">满足条件？</span></div><div class="arrow">→</div><div class="node blue"><span data-i18n="flow-final">是：最终答案</span></div><div class="node"><span data-i18n="flow-continue">否：继续分解 ↺</span></div></div>
         </div>
       </div>
     </div>
@@ -149,7 +149,7 @@ body.atlas-paper .trade-plot{margin-top:20px;background:repeating-linear-gradien
   <section id="evidence">
     <div class="section-head"><div><div class="kicker"><span data-i18n="evidence-kicker">05 · 实验证据</span></div><h2><span data-i18n="evidence-title">实验支持了什么？</span></h2></div><p><span data-i18n="evidence-intro">切换 backbone，查看 Table 1 的 Avg 列：它平均五个数据集的 EM 与 F1 共十个分数，不是单独的平均 EM。</span></p></div>
     <div class="card chart">
-      <div class="chart-toolbar"><span class="tag mint" style="margin:0"><span data-i18n="average-em-label">Table 1 · Avg（EM 与 F1）</span></span><select class="select" id="backbone"><option value="llama">Llama-3-8B</option><option value="qwen">Qwen-2.5-32B</option></select></div>
+      <div class="chart-toolbar"><span class="tag mint" style="margin:0"><span data-i18n="average-em-label">Table 1 · Avg（EM 与 F1；节选 7 行）</span></span><select class="select" id="backbone"><option value="llama">Llama-3-8B</option><option value="qwen">Qwen-2.5-32B</option></select></div>
       <div class="bars" id="bars"></div><div class="bar-axis" aria-hidden="true"><span></span><div><span>0</span><span>15</span><span>30</span><span>45</span></div><span></span></div><div class="source">DeepRAG-RL<sub>on</sub> <span data-i18n="evidence-source-a">在 Llama-3-8B 上的 Avg 为 42.36，在 Qwen-2.5-32B 上为 41.05；DeepRAG-RL</span><sub>off</sub> <span data-i18n="evidence-source-b">分别为 41.47 和 35.72。共同分数轴为 0–45，柱长从零按比例绘制。</span></div>
       <div class="tradeoff"><h4><span data-i18n="trade-title">准确率与检索成本 · WebQuestions · Table 2</span></h4><p><span data-i18n="trade-copy">横轴为平均检索次数 0–5，纵轴为 EM 10–35（截断坐标）；青绿色点为 DeepRAG。FLARE / DRAGIN 在该实验默认阈值下未触发检索，不代表它们没有检索功能。</span></p><div class="trade-plot" id="tradePlot"></div><div class="trade-detail" id="tradeDetail"><span data-i18n="trade-prompt">点击一个点查看方法、EM 与平均检索次数。</span></div></div>
     </div>
@@ -159,8 +159,8 @@ body.atlas-paper .trade-plot{margin-top:20px;background:repeating-linear-gradien
 
   <section id="critical">
     <div class="section-head"><div><div class="kicker"><span data-i18n="critical-kicker">06 · 批判性理解</span></div><h2><span data-i18n="critical-title-a">结论、证据与</span><br/><span data-i18n="critical-title-b">仍然未知的部分。</span></h2></div><p><span data-i18n="critical-intro">下面把“论文确实展示了什么”和“读者仍需保持的谨慎”并列放在一起。</span></p></div>
-    <div class="evidence"><div class="evidence-col claim"><h4><span data-i18n="claims-label">Claims · 论文主张</span></h4><p><span data-i18n="claims-copy">按需检索能同时提升多跳 QA 的准确率与检索效率；模型更能探索自身的知识边界。</span></p></div><div class="evidence-col support"><h4><span data-i18n="support-label">Supporting evidence · 论文证据</span></h4><p><span data-i18n="support-copy">五个 benchmark、两种 backbone、OOD 结果、retrieval count、balanced accuracy / MCC，以及 imitation / calibration ablation。</span></p></div><div class="evidence-col open"><h4><span data-i18n="uncertainty-label">Remaining uncertainty · 读者可追问</span></h4><p><span data-i18n="uncertainty-copy">论文在结论中强调未来开源代码；对不同 retriever、长文档噪声和更开放的生成任务，稳健性仍需更多验证。</span></p></div></div>
-    <div class="card panel" style="margin-top:18px"><span class="tag amber"><span data-i18n="research-label">研究者视角</span></span><div class="list"><div class="list-item"><i class="dot"></i><span><b><span data-i18n="contribution-label">最强贡献：</span></b><span data-i18n="contribution-copy">把检索时机、子问题生成和终止决策放进同一条可训练轨迹。</span></span></div><div class="list-item"><i class="dot mint"></i><span><b><span data-i18n="design-label">关键设计：</span></b><span data-i18n="design-copy">以“正确答案 + 低检索成本”为搜索目标，而非单纯增加 context。</span></span></div><div class="list-item"><i class="dot amber"></i><span><b><span data-i18n="question-label">值得质疑：</span></b><span data-i18n="question-copy">奖励和最优路径依赖 retriever、最大检索预算 T 与答案判定方式；换环境后决策边界可能移动。</span></span></div></div></div>
+    <div class="evidence"><div class="evidence-col claim"><h4><span data-i18n="claims-label">Claims · 论文主张</span></h4><p><span data-i18n="claims-copy">按需检索能同时提升多跳 QA 的准确率与检索效率；模型更能探索自身的知识边界。</span></p></div><div class="evidence-col support"><h4><span data-i18n="support-label">Supporting evidence · 论文证据</span></h4><p><span data-i18n="support-copy">五个 benchmark、两种 backbone、OOD 结果、retrieval count、balanced accuracy / MCC，以及 imitation / calibration ablation。</span></p></div><div class="evidence-col open"><h4><span data-i18n="uncertainty-label">Remaining uncertainty · 读者可追问</span></h4><p><span data-i18n="uncertainty-copy">可复现性声明承诺未来开源代码（脚注 1 已给出代码库地址）；对不同 retriever、长文档噪声和更开放的生成任务，稳健性仍需更多验证。</span></p></div></div>
+    <div class="card panel" style="margin-top:18px"><span class="tag amber"><span data-i18n="research-label">研究者视角</span></span><div class="list"><div class="list-item"><i class="dot"></i><span><b><span data-i18n="contribution-label">最强贡献：</span></b><span data-i18n="contribution-copy">把检索时机、子问题生成和终止决策放进同一条可训练轨迹。</span></span></div><div class="list-item"><i class="dot mint"></i><span><b><span data-i18n="design-label">关键设计：</span></b><span data-i18n="design-copy">以“正确答案 + 低检索成本”为搜索目标，而非单纯增加 context。</span></span></div><div class="list-item"><i class="dot amber"></i><span><b><span data-i18n="question-label">值得质疑：</span></b><span data-i18n="question-copy">奖励依赖检索预算 T（式 3），最优路径搜索还受最大历史长度上限（算法 1）、retriever 与答案判定方式影响；换环境后决策边界可能移动。</span></span></div></div></div>
   </section>
 
   <section id="map">
@@ -240,16 +240,16 @@ const translations={"evidence-ledger-link":{"zh":"图示来源与核对记录","
     "en": "Intermediate answer"
   },
   "flow-continue": {
-    "zh": "继续分解",
-    "en": "Keep decomposing"
+    "zh": "否：继续分解 ↺",
+    "en": "No: keep decomposing ↺"
   },
   "flow-enough": {
     "zh": "满足条件？",
     "en": "Enough information?"
   },
   "flow-final": {
-    "zh": "最终答案",
-    "en": "Final answer"
+    "zh": "是：最终答案",
+    "en": "Yes: final answer"
   },
   "intuition-title-a": {
     "zh": "检索不是默认动作，",
@@ -556,8 +556,8 @@ const translations={"evidence-ledger-link":{"zh":"图示来源与核对记录","
     "en": "Remaining uncertainty"
   },
   "uncertainty-copy": {
-    "zh": "论文在结论中强调未来开源代码；对不同 retriever、长文档噪声和更开放的生成任务，稳健性仍需更多验证。",
-    "en": "The conclusion emphasises future code release. Robustness across different retrievers, long-document noise and more open-ended generation tasks still needs further validation."
+    "zh": "可复现性声明承诺未来开源代码（脚注 1 已给出代码库地址）；对不同 retriever、长文档噪声和更开放的生成任务，稳健性仍需更多验证。",
+    "en": "The reproducibility statement promises a future code release (footnote 1 already links the repository). Robustness across different retrievers, long-document noise and more open-ended generation tasks still needs further validation."
   },
   "research-label": {
     "zh": "研究者视角",
@@ -584,8 +584,8 @@ const translations={"evidence-ledger-link":{"zh":"图示来源与核对记录","
     "en": "Open question:"
   },
   "question-copy": {
-    "zh": "奖励和最优路径依赖 retriever、最大检索预算 T 与答案判定方式；换环境后决策边界可能移动。",
-    "en": "Rewards and optimal paths depend on the retriever, maximum retrieval budget T and answer judgement. The decision boundary may shift in a different environment."
+    "zh": "奖励依赖检索预算 T（式 3），最优路径搜索还受最大历史长度上限（算法 1）、retriever 与答案判定方式影响；换环境后决策边界可能移动。",
+    "en": "Rewards depend on the retrieval budget T (Eq. 3); the optimal-path search also depends on the maximum history length (Algorithm 1), the retriever and answer judgement. The decision boundary may shift in a different environment."
   },
   "map-title-a": {
     "zh": "把整篇论文压缩成",
@@ -820,8 +820,8 @@ const translations={"evidence-ledger-link":{"zh":"图示来源与核对记录","
     "en": "05 · Evidence"
   },
   "average-em-label": {
-    "zh": "Table 1 · Avg（EM 与 F1）",
-    "en": "Table 1 · Avg (EM and F1)"
+    "zh": "Table 1 · Avg（EM 与 F1；节选 7 行）",
+    "en": "Table 1 · Avg (EM and F1; 7 selected rows)"
   },
   "experimental-detail-label": {
     "zh": "实验细节",

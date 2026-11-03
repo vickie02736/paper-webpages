@@ -16,11 +16,10 @@ Each explainer is a static visual webpage using the shared Research Atlas readin
 | Hans-LanM dimer — Enhanced rare-earth separation with a metal-sensitive lanmodulin dimer | Nature 2023 | [Open page](hans-lanm-dimer/) |
 | MOFTransformer — A multi-modal pre-training transformer for universal transfer learning in metal–organic frameworks | Nature Machine Intelligence 2023 | [Open page](moftransformer/) |
 | MOF SNAP — Quantum-accurate potentials with temperature-driven active learning | npj Computational Materials 2024 | [Open page](mof-snap-active-learning/) |
-
 | CALF-20 — Gas adsorption and framework flexibility | Nature Communications 2024 | [Open page](calf20-flexibility/) |
 | LanM — Protein-based rare-earth recovery and separation | ACS Central Science 2021 | [Open page](lanm-protein-process/) |
 
-Opening these pages does not require ChatGPT sign-in. Each supports Chinese and English, including diagrams and interactive feedback. Ln local coordination and PMIDA–MIL-101 also offer parallel bilingual reading.
+Opening these pages does not require ChatGPT sign-in. Each supports Chinese and English, including diagrams and interactive feedback. Ln local coordination, PMIDA–MIL-101 and CALF-20 also offer parallel bilingual reading.
 
 
 - [FrontierCS 2 — A Benchmark for Computer Science R&D](frontier-cs/) — arXiv 2026; PDF-audited bilingual guide with all 48 tasks, judge isolation, complete 12-agent results, three case studies, FCI/FDI and 29 related works.
@@ -80,6 +79,22 @@ Every paper explainer loads `../assets/bibliography.css`, `bibliography.js` and 
 ## verl algorithm explainers
 
 [Read the verl articles in Artificial Intelligence & Computing](../?theme=ai&q=verl#themes). The theme lists each paper and documentation article directly, with bilingual content, teaching interactions and evidence ledgers.
+
+- [PPO: limiting the incentive for a large update](ppo/) — paper
+- [GRPO: answers to one question provide a baseline](grpo/) — paper
+- [DAPO: keeping long-reasoning training productive](dapo/) — paper
+- [SPIN: turn the previous model into an opponent](spin/) — paper
+- [SPPO: preferences can form cycles](sppo/) — paper
+- [Entropy mechanisms: why exploration runs out early](entropy-mechanism/) — paper
+- [OPO: how should a baseline be weighted?](opo/) — paper
+- [Reading baselines: align conditions before comparing](verl-algorithm-baselines/) — documentation
+- [GPG: reconsider the weights in policy gradients](gpg/) — paper
+- [Rollout correction: who actually generated the data?](rollout-correction/) — documentation
+- [The mathematics: change of measure and long-sequence variance](rollout-correction-math/) — documentation
+- [OTB: a baseline that changes across tokens](otb/) — paper
+- [DPPO: from probability ratios to divergence](dppo/) — paper
+- [On-policy distillation: teach along the student’s path](on-policy-distillation/) — paper
+- [DRO: alignment from single-response feedback](direct-reward-optimization/) — paper
 
 ## Optional teaching layer
 

@@ -21,6 +21,7 @@
 - EWMA is a normalized finite-history parameter average in Appendix A. Lab age is steady-state, not exact startup age.
 - Three-policy demo uses synthetic probabilities and advantage; no state-distribution or arbitrary-off-policy unbiasedness claim.
 - Scaling demo derives 65,536/8,192 from Appendix B; independent small-batch SGD/Adam rules, advantage window, Eπ=1 and PPG auxiliary-phase exception are retained.
+- Audit 2026-11-03: §5.3 says EWMA outperforms the baseline “on all of the last 8 environments for both PPO and PPG”; the zh text now keeps “all”. Appendix E: advantage-window ablation (b) is significant only at the smallest batch (/256).
 
 ## Visual inventory
 
@@ -47,6 +48,7 @@
 - Conversions start from Appendix B: 256 parallel environments, 256 steps per rollout, and 8 minibatches per epoch, giving iteration batch 65,536 and optimization batch 8,192; α=0.0005, H=8 (exact βprox=8/9), Nπ=32. The demo computes parameters deterministically; it does not predict learning curves.
 - Appendix A normalizes finite-history EWMA: wnew=1+βw and θprox←θ/wnew+βwθprox/wnew, initialized with θprox=θ and w=1. Thus H=β/(1−β) is a steady-state age, not exact at the first step. Adam’s β₁ and β₂ can additionally become β₁^(1/c) and β₂^(1/c); most main experiments omit this optional adjustment.
 - The main experiments use 16 Procgen games on hard difficulty and an IMPALA convolutional network, not LLMs. Runs usually last 100 million environment steps. Batch-invariance experiments use PPG-EWMA with one policy epoch, Eπ=1. Parallel environments drop from 256 to 64, 16, 4 and 1, spanning a factor of 256.
+- The sample count used for advantage statistics matters too, but only significantly at the smallest batch (/256); not at /4–/64.
 - Figure 2 plots environment steps against mean normalized return across games; shading is standard deviation over 3 seeds. Figure 3 compares batch sizes per game using the last 4 million steps, with standard-error bars and a square-root axis. Table 5 uses a stratified nonparametric test with Bonferroni correction for 16 comparisons, threshold 0.001/16. These uncertainty definitions are not interchangeable.
 - Figure 1’s stale-data experiment supports the division of roles: retaining the true behavior denominator while anchoring updates to a recent policy is more robust than treating that recent policy as the sampler. Figure 4 uses 4 seeds; EWMA benefits both PPO and PPG on all 8 games held out from hyperparameter tuning, but the overall benefit is modest.
 - The conditions matter: optimization batches must be sufficiently small. The invariance experiments scale optimization and iteration batches together and use Eπ=1. Repeated passes over tiny batches reuse the same data; the same conclusion does not automatically apply.

@@ -98,8 +98,8 @@ window.WATER_REVIEW_DATA = {
         "Original category: “thermodynamically stable”*"
       ],
       "rule": [
-        "按所报告的较长液水暴露或较苛刻酸／碱／沸水暴露归类；具体判据与原始条件需要并读。",
-        "Assigned from reported extended liquid-water exposure or harsher acidic/basic/boiling-water tests; read the criteria together with each protocol."
+        "按所报告的较长液水暴露或较苛刻酸／碱／高温水暴露归类；具体判据与原始条件需要并读。",
+        "Assigned from reported extended liquid-water exposure or harsher acidic/basic/high-temperature-water tests; read the criteria together with each protocol."
       ],
       "example": [
         "MIL-101(Cr)：高置信度；La-BTB：低置信度。二者同一类别，不代表相同证据充分程度。",
@@ -222,8 +222,8 @@ window.WATER_REVIEW_DATA = {
         "Original category: high kinetic stability · high confidence"
       ],
       "observation": [
-        "SI 包含沸水一周后 PXRD 与 BET 不变、40 次水等压循环保留性能，以及六条水蒸气等温线后 BET 不变的报告。",
-        "The SI includes reports of unchanged PXRD/BET after a week in boiling water, retained performance over 40 water-isobar cycles and unchanged BET after six water-vapour isotherms."
+        "SI 包含沸水一周后 PXRD 与 BET 不变、40 次水等压循环后吸水容量小幅下降但 PXRD 与随后 BET 未降，以及六条水蒸气等温线后 BET 不变的报告。",
+        "The SI includes reports of unchanged PXRD/BET after a week in boiling water, a slight water-capacity decrease over 40 water-isobar cycles with no change in PXRD or subsequent BET, and unchanged BET after six water-vapour isotherms."
       ],
       "counter": [
         "另一个两天液水实验却报告 BET 大幅下降、PXRD 基本保留。综述汇集了差异，没有证明哪个样品或协议代表全部 MIL-100(Fe)。",

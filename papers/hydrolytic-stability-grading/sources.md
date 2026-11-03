@@ -20,7 +20,7 @@ The PDF title page verifies both authors at the Department of Chemistry, Univers
 - Duration, repeat exposure and activation: §5.5. The authors suggest 24 h as an initial exposure, followed by further exposure to distinguish plateau from continuing deterioration. The tool’s 0.1–100,000 h input constraint is a UI limit, not a paper recommendation. Presets are teaching scenarios without material identities.
 - Complementary measurements: §§4.1–4.4. Partial dissolution may leave a crystalline residue; PXRD and gas adsorption have different sensitivities. Probe gas, temperature, activation and functional performance remain relevant. Do not infer absence of dissolution from peaks alone.
 - Time example: §§3.2, 5.1, 6.3 and 6.6. Reviewed CALF-28 batches begin around 700–800 m²/g, decline to about 500 after 24 h at 80 °C/90% RH, then plateau within the reported tests. MIL-53(Al) develops a growing gamma-AlO(OH) surface layer in boiling water. These are cases summarized by this perspective, not new experiments.
-- REE connection: §5.5 separately discusses biological phosphate-buffer tests. This article supplies no REE capacity or selectivity; additional REE-solution conditions and leaching measurements are the explainer’s methodological connection.
+- REE connection: §5.2 separately proposes 50 mM potassium phosphate buffer, pH 7, 37 °C for biological tests. This article supplies no REE capacity or selectivity; additional REE-solution conditions and leaching measurements are the explainer’s methodological connection.
 
 ## Source inconsistencies and scope choices
 
@@ -47,3 +47,9 @@ Rechecked main §§3–5.5 and Tables 2–3. A/B/C/D mapping and missing-evidenc
 Reader task: Check: why is PXRD alone insufficient for 6A? 6 only identifies boiling-water exposure. A additionally requires retained order and porosity; without the pore measurement the letter lacks evidence. Duration must still be reported.
 
 Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.
+
+## Audit 2026-11-03
+
+Second-pass content audit of the site-wide explainer review (`reports/explainer-audit/content-findings.md`). Each correction cites its source location; claims not listed were rechecked and left unchanged.
+
+- Ledger locator: the phosphate-buffer proposal is in §5.2 “Nature of water treatments” (p. 3673), not §5.5. Page text unchanged.

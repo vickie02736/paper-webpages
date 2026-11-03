@@ -39,7 +39,7 @@ Source locator: GSM8k, DAPO math-17k, Coding related datasets; Notes [1]–[2]
 
 Source locator: All 30 table rows; original per-row command/log links; documentation update 2025-06-18
 
-1. GSM8K records for Qwen2-7B-Instruct include GRPO 89.0, FSDP2 89.8, Megatron 89.6, and GPG 88.0. These are documented run scores; this page does not infer statistically significant backend or algorithm superiority.
+1. GSM8K records for Qwen2-7B-Instruct include GRPO 89, FSDP2 89.8, Megatron 89.6, and 88 for both GPG and GPG (Megatron). These are documented run scores; this page does not infer statistically significant backend or algorithm superiority.
 
 2. SPPO’s 65.6 for Qwen2.5-7B-Instruct is explicitly on MATH and cannot be ranked alongside SPIN’s GSM8K 92. Each row links to its source script or log so omitted conditions can be inspected.
 
@@ -73,3 +73,7 @@ These are general definitions and worked teaching examples, not experimental obs
 - Evidence table (when present): exact transcribed values; the metric, model, comparison conditions, and source page are given beside the table. No values are inferred from plotted curves.
 - Limits and implementation notes distinguish paper claims, required assumptions, and later engineering choices.
 - Browser and numerical acceptance results are recorded in `reports/verl-validation.md`.
+
+## Version and audit notes
+
+- Source caveat: the ReMax row lists Qwen/Qwen2.5-7B-Instruct but links remax_trainer/run_qwen2.5-3b_seq_balance.sh. The page transcribes the doc as printed; the mismatch is unresolved.

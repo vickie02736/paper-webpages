@@ -33,3 +33,14 @@ Checked 2026-11-01. The shared byline uses the ordered manuscript authors and ex
 - [Author information; About this article / publication history](https://www.nature.com/articles/s42256-023-00628-2) — dates.published, dates.accepted, affiliations, authors.
 
 Paper dates: published = 2023-03-13; accepted = 2023-02-06. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.
+
+## Audit 2026-11-03
+
+The Nature Machine Intelligence version of record is not open access from this environment (only the abstract was retrievable). Re-checked against the open Supplementary Information PDF (Springer ESM) and the ChemRxiv v2 preprint (doi:10.26434/chemrxiv-2022-hcjzc-v2, 2023-01-18, the version immediately preceding publication): all seven Table 1 rows (values, baselines, dataset sizes 5,286 / 8,183 / 2,148 / 3,098, thermal MAE 45 vs 44 °C); pre-training accuracies MTP 0.97, MOC 0.98, VFP MAE 0.01 and 1,079 topologies; 30 Å grid / 5 Å patches / 216 patches, L = 12, H = 768, A = 12, normalised-volume `[VOL]`; CGCNN output without pooling; Methods hyperparameters (AdamW, 10⁻⁴, 10⁻², batch 1,024, 100 epochs, 800,000 / 126,611 / 100,000; fine-tune batch 32, 20 epochs, 0.8 / 0.1 / 0.1, standardisation); GCMC 100 bar / 77 K / 10k cycles; MD 77 K, NVT, 1 fs, 3M cycles; QMOF v13 20,373 PBE structures; IRMOF-1 eight highest-attention patches among 6×6×6 near metals, threshold 0.008, < 20 kJ mol⁻¹; SI Notes S1 (three connected bonds), S2 (all three tasks lowest MAE across all properties), S3 (open-shell PBE underestimation), S4 (719 / 234 / 1,775). Article page numbers in the table above were not re-verified against the paywalled version of record.
+
+- P1 · `#why` transfer card, Chinese only: “先用无监督式的结构任务预训练” → “先用面向结构的任务预训练”, matching the English “Pre-train on structure-oriented tasks”. MTP, VFP and MOC are supervised heads on labels obtained from structure construction (topology; metal-node vs linker atoms) or Zeo++ geometry (void fraction) (ChemRxiv v2 “Pre-training” results paragraph; article p. 312 per ledger); the paper does not describe them as unsupervised.
+- Not changed, noted: Table 1 bars are scaled to the larger value of each pair (`v / max`), so the better model always fills the track and no axis is shown; ratios are preserved from zero, but a fixed 0–1 axis for R² / accuracy would read more faithfully.
+
+Second-pass corrections (site-wide audit):
+
+- Architecture formula and walk-through head node (zh/en): “MLP head” overstated the head. The preprint Methods say fine-tuning adds “a single dense layer to the class token”, and the MTP head likewise “consists of a single dense layer”.

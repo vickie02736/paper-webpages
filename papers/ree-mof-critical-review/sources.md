@@ -55,8 +55,8 @@ HTML SHA256 aa945c917075380dd2c137d32f87427d748bac6498f993e5a305c52b282ae33d
       [
         "批次竞争",
         "Batch competition",
-        "<h3>竞争吸附：先统一比较基准</h3><p>在可比较 pH、离子强度和配比下测试二元与多元稀土，加入高丰度 Fe、Al 和实际阴离子。记录 Ce 检出限与误差，避免接近零的分母造成看似极大的 Kd。来源：§3.3。</p>",
-        "<h3>Competitive uptake: establish comparable conditions</h3><p>Test binary/multicomponent REEs at comparable pH, ionic strength and composition, including abundant Fe/Al and relevant anions. Record Ce detection limits and uncertainty because a near-zero denominator can inflate Kd. Source: §3.3.</p>"
+        "<h3>竞争吸附：先统一比较基准</h3><p>在可比较 pH、离子强度和配比下测试二元与多元稀土，加入高丰度 Fe、Al 和实际阴离子。记录平衡浓度 Cₑ 的检出限与误差，避免接近零的分母造成看似极大的 Kd（此点为讲解者依 Kd 公式补充）。来源：§3.3。</p>",
+        "<h3>Competitive uptake: establish comparable conditions</h3><p>Test binary/multicomponent REEs at comparable pH, ionic strength and composition, including abundant Fe/Al and relevant anions. Record detection limits and uncertainty for the equilibrium concentration Cₑ, because a near-zero denominator can inflate Kd (an explainer note derived from the Kd formula). Source: §3.3.</p>"
       ],
       [
         "固定床",
@@ -133,3 +133,9 @@ Reread final review §§3.2.6, 3.3 and 4.2. The 47.87% calculation derives from 
 Reader task: Check: does a good pseudo-second-order fit alone prove chemical coordination? No. It describes a macroscopic time curve, and different processes can fit similarly. Relevant spectroscopy, composition and controls must constrain the mechanism and test precipitation or material change.
 
 Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.
+
+## Audit 2026-11-03
+
+Scope: claim-by-claim recheck of displayed numbers and qualifiers against the cached publisher full text (`/tmp/mof-ree-sources/ree-mof-critical-review-publisher-main.txt`; ScienceDirect itself returned 403 to automated fetch on this date). Verified unchanged: BNMG-1 Nd 57% (NdFeB leachate) / Y 27% (CFL waste) in §3.3; Table 1 rows 26/72–74 (ZNB-3 Lu 45.93, P/ZNB-1.5 Lu 103.47, OP/ST2 Yb 83.11/132.76, year 2026) versus §3.2.1 prose assigning 103.47 mg/g to pristine ZNB-3; §3.2.3 XAFS node binding in Cr(III)-MIL-101 and Zr-UiO; §3.2.4 “5–10 adsorption-desorption cycles”; Fig. 10 compiled Nd capacities; Table 2 incorporation modes; DTPA–MIL-101 ammonium case; teaching calculation 0.9091/(0.9091+0.9901) = 47.87%.
+
+Correction (P2, evidence identity / symbol ambiguity), `page.js` stage “Batch competition” panel, both languages, and the inventory copy above: “Ce detection limits” could be read as cerium on an REE page and was attributed only to §3.3. Now reads “detection limits … for the equilibrium concentration Cₑ … (an explainer note derived from the Kd formula)”. Locator: §3.3 discusses competitive testing but contains no detection-limit statement; the Kd = [(C₀ − Cₑ)/Cₑ](V/m) denominator argument is the explainer’s, as already noted in the reading ledger above. Not a lesson-layer string; `lessons.json` unaffected.

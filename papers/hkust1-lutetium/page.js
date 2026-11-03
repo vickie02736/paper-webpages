@@ -22,9 +22,9 @@
     const lo=document.createElement('span');lo.textContent='0';const hi=document.createElement('span');hi.textContent=num(max)+' '+unit;axis.append(lo,hi);box.append(axis);
   }
   function renderPh(){
-    const ph=[3,4,5,6,6.5][state.ph],q=[113.35,183.01,178.38,180.01,182.33][state.ph];
+    const ph=[3,4,5,6,6.5][state.ph],q=[111.35,183.01,178.38,180.01,182.33][state.ph];
     text('ph-title','pH '+ph+' · '+tr(['报告吸附量','reported uptake']));text('ph-value',num(q)+' mg/g');
-    text('ph-note',state.ph===0?['pH 3 下吸附量较低。作者将较酸条件下的框架降解和材料损失与这一趋势联系起来；该段没有给出对应的 Cu/BTC 浸出收支。','Uptake is lower at pH 3. The authors associate this trend with framework degradation and material loss in more acidic conditions; that section does not provide a corresponding Cu/BTC leaching balance.']:['在 pH 4–6.5 的这些测点，吸附量约为 178–183 mg/g。pH 6 是后续选用条件，而不是已经证明的任意水样最优值。','At these pH 4–6.5 points, uptake is about 178–183 mg/g. pH 6 is selected for subsequent tests rather than established as optimal for every water matrix.']);pressed('ph');
+    text('ph-note',state.ph===0?['pH 3 下吸附量较低。图 3a 的柱标注为 111.35 mg/g，而 §3.2 正文写为 113.35 mg/g；本页按图中标注显示并保留这一差异。作者将较酸条件下的框架降解和材料损失与这一趋势联系起来；该段没有给出对应的 Cu/BTC 浸出收支。','Uptake is lower at pH 3. Fig. 3a labels this bar 111.35 mg/g, while the §3.2 text gives 113.35 mg/g; the figure label is shown and the discrepancy retained. The authors associate this trend with framework degradation and material loss in more acidic conditions; that section does not provide a corresponding Cu/BTC leaching balance.']:['在 pH 4–6.5 的这些测点，吸附量约为 178–183 mg/g。pH 6 是后续选用条件，而不是已经证明的任意水样最优值。','At these pH 4–6.5 points, uptake is about 178–183 mg/g. pH 6 is selected for subsequent tests rather than established as optimal for every water matrix.']);pressed('ph');
   }
   function renderCapacity(){
     const t=[303,313,323][state.temperature],q=[512.82,500,375.94][state.temperature];

@@ -2,12 +2,12 @@
 
 Generated from `paper-catalog.json`; checked dates and field-level source locators are stored with each record. This ledger concerns bibliographic metadata only.
 
-核对结果：作者名单 492/492；单位 486/492；完整作者—单位对应 430/492。已核实发表日期 433 篇、录用日期 159 篇、首次预印本日期 224 篇；另有 126 篇的已检查官方记录未披露录用日期。下列 245 篇仍有至少一个未核实字段，不能视为全部信息已经核实。
+核对结果：作者名单 492/492；单位 486/492；完整作者—单位对应 431/492。已核实发表日期 433 篇、录用日期 159 篇、首次预印本日期 224 篇；另有 126 篇的已检查官方记录未披露录用日期。下列 245 篇仍有至少一个未核实字段，不能视为全部信息已经核实。
 
 - papers: 492
 - authors: 492
 - affiliations: 486
-- completeMappings: 430
+- completeMappings: 431
 - published: 433
 - accepted: 159
 - preprint: 224
@@ -103,7 +103,7 @@ Dates use the precision published by the source. “Not disclosed” means the i
 - [Rethinking the Trust Region in LLM Reinforcement Learning](https://arxiv.org/abs/2602.04879): accepted
 - [On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes](https://arxiv.org/abs/2306.13649): accepted
 - [Offline Regularised Reinforcement Learning for Large Language Models Alignment](https://arxiv.org/abs/2405.19107): published, accepted
-- [DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models](https://arxiv.org/abs/2402.03300): author–affiliation mapping, published, accepted
+- [DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models](https://arxiv.org/abs/2402.03300): published, accepted
 - [Trust Region Masking for Long-Horizon LLM Reinforcement Learning](https://arxiv.org/abs/2512.23075): author–affiliation mapping, published, accepted. The v5 first page gives no affiliation marker for Yingru Li, Yuxuan Tong or Qian Liu; their mapping remains unverified. First three authors are marked equal contributors. No formal venue or paper-specific acceptance date was verified.
 - [Batch size-invariance for policy optimization](https://arxiv.org/abs/2110.00641): accepted
 - [Equiformer: Equivariant Graph Attention Transformer for 3D Atomistic Graphs](https://openreview.net/pdf?id=KwmPfARgOTD): accepted. Original source unavailable: 403

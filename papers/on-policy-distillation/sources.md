@@ -11,7 +11,7 @@
 
 ## Source locators
 
-§3.1 Algorithm 1; §3.2; §§4.1–4.4 Figures 7/9/10; Appendix A.4/A.6/A.7; Thinking Machines 2025; verl OPD Loss Variants
+§3.1 Algorithm 1; §3.2; §§4.1–4.4 Figures 7–10; Appendix A.4/A.6/A.7; Thinking Machines 2025; verl OPD Loss Variants
 
 ## Claim mapping
 

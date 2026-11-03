@@ -48,3 +48,9 @@ Reread main materials/regeneration and full SI TableS4 plus S12–S14 captions. 
 Reader task: Check: why measure phosphorus groups and solution P when diffraction peaks remain? Diffraction mainly probes the ordered solid support. Functional molecules can be lost without erasing all support peaks. Spectra, liquid composition and next-run uptake add evidence about functional retention.
 
 Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.
+
+## Audit 2026-11-03
+
+Second-pass content audit of the site-wide explainer review (`reports/explainer-audit/content-findings.md`). Each correction cites its source location; claims not listed were rechecked and left unchanged.
+
+- Idea card (zh): “最高实测 Er 负载较高” did not say H50 is the highest of the three; aligned with the English (abstract: H50 57.5 mg/g vs 48.9 and 37.2).

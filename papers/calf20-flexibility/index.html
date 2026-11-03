@@ -32,7 +32,7 @@
   <div class="hero-copy">
     <div class="kicker">NATURE COMMUNICATIONS · 2024 · MOF</div>
     <h1><span class="zh">孔道会动，选择性才有答案</span><span class="en">The pore moves—and selectivity follows</span></h1>
-    <p class="lead"><span class="zh">CALF-20 不是一张固定的“孔地图”。CO₂、H₂O 和温度会改变晶胞体积、孔体积分数与配体转角；把吸附等温线和原位 PXRD 放在一起，才能解释为什么它在湿烟气中仍偏好 CO₂。</span><span class="en">CALF-20 is not a fixed pore map. CO₂, H₂O and temperature change cell volume, pore-volume fraction and linker rotation. Pairing adsorption isotherms with in-situ PXRD explains why it still favours CO₂ in humid flue gas.</span></p>
+    <p class="lead"><span class="zh">CALF-20 不是一张固定的“孔地图”。CO₂、H₂O 和温度会改变晶胞体积、孔体积分数与配体转角；把吸附等温线和原位 PXRD 放在一起，才能解释为什么它在较低湿度的烟气中仍偏好 CO₂。</span><span class="en">CALF-20 is not a fixed pore map. CO₂, H₂O and temperature change cell volume, pore-volume fraction and linker rotation. Pairing adsorption isotherms with in-situ PXRD explains why it still favours CO₂ over water in flue gas at low-to-moderate humidity.</span></p>
     <p class="paper-meta"><span class="zh">Oktavian 等，Nature Communications 15, 3898 (2024) · DOI 10.1038/s41467-024-48136-0</span><span class="en">Oktavian et al., Nature Communications 15, 3898 (2024) · DOI 10.1038/s41467-024-48136-0</span></p>
     <div class="callout"><span class="zh">读完这一页，你应能回答：固定骨架模型为什么会低估 273 K 的 CO₂ 吸附？水又怎样通过受限氢键网络和框架柔性影响选择性？</span><span class="en">By the end, you should be able to answer: why does a rigid-framework model underpredict CO₂ at 273 K, and how do confined hydrogen bonds and framework flexibility shape selectivity?</span></div>
   </div>
@@ -122,7 +122,7 @@
 </section>
 
 <section class="section" id="flexibility">
-  <div class="section-head"><div><div class="num">04 · FLEXIBILITY</div><h2><span class="zh">从 20 ps 的 DFT-MD，到可扫描的自由能</span><span class="en">From 20 ps of DFT-MD to scan-able free energy</span></div><p><span class="zh">DFT-MD 先给出“客体会把骨架撑开”的直接证据；MLP 再把昂贵的 DFT 采样扩展为体积方向的自由能剖面。</span><span class="en">DFT-MD first shows that guests hold the framework open; an MLP then extends expensive DFT sampling into free-energy profiles along volume.</span></p></div>
+  <div class="section-head"><div><div class="num">04 · FLEXIBILITY</div><h2><span class="zh">从 20 ps 的 DFT-MD，到可扫描的自由能</span><span class="en">From 20 ps of DFT-MD to scan-able free energy</span></h2></div><p><span class="zh">DFT-MD 先给出“客体会把骨架撑开”的直接证据；MLP 再把昂贵的 DFT 采样扩展为体积方向的自由能剖面。</span><span class="en">DFT-MD first shows that guests hold the framework open; an MLP then extends expensive DFT sampling into free-energy profiles along volume.</span></p></div>
   <div class="card">
     <div class="flow" id="method-flow" role="group" aria-label="Simulation workflow"></div>
     <div class="flow-detail card" id="method-detail" aria-live="polite"></div>
@@ -252,7 +252,7 @@ document.getElementById('method-flow').addEventListener('click',e=>{const b=e.ta
 document.getElementById('flex-controls').addEventListener('click',e=>{const b=e.target.closest('[data-flex]');if(!b)return;S.flexTemp=+b.dataset.flex;renderFlex();});
 document.getElementById('rh-controls').addEventListener('click',e=>{const b=e.target.closest('[data-rh]');if(!b)return;S.rh=+b.dataset.rh;renderHb();});
 renderTemp();renderCondition();renderFlow();renderFlex();renderHb();
-const controller=AtlasPaper.init({shortTitle:'CALF-20 柔性',title:{zh:'CALF-20 柔性｜气体吸附与框架响应',en:'CALF-20 flexibility | Gas adsorption and framework response'},allowBoth:true,depth:document.getElementById('depth'),legacyHeader:null,sections:[{id:'core',zh:'核心思想',en:'Core idea'},{id:'structure',zh:'结构与拓扑',en:'Structure & topology'},{id:'adsorption',zh:'吸附证据',en:'Adsorption evidence'},{id:'pxrd',zh:'PXRD 响应',en:'PXRD response'},{id:'flexibility',zh:'框架柔性',en:'Framework flexibility'},{id:'water',zh:'水与氢键',en:'Water & H-bonds'},{id:'limits',zh:'边界与来源',en:'Limits & sources'}],onLanguageChange:updateLang});
+const controller=AtlasPaper.init({shortTitle:'CALF-20',title:{zh:'CALF-20 柔性｜气体吸附与框架响应',en:'CALF-20 flexibility | Gas adsorption and framework response'},allowBoth:true,depth:document.getElementById('depth'),legacyHeader:null,sections:[{id:'core',zh:'核心思想',en:'Core idea'},{id:'structure',zh:'结构与拓扑',en:'Structure & topology'},{id:'adsorption',zh:'吸附证据',en:'Adsorption evidence'},{id:'pxrd',zh:'PXRD 响应',en:'PXRD response'},{id:'flexibility',zh:'框架柔性',en:'Framework flexibility'},{id:'water',zh:'水与氢键',en:'Water & H-bonds'},{id:'limits',zh:'边界与来源',en:'Limits & sources'}],onLanguageChange:updateLang});
 </script>
 </body>
 </html>

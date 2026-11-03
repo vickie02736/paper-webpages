@@ -48,3 +48,11 @@ Checked 2026-11-01. The shared byline uses the ordered manuscript authors and ex
 - [Explicit printed proceedings publication statement; source discloses year only](https://proceedings.neurips.cc/paper/2020/file/6b493230205f780e1bc26945df7481e5-Paper.pdf) — dates.published.
 
 Paper dates: published = 2020; accepted = notDisclosed; preprint = 2020-05-22. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.
+
+## Audit 2026-11-03
+
+Second-pass content audit of the site-wide explainer review (`reports/explainer-audit/content-findings.md`). Each correction cites its source location; claims not listed were rechecked and left unchanged.
+
+- Figure 2 note (zh): “说明 BART 自己已经能完成标题” stated the authors’ hypothesis as fact; §4.3 p. 6 says “This observation suggests that the generator can complete the titles”. zh now hedges like the English.
+- Generation chart note (zh/en): “RAG-Token is better at combining clues” is the authors’ explanation (“may perform best because…”, §4.3); the measured fact is Q-BLEU-1 22.2 vs 21.4 (Table 2).
+- QA chart (zh/en, `renderBars`): the highlight marked the last bar (always RAG-Sequence) rather than the best; it now marks each dataset’s maximum (DPR on standard TQA, RAG-Token on WQ). The caption now says the baselines are a selection (Table 1 also lists T5-11B+SSM 36.6/44.7 and REALM 40.4 on NQ). No values changed.

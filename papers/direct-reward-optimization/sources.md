@@ -45,7 +45,7 @@ Source locator: §4.1 Figures 1–5 (PDF pp.8–9); Appendices B/C
 
 1. Figures 1/2 report pairwise evaluation of T5-L and T5-XL in the UltraFeedback setting: DRO-V versus KTO wins 63.4%±1.0% and 57.5%±0.8%. Errors are standard deviations over five evaluation folds of 1,000 prompts, not confidence intervals.
 
-2. Section 4.1 and appendices study policy/value learning rates, regularization, initialization, and parameter sharing. KTO receives a regularization search while DRO-V uses a default. Findings support the reported models and evaluation, not current large-model verl runs.
+2. Section 4.1 and Appendix C study policy/value learning rates, the regularization scale τ, and parameter sharing (single vs. two networks, single vs. multiple values). KTO receives a regularization search while DRO-V uses a default. Findings support the reported models and evaluation, not current large-model verl runs.
 
 ### limits
 

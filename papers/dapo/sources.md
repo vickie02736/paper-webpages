@@ -11,19 +11,19 @@
 
 ## Source locators
 
-§§3.1–3.4 equations 8–14; Algorithm 1; §4.1–4.3 Table 1; verl DAPO FAQ
+§§3.1–3.4 equations 8–13; Algorithm 1; §4.1–4.3 Table 1; verl DAPO FAQ
 
 ## Claim mapping
 
 ### background
 
-Source locator: §§3.1–3.4 Eqs.8–14; Algorithm 1
+Source locator: §§3.1–3.4 Eqs.8–13; Algorithm 1
 
 1. Naive GRPO can suffer entropy collapse, an increasing share of zero-advantage groups, imbalanced long-answer weighting, and reward noise from truncation. DAPO contributes a reproducible training system and its components, rather than only a new loss.
 
 ### mechanism
 
-Source locator: §§3.1–3.4 Eqs.8–14; Algorithm 1
+Source locator: §§3.1–3.4 Eqs.8–13; Algorithm 1
 
 1. Clip-Higher separates εlow and εhigh, increasing upward room for positively advantaged actions. Dynamic sampling filters all-correct or all-wrong reward groups and resamples until enough informative prompts are collected, changing batch composition and incurring extra generation.
 
@@ -31,7 +31,7 @@ Source locator: §§3.1–3.4 Eqs.8–14; Algorithm 1
 
 ### math
 
-Source locator: §§3.1–3.4 Eqs.8–14; Algorithm 1
+Source locator: §§3.1–3.4 Eqs.8–13; Algorithm 1
 
 1. The first expression suppresses sampling conditions and reward-model details to highlight aggregation. The second is a teaching form for the buffer: L is maximum length, B buffer width, T generated length, and penalty coefficient one. Hard truncation and its mask are handled separately.
 
@@ -47,7 +47,7 @@ Source locator: §4.2 Table 1; §4.3 training dynamics
 
 ### limits
 
-Source locator: Interpretive analysis of assumptions and scope in §§3.1–3.4 Eqs.8–14; Algorithm 1; empirical limits in §4.2 Table 1; §4.3 training dynamics
+Source locator: Interpretive analysis of assumptions and scope in §§3.1–3.4 Eqs.8–13; Algorithm 1; empirical limits in §4.2 Table 1; §4.3 training dynamics
 
 1. The heuristics interact and their gains depend on model, data, and context budget. A larger upper clipping boundary is not a theorem guaranteeing better exploration or preventing entropy collapse for every model.
 

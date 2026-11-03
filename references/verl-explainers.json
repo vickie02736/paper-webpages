@@ -115,6 +115,11 @@
     "readingAnswer": {
       "zh": "min(−0.5,−0.8)=−0.8。处在负优势的下侧平台，对 r 的局部导数为 0；这不意味着整个神经网络的全部梯度为 0。",
       "en": "min(−0.5,−0.8)=−0.8. This is the lower plateau for a negative advantage, so the local derivative with respect to r is zero. It does not make every neural-network gradient zero."
+    },
+    "locatorZh": "§§2–5；公式 7、9、11–12；算法 1；§6.1 表 1；§6.4 表 2",
+    "claimLocatorsZh": {
+      "mechanism": "§§2–5；公式 7、9、11–12；算法 1",
+      "math": "§§2–5；公式 7、9、11–12；算法 1"
     }
   },
   {
@@ -144,11 +149,11 @@
         "en": "Original GRPO averages token losses within each answer and then averages answers, while adding a KL term relative to a reference policy. The reference, old sampling, and current trainable policies have different roles even though no critic is used."
       }
     ],
-    "formula": "Ai = (Ri − mean(R)) / std(R)\nJ = E[(1/G) Σi (1/Ti) Σt {min(ri,t Ai, clip(ri,t) Ai) − β DKL}]",
+    "formula": "Ai = (Ri − mean(R)) / std(R)\nJ = E[(1/G) Σi (1/Ti) Σt {min(ri,t Ai, clip(ri,t, 1−ε, 1+ε) Ai) − β DKL}]",
     "math": [
       {
-        "zh": "Ri 是第 i 个答案的奖励，Ti 为有效 token 数，ri,t=πθ/πold。优势只说明组内相对位置：全对与全错两种组都没有结果奖励对比信号。演示使用总体标准差，零方差时显式返回零，并说明这只涉及奖励梯度，KL 项仍可能产生更新。",
-        "en": "Ri is answer i’s reward, Ti its valid token count, and ri,t=πθ/πold. Advantages encode relative rank within a group: both all-correct and all-wrong groups lack outcome-reward contrast. The demo uses population standard deviation and explicitly returns zero at zero variance. This concerns the reward gradient; a KL term may still update the policy."
+        "zh": "Ri 是第 i 个答案的奖励，Ti 为有效 token 数，ri,t=πθ/πold，ε 为裁剪宽度，β 为 KL 系数。优势只说明组内相对位置：全对与全错两种组都没有结果奖励对比信号。演示使用总体标准差，零方差时显式返回零，并说明这只涉及奖励梯度，KL 项仍可能产生更新。",
+        "en": "Ri is answer i’s reward, Ti its valid token count, and ri,t=πθ/πold; ε is the clip width and β the KL coefficient. Advantages encode relative rank within a group: both all-correct and all-wrong groups lack outcome-reward contrast. The demo uses population standard deviation and explicitly returns zero at zero variance. This concerns the reward gradient; a KL term may still update the policy."
       },
       {
         "zh": "DrGRPO 的讨论属于后续研究：去掉组内标准差缩放，并用固定尺度替代逐答案长度平均。verl 的默认 token-mean 又与原始论文的序列等权聚合不同；这三种设置必须分别标明。",
@@ -175,7 +180,7 @@
       "zh": "verl 使用 adv_estimator=grpo 和组采样 n>1。核对 loss_agg_mode、norm_adv_by_std_in_grpo 与 KL 配置后，才能判断运行的是哪个变体。",
       "en": "verl uses adv_estimator=grpo and group sampling n>1. Inspect loss_agg_mode, norm_adv_by_std_in_grpo, and KL settings before identifying the variant."
     },
-    "locator": "§§2–4; §4.1 equations 3–5; Table 5; §5 and Appendix A; verl GRPO Advanced Extensions",
+    "locator": "§§2–4; §4.1 equations 3–4; Table 5; §5 and Appendix A; verl GRPO Advanced Extensions",
     "rows": [
       [
         "DeepSeekMath-Instruct 7B",
@@ -213,11 +218,11 @@
     "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
     "docSha256": "d43fb13fba50523c0a39fec81e56bb300dd4468ddfd331b193a9a6bedf646b9c",
     "claimLocators": {
-      "background": "§§2–3 data/pretraining; §4.1 Eqs.3–5",
-      "mechanism": "§§2–3 data/pretraining; §4.1 Eqs.3–5",
-      "math": "§§2–3 data/pretraining; §4.1 Eqs.3–5",
+      "background": "§§2–3 data/pretraining; §4.1 Eqs.3–4",
+      "mechanism": "§§2–3 data/pretraining; §4.1 Eqs.3–4",
+      "math": "§§2–3 data/pretraining; §4.1 Eqs.3–4",
       "evidence": "Table 5; §5 and Appendix A",
-      "limits": "Interpretive analysis of assumptions and scope in §§2–3 data/pretraining; §4.1 Eqs.3–5; empirical limits in Table 5; §5 and Appendix A",
+      "limits": "Interpretive analysis of assumptions and scope in §§2–3 data/pretraining; §4.1 Eqs.3–4; empirical limits in Table 5; §5 and Appendix A",
       "implementation": "Pinned verl docs/algo/grpo.md; implementation-specific settings"
     },
     "foundation": {
@@ -231,6 +236,11 @@
     "readingAnswer": {
       "zh": "因为组内奖励相同，每条奖励减去组均值都为零，标准差也为零。这里将优势置零；“全对”说明本组成功，却不告诉算法哪条答案应相对其他答案增加概率。",
       "en": "All rewards equal their group mean, so centered rewards and standard deviation are zero. The demo sets advantages to zero. Success alone does not identify which answer should become more probable relative to the others."
+    },
+    "locatorZh": "§§2–4；§4.1 公式 3–4；表 5；§5 与附录 A；verl GRPO 文档 “Advanced Extensions”",
+    "claimLocatorsZh": {
+      "mechanism": "§§2–3 数据与预训练；§4.1 公式 3–4",
+      "math": "§§2–3 数据与预训练；§4.1 公式 3–4"
     }
   },
   {
@@ -291,10 +301,10 @@
       "zh": "重点核对 clip_ratio_low/high、filter_groups、token-mean 及 overlong_buffer。verl recipe 未把原文中的每一种过滤实验都做成相同默认。",
       "en": "Inspect clip_ratio_low/high, filter_groups, token-mean, and overlong_buffer. The verl recipe does not make every filtering experiment in the paper an identical default."
     },
-    "locator": "§§3.1–3.4 equations 8–14; Algorithm 1; §4.1–4.3 Table 1; verl DAPO FAQ",
+    "locator": "§§3.1–3.4 equations 8–13; Algorithm 1; §4.1–4.3 Table 1; verl DAPO FAQ",
     "rows": [
       [
-        "GRPO",
+        "Naive GRPO",
         30
       ],
       [
@@ -369,11 +379,11 @@
     "docCommit": "3fdf2b548882a8aeccf0842c2150d9c9f1790a55",
     "docSha256": "4ad9287e2d91dcf492e4a83f3711df4206d20444e5006c03f92208d7d14de0f9",
     "claimLocators": {
-      "background": "§§3.1–3.4 Eqs.8–14; Algorithm 1",
-      "mechanism": "§§3.1–3.4 Eqs.8–14; Algorithm 1",
-      "math": "§§3.1–3.4 Eqs.8–14; Algorithm 1",
+      "background": "§§3.1–3.4 Eqs.8–13; Algorithm 1",
+      "mechanism": "§§3.1–3.4 Eqs.8–13; Algorithm 1",
+      "math": "§§3.1–3.4 Eqs.8–13; Algorithm 1",
       "evidence": "§4.2 Table 1; §4.3 training dynamics",
-      "limits": "Interpretive analysis of assumptions and scope in §§3.1–3.4 Eqs.8–14; Algorithm 1; empirical limits in §4.2 Table 1; §4.3 training dynamics",
+      "limits": "Interpretive analysis of assumptions and scope in §§3.1–3.4 Eqs.8–13; Algorithm 1; empirical limits in §4.2 Table 1; §4.3 training dynamics",
       "implementation": "Pinned verl docs/algo/dapo.md; implementation-specific settings"
     },
     "foundation": {
@@ -387,6 +397,11 @@
     "readingAnswer": {
       "zh": "长度惩罚为 −(90−80)/20=−0.5。组过滤是另一个判断：按演示的二值正确性规则，全对组仍被丢弃。",
       "en": "The length penalty is −(90−80)/20=−0.5. Group filtering is separate: under the demo’s binary-correctness rule, an all-correct group is still dropped."
+    },
+    "locatorZh": "§§3.1–3.4 公式 8–13；算法 1；§4.1–4.3 表 1；verl DAPO 文档 FAQ",
+    "claimLocatorsZh": {
+      "mechanism": "§§3.1–3.4 公式 8–13；算法 1",
+      "math": "§§3.1–3.4 公式 8–13；算法 1"
     }
   },
   {
@@ -419,8 +434,8 @@
     "formula": "z = λ[log πθ(y|x)/πold(y|x) − log πθ(y′|x)/πold(y′|x)]\nL = E[log(1 + exp(−z))]",
     "math": [
       {
-        "zh": "x 来自示范提示，y 来自示范答案，y′ 由当前轮旧模型采样，λ 控制更新尺度。提升示范相对旧模型的概率比、压低生成答案的相对概率比，会增大 z 并降低损失。",
-        "en": "x is a demonstration prompt, y its demonstration answer, y′ an old-policy sample, and λ the update scale. Raising the demonstration’s relative probability ratio and lowering the generated answer’s ratio increases z and reduces loss."
+        "zh": "x 来自示范提示，y 来自示范答案，y′ 由当前轮旧模型采样，λ 是式 4.3 的正则化参数：λ 越大，相邻两轮模型的变化越小（注 5.5）。提升示范相对旧模型的概率比、压低生成答案的相对概率比，会增大 z 并降低损失。",
+        "en": "x is a demonstration prompt, y its demonstration answer, y′ an old-policy sample, and λ the regularization parameter of Eq. 4.3; a larger λ yields a smaller change between successive opponents (Remark 5.5). Raising the demonstration’s relative probability ratio and lowering the generated answer’s ratio increases z and reduces loss."
       },
       {
         "zh": "式 4.7 的一般形式允许凸递减损失。定理 5.2、5.4 的最优性结论依赖可表达目标分布和相应优化假设；有限神经网络、有限样本和近似优化不继承一个无条件的收敛保证。",
@@ -429,12 +444,12 @@
     ],
     "evidence": [
       {
-        "zh": "论文从 zephyr-7b-sft-full 出发，使用 Ultrachat200k 的 50k 子集，迭代后 Open LLM Leaderboard 六项平均从 58.14 到 63.16，MT-Bench 从 5.94 到 6.78。两个指标有不同量尺。",
-        "en": "Starting from zephyr-7b-sft-full and a 50k subset of Ultrachat200k, the paper raises the six-task Open LLM Leaderboard average from 58.14 to 63.16 and MT-Bench from 5.94 to 6.78. These metrics use different scales."
+        "zh": "论文从 zephyr-7b-sft-full 出发，使用 Ultrachat200k 的 50k 提示子集。Open LLM Leaderboard 六项平均从 58.14（SFT）升至第 3 轮的 63.16（附录表 4）；MT-Bench 从 5.94 升至第 2 轮的 6.78（附录表 6，未报告第 3 轮）。两个指标的量尺和对应轮次都不同。",
+        "en": "Starting from zephyr-7b-sft-full and a 50k-prompt subset of Ultrachat200k, the paper raises the six-task Open LLM Leaderboard average from 58.14 (SFT) to 63.16 at iteration 3 (Appendix Table 4) and MT-Bench from 5.94 to 6.78 at iteration 2 (Appendix Table 6, which reports no iteration 3). The two metrics differ in scale and in the iteration reported."
       },
       {
-        "zh": "附录 B 分列数据量、更多 SFT 与迭代轮次的比较，也列出各任务 few-shot 设置。只看综合均值会掩盖任务间差异；生成训练对本身也有时间成本。",
-        "en": "Appendix B compares data quantity, additional SFT, and iteration count and lists each task’s few-shot protocol. Aggregate scores can hide task differences, and generating training pairs has its own time cost."
+        "zh": "§6.3 图 5 比较数据量；附录 B 表 4–5 比较迭代轮次与更多 SFT，表 1 列出各任务 few-shot 设置。只看综合均值会掩盖任务间差异；生成训练对本身也有时间成本。",
+        "en": "§6.3 (Figure 5) compares data quantity; Appendix B Tables 4–5 compare iteration count and additional SFT, and Table 1 lists each task’s few-shot protocol. Aggregate scores can hide task differences, and generating training pairs has its own time cost."
       }
     ],
     "limits": [
@@ -447,14 +462,14 @@
       "zh": "verl 的 SPIN recipe 说明其使用在线 DPO、奖励排序和可更新参考模型。这是受 SPIN 启发的实现；页面把这些机制放在单独附注，避免归给原论文。",
       "en": "The verl SPIN recipe describes online DPO, reward-based ranking, and an updatable reference model. These are implementation choices inspired by SPIN and are separated from the original paper."
     },
-    "locator": "§4 equation 4.7 and Algorithm 1; §5 Theorems 5.2/5.4; §6; Appendix B Tables 3–5; verl SPIN Our Online DPO Implementation",
+    "locator": "§4 equation 4.7 and Algorithm 1; §5 Theorems 5.2/5.4; §6; §6.3 Figure 5; Appendix B Tables 1, 2, 4–6; verl SPIN Our Online DPO Implementation",
     "rows": [
       [
         "SFT",
         58.14
       ],
       [
-        "SPIN",
+        "SPIN Iter3",
         63.16
       ]
     ],
@@ -462,7 +477,7 @@
       "zh": "Open LLM Leaderboard 六项平均",
       "en": "Open LLM Leaderboard six-task average"
     },
-    "evidencePage": 16,
+    "evidencePage": 17,
     "version": "2401.01335v3",
     "source": "https://arxiv.org/abs/2401.01335v3",
     "sourceTitle": "Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models",
@@ -482,8 +497,8 @@
       "background": "§4 Eq.4.7 and Algorithm 1; §5 Theorems 5.2/5.4",
       "mechanism": "§4 Eq.4.7 and Algorithm 1; §5 Theorems 5.2/5.4",
       "math": "§4 Eq.4.7 and Algorithm 1; §5 Theorems 5.2/5.4",
-      "evidence": "§6; Appendix B Tables 2–5",
-      "limits": "Interpretive analysis of assumptions and scope in §4 Eq.4.7 and Algorithm 1; §5 Theorems 5.2/5.4; empirical limits in §6; Appendix B Tables 2–5",
+      "evidence": "§6; §6.3 Figure 5; Appendix B Tables 1, 2, 4–6",
+      "limits": "Interpretive analysis of assumptions and scope in §4 Eq.4.7 and Algorithm 1; §5 Theorems 5.2/5.4; empirical limits in §6; §6.3 Figure 5; Appendix B Tables 1, 2, 4–6",
       "implementation": "Pinned verl docs/algo/spin.md; implementation-specific settings"
     },
     "foundation": {
@@ -497,7 +512,15 @@
     "readingAnswer": {
       "zh": "原始 SPIN 复用固定示范并重新生成对手答案，所以不要求每轮新增偏好标签。但示范本身仍提供人类监督，其质量和覆盖限制目标分布。",
       "en": "Original SPIN reuses fixed demonstrations and regenerates opponent answers, avoiding new preference labels each round. The demonstrations still supply human supervision, whose quality and coverage constrain the target."
-    }
+    },
+    "locatorZh": "§4 公式 4.7 与算法 1；§5 定理 5.2/5.4；§6；§6.3 图 5；附录 B 表 1、2、4–6；verl SPIN 文档 “Our Online DPO Implementation”",
+    "claimLocatorsZh": {
+      "mechanism": "§4 公式 4.7 与算法 1；§5 定理 5.2/5.4",
+      "math": "§4 公式 4.7 与算法 1；§5 定理 5.2/5.4"
+    },
+    "ledgerNotes": [
+      "Audit 2026-11-03: 63.16 is SPIN iteration 3 (Appendix Table 4, PDF p.17); MT-Bench 6.78 is iteration 2 (Table 6, p.17, no iteration-3 row). The evidence page moved from p.16 (Table 3, SPIN+DPO) to p.17. λ is the Eq. 4.3 regularization parameter (Remark 5.5), not an update scale. The data-quantity study is §6.3 Figure 5."
+    ]
   },
   {
     "slug": "sppo",
@@ -543,8 +566,8 @@
         "en": "Table 1 reports AlpacaEval 2.0 length-controlled win rates of 17.11% for Mistral-7B-Instruct-v0.2 and 28.53% for SPPO iteration 3. The ordinary win rate is 31.02%; these metrics are not interchangeable."
       },
       {
-        "zh": "表 3 的通用能力平均并非每轮都单调上升。best-of-16 又引入推理时重排，必须与单次生成结果分别比较。verl 的 MATH 复现使用另一种模型和评测设置。",
-        "en": "The general-capability average in Table 3 does not rise monotonically every round. Best-of-16 introduces inference-time reranking and must be compared separately from single-generation results. The verl MATH reproduction uses a different model and evaluation protocol."
+        "zh": "表 3 中 Mistral-7B-SPPO 的通用能力平均并非逐轮上升（66.67→66.75→66.40）。best-of-16 又引入推理时重排，必须与单次生成结果分别比较。verl 的 MATH 复现使用另一种模型和评测设置。",
+        "en": "In Table 3 the Mistral-7B-SPPO general-capability average does not rise every round (66.67→66.75→66.40). Best-of-16 introduces inference-time reranking and must be compared separately from single-generation results. The verl MATH reproduction uses a different model and evaluation protocol."
       }
     ],
     "limits": [
@@ -616,7 +639,16 @@
     "readingAnswer": {
       "zh": "C 的胜率为 0.8，A 为 0.5，B 为 0.2。换一个对手混合，排序就可能改变；这正是固定标量排序难以表达的部分。",
       "en": "C wins with probability 0.8, versus 0.5 for A and 0.2 for B. Changing the opponent mixture can change the ranking, which a fixed scalar ordering struggles to represent."
-    }
+    },
+    "locatorZh": "§4 公式 4.2–4.6；算法 1；§5 表 1/3；附录 A；verl SPPO 文档 “Reproduce the Experiment”",
+    "claimLocatorsZh": {
+      "mechanism": "§4 公式 4.2–4.6；算法 1",
+      "math": "§4 公式 4.2–4.6；算法 1"
+    },
+    "ledgerNotes": [
+      "Version discrepancy: Table 1 of v5 prints 17.11 for the Mistral baseline; accompanying improvement annotations imply 17.10. We use the explicit table cell, and do not recompute the paper’s annotations.",
+      "Version discrepancy: the v5 prose on PDF p.16 gives 28.52% for Mistral-7B-SPPO Iter3 (length-controlled), while Table 1 and its caption print 28.53. We use the table cell."
+    ]
   },
   {
     "slug": "entropy-mechanism",
@@ -662,8 +694,8 @@
     ],
     "evidence": [
       {
-        "zh": "表 2 的 Qwen2.5-32B 七基准平均为：GRPO 45.8、Clip-Higher 47.2、Clip-Cov 50.3、KL-Cov 52.2。AIME 和 AMC 使用 avg@32；总平均跨不同基准，不能称为单一数据集准确率。",
-        "en": "Table 2’s seven-benchmark average for Qwen2.5-32B is 45.8 for GRPO, 47.2 for Clip-Higher, 50.3 for Clip-Cov, and 52.2 for KL-Cov. AIME and AMC use avg@32. The aggregate spans benchmarks and is not a single-dataset accuracy."
+        "zh": "表 2 中 Qwen2.5-32B 的 Avg. 列（论文未说明加权方式，且不等于七项简单平均，如 GRPO 简单平均约 45.2）为：GRPO 45.8、Clip-Higher 47.2、Clip-Cov 50.3、KL-Cov 52.2。AIME 和 AMC 使用 avg@32；总平均跨不同基准，不能称为单一数据集准确率。",
+        "en": "Table 2’s Avg. column for Qwen2.5-32B (weighting unstated in the paper; not the unweighted mean of the seven benchmarks, e.g. ≈45.2 for GRPO) is 45.8 for GRPO, 47.2 for Clip-Higher, 50.3 for Clip-Cov, and 52.2 for KL-Cov. AIME and AMC use avg@32. The aggregate spans benchmarks and is not a single-dataset accuracy."
       },
       {
         "zh": "并非每个单项都由同一种方法最好：32B 的 MATH-500 上 Clip-Cov 为 87.0、KL-Cov 为 84.6。论文的约束方法具有不同取舍，不能由总平均推断每项提升。",
@@ -700,8 +732,8 @@
       ]
     ],
     "metric": {
-      "zh": "Qwen2.5-32B 七基准平均分",
-      "en": "Qwen2.5-32B seven-benchmark mean score"
+      "zh": "Qwen2.5-32B 表 2 Avg. 列（论文报告值）",
+      "en": "Qwen2.5-32B Table 2 Avg. column (as reported)"
     },
     "evidencePage": 12,
     "version": "2505.22617v1",
@@ -750,7 +782,15 @@
     "readingAnswer": {
       "zh": "分布从最均匀状态偏向动作 1，熵下降。但这个变化并不能判断动作 1 是否正确，也不能单独证明训练性能提高或下降。",
       "en": "The distribution moves away from uniform toward action 1, lowering entropy. This neither determines whether action 1 is correct nor establishes a performance gain or loss."
-    }
+    },
+    "locatorZh": "§2.4 经验拟合；§3.1 熵动力学；§4.1–4.3；表 2；图 9–10",
+    "claimLocatorsZh": {
+      "mechanism": "§2.4 经验拟合；§3.1 熵动力学；§4.1–4.2 公式 10–14",
+      "math": "§2.4 经验拟合；§3.1 熵动力学；§4.1–4.2 公式 10–14"
+    },
+    "ledgerNotes": [
+      "Audit 2026-11-03: Table 2 (PDF p.12) Avg. does not equal the unweighted mean of the seven listed columns (32B GRPO: 316.2/7 = 45.17 vs printed 45.8; KL-Cov 51.59 vs 52.2). The paper does not state the weighting; the page reports the printed Avg. column and labels it as reported."
+    ]
   },
   {
     "slug": "opo",
@@ -861,6 +901,11 @@
     "readingAnswer": {
       "zh": "共同长度在分子与分母中约掉，两者相等。长度不同才会改变权重；这种改变是否接近最优，仍取决于梯度代理的假设。",
       "en": "The common length cancels between numerator and denominator, giving the ordinary mean. Unequal lengths change weights, but proximity to the optimum still depends on the gradient-proxy assumptions."
+    },
+    "locatorZh": "§3.1–3.3 公式 5–12；算法 1；§4.1–4.2 表 1/2；附录 A",
+    "claimLocatorsZh": {
+      "mechanism": "§3 最优基线，公式 7–12；附录 A",
+      "math": "§3 最优基线，公式 7–12；附录 A"
     }
   },
   {
@@ -903,8 +948,8 @@
     ],
     "evidence": [
       {
-        "zh": "Qwen2-7B-Instruct 的 GSM8K 记录包括 GRPO 89.0、FSDP2 89.8、Megatron 89.6，以及 GPG 88.0。这些是文档提供的运行分数，页面不据此推导后端或算法的显著优劣。",
-        "en": "GSM8K records for Qwen2-7B-Instruct include GRPO 89.0, FSDP2 89.8, Megatron 89.6, and GPG 88.0. These are documented run scores; this page does not infer statistically significant backend or algorithm superiority."
+        "zh": "Qwen2-7B-Instruct 的 GSM8K 记录包括 GRPO 89、FSDP2 89.8、Megatron 89.6，以及 GPG 与 GPG (Megatron) 均为 88。这些是文档提供的运行分数，页面不据此推导后端或算法的显著优劣。",
+        "en": "GSM8K records for Qwen2-7B-Instruct include GRPO 89, FSDP2 89.8, Megatron 89.6, and 88 for both GPG and GPG (Megatron). These are documented run scores; this page does not infer statistically significant backend or algorithm superiority."
       },
       {
         "zh": "Qwen2.5-7B-Instruct 的 SPPO 65.6 明确来自 MATH，不能与同模型 SPIN 的 GSM8K 92 画在同一个准确率排行榜。每行链接指向原脚本或日志，便于检查未列出的条件。",
@@ -1192,7 +1237,15 @@
     "readingAnswer": {
       "zh": "不能。评测题集、模型与训练条件不同。先筛到相同评测集与模型，再核对日志中的采样、长度和评分规则；这些条件不齐，仍只能把它们当作各自的运行记录。",
       "en": "No. The evaluation sets, models, and training conditions differ. Filter to the same evaluation set and model, then inspect sampling, length, and scoring in the logs. Without matched conditions they remain separate run records."
-    }
+    },
+    "locatorZh": "verl “Algorithm Baselines” 文档：GSM8k 表；DAPO math-17k；注释 [1]–[2]",
+    "claimLocatorsZh": {
+      "mechanism": "GSM8k、DAPO math-17k 与代码相关数据集；注释 [1]–[2]",
+      "math": "GSM8k、DAPO math-17k 与代码相关数据集；注释 [1]–[2]"
+    },
+    "ledgerNotes": [
+      "Source caveat: the ReMax row lists Qwen/Qwen2.5-7B-Instruct but links remax_trainer/run_qwen2.5-3b_seq_balance.sh. The page transcribes the doc as printed; the mismatch is unresolved."
+    ]
   },
   {
     "slug": "gpg",
@@ -1228,8 +1281,8 @@
         "en": "B is the batch sample count and M the uninformative count. If all groups are degenerate, B−M=0; division is invalid. The demo marks no learning signal and sets the effective update to zero rather than displaying infinity."
       },
       {
-        "zh": "当所有组大小相同，按组计数可展示相同的缩放直觉。α 修正的是有效批次幅度；剔除退化组、有限样本基线和数据重用仍可能改变估计性质，因此不能把它笼统表述为原始总体目标的无偏估计器。",
-        "en": "With equal group sizes, group counts illustrate the same scaling. α corrects effective batch magnitude. Degenerate-group selection, finite-sample baselines, and data reuse still affect the estimator, so it should not be described unconditionally as unbiased for the original population objective."
+        "zh": "当所有组大小相同，按组计数可展示相同的缩放直觉。α 修正的是有效批次幅度。作者称 AGE 给出无偏梯度估计（§2.2）；本页认为剔除退化组、有限样本基线和数据重用仍可能改变估计性质，因此该说法需附条件。",
+        "en": "With equal group sizes, group counts illustrate the same scaling. α corrects effective batch magnitude. The authors describe AGE as an unbiased gradient estimate (§2.2); this guide notes that degenerate-group selection, finite-sample baselines, and data reuse can still affect the estimator, so the claim needs qualification."
       }
     ],
     "evidence": [
@@ -1255,15 +1308,15 @@
     "locator": "§2.2 equations 5–8; Table 1 (PDF p.4); §3 experiments and ablations; Appendix A",
     "rows": [
       [
-        "GPG, α=1",
+        "GPG (Fnorm=1, α=1)",
         43.9
       ],
       [
-        "GPG + AGE",
+        "GPG (Fnorm=1) + AGE",
         47.8
       ],
       [
-        "GPG + AGE + threshold",
+        "GPG (Fnorm=1) + AGE + βth=0.6",
         48.3
       ]
     ],
@@ -1292,7 +1345,7 @@
       "mechanism": "§2.2 Eqs.5–8; advantage normalization and AGE",
       "math": "§2.2 Eqs.5–8; advantage normalization and AGE",
       "evidence": "Table 1 (PDF p.4); §3 experiments and ablations",
-      "limits": "Interpretive analysis of assumptions and scope in §3 Eqs.5–7; advantage normalization and AGE; empirical limits in Table 1 (PDF p.4); §4 ablations",
+      "limits": "Interpretive analysis of assumptions and scope in §2.2 Eqs.5–8; advantage normalization and AGE; empirical limits in Table 1 (PDF p.4); §3.4 ablations",
       "implementation": "Pinned verl docs/algo/gpg.md; implementation-specific settings"
     },
     "foundation": {
@@ -1306,6 +1359,11 @@
     "readingAnswer": {
       "zh": "α=8/(8−4)=2。M=8 时没有有信号的组，分母为零，应跳过更新；不能把无限系数解释为“学习更强”。",
       "en": "α=8/(8−4)=2. At M=8 no informative group remains and the denominator is zero, so the update should be skipped. An infinite multiplier does not mean stronger learning."
+    },
+    "locatorZh": "§2.2 公式 5–8；表 1（PDF 第 4 页）；§3 实验与消融；附录 A",
+    "claimLocatorsZh": {
+      "mechanism": "§2.2 公式 5–8；优势归一化与 AGE",
+      "math": "§2.2 公式 5–8；优势归一化与 AGE"
     }
   },
   {
@@ -1421,6 +1479,11 @@
     "readingAnswer": {
       "zh": "(0.3/0.2)×(0.4/0.3)=2，等于当前概率除以实际采样概率。旧概率约掉；但一旦分别裁剪或加 mask，这种代数抵消就不能用来声称目标仍完全相同。",
       "en": "(0.3/0.2)×(0.4/0.3)=2, equal to current probability divided by sampling probability. The old probability cancels algebraically, but separate clipping or masks change the objective."
+    },
+    "locatorZh": "verl rollout_corr 文档：Overview、Key Design Principle、Operating Modes、IS/RS 配置；所链接的作者分析与 arXiv:2512.23075",
+    "claimLocatorsZh": {
+      "mechanism": "使用指南：Three Policies；IS；RS；Bypass 与 Decoupled PPO 的对比",
+      "math": "使用指南：Three Policies；IS；RS；Bypass 与 Decoupled PPO 的对比"
     }
   },
   {
@@ -1453,8 +1516,8 @@
     "formula": "W(τ) = ∏t π(at|st)/μ(at|st) = exp(Σt log ρt)\nESS = (Σi Wi)² / Σi Wi²\nEμ[min(W,C) f] ≠ Eπ[f]  (in general)",
     "math": [
       {
-        "zh": "使用 log 空间累加能缓解数值溢出，但不消除统计重尾。ESS 是批次权重集中的诊断量，不是对相关样本真实独立数量的精确计数；当所有权重为零时应报告不可定义。",
-        "en": "Summing in log space reduces numerical overflow but does not eliminate statistical heavy tails. ESS diagnoses concentration of batch weights; it is not an exact count of independent correlated samples. It is undefined when all weights are zero."
+        "zh": "使用 log 空间累加能缓解数值溢出，但不消除统计重尾。ESS 是批次权重集中的诊断量，不是对相关样本真实独立数量的精确计数；当所有权重为零时应报告不可定义。verl 的 rollout_is_eff_sample_size 报告归一化比例 1/mean(w̃²)=ESS/N（0–1），不是条数。",
+        "en": "Summing in log space reduces numerical overflow but does not eliminate statistical heavy tails. ESS diagnoses concentration of batch weights; it is not an exact count of independent correlated samples. It is undefined when all weights are zero. verl’s rollout_is_eff_sample_size reports the normalized fraction 1/mean(w̃²)=ESS/N (0–1), not a count."
       },
       {
         "zh": "演示设每步条件概率比相同，只改变比值与序列长度，显示逐 token 比值、序列乘积和截断后乘积。这是量级示意，不是假设真实语言模型每步比值恒定，也不是训练曲线。",
@@ -1520,7 +1583,7 @@
     "claimLocators": {
       "background": "Math guide §§1.1–1.3 and §2; Hilton et al. §2; TRM §§2–5",
       "mechanism": "Math guide §§1.1–1.3 and §2; Hilton et al. §2; TRM §§2–5",
-      "math": "Math guide §§1.1–1.3 and §2; Hilton et al. §2; TRM §§2–5",
+      "math": "Math guide §§1.1–1.3 and §2; Hilton et al. §2; TRM §§2–5; usage guide Metrics → Effective Sample Size",
       "evidence": "Math guide §§3–4: aggregation, rejection, and diagnostics; no new training results",
       "limits": "Interpretive analysis of assumptions and scope in Math guide §§1.1–1.3 and §2; Hilton et al. §2; TRM §§2–5; empirical limits in Math guide §§3–4: aggregation, rejection, and diagnostics; no new training results",
       "implementation": "Pinned verl docs/algo/rollout_corr_math.md; implementation-specific settings"
@@ -1536,6 +1599,11 @@
     "readingAnswer": {
       "zh": "不是，序列权重为 1.1²⁰≈6.7275。截断到 3 会限制该样本的贡献，但也改变原本加权期望，通常引入偏差。",
       "en": "No. The sequence weight is 1.1²⁰≈6.7275. Capping it at 3 limits the sample’s contribution but changes the weighted expectation and generally introduces bias."
+    },
+    "locatorZh": "verl rollout_corr_math §§1.1–2.4 与 “Algorithmic Components”；作者博客系列第 1–3 部分；arXiv:2512.23075",
+    "claimLocatorsZh": {
+      "mechanism": "数学指南 §§1.1–1.3 与 §2；Hilton et al. §2；TRM §§2–5",
+      "math": "数学指南 §§1.1–1.3 与 §2；Hilton et al. §2；TRM §§2–5；使用指南 Metrics → Effective Sample Size"
     }
   },
   {
@@ -1643,8 +1711,8 @@
       "background": "§§3–5 Eqs.6–13; Figure 6; §5.3 proxy assumptions",
       "mechanism": "§§3–5 Eqs.6–13; Figure 6; §5.3 proxy assumptions",
       "math": "§§3–5 Eqs.6–13; Figure 6; §5.3 proxy assumptions",
-      "evidence": "§6.1 Table 1 (PDF p.6); §6.4; Appendix F",
-      "limits": "Interpretive analysis of assumptions and scope in §§3–5 Eqs.6–13; Figure 6; §5.3 proxy assumptions; empirical limits in §6.1 Table 1 (PDF p.6); §6.4; Appendix F",
+      "evidence": "§6.1 Table 1 (PDF p.6); §§6.2–6.3 Figures 8–10; Appendix F",
+      "limits": "Interpretive analysis of assumptions and scope in §§3–5 Eqs.6–13; Figure 6; §5.3 proxy assumptions; empirical limits in §6.1 Table 1 (PDF p.6); §§6.2–6.3 Figures 8–10; Appendix F",
       "implementation": "Pinned verl docs/algo/otb.md; implementation-specific settings"
     },
     "foundation": {
@@ -1658,6 +1726,11 @@
     "readingAnswer": {
       "zh": "只剩一条带非零权重的轨迹，基线为 1，轨迹 1 优势为 0；轨迹 2 是 padding，权重与优势都为 0。这也说明有效样本太少会让信号退化。",
       "en": "With one nonzero-weight trajectory, the baseline is 1 and its advantage is zero. Trajectory 2 is padding, with zero weight and advantage. Too few valid samples can therefore eliminate the signal."
+    },
+    "locatorZh": "§§3–5 公式 6–13；图 6；§6 表 1；附录中的理论假设与训练设置；verl OTB 文档",
+    "claimLocatorsZh": {
+      "mechanism": "§§3–5 公式 6–13；图 6；§5.3 代理假设",
+      "math": "§§3–5 公式 6–13；图 6；§5.3 代理假设"
     }
   },
   {
@@ -1683,15 +1756,15 @@
         "en": "Full-vocabulary divergence is expensive. The Binary approximation groups the sampled token against the rest of the vocabulary; Top-K retains more probability information. These coarse-grained divergences lower-bound the full divergence rather than measuring it exactly."
       },
       {
-        "zh": "掩码会结合优势方向：超出散度阈值且更新继续沿有利方向远离旧策略时抑制该项；回到锚点方向的更新仍允许。这里 DPPO 指 Divergence PPO，不是名称相近的 Diffusion Policy Optimization。",
-        "en": "The mask also considers advantage direction: it suppresses a term outside the divergence threshold when the beneficial update would move further from the old policy, while allowing updates back toward the anchor. DPPO here means Divergence PPO, not Diffusion Policy Optimization."
+        "zh": "掩码会结合优势方向：超出散度阈值且更新继续沿有利方向远离采样策略 μ 时抑制该项；回到锚点方向的更新仍允许。这里 DPPO 指 Divergence PPO，不是名称相近的 Diffusion Policy Optimization。",
+        "en": "The mask also considers advantage direction: it suppresses a term outside the divergence threshold when the beneficial update would move further from the rollout policy μ, while allowing updates back toward the anchor. DPPO here means Divergence PPO, not Diffusion Policy Optimization."
       }
     ],
     "formula": "DTV = |p−q|\nDKL = p log(p/q) + (1−p) log((1−p)/(1−q))\nmask = 1 if D≤δ or A(q−p)≤0; otherwise 0",
     "math": [
       {
-        "zh": "p 为旧策略对采样 token 的概率，q 为当前概率。KL 方向固定为旧到新。演示将概率限制在 (0,1) 内避免 log(0)，同时显示 r=q/p、Binary-TV、Binary-KL 和更新掩码；阈值不同量纲，不能直接当作相同强度。",
-        "en": "p is the old probability of the sampled token and q the current probability. KL runs from old to new. The demo keeps probabilities inside (0,1) to avoid log(0), displaying r=q/p, Binary-TV, Binary-KL, and the update mask. Thresholds use different scales and are not equivalent strengths."
+        "zh": "p 为采样（rollout）策略 μ 对已采样 token 的概率，q 为当前训练策略 π 的概率；KL 方向为 μ 到 π。论文要求信赖域以原始采样策略 μ 为锚点，而不是重新计算的旧训练策略概率（§5.2 要点 2；附录 E）。演示将概率限制在 (0,1) 内避免 log(0)，同时显示 r=q/p、Binary-TV、Binary-KL 和更新掩码；阈值不同量纲，不能直接当作相同强度。",
+        "en": "p is the rollout (behavior) policy μ’s probability of the sampled token and q the current training policy π’s probability; KL runs from μ to π. The paper anchors the trust region to the original rollout policy μ, not a recomputed old training-policy probability (§5.2 Takeaway 2; Appendix E). The demo keeps probabilities inside (0,1) to avoid log(0), displaying r=q/p, Binary-TV, Binary-KL, and the update mask. Thresholds use different scales and are not equivalent strengths."
       },
       {
         "zh": "理论界、散度近似和实际动态 mask 是三个层次。散度下界超过阈值可提示真实变化较大；下界较小却不能证明完整策略的散度同样小。",
@@ -1704,8 +1777,8 @@
         "en": "Mathematical-RL experiments on Qwen3-30B-A3B-Base compare router-replay settings, LoRA, and several objectives. Training stability and inference–training mismatch should be read together rather than selecting only peak points."
       },
       {
-        "zh": "附录 F.3 比较 Binary 与 Top-K，F.4 检查散度阈值敏感性，F.5 扩展模型与任务；表 2 另给出 UltraFeedback 上 Qwen3-4B-Instruct-2507 的 RLHF 结果。本文链接原始证据页，避免从曲线估读精确数值。",
-        "en": "Appendix F.3 compares Binary and Top-K, F.4 studies threshold sensitivity, and F.5 extends models and tasks. Table 2 separately reports RLHF on Qwen3-4B-Instruct-2507 with UltraFeedback. The original evidence page is linked rather than inventing exact values from curves."
+        "zh": "附录 F.3 比较 Binary 与 Top-K，F.4 检查散度阈值敏感性，F.5 扩展模型与任务；表 2 另给出 UltraFeedback 上 Qwen3-4B-Instruct-2507 的 RLHF 结果（表 2 标注 UltraFeedback；§7.2 正文与图 10 图注写作 HH-RLHF）。本文链接原始证据页，避免从曲线估读精确数值。",
+        "en": "Appendix F.3 compares Binary and Top-K, F.4 studies threshold sensitivity, and F.5 extends models and tasks. Table 2 separately reports RLHF on Qwen3-4B-Instruct-2507 with UltraFeedback (Table 2 states UltraFeedback; the §7.2 text and Figure 10 caption say HH-RLHF). The original evidence page is linked rather than inventing exact values from curves."
       },
       {
         "zh": "表 2 采用 step 150 的检查点：初始模型、GRPO 与 DPPO 的长度控制胜率为 59.39%、77.05% 和 80.90%。作者报告后续检查点奖励更高却在 AlpacaEval 上更差，说明训练奖励和外部评测不能互相替代。",
@@ -1778,7 +1851,17 @@
     "readingAnswer": {
       "zh": "PPO 的比率为 2，超过 1.2，进入平台；Binary-TV=|0.05−0.1|=0.05，小于 0.1，DPPO 仍允许该项。此例只比较指定阈值，不说明所有设置下谁更好。",
       "en": "PPO sees ratio 2 above 1.2 and plateaus. Binary-TV is |0.05−0.1|=0.05, below 0.1, so DPPO permits the term. This compares specified thresholds, not universal algorithm quality."
-    }
+    },
+    "locatorZh": "§§3–4.4 公式 11–16；§7；附录 B；附录 F.3–F.5；表 2",
+    "claimLocatorsZh": {
+      "mechanism": "§§3–4.4 公式 11–16；附录 B",
+      "math": "§§3–4.4 公式 11–16；附录 B"
+    },
+    "ledgerNotes": [
+      "Audit 2026-11-03: the trust-region anchor is the rollout (behavior) policy μ (§5.2 Takeaway 2; Appendix E; §7 setup), not a recomputed old policy. Page wording corrected from “old policy / old to new”.",
+      "Source inconsistency: Table 2 and Appendix F.1 name UltraFeedback for the Qwen3-4B-Instruct-2507 RLHF run, while §7.2 and the Figure 10 caption say HH-RLHF. The page follows Table 2 and discloses the conflict.",
+      "Not verified: whether verl’s dppo_tv/dppo_kl losses anchor to rollout log-probabilities or recomputed old_log_prob depends on the rollout-correction mode; the pinned doc does not state it and the code was not run."
+    ]
   },
   {
     "slug": "on-policy-distillation",
@@ -1838,7 +1921,7 @@
       "zh": "verl 区分 GKD OPD 与 PG OPD，并支持多教师路由。此页以 2024 GKD 为核心，2025 博文与 2026 文档单独标明，不把后续工程能力归给原论文。",
       "en": "verl distinguishes GKD OPD from PG OPD and supports teacher routing. This page centers on 2024 GKD, labeling the 2025 blog and 2026 documentation separately rather than attributing later engineering features to the original paper."
     },
-    "locator": "§3.1 Algorithm 1; §3.2; §§4.1–4.4 Figures 7/9/10; Appendix A.4/A.6/A.7; Thinking Machines 2025; verl OPD Loss Variants",
+    "locator": "§3.1 Algorithm 1; §3.2; §§4.1–4.4 Figures 7–10; Appendix A.4/A.6/A.7; Thinking Machines 2025; verl OPD Loss Variants",
     "rows": [],
     "metric": null,
     "evidencePage": 9,
@@ -1886,6 +1969,11 @@
     "readingAnswer": {
       "zh": "不违反。单个 token 的差值可为负，KL 非负性描述完整分布上的期望；而这里的反馈还是 reverse KL 的负向信号，必须同时核对方向和采样分布。",
       "en": "No. An individual token’s difference may be negative; KL nonnegativity concerns an expectation over the full distribution. This feedback also uses the negative reverse-KL direction, so both sign and sampling distribution matter."
+    },
+    "locatorZh": "§3.1 算法 1；§3.2；§§4.1–4.4 图 7–10；附录 A.4/A.6/A.7；Thinking Machines 2025；verl OPD 文档 “Loss Variants”",
+    "claimLocatorsZh": {
+      "mechanism": "§3.1 算法 1；§3.2 散度；之后的 Thinking Machines 损失与伪代码另行标注",
+      "math": "§3.1 算法 1；§3.2 散度；之后的 Thinking Machines 损失与伪代码另行标注"
     }
   },
   {
@@ -1936,8 +2024,8 @@
         "en": "Figures 1/2 report pairwise evaluation of T5-L and T5-XL in the UltraFeedback setting: DRO-V versus KTO wins 63.4%±1.0% and 57.5%±0.8%. Errors are standard deviations over five evaluation folds of 1,000 prompts, not confidence intervals."
       },
       {
-        "zh": "§4.1 和附录研究策略/value 学习率、正则尺度、初始化和参数共享。KTO 基线进行了正则参数搜索，DRO-V 使用默认值；结果仅支持已报告模型与评测协议，不能等同于 verl 当前大模型训练结果。",
-        "en": "Section 4.1 and appendices study policy/value learning rates, regularization, initialization, and parameter sharing. KTO receives a regularization search while DRO-V uses a default. Findings support the reported models and evaluation, not current large-model verl runs."
+        "zh": "§4.1 与附录 C 研究策略/value 学习率、正则尺度 τ 以及参数共享（单/双网络、单/多 value）。KTO 基线进行了正则参数搜索，DRO-V 使用默认值；结果仅支持已报告模型与评测协议，不能等同于 verl 当前大模型训练结果。",
+        "en": "Section 4.1 and Appendix C study policy/value learning rates, the regularization scale τ, and parameter sharing (single vs. two networks, single vs. multiple values). KTO receives a regularization search while DRO-V uses a default. Findings support the reported models and evaluation, not current large-model verl runs."
       }
     ],
     "limits": [
@@ -2021,6 +2109,11 @@
     "readingAnswer": {
       "zh": "log(π/πold)=log 1=0，因此惩罚为零。奖励项 log π·A 通常仍非零；没有惩罚不等于没有更新信号。",
       "en": "log(π/πold)=log 1=0, so the penalty vanishes. The reward term log π·A is generally nonzero; zero penalty does not imply zero learning signal."
+    },
+    "locatorZh": "§3.1–3.3 公式 1–8；§4.1 图 1–5；附录 B/C；verl compute_policy_loss_dro",
+    "claimLocatorsZh": {
+      "mechanism": "§§3.1–3.3 公式 1–8；verl compute_policy_loss_dro",
+      "math": "§§3.1–3.3 公式 1–8；verl compute_policy_loss_dro；附录 B 公式 15 与算法 2（DRO-P）"
     }
   }
 ]

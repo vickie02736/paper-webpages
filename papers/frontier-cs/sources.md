@@ -143,3 +143,9 @@ Checked 2026-11-01. The shared byline uses the ordered manuscript authors and ex
 - [Version 1, Author list: individually printed author/affiliation grid; blank affiliations remain unverified](https://arxiv.org/html/2610.29932v1#Sx1) — affiliations.
 
 Paper dates: published = unverified; accepted = unverified; preprint = 2026-10-21. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.
+
+## Audit 2026-11-03
+
+Second-pass content audit of the site-wide explainer review (`reports/explainer-audit/content-findings.md`). Each correction cites its source location; claims not listed were rechecked and left unchanged.
+
+- Judge column (zh/en): the hidden-final-suite description does not apply to Structured LWE (“Since these instances are public, its final suite has no held-out part”, Appendix A p. 24). Exception added.

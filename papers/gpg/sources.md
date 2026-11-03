@@ -35,7 +35,7 @@ Source locator: §2.2 Eqs.5–8; advantage normalization and AGE
 
 1. B is the batch sample count and M the uninformative count. If all groups are degenerate, B−M=0; division is invalid. The demo marks no learning signal and sets the effective update to zero rather than displaying infinity.
 
-2. With equal group sizes, group counts illustrate the same scaling. α corrects effective batch magnitude. Degenerate-group selection, finite-sample baselines, and data reuse still affect the estimator, so it should not be described unconditionally as unbiased for the original population objective.
+2. With equal group sizes, group counts illustrate the same scaling. α corrects effective batch magnitude. The authors describe AGE as an unbiased gradient estimate (§2.2); this guide notes that degenerate-group selection, finite-sample baselines, and data reuse can still affect the estimator, so the claim needs qualification.
 
 ### evidence
 
@@ -47,7 +47,7 @@ Source locator: Table 1 (PDF p.4); §3 experiments and ablations
 
 ### limits
 
-Source locator: Interpretive analysis of assumptions and scope in §3 Eqs.5–7; advantage normalization and AGE; empirical limits in Table 1 (PDF p.4); §4 ablations
+Source locator: Interpretive analysis of assumptions and scope in §2.2 Eqs.5–8; advantage normalization and AGE; empirical limits in Table 1 (PDF p.4); §3.4 ablations
 
 1. When few samples are informative, α can amplify noise; thresholding and global aggregation matter. A direct objective does not automatically correct stale-policy data and should be understood alongside rollout correction.
 

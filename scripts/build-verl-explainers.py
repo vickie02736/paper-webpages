@@ -8,6 +8,9 @@ E=lambda s:html.escape(str(s),quote=True)
 def pair(z,e):return {'zh':z,'en':e}
 def tr(p,tag='span',attrs=''):
  return f'<{tag} data-zh="{E(p["zh"])}" data-en="{E(p["en"])}" {attrs}>{E(p["zh"])}</{tag}>'
+def loc(d,key=None):
+ en=d['claimLocators'][key] if key else d['locator'];zh=(d.get('claimLocatorsZh') or {}).get(key) if key else d.get('locatorZh')
+ return tr(pair(zh,en)) if zh else E(en)
 def link(url,p):return f'<a href="{E(url)}" target="_blank" rel="noopener">{tr(p)}</a>'
 def paras(ps,extra=False):return '\n'.join(tr(p,'p','data-level="research"' if extra and i else '') for i,p in enumerate(ps))
 def section(id,z,e,body,index):return f'<section id="{id}" aria-labelledby="{id}-title"><div class="section-num">{index:02}</div>'+tr(pair(z,e),'h2',f'id="{id}-title"')+body+'</section>'
@@ -19,8 +22,8 @@ for i,d in enumerate(DATA):
  source=link(d['source'],pair('原论文 ↗' if d['arxiv'] else '原文档 ↗','Source paper ↗' if d['arxiv'] else 'Source documentation ↗'))
  hero=tr(pair('论文精读 · '+d['short'] if d['arxiv'] else '文档专题 · '+d['short'],'Paper close reading · '+d['short'] if d['arxiv'] else 'Documentation study · '+d['short']),'p','class="eyebrow"')+tr(d['title'],'h1')+tr(d['lead'],'p','class="reading-intro"')+f'<p class="source-note">{E(d["sourceTitle"])} · {E(d["version"])}</p><div class="source-links">{source}<a href="../../?theme=ai&amp;q=verl#themes">'+tr(pair('人工智能与计算','Artificial Intelligence & Computing'))+'</a></div>'
  body=section('background','研究问题','The research problem',tr(d['foundation'],'p','class="callout"')+tr(d['background'],'p'),1)
- body+=section('mechanism','方法怎样工作','How the method works','<ol class="mechanism-list">'+''.join(tr(p,'li') for p in d['mechanism'])+'</ol><p class="source-note">'+source+' · '+E(d['claimLocators']['mechanism'])+'</p>',2)
- body+=section('math','从符号到目标','From notation to objective',tr(d['math'][0],'p')+f'<pre class="formula" data-level="mechanism"><code>{E(d["formula"])}</code></pre>'+paras(d['math'][1:])+tr(pair('公式位置与假设见下方来源；这些简式保留教学所需的变量，省略项在正文说明。','See the source locators below for assumptions. These teaching expressions retain the relevant variables; omissions are explained in the text.'),'p','class="source-note"')+'<p class="source-note">'+source+' · '+E(d['claimLocators']['math'])+'</p>',3)
+ body+=section('mechanism','方法怎样工作','How the method works','<ol class="mechanism-list">'+''.join(tr(p,'li') for p in d['mechanism'])+'</ol><p class="source-note">'+source+' · '+loc(d,'mechanism')+'</p>',2)
+ body+=section('math','从符号到目标','From notation to objective',tr(d['math'][0],'p')+f'<pre class="formula" data-level="mechanism"><code>{E(d["formula"])}</code></pre>'+paras(d['math'][1:])+tr(pair('公式位置与假设见下方来源；这些简式保留教学所需的变量，省略项在正文说明。','See the source locators below for assumptions. These teaching expressions retain the relevant variables; omissions are explained in the text.'),'p','class="source-note"')+'<p class="source-note">'+source+' · '+loc(d,'math')+'</p>',3)
  body+=section('lab','动手改变一个条件','Change a condition',tr(pair('教学计算 · 控件只计算本页注明的公式，不运行模型训练或论文实验。' if slug!='verl-algorithm-baselines' else '文档记录筛选 · 不跨数据集排名，保留原始日志与配置来源。','Teaching computation · These controls evaluate the stated formulas, not model training or paper experiments.' if slug!='verl-algorithm-baselines' else 'Documentation filters · Records retain original logs and configurations; there is no cross-dataset ranking.'),'p','class="lab-note"')+'<div class="lab-layout"><div id="lab-controls" class="lab-controls"></div><div id="lab-results" class="lab-results" aria-live="polite" aria-atomic="true"></div></div>',4)
  ev=paras(d['evidence'],True)
  if d['rows']:
@@ -35,7 +38,7 @@ for i,d in enumerate(DATA):
  if slug=='rollout-correction':related=[DATA[10]]
  elif slug=='rollout-correction-math':related=[DATA[9]]
  else:related=[DATA[(i-1)%len(DATA)],DATA[(i+1)%len(DATA)]]
- sources=tr(pair('本文区分原论文报告、文档实现及教学计算。完整主张与图示核对记录可在 sources.md 查看。','This page separates paper reports, documented implementations, and teaching calculations. The complete claim and visual evidence ledger is in sources.md.'),'p')+f'<p class="source-note">{E(d["locator"])}</p><div class="source-links">{source}{link(pinned,pair("固定文档版本 ↗","Pinned documentation ↗"))}<a href="sources.md">'+tr(pair('证据记录','Evidence ledger'))+'</a></div>'
+ sources=tr(pair('本文区分原论文报告、文档实现及教学计算。完整主张与图示核对记录可在 sources.md 查看。','This page separates paper reports, documented implementations, and teaching calculations. The complete claim and visual evidence ledger is in sources.md.'),'p')+'<p class="source-note">'+loc(d)+f'</p><div class="source-links">{source}{link(pinned,pair("固定文档版本 ↗","Pinned documentation ↗"))}<a href="sources.md">'+tr(pair('证据记录','Evidence ledger'))+'</a></div>'
  for s in d.get('extraSources',[]):sources+='<p>'+link(s['url'],pair(s['zh'],s['en']))+'</p>'
  sources+='<p>'+tr(pair('继续阅读','Continue reading'))+'</p><div class="related-links">'+''.join(f'<a href="../{r["slug"]}/">{E(r["short"])}</a>' for r in related)+'</div>'
  body+=section('sources','来源与延伸阅读','Sources and further reading',sources,8)
@@ -61,7 +64,7 @@ for i,d in enumerate(DATA):
   for j,p in enumerate(ps):ledger+=f'{j+1}. {p["en"]}\n\n'
  ledger+='## Foundations and reading task\n\n'+d['foundation']['en']+'\n\nQuestion: '+d['readingQuestion']['en']+'\n\nAnswer: '+d['readingAnswer']['en']+'\n\nThese are general definitions and worked teaching examples, not experimental observations. Reader comprehension has been editorially reviewed; no human rereading study was conducted.\n\n'
  ledger+='## Visual and interaction audit\n\n- Method panels: author-method paraphrases, mapped to the method/algorithm locators above; not an experimental workflow run.\n- Formula panel: teaching notation, with omitted conditions and approximations explained in both languages.\n- Interactive lab: synthetic inputs except the baseline documentation filter. Outputs are deterministic evaluations of the displayed formulas, not measured performance.\n- Evidence table (when present): exact transcribed values; the metric, model, comparison conditions, and source page are given beside the table. No values are inferred from plotted curves.\n- Limits and implementation notes distinguish paper claims, required assumptions, and later engineering choices.\n- Browser and numerical acceptance results are recorded in `reports/verl-validation.md`.\n'
- if slug=='sppo':ledger+='\nVersion discrepancy: Table 1 of v5 prints 17.11 for the Mistral baseline; accompanying improvement annotations imply 17.10. We use the explicit table cell, and do not recompute the paper’s annotations.\n'
+ if d.get('ledgerNotes'):ledger+='\n## Version and audit notes\n\n'+''.join(f'- {n}\n' for n in d['ledgerNotes'])
  for s in d.get('extraSources',[]):ledger+=f'\n- [{s["en"]}]({s["url"]}): {s["locator"]}\n'
  (folder/'sources.md').write_text(ledger)
 # The collection is navigation, not a sixteenth explainer or fictitious paper.

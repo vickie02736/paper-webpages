@@ -91,3 +91,9 @@ Reread main kinetic-stability discussion, Fig. 2, Fig. 5 and Tables 2–3. The f
 Reader task: Check: does higher static ammonia uptake guarantee a better protective filter? No. A filter must delay outlet breakthrough at the target concentration, humidity and flow rate; degradation and use conditions also matter. Pure-gas equilibrium capacity cannot replace that breakthrough test.
 
 Scientific observations, author explanations and teaching calculations remain distinct. Existing datasets are unchanged; no unverified atomic structure is drawn. The technical and teaching audits are recorded separately in [the rollout](../../reports/quality-rollout/README.md). Human comprehension has not been tested.
+
+## Audit 2026-11-03
+
+Second-pass content audit of the site-wide explainer review (`reports/explainer-audit/content-findings.md`). Each correction cites its source location; claims not listed were rechecked and left unchanged.
+
+- Ammonia source note (zh/en): disclosed a source inconsistency. Table 3 (p. 716) lists Cu₂Cl₂BTDD 1000 ppm 7.52/5.73 (ref. 42), while Fig. 5b (p. 717) labels the same bars Cu₂Cl₂BBTA and the caption names HKUST-1, Co₂Cl₂BBTA and Cu₂Cl₂BBTA. The page follows Table 3.

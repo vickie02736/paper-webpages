@@ -29,9 +29,9 @@ Source locator: Math guide §§1.1–1.3 and §2; Hilton et al. §2; TRM §§2�
 
 ### math
 
-Source locator: Math guide §§1.1–1.3 and §2; Hilton et al. §2; TRM §§2–5
+Source locator: Math guide §§1.1–1.3 and §2; Hilton et al. §2; TRM §§2–5; usage guide Metrics → Effective Sample Size
 
-1. Summing in log space reduces numerical overflow but does not eliminate statistical heavy tails. ESS diagnoses concentration of batch weights; it is not an exact count of independent correlated samples. It is undefined when all weights are zero.
+1. Summing in log space reduces numerical overflow but does not eliminate statistical heavy tails. ESS diagnoses concentration of batch weights; it is not an exact count of independent correlated samples. It is undefined when all weights are zero. verl’s rollout_is_eff_sample_size reports the normalized fraction 1/mean(w̃²)=ESS/N (0–1), not a count.
 
 2. The demo assumes an identical conditional ratio at each step and varies ratio and length to show token, sequence-product, and truncated weights. This illustrates scale; it neither assumes real LLM ratios are constant nor represents a training curve.
 

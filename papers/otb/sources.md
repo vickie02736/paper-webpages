@@ -39,7 +39,7 @@ Source locator: §§3–5 Eqs.6–13; Figure 6; §5.3 proxy assumptions
 
 ### evidence
 
-Source locator: §6.1 Table 1 (PDF p.6); §6.4; Appendix F
+Source locator: §6.1 Table 1 (PDF p.6); §§6.2–6.3 Figures 8–10; Appendix F
 
 1. Table 1 reports peaks over the full training process. In single-turn Qwen3-8B-Base training, AIME25 scores are 25.31 for GRPO, 27.29 for OPO, and 30.31 for OTB; MATH500 scores are 90.50, 93.31, and 93.43. These are neither a common-step comparison nor final-checkpoint results.
 
@@ -47,7 +47,7 @@ Source locator: §6.1 Table 1 (PDF p.6); §6.4; Appendix F
 
 ### limits
 
-Source locator: Interpretive analysis of assumptions and scope in §§3–5 Eqs.6–13; Figure 6; §5.3 proxy assumptions; empirical limits in §6.1 Table 1 (PDF p.6); §6.4; Appendix F
+Source locator: Interpretive analysis of assumptions and scope in §§3–5 Eqs.6–13; Figure 6; §5.3 proxy assumptions; empirical limits in §6.1 Table 1 (PDF p.6); §§6.2–6.3 Figures 8–10; Appendix F
 
 1. Proxy choices, masking, and baseline dependence determine implementation semantics. With group size one, the baseline approaches its own return and learning signal can vanish. Tiny weights and all-padding states require explicit handling.
 

@@ -122,3 +122,9 @@ This pass follows the solidified `paper-webpage` standard. It changes teaching o
 - `#percent-foundations`: default-visible worked normalization. Main Table 1 supplies 99% linker release for 0.01 M PB at 4 h. Total-content measurements supply linker reference 446 ± 16 mg/L and Zr reference 335 ± 12 mg/L. SI Table S3, p. 4 supplies PB 0.01 M: 0.08 ± 0.02 mg/L Zr and 0.024 ± 0.006%. `(0.08 / 335) × 100 = 0.0238806…%`, rounded to 0.024%. This calculation uses central values, does not re-estimate uncertainty and is not a full material balance in one sampled bottle. It measures each component against its own initial total, not against all material mass. Low filtrate Zr does not establish intact remaining UiO-66.
 
 Body Experimental, total-content paragraphs, main Table 1 and SI Table S3 were reread for this pass; SI Table S4 continues to constrain the earlier solubility discussion. The new explanations were checked in both languages. See [separate science, teaching and technical reports](../../reports/standards-high-school-transfer/review.md). Local only; no publication in this pass.
+
+## Audit 2026-11-03
+
+Bilingual copy fixes found by the site-wide browser sweep.
+
+- PXRD primer caption ended with a Chinese full stop in English mode; the final punctuation is now language-specific. No scientific change.

@@ -40,3 +40,16 @@ Checked 2026-11-01. The shared byline uses the ordered manuscript authors and ex
 - [Official proceedings manuscript: no individual-paper acceptance date disclosed](https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf) — dates.accepted.
 
 Paper dates: published = 2026-04-20; accepted = notDisclosed; preprint = 2025-02-03. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.
+
+## Audit 2026-11-03
+
+Re-checked against the ICLR 2026 proceedings PDF: all 14 Table 1 Avg bars (p.7; recomputed RLon Llama-3-8B Avg from its ten EM/F1 cells = 42.36), all 11 Table 2 EM / All-retrieval points and the RLon / IterDRAG time values (p.8), Table 3 balanced accuracy 0.801 and MCC 0.543 (p.8), Eq. (1)–(3) and score_format = 0.1, α = 0.1, T = 5 (§3.3–3.4, §4.2), Algorithm 1 (p.5), 4,000 / 1,000 sampling and OOD list (§4.2), the 25.41% abstract claim, 0–2 retrieval rounds (§5.3, Figure 3), and the Figure 1 runtimes 178 + 179 + 201 = 558. No page change was needed.
+
+- P2 · Ledger locator only: item 14 above cites “§5.2 / Figure 5” for the retrieve-only quiz; Figure 5 is discussed in §5.4 (“Different inference strategy”). The page text itself does not cite a section number. Note that §5.4's prose swaps the labels (“relying solely on internal knowledge (retrieve only)”); the page follows Figure 5's bar labels and the conclusion sentence, which use the intended meaning.
+
+Second-pass corrections (site-wide audit):
+
+- Uncertainty card (zh/en): the code-release promise is in the Reproducibility Statement (p. 10), not the Conclusion (§6); footnote 1 already links github.com/icip-cas/DeepRAG.
+- Critical question (zh/en): Eq. 3’s T is the retrieval budget (§3.4.2); the optimal-path search in Algorithm 1 is bounded by the maximum history length. The two were merged as one “maximum retrieval budget T”.
+- Hero flow (zh/en): the termination decision σ is taken after the intermediate answer and before generating q_{t+1} (§3.1 Actions/Transitions). The row now reads “Enough information? → yes: final answer / no: keep decomposing ↺”.
+- Avg chart label (zh/en): Table 1 rows UAR, TAARE, FLARE, DRAGIN, IterDRAG, Auto-RAG and Search-o1 are omitted; the label now says “7 selected rows”. No omitted baseline exceeds R1-Searcher++, so the ranking is unchanged.
