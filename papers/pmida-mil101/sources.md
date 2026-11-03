@@ -38,3 +38,12 @@ Checked 2026-11-01. The shared byline uses the ordered manuscript authors and ex
 - [Publisher-deposited Crossref record; author affiliations and explicit published-online / accepted fields](https://api.crossref.org/works/10.1021/acsami.6c16452) — authors, affiliations, dates.published.
 
 Paper dates: published = 2026-10-14; accepted = unverified. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.
+
+## Audit 2026-11-03 (publisher access)
+
+Rechecked against the publisher full text (ACS, via UCL access) and the complete SI DOCX `am-2026-16452u_si_001` (SHA-256 `33dffbb536ff5868…`), which earlier entries could not reach.
+
+- Takeaway 01 (zh/en): “keeps … a high surface area” omitted that §3.1 reports both pore volume and surface area “significantly lower after PMIDA modification” (1.364 → 0.987 cm³ g⁻¹; 2108 → 1260 m² g⁻¹). The drop is now stated.
+- SI Section S13 confirms the split MOF losses: “7.96±1.05% and 11.86±2.69% of the MOF mass for each adsorption and desorption experiment, respectively”. The page wording stands.
+- SI Table S4 confirms 0.49/0.60/0.59 (1.2 mmol g⁻¹) and 0.87/0.85/1.06 mmol g⁻¹ (2.1 mmol g⁻¹) for Nd/Gd/Dy.
+- Total coordination strength is SI Table S11 (rows Gd, Dy, Nd). The main text cites “Table S10” (§3.3), which is the phosphonate bond-length table; the page’s S11 citation is correct. Recomputed for Nd: 0.36 × 16.21 + 0.64 × 13.74 = 14.63 at 3.0 mmol g⁻¹ and 0.55 × 13.81 + 0.45 × 10.10 = 12.14 at 2.1 mmol g⁻¹, matching the page notes (≈14.6 vs the text’s 15.26).

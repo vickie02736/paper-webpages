@@ -55,9 +55,9 @@ Source locator: Interpretive analysis of assumptions and scope in §§3–4.4 Eq
 
 ### implementation
 
-Source locator: Pinned verl docs/algo/dppo.md; implementation-specific settings
+Source locator: Pinned verl docs/algo/dppo.md; core_algos.py compute_policy_loss_dppo_tv/_kl; ray_trainer.py bypass_mode branch; docs/algo/rollout_corr.md
 
-1. The verl documentation implements Binary-TV and Binary-KL (loss_mode=dppo_tv/dppo_kl). Top-K is in the original repository and should not be presented as an available verl configuration.
+1. The verl documentation implements Binary-TV and Binary-KL (loss_mode=dppo_tv/dppo_kl). Top-K is in the original repository and should not be presented as an available verl configuration. Both losses anchor to old_log_prob; only with algorithm.rollout_correction.bypass_mode enabled (old_log_prob set to the rollout log-probabilities) does this match the paper’s rollout-policy anchor μ. The option is off by default and the official DPPO example script does not enable it, so the anchor is then a recomputed old policy.
 
 ## Foundations and reading task
 
@@ -82,4 +82,4 @@ These are general definitions and worked teaching examples, not experimental obs
 
 - Audit 2026-11-03: the trust-region anchor is the rollout (behavior) policy μ (§5.2 Takeaway 2; Appendix E; §7 setup), not a recomputed old policy. Page wording corrected from “old policy / old to new”.
 - Source inconsistency: Table 2 and Appendix F.1 name UltraFeedback for the Qwen3-4B-Instruct-2507 RLHF run, while §7.2 and the Figure 10 caption say HH-RLHF. The page follows Table 2 and discloses the conflict.
-- Not verified: whether verl’s dppo_tv/dppo_kl losses anchor to rollout log-probabilities or recomputed old_log_prob depends on the rollout-correction mode; the pinned doc does not state it and the code was not run.
+- Audit 2026-11-03 (code): at commit 3fdf2b5, `compute_policy_loss_dppo_tv`/`_kl` in `verl/trainer/ppo/core_algos.py` measure divergence against `old_log_prob`. `ray_trainer.py` sets `old_log_prob = rollout_log_probs` only when `algorithm.rollout_correction.bypass_mode` is true (default false, `docs/algo/rollout_corr.md`); `examples/dppo_trainer/run_qwen3_30b_a3b_megatron.sh` sets no rollout-correction options. Supersedes the earlier “not verified” note.

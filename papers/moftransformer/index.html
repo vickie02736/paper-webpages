@@ -182,7 +182,7 @@
     <div class="panel task-card" id="taskCard"></div>
     <div class="panel">
       <div class="eyebrow paired"><span class="zh">共享的预测头</span><span class="en">Shared prediction head</span></div>
-      <div class="formula" style="margin-top:14px"><b>[CLS]</b> + atom tokens + <b>[SEP]</b> + 216 grid patches + <b>[VOL]</b><br><span style="color:var(--muted)">→ Transformer (L = 12, H = 768, A = 12) → single dense-layer head</span></div>
+      <div class="formula" style="margin-top:14px"><b>[CLS]</b> + atom tokens + <b>[SEP]</b> + 216 grid patches + <b>[VOL]</b><br><span style="color:var(--muted)">→ Transformer (L = 12, H = 768, A = 12) → MLP head (Methods: a single dense layer on [CLS])</span></div>
       <p class="paired"><span class="zh">[VOL] 补回把能量网格统一到 30 Å 立方体时丢掉的原始晶胞体积信息。位置 embedding 与 modal-type embedding 逐元素相加。</span><span class="en">[VOL] restores original cell-volume information lost when energy grids are interpolated to a 30 Å cube. Position and modal-type embeddings are added element-wise.</span></p>
       <div class="callout note paired"><span class="zh">SI Note S2：只做 MTP 或 VFP 更有利于 H₂ uptake / diffusivity；MOC 更有利于 band gap；三任务一起时总体 MAE 最低。</span><span class="en">SI Note S2: MTP or VFP alone helps H₂ uptake / diffusivity, MOC helps band gap, and all three together give the lowest overall MAE.</span></div>
     </div>
@@ -266,7 +266,7 @@ function renderWalk(){
   '<div class="arrow">→</div>'+
   '<div class="node encoder-node'+active(state.walk>=2)+'"><strong>'+q('Transformer 编码器','Transformer encoder')+'</strong><small>12 blocks · H = 768 · A = 12</small></div>'+
   '<div class="arrow">→</div>'+
-  '<div class="node head-node'+active(state.walk===3)+'"><strong>'+q('[CLS] → 单层全连接性质头','[CLS] → single dense-layer property head')+'</strong><small>'+q('迁移到目标性质','transfer to a target property')+'</small></div>';
+  '<div class="node head-node'+active(state.walk===3)+'"><strong>'+q('[CLS] → MLP 性质头（Methods：单层全连接）','[CLS] → MLP property head (Methods: single dense layer)')+'</strong><small>'+q('迁移到目标性质','transfer to a target property')+'</small></div>';
  document.getElementById('walkDetail').innerHTML='<div class="eyebrow">'+q('步骤 '+(state.walk+1)+' / 4','STEP '+(state.walk+1)+' / 4')+'</div><h3>'+q(d.title[0],d.title[1])+'</h3><p>'+q(d.body[0],d.body[1])+'</p><dl><dt>'+q('证据','Evidence')+'</dt><dd>'+q(d.evidence[0],d.evidence[1])+'</dd></dl>';
  document.querySelectorAll('#walkSteps button').forEach(b=>b.classList.toggle('active',+b.dataset.walk===state.walk));
 }

@@ -145,3 +145,11 @@ Checked 2026-11-01. The shared byline uses the ordered manuscript authors and ex
 - [Publisher-deposited Crossref record; author affiliations and explicit published-online / accepted fields](https://api.crossref.org/works/10.1002/adfm.202419093) — authors, affiliations, dates.published.
 
 Paper dates: published = 2024-12-20; accepted = unverified. Source precision is retained; undisclosed acceptance is not inferred from conference notifications. Unverified fields remain explicit. This bibliography update does not revise the scientific content or figures.
+
+## Audit 2026-11-03 (publisher access)
+
+Rechecked against the Wiley version of record (Adv. Funct. Mater., PDF via UCL access, SHA-256 `98e36c697c4e7e13…`) and the SI DOCX `adfm202419093-sup-0001-SuppMat` (SHA-256 `b7863f861f5ae6a2…`), which earlier entries could not reach. No page changes.
+
+- Tailings pH: experiments were “examined at pH 5.5 in accordance with the pH of tailings wastewater” (main text, kinetics paragraph); SI §2 adjusts all solutions to pH 5.5. The tailings sample is from Ganzhou, Jiangxi (SI §2.6, Table S2).
+- Langmuir R²: SI Table S3 ranges from 0.831 (Yb³⁺) to 0.999 (Er³⁺); largest qm Gd³⁺ 286.593 mg g⁻¹, largest K_L Lu³⁺ 0.581 L mg⁻¹.
+- Synthesis: BTC 21.0 mg (0.10 mmol), ATZ 8.41 mg (0.10 mmol), Zn(NO₃)₂·6H₂O 29.5 mg (0.10 mmol), MeCN 2 mL and water 8 mL, 140 °C for 3 days (SI §2.1).
