@@ -35,7 +35,7 @@ npm install --no-save --package-lock=false playwright
 ```
 
 - 仅缺少 Chromium 时，使用对应 Playwright 安装的 CLI 执行 `install chromium`；上述相对路径适用于仓库本地安装。将 `node_modules/` 加入本地 Git 排除规则，避免把检查依赖带入页面提交或发布。
-- 外部安装可用 `PAPER_PLAYWRIGHT_MODULE` 指向可解析的模块绝对路径，或通过 `NODE_PATH` 提供；`PAPER_CHROMIUM_EXECUTABLE` 可指定已有且兼容的 Chromium。回归脚本未设置 `PAPER_BASE_URL` 时自动启动本地 HTTP 服务，截图默认写入系统临时目录下的 `paper-webpages-qa`，可用 `PAPER_QA_DIR` 覆盖。
+- 外部安装可用 `PAPER_PLAYWRIGHT_MODULE` 指向可解析的模块绝对路径，或通过 `NODE_PATH` 提供；`PAPER_CHROMIUM_EXECUTABLE` 可指定已有且兼容的 Chromium。`check-explainers`、`check-reading`、`check-ncu1-reader`、`check-catalog`、`check-paper-metadata` 未设置 `PAPER_BASE_URL` 时自动启动本地 HTTP 服务（其余脚本见下文“全站脚本与补充扫描”），截图默认写入系统临时目录下的 `paper-webpages-qa`，可用 `PAPER_QA_DIR` 覆盖。
 - 安装或复用后，用回归脚本或针对本次页面的 Playwright 脚本实际启动无头 Chromium，完成页面加载、交互和截图，再关闭浏览器。模块解析或版本命令成功只说明依赖可见，不能替代浏览器运行验证。
 - 通过本地 HTTP 服务检查 1440px、768px、390px 视口下的首屏、图表、公式和长标题；展开详情及各深度后也应无页面横向溢出。检查中英文、图内标签、动态反馈、可访问标签、Tab/Enter 操作及控制台／资源错误，并保存、实际查看代表性截图。针对图表及展开状态补充截图，不能仅凭首屏截图判断整页通过。
 - 核对章节目标未被吸顶栏遮挡；在已操作滑块、图表、测验或展开项后双向切换语言，验证状态、焦点及滚动位置。检查直接英文链接、刷新记忆、跨页语言和存储不可用场景。
@@ -50,7 +50,7 @@ npm install --no-save --package-lock=false playwright
 
 ## 全站脚本与补充扫描
 
-从仓库根目录运行；浏览器脚本共用 `PAPER_PLAYWRIGHT_MODULE`、`PAPER_CHROMIUM_EXECUTABLE`、`PAPER_QA_DIR`。全站审计时把每条命令的输出存入 `/tmp/<任务>/` 便于引用。
+从仓库根目录运行；浏览器脚本共用 `PAPER_PLAYWRIGHT_MODULE`、`PAPER_CHROMIUM_EXECUTABLE`、`PAPER_QA_DIR`。`check-verl.cjs`、`check-rl-foundations.cjs` 与 `check-taxonomy.cjs`（非 `--data-only`）不会自行启动服务，需先在仓库根目录运行 `python3 -m http.server 8768 --bind 127.0.0.1` 或设置 `PAPER_BASE_URL`；报 `ERR_CONNECTION_REFUSED` 时就是缺少该服务，不是页面错误。全站审计时把每条命令的输出存入 `/tmp/<任务>/` 便于引用。
 
 | 命令 | 覆盖 |
 |---|---|

@@ -9,6 +9,21 @@
 - 表格含合并单元格时，优先解析出版社 HTML／XML（JATS）的行列结构；扁平文本会把相邻列串位。
 - 下载后计算 `shasum -a 256`，与 `sources.md` 中记录的哈希比较；一致才说明审阅的是同一文件。新建记录时写入哈希。
 
+## 机构访问与出版社拦截
+
+在机构网络（如 UCL VPN，出口为 Jisc）上，出版社的 Cloudflare 检查仍会对 `curl` 返回 403 “Just a moment…”，这不代表没有订阅。用 `scripts/fetch_source.cjs` 在真实浏览器中打开论文页，保存含全文的 `landing.html`，再在页面内带 cookie 下载 PDF／SI：
+
+| 出版社 | 可用方式 | 链接形式 |
+|---|---|---|
+| Wiley | 内置 Chromium 无头模式 | 正文 `…/doi/pdfdirect/<doi>?download=true`；SI `…/action/downloadSupplement?doi=…&file=…` |
+| ACS | `CHROME=1`（已安装的 Chrome，持久配置） | 新版页面的 SI 在 `landing.html` 中以 `/…/article-supplement/<id>/docx/<稿号>_si_001/` 出现；正文全文已在页面中 |
+| ScienceDirect | `CHROME=1`，`WAIT_TEXT=<标题关键词>` 等待约 10 s 的 Turnstile 自动通过 | 用 Crossref 的 `alternative-id` 得到 PII，打开 `/science/article/pii/<PII>` |
+| Nature | `CHROME=1` | `…/articles/<id>.pdf` |
+
+- 先确认出口网络（`curl -s https://ipinfo.io/org`）。浏览器页面若显示 “Access through your institution”／“Get Access”，才是真正没有权限。
+- 若出现需要点击的验证框，用 `CHROME=1` 打开的窗口由用户点击一次即可；持久配置会保留通过状态。
+- 页面全文 HTML 去掉标签后即可检索；表格行列（尤其 SI DOCX 的表）用 DOCX 的 `word/document.xml` 按 `<w:tr>`／`<w:tc>` 解析，`textutil` 的纯文本会丢失行标签。
+
 ## 来源顺序与版本
 
 按以下顺序尝试，并在 `sources.md` 写明实际使用了哪一项：

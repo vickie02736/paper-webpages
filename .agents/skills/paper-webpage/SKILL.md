@@ -83,6 +83,7 @@ description: "为 Research Atlas 仓库（papers/<slug>/）创建、更新、审
 |---|---|
 | `python3 .agents/skills/paper-webpage/scripts/check_page.py --root . --slug <slug>`（或 `--all`） | 只读静态检查：元数据、重复 ID、未知标签、本地资源、内联与外部脚本语法、页面框架约定（body、共享 CSS/JS 顺序、`AtlasPaper.init`、语言中立的 `shortTitle`）、README/证据记录、`papers/README.md` 入口、目录登记（论文页或文档页）、`paperMetadata`、时间表；生成页给出 NOTE。退出码 0 通过、1 有问题、2 参数错误。`--page-only` 仅用于纯概念页或接入目录前 |
 | `node .agents/skills/paper-webpage/scripts/sweep_pages.cjs` | 只读浏览器补充扫描，见 validation.md |
+| `node .agents/skills/paper-webpage/scripts/fetch_source.cjs <论文页> <缓存目录> [url=文件 ...]` | 在机构网络上经真实浏览器获取全文页、PDF 与 SI，见 [source-access.md](references/source-access.md#机构访问与出版社拦截) |
 | `scripts/check-*.cjs`、`scripts/build-*.{py,cjs}` | 仓库回归与生成器，见 validation.md、site-integration.md |
 
 静态检查不执行 JavaScript、不请求远端资源，也不证明科学内容正确；动态 DOM、页面内锚点、双语完整性和交互仍需浏览器核对。
