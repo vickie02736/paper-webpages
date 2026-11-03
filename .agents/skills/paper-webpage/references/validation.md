@@ -1,5 +1,25 @@
 # 浏览器验证操作参考
 
+## 最低覆盖
+
+- 1440、768、390px 首屏及全部章节，图表、长标题、全部深度和展开内容；保存并查看截图。
+- 中英文、支持的对照模式、刷新、直接英文 URL、语言/深度切换后的输入、选择、展开、焦点和滚动状态。
+- 键盘 Tab/Enter/Space、焦点、可访问名称与对比度；图片慢加载、失败/重试、快速切换、适用的空状态；控制台、资源、锚点、链接和横向溢出。
+- 修改共享资源时运行全部页面静态检查、共享 JS 语法检查及全站回归；单页改动按影响范围验证。
+- 科学内容任务按证据清单核对实际显示的两种语言及相关状态，尤其是方法箭头、公式分支、数值行列、单位与量尺；纯样式任务确认这些语义未被改动。
+
+### 纯文字修正的轻量路径
+
+只改正文或标签文字、不改布局、控件、图形计算或共享资源时，可用以下检查代替上面的完整覆盖：
+
+1. 静态检查该页（`check_page.py --slug`），对改过的外部脚本运行 `node --check`；生成页运行其生成器与专项检查。
+2. `node .agents/skills/paper-webpage/scripts/sweep_pages.cjs --slugs <改动页>`：两种语言、三种屏宽下无错误、溢出、未知标签与语言残留。
+3. 在浏览器中打开改动所在章节或交互状态，中英文各看一次改后的完整句子（含被折叠或由脚本生成的文本）。
+
+改动涉及交互逻辑、图形量尺、HTML 结构或共享文件时，回到完整覆盖。
+
+## 环境
+
 默认使用 **Node.js 版 `playwright` 与 Chromium** 执行浏览器检查，与[现有回归脚本](../../../../scripts/check-explainers.cjs)一致。从仓库根目录确认模块可加载，优先复用可用安装；新 worktree 也要重新检查，不能假定它拥有原工作区的 `node_modules`。
 
 ```bash
@@ -27,6 +47,22 @@ npm install --no-save --package-lock=false playwright
 - 依赖缺失时先按上述步骤安装或复用；仍不可用时，使用可用的实际浏览器核对并准确记录未运行项。
 - 对修改页面重点检查改动及其关联功能。记录已运行检查与结果；工具不可用时说明未验证项目，不能以静态检查代替运行检查。关键内容或交互尚未确认时保留本地成果。
 
+
+## 全站脚本与补充扫描
+
+从仓库根目录运行；浏览器脚本共用 `PAPER_PLAYWRIGHT_MODULE`、`PAPER_CHROMIUM_EXECUTABLE`、`PAPER_QA_DIR`。全站审计时把每条命令的输出存入 `/tmp/<任务>/` 便于引用。
+
+| 命令 | 覆盖 |
+|---|---|
+| `python3 .agents/skills/paper-webpage/scripts/check_page.py --root . --all` | 全部页面的静态检查（含外部脚本语法、页面框架约定、目录、时间表、README 入口） |
+| `node scripts/check-explainers.cjs` | 全部讲解页的共享框架、双语交互与状态、三种屏宽、存储回退（约 7000 个用例） |
+| `node scripts/check-reading.cjs`、`node scripts/check-ncu1-reader.cjs` | 正文跳转、锚点、全页截图、原图失败／重试；NCU-1 独立阅读器 |
+| `node scripts/check-verl.cjs`、`node scripts/check-rl-foundations.cjs` | 生成页的数值、交互和集合页 |
+| `node scripts/check-catalog.cjs`、`node scripts/check-taxonomy.cjs --data-only` | 首页目录、计数、刷新、分类与迁移 |
+| `node scripts/build-paper-metadata.cjs --check`、`node scripts/check-paper-metadata.cjs` | 署名子集是否过期、作者／单位／日期搜索 |
+| `node .agents/skills/paper-webpage/scripts/sweep_pages.cjs [--slugs a,b] [--out r.json]` | 补充扫描：控制台、失败请求、坏图、溢出、失效锚点与本地链接、未知标签、无名称控件，以及语言残留、英文中的全角标点、同一章节中英数字不一致与 `undefined`／`NaN` 提示 |
+
+`sweep_pages.cjs` 的 HINT 需人工判读：原论文标题、作者、正式引用、章节编号与原文档标题可保留英文；“the ratio is undefined”之类属正常英文；英文把数字写成单词（twenty）或中文用“万”计数（2100 万 vs 21M）会产生数字不一致提示。确认后的问题再写入报告。
 
 ## 阅读改进补充检查
 
