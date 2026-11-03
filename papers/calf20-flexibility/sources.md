@@ -100,3 +100,18 @@ Rechecked the publisher-version article (pp. 1–9 and original Figs. 1–6), ob
 The figures are evidence views. The PXRD direction widget remains a qualitative teaching schematic without numerical 2θ positions. The CO₂ temperature values, flexibility differences and hydrogen-bond probability arrays are unchanged. The new method map encodes reading order without implying an experimental chronology. The MLP steps encode actual computational dependencies. Original IDs, source links and catalogue entry remain available; `free-energy` is an additional anchor.
 
 Reading task for this revision: for any result, especially 5930→6089 Å³ or a hydrogen-bond probability, identify the generating method, what was compared, and the strongest supported conclusion. Coverage and source consistency have been self-reviewed; reader comprehension awaits user feedback.
+
+## Audit 2026-11-03 — labeled evidence flow
+
+Added `#evidence-flow` in response to the request for arrows explaining which result supports which claim. This is a bilingual editorial relationship diagram based on the same publisher-version PDF and SHA-256 recorded in the preceding audit; no additional scientific data or chronological claims are introduced.
+
+Arrow checks (both Chinese and English):
+
+- Adsorption experiment + rigid GCMC → comparison shows underprediction above about 150 mbar, especially 273 K → **raises a hypothesis**, not proof that flexibility caused the discrepancy (main p. 2, Fig. 2; interpretation pp. 3–4). The hypothesis edge is dashed.
+- In-situ PXRD → **measures** peak shifts → **direct experimental support** for changes in the real crystal under different adsorption conditions; this is not a direct measurement of the causal mechanism of competitive adsorption (pp. 3–4, Fig. 3).
+- Flexible DFT-MD → **computes** greater accessible space after CO₂ loading → **support within the model** for structural response as an explanation of the adsorption discrepancy (p. 4, Fig. 4). Other model errors are not excluded.
+- MLP + umbrella sampling + WHAM → **computes** free-energy minima versus loading/species → **predicts relative stability** of structural states (pp. 5–6, Fig. 5; Methods p. 9). High-pressure closed-pore transitions remain unobserved experimentally.
+- Water adsorption simulation + RDF / hydrogen-bond statistics → **calculates** water positions and bond-count distributions → **support within the model** for a less connected water hydrogen-bond network than in bulk water (pp. 7–8, Fig. 6b–e). Water-isotherm agreement with experiment is distinct from direct verification of every microscopic feature.
+- These experimental and computational results → **together support the authors' interpretation**, not a unique-mechanism proof → structural adjustment and restricted water hydrogen bonding may contribute to low-RH CO₂ selectivity (pp. 3–5, 8). The synthesis edge is dashed and retains the low-RH and tentative-causality limits.
+
+Solid arrows denote obtaining results or directly supporting the stated claim; their labels explicitly distinguish experiment from model-based support. Dashed arrows denote a hypothesis or combined mechanistic interpretation. The diagram is not an experimental timeline. Nodes link to the corresponding existing method section; source data, original figures and previous anchors remain unchanged.

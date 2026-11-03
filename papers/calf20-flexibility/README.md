@@ -14,3 +14,9 @@ All previous section IDs remain valid, with `free-energy` added for the MLP/WHAM
 - Focused browser checks: 103 assertions passed across 1440/768/390 px, Chinese/English/parallel reading, all three depths, every selector state, preserved selections and disclosure state across language changes, keyboard activation/focus, anchor clearance, direct English URL/refresh, and original-image loading/failure/retry.
 - Original CO₂, pore-fraction and hydrogen-bond arrays were compared with the pre-edit page and are unchanged. Source figures and the displayed evidence labels were visually reviewed. No true screen-reader session or new SI/workbook retrieval was performed.
 - Original section anchors, catalogue entry, first-publication date and creation timestamp are preserved. Scientific provenance and limits are recorded separately in `sources.md`; passing browser checks is not evidence that readers understand the explanation.
+
+## Labeled evidence flow
+
+The `#evidence-flow` overview links methods to results and supported claims with labeled arrows. Solid arrows identify measured/computed outputs and experimental or model-based support; dashed arrows identify the initial flexibility hypothesis and the final combined interpretation. Each node links to its detailed method section. The graph reflows vertically on narrow screens and supports Chinese, English and parallel reading without a new diagram library.
+
+Flow validation: 265 focused assertions passed across 1440/768/390 px, Chinese/English/parallel text, all reading depths, every arrow label, node counts, keyboard links and header clearance. Static checks and the bilingual browser sweep passed without warnings or hints. Chinese/English desktop and Chinese mobile diagrams were visually inspected; the link relationships were checked against the evidence ledger.
