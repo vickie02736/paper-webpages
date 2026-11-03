@@ -104,7 +104,7 @@ references/
     *.mm
 ```
 
-The explainers share the Research Atlas navy-and-cyan reading style, a two-row sticky header, accessible section navigation and reading progress. All 60 pages support complete Chinese/English switching, including interactive feedback, and remember the homepage's language preference. Ln local coordination and PMIDA–MIL-101 also retain their parallel bilingual mode. Paper-specific diagrams, experiments and learning-depth options remain tailored to the subject.
+The explainers share the Research Atlas navy-and-cyan reading style, a two-row sticky header, accessible section navigation and reading progress. All 60 pages support complete Chinese/English switching, including interactive feedback, and remember the homepage's language preference. Ln local coordination, PMIDA–MIL-101 and CALF-20 also retain their parallel bilingual mode. Paper-specific diagrams, experiments and learning-depth options remain tailored to the subject.
 
 Start with the central idea, then explore the mechanism, evidence, limitations, and broader connections. See the [explainer implementation guide](papers/README.md#shared-reading-system) for the common styles and language controller.
 
@@ -122,16 +122,32 @@ With a search active, the explainer filter shows matching / total explainer coun
 
 The **Explainers from the past week / 近一周的讲解页** section includes explainers first created within the last seven UTC calendar days, ordered by their precise creation time, including creations on the same day; updating an existing page does not return it to the list or move it to the top. Before publishing, run `node scripts/update-explainer-updates.cjs` after committing the explainer changes to initialise missing creation timestamps from Git history while preserving existing creation times and first-publication dates; see the [catalogue guide](references/paper-catalog-guide.md).
 
-The homepage and all 43 explainers share expandable publication-time author/affiliation bylines and separate Published, Accepted and Preprint posted dates. Search includes full author lists, reliable Chinese/English institution names and acronyms. Metadata is maintained once per source URL in the catalogue; see the [schema and generation steps](references/paper-catalog-guide.md#authors-affiliations-and-paper-dates) and [unverified-information ledger](references/paper-metadata-audit.md).
+The homepage and all 57 paper explainers share expandable publication-time author/affiliation bylines and separate Published, Accepted and Preprint posted dates. Search includes full author lists, reliable Chinese/English institution names and acronyms. Metadata is maintained once per source URL in the catalogue; see the [schema and generation steps](references/paper-catalog-guide.md#authors-affiliations-and-paper-dates) and [unverified-information ledger](references/paper-metadata-audit.md).
 
 ## Classification and filters
 
 Use the primary-theme selector and the expandable cross-disciplinary tags alongside global or within-theme search. Tags have separate object, method, task and application dimensions: selections within one dimension use OR; different dimensions use AND. For example, `?theme=mof&tag=application%3Aree` selects MOF rare-earth adsorption/separation, and `?tag=object%3Amof&tag=method%3Amlip` selects MOF interatomic potentials. `MLP`, `MLIP` and the old `AIRS` abbreviation are searchable aliases; the synthesis paper now displays its original abbreviation, AIRES.
 
-A paper reference uses `?paper=<stable-id>` and opens the primary entry. Existing `?q=`, `?lang=`, `?explainers=1`, `#themes`, `#recent` and all explainer paths remain valid. Related readings show the primary theme and do not affect the 479-paper total. A migration ledger preserves all 463 old listings: [`taxonomy-migration.json`](references/taxonomy-migration.json).
+A paper reference uses `?paper=<stable-id>` and opens the primary entry. Existing `?q=`, `?lang=`, `?explainers=1`, `#themes`, `#recent` and all explainer paths remain valid. Related readings show the primary theme and do not affect the 492-paper total. A migration ledger preserves all 463 old listings: [`taxonomy-migration.json`](references/taxonomy-migration.json).
 
 Run `node scripts/check-taxonomy.cjs --data-only` for migration and schema checks. Browser checks are described in the [catalogue guide](references/paper-catalog-guide.md).
 
 ## verl algorithm explainers
 
 [Read the verl articles in Artificial Intelligence & Computing](?theme=ai&q=verl#themes). The theme lists each paper and documentation article directly, with bilingual content, teaching interactions and evidence ledgers.
+
+- [PPO: limiting the incentive for a large update](papers/ppo/) — paper
+- [GRPO: answers to one question provide a baseline](papers/grpo/) — paper
+- [DAPO: keeping long-reasoning training productive](papers/dapo/) — paper
+- [SPIN: turn the previous model into an opponent](papers/spin/) — paper
+- [SPPO: preferences can form cycles](papers/sppo/) — paper
+- [Entropy mechanisms: why exploration runs out early](papers/entropy-mechanism/) — paper
+- [OPO: how should a baseline be weighted?](papers/opo/) — paper
+- [Reading baselines: align conditions before comparing](papers/verl-algorithm-baselines/) — documentation
+- [GPG: reconsider the weights in policy gradients](papers/gpg/) — paper
+- [Rollout correction: who actually generated the data?](papers/rollout-correction/) — documentation
+- [The mathematics: change of measure and long-sequence variance](papers/rollout-correction-math/) — documentation
+- [OTB: a baseline that changes across tokens](papers/otb/) — paper
+- [DPPO: from probability ratios to divergence](papers/dppo/) — paper
+- [On-policy distillation: teach along the student’s path](papers/on-policy-distillation/) — paper
+- [DRO: alignment from single-response feedback](papers/direct-reward-optimization/) — paper
