@@ -222,16 +222,28 @@
           "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3",
           "points": [
             {
-              "zh": "教学假设：同一个动作，优势 A=1，裁剪宽度 ε=0.2。",
-              "en": "Teaching assumptions: the same action, advantage A=1 and clip width ε=0.2."
+              "zh": "优势：这个动作比通常表现好多少。这里假设好 1 分。",
+              "en": "Advantage: how much better the action is than usual. Assume 1 point better."
             },
             {
-              "zh": "24% 之后，这条样本的目标得分不再增加；真实概率仍能变化。",
-              "en": "Above 24%, this sample earns no further objective credit; its actual probability can still change."
+              "zh": "裁剪宽度：允许增加多少倍后停止额外加分。这里取相对增加 20%。",
+              "en": "Clip width: the relative increase after which extra credit stops. Use 20% here."
             },
             {
-              "zh": "20%→24% 是相对增加 20%，也就是增加 4 个百分点。",
-              "en": "20%→24% is a 20% relative increase, or 4 percentage points."
+              "zh": "先算倍数＝新概率÷旧概率，再算未裁剪分数＝倍数×1。",
+              "en": "First compute the ratio: new probability / old probability. The raw score is that ratio ×1."
+            },
+            {
+              "zh": "20%÷20%=1；24%÷20%=1.2；30%÷20%=1.5。",
+              "en": "20%/20%=1; 24%/20%=1.2; 30%/20%=1.5."
+            },
+            {
+              "zh": "超过 24% 后，这条经验的分数保持 1.2；实际概率仍能继续变化。",
+              "en": "Above 24%, this sample’s score stays at 1.2; its actual probability can still change."
+            },
+            {
+              "zh": "20%→24% 是相对增加 20%，绝对增加 4 个百分点。",
+              "en": "20%→24% is a relative increase of 20%, or 4 percentage points."
             }
           ],
           "example": [
@@ -390,6 +402,10 @@
               "text": {
                 "zh": "用 πold 与环境交互，得到状态、动作、奖励和后续状态。原文每个采样进程采 T 步，N 个进程合计 NT 个时间步。",
                 "en": "Interact with the environment using πold to collect states, actions, rewards and next states. Each of N actors collects T steps, producing NT timesteps."
+              },
+              "intuitionText": {
+                "zh": "按当前的动作概率玩 10 局，记下画面、动作和反馈。",
+                "en": "Play 10 games with the current action probabilities; record observations, actions and feedback."
               }
             },
             {
@@ -400,6 +416,10 @@
               "text": {
                 "zh": "保存每个已选动作的 πold(aₜ|sₜ)。同一批数据的多轮更新中，这些分母固定；待训练模型的 πθ 会变化。若分母跟着每次更新，就失去了比较起点。",
                 "en": "Keep πold(aₜ|sₜ) for each sampled action. These denominators stay fixed over the batch’s optimization epochs while πθ changes. Updating both together would remove the anchor."
+              },
+              "intuitionText": {
+                "zh": "保存当时选择各动作的概率，作为后面比较的起点。",
+                "en": "Save the action probabilities used during collection as the comparison baseline."
               }
             },
             {
@@ -410,6 +430,10 @@
               "text": {
                 "zh": "用奖励和价值估计计算 TD 残差及 GAE，得到每一步的 Âₜ。这里固定该批优势供 actor 优化，避免把优势计算也误当成 actor 目标中的可微路径。",
                 "en": "Use rewards and value estimates to compute TD residuals and GAE, giving Âₜ at each step. Here those batch estimates are held fixed for actor optimization, rather than differentiated through as part of the actor objective."
+              },
+              "intuitionText": {
+                "zh": "估计每个动作比通常表现好多少；这个差值叫优势。",
+                "en": "Estimate how much better each action was than usual; this difference is its advantage."
               }
             },
             {
@@ -420,6 +444,10 @@
               "text": {
                 "zh": "把 NT 个样本分成大小 M≤NT 的小批次，优化 K 轮。每次重新计算当前概率比与裁剪目标；critic 学习价值目标，actor 学习动作概率。小批次不是重新采样的新轨迹。",
                 "en": "Split the NT samples into minibatches of size M≤NT and optimize for K epochs. Recompute current ratios and clipped objectives at each update. The critic learns value targets; the actor learns action probabilities. A minibatch is not a newly sampled trajectory."
+              },
+              "intuitionText": {
+                "zh": "根据同一批记录练几遍：调整概率，但不给过头的有利调整继续加分。",
+                "en": "Learn from the same records several times: adjust probabilities without giving excessive beneficial changes extra credit."
               }
             },
             {
@@ -430,10 +458,20 @@
               "text": {
                 "zh": "本轮结束后令 θold←θ，再用更新后的策略采新数据，返回第 1 步。下一轮的概率比在相同参数处重新从 1 开始；长期冻结的参考模型不属于这个替换操作。",
                 "en": "At the end, set θold←θ, collect fresh data with the updated policy and return to step 1. Ratios restart at 1 when the parameters match. A long-term frozen reference model is separate from this replacement."
+              },
+              "intuitionText": {
+                "zh": "用调整后的策略再玩 10 局，收集新记录，开始下一轮。",
+                "en": "Play 10 new games with the updated policy, collect fresh records and repeat."
               }
             }
           ],
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=5"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=5",
+          "points": [
+            {
+              "zh": "教学例子：玩 10 局 → 保存记录 → 根据记录练几遍 → 再玩 10 局。点击下面各步看说明；10 局不是论文实验设置。",
+              "en": "Teaching example: play 10 games → save records → learn from them several times → play 10 new games. Select a step below; 10 games is not a paper setting."
+            }
+          ]
         },
         {
           "id": "ppo-anchor-question",
@@ -1434,16 +1472,16 @@
           "paragraphs": [],
           "points": [
             {
-              "zh": "动作好不好？→ 看优势 A。",
-              "en": "Was the action better than usual? → advantage A."
+              "zh": "这个动作比通常表现好多少？→ 估计“优势”。",
+              "en": "How much better was this action than usual? → estimate its advantage."
             },
             {
-              "zh": "概率变了多少？→ 看新旧概率比 r。",
-              "en": "How much did its probability change? → ratio r."
+              "zh": "现在有多常选它？→ 新概率除以旧概率。",
+              "en": "How often is it chosen now? → divide new probability by old probability."
             },
             {
-              "zh": "还应不应该加分？→ 用 clip 和 min 限制额外激励。",
-              "en": "Should further change earn credit? → clip and min limit the extra incentive."
+              "zh": "继续改变还要加分吗？→ 朝有利方向改得足够多，就停止额外加分。",
+              "en": "Should further change earn credit? → stop extra credit after a sufficiently large beneficial change."
             }
           ]
         }
@@ -1509,7 +1547,8 @@
       "## Audit 2026-11-03\n\nRechecked PPO 1707.06347v2 against the PDF (SHA-256 unchanged), including visually inspected PDF pp. 3, 5, 6 and 8. Supplemented definitions with GAE 1506.02438v6 and retained the pinned verl documentation commit.\n\n- papers/ppo/index.html #math, Chinese/English: compact formula and GAE prose → symbol definitions, ratio interpretation, signed worked cases, batch averaging, chain-rule derivation, explicit GAE limits, joint-objective signs and directed KL. PPO §§2–5, Eqs.1–12, Figure 1 and Algorithm 1.\n- #ppo-loop, both languages: two prose method panels → retained panels plus five selectable stages; fixed old probabilities/advantages, K epochs and outer refresh are explicit. PPO Algorithm 1, p.5.\n- #lab: one objective curve → raw, clipped-candidate and min curves computed from the same inputs; explicit boundary lines, signed branches, kinks and zero advantage. PPO §3 Eq.7, Figure 1; synthetic inputs, not measured data.\n- #ppo-gae-lab: no worked trajectory → R=[0,0,1], V=[0.4,0.5,0.6,0], true termination, fixed critic values; default gamma=.9/lambda=.8 gives deltas [.05,.04,.4] and advantages [.28616,.328,.4]. Teaching data only.\n- #ppo-gae-sum: compact description without index caveat → explicit sum l=0..T-1-t and note that PPO v2 Eqs.10–11 print T-t+1 in the last exponent. Verified visually; consistent powers follow GAE §3 Eq.16. This is a stated reindexing, not silent transcription of the printed inconsistency.\n- #evidence: selected clip rows → preserved rows plus no-clip baseline, all remaining Table 1 rows in an expansion, full Table 2 at research depth; last-100-episode metric, 21-run aggregation, architecture and lack of tabulated uncertainty explicit. PPO pp.6,8.\n- #implementation: terse role note → token/prefix mapping and distinctions between original PPO and pinned verl extensions. No LLM performance claim added.\n- Original valid content and eight section anchors retained; original formula claims incorporated into the expanded derivation. See reports/ppo-formula-lesson.md for separate technical, scientific and editorial checks.",
       "Source files retrieved 2026-11-03: 1707.06347v2.pdf from https://arxiv.org/pdf/1707.06347v2, SHA-256 e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b; 1506.02438v6.pdf from https://arxiv.org/pdf/1506.02438v6, SHA-256 5aa736ccf3517a1f36d0ca8146982e69beaf9a2bdccac2ae324f780743bc045e; verl-ppo.md from the pinned commit, SHA-256 48fe658d2c04ddef720daa978f8723746035fda62ac647fd28a8b97ea03b7c16. Public originals remain outside the repository in the persistent paper-source cache.",
       "## Audit 2026-11-03 — STAR opening\n\nRechecked the cached PPO 1707.06347v2 introduction, §§2–3, Algorithm 1 and the experimental conclusions in §6.\n\n- Hero title/lead, Chinese and English: the abstract metaphor about an update incentive → a concrete question about reusing a batch without overly large policy changes. Catalogue and README labels follow the same title.\n- #background, both languages: definitions before the research motivation → an added STAR sequence before the retained definitions. S explains policy-based trial and error; T establishes the data-reuse/update-size trade-off and TRPO context; A introduces the clipped objective with a declared fixed-positive-advantage teaching example (20% to 24% to 30%, epsilon 0.2); R states the paper’s scoped empirical conclusions and absence of per-update guarantees. Sources: PPO v2 abstract, §§1–3, §5 Algorithm 1, §§6.2–6.3.\n- The example’s 20% relative increase is explicitly distinguished from the 4-percentage-point absolute increase. Clipping changes one sample’s objective contribution and does not cap the actual probability. All previous lesson modules, original section anchors and evidence remain. No calculation logic or experimental values changed.",
-      "## Audit 2026-11-03 — concise reading layers\n\nReorganized the verified PPO v2 lesson after reading feedback without changing the underlying formulas or empirical values.\n\n- #background / STAR, Chinese and English: long paragraphs → short points, with the complete prior explanation and citations in native disclosures. The 20%→24%→30% teaching example is now a labelled comparison: fixed A=1, epsilon=0.2, ratios 1/1.2/1.5 and single-term scores 1/1.2/1.2, independently checked against Eq.7. Scores are explicitly not game rewards; the actual probability is not capped.\n- Reading guide and depth controls: previously unnamed differences → cumulative layers (intuition: story/example/evidence/limits; mechanism: symbols, signed clipping and GAE; research: gradients, importance-sampling assumptions, KL and detailed experimental protocols). Critical limitations remain in the default layer.\n- #math and #evidence: compact reading maps precede the preserved detailed derivations and original result table. Probability/advantage definitions and experimental qualifications remain available. All original lesson IDs and content paragraphs are retained; summaries do not replace the underlying evidence.\n- Visual audit: probability comparison is a teaching diagram, not measured performance or a time series. Source: PPO v2 §3 Eq.7/Figure 1. Reading-layer organization is editorial guidance, not a scientific result. Original claim locators and version caveats continue to apply."
+      "## Audit 2026-11-03 — concise reading layers\n\nReorganized the verified PPO v2 lesson after reading feedback without changing the underlying formulas or empirical values.\n\n- #background / STAR, Chinese and English: long paragraphs → short points, with the complete prior explanation and citations in native disclosures. The 20%→24%→30% teaching example is now a labelled comparison: fixed A=1, epsilon=0.2, ratios 1/1.2/1.5 and single-term scores 1/1.2/1.2, independently checked against Eq.7. Scores are explicitly not game rewards; the actual probability is not capped.\n- Reading guide and depth controls: previously unnamed differences → cumulative layers (intuition: story/example/evidence/limits; mechanism: symbols, signed clipping and GAE; research: gradients, importance-sampling assumptions, KL and detailed experimental protocols). Critical limitations remain in the default layer.\n- #math and #evidence: compact reading maps precede the preserved detailed derivations and original result table. Probability/advantage definitions and experimental qualifications remain available. All original lesson IDs and content paragraphs are retained; summaries do not replace the underlying evidence.\n- Visual audit: probability comparison is a teaching diagram, not measured performance or a time series. Source: PPO v2 §3 Eq.7/Figure 1. Reading-layer organization is editorial guidance, not a scientific result. Original claim locators and version caveats continue to apply.",
+      "## Audit 2026-11-03 — independent high-school introduction\n\nClosed the reviewed prerequisite gaps in both languages: defined advantage and clipping width before symbols, spelled out probability division and the raw-score calculation, added a declared ten-game teaching loop, and introduced a one-probability beginner exercise with fixed positive advantage 1 and epsilon .2. Advanced controls and derivative plots remain available at Mechanism/Research. Existing equations and evidence are preserved. Source: PPO v2 §3 Eq.7 and §5 Algorithm 1. The game count and probabilities are teaching assumptions, not experimental results. Research prerequisites are explicitly stated."
     ],
     "readingGuide": [
       {
@@ -1541,8 +1580,8 @@
           "en": "Research · examine the evidence"
         },
         "text": {
-          "zh": "再增加梯度推导、假设、实验条件与 KL。",
-          "en": "Also adds gradients, assumptions, experimental details and KL."
+          "zh": "增加推导与实验细节；需补充微积分、概率与机器学习基础。",
+          "en": "Adds derivations and experimental details; requires calculus, probability and machine-learning basics."
         }
       }
     ]

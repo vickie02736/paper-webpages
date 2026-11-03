@@ -76,3 +76,8 @@
 @media(max-width:800px){[data-paper="ppo"] .ppo-star-grid{grid-template-columns:1fr}[data-paper="ppo"] .ppo-reading-options{grid-template-columns:1fr}[data-paper="ppo"] .ppo-reading-options button{padding:10px 14px}[data-paper="ppo"] .ppo-reading-options strong{margin-bottom:3px}}
 @media(max-width:480px){[data-paper="ppo"] .ppo-reading-guide{padding:16px}[data-paper="ppo"] .ppo-probability-example{gap:18px}[data-paper="ppo"] .ppo-probability-example li{padding:12px 4px}[data-paper="ppo"] .ppo-probability-example span{font-size:.76rem}[data-paper="ppo"] .ppo-probability-example strong{font-size:1.6rem}[data-paper="ppo"] .ppo-probability-example li:not(:last-child)::after{right:-16px}}
 @media(max-width:480px){[data-paper="ppo"] .ppo-probability-example li>span:first-child{min-height:3.2em}}
+[data-paper="ppo"] #ppo-beginner-lab{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:16px}
+[data-paper="ppo"] #ppo-beginner-lab label{display:block;font-weight:650;margin-bottom:14px}
+[data-paper="ppo"] #ppo-beginner-result p{margin:12px 0;max-width:850px}
+[data-paper="ppo"][data-ppo-reading-depth="intuition"] #lab .lab-layout{display:none}
+[data-paper="ppo"]:not([data-ppo-reading-depth="intuition"]) #ppo-beginner-lab{display:none}

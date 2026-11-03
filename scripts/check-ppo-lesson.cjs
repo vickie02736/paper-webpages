@@ -53,6 +53,7 @@ const out=process.env.PAPER_QA_DIR||'/tmp/ppo-lesson/qa';fs.mkdirSync(out,{recur
  assert((await page.locator('[data-depth="intuition"]').getAttribute('title')).includes('STAR'));
  assert(await page.locator('#ppo-star-a .ppo-prose-details').evaluate(e=>e.open));
  await page.locator('[data-atlas-lang="zh"]').click();
+ await page.locator('[data-depth="mechanism"]').click();
  await page.locator('[data-ppo-step="3"]').click();assert((await page.locator('#ppo-step-detail').innerText()).includes('K'));
  await page.locator('[data-depth="mechanism"]').click();assert(await page.locator('#ppo-gae-lab').isVisible());assert(!(await page.locator('#ppo-gradient').isVisible()));
  assert((await page.locator('#ppo-gae-results').innerText()).includes('0.28616'));

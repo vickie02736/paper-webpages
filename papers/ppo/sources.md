@@ -116,9 +116,12 @@ This is the concrete meaning of removing the incentive for a large update: this 
 
 Compact reading points:
 
-- Teaching assumptions: the same action, advantage A=1 and clip width ε=0.2.
-- Above 24%, this sample earns no further objective credit; its actual probability can still change.
-- 20%→24% is a 20% relative increase, or 4 percentage points.
+- Advantage: how much better the action is than usual. Assume 1 point better.
+- Clip width: the relative increase after which extra credit stops. Use 20% here.
+- First compute the ratio: new probability / old probability. The raw score is that ratio ×1.
+- 20%/20%=1; 24%/20%=1.2; 30%/20%=1.5.
+- Above 24%, this sample’s score stays at 1.2; its actual probability can still change.
+- 20%→24% is a relative increase of 20%, or 4 percentage points.
 
 Teaching comparison: Old policy 20% (r=1 · score 1); At the threshold 24% (r=1.2 · score 1.2); Increase further 30% (r=1.5 · score stays 1.2). Scores are one sample’s objective values, not game rewards.
 
@@ -166,6 +169,10 @@ Definitions: GAE v6, §2, Eqs. 4–5 (discounted values and advantage); the exam
 ### #ppo-loop — One PPO iteration: what stays fixed and what changes?
 
 This is a teaching decomposition of the paper’s actor–critic algorithm. Select a stage to inspect its inputs and outputs. Arrows show data flow and the outer loop; no model is being trained.
+
+Compact reading points:
+
+- Teaching example: play 10 games → save records → learn from them several times → play 10 new games. Select a step below; 10 games is not a paper setting.
 
 Source: PPO v2, p. 5, Eqs. 9, 11–12 and Algorithm 1.
 
@@ -451,9 +458,9 @@ Source: pinned verl docs/algo/ppo.md, Key Components and Advanced Extensions; or
 
 Compact reading points:
 
-- Was the action better than usual? → advantage A.
-- How much did its probability change? → ratio r.
-- Should further change earn credit? → clip and min limit the extra incentive.
+- How much better was this action than usual? → estimate its advantage.
+- How often is it chosen now? → divide new probability by old probability.
+- Should further change earn credit? → stop extra credit after a sufficiently large beneficial change.
 
 ### #ppo-evidence-map — Read the comparison conditions first
 
@@ -506,5 +513,8 @@ Reorganized the verified PPO v2 lesson after reading feedback without changing t
 - Reading guide and depth controls: previously unnamed differences → cumulative layers (intuition: story/example/evidence/limits; mechanism: symbols, signed clipping and GAE; research: gradients, importance-sampling assumptions, KL and detailed experimental protocols). Critical limitations remain in the default layer.
 - #math and #evidence: compact reading maps precede the preserved detailed derivations and original result table. Probability/advantage definitions and experimental qualifications remain available. All original lesson IDs and content paragraphs are retained; summaries do not replace the underlying evidence.
 - Visual audit: probability comparison is a teaching diagram, not measured performance or a time series. Source: PPO v2 §3 Eq.7/Figure 1. Reading-layer organization is editorial guidance, not a scientific result. Original claim locators and version caveats continue to apply.
+## Audit 2026-11-03 — independent high-school introduction
+
+Closed the reviewed prerequisite gaps in both languages: defined advantage and clipping width before symbols, spelled out probability division and the raw-score calculation, added a declared ten-game teaching loop, and introduced a one-probability beginner exercise with fixed positive advantage 1 and epsilon .2. Advanced controls and derivative plots remain available at Mechanism/Research. Existing equations and evidence are preserved. Source: PPO v2 §3 Eq.7 and §5 Algorithm 1. The game count and probabilities are teaching assumptions, not experimental results. Research prerequisites are explicitly stated.
 
 - [GAE paper: value, advantage and generalized advantage estimation](https://arxiv.org/abs/1506.02438v6): §2 Eqs. 4–5; §3 Eqs. 10–16. Supplementary definitions and derivations, not PPO experimental evidence.

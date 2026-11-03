@@ -42,8 +42,12 @@ let state=null;
 function mount(data,rerender){
  if(!data.ppoSteps)return;
  state={steps:data.ppoSteps,step:0,lang:'zh',depth:'intuition',guide:data.ppoReadingGuide||[]};
+ const simple=document.createElement('div');simple.id='ppo-beginner-lab';
+ simple.innerHTML='<label for="ppo-new-prob"><span data-zh="只改变：现在选择这个动作的概率" data-en="Change only: the current probability of this action">只改变：现在选择这个动作的概率</span></label><input id="ppo-new-prob" type="range" min="10" max="40" step="1" value="20"><div id="ppo-beginner-result" aria-live="polite"></div>';
+ document.querySelector('#lab .lab-layout').before(simple);
+ simple.querySelector('input').addEventListener('input',()=>refresh(state.lang));
  document.querySelectorAll('[data-ppo-depth]').forEach(b=>b.addEventListener('click',()=>document.querySelector('#depth-control [data-depth="'+b.dataset.ppoDepth+'"]').click()));
- document.querySelectorAll('#depth-control [data-depth]').forEach(b=>b.addEventListener('click',()=>{state.depth=b.dataset.depth;refreshGuide();}));
+ document.querySelectorAll('#depth-control [data-depth]').forEach(b=>b.addEventListener('click',()=>{state.depth=b.dataset.depth;refresh(state.lang);}));
  const presets=[['正优势 · 提高概率','Positive · increase',1.5,1],['正优势 · 降低概率','Positive · decrease',.5,1],['负优势 · 降低概率','Negative · decrease',.5,-1],['负优势 · 提高概率','Negative · increase',1.5,-1],['零优势','Zero advantage',1,0]];
  const holder=document.createElement('div');holder.className='ppo-presets';
  holder.innerHTML='<p><span data-zh="代入典型情况（ε=0.2）" data-en="Try a case (ε=0.2)">代入典型情况（ε=0.2）</span></p>'+presets.map(([z,e,r,a],i)=>`<button type="button" data-ppo-preset="${i}" data-r="${r}" data-a="${a}" aria-pressed="false"><span data-zh="${z}" data-en="${e}">${z}</span></button>`).join('');
@@ -55,6 +59,7 @@ function mount(data,rerender){
 }
 function refreshGuide(){
  if(!state)return;
+ document.body.dataset.ppoReadingDepth=state.depth;
  document.querySelectorAll('[data-ppo-depth]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.ppoDepth===state.depth)));
  for(const g of state.guide){const b=document.querySelector('#depth-control [data-depth="'+g.depth+'"]');if(b)b.title=g.text[state.lang];}
 }
@@ -62,7 +67,9 @@ function refresh(lang){
  if(!state)return;state.lang=lang;const tx=(z,e)=>lang==='en'?e:z;
  refreshGuide();
  document.querySelectorAll('[data-ppo-step]').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.ppoStep===state.step)));
- document.getElementById('ppo-step-detail').textContent=state.steps[state.step].text[lang];
+ const step=state.steps[state.step];document.getElementById('ppo-step-detail').textContent=(state.depth==='intuition'&&step.intuitionText?step.intuitionText:step.text)[lang];
+ const probability=+document.getElementById('ppo-new-prob').value,ratio=probability/20;
+ document.getElementById('ppo-beginner-result').innerHTML='<p>'+tx('教学设定：旧概率 20%；动作比通常表现好 1 分；相对增加 20% 后停止额外加分。','Teaching settings: old probability 20%; the action is 1 point better than usual; extra credit stops after a 20% relative increase.')+'</p><p>'+tx('现在的概率：','Current probability: ')+probability+'%</p><p>'+probability+'% ÷ 20% = '+num(ratio)+'</p><p>'+tx('未裁剪分数：','Raw score: ')+num(ratio)+' × 1 = '+num(ratio)+'</p><p>'+tx('PPO 单条分数：','PPO sample score: ')+num(clipTerms(ratio,1,.2).objective)+'</p><p>'+tx(probability>=24?'达到或超过 24%：继续提高概率，这条经验也不再多加分。':'低于 24%：提高概率仍可增加这条经验的分数。',probability>=24?'At or above 24%: further increases earn no extra credit for this sample.':'Below 24%: increasing probability can still increase this sample’s score.')+'</p><p>'+tx('这是训练目标分数，不是游戏奖励，也不是概率的硬上限。切到“机制”可查看正负优势和完整曲线。','This is an objective score, not game reward or a hard probability cap. Select Mechanism for signed advantages and full curves.')+'</p>';
  document.querySelectorAll('[data-ppo-preset]').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.r===+document.getElementById('r').value&&+b.dataset.a===+document.getElementById('a').value&&+document.getElementById('eps').value===.2)));
  const gamma=+document.getElementById('ppo-gamma').value,lambda=+document.getElementById('ppo-lambda').value;
  document.getElementById('ppo-gamma-value').value=num(gamma);document.getElementById('ppo-lambda-value').value=num(lambda);
