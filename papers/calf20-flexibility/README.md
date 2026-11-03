@@ -20,3 +20,9 @@ All previous section IDs remain valid, with `free-energy` added for the MLP/WHAM
 The `#evidence-flow` overview links methods to results and supported claims with labeled arrows. Solid arrows identify measured/computed outputs and experimental or model-based support; dashed arrows identify the initial flexibility hypothesis and the final combined interpretation. Each node links to its detailed method section. The graph reflows vertically on narrow screens and supports Chinese, English and parallel reading without a new diagram library.
 
 Flow validation: 265 focused assertions passed across 1440/768/390 px, Chinese/English/parallel text, all reading depths, every arrow label, node counts, keyboard links and header clearance. Static checks and the bilingual browser sweep passed without warnings or hints. Chinese/English desktop and Chinese mobile diagrams were visually inspected; the link relationships were checked against the evidence ledger.
+
+## High-school reading bridges
+
+Added bilingual object definitions and six short input–operation–output–inference chains. Intuition keeps these bridges and evidence limits; Mechanism adds full method records, and specialised structure/topology details remain progressively disclosed. The original Figure 1a–b viewport identifies the framework without inventing a schematic structure. Scientific and pedagogical provenance is recorded in the evidence ledger; actual reader comprehension remains to be tested.
+
+Bridge validation: static checker and bilingual browser sweep passed with zero warnings, failures or hints. Focused browser checks passed 270 bridge/depth assertions across Chinese/English/parallel modes, 1440/768/390 px and all three depths, plus keyboard disclosure and console checks. Representative Chinese mobile, Chinese structure and English desktop screenshots were visually inspected. No new data arrays or shared runtime files changed.

@@ -115,3 +115,13 @@ Arrow checks (both Chinese and English):
 - These experimental and computational results → **together support the authors' interpretation**, not a unique-mechanism proof → structural adjustment and restricted water hydrogen bonding may contribute to low-RH CO₂ selectivity (pp. 3–5, 8). The synthesis edge is dashed and retains the low-RH and tentative-causality limits.
 
 Solid arrows denote obtaining results or directly supporting the stated claim; their labels explicitly distinguish experiment from model-based support. Dashed arrows denote a hypothesis or combined mechanistic interpretation. The diagram is not an experimental timeline. Nodes link to the corresponding existing method section; source data, original figures and previous anchors remain unchanged.
+
+## Audit 2026-11-03 — high-school reading bridges
+
+Rechecked the cached published main PDF (DOI 10.1038/s41467-024-48136-0), pp. 2–5, 8–9 and Figures 1–6. No new SI retrieval or experimental claims were added.
+
+- `index.html`, both languages: previously undefined framework/pore/loading/unit cell → introductory object definitions and original Figure 1a–b viewport (same unchanged artwork and provenance as the existing Figure 1 viewport). No invented crystal geometry or guest reaction is shown.
+- Structure/adsorption/PXRD/flexibility/free-energy/water sections: method names and outputs alone → six editorial bridges explaining input, operation, observable and allowed inference. References: Fig. 1 structure; Fig. 2 and gas-adsorption methods pp. 8–9; Fig. 3 and PXRD discussion pp. 3–4; Fig. 4 and DFT-MD discussion; Fig. 5 and MLP/umbrella/WHAM methods pp. 5, 9; Fig. 6 and RDF/H-bond analysis p. 8. General explanations of diffraction reinforcement, equilibrium sampling and probability-density interpretation of free energy are pedagogical background, not new measurements by this paper.
+- Evidence limits remain visible at every depth: GCMC discrepancy does not isolate flexibility; a PXRD peak shift does not directly yield pore volume; MD positions are computed; biased sampling counts require correction; RDF distance enhancement is distinct from geometric H-bond counting.
+- Existing full method records now appear from Mechanism depth upward; specialised structural metrics/topology remain in a disclosure, preserving all original material and IDs. Intuition independently retains operations, main results and limits.
+- Reading tasks: explain why matched-temperature/pressure uptake curves test a model; trace a peak shift to changed spacing; identify 5930/6089 Å³ as empty/loaded simulated supercell volumes; distinguish a distance peak from a bond count. This is editorial coverage, not a claim of verified comprehension by high-school readers.
