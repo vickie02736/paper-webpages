@@ -66,3 +66,37 @@ Second-pass content audit of the site-wide explainer review (`reports/explainer-
 
 - Hero lead (zh/en): “in humid flue gas” overstated the scope. The article says the analysis “could explain why CALF-20 accepts CO2 over water at low RH” (p. 4), and the cited selectivity holds “up to 40% relative humidity” (p. 1).
 - Markup: the `#flexibility` section heading `<h2>` was not closed; fixed (no text change).
+
+## Audit 2026-11-03 — methods, measurements and claims
+
+Rechecked the publisher-version article (pp. 1–9 and original Figs. 1–6), obtained from the authors' UCL repository. The former Downloads files are no longer present; their historical audit entries remain above. Source data arrays from the previously checked workbook are retained unchanged; the workbook and SI were not newly retrieved in this revision.
+
+- Source file: `s41467-024-48136-0.pdf`; obtained 2026-11-03 from [UCL Discovery](https://discovery.ucl.ac.uk/10194275/1/Gas%20adsorption%20and%20framework%20flexibility%20of%20CALF-20%20explored%20via%20experiments%20and%20simulations.pdf).
+- SHA-256: `2437504706907c3dd2f352464e0152f50436e186e6b645ff13dd226e17c079b6`.
+- Persistent local cache: `~/paper-sources/calf20-flexibility/s41467-024-48136-0.pdf`.
+
+### Feedback and editorial changes (Chinese and English)
+
+- `#core`: “孔道会动，选择性才有答案 / The pore moves—and selectivity follows” and its compressed causal account → “实验测到了什么，模拟解释了什么？ / What did experiments measure? What did simulations explain?” Separate experimental measurement, computation, and authors' mechanistic interpretation. The original title made a necessary causal relation sound established; main pp. 3–4 say the structural differences *could* explain low-RH selectivity.
+- All method sections: implicit purpose and mixed evidence types → explicit purpose, operation, measured/calculated output, result, and evidence limit. This is an editorial reconstruction of the argument, not an experimental chronology. Main p. 2 says computations preceded Svante synthesis and physical adsorption measurements.
+- `#structure`: geometric descriptors and BET area → identify CIF-derived LCD/PLD/topology versus BET analysis of an N₂ isotherm (main p. 2, Fig. 1). A topology alone does not demonstrate adsorption-induced flexibility.
+- `#adsorption`: explain GCMC's insertion/deletion/translation/rotation attempts and fixed framework assumption (Methods p. 8); compare the measured and predicted isotherms at the same temperature and pressure (Fig. 2). The underprediction is a motivation for testing flexibility, not sufficient proof that it caused the discrepancy (main pp. 2–4).
+- `#pxrd`: distinguish intensity/angle measurement from structural inference; compare peak positions against dry N₂ and do not treat vertical trace offsets as uptake (Fig. 3, main pp. 3–4). Keep the 20% RH directional boundary. Main p. 3 says 45 min drying at 110 °C, while the Fig. 3 caption says 30 min: both are explicitly recorded in research details; no definitive duration is invented.
+- `#flexibility`: “DFT-MD gives direct evidence” → simulated structural distributions, distinct from experimental observations. Explain NPT, trajectories and N₂-probe pore fraction; 5930/6089 Å³ refer to the 2×2×2 supercell in Fig. 4a, whereas Fig. 4f uses a unit-cell volume (main p. 4, Fig. 4). The 11.9/7.3/6.6% values are retained as author-reported differences, without converting them into percentage points or adsorption gains.
+- New `#free-energy`: retain the original MLP/WHAM content in its own section and explain its purpose. DFT sampling → per-loading NequIP training → MLP umbrella sampling → WHAM free energy; it is a computational dependency chain. Training 90:10 and loss weights remain separate from experimental validation (main pp. 5, 9). Empty-framework profiles compare 223/273/387 K; Fig. 5 loading profiles are at 273 K. Stable volumes 744→766 Å³ (CO₂), 725 then 764 Å³ (water), and predicted 376/111 MPa transitions are computational results (main p. 5, Fig. 5). Linker angle ranges 10–20/20–30/30–40° come from main p. 5 / SI Fig. 2 discussion, not direct measurements.
+- `#water`: identify Fig. 6a's experimental versus simulated points, and Fig. 6b–e as simulation analyses. RDF/geometry-based hydrogen-bond counting and the 73% energy decomposition are not direct imaging or calorimetry (main pp. 5, 7–8; SI Fig. 3 discussed in main p. 8). Bulk TIP4P liquid water is a separate comparator, not “at 80% RH”; that condition describes the confined-water comparisons. Dominant 1–2 bonds at 80% RH does not mean all molecules have at most 2 bonds.
+- `#limits`: replace the undifferentiated “paper report” summary with experimental support, model explanation, and author interpretation. Single-component uptake is not mixture selectivity; prior separation performance is identified as prior work (main pp. 1–2). High-pressure transitions remain predictions not observed in this study (main p. 5).
+
+### Original figures and interaction audit
+
+`assets/figure-2.webp` through `figure-6.webp` reproduce the original panels under CC BY 4.0, with attribution and publisher figure links next to each image. No curves, bonds or labels were redrawn. Pages were inspected at 150 dpi (1241 × 1648 px), then rendered at 300 dpi for sharp assets. The following crop coordinates `(left, top, right, bottom)` use the 150 dpi reference grid; each coordinate was doubled for the final 300 dpi crop:
+
+- Fig. 2: p. 3, `(220, 90, 1020, 387)`; both a/b panels, axis units, temperature labels and experiment/simulation legends retained.
+- Fig. 3: p. 3, `(180, 495, 1090, 865)`; a–d, condition labels, all pattern axes and corresponding structural planes retained.
+- Fig. 4: p. 4, `(120, 95, 1140, 598)`; a–f and the common legend retained; cell/supercell distinction explained in the caption.
+- Fig. 5: p. 6, `(190, 94, 1065, 1360)`; a–f, loading/temperature legends and units retained.
+- Fig. 6: p. 7, `(115, 90, 1140, 1356)`; a–e, structural snapshots, legends and axes retained.
+
+The figures are evidence views. The PXRD direction widget remains a qualitative teaching schematic without numerical 2θ positions. The CO₂ temperature values, flexibility differences and hydrogen-bond probability arrays are unchanged. The new method map encodes reading order without implying an experimental chronology. The MLP steps encode actual computational dependencies. Original IDs, source links and catalogue entry remain available; `free-energy` is an additional anchor.
+
+Reading task for this revision: for any result, especially 5930→6089 Å³ or a hydrogen-bond probability, identify the generating method, what was compared, and the strongest supported conclusion. Coverage and source consistency have been self-reviewed; reader comprehension awaits user feedback.
