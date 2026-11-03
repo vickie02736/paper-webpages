@@ -53,3 +53,4 @@ Second-pass content audit of the site-wide explainer review (`reports/explainer-
 
 - Loss card note (zh/en): hard-negative mining applies to public datasets without hard negatives in the full-data mixture (“we use mE5base to mine top 100 hard negatives”, Appendix A p. 12), not to synthetic templates.
 - Multilingual limit card (zh/en): the low-resource gap is the authors’ attribution (“We attribute this to the fact that Mistral-7B is predominantly pre-trained on English data”, §4.4 p. 7), now stated as such.
+- Source-note locators (en mode) used Chinese enumeration commas (“Figure 1、§3.1…”, “Tables 2、6”, “Figures 4、5”, “§4.4、§5.2”) and “DOI：”; now ASCII commas and “DOI: ” in English. No scientific change.
