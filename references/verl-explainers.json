@@ -9,8 +9,8 @@
       "en": "PPO: why can reusing a batch lead to overly large policy updates?"
     },
     "lead": {
-      "zh": "先从背景说起：模型通过试错收集经验，再调整各个动作的选择概率。同一批经验多学几遍能减少采样需求，但也可能把原本有用的策略改坏。PPO 怎样处理这个矛盾？",
-      "en": "Start with the setting: a model collects experience through trial and error, then adjusts action probabilities. Learning repeatedly from one batch can reduce the need for new samples, but can also damage a useful policy. How does PPO address this trade-off?"
+      "zh": "一批经验，多学几遍；改动太大，表现可能变差。先看故事与算例，再逐层展开公式。",
+      "en": "Learn repeatedly from one batch; change the policy too much and performance can drop. Start with a story and example, then unpack the formulas."
     },
     "background": {
       "zh": "普通策略梯度用采样回报决定动作概率的升降，但同一批数据反复优化可能让新策略远离采样策略。TRPO 用约束优化控制更新，PPO 则探索能直接用小批量一阶优化的代理目标。原论文研究连续控制和 Atari，语言模型训练是后续应用。",
@@ -126,8 +126,8 @@
         {
           "id": "ppo-star-s",
           "title": {
-            "zh": "S · 情境：模型怎样从试错中学习？",
-            "en": "S · Situation: how does a model learn from trial and error?"
+            "zh": "S · 情境：先玩，再学",
+            "en": "S · Situation: play, then learn"
           },
           "paragraphs": [
             {
@@ -143,13 +143,27 @@
             "zh": "背景依据：PPO v2 摘要、§2.1、§5 算法 1。游戏角色是教学情境，不是论文中的一项实验。",
             "en": "Background: PPO v2 abstract, §2.1 and §5 Algorithm 1. The game character is a teaching scenario, not a reported experiment."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=1"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=1",
+          "points": [
+            {
+              "zh": "角色看到画面 → 选择动作 → 得到游戏反馈。",
+              "en": "Observe the game → choose an action → receive feedback."
+            },
+            {
+              "zh": "策略：给“左、右、跳跃”分配选择概率。",
+              "en": "Policy: assign probabilities to left, right and jump."
+            },
+            {
+              "zh": "先用旧策略收集记录，再更新策略，让长期总分更高。",
+              "en": "Collect records with the old policy, then update it to seek a higher total score."
+            }
+          ]
         },
         {
           "id": "ppo-star-t",
           "title": {
-            "zh": "T · 任务：既多用几遍经验，又别把策略改坏",
-            "en": "T · Task: learn more from each batch without damaging the policy"
+            "zh": "T · 任务：复用经验，少走偏",
+            "en": "T · Task: reuse experience carefully"
           },
           "paragraphs": [
             {
@@ -165,13 +179,27 @@
             "zh": "依据：PPO v2 §1、§2.1–2.2。原文报告：直接在同一轨迹上反复优化普通策略梯度目标，经验上常导致破坏性的大幅更新。",
             "en": "Source: PPO v2 §§1–2.2. The paper reports that repeated optimization of the ordinary policy-gradient objective on the same trajectory often causes destructively large updates in practice."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=2"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=2",
+          "points": [
+            {
+              "zh": "多学几遍：充分利用已经收集的经验。",
+              "en": "More updates: learn more from experience already collected."
+            },
+            {
+              "zh": "改得太猛：可能放大偶然的好结果，破坏原来的表现。",
+              "en": "Too much change: chance successes can be reinforced and performance damaged."
+            },
+            {
+              "zh": "目标：在一批数据上多轮学习，同时减少过大更新的风险。",
+              "en": "Goal: several updates per batch with less risk from excessive policy changes."
+            }
+          ]
         },
         {
           "id": "ppo-star-a",
           "title": {
-            "zh": "A · 行动：改写训练评分，避免鼓励过头的调整",
-            "en": "A · Action: change the objective so excessive adjustments stop earning credit"
+            "zh": "A · 行动：改得更多，不一定多得分",
+            "en": "A · Action: more change need not earn more credit"
           },
           "paragraphs": [
             {
@@ -191,13 +219,66 @@
             "zh": "依据：PPO v2 §3，公式 7、图 1。20%→24%→30% 是固定正优势下的教学计算，不是实验数据或概率硬约束。",
             "en": "Source: PPO v2 §3, Eq.7 and Figure 1. The 20%→24%→30% example is a teaching calculation with fixed positive advantage, not experimental data or a hard probability constraint."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3",
+          "points": [
+            {
+              "zh": "教学假设：同一个动作，优势 A=1，裁剪宽度 ε=0.2。",
+              "en": "Teaching assumptions: the same action, advantage A=1 and clip width ε=0.2."
+            },
+            {
+              "zh": "24% 之后，这条样本的目标得分不再增加；真实概率仍能变化。",
+              "en": "Above 24%, this sample earns no further objective credit; its actual probability can still change."
+            },
+            {
+              "zh": "20%→24% 是相对增加 20%，也就是增加 4 个百分点。",
+              "en": "20%→24% is a 20% relative increase, or 4 percentage points."
+            }
+          ],
+          "example": [
+            {
+              "label": {
+                "zh": "旧策略",
+                "en": "Old policy"
+              },
+              "value": "20%",
+              "text": {
+                "zh": "r=1 · 得分 1",
+                "en": "r=1 · score 1"
+              }
+            },
+            {
+              "label": {
+                "zh": "到达阈值",
+                "en": "At the threshold"
+              },
+              "value": "24%",
+              "text": {
+                "zh": "r=1.2 · 得分 1.2",
+                "en": "r=1.2 · score 1.2"
+              }
+            },
+            {
+              "label": {
+                "zh": "继续提高",
+                "en": "Increase further"
+              },
+              "value": "30%",
+              "text": {
+                "zh": "r=1.5 · 得分仍是 1.2",
+                "en": "r=1.5 · score stays 1.2"
+              }
+            }
+          ],
+          "caption": {
+            "zh": "分数是单条经验的训练目标值，不是游戏奖励。",
+            "en": "Scores are one sample’s objective values, not game rewards."
+          }
         },
         {
           "id": "ppo-star-r",
           "title": {
-            "zh": "R · 结果：经验可以复用，但每次进步没有保证",
-            "en": "R · Result: experience can be reused, but improvement is not guaranteed"
+            "zh": "R · 结果：能复用，不保证次次进步",
+            "en": "R · Result: reuse, without guaranteed improvement"
           },
           "paragraphs": [
             {
@@ -213,7 +294,21 @@
             "zh": "依据：PPO v2 §1、§5 算法 1、§6.2–6.3；裁剪边界见 §3 图 1–2。实验结论不延伸为逐次更新保证。",
             "en": "Source: PPO v2 §§1, 5 (Algorithm 1) and 6.2–6.3; clipping behavior in §3 Figures 1–2. Experimental findings are not a guarantee for individual updates."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=1"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=1",
+          "points": [
+            {
+              "zh": "采样一批 → 学习多轮 → 用新策略重新采样。",
+              "en": "Collect a batch → learn for several epochs → sample again with the new policy."
+            },
+            {
+              "zh": "原论文在连续控制与 Atari 上检验方法，结果支持其实用性。",
+              "en": "The paper tests continuous control and Atari; the results support practical usefulness."
+            },
+            {
+              "zh": "实验表现好，不等于每次更新都更好，也不是策略变化的硬保证。",
+              "en": "Good benchmark results do not guarantee improvement or a hard bound on each policy change."
+            }
+          ]
         }
       ],
       "background": [
@@ -250,7 +345,22 @@
             "zh": "定义补充：GAE v6，§2，公式 4–5（折扣价值与优势）；教学例子不是论文实验。",
             "en": "Definitions: GAE v6, §2, Eqs. 4–5 (discounted values and advantage); the example is not an experiment."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1506.02438v6#page=3"
+          "sourceUrl": "https://arxiv.org/pdf/1506.02438v6#page=3",
+          "points": [
+            {
+              "zh": "奖励 R：这一步得多少分；回报 G：从这一步起累计多少分。",
+              "en": "Reward R: the score now. Return G: accumulated score from now onward."
+            },
+            {
+              "zh": "价值 V：通常能得多少；优势 A：这个动作比通常表现好多少。",
+              "en": "Value V: expected performance. Advantage A: how much better this action is than usual."
+            },
+            {
+              "zh": "Actor 选动作；critic 估价值；Â 是有误差的优势估计。",
+              "en": "The actor chooses actions; the critic estimates value; Â is an imperfect advantage estimate."
+            }
+          ],
+          "level": "mechanism"
         }
       ],
       "mechanism": [
@@ -336,7 +446,8 @@
           "answer": {
             "zh": "策略逐渐改变后，早期数据越来越不能代表当前策略会遇到的状态和动作。裁剪降低某些过大更新的激励，却不保证任意久的离策略复用都可靠，所以算法交替采样和优化。",
             "en": "As the policy changes, old data becomes less representative of the states and actions it would now encounter. Clipping reduces some incentives for large changes but does not justify arbitrary off-policy reuse, so the algorithm alternates sampling and optimization."
-          }
+          },
+          "level": "mechanism"
         }
       ],
       "math": [
@@ -425,7 +536,8 @@
               ]
             ]
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3",
+          "level": "mechanism"
         },
         {
           "id": "ppo-ratio",
@@ -452,7 +564,22 @@
             "zh": "依据：PPO v2，第 3 页，公式 6–7、图 1；例子为教学计算。",
             "en": "Source: PPO v2, p. 3, Eqs. 6–7 and Figure 1; examples are teaching calculations."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3",
+          "points": [
+            {
+              "zh": "旧概率 0.2，新概率 0.3 → r=0.3÷0.2=1.5。",
+              "en": "Old probability 0.2, new probability 0.3 → r=0.3/0.2=1.5."
+            },
+            {
+              "zh": "r>1：更常选；r<1：更少选。r 是倍数，可以大于 1。",
+              "en": "r>1: choose more often. r<1: choose less often. A ratio can exceed 1."
+            },
+            {
+              "zh": "必须比较同一个状态、同一个动作，且旧概率为正。",
+              "en": "Compare the same state and action, with positive old probability."
+            }
+          ],
+          "level": "mechanism"
         },
         {
           "id": "ppo-score",
@@ -474,7 +601,22 @@
             "zh": "依据：PPO v2，第 3 页，公式 6–7、图 1；例子为教学计算。",
             "en": "Source: PPO v2, p. 3, Eqs. 6–7 and Figure 1; examples are teaching calculations."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3",
+          "points": [
+            {
+              "zh": "A>0：提高概率，rA 增大。",
+              "en": "A>0: raising probability increases rA."
+            },
+            {
+              "zh": "A<0：降低概率，rA 变得不那么负，目标也提高。",
+              "en": "A<0: lowering probability makes rA less negative, improving the objective."
+            },
+            {
+              "zh": "A=0：这一项不提供策略更新信号；估计的有利方向不保证实际获益。",
+              "en": "A=0: no policy signal from this term. Estimated benefit does not guarantee actual improvement."
+            }
+          ],
+          "level": "mechanism"
         },
         {
           "id": "ppo-clamp",
@@ -497,7 +639,22 @@
             "zh": "依据：PPO v2，第 3 页，公式 6–7、图 1；例子为教学计算。",
             "en": "Source: PPO v2, p. 3, Eqs. 6–7 and Figure 1; examples are teaching calculations."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3",
+          "points": [
+            {
+              "zh": "ε=0.2 → 候选比值限制在 [0.8,1.2]。",
+              "en": "ε=0.2 → the candidate ratio stays in [0.8,1.2]."
+            },
+            {
+              "zh": "小于 0.8 返回 0.8；大于 1.2 返回 1.2；中间原样返回。",
+              "en": "Below 0.8 return 0.8; above 1.2 return 1.2; otherwise keep the input."
+            },
+            {
+              "zh": "clip 改的是目标里的候选值，不直接改模型输出。",
+              "en": "clip changes a candidate in the objective, not the model output itself."
+            }
+          ],
+          "level": "mechanism"
         },
         {
           "id": "ppo-min",
@@ -523,7 +680,26 @@
             "zh": "依据：PPO v2，第 3 页，公式 6–7、图 1；例子为教学计算。",
             "en": "Source: PPO v2, p. 3, Eqs. 6–7 and Figure 1; examples are teaching calculations."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3",
+          "points": [
+            {
+              "zh": "好动作增得太多：min(1.5,1.2)=1.2，不再加分。",
+              "en": "A good action increased too far: min(1.5,1.2)=1.2, with no extra credit."
+            },
+            {
+              "zh": "坏动作减得太多：min(−0.5,−0.8)=−0.8，也进入平台。",
+              "en": "A bad action decreased too far: min(−0.5,−0.8)=−0.8, also a plateau."
+            },
+            {
+              "zh": "坏动作反而更常选：min(−1.5,−1.2)=−1.5，仍保留惩罚。",
+              "en": "A bad action chosen more often: min(−1.5,−1.2)=−1.5, retaining the penalty."
+            }
+          ],
+          "level": "mechanism",
+          "brief": {
+            "zh": "三个教学例子均取 ε=0.2；“好／坏”指优势估计为正／负，A 分别取 1／−1。",
+            "en": "All three examples use ε=0.2. “Good/bad” means positive/negative estimated advantage, with A=1/−1."
+          }
         },
         {
           "id": "ppo-piecewise",
@@ -702,7 +878,22 @@
             "zh": "依据：PPO v2，第 3 页，公式 6–7、图 1；例子为教学计算。",
             "en": "Source: PPO v2, p. 3, Eqs. 6–7 and Figure 1; examples are teaching calculations."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3",
+          "points": [
+            {
+              "zh": "每条经验算一个分数，整批相加后除以样本数 B。",
+              "en": "Score each sample, add the scores and divide by batch size B."
+            },
+            {
+              "zh": "同一批更新中，旧概率与优势固定；当前策略参数 θ 改变。",
+              "en": "Old probabilities and advantages stay fixed within a batch; current parameters θ change."
+            },
+            {
+              "zh": "单条进入平台，其他项仍能推动共享参数；训练损失可写成 −L。",
+              "en": "Other terms can move shared parameters even when one term plateaus. The loss can be −L."
+            }
+          ],
+          "level": "mechanism"
         },
         {
           "id": "ppo-gradient",
@@ -730,7 +921,21 @@
             "zh": "依据：PPO v2，§2.1 公式 1–2、§3 公式 6–7；链式法则为教学推导。",
             "en": "Source: PPO v2, §2.1 Eqs. 1–2 and §3 Eqs. 6–7; the chain rule is a teaching derivation."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3",
+          "points": [
+            {
+              "zh": "优化方向：最大化 L，等价于最小化 −L。",
+              "en": "Maximize L, equivalently minimize −L."
+            },
+            {
+              "zh": "未进入裁剪平台时：链式法则把目标变化传回参数 θ。",
+              "en": "Off the clipping plateau, the chain rule carries objective changes back to θ."
+            },
+            {
+              "zh": "有效裁剪边界是折角；学习率 η 与裁剪宽度 ε 不同。",
+              "en": "The active boundary is a kink. Learning rate η differs from clip width ε."
+            }
+          ]
         },
         {
           "id": "ppo-importance",
@@ -754,7 +959,17 @@
             "zh": "依据：PPO v2，§2.2、§3，公式 3–7；固定状态下的重加权恒等式为教学推导。",
             "en": "Source: PPO v2, §§2.2–3, Eqs. 3–7; the fixed-state reweighting identity is a teaching derivation."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=3",
+          "points": [
+            {
+              "zh": "固定状态下，概率比可以重加权动作平均；需要支持集条件。",
+              "en": "At a fixed state, the ratio reweights action averages, subject to a support condition."
+            },
+            {
+              "zh": "状态仍来自旧策略，因此没有精确校正完整的新策略轨迹。",
+              "en": "States still come from the old policy, so this does not exactly correct full new-policy trajectories."
+            }
+          ]
         },
         {
           "id": "ppo-gae",
@@ -777,7 +992,22 @@
             "zh": "依据：PPO v2，第 5 页，公式 9、11–12、算法 1。",
             "en": "Source: PPO v2, p. 5, Eqs. 9, 11–12 and Algorithm 1."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=5"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=5",
+          "points": [
+            {
+              "zh": "δ：观察到的奖励，加下一状态的估值，再减原来的估值。",
+              "en": "δ: observed reward plus the next-state value estimate minus the original estimate."
+            },
+            {
+              "zh": "GAE：把当前和后续 δ 按 1、γλ、(γλ)²… 加权。",
+              "en": "GAE: weight current and later δ by 1, γλ, (γλ)²…"
+            },
+            {
+              "zh": "λ=0 只看当前残差；λ 越大，后续残差权重越高。",
+              "en": "λ=0 uses only the current residual; larger λ gives later residuals more weight."
+            }
+          ],
+          "level": "mechanism"
         },
         {
           "id": "ppo-gae-lab",
@@ -825,7 +1055,21 @@
             "zh": "依据：PPO v2，§5；GAE v6，§3，公式 10–16。",
             "en": "Source: PPO v2, §5; GAE v6, §3, Eqs. 10–16."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=5"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=5",
+          "points": [
+            {
+              "zh": "真正终止：末状态价值为 0；仅采样截断：通常仍需价值引导。",
+              "en": "True termination: final value is 0. Sampling truncation: usually retain a bootstrap value."
+            },
+            {
+              "zh": "较小 λ 更依赖价值预测；偏差与方差之间没有通用最优选择。",
+              "en": "Smaller λ depends more on value predictions; no universal choice optimizes the bias–variance trade-off."
+            },
+            {
+              "zh": "版本注意：下式明确重排下标，PPO v2 印刷指数差异见展开说明。",
+              "en": "Version note: the sum below is explicitly reindexed; expand for the printed PPO v2 exponent discrepancy."
+            }
+          ]
         },
         {
           "id": "ppo-joint",
@@ -853,7 +1097,21 @@
             "zh": "依据：PPO v2，第 5 页公式 9；第 6 页 §6.1；H 对应原文的 S。",
             "en": "Source: PPO v2, p. 5 Eq. 9 and p. 6 §6.1; H denotes the paper’s S."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=5"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=5",
+          "points": [
+            {
+              "zh": "策略项：鼓励优势估计认为较好的动作。",
+              "en": "Policy term: favor actions judged better by the advantage estimate."
+            },
+            {
+              "zh": "减去价值误差：训练 critic；加上熵项：鼓励探索。",
+              "en": "Subtract value error to train the critic; add entropy to encourage exploration."
+            },
+            {
+              "zh": "联合目标适用于共享参数；§6.1 实验并未共享 actor/critic，也未使用熵奖励。",
+              "en": "The joint form concerns shared parameters; §6.1 uses separate actor/critic networks and no entropy bonus."
+            }
+          ]
         },
         {
           "id": "ppo-kl",
@@ -881,7 +1139,21 @@
             "zh": "依据：PPO v2，§2.2 公式 3–5；§4 公式 8 及 β 调节规则。",
             "en": "Source: PPO v2, §2.2 Eqs. 3–5; §4 Eq. 8 and the β adaptation rule."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=4"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=4",
+          "points": [
+            {
+              "zh": "方向是 KL(πold∥πθ)，比较完整动作分布；交换方向通常不相等。",
+              "en": "KL(πold∥πθ) compares full action distributions; reversing it usually changes the value."
+            },
+            {
+              "zh": "β 越大，同样差异扣分越多；自适应调整也不是硬约束。",
+              "en": "Larger β penalizes the same difference more; adaptation still gives a soft penalty."
+            },
+            {
+              "zh": "采样旧策略 πold 不等于 LLM 对齐的长期参考模型 πref。",
+              "en": "Sampling policy πold is distinct from the long-term LLM reference πref."
+            }
+          ]
         }
       ],
       "evidence": [
@@ -905,7 +1177,8 @@
             "zh": "依据：PPO v2，第 6 页 §6.1、表 1。",
             "en": "Source: PPO v2, p. 6 §6.1 and Table 1."
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=6"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=6",
+          "level": "research"
         },
         {
           "id": "ppo-kl-results",
@@ -1003,7 +1276,8 @@
               ]
             ]
           },
-          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=6"
+          "sourceUrl": "https://arxiv.org/pdf/1707.06347v2#page=6",
+          "level": "research"
         },
         {
           "id": "ppo-atari",
@@ -1107,7 +1381,8 @@
           "answer": {
             "zh": "不会。min(−1.5,−1.2)=−1.5，对 r 的导数为 −1。坏动作的概率正在上升，目标保留纠正信号。若只用 clip(r)A，会错误地在这一侧也去掉信号。",
             "en": "No. min(−1.5,−1.2)=−1.5, with derivative −1 with respect to r. A bad action is becoming more likely, so the objective retains a corrective signal. clip(r)A alone would remove the signal on this side too."
-          }
+          },
+          "level": "mechanism"
         },
         {
           "id": "ppo-check-kl",
@@ -1120,7 +1395,8 @@
           "answer": {
             "zh": "平台只针对一个固定优势的采样项。网络共享参数、其他样本和其他损失项仍在更新，未采样动作的概率也会变化；clip 没有把完整分布投影到一个 KL 约束集合。",
             "en": "The plateau concerns one sampled term with fixed advantage. Shared parameters, other samples and other loss terms still change, including probabilities of unsampled actions. clip does not project the full distribution onto a KL-constrained set."
-          }
+          },
+          "level": "research"
         }
       ],
       "implementation": [
@@ -1144,7 +1420,80 @@
             "zh": "依据：固定提交的 verl docs/algo/ppo.md，Key Components、Advanced Extensions；原论文与后续实现分开。",
             "en": "Source: pinned verl docs/algo/ppo.md, Key Components and Advanced Extensions; original paper and later implementation are distinct."
           },
-          "sourceUrl": "https://github.com/verl-project/verl/blob/3fdf2b548882a8aeccf0842c2150d9c9f1790a55/docs/algo/ppo.md"
+          "sourceUrl": "https://github.com/verl-project/verl/blob/3fdf2b548882a8aeccf0842c2150d9c9f1790a55/docs/algo/ppo.md",
+          "level": "research"
+        }
+      ],
+      "mathIntro": [
+        {
+          "id": "ppo-math-map",
+          "title": {
+            "zh": "公式在回答三个问题",
+            "en": "Three questions behind the formula"
+          },
+          "paragraphs": [],
+          "points": [
+            {
+              "zh": "动作好不好？→ 看优势 A。",
+              "en": "Was the action better than usual? → advantage A."
+            },
+            {
+              "zh": "概率变了多少？→ 看新旧概率比 r。",
+              "en": "How much did its probability change? → ratio r."
+            },
+            {
+              "zh": "还应不应该加分？→ 用 clip 和 min 限制额外激励。",
+              "en": "Should further change earn credit? → clip and min limit the extra incentive."
+            }
+          ]
+        }
+      ],
+      "evidenceIntro": [
+        {
+          "id": "ppo-evidence-map",
+          "title": {
+            "zh": "先认清这张表的口径",
+            "en": "Read the comparison conditions first"
+          },
+          "paragraphs": [],
+          "points": [
+            {
+              "zh": "表 1：7 个连续控制环境 × 3 个随机种子，共 21 次运行。",
+              "en": "Table 1: 7 continuous-control environments × 3 seeds, totaling 21 runs."
+            },
+            {
+              "zh": "每个环境内归一化：随机策略为 0，最佳结果为 1，再取平均。",
+              "en": "Normalize within each environment: random policy=0, best result=1, then average."
+            },
+            {
+              "zh": "0.82 是归一化回报，不是 82% 成功率；也不说明 ε=0.2 总是最优。",
+              "en": "0.82 is normalized return, not an 82% success rate; ε=0.2 need not always be best."
+            }
+          ]
+        }
+      ],
+      "limitsIntro": [
+        {
+          "id": "ppo-limits-map",
+          "title": {
+            "zh": "始终记住这三条",
+            "en": "Keep three limits in mind"
+          },
+          "paragraphs": [],
+          "points": [
+            {
+              "zh": "单条分数出现平台，不等于整个策略停止变化。",
+              "en": "A single score plateau does not freeze the entire policy."
+            },
+            {
+              "zh": "裁剪既不保证每次进步，也不硬性限定整体分布差异（KL）。",
+              "en": "Clipping guarantees neither improvement nor a hard bound on distributional change (KL)."
+            },
+            {
+              "zh": "原论文研究控制与游戏；不能直接替某种语言模型配置背书。",
+              "en": "The original paper studies control and games; it does not validate a particular LLM configuration."
+            }
+          ]
         }
       ]
     },
@@ -1159,7 +1508,43 @@
     "ledgerNotes": [
       "## Audit 2026-11-03\n\nRechecked PPO 1707.06347v2 against the PDF (SHA-256 unchanged), including visually inspected PDF pp. 3, 5, 6 and 8. Supplemented definitions with GAE 1506.02438v6 and retained the pinned verl documentation commit.\n\n- papers/ppo/index.html #math, Chinese/English: compact formula and GAE prose → symbol definitions, ratio interpretation, signed worked cases, batch averaging, chain-rule derivation, explicit GAE limits, joint-objective signs and directed KL. PPO §§2–5, Eqs.1–12, Figure 1 and Algorithm 1.\n- #ppo-loop, both languages: two prose method panels → retained panels plus five selectable stages; fixed old probabilities/advantages, K epochs and outer refresh are explicit. PPO Algorithm 1, p.5.\n- #lab: one objective curve → raw, clipped-candidate and min curves computed from the same inputs; explicit boundary lines, signed branches, kinks and zero advantage. PPO §3 Eq.7, Figure 1; synthetic inputs, not measured data.\n- #ppo-gae-lab: no worked trajectory → R=[0,0,1], V=[0.4,0.5,0.6,0], true termination, fixed critic values; default gamma=.9/lambda=.8 gives deltas [.05,.04,.4] and advantages [.28616,.328,.4]. Teaching data only.\n- #ppo-gae-sum: compact description without index caveat → explicit sum l=0..T-1-t and note that PPO v2 Eqs.10–11 print T-t+1 in the last exponent. Verified visually; consistent powers follow GAE §3 Eq.16. This is a stated reindexing, not silent transcription of the printed inconsistency.\n- #evidence: selected clip rows → preserved rows plus no-clip baseline, all remaining Table 1 rows in an expansion, full Table 2 at research depth; last-100-episode metric, 21-run aggregation, architecture and lack of tabulated uncertainty explicit. PPO pp.6,8.\n- #implementation: terse role note → token/prefix mapping and distinctions between original PPO and pinned verl extensions. No LLM performance claim added.\n- Original valid content and eight section anchors retained; original formula claims incorporated into the expanded derivation. See reports/ppo-formula-lesson.md for separate technical, scientific and editorial checks.",
       "Source files retrieved 2026-11-03: 1707.06347v2.pdf from https://arxiv.org/pdf/1707.06347v2, SHA-256 e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b; 1506.02438v6.pdf from https://arxiv.org/pdf/1506.02438v6, SHA-256 5aa736ccf3517a1f36d0ca8146982e69beaf9a2bdccac2ae324f780743bc045e; verl-ppo.md from the pinned commit, SHA-256 48fe658d2c04ddef720daa978f8723746035fda62ac647fd28a8b97ea03b7c16. Public originals remain outside the repository in the persistent paper-source cache.",
-      "## Audit 2026-11-03 — STAR opening\n\nRechecked the cached PPO 1707.06347v2 introduction, §§2–3, Algorithm 1 and the experimental conclusions in §6.\n\n- Hero title/lead, Chinese and English: the abstract metaphor about an update incentive → a concrete question about reusing a batch without overly large policy changes. Catalogue and README labels follow the same title.\n- #background, both languages: definitions before the research motivation → an added STAR sequence before the retained definitions. S explains policy-based trial and error; T establishes the data-reuse/update-size trade-off and TRPO context; A introduces the clipped objective with a declared fixed-positive-advantage teaching example (20% to 24% to 30%, epsilon 0.2); R states the paper’s scoped empirical conclusions and absence of per-update guarantees. Sources: PPO v2 abstract, §§1–3, §5 Algorithm 1, §§6.2–6.3.\n- The example’s 20% relative increase is explicitly distinguished from the 4-percentage-point absolute increase. Clipping changes one sample’s objective contribution and does not cap the actual probability. All previous lesson modules, original section anchors and evidence remain. No calculation logic or experimental values changed."
+      "## Audit 2026-11-03 — STAR opening\n\nRechecked the cached PPO 1707.06347v2 introduction, §§2–3, Algorithm 1 and the experimental conclusions in §6.\n\n- Hero title/lead, Chinese and English: the abstract metaphor about an update incentive → a concrete question about reusing a batch without overly large policy changes. Catalogue and README labels follow the same title.\n- #background, both languages: definitions before the research motivation → an added STAR sequence before the retained definitions. S explains policy-based trial and error; T establishes the data-reuse/update-size trade-off and TRPO context; A introduces the clipped objective with a declared fixed-positive-advantage teaching example (20% to 24% to 30%, epsilon 0.2); R states the paper’s scoped empirical conclusions and absence of per-update guarantees. Sources: PPO v2 abstract, §§1–3, §5 Algorithm 1, §§6.2–6.3.\n- The example’s 20% relative increase is explicitly distinguished from the 4-percentage-point absolute increase. Clipping changes one sample’s objective contribution and does not cap the actual probability. All previous lesson modules, original section anchors and evidence remain. No calculation logic or experimental values changed.",
+      "## Audit 2026-11-03 — concise reading layers\n\nReorganized the verified PPO v2 lesson after reading feedback without changing the underlying formulas or empirical values.\n\n- #background / STAR, Chinese and English: long paragraphs → short points, with the complete prior explanation and citations in native disclosures. The 20%→24%→30% teaching example is now a labelled comparison: fixed A=1, epsilon=0.2, ratios 1/1.2/1.5 and single-term scores 1/1.2/1.2, independently checked against Eq.7. Scores are explicitly not game rewards; the actual probability is not capped.\n- Reading guide and depth controls: previously unnamed differences → cumulative layers (intuition: story/example/evidence/limits; mechanism: symbols, signed clipping and GAE; research: gradients, importance-sampling assumptions, KL and detailed experimental protocols). Critical limitations remain in the default layer.\n- #math and #evidence: compact reading maps precede the preserved detailed derivations and original result table. Probability/advantage definitions and experimental qualifications remain available. All original lesson IDs and content paragraphs are retained; summaries do not replace the underlying evidence.\n- Visual audit: probability comparison is a teaching diagram, not measured performance or a time series. Source: PPO v2 §3 Eq.7/Figure 1. Reading-layer organization is editorial guidance, not a scientific result. Original claim locators and version caveats continue to apply."
+    ],
+    "readingGuide": [
+      {
+        "depth": "intuition",
+        "title": {
+          "zh": "直觉 · 看懂主线",
+          "en": "Intuition · grasp the idea"
+        },
+        "text": {
+          "zh": "STAR 故事、概率例子、关键结论。",
+          "en": "STAR story, probability example and main findings."
+        }
+      },
+      {
+        "depth": "mechanism",
+        "title": {
+          "zh": "机制 · 跟着算一遍",
+          "en": "Mechanism · work it out"
+        },
+        "text": {
+          "zh": "增加符号、裁剪公式、正负优势与 GAE。",
+          "en": "Adds notation, clipping, signed advantages and GAE."
+        }
+      },
+      {
+        "depth": "research",
+        "title": {
+          "zh": "研究 · 核查依据",
+          "en": "Research · examine the evidence"
+        },
+        "text": {
+          "zh": "再增加梯度推导、假设、实验条件与 KL。",
+          "en": "Also adds gradients, assumptions, experimental details and KL."
+        }
+      }
     ]
   },
   {

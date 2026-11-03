@@ -36,6 +36,23 @@ const out=process.env.PAPER_QA_DIR||'/tmp/ppo-lesson/qa';fs.mkdirSync(out,{recur
  const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('requestfailed',r=>errors.push(r.url()));
  const set=async(id,value)=>page.locator('#'+id).evaluate((e,v)=>{e.value=String(v);e.dispatchEvent(new Event('input',{bubbles:true}));},value);
  await page.goto(base+'papers/ppo/?lang=zh');
+ assert(await page.locator('#ppo-star-a').isVisible());
+ assert(!(await page.locator('#ppo-ratio').isVisible()));
+ assert(!(await page.locator('#ppo-gae').isVisible()));
+ await page.locator('[data-ppo-depth="mechanism"]').focus();
+ await page.locator('[data-ppo-depth="mechanism"]').press('Enter');
+ assert(await page.locator('#ppo-ratio').isVisible());
+ assert.equal(await page.locator('[data-depth="mechanism"]').getAttribute('aria-pressed'),'true');
+ await page.locator('#ppo-star-a .ppo-prose-details summary').click();
+ await page.locator('[data-ppo-depth="intuition"]').focus();
+ await page.locator('[data-ppo-depth="intuition"]').press('Space');
+ assert(!(await page.locator('#ppo-ratio').isVisible()));
+ assert(await page.locator('#ppo-star-a .ppo-prose-details').evaluate(e=>e.open));
+ await page.locator('[data-atlas-lang="en"]').evaluate(e=>e.click());
+ assert(await page.locator('[data-ppo-depth="intuition"]').evaluate(e=>e===document.activeElement));
+ assert((await page.locator('[data-depth="intuition"]').getAttribute('title')).includes('STAR'));
+ assert(await page.locator('#ppo-star-a .ppo-prose-details').evaluate(e=>e.open));
+ await page.locator('[data-atlas-lang="zh"]').click();
  await page.locator('[data-ppo-step="3"]').click();assert((await page.locator('#ppo-step-detail').innerText()).includes('K'));
  await page.locator('[data-depth="mechanism"]').click();assert(await page.locator('#ppo-gae-lab').isVisible());assert(!(await page.locator('#ppo-gradient').isVisible()));
  assert((await page.locator('#ppo-gae-results').innerText()).includes('0.28616'));
@@ -60,6 +77,10 @@ const out=process.env.PAPER_QA_DIR||'/tmp/ppo-lesson/qa';fs.mkdirSync(out,{recur
    await page.locator(`[data-depth="${depth}"]`).click();
    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`overflow ${width} ${lang} ${depth}`);
    assert(await page.locator('#ppo-gradient').isVisible()=== (depth==='research'));
+   assert(await page.locator('#ppo-ratio').isVisible()===(depth!=='intuition'));
+   assert(await page.locator('#ppo-protocol').isVisible()===(depth==='research'));
+   assert(await page.locator('#ppo-limits-map').isVisible());
+   assert.equal(await page.locator(`[data-ppo-depth="${depth}"]`).getAttribute('aria-pressed'),'true');
   }
   for(const details of await page.locator('main details').all())await details.evaluate(e=>e.open=true);
   await page.screenshot({path:path.join(out,`${width}-${lang}-full.png`),fullPage:true});

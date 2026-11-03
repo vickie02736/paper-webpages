@@ -41,7 +41,9 @@ function renderClip(r,a,eps,lang){
 let state=null;
 function mount(data,rerender){
  if(!data.ppoSteps)return;
- state={steps:data.ppoSteps,step:0,lang:'zh'};
+ state={steps:data.ppoSteps,step:0,lang:'zh',depth:'intuition',guide:data.ppoReadingGuide||[]};
+ document.querySelectorAll('[data-ppo-depth]').forEach(b=>b.addEventListener('click',()=>document.querySelector('#depth-control [data-depth="'+b.dataset.ppoDepth+'"]').click()));
+ document.querySelectorAll('#depth-control [data-depth]').forEach(b=>b.addEventListener('click',()=>{state.depth=b.dataset.depth;refreshGuide();}));
  const presets=[['正优势 · 提高概率','Positive · increase',1.5,1],['正优势 · 降低概率','Positive · decrease',.5,1],['负优势 · 降低概率','Negative · decrease',.5,-1],['负优势 · 提高概率','Negative · increase',1.5,-1],['零优势','Zero advantage',1,0]];
  const holder=document.createElement('div');holder.className='ppo-presets';
  holder.innerHTML='<p><span data-zh="代入典型情况（ε=0.2）" data-en="Try a case (ε=0.2)">代入典型情况（ε=0.2）</span></p>'+presets.map(([z,e,r,a],i)=>`<button type="button" data-ppo-preset="${i}" data-r="${r}" data-a="${a}" aria-pressed="false"><span data-zh="${z}" data-en="${e}">${z}</span></button>`).join('');
@@ -51,8 +53,14 @@ function mount(data,rerender){
  for(const id of ['ppo-gamma','ppo-lambda'])document.getElementById(id).addEventListener('input',()=>refresh(state.lang));
  document.getElementById('ppo-gae-reset').addEventListener('click',()=>{document.getElementById('ppo-gamma').value=.9;document.getElementById('ppo-lambda').value=.8;refresh(state.lang);});
 }
+function refreshGuide(){
+ if(!state)return;
+ document.querySelectorAll('[data-ppo-depth]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.ppoDepth===state.depth)));
+ for(const g of state.guide){const b=document.querySelector('#depth-control [data-depth="'+g.depth+'"]');if(b)b.title=g.text[state.lang];}
+}
 function refresh(lang){
  if(!state)return;state.lang=lang;const tx=(z,e)=>lang==='en'?e:z;
+ refreshGuide();
  document.querySelectorAll('[data-ppo-step]').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.ppoStep===state.step)));
  document.getElementById('ppo-step-detail').textContent=state.steps[state.step].text[lang];
  document.querySelectorAll('[data-ppo-preset]').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.r===+document.getElementById('r').value&&+b.dataset.a===+document.getElementById('a').value&&+document.getElementById('eps').value===.2)));

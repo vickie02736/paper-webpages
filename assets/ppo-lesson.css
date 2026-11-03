@@ -48,3 +48,31 @@
 
 [data-paper="ppo"] .ppo-chart-hint{display:none;color:var(--muted);font-size:.85rem}
 @media(max-width:480px){[data-paper="ppo"] .ppo-chart-hint{display:block}}
+
+/* A concise first reading, with cumulative levels and optional full explanations. */
+[data-paper="ppo"] .ppo-reading-guide{margin-top:28px;padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+[data-paper="ppo"] .ppo-reading-guide h2{margin:0 0 14px;font-size:1rem}
+[data-paper="ppo"] .ppo-reading-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+[data-paper="ppo"] .ppo-reading-options button{padding:14px;text-align:left;background:var(--bg);border:1px solid var(--line);border-radius:12px;color:var(--ink);cursor:pointer;font:inherit}
+[data-paper="ppo"] .ppo-reading-options button[aria-pressed="true"]{border-color:var(--cyan);background:#183d50}
+[data-paper="ppo"] .ppo-reading-options strong{display:block;color:var(--cyan);margin-bottom:7px;font-size:1rem}
+[data-paper="ppo"] .ppo-reading-options span{display:block;color:var(--muted);font-size:.88rem;line-height:1.6}
+[data-paper="ppo"] .ppo-reading-guide>.source-note{margin:12px 0 0}
+[data-paper="ppo"] .ppo-star-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-block:24px}
+[data-paper="ppo"] .ppo-star-grid>.ppo-lesson-block{margin:0;min-width:0}
+[data-paper="ppo"] #ppo-star-a,[data-paper="ppo"] #ppo-star-r{grid-column:1/-1}
+[data-paper="ppo"] .ppo-points{padding-left:22px;margin:0;max-width:930px}
+[data-paper="ppo"] .ppo-points li{padding-left:4px;margin-block:10px;line-height:1.8}
+[data-paper="ppo"] .ppo-points li::marker{color:var(--cyan)}
+[data-paper="ppo"] .ppo-prose-details{border-top:1px solid var(--line);margin-top:18px;padding-top:12px}
+[data-paper="ppo"] .ppo-prose-details summary{font-size:.88rem;color:var(--muted)}
+[data-paper="ppo"] .ppo-prose-details p{font-size:.96rem}
+[data-paper="ppo"] .ppo-brief{color:var(--muted);font-size:.94rem}
+[data-paper="ppo"] .ppo-probability-example{list-style:none;padding:0;margin:24px 0 12px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+[data-paper="ppo"] .ppo-probability-example li{position:relative;padding:16px 12px;border:1px solid var(--line);border-radius:12px;background:var(--bg);text-align:center}
+[data-paper="ppo"] .ppo-probability-example li:not(:last-child)::after{content:'→';position:absolute;right:-23px;top:35%;color:var(--muted)}
+[data-paper="ppo"] .ppo-probability-example span{display:block;font-size:.9rem;line-height:1.6;color:var(--muted)}
+[data-paper="ppo"] .ppo-probability-example strong{display:block;margin:8px 0;font-size:2rem;color:var(--cyan)}
+@media(max-width:800px){[data-paper="ppo"] .ppo-star-grid{grid-template-columns:1fr}[data-paper="ppo"] .ppo-reading-options{grid-template-columns:1fr}[data-paper="ppo"] .ppo-reading-options button{padding:10px 14px}[data-paper="ppo"] .ppo-reading-options strong{margin-bottom:3px}}
+@media(max-width:480px){[data-paper="ppo"] .ppo-reading-guide{padding:16px}[data-paper="ppo"] .ppo-probability-example{gap:18px}[data-paper="ppo"] .ppo-probability-example li{padding:12px 4px}[data-paper="ppo"] .ppo-probability-example span{font-size:.76rem}[data-paper="ppo"] .ppo-probability-example strong{font-size:1.6rem}[data-paper="ppo"] .ppo-probability-example li:not(:last-child)::after{right:-16px}}
+@media(max-width:480px){[data-paper="ppo"] .ppo-probability-example li>span:first-child{min-height:3.2em}}
