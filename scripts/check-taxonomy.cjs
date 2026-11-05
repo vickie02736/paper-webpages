@@ -93,7 +93,7 @@ const mof=catalog.themes.find(t=>t.id==='mof');
 const categoryCount=name=>mof.p.filter(p=>mof.groups[p.g].category.zh===name).length;
 assert.equal(categoryCount('MOF 稳定性'),14);assert.equal(categoryCount('稀土吸附与分离'),20);
 assert.equal(mof.relatedPaperIds.length,5);
-console.log('PASS taxonomy: original451records/463contexts preserved;28MOF+11verl+2RL additions;493papers/58paper+3document explainers;96/104/73/72/77/70 primary counts;explicit GRPO theme correction;immutable baseline metadata and dates.');
+console.log('PASS taxonomy: original451records/463contexts preserved;28MOF+11verl+2RL+1SAM additions;493papers/58paper+3document explainers;96/104/74/72/77/70 primary counts;explicit GRPO theme correction;immutable baseline metadata and dates.');
 if(process.argv.includes('--data-only'))process.exit(0);
 const {chromium}=require(process.env.PAPER_PLAYWRIGHT_MODULE||'playwright');
 (async()=>{

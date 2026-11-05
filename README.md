@@ -12,7 +12,7 @@ Six primary themes organize 493 papers, with one primary record per paper:
 
 - [Metal–Organic Frameworks / 金属有机框架](https://vickie02736.github.io/paper-webpages/?theme=mof): 96 papers. Includes separate **MOF Stability / MOF 稳定性** and **Rare-Earth Adsorption & Separation / 稀土吸附与分离** subcategories.
 - [Artificial Intelligence & Computing / 人工智能与计算](https://vickie02736.github.io/paper-webpages/?theme=ai): 104 papers and 3 documentation articles.
-- [General Chemistry & Materials / 通用化学与材料](https://vickie02736.github.io/paper-webpages/?theme=chemistry-materials): 73 papers.
+- [General Chemistry & Materials / 通用化学与材料](https://vickie02736.github.io/paper-webpages/?theme=chemistry-materials): 74 papers.
 - [Robotics & Lab Automation / 机器人与实验自动化](https://vickie02736.github.io/paper-webpages/?theme=robotics-lab): 72 papers.
 - [Mathematics & Modelling Foundations / 数学与建模基础](https://vickie02736.github.io/paper-webpages/?theme=mathematics): 77 papers.
 - [Life Sciences, Drug Discovery & Medicine / 生命科学、药物与医学](https://vickie02736.github.io/paper-webpages/?theme=life-medicine): 70 papers.
@@ -130,7 +130,7 @@ The homepage and all 58 paper explainers share expandable publication-time autho
 
 Use the primary-theme selector and the expandable cross-disciplinary tags alongside global or within-theme search. Tags have separate object, method, task and application dimensions: selections within one dimension use OR; different dimensions use AND. For example, `?theme=mof&tag=application%3Aree` selects MOF rare-earth adsorption/separation, and `?tag=object%3Amof&tag=method%3Amlip` selects MOF interatomic potentials. `MLP`, `MLIP` and the old `AIRS` abbreviation are searchable aliases; the synthesis paper now displays its original abbreviation, AIRES.
 
-A paper reference uses `?paper=<stable-id>` and opens the primary entry. Existing `?q=`, `?lang=`, `?explainers=1`, `#themes`, `#recent` and all explainer paths remain valid. Related readings show the primary theme and do not affect the 492-paper total. A migration ledger preserves all 463 old listings: [`taxonomy-migration.json`](references/taxonomy-migration.json).
+A paper reference uses `?paper=<stable-id>` and opens the primary entry. Existing `?q=`, `?lang=`, `?explainers=1`, `#themes`, `#recent` and all explainer paths remain valid. Related readings show the primary theme and do not affect the 493-paper total. A migration ledger preserves all 463 old listings: [`taxonomy-migration.json`](references/taxonomy-migration.json).
 
 Run `node scripts/check-taxonomy.cjs --data-only` for migration and schema checks. Browser checks are described in the [catalogue guide](references/paper-catalog-guide.md).
 
