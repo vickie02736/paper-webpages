@@ -15,6 +15,7 @@ Each explainer is a static visual webpage using the shared Research Atlas readin
 | ATZ-BTC-Zn — Ion-exchange-assisted separation of adjacent rare earths | Advanced Functional Materials 2025 (online 2024) | [Open page](atz-btc-zn/) |
 | Hans-LanM dimer — Enhanced rare-earth separation with a metal-sensitive lanmodulin dimer | Nature 2023 | [Open page](hans-lanm-dimer/) |
 | MOFTransformer — A multi-modal pre-training transformer for universal transfer learning in metal–organic frameworks | Nature Machine Intelligence 2023 | [Open page](moftransformer/) |
+| AI-SAM — AI-guided self-assembled monolayers for perovskite solar cells | Nature Synthesis 2026 | [Open page](ai-sam-perovskite/) |
 | MOF SNAP — Quantum-accurate potentials with temperature-driven active learning | npj Computational Materials 2024 | [Open page](mof-snap-active-learning/) |
 | CALF-20 — Gas adsorption and framework flexibility | Nature Communications 2024 | [Open page](calf20-flexibility/) |
 | LanM — Protein-based rare-earth recovery and separation | ACS Central Science 2021 | [Open page](lanm-protein-process/) |

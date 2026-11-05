@@ -2,14 +2,14 @@
 
 Generated from `paper-catalog.json`; checked dates and field-level source locators are stored with each record. This ledger concerns bibliographic metadata only.
 
-核对结果：作者名单 492/492；单位 486/492；完整作者—单位对应 431/492。已核实发表日期 433 篇、录用日期 159 篇、首次预印本日期 224 篇；另有 126 篇的已检查官方记录未披露录用日期。下列 245 篇仍有至少一个未核实字段，不能视为全部信息已经核实。
+核对结果：作者名单 493/493；单位 487/493；完整作者—单位对应 432/493。已核实发表日期 434 篇、录用日期 160 篇、首次预印本日期 224 篇；另有 126 篇的已检查官方记录未披露录用日期。下列 245 篇仍有至少一个未核实字段，不能视为全部信息已经核实。
 
-- papers: 492
-- authors: 492
-- affiliations: 486
-- completeMappings: 431
-- published: 433
-- accepted: 159
+- papers: 493
+- authors: 493
+- affiliations: 487
+- completeMappings: 432
+- published: 434
+- accepted: 160
 - preprint: 224
 - acceptanceNotDisclosed: 126
 
