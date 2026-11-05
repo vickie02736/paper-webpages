@@ -1,0 +1,83 @@
+/* Companion styles only for the expanded PPO lesson. */
+[data-paper="ppo"] .ppo-lesson-block{scroll-margin-top:calc(var(--atlas-header-height,124px) + 24px);margin-block:28px;padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+[data-paper="ppo"] .ppo-lesson-block h3{margin:0 0 18px;font-size:1.25rem;line-height:1.5;color:var(--cyan)}
+[data-paper="ppo"] .ppo-lesson-block p{max-width:930px}
+[data-paper="ppo"] .ppo-lesson-block p:last-child{margin-bottom:0}
+[data-paper="ppo"] .ppo-lesson-block summary{font-weight:650;cursor:pointer;color:var(--cyan)}
+[data-paper="ppo"] .ppo-equation{white-space:pre-wrap;overflow-x:auto;overflow-wrap:anywhere;line-height:2;padding:18px 20px;border-left:3px solid var(--cyan);background:var(--bg);border-radius:0 12px 12px 0;font-size:1.02rem}
+[data-paper="ppo"] .ppo-equation code,[data-paper="ppo"] .ppo-calculation code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+[data-paper="ppo"] .ppo-lesson-block table{font-size:.96rem}
+[data-paper="ppo"] .ppo-lesson-block td,[data-paper="ppo"] .ppo-lesson-block th{white-space:normal;min-width:70px;vertical-align:top}
+[data-paper="ppo"] #ppo-symbols th[scope="row"]{min-width:130px}
+[data-paper="ppo"] .ppo-flow{list-style:none;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px}
+[data-paper="ppo"] .ppo-flow li{position:relative;min-width:0}
+[data-paper="ppo"] .ppo-flow li:not(:last-child)::after{content:'→';position:absolute;right:-19px;top:18px;color:var(--muted)}
+[data-paper="ppo"] .ppo-flow button{height:100%;width:100%;padding:14px 10px;border:1px solid var(--line);border-radius:10px;background:var(--panel2);color:var(--ink);cursor:pointer;font-weight:600}
+[data-paper="ppo"] .ppo-flow button[aria-pressed="true"],[data-paper="ppo"] .ppo-presets button[aria-pressed="true"]{border-color:var(--cyan);background:#183d50;color:var(--cyan)}
+[data-paper="ppo"] #ppo-step-detail{min-height:104px}
+[data-paper="ppo"] .ppo-loop-return{color:var(--cyan);font-size:.9rem}
+[data-paper="ppo"] .ppo-presets{display:grid;gap:8px;border-top:1px solid var(--line);padding-top:12px}
+[data-paper="ppo"] .ppo-presets p{margin:0 0 4px;font-size:.9rem;color:var(--muted)}
+[data-paper="ppo"] .ppo-presets button{text-align:left;font-size:.9rem}
+[data-paper="ppo"] .ppo-calculation{background:var(--bg);border:1px solid var(--line);padding:14px 18px;border-radius:12px;overflow-wrap:anywhere}
+[data-paper="ppo"] .ppo-calculation p{margin:6px 0;line-height:1.8}
+[data-paper="ppo"] .ppo-plot{width:100%;height:auto;background:var(--bg);border-radius:12px}
+[data-paper="ppo"] .ppo-plot text{fill:var(--muted);font-size:15px;font-family:inherit}
+[data-paper="ppo"] .ppo-axis{stroke:var(--muted)}
+[data-paper="ppo"] .ppo-zero{stroke:var(--line);stroke-dasharray:3 5}
+[data-paper="ppo"] .ppo-bound{stroke:var(--muted);stroke-dasharray:5 5}
+[data-paper="ppo"] .ppo-band{fill:var(--cyan);fill-opacity:.07}
+[data-paper="ppo"] .ppo-raw{fill:none;stroke:var(--amber);stroke-width:2.5;stroke-dasharray:9 6}
+[data-paper="ppo"] .ppo-candidate{fill:none;stroke:var(--purple);stroke-width:3;stroke-dasharray:2 6}
+[data-paper="ppo"] .ppo-final-halo{fill:none;stroke:var(--cyan);stroke-width:10;opacity:.2}
+[data-paper="ppo"] .ppo-final{fill:none;stroke:var(--cyan);stroke-width:2}
+[data-paper="ppo"] .ppo-current{fill:var(--amber);stroke:var(--bg);stroke-width:2}
+[data-paper="ppo"] .ppo-legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:10px}
+[data-paper="ppo"] .ppo-legend-raw{color:var(--amber)}
+[data-paper="ppo"] .ppo-legend-candidate{color:var(--purple)}
+[data-paper="ppo"] .ppo-legend-final{color:var(--cyan)}
+[data-paper="ppo"] .ppo-gae-controls{display:grid;grid-template-columns:1fr 1fr auto;align-items:end;gap:22px;margin-block:20px}
+[data-paper="ppo"] .ppo-gae-controls label{display:block;font-weight:600}
+[data-paper="ppo"] .ppo-gae-controls output{float:right;color:var(--cyan)}
+[data-paper="ppo"] .ppo-gae-controls button{background:var(--panel2);border:1px solid var(--line);border-radius:10px;color:var(--ink);padding:10px 14px;cursor:pointer}
+[data-paper="ppo"] #ppo-gae-results .ppo-calculation{margin-top:18px}
+[data-paper="ppo"] caption{text-align:left;padding:12px;color:var(--muted)}
+[data-paper="ppo"] .ppo-sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:800px){[data-paper="ppo"] .ppo-flow{grid-template-columns:1fr;gap:24px}[data-paper="ppo"] .ppo-flow li:not(:last-child)::after{content:'↓';top:auto;bottom:-23px;left:50%;right:auto}[data-paper="ppo"] .ppo-flow button{text-align:left}[data-paper="ppo"] .ppo-gae-controls{grid-template-columns:1fr 1fr}[data-paper="ppo"] .ppo-gae-controls button{grid-column:1/-1}[data-paper="ppo"] .ppo-presets{grid-column:1/-1}}
+@media(max-width:480px){[data-paper="ppo"] .ppo-lesson-block{padding:18px 16px}[data-paper="ppo"] .ppo-equation{font-size:.9rem;padding:12px}[data-paper="ppo"] .ppo-gae-controls{grid-template-columns:1fr}[data-paper="ppo"] .ppo-plot text{font-size:18px}[data-paper="ppo"] .ppo-curve-figure{overflow-x:auto}[data-paper="ppo"] .ppo-plot{min-width:520px}}
+
+[data-paper="ppo"] .ppo-chart-hint{display:none;color:var(--muted);font-size:.85rem}
+@media(max-width:480px){[data-paper="ppo"] .ppo-chart-hint{display:block}}
+
+/* A concise first reading, with cumulative levels and optional full explanations. */
+[data-paper="ppo"] .ppo-reading-guide{margin-top:28px;padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+[data-paper="ppo"] .ppo-reading-guide h2{margin:0 0 14px;font-size:1rem}
+[data-paper="ppo"] .ppo-reading-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+[data-paper="ppo"] .ppo-reading-options button{padding:14px;text-align:left;background:var(--bg);border:1px solid var(--line);border-radius:12px;color:var(--ink);cursor:pointer;font:inherit}
+[data-paper="ppo"] .ppo-reading-options button[aria-pressed="true"]{border-color:var(--cyan);background:#183d50}
+[data-paper="ppo"] .ppo-reading-options strong{display:block;color:var(--cyan);margin-bottom:7px;font-size:1rem}
+[data-paper="ppo"] .ppo-reading-options span{display:block;color:var(--muted);font-size:.88rem;line-height:1.6}
+[data-paper="ppo"] .ppo-reading-guide>.source-note{margin:12px 0 0}
+[data-paper="ppo"] .ppo-star-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-block:24px}
+[data-paper="ppo"] .ppo-star-grid>.ppo-lesson-block{margin:0;min-width:0}
+[data-paper="ppo"] #ppo-star-a,[data-paper="ppo"] #ppo-star-r{grid-column:1/-1}
+[data-paper="ppo"] .ppo-points{padding-left:22px;margin:0;max-width:930px}
+[data-paper="ppo"] .ppo-points li{padding-left:4px;margin-block:10px;line-height:1.8}
+[data-paper="ppo"] .ppo-points li::marker{color:var(--cyan)}
+[data-paper="ppo"] .ppo-prose-details{border-top:1px solid var(--line);margin-top:18px;padding-top:12px}
+[data-paper="ppo"] .ppo-prose-details summary{font-size:.88rem;color:var(--muted)}
+[data-paper="ppo"] .ppo-prose-details p{font-size:.96rem}
+[data-paper="ppo"] .ppo-brief{color:var(--muted);font-size:.94rem}
+[data-paper="ppo"] .ppo-probability-example{list-style:none;padding:0;margin:24px 0 12px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+[data-paper="ppo"] .ppo-probability-example li{position:relative;padding:16px 12px;border:1px solid var(--line);border-radius:12px;background:var(--bg);text-align:center}
+[data-paper="ppo"] .ppo-probability-example li:not(:last-child)::after{content:'→';position:absolute;right:-23px;top:35%;color:var(--muted)}
+[data-paper="ppo"] .ppo-probability-example span{display:block;font-size:.9rem;line-height:1.6;color:var(--muted)}
+[data-paper="ppo"] .ppo-probability-example strong{display:block;margin:8px 0;font-size:2rem;color:var(--cyan)}
+@media(max-width:800px){[data-paper="ppo"] .ppo-star-grid{grid-template-columns:1fr}[data-paper="ppo"] .ppo-reading-options{grid-template-columns:1fr}[data-paper="ppo"] .ppo-reading-options button{padding:10px 14px}[data-paper="ppo"] .ppo-reading-options strong{margin-bottom:3px}}
+@media(max-width:480px){[data-paper="ppo"] .ppo-reading-guide{padding:16px}[data-paper="ppo"] .ppo-probability-example{gap:18px}[data-paper="ppo"] .ppo-probability-example li{padding:12px 4px}[data-paper="ppo"] .ppo-probability-example span{font-size:.76rem}[data-paper="ppo"] .ppo-probability-example strong{font-size:1.6rem}[data-paper="ppo"] .ppo-probability-example li:not(:last-child)::after{right:-16px}}
+@media(max-width:480px){[data-paper="ppo"] .ppo-probability-example li>span:first-child{min-height:3.2em}}
+[data-paper="ppo"] #ppo-beginner-lab{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:16px}
+[data-paper="ppo"] #ppo-beginner-lab label{display:block;font-weight:650;margin-bottom:14px}
+[data-paper="ppo"] #ppo-beginner-result p{margin:12px 0;max-width:850px}
+[data-paper="ppo"][data-ppo-reading-depth="intuition"] #lab .lab-layout{display:none}
+[data-paper="ppo"]:not([data-ppo-reading-depth="intuition"]) #ppo-beginner-lab{display:none}

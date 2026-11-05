@@ -81,7 +81,7 @@ Every paper explainer loads `../assets/bibliography.css`, `bibliography.js` and 
 
 [Read the verl articles in Artificial Intelligence & Computing](../?theme=ai&q=verl#themes). The theme lists each paper and documentation article directly, with bilingual content, teaching interactions and evidence ledgers.
 
-- [PPO: limiting the incentive for a large update](ppo/) — paper
+- [PPO: why can reusing a batch lead to overly large policy updates?](ppo/) — paper
 - [GRPO: answers to one question provide a baseline](grpo/) — paper
 - [DAPO: keeping long-reasoning training productive](dapo/) — paper
 - [SPIN: turn the previous model into an opponent](spin/) — paper

@@ -138,7 +138,7 @@ Run `node scripts/check-taxonomy.cjs --data-only` for migration and schema check
 
 [Read the verl articles in Artificial Intelligence & Computing](?theme=ai&q=verl#themes). The theme lists each paper and documentation article directly, with bilingual content, teaching interactions and evidence ledgers.
 
-- [PPO: limiting the incentive for a large update](papers/ppo/) — paper
+- [PPO: why can reusing a batch lead to overly large policy updates?](papers/ppo/) — paper
 - [GRPO: answers to one question provide a baseline](papers/grpo/) — paper
 - [DAPO: keeping long-reasoning training productive](papers/dapo/) — paper
 - [SPIN: turn the previous model into an opponent](papers/spin/) — paper

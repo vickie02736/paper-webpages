@@ -25,7 +25,7 @@ const out=process.env.PAPER_QA_DIR||'/tmp/verl-specific-qa';fs.mkdirSync(out,{re
   await p.goto(base+'papers/'+d.slug+'/?lang=en#lab');
   assert((await p.locator('#lab-results').innerText()).trim().length>30);
   assert(!/NaN|Infinity|undefined/.test(await p.locator('#lab-results').innerText()),d.slug+' finite outputs');
-  const range=p.locator('main input[type=range]').first();
+  const range=p.locator('#lab-controls input[type=range]').first();
   if(await range.count()){
    await range.focus();const before=await range.inputValue();await range.press('ArrowRight');assert.notEqual(await range.inputValue(),before,d.slug+' keyboard changes range');
    const after=await range.inputValue();await p.locator('[data-depth="research"]').evaluate(e=>e.click());await p.locator('[data-atlas-lang="zh"]').evaluate(e=>e.click());assert.equal(await range.inputValue(),after,d.slug+' state preserved');assert(await range.evaluate(e=>e===document.activeElement),d.slug+' programmatic language change retains focused input');

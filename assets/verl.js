@@ -1,6 +1,7 @@
 (function(){
 'use strict';
 const d=JSON.parse(document.getElementById('page-data').textContent),M=window.VerlMath;
+const ppoEnhanced=d.slug==='ppo'&&!!d.ppoSteps&&!!window.PpoLesson;
 let lang='zh',depth='intuition';
 const tx=(zh,en)=>lang==='en'?en:zh;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -43,10 +44,12 @@ function curve(fn,xmin,xmax,label,current){
  return `<svg class="plot" role="img" aria-label="${esc(label)}" viewBox="0 0 580 270"><line class="axis" x1="92" y1="210" x2="552" y2="210"/><line class="axis" x1="92" y1="30" x2="92" y2="210"/>${ticks}<polyline class="curve" points="${points}"/><circle cx="${px(current)}" cy="${py(fn(current))}" r="5" fill="#ffb66e"/><text x="300" y="258" text-anchor="middle">${esc(label)}</text></svg>`;
 }
 function render(){
+ const ppoFocus=ppoEnhanced&&document.activeElement?.id==='ppo-curve';
+ const ppoScroll=ppoEnhanced?(document.getElementById('ppo-curve')?.scrollLeft||0):0;
  controls.querySelectorAll('input[type=range]').forEach(e=>document.getElementById(e.id+'-value').value=n(+e.value));
  let html='';const yes=tx('允许','Allowed'),no=tx('抑制','Suppressed');
  switch(d.slug){
- case 'ppo':{const r=v('r'),a=v('a'),eps=v('eps'),active=M.ppoActive(r,a,eps),boundary=a>0&&Math.abs(r-1-eps)<1e-9||a<0&&Math.abs(r-1+eps)<1e-9;html=metrics([[tx('裁剪目标','Clipped objective'),M.ppo(r,a,eps)],[tx('对 r 的导数','Derivative w.r.t. r'),boundary?tx('边界不可导','Kink'):active?a:0]])+curve(x=>M.ppo(x,a,eps),.05,2,tx('横轴：r；纵轴：代理目标','x: r; y: surrogate objective'),r)+note(tx('橙点是当前输入。正优势只在上侧形成平台，负优势只在下侧形成平台；零优势没有更新信号。','The orange point is the current input. Positive advantages plateau above the upper bound; negative advantages plateau below the lower bound. Zero advantage gives no signal.'));break;}
+ case 'ppo':{if(ppoEnhanced){html=window.PpoLesson.renderClip(v('r'),v('a'),v('eps'),lang);}else{const r=v('r'),a=v('a'),eps=v('eps'),active=M.ppoActive(r,a,eps),boundary=a>0&&Math.abs(r-1-eps)<1e-9||a<0&&Math.abs(r-1+eps)<1e-9;html=metrics([[tx('裁剪目标','Clipped objective'),M.ppo(r,a,eps)],[tx('对 r 的导数','Derivative w.r.t. r'),boundary?tx('边界不可导','Kink'):active?a:0]])+curve(x=>M.ppo(x,a,eps),.05,2,tx('横轴：r；纵轴：代理目标','x: r; y: surrogate objective'),r)+note(tx('橙点是当前输入。正优势只在上侧形成平台，负优势只在下侧形成平台；零优势没有更新信号。','The orange point is the current input. Positive advantages plateau above the upper bound; negative advantages plateau below the lower bound. Zero advantage gives no signal.'));}break;}
  case 'grpo':{const r=values('r'),a=M.advantages(r,!!v('norm'));html=metrics([[tx('组均值','Group mean'),a.b],[tx('总体标准差','Population standard deviation'),a.sd]])+table([tx('样本','Sample'),'R',tx('优势','Advantage')],r.map((r,i)=>[i+1,r,a.a[i]]))+note(tx('教学实现使用总体标准差；标准差为零时优势设为零。关闭归一化只展示中心化信号，不代表已完整实现 DrGRPO。','This teaching implementation uses population standard deviation and sets advantages to zero for a constant group. Disabling normalization illustrates centering alone, not the complete DrGRPO algorithm.'));break;}
  case 'dapo':{const k=v('correct'),len=v('length');html=metrics([[tx('裁剪目标','Clipped objective'),M.ppo(v('r'),v('a'),v('low'),v('high'))],[tx('组过滤','Group filter'),k>0&&k<4?tx('保留','Keep'):tx('丢弃','Drop')],[tx('长度奖励项','Length reward term'),-M.clamp((len-80)/20,0,1)]])+curve(x=>M.ppo(x,v('a'),v('low'),v('high')),.05,2,tx('横轴：r；纵轴：目标','x: r; y: objective'),v('r'))+note(tx('教学设定：L=100、缓冲宽度 B=20；长度超过上限时惩罚饱和为 −1，硬截断 mask 单独处理。组过滤依赖四条回答的二值正确性。','Teaching settings: L=100 and buffer B=20. The penalty saturates at −1 beyond the cap; hard-truncation masks are separate. Group filtering uses binary correctness for four answers.'));break;}
  case 'spin':{const stages=[tx('冻结旧模型，固定人类示范。','Freeze the old model; keep human demonstrations fixed.'),tx('对示范提示采样 y′，与人类答案 y 配对。','Sample y′ for demonstration prompts; pair it with human answer y.'),tx('优化人类与生成答案的相对 log-ratio；梯度下降减小 logistic 损失。','Optimize the relative log ratios; gradient descent reduces logistic loss.'),tx('将训练后的新模型冻结为下一轮对手，然后重新采样。','Freeze the trained model as the next opponent and resample.')],z=v('lambda')*v('margin');html=metrics([[tx('阶段','Stage'),v('step')+1],['z',z],[tx('logistic 损失','Logistic loss'),Math.log1p(Math.exp(-z))]])+'<p class="callout">'+stages[v('step')]+'</p>'+table([tx('顺序','Order'),tx('训练过程','Training process')],stages.map((s,i)=>[(i===v('step')?'→ ':'')+(i+1),s]));break;}
@@ -63,7 +66,9 @@ function render(){
  case 'verl-algorithm-baselines':{const dataset=document.getElementById('dataset').value,model=document.getElementById('model').value,rows=d.baselines.filter(r=>(dataset==='all'||r.dataset===dataset)&&(model==='all'||r.model===model));html=metrics([[tx('匹配记录','Matching records'),rows.length]])+(rows.length?'<div class="table-scroll"><table><thead><tr>'+[tx('评测集','Evaluation set'),tx('模型','Model'),tx('方法','Method'),tx('文档分数','Document score'),tx('硬件','Hardware'),tx('来源','Source')].map(h=>'<th scope="col">'+h+'</th>').join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+[r.dataset,r.model,r.method,r.score,r.hardware].map(x=>'<td>'+esc(x)+'</td>').join('')+'<td><a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+tx('原始记录 ↗','Original record ↗')+'</a></td></tr>').join('')+'</tbody></table></div>':note(tx('没有符合这组筛选条件的记录。','No records match these filters.')))+note(tx('转录自文档表格，保留原始方法名与分数标记。DeepSeek 的 [1] 只提取 #### 后的答案；GSM8K 表中的 MATH/GEO3k 行已按实际评测集分开。分数未独立复现。','Transcribed from the documentation with original method names and score markers. DeepSeek [1] extracts answers after #### only. MATH/GEO3k rows in the GSM8K table are classified by their actual evaluation set. Scores were not independently reproduced.'));break;}
  }
  document.getElementById('lab-results').innerHTML=html;
+ if(ppoEnhanced){window.PpoLesson.refresh(lang);document.getElementById('ppo-curve').scrollLeft=ppoScroll;if(ppoFocus)document.getElementById('ppo-curve').focus({preventScroll:true});}
 }
+if(ppoEnhanced)window.PpoLesson.mount(d,render);
 function translate(){document.documentElement.lang=lang==='en'?'en':'zh-CN';document.querySelectorAll('[data-zh][data-en]').forEach(e=>{e.textContent=e.dataset[lang];});document.title=d.title[lang]+' · Research Atlas';render();}
 function handleInput(event){
  if(d.slug==='gpg'){
