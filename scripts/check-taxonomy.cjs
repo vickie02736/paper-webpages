@@ -34,7 +34,11 @@ assert.deepEqual(placement.to,{primaryThemeId:'ai',topicId:'ai-training-adaptati
 const applyVerlPlacement=p=>{if(p.id===placement.paperId){p.g=placement.to.g;p.topicId=placement.to.topicId;}return p;};
 const regroup=JSON.parse(fs.readFileSync(path.join(root,'reports/mof-taxonomy-regroup.json'),'utf8'));
 assert.equal(regroup.themeId,'mof');assert.deepEqual(regroup.allowedPaperFields,['g','topicId']);assert.equal(regroup.papers.length,96);
-const regroupMoves=new Map(regroup.papers.map(m=>[m.paperId,m]));
+const subtopicRegroup=JSON.parse(fs.readFileSync(path.join(root,'reports/subtopic-regroup.json'),'utf8'));
+assert.deepEqual(subtopicRegroup.allowedPaperFields,['g','topicId']);assert.equal(subtopicRegroup.papers.length,397);
+assert(!subtopicRegroup.papers.some(m=>m.themeId==='mof'),'MOF moves live in mof-taxonomy-regroup.json');
+const regroupMoves=new Map([...regroup.papers,...subtopicRegroup.papers].map(m=>[m.paperId,m]));
+assert.equal(regroupMoves.size,493,'Every paper has exactly one regroup entry');
 const applyPlacement=p=>{applyVerlPlacement(p);const m=regroupMoves.get(p.id);if(m){p.g=m.to.g;p.topicId=m.to.topicId;}return p;};
 const regroupedTopic=(id,topicId)=>regroupMoves.has(id)?regroupMoves.get(id).to.topicId:topicId;
 for(const t of verlBaseline.themes)for(const original of t.p){
@@ -99,6 +103,8 @@ const categoryCount=name=>mof.p.filter(p=>mof.groups[p.g].category.zh===name).le
 assert.equal(categoryCount('MOF 稳定性'),14);assert.equal(categoryCount('稀土吸附与分离'),20);assert.equal(categoryCount('玻璃态 MOF'),2);assert.equal(new Set(mof.groups.map(g=>g.categoryId)).size,6);assert.equal(mof.groups.length,16);
 for(const m of regroup.papers){const p=mof.p.find(x=>x.id===m.paperId);assert(p);assert.equal(p.topicId,m.to.topicId);assert.equal(p.g,m.to.g);}
 for(const id of regroup.retiredTopicIds)assert(!mof.groups.some(g=>g.id===id));
+for(const m of subtopicRegroup.papers){const t=catalog.themes.find(x=>x.id===m.themeId);const p=t.p.find(x=>x.id===m.paperId);assert(p,'Regrouped paper keeps its primary theme');assert.equal(p.topicId,m.to.topicId);assert.equal(p.g,m.to.g);}
+for(const [id,info] of Object.entries(subtopicRegroup.themes)){const t=catalog.themes.find(x=>x.id===id);assert.equal(t.groups.length,info.topics[1]);assert.equal(new Set(t.groups.map(g=>g.categoryId)).size,info.categories[1]);for(const r of info.retiredTopicIds)assert(!t.groups.some(g=>g.id===r));for(const g of t.groups)assert(t.p.some(p=>p.topicId===g.id),'No empty topic');}
 assert.equal(mof.relatedPaperIds.length,5);
 console.log('PASS taxonomy: original451records/463contexts preserved;28MOF+11verl+2RL+1SAM additions;493papers/58paper+3document explainers;96/104/74/72/77/70 primary counts;explicit GRPO theme correction;immutable baseline metadata and dates.');
 if(process.argv.includes('--data-only'))process.exit(0);

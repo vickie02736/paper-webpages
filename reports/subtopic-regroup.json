@@ -1,0 +1,5267 @@
+{
+  "baselineCommit": "5be1378d8c8deff736322918fd22b5b8b8e7a254",
+  "reason": "User requested cleanup of unreasonable subtopics in the non-MOF themes: merge single-paper and near-duplicate topics, and move misplaced topics/papers to coherent categories. Only paper g/topicId change; no paper changes primary theme.",
+  "allowedPaperFields": [
+    "g",
+    "topicId"
+  ],
+  "themes": {
+    "ai": {
+      "categories": [
+        9,
+        9
+      ],
+      "topics": [
+        38,
+        26
+      ],
+      "retiredTopicIds": [
+        "ai-knowledge-retrieval-7289baafe02e",
+        "ai-agents-reasoning-computing-db4a0468a826",
+        "ai-training-adaptation-e234985b1dee",
+        "ai-training-adaptation-f4b2e0018897",
+        "ai-vision-3d-perception-3a3fd02f3a2c",
+        "ai-evaluation-reliability-c77415041d21",
+        "ai-optimization-decision-making-c8d1452b541f",
+        "ai-optimization-decision-making-64bbfe4f717d",
+        "ai-training-adaptation-1b491535150e",
+        "ai-generative-models-probability-theory-d7e4c4921b60",
+        "ai-generative-models-probability-theory-1196c30068e6",
+        "ai-geometry-graphs-scientific-computing-2269565224ec"
+      ],
+      "newTopicIds": []
+    },
+    "chemistry-materials": {
+      "categories": [
+        8,
+        7
+      ],
+      "topics": [
+        27,
+        19
+      ],
+      "retiredTopicIds": [
+        "chemistry-materials-machine-learning-potentials-atomistic-simulation-aca71b7def62",
+        "chemistry-materials-data-representations-properties-2ac97afad82e",
+        "chemistry-materials-data-representations-properties-1c486e4c2853",
+        "chemistry-materials-structure-design-discovery-d9d3c1acef08",
+        "chemistry-materials-structure-design-discovery-7ce82ffaa3e3",
+        "chemistry-materials-catalysis-energy-transport-4498e20e2f7b",
+        "chemistry-materials-separation-environment-storage-b1a7c88bebf4",
+        "chemistry-materials-chemical-knowledge-materials-validation-a490931a029d"
+      ],
+      "newTopicIds": []
+    },
+    "robotics-lab": {
+      "categories": [
+        9,
+        10
+      ],
+      "topics": [
+        26,
+        26
+      ],
+      "retiredTopicIds": [],
+      "newTopicIds": []
+    },
+    "mathematics": {
+      "categories": [
+        5,
+        5
+      ],
+      "topics": [
+        26,
+        20
+      ],
+      "retiredTopicIds": [
+        "mathematics-geometry-symmetry-graph-representations-2269565224ec",
+        "mathematics-probability-generation-optimal-transport-d7e4c4921b60",
+        "mathematics-probability-generation-optimal-transport-1196c30068e6",
+        "mathematics-optimization-learning-generalization-766b6ec20964",
+        "mathematics-mathematical-reasoning-proof-discovery-266b7787ecae",
+        "mathematics-mathematical-reasoning-proof-discovery-c041b9540384"
+      ],
+      "newTopicIds": []
+    },
+    "life-medicine": {
+      "categories": [
+        7,
+        7
+      ],
+      "topics": [
+        23,
+        19
+      ],
+      "retiredTopicIds": [
+        "life-medicine-drug-discovery-molecular-intervention-bcd133c45158",
+        "life-medicine-biological-structure-engineering-c6da537390d3",
+        "life-medicine-drug-discovery-molecular-intervention-43c272289faa",
+        "life-medicine-laboratory-platforms-bioengineering-5b5e4e25a489"
+      ],
+      "newTopicIds": []
+    }
+  },
+  "papers": [
+    {
+      "themeId": "ai",
+      "paperId": "paper-8bf5f4860f61",
+      "u": "https://papers.neurips.cc/paper_files/paper/2023/hash/419f72cbd568ad62183f8132a3605a2a-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-optimization-decision-making-1b147bdc6b51",
+        "g": 0
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-1b147bdc6b51",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-f5e8e8176409",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/84b8d9fcb4e262fcd429544697e1e720-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-optimization-decision-making-1b147bdc6b51",
+        "g": 0
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-1b147bdc6b51",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-095e0c646cbe",
+      "u": "https://proceedings.mlr.press/v235/buathong24a.html",
+      "from": {
+        "topicId": "ai-optimization-decision-making-1b147bdc6b51",
+        "g": 0
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-1b147bdc6b51",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-1228d113823a",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/a4a3689e5ca538e340f58cdd29f513a9-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-optimization-decision-making-1b147bdc6b51",
+        "g": 0
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-1b147bdc6b51",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-e915f3982534",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/85381f4549b5ddf1d48e2e287d7d3d15-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-optimization-decision-making-1b147bdc6b51",
+        "g": 0
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-1b147bdc6b51",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-3f7a69cf81eb",
+      "u": "https://openreview.net/pdf?id=ryghZJBKPS",
+      "from": {
+        "topicId": "ai-optimization-decision-making-90e13076ab8a",
+        "g": 1
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-90e13076ab8a",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-14b731b3e2bb",
+      "u": "https://proceedings.mlr.press/v235/muldrew24a.html",
+      "from": {
+        "topicId": "ai-optimization-decision-making-90e13076ab8a",
+        "g": 1
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-90e13076ab8a",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-925a2956c542",
+      "u": "https://proceedings.mlr.press/v267/zhang25db.html",
+      "from": {
+        "topicId": "ai-optimization-decision-making-90e13076ab8a",
+        "g": 1
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-90e13076ab8a",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-c8b9a4f98933",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/a8166da05c5a094f7dc03724b41886e5-Abstract.html",
+      "from": {
+        "topicId": "ai-optimization-decision-making-3996c9f7f717",
+        "g": 2
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-3996c9f7f717",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-831281ac4f3c",
+      "u": "https://papers.neurips.cc/paper_files/paper/2023/hash/26cce1e512793f2072fd27c391e04652-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-optimization-decision-making-3996c9f7f717",
+        "g": 2
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-3996c9f7f717",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-c75d4455bfce",
+      "u": "https://proceedings.neurips.cc/paper/2020/file/4c5bcfec8584af0d967f1ab10179ca4b-Paper.pdf",
+      "from": {
+        "topicId": "ai-generative-models-probability-theory-b95ea276351a",
+        "g": 3
+      },
+      "to": {
+        "topicId": "ai-generative-models-probability-theory-b95ea276351a",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-0c1c6f11c946",
+      "u": "https://openaccess.thecvf.com/content/ICCV2023/papers/Peebles_Scalable_Diffusion_Models_with_Transformers_ICCV_2023_paper.pdf",
+      "from": {
+        "topicId": "ai-generative-models-probability-theory-b95ea276351a",
+        "g": 3
+      },
+      "to": {
+        "topicId": "ai-generative-models-probability-theory-b95ea276351a",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-537b8b1677fb",
+      "u": "https://openreview.net/pdf?id=UaAD-Nu86WX",
+      "from": {
+        "topicId": "ai-generative-models-probability-theory-b95ea276351a",
+        "g": 3
+      },
+      "to": {
+        "topicId": "ai-generative-models-probability-theory-b95ea276351a",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-d39eb72835d3",
+      "u": "https://openreview.net/forum?id=PqvMRDCJT9t",
+      "from": {
+        "topicId": "ai-generative-models-probability-theory-07b63586ebb5",
+        "g": 4
+      },
+      "to": {
+        "topicId": "ai-generative-models-probability-theory-07b63586ebb5",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-6d181e17d7ad",
+      "u": "https://openreview.net/forum?id=g7ohDlTITL",
+      "from": {
+        "topicId": "ai-generative-models-probability-theory-07b63586ebb5",
+        "g": 4
+      },
+      "to": {
+        "topicId": "ai-generative-models-probability-theory-07b63586ebb5",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-8cc106d85f2b",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/f0d629a734b56a642701bba7bc8bb3ed-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-generative-models-probability-theory-07b63586ebb5",
+        "g": 4
+      },
+      "to": {
+        "topicId": "ai-generative-models-probability-theory-07b63586ebb5",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-86ecf38d952f",
+      "u": "https://papers.neurips.cc/paper_files/paper/2022/hash/27b51baca8377a0cf109f6ecc15a0f70-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-generative-models-probability-theory-e8ad33c427e9",
+        "g": 5
+      },
+      "to": {
+        "topicId": "ai-generative-models-probability-theory-e8ad33c427e9",
+        "g": 10
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-465eadc34a56",
+      "u": "https://proceedings.mlr.press/v202/jain23a.html",
+      "from": {
+        "topicId": "ai-generative-models-probability-theory-e8ad33c427e9",
+        "g": 5
+      },
+      "to": {
+        "topicId": "ai-generative-models-probability-theory-e8ad33c427e9",
+        "g": 10
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-7deb58a0dafc",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/000eba875068854d5ff003b1fa534cd6-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-generative-models-probability-theory-e8ad33c427e9",
+        "g": 5
+      },
+      "to": {
+        "topicId": "ai-generative-models-probability-theory-e8ad33c427e9",
+        "g": 10
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-06d872cc5ce0",
+      "u": "https://proceedings.neurips.cc/paper/2020/file/6b493230205f780e1bc26945df7481e5-Paper.pdf",
+      "from": {
+        "topicId": "ai-knowledge-retrieval-26a354eea776",
+        "g": 6
+      },
+      "to": {
+        "topicId": "ai-knowledge-retrieval-26a354eea776",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-d855655f99b8",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/25f7be9694d7b32d5cc670927b8091e1-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-knowledge-retrieval-26a354eea776",
+        "g": 6
+      },
+      "to": {
+        "topicId": "ai-knowledge-retrieval-26a354eea776",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-962cd8b08dbf",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/bdff657cb9351656c025da8e1dc538a4-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-knowledge-retrieval-26a354eea776",
+        "g": 6
+      },
+      "to": {
+        "topicId": "ai-knowledge-retrieval-26a354eea776",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-138d83d31c2c",
+      "u": "https://aclanthology.org/2024.acl-long.642/",
+      "from": {
+        "topicId": "ai-knowledge-retrieval-7289baafe02e",
+        "g": 7
+      },
+      "to": {
+        "topicId": "ai-knowledge-retrieval-26a354eea776",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-d86da1939e9a",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/c4bf73386022473a652a18941e9ea6f8-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-knowledge-retrieval-7289baafe02e",
+        "g": 7
+      },
+      "to": {
+        "topicId": "ai-knowledge-retrieval-26a354eea776",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-afaaa5e3d02b",
+      "u": "https://aclanthology.org/2022.acl-long.395/",
+      "from": {
+        "topicId": "ai-knowledge-retrieval-96e036726112",
+        "g": 8
+      },
+      "to": {
+        "topicId": "ai-knowledge-retrieval-96e036726112",
+        "g": 16
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-047e4f2dd3e3",
+      "u": "https://aclanthology.org/2023.emnlp-main.620/",
+      "from": {
+        "topicId": "ai-knowledge-retrieval-96e036726112",
+        "g": 8
+      },
+      "to": {
+        "topicId": "ai-knowledge-retrieval-96e036726112",
+        "g": 16
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-7a5efbfecddf",
+      "u": "https://openreview.net/pdf?id=WE_vluYUL-X",
+      "from": {
+        "topicId": "ai-agents-reasoning-computing-60103ae6ed7e",
+        "g": 9
+      },
+      "to": {
+        "topicId": "ai-agents-reasoning-computing-60103ae6ed7e",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-9eb991d713fc",
+      "u": "https://papers.nips.cc/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-agents-reasoning-computing-60103ae6ed7e",
+        "g": 9
+      },
+      "to": {
+        "topicId": "ai-agents-reasoning-computing-60103ae6ed7e",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-e7799865a611",
+      "u": "https://papers.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-agents-reasoning-computing-60103ae6ed7e",
+        "g": 9
+      },
+      "to": {
+        "topicId": "ai-agents-reasoning-computing-60103ae6ed7e",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-d014ed365518",
+      "u": "https://openreview.net/pdf?id=1PL1NIMMrw",
+      "from": {
+        "topicId": "ai-agents-reasoning-computing-edf1ebdb1a81",
+        "g": 10
+      },
+      "to": {
+        "topicId": "ai-agents-reasoning-computing-edf1ebdb1a81",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-b2ec516c7fae",
+      "u": "https://papers.nips.cc/paper/2023/hash/271db9922b8d1f4dd7aaef84ed5ac703-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-agents-reasoning-computing-edf1ebdb1a81",
+        "g": 10
+      },
+      "to": {
+        "topicId": "ai-agents-reasoning-computing-edf1ebdb1a81",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-2ed7e9a81a01",
+      "u": "https://proceedings.mlr.press/v235/zhou24r.html",
+      "from": {
+        "topicId": "ai-agents-reasoning-computing-edf1ebdb1a81",
+        "g": 10
+      },
+      "to": {
+        "topicId": "ai-agents-reasoning-computing-edf1ebdb1a81",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-e5a78f4fe695",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/6507b115562bb0a305f1958ccc87355a-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-agents-reasoning-computing-db4a0468a826",
+        "g": 11
+      },
+      "to": {
+        "topicId": "ai-agents-reasoning-computing-60103ae6ed7e",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-9a6bc40563db",
+      "u": "https://aclanthology.org/2024.acl-long.381/",
+      "from": {
+        "topicId": "ai-agents-reasoning-computing-db4a0468a826",
+        "g": 11
+      },
+      "to": {
+        "topicId": "ai-agents-reasoning-computing-60103ae6ed7e",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-3d8dbca3cbd4",
+      "u": "https://papers.neurips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html",
+      "from": {
+        "topicId": "ai-evaluation-reliability-631a7d162044",
+        "g": 12
+      },
+      "to": {
+        "topicId": "ai-evaluation-reliability-631a7d162044",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-c32420bfaf22",
+      "u": "https://aclanthology.org/2023.emnlp-main.153/",
+      "from": {
+        "topicId": "ai-evaluation-reliability-631a7d162044",
+        "g": 12
+      },
+      "to": {
+        "topicId": "ai-evaluation-reliability-631a7d162044",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-642ce0841547",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/803485352e61e3ebf41221e4776c9fd4-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-evaluation-reliability-631a7d162044",
+        "g": 12
+      },
+      "to": {
+        "topicId": "ai-evaluation-reliability-631a7d162044",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-cc940d0986b3",
+      "u": "https://aclanthology.org/2023.emnlp-main.741/",
+      "from": {
+        "topicId": "ai-evaluation-reliability-5a6bf4cb2ebb",
+        "g": 13
+      },
+      "to": {
+        "topicId": "ai-evaluation-reliability-5a6bf4cb2ebb",
+        "g": 18
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-33d035b398e6",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/937ae0e83eb08d2cb8627fe1def8c751-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-evaluation-reliability-5a6bf4cb2ebb",
+        "g": 13
+      },
+      "to": {
+        "topicId": "ai-evaluation-reliability-5a6bf4cb2ebb",
+        "g": 18
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-bf3ddb14ac1c",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/f3549ef9b5ff520a7e41ff3cc306ab2b-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-evaluation-reliability-2997080a5269",
+        "g": 14
+      },
+      "to": {
+        "topicId": "ai-evaluation-reliability-2997080a5269",
+        "g": 19
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-ea8664be6b9c",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/31421b112e5f7faf4fc577b74e45dab2-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-evaluation-reliability-2997080a5269",
+        "g": 14
+      },
+      "to": {
+        "topicId": "ai-evaluation-reliability-2997080a5269",
+        "g": 19
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-b60db7788c79",
+      "u": "https://proceedings.mlr.press/v235/mohri24a.html",
+      "from": {
+        "topicId": "ai-evaluation-reliability-2997080a5269",
+        "g": 14
+      },
+      "to": {
+        "topicId": "ai-evaluation-reliability-2997080a5269",
+        "g": 19
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-3f5b21cc89d4",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/bd074b828bbd782d4bece89306caff84-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-evaluation-reliability-2997080a5269",
+        "g": 14
+      },
+      "to": {
+        "topicId": "ai-evaluation-reliability-2997080a5269",
+        "g": 19
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-d87e533b0998",
+      "u": "https://proceedings.mlr.press/v306/lin26t.html",
+      "from": {
+        "topicId": "ai-evaluation-reliability-2997080a5269",
+        "g": 14
+      },
+      "to": {
+        "topicId": "ai-evaluation-reliability-2997080a5269",
+        "g": 19
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-1f9c6c84edcb",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/a85b405ed65c6477a4fe8302b5e06ce7-Abstract.html",
+      "from": {
+        "topicId": "ai-training-adaptation-a1d5d1227056",
+        "g": 15
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-a1d5d1227056",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-e0567a6af5c1",
+      "u": "https://papers.nips.cc/paper_files/paper/2024/hash/e099c1c9699814af0be873a175361713-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-training-adaptation-a1d5d1227056",
+        "g": 15
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-a1d5d1227056",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-7089aca87c94",
+      "u": "https://proceedings.mlr.press/v235/ethayarajh24a.html",
+      "from": {
+        "topicId": "ai-training-adaptation-a1d5d1227056",
+        "g": 15
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-a1d5d1227056",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-4d3867190312",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/8ac015d409635f196f9e3e9dcfb9a94e-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-training-adaptation-03cb846c39b9",
+        "g": 16
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-03cb846c39b9",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-557b4224d8ea",
+      "u": "https://proceedings.mlr.press/v235/ko24c.html",
+      "from": {
+        "topicId": "ai-training-adaptation-03cb846c39b9",
+        "g": 16
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-03cb846c39b9",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-eaf5e1654500",
+      "u": "https://proceedings.mlr.press/v267/ko25a.html",
+      "from": {
+        "topicId": "ai-training-adaptation-03cb846c39b9",
+        "g": 16
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-03cb846c39b9",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-2007e2f61f78",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/be52acf6bccf4a8c0a90fe2f5cfcead3-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-training-adaptation-e234985b1dee",
+        "g": 17
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-f3d46fcdb2eb",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-ece7cd562390",
+      "u": "https://proceedings.mlr.press/v267/wang25en.html",
+      "from": {
+        "topicId": "ai-training-adaptation-e234985b1dee",
+        "g": 17
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-f3d46fcdb2eb",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-b5e76fb85afc",
+      "u": "https://openaccess.thecvf.com/content/CVPR2023/html/Zhao_Improved_Distribution_Matching_for_Dataset_Condensation_CVPR_2023_paper.html",
+      "from": {
+        "topicId": "ai-training-adaptation-f4b2e0018897",
+        "g": 18
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-03cb846c39b9",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-3c9c73dd5369",
+      "u": "https://openaccess.thecvf.com/content/ICCV2023/html/Liu_DREAM_Efficient_Dataset_Distillation_by_Representative_Matching_ICCV_2023_paper.html",
+      "from": {
+        "topicId": "ai-training-adaptation-f4b2e0018897",
+        "g": 18
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-03cb846c39b9",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-df61d21c24df",
+      "u": "https://openreview.net/pdf?id=g2YraF75Tj",
+      "from": {
+        "topicId": "ai-training-adaptation-f3d46fcdb2eb",
+        "g": 19
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-f3d46fcdb2eb",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-44b09fb5cb8b",
+      "u": "https://openaccess.thecvf.com/content/CVPR2023/html/Yuan_Robust_Test-Time_Adaptation_in_Dynamic_Scenarios_CVPR_2023_paper.html",
+      "from": {
+        "topicId": "ai-training-adaptation-f3d46fcdb2eb",
+        "g": 19
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-f3d46fcdb2eb",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-d650eaced483",
+      "u": "https://proceedings.mlr.press/v267/lee25g.html",
+      "from": {
+        "topicId": "ai-training-adaptation-f3d46fcdb2eb",
+        "g": 19
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-f3d46fcdb2eb",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-78ffc7c94965",
+      "u": "https://openreview.net/pdf/53c47f849d1cd4d21b865caf7d774e07a5c42aa4.pdf",
+      "from": {
+        "topicId": "ai-geometry-graphs-scientific-computing-cca016704f19",
+        "g": 20
+      },
+      "to": {
+        "topicId": "ai-geometry-graphs-scientific-computing-cca016704f19",
+        "g": 21
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-3d5dd4fcb3a6",
+      "u": "https://papers.neurips.cc/paper_files/paper/2023/hash/70518ea42831f02afc3a2828993935ad-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-geometry-graphs-scientific-computing-cca016704f19",
+        "g": 20
+      },
+      "to": {
+        "topicId": "ai-geometry-graphs-scientific-computing-cca016704f19",
+        "g": 21
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-fb201bb1d5d9",
+      "u": "https://proceedings.mlr.press/v235/wu24r.html",
+      "from": {
+        "topicId": "ai-geometry-graphs-scientific-computing-cca016704f19",
+        "g": 20
+      },
+      "to": {
+        "topicId": "ai-geometry-graphs-scientific-computing-cca016704f19",
+        "g": 21
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-40a1287eac21",
+      "u": "https://openreview.net/pdf?id=Jbdc0vTOcol",
+      "from": {
+        "topicId": "ai-time-series-causal-modelling-3fd835c502ff",
+        "g": 21
+      },
+      "to": {
+        "topicId": "ai-time-series-causal-modelling-3fd835c502ff",
+        "g": 22
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-1d7a859c7d86",
+      "u": "https://proceedings.mlr.press/v235/das24c.html",
+      "from": {
+        "topicId": "ai-time-series-causal-modelling-3fd835c502ff",
+        "g": 21
+      },
+      "to": {
+        "topicId": "ai-time-series-causal-modelling-3fd835c502ff",
+        "g": 22
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-bbb55c986898",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/558d48c1f08675daa636e09bfe94a89e-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-time-series-causal-modelling-3fd835c502ff",
+        "g": 21
+      },
+      "to": {
+        "topicId": "ai-time-series-causal-modelling-3fd835c502ff",
+        "g": 22
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-301fada0affc",
+      "u": "https://papers.neurips.cc/paper_files/paper/2022/hash/36e2967f87c3362e37cf988781a887ad-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-time-series-causal-modelling-8ea022cb0992",
+        "g": 22
+      },
+      "to": {
+        "topicId": "ai-time-series-causal-modelling-8ea022cb0992",
+        "g": 23
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-af5326e2aa65",
+      "u": "https://proceedings.mlr.press/v235/nazaret24a.html",
+      "from": {
+        "topicId": "ai-time-series-causal-modelling-8ea022cb0992",
+        "g": 22
+      },
+      "to": {
+        "topicId": "ai-time-series-causal-modelling-8ea022cb0992",
+        "g": 23
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-11b61fdb4eea",
+      "u": "https://openaccess.thecvf.com/content/ICCV2023/html/Kirillov_Segment_Anything_ICCV_2023_paper.html",
+      "from": {
+        "topicId": "ai-vision-3d-perception-bd861a49471a",
+        "g": 23
+      },
+      "to": {
+        "topicId": "ai-vision-3d-perception-bd861a49471a",
+        "g": 24
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-144a2af00efd",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/45c1f6a8cbf2da59ebf2c802b4f742cd-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-vision-3d-perception-bd861a49471a",
+        "g": 23
+      },
+      "to": {
+        "topicId": "ai-vision-3d-perception-bd861a49471a",
+        "g": 24
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-2ea1d219b360",
+      "u": "https://openaccess.thecvf.com/content/CVPR2024/html/Yang_Depth_Anything_Unleashing_the_Power_of_Large-Scale_Unlabeled_Data_CVPR_2024_paper.html",
+      "from": {
+        "topicId": "ai-vision-3d-perception-9e71696f158a",
+        "g": 24
+      },
+      "to": {
+        "topicId": "ai-vision-3d-perception-9e71696f158a",
+        "g": 25
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-37c57ef27850",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/26cfdcd8fe6fd75cc53e92963a656c58-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-vision-3d-perception-9e71696f158a",
+        "g": 24
+      },
+      "to": {
+        "topicId": "ai-vision-3d-perception-9e71696f158a",
+        "g": 25
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-9f67d10adb67",
+      "u": "https://openaccess.thecvf.com/content/CVPR2024/html/Wang_DUSt3R_Geometric_3D_Vision_Made_Easy_CVPR_2024_paper.html",
+      "from": {
+        "topicId": "ai-vision-3d-perception-3a3fd02f3a2c",
+        "g": 25
+      },
+      "to": {
+        "topicId": "ai-vision-3d-perception-9e71696f158a",
+        "g": 25
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-f69edf17a8c6",
+      "u": "https://openaccess.thecvf.com/content/CVPR2025/html/Wang_VGGT_Visual_Geometry_Grounded_Transformer_CVPR_2025_paper.html",
+      "from": {
+        "topicId": "ai-vision-3d-perception-3a3fd02f3a2c",
+        "g": 25
+      },
+      "to": {
+        "topicId": "ai-vision-3d-perception-9e71696f158a",
+        "g": 25
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-72af933c20fe",
+      "u": "https://arxiv.org/abs/2610.29932",
+      "from": {
+        "topicId": "ai-evaluation-reliability-c77415041d21",
+        "g": 26
+      },
+      "to": {
+        "topicId": "ai-evaluation-reliability-631a7d162044",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-add3da483052",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/c4d66eae503694424123b93ac0fbaf17-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-optimization-decision-making-c8d1452b541f",
+        "g": 27
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-3996c9f7f717",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-cc826e96084e",
+      "u": "https://www.tdmpc2.com/",
+      "from": {
+        "topicId": "ai-optimization-decision-making-c8d1452b541f",
+        "g": 27
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-3996c9f7f717",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-8fa0ebc722d8",
+      "u": "https://www.nature.com/articles/s41586-025-08744-2",
+      "from": {
+        "topicId": "ai-optimization-decision-making-c8d1452b541f",
+        "g": 27
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-3996c9f7f717",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-bb51d7569633",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/639a9a172c044fbb64175b5fad42e9a5-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-agents-reasoning-computing-e02776d3bb2c",
+        "g": 28
+      },
+      "to": {
+        "topicId": "ai-agents-reasoning-computing-e02776d3bb2c",
+        "g": 13
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-8edc3f61ebb1",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/1b623663fd9b874366f3ce019fdfdd44-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-agents-reasoning-computing-e02776d3bb2c",
+        "g": 28
+      },
+      "to": {
+        "topicId": "ai-agents-reasoning-computing-e02776d3bb2c",
+        "g": 13
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-b7585011e5b5",
+      "u": "https://www.nature.com/articles/s41586-025-09422-z",
+      "from": {
+        "topicId": "ai-agents-reasoning-computing-e02776d3bb2c",
+        "g": 28
+      },
+      "to": {
+        "topicId": "ai-agents-reasoning-computing-e02776d3bb2c",
+        "g": 13
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-0551ab86adc7",
+      "u": "https://arxiv.org/abs/2506.13131",
+      "from": {
+        "topicId": "ai-agents-reasoning-computing-8fef6429b9ad",
+        "g": 29
+      },
+      "to": {
+        "topicId": "ai-agents-reasoning-computing-8fef6429b9ad",
+        "g": 14
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-94c208ff19a3",
+      "u": "https://www.nature.com/articles/s41586-023-06004-9",
+      "from": {
+        "topicId": "ai-agents-reasoning-computing-8fef6429b9ad",
+        "g": 29
+      },
+      "to": {
+        "topicId": "ai-agents-reasoning-computing-8fef6429b9ad",
+        "g": 14
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-e41b8a2c1c77",
+      "u": "https://arxiv.org/abs/1412.6980",
+      "from": {
+        "topicId": "ai-optimization-decision-making-0ed3475ca9d6",
+        "g": 30
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-0ed3475ca9d6",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-831820aeb003",
+      "u": "https://openreview.net/forum?id=ryQu7f-RZ",
+      "from": {
+        "topicId": "ai-optimization-decision-making-0ed3475ca9d6",
+        "g": 30
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-0ed3475ca9d6",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-c475351b2997",
+      "u": "https://openreview.net/forum?id=Bkg6RiCqY7",
+      "from": {
+        "topicId": "ai-optimization-decision-making-0ed3475ca9d6",
+        "g": 30
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-0ed3475ca9d6",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-f7756bca34a2",
+      "u": "https://openreview.net/forum?id=6Tm1mposlrM",
+      "from": {
+        "topicId": "ai-optimization-decision-making-64bbfe4f717d",
+        "g": 31
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-0ed3475ca9d6",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-5d037c4e6f49",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/c1e2faff6f588870935f114ebe04a3e5-Abstract-Conference.html",
+      "from": {
+        "topicId": "ai-training-adaptation-1b491535150e",
+        "g": 32
+      },
+      "to": {
+        "topicId": "ai-optimization-decision-making-0ed3475ca9d6",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-3f96625b9dae",
+      "u": "https://openreview.net/forum?id=PxTIG12RRHS",
+      "from": {
+        "topicId": "ai-generative-models-probability-theory-d7e4c4921b60",
+        "g": 33
+      },
+      "to": {
+        "topicId": "ai-generative-models-probability-theory-b95ea276351a",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-c258738250e7",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2013/hash/af21d0c97db2e27e13572cbf59eb343d-Abstract.html",
+      "from": {
+        "topicId": "ai-generative-models-probability-theory-1196c30068e6",
+        "g": 34
+      },
+      "to": {
+        "topicId": "ai-generative-models-probability-theory-07b63586ebb5",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-8c87d43c8563",
+      "u": "https://openreview.net/forum?id=XVjTT1nw5z",
+      "from": {
+        "topicId": "ai-generative-models-probability-theory-1196c30068e6",
+        "g": 34
+      },
+      "to": {
+        "topicId": "ai-generative-models-probability-theory-07b63586ebb5",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-d1dfb2ab7dd3",
+      "u": "https://proceedings.mlr.press/v48/cohenc16.html",
+      "from": {
+        "topicId": "ai-geometry-graphs-scientific-computing-11c990f9ab76",
+        "g": 35
+      },
+      "to": {
+        "topicId": "ai-geometry-graphs-scientific-computing-11c990f9ab76",
+        "g": 20
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-f77c75a7a67b",
+      "u": "https://proceedings.mlr.press/v139/satorras21a.html",
+      "from": {
+        "topicId": "ai-geometry-graphs-scientific-computing-2269565224ec",
+        "g": 36
+      },
+      "to": {
+        "topicId": "ai-geometry-graphs-scientific-computing-11c990f9ab76",
+        "g": 20
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-40de426bfa4c",
+      "u": "https://arxiv.org/abs/1707.06347",
+      "from": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 37
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-fcdb65137747",
+      "u": "https://arxiv.org/abs/2503.14476",
+      "from": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 37
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-6ffdfad37a93",
+      "u": "https://arxiv.org/abs/2401.01335",
+      "from": {
+        "topicId": "ai-training-adaptation-a1d5d1227056",
+        "g": 15
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-a1d5d1227056",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-d67416e99e5d",
+      "u": "https://arxiv.org/abs/2405.00675",
+      "from": {
+        "topicId": "ai-training-adaptation-a1d5d1227056",
+        "g": 15
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-a1d5d1227056",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-dadc82d5e35f",
+      "u": "https://arxiv.org/abs/2505.22617",
+      "from": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 37
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-1eaf50da3920",
+      "u": "https://arxiv.org/abs/2505.23585",
+      "from": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 37
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-164d63e308ca",
+      "u": "https://arxiv.org/abs/2504.02546",
+      "from": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 37
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-41819c7f3763",
+      "u": "https://arxiv.org/abs/2602.07078",
+      "from": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 37
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-3054c58de7b2",
+      "u": "https://arxiv.org/abs/2602.04879",
+      "from": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 37
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-7457adf1086a",
+      "u": "https://arxiv.org/abs/2306.13649",
+      "from": {
+        "topicId": "ai-training-adaptation-03cb846c39b9",
+        "g": 16
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-03cb846c39b9",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-f455a78c2611",
+      "u": "https://arxiv.org/abs/2405.19107",
+      "from": {
+        "topicId": "ai-training-adaptation-a1d5d1227056",
+        "g": 15
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-a1d5d1227056",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-3e01248237a0",
+      "u": "https://arxiv.org/abs/2402.03300",
+      "from": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 37
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-91567a33b3a7",
+      "u": "https://arxiv.org/abs/2512.23075",
+      "from": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 37
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "ai",
+      "paperId": "paper-6e8d04b9d484",
+      "u": "https://arxiv.org/abs/2110.00641",
+      "from": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 37
+      },
+      "to": {
+        "topicId": "ai-training-adaptation-rl-post-training",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-10d14cbe9305",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/38b787fc530d0b31825827e2cc306656-Abstract.html",
+      "from": {
+        "topicId": "chemistry-materials-structure-design-discovery-aab4fa5b36ce",
+        "g": 12
+      },
+      "to": {
+        "topicId": "chemistry-materials-structure-design-discovery-aab4fa5b36ce",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-0d2b87e8226a",
+      "u": "https://openreview.net/pdf?id=KwmPfARgOTD",
+      "from": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-aca71b7def62",
+        "g": 0
+      },
+      "to": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-6949f00d3ea3",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-d403f92396d4",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/ab12e8f3443c1a789f595b18d8c597b4-Abstract-Conference.html",
+      "from": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-aca71b7def62",
+        "g": 0
+      },
+      "to": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-6949f00d3ea3",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-e08ec8c5c7fe",
+      "u": "https://www.nature.com/articles/s41467-026-69245-y",
+      "from": {
+        "topicId": "chemistry-materials-data-representations-properties-2ac97afad82e",
+        "g": 7
+      },
+      "to": {
+        "topicId": "chemistry-materials-data-representations-properties-ab7d425a2c53",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-f71c07091b01",
+      "u": "https://www.nature.com/articles/s41467-024-45563-x",
+      "from": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-acf21c5503be",
+        "g": 24
+      },
+      "to": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-acf21c5503be",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-7879ce83ecb5",
+      "u": "https://www.nature.com/articles/s41586-024-07683-8",
+      "from": {
+        "topicId": "chemistry-materials-separation-environment-storage-280a24d129c8",
+        "g": 22
+      },
+      "to": {
+        "topicId": "chemistry-materials-separation-environment-storage-280a24d129c8",
+        "g": 16
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-704d26e29605",
+      "u": "https://www.nature.com/articles/s41586-023-05945-5",
+      "from": {
+        "topicId": "chemistry-materials-separation-environment-storage-b1a7c88bebf4",
+        "g": 23
+      },
+      "to": {
+        "topicId": "chemistry-materials-separation-environment-storage-280a24d129c8",
+        "g": 16
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-3552d0a1a4b4",
+      "u": "https://pubs.acs.org/doi/10.1021/acscentsci.1c00724",
+      "from": {
+        "topicId": "chemistry-materials-separation-environment-storage-b1a7c88bebf4",
+        "g": 23
+      },
+      "to": {
+        "topicId": "chemistry-materials-separation-environment-storage-280a24d129c8",
+        "g": 16
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-ee7fa46fb8e9",
+      "u": "https://doi.org/10.1103/physrevresearch.2.033429",
+      "from": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-bb722abb215f",
+        "g": 4
+      },
+      "to": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-bb722abb215f",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-6c5e194fa7a4",
+      "u": "https://www.nature.com/articles/s41557-020-0544-y",
+      "from": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-bb722abb215f",
+        "g": 4
+      },
+      "to": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-bb722abb215f",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-234d038c8d23",
+      "u": "https://openreview.net/forum?id=xveTeHVlF7j",
+      "from": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-bb722abb215f",
+        "g": 4
+      },
+      "to": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-bb722abb215f",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-ab42b977ebfe",
+      "u": "https://www.science.org/doi/10.1126/science.adn0137",
+      "from": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-bb722abb215f",
+        "g": 4
+      },
+      "to": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-bb722abb215f",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-c31b1423eba4",
+      "u": "https://doi.org/10.1103/physrevlett.126.036401",
+      "from": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-8b8cc4e1f8f2",
+        "g": 5
+      },
+      "to": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-8b8cc4e1f8f2",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-ba719eeea21e",
+      "u": "https://www.science.org/doi/10.1126/science.abj6511",
+      "from": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-8b8cc4e1f8f2",
+        "g": 5
+      },
+      "to": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-8b8cc4e1f8f2",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-0cffb244a5e6",
+      "u": "https://www.nature.com/articles/sdata.2014.22",
+      "from": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-d0a972090277",
+        "g": 6
+      },
+      "to": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-d0a972090277",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-600539f9c876",
+      "u": "https://www.nature.com/articles/s41467-019-12875-2",
+      "from": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-d0a972090277",
+        "g": 6
+      },
+      "to": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-d0a972090277",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-f75f260ebbdb",
+      "u": "https://doi.org/10.1063/5.0021955",
+      "from": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-d0a972090277",
+        "g": 6
+      },
+      "to": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-d0a972090277",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-e6b28bf1aa12",
+      "u": "https://www.nature.com/articles/s43588-022-00265-6",
+      "from": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-d0a972090277",
+        "g": 6
+      },
+      "to": {
+        "topicId": "chemistry-materials-electronic-structure-quantum-chemistry-d0a972090277",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-f0208b662efd",
+      "u": "https://doi.org/10.1103/physrevlett.98.146401",
+      "from": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-671573df31b3",
+        "g": 1
+      },
+      "to": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-671573df31b3",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-508070d98dae",
+      "u": "https://doi.org/10.1103/physrevlett.104.136403",
+      "from": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-671573df31b3",
+        "g": 1
+      },
+      "to": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-671573df31b3",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-1722d9f94d11",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2017/hash/303ed4c69846ab36c2904d3ba8573050-Abstract.html",
+      "from": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-671573df31b3",
+        "g": 1
+      },
+      "to": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-671573df31b3",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-b722b9b79893",
+      "u": "https://doi.org/10.1103/physrevlett.120.143001",
+      "from": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-671573df31b3",
+        "g": 1
+      },
+      "to": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-671573df31b3",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-c05279b930ed",
+      "u": "https://www.nature.com/articles/s41467-022-29939-5",
+      "from": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-6949f00d3ea3",
+        "g": 2
+      },
+      "to": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-6949f00d3ea3",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-830c0cada1ab",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/4a36c3c51af11ed9f34615b81edb5bbc-Abstract-Conference.html",
+      "from": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-6949f00d3ea3",
+        "g": 2
+      },
+      "to": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-6949f00d3ea3",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-e6687b9b6b57",
+      "u": "https://www.nature.com/articles/s41467-023-36329-y",
+      "from": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-6949f00d3ea3",
+        "g": 2
+      },
+      "to": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-6949f00d3ea3",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-6009f5d8d2b5",
+      "u": "https://www.nature.com/articles/s43588-022-00349-3",
+      "from": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-5e2d3c8cf2b1",
+        "g": 3
+      },
+      "to": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-5e2d3c8cf2b1",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-4bbb33af87d7",
+      "u": "https://www.nature.com/articles/s42256-023-00716-3",
+      "from": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-5e2d3c8cf2b1",
+        "g": 3
+      },
+      "to": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-5e2d3c8cf2b1",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-3c8a7e394c0c",
+      "u": "https://arxiv.org/abs/2401.00096",
+      "from": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-5e2d3c8cf2b1",
+        "g": 3
+      },
+      "to": {
+        "topicId": "chemistry-materials-machine-learning-potentials-atomistic-simulation-5e2d3c8cf2b1",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-005c40d4baa6",
+      "u": "https://doi.org/10.1103/physrevlett.120.145301",
+      "from": {
+        "topicId": "chemistry-materials-data-representations-properties-ab7d425a2c53",
+        "g": 8
+      },
+      "to": {
+        "topicId": "chemistry-materials-data-representations-properties-ab7d425a2c53",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-30690a573a7d",
+      "u": "https://doi.org/10.1021/acs.chemmater.9b01294",
+      "from": {
+        "topicId": "chemistry-materials-data-representations-properties-ab7d425a2c53",
+        "g": 8
+      },
+      "to": {
+        "topicId": "chemistry-materials-data-representations-properties-ab7d425a2c53",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-eb55e477d5bb",
+      "u": "https://www.nature.com/articles/s41524-021-00650-1",
+      "from": {
+        "topicId": "chemistry-materials-data-representations-properties-ab7d425a2c53",
+        "g": 8
+      },
+      "to": {
+        "topicId": "chemistry-materials-data-representations-properties-ab7d425a2c53",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-7147b00ace1f",
+      "u": "https://doi.org/10.1063/1.4812323",
+      "from": {
+        "topicId": "chemistry-materials-data-representations-properties-3cda6e299c3f",
+        "g": 9
+      },
+      "to": {
+        "topicId": "chemistry-materials-data-representations-properties-3cda6e299c3f",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-4965949aaef3",
+      "u": "https://www.nature.com/articles/s41524-020-00406-3",
+      "from": {
+        "topicId": "chemistry-materials-data-representations-properties-3cda6e299c3f",
+        "g": 9
+      },
+      "to": {
+        "topicId": "chemistry-materials-data-representations-properties-3cda6e299c3f",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-0550a04d39be",
+      "u": "https://www.nature.com/articles/s43588-026-00996-w",
+      "from": {
+        "topicId": "chemistry-materials-data-representations-properties-3cda6e299c3f",
+        "g": 9
+      },
+      "to": {
+        "topicId": "chemistry-materials-data-representations-properties-3cda6e299c3f",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-667d7228a003",
+      "u": "https://www.nature.com/articles/s41524-022-00921-5",
+      "from": {
+        "topicId": "chemistry-materials-data-representations-properties-1c486e4c2853",
+        "g": 10
+      },
+      "to": {
+        "topicId": "chemistry-materials-data-representations-properties-ab7d425a2c53",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-24bc12cf7a00",
+      "u": "https://openreview.net/forum?id=03RLpj-tc_",
+      "from": {
+        "topicId": "chemistry-materials-structure-design-discovery-aab4fa5b36ce",
+        "g": 12
+      },
+      "to": {
+        "topicId": "chemistry-materials-structure-design-discovery-aab4fa5b36ce",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-2a00a9b6d0e6",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/5dc6d1c81754c32008c9667339b3fdd3-Abstract-Conference.html",
+      "from": {
+        "topicId": "chemistry-materials-structure-design-discovery-aab4fa5b36ce",
+        "g": 12
+      },
+      "to": {
+        "topicId": "chemistry-materials-structure-design-discovery-aab4fa5b36ce",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-1078190dcddf",
+      "u": "https://proceedings.mlr.press/v235/miller24a.html",
+      "from": {
+        "topicId": "chemistry-materials-structure-design-discovery-aab4fa5b36ce",
+        "g": 12
+      },
+      "to": {
+        "topicId": "chemistry-materials-structure-design-discovery-aab4fa5b36ce",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-9c9e43210738",
+      "u": "https://doi.org/10.1016/j.matt.2019.08.017",
+      "from": {
+        "topicId": "chemistry-materials-structure-design-discovery-d9d3c1acef08",
+        "g": 13
+      },
+      "to": {
+        "topicId": "chemistry-materials-structure-design-discovery-aab4fa5b36ce",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-765cd183a8ba",
+      "u": "https://www.nature.com/articles/s41586-025-08628-5",
+      "from": {
+        "topicId": "chemistry-materials-structure-design-discovery-d9d3c1acef08",
+        "g": 13
+      },
+      "to": {
+        "topicId": "chemistry-materials-structure-design-discovery-aab4fa5b36ce",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-d88e93b6f0a4",
+      "u": "https://doi.org/10.1021/acs.chemmater.7b00156",
+      "from": {
+        "topicId": "chemistry-materials-structure-design-discovery-cc9e7daea2ab",
+        "g": 14
+      },
+      "to": {
+        "topicId": "chemistry-materials-structure-design-discovery-cc9e7daea2ab",
+        "g": 10
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-baaecb5083de",
+      "u": "https://www.nature.com/articles/s41467-018-05761-w",
+      "from": {
+        "topicId": "chemistry-materials-structure-design-discovery-cc9e7daea2ab",
+        "g": 14
+      },
+      "to": {
+        "topicId": "chemistry-materials-structure-design-discovery-cc9e7daea2ab",
+        "g": 10
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-fab26d57329d",
+      "u": "https://www.nature.com/articles/s41586-023-06735-9",
+      "from": {
+        "topicId": "chemistry-materials-structure-design-discovery-cc9e7daea2ab",
+        "g": 14
+      },
+      "to": {
+        "topicId": "chemistry-materials-structure-design-discovery-cc9e7daea2ab",
+        "g": 10
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-82e045860339",
+      "u": "https://www.science.org/doi/10.1126/science.aar5169",
+      "from": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-1699541020db",
+        "g": 16
+      },
+      "to": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-1699541020db",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-e1e711ad8d94",
+      "u": "https://doi.org/10.1039/c8sc04228d",
+      "from": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-1699541020db",
+        "g": 16
+      },
+      "to": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-1699541020db",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-c2a1c765e8d3",
+      "u": "https://doi.org/10.1021/acscentsci.9b00576",
+      "from": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-1699541020db",
+        "g": 16
+      },
+      "to": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-1699541020db",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-f658cc3f3b6c",
+      "u": "https://www.nature.com/articles/nature25978",
+      "from": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-42cc97f25960",
+        "g": 17
+      },
+      "to": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-42cc97f25960",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-e3a82ccd9109",
+      "u": "https://proceedings.mlr.press/v119/chen20k.html",
+      "from": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-42cc97f25960",
+        "g": 17
+      },
+      "to": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-42cc97f25960",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-b46be23909ae",
+      "u": "https://doi.org/10.1021/jacsau.1c00246",
+      "from": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-42cc97f25960",
+        "g": 17
+      },
+      "to": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-42cc97f25960",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-8066ce23544a",
+      "u": "https://doi.org/10.1021/acscentsci.8b00307",
+      "from": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-383475661b00",
+        "g": 18
+      },
+      "to": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-383475661b00",
+        "g": 13
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-f563dae3432c",
+      "u": "https://www.nature.com/articles/s41586-021-03213-y",
+      "from": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-383475661b00",
+        "g": 18
+      },
+      "to": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-383475661b00",
+        "g": 13
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-6d31f88e1dc7",
+      "u": "https://www.science.org/doi/10.1126/science.adc8743",
+      "from": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-383475661b00",
+        "g": 18
+      },
+      "to": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-383475661b00",
+        "g": 13
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-678d8f41c32a",
+      "u": "https://www.nature.com/articles/s41586-020-2242-8",
+      "from": {
+        "topicId": "chemistry-materials-catalysis-energy-transport-b2578bc95830",
+        "g": 19
+      },
+      "to": {
+        "topicId": "chemistry-materials-catalysis-energy-transport-b2578bc95830",
+        "g": 14
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-cf7f8f29e1a4",
+      "u": "https://doi.org/10.1021/acscatal.0c04525",
+      "from": {
+        "topicId": "chemistry-materials-catalysis-energy-transport-b2578bc95830",
+        "g": 19
+      },
+      "to": {
+        "topicId": "chemistry-materials-catalysis-energy-transport-b2578bc95830",
+        "g": 14
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-dcd79726f4f3",
+      "u": "https://doi.org/10.1021/acscatal.2c05426",
+      "from": {
+        "topicId": "chemistry-materials-catalysis-energy-transport-b2578bc95830",
+        "g": 19
+      },
+      "to": {
+        "topicId": "chemistry-materials-catalysis-energy-transport-b2578bc95830",
+        "g": 14
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-0c3672a01758",
+      "u": "https://www.nature.com/articles/s41929-018-0142-1",
+      "from": {
+        "topicId": "chemistry-materials-catalysis-energy-transport-4498e20e2f7b",
+        "g": 20
+      },
+      "to": {
+        "topicId": "chemistry-materials-catalysis-energy-transport-b2578bc95830",
+        "g": 14
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-270fa92b51f0",
+      "u": "https://www.nature.com/articles/s41524-023-01121-5",
+      "from": {
+        "topicId": "chemistry-materials-catalysis-energy-transport-4498e20e2f7b",
+        "g": 20
+      },
+      "to": {
+        "topicId": "chemistry-materials-catalysis-energy-transport-b2578bc95830",
+        "g": 14
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-c63fcdae068f",
+      "u": "https://www.nature.com/articles/s41560-019-0356-8",
+      "from": {
+        "topicId": "chemistry-materials-catalysis-energy-transport-1afadb573caf",
+        "g": 21
+      },
+      "to": {
+        "topicId": "chemistry-materials-catalysis-energy-transport-1afadb573caf",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-29f73fb4e5c3",
+      "u": "https://www.nature.com/articles/s41586-020-1994-5",
+      "from": {
+        "topicId": "chemistry-materials-catalysis-energy-transport-1afadb573caf",
+        "g": 21
+      },
+      "to": {
+        "topicId": "chemistry-materials-catalysis-energy-transport-1afadb573caf",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-fc9ec454d170",
+      "u": "https://doi.org/10.1021/jacs.4c03849",
+      "from": {
+        "topicId": "chemistry-materials-catalysis-energy-transport-1afadb573caf",
+        "g": 21
+      },
+      "to": {
+        "topicId": "chemistry-materials-catalysis-energy-transport-1afadb573caf",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-c960c13a0bd7",
+      "u": "https://www.nature.com/articles/s41586-019-1335-8",
+      "from": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-acf21c5503be",
+        "g": 24
+      },
+      "to": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-acf21c5503be",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-4511ffebaf20",
+      "u": "https://www.nature.com/articles/s41597-019-0224-1",
+      "from": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-acf21c5503be",
+        "g": 24
+      },
+      "to": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-acf21c5503be",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-99d16c0456ad",
+      "u": "https://www.nature.com/articles/s42256-023-00788-1",
+      "from": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-a490931a029d",
+        "g": 25
+      },
+      "to": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-acf21c5503be",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-68ad95b7dd29",
+      "u": "https://www.nature.com/articles/s41557-025-01815-x",
+      "from": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-a490931a029d",
+        "g": 25
+      },
+      "to": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-acf21c5503be",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-4277aaa9c518",
+      "u": "https://www.nature.com/articles/s41524-020-00362-y",
+      "from": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-138499189986",
+        "g": 26
+      },
+      "to": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-138499189986",
+        "g": 18
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-d48a94e297c7",
+      "u": "https://www.nature.com/articles/s42256-025-01055-1",
+      "from": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-138499189986",
+        "g": 26
+      },
+      "to": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-138499189986",
+        "g": 18
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-ebd28f4c22fa",
+      "u": "https://doi.org/10.1021/acs.chemmater.4c00643",
+      "from": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-138499189986",
+        "g": 26
+      },
+      "to": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-138499189986",
+        "g": 18
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-129a60d56233",
+      "u": "https://doi.org/10.1103/prxenergy.3.011002",
+      "from": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-138499189986",
+        "g": 26
+      },
+      "to": {
+        "topicId": "chemistry-materials-chemical-knowledge-materials-validation-138499189986",
+        "g": 18
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-4034d65eac19",
+      "u": "https://proceedings.mlr.press/v162/hoogeboom22a.html",
+      "from": {
+        "topicId": "chemistry-materials-structure-design-discovery-7ce82ffaa3e3",
+        "g": 15
+      },
+      "to": {
+        "topicId": "chemistry-materials-structure-design-discovery-aab4fa5b36ce",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-f7ee9824dd73",
+      "u": "https://www.nature.com/articles/s42256-022-00447-x",
+      "from": {
+        "topicId": "chemistry-materials-data-representations-properties-49e4140800bb",
+        "g": 11
+      },
+      "to": {
+        "topicId": "chemistry-materials-data-representations-properties-49e4140800bb",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-77e6ad9bdf83",
+      "u": "https://www.nature.com/articles/s42256-021-00438-4",
+      "from": {
+        "topicId": "chemistry-materials-data-representations-properties-49e4140800bb",
+        "g": 11
+      },
+      "to": {
+        "topicId": "chemistry-materials-data-representations-properties-49e4140800bb",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-10220b9f081b",
+      "u": "https://openreview.net/forum?id=6K2RM6wVqKu",
+      "from": {
+        "topicId": "chemistry-materials-data-representations-properties-49e4140800bb",
+        "g": 11
+      },
+      "to": {
+        "topicId": "chemistry-materials-data-representations-properties-49e4140800bb",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-b8a63d231c0d",
+      "u": "https://doi.org/10.1039/d2sc02763a",
+      "from": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-42cc97f25960",
+        "g": 17
+      },
+      "to": {
+        "topicId": "chemistry-materials-synthesis-manufacturing-processes-42cc97f25960",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "chemistry-materials",
+      "paperId": "paper-314ea780febf",
+      "u": "https://www.nature.com/articles/s44160-026-01203-4",
+      "from": {
+        "topicId": "chemistry-materials-structure-design-discovery-cc9e7daea2ab",
+        "g": 14
+      },
+      "to": {
+        "topicId": "chemistry-materials-structure-design-discovery-cc9e7daea2ab",
+        "g": 10
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-97059e2d5139",
+      "u": "https://is.mpg.de/en/publications/openx24",
+      "from": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-d4cb90328fe6",
+        "g": 2
+      },
+      "to": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-d4cb90328fe6",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-e2bc8b7c981a",
+      "u": "https://roboticsproceedings.org/rss20/p120.html",
+      "from": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-d4cb90328fe6",
+        "g": 2
+      },
+      "to": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-d4cb90328fe6",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-e064f89fc62c",
+      "u": "https://www.roboticsproceedings.org/rss20/p045.html",
+      "from": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-d4cb90328fe6",
+        "g": 2
+      },
+      "to": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-d4cb90328fe6",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-03da4d0955f7",
+      "u": "https://proceedings.mlr.press/v205/nair23a.html",
+      "from": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-3823f09ea0c6",
+        "g": 3
+      },
+      "to": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-3823f09ea0c6",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-d0634b0d26b0",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/022ca1bed6b574b962c48a2856eb207b-Abstract-Conference.html",
+      "from": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-3823f09ea0c6",
+        "g": 3
+      },
+      "to": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-3823f09ea0c6",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-4fc7cd3abf32",
+      "u": "https://proceedings.mlr.press/v229/zitkovich23a.html",
+      "from": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-ce2048e91baa",
+        "g": 4
+      },
+      "to": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-ce2048e91baa",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-79a1201597a7",
+      "u": "https://www.roboticsproceedings.org/rss20/p090.html",
+      "from": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-ce2048e91baa",
+        "g": 4
+      },
+      "to": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-ce2048e91baa",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-0893bf6c64c0",
+      "u": "https://proceedings.mlr.press/v270/kim25c.html",
+      "from": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-ce2048e91baa",
+        "g": 4
+      },
+      "to": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-ce2048e91baa",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-0cb55a1120fd",
+      "u": "https://roboticsproceedings.org/rss21/p010.html",
+      "from": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-ce2048e91baa",
+        "g": 4
+      },
+      "to": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-ce2048e91baa",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-a351afa55044",
+      "u": "https://proceedings.mlr.press/v305/black25a.html",
+      "from": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-ce2048e91baa",
+        "g": 4
+      },
+      "to": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-ce2048e91baa",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-e24f5b90aa5b",
+      "u": "https://roboticsproceedings.org/rss22/p203.html",
+      "from": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-ce2048e91baa",
+        "g": 4
+      },
+      "to": {
+        "topicId": "robotics-lab-data-representation-generalist-policies-ce2048e91baa",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-34421bcb3c87",
+      "u": "https://roboticsproceedings.org/rss19/p026.html",
+      "from": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-500078ee3055",
+        "g": 5
+      },
+      "to": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-500078ee3055",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-6394591747a5",
+      "u": "https://www.roboticsproceedings.org/rss19/p016.html",
+      "from": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-500078ee3055",
+        "g": 5
+      },
+      "to": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-500078ee3055",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-12a3e80f89a9",
+      "u": "https://proceedings.mlr.press/v305/jiang25a.html",
+      "from": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-500078ee3055",
+        "g": 5
+      },
+      "to": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-500078ee3055",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-ac655b75a40f",
+      "u": "https://proceedings.mlr.press/v205/shridhar23a.html",
+      "from": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-5e812d757569",
+        "g": 6
+      },
+      "to": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-5e812d757569",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-b45e6ec476b3",
+      "u": "https://proceedings.mlr.press/v229/goyal23a.html",
+      "from": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-5e812d757569",
+        "g": 6
+      },
+      "to": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-5e812d757569",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-59fbff47416f",
+      "u": "https://roboticsproceedings.org/rss20/p067.html",
+      "from": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-5e812d757569",
+        "g": 6
+      },
+      "to": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-5e812d757569",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-b4a7ccdccb41",
+      "u": "https://roboticsproceedings.org/rss22/p141.html",
+      "from": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-5e812d757569",
+        "g": 6
+      },
+      "to": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-5e812d757569",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-aea91726150e",
+      "u": "https://roboticsproceedings.org/rss19/p015.html",
+      "from": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-f00206192e12",
+        "g": 7
+      },
+      "to": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-f00206192e12",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-580b36c0895d",
+      "u": "https://www.roboticsproceedings.org/rss20/p043.html",
+      "from": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-f00206192e12",
+        "g": 7
+      },
+      "to": {
+        "topicId": "robotics-lab-manipulation-policies-dexterous-skills-f00206192e12",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-5578a8d370b6",
+      "u": "https://proceedings.mlr.press/v205/ichter23a.html",
+      "from": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-5282b8e6c835",
+        "g": 8
+      },
+      "to": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-5282b8e6c835",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-84182cdf0db8",
+      "u": "https://arxiv.org/abs/2209.07753",
+      "from": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-5282b8e6c835",
+        "g": 8
+      },
+      "to": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-5282b8e6c835",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-daaf554d1668",
+      "u": "https://proceedings.mlr.press/v202/driess23a.html",
+      "from": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-5282b8e6c835",
+        "g": 8
+      },
+      "to": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-5282b8e6c835",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-e3e98e31d2d1",
+      "u": "https://proceedings.mlr.press/v229/huang23b.html",
+      "from": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-9e1f592ac7d7",
+        "g": 9
+      },
+      "to": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-9e1f592ac7d7",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-328464412d33",
+      "u": "https://proceedings.mlr.press/v270/huang25g.html",
+      "from": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-9e1f592ac7d7",
+        "g": 9
+      },
+      "to": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-9e1f592ac7d7",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-74e7e47df814",
+      "u": "https://proceedings.mlr.press/v205/huang23c.html",
+      "from": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-6d875290376b",
+        "g": 10
+      },
+      "to": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-6d875290376b",
+        "g": 10
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-adf8cbdf9280",
+      "u": "https://proceedings.mlr.press/v229/liu23g.html",
+      "from": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-6d875290376b",
+        "g": 10
+      },
+      "to": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-6d875290376b",
+        "g": 10
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-b688b0fc8d30",
+      "u": "https://arxiv.org/abs/2205.04422",
+      "from": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-10ff03ec5737",
+        "g": 11
+      },
+      "to": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-10ff03ec5737",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-186849ddc2aa",
+      "u": "https://curobo.org/research/research.html",
+      "from": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-10ff03ec5737",
+        "g": 11
+      },
+      "to": {
+        "topicId": "robotics-lab-language-planning-execution-feedback-10ff03ec5737",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-f79dc161c0cc",
+      "u": "https://roboticsproceedings.org/rss19/p066.html",
+      "from": {
+        "topicId": "robotics-lab-perception-spatial-memory-navigation-f73501792894",
+        "g": 12
+      },
+      "to": {
+        "topicId": "robotics-lab-perception-spatial-memory-navigation-f73501792894",
+        "g": 14
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-5295d728589a",
+      "u": "https://concept-graphs.github.io/",
+      "from": {
+        "topicId": "robotics-lab-perception-spatial-memory-navigation-f73501792894",
+        "g": 12
+      },
+      "to": {
+        "topicId": "robotics-lab-perception-spatial-memory-navigation-f73501792894",
+        "g": 14
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-57830b743042",
+      "u": "https://proceedings.mlr.press/v229/shah23a.html",
+      "from": {
+        "topicId": "robotics-lab-perception-spatial-memory-navigation-833d8db9be70",
+        "g": 13
+      },
+      "to": {
+        "topicId": "robotics-lab-perception-spatial-memory-navigation-833d8db9be70",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-10f0b0ffc23e",
+      "u": "https://general-navigation-models.github.io/nomad/index.html",
+      "from": {
+        "topicId": "robotics-lab-perception-spatial-memory-navigation-833d8db9be70",
+        "g": 13
+      },
+      "to": {
+        "topicId": "robotics-lab-perception-spatial-memory-navigation-833d8db9be70",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-a0a85c086ab1",
+      "u": "https://roboticsproceedings.org/rss21/p018.html",
+      "from": {
+        "topicId": "robotics-lab-perception-spatial-memory-navigation-833d8db9be70",
+        "g": 13
+      },
+      "to": {
+        "topicId": "robotics-lab-perception-spatial-memory-navigation-833d8db9be70",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-40bd41aada54",
+      "u": "https://proceedings.neurips.cc/paper/2021/hash/89fcd07f20b6785b92134bd6c1d0fa42-Abstract.html",
+      "from": {
+        "topicId": "robotics-lab-perception-spatial-memory-navigation-521784eecc35",
+        "g": 14
+      },
+      "to": {
+        "topicId": "robotics-lab-perception-spatial-memory-navigation-521784eecc35",
+        "g": 16
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-df589f8e56b1",
+      "u": "https://openaccess.thecvf.com/content/CVPR2024/html/Keetha_SplaTAM_Splat_Track__Map_3D_Gaussians_for_Dense_RGB-D_CVPR_2024_paper.html",
+      "from": {
+        "topicId": "robotics-lab-perception-spatial-memory-navigation-521784eecc35",
+        "g": 14
+      },
+      "to": {
+        "topicId": "robotics-lab-perception-spatial-memory-navigation-521784eecc35",
+        "g": 16
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-834788245e87",
+      "u": "https://leggedrobotics.github.io/rl-perceptiveloco/",
+      "from": {
+        "topicId": "robotics-lab-legged-humanoid-mobile-manipulation-f5e1faa08ea5",
+        "g": 15
+      },
+      "to": {
+        "topicId": "robotics-lab-legged-humanoid-mobile-manipulation-f5e1faa08ea5",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-098856d34218",
+      "u": "https://extreme-parkour.github.io/",
+      "from": {
+        "topicId": "robotics-lab-legged-humanoid-mobile-manipulation-f5e1faa08ea5",
+        "g": 15
+      },
+      "to": {
+        "topicId": "robotics-lab-legged-humanoid-mobile-manipulation-f5e1faa08ea5",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-993623cd0eb9",
+      "u": "https://arxiv.org/abs/2403.04436",
+      "from": {
+        "topicId": "robotics-lab-legged-humanoid-mobile-manipulation-ea5da256fa35",
+        "g": 16
+      },
+      "to": {
+        "topicId": "robotics-lab-legged-humanoid-mobile-manipulation-ea5da256fa35",
+        "g": 18
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-516597a8eda4",
+      "u": "https://proceedings.mlr.press/v270/fu25a.html",
+      "from": {
+        "topicId": "robotics-lab-legged-humanoid-mobile-manipulation-ea5da256fa35",
+        "g": 16
+      },
+      "to": {
+        "topicId": "robotics-lab-legged-humanoid-mobile-manipulation-ea5da256fa35",
+        "g": 18
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-62aab876abfd",
+      "u": "https://www.roboticsproceedings.org/rss21/p066.html",
+      "from": {
+        "topicId": "robotics-lab-legged-humanoid-mobile-manipulation-ea5da256fa35",
+        "g": 16
+      },
+      "to": {
+        "topicId": "robotics-lab-legged-humanoid-mobile-manipulation-ea5da256fa35",
+        "g": 18
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-04c97986b222",
+      "u": "https://proceedings.mlr.press/v270/fu25b.html",
+      "from": {
+        "topicId": "robotics-lab-legged-humanoid-mobile-manipulation-bcf6a85567e6",
+        "g": 17
+      },
+      "to": {
+        "topicId": "robotics-lab-legged-humanoid-mobile-manipulation-bcf6a85567e6",
+        "g": 19
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-177036e7e782",
+      "u": "https://doi.org/10.1109/ICRA57147.2024.10611307",
+      "from": {
+        "topicId": "robotics-lab-legged-humanoid-mobile-manipulation-bcf6a85567e6",
+        "g": 17
+      },
+      "to": {
+        "topicId": "robotics-lab-legged-humanoid-mobile-manipulation-bcf6a85567e6",
+        "g": 19
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-9a62bfb30cfa",
+      "u": "https://roboticsproceedings.org/rss20/p015.html",
+      "from": {
+        "topicId": "robotics-lab-world-models-simulation-transfer-dfe6723e85e1",
+        "g": 18
+      },
+      "to": {
+        "topicId": "robotics-lab-world-models-simulation-transfer-dfe6723e85e1",
+        "g": 20
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-c141006e0b81",
+      "u": "https://proceedings.mlr.press/v270/yu25b.html",
+      "from": {
+        "topicId": "robotics-lab-world-models-simulation-transfer-dfe6723e85e1",
+        "g": 18
+      },
+      "to": {
+        "topicId": "robotics-lab-world-models-simulation-transfer-dfe6723e85e1",
+        "g": 20
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-5498a0d02403",
+      "u": "https://roboticsproceedings.org/rss22/p139.html",
+      "from": {
+        "topicId": "robotics-lab-world-models-simulation-transfer-dfe6723e85e1",
+        "g": 18
+      },
+      "to": {
+        "topicId": "robotics-lab-world-models-simulation-transfer-dfe6723e85e1",
+        "g": 20
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-c5368e242958",
+      "u": "https://openreview.net/pdf?id=b_CQDy9vrD1",
+      "from": {
+        "topicId": "robotics-lab-world-models-simulation-transfer-329653e82568",
+        "g": 19
+      },
+      "to": {
+        "topicId": "robotics-lab-world-models-simulation-transfer-329653e82568",
+        "g": 21
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-685493265d49",
+      "u": "https://www.roboticsproceedings.org/rss20/p050.html",
+      "from": {
+        "topicId": "robotics-lab-world-models-simulation-transfer-329653e82568",
+        "g": 19
+      },
+      "to": {
+        "topicId": "robotics-lab-world-models-simulation-transfer-329653e82568",
+        "g": 21
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-e1c1adbaae3c",
+      "u": "https://proceedings.mlr.press/v205/li23a.html",
+      "from": {
+        "topicId": "robotics-lab-world-models-simulation-transfer-329653e82568",
+        "g": 19
+      },
+      "to": {
+        "topicId": "robotics-lab-world-models-simulation-transfer-329653e82568",
+        "g": 21
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-88e933819d05",
+      "u": "https://proceedings.mlr.press/v270/higuera25a.html",
+      "from": {
+        "topicId": "robotics-lab-contact-human-robot-interaction-body-design-4abf9a84956d",
+        "g": 20
+      },
+      "to": {
+        "topicId": "robotics-lab-contact-human-robot-interaction-body-design-4abf9a84956d",
+        "g": 22
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-f1bcd45ef2cd",
+      "u": "https://gewu-lab.github.io/AnyTouch/",
+      "from": {
+        "topicId": "robotics-lab-contact-human-robot-interaction-body-design-4abf9a84956d",
+        "g": 20
+      },
+      "to": {
+        "topicId": "robotics-lab-contact-human-robot-interaction-body-design-4abf9a84956d",
+        "g": 22
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-57da559d8b2f",
+      "u": "https://roboticsproceedings.org/rss21/p052.html",
+      "from": {
+        "topicId": "robotics-lab-contact-human-robot-interaction-body-design-4abf9a84956d",
+        "g": 20
+      },
+      "to": {
+        "topicId": "robotics-lab-contact-human-robot-interaction-body-design-4abf9a84956d",
+        "g": 22
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-862527be3a7d",
+      "u": "https://roboticsproceedings.org/rss19/p014.html",
+      "from": {
+        "topicId": "robotics-lab-contact-human-robot-interaction-body-design-d854b74c982b",
+        "g": 21
+      },
+      "to": {
+        "topicId": "robotics-lab-contact-human-robot-interaction-body-design-d854b74c982b",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-8be841467306",
+      "u": "https://www.roboticsproceedings.org/rss20/p025.html",
+      "from": {
+        "topicId": "robotics-lab-contact-human-robot-interaction-body-design-d854b74c982b",
+        "g": 21
+      },
+      "to": {
+        "topicId": "robotics-lab-contact-human-robot-interaction-body-design-d854b74c982b",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-1e472276faf1",
+      "u": "https://proceedings.mlr.press/v229/wang23b.html",
+      "from": {
+        "topicId": "robotics-lab-contact-human-robot-interaction-body-design-b418659efd48",
+        "g": 22
+      },
+      "to": {
+        "topicId": "robotics-lab-contact-human-robot-interaction-body-design-b418659efd48",
+        "g": 23
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-88513acaccf4",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8b1008098947ad59144c18a78337f937-Abstract-Conference.html",
+      "from": {
+        "topicId": "robotics-lab-contact-human-robot-interaction-body-design-b418659efd48",
+        "g": 22
+      },
+      "to": {
+        "topicId": "robotics-lab-contact-human-robot-interaction-body-design-b418659efd48",
+        "g": 23
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-bab6b17d3bab",
+      "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10576117/",
+      "from": {
+        "topicId": "robotics-lab-contact-human-robot-interaction-body-design-b418659efd48",
+        "g": 22
+      },
+      "to": {
+        "topicId": "robotics-lab-contact-human-robot-interaction-body-design-b418659efd48",
+        "g": 23
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-2e8feba55280",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8c3c666820ea055a77726d66fc7d447f-Abstract-Datasets_and_Benchmarks.html",
+      "from": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-c14f937caecd",
+        "g": 23
+      },
+      "to": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-c14f937caecd",
+        "g": 24
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-76e692b7c04c",
+      "u": "https://proceedings.mlr.press/v270/li25c.html",
+      "from": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-c14f937caecd",
+        "g": 23
+      },
+      "to": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-c14f937caecd",
+        "g": 24
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-40108858eb28",
+      "u": "https://roboticsproceedings.org/rss22/p062.html",
+      "from": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-c14f937caecd",
+        "g": 23
+      },
+      "to": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-c14f937caecd",
+        "g": 24
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-144fbda3cda8",
+      "u": "https://proceedings.mlr.press/v229/ren23a.html",
+      "from": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-b095aafdc019",
+        "g": 24
+      },
+      "to": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-b095aafdc019",
+        "g": 25
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-a160e9441af9",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/f95606d8e870020085990d9650b4f2a1-Abstract-Conference.html",
+      "from": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-b095aafdc019",
+        "g": 24
+      },
+      "to": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-b095aafdc019",
+        "g": 25
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-b4288bdf2241",
+      "u": "https://proceedings.mlr.press/v305/ganai25a.html",
+      "from": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-b095aafdc019",
+        "g": 24
+      },
+      "to": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-b095aafdc019",
+        "g": 25
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-71e763cf1d75",
+      "u": "https://ieeexplore.ieee.org/document/9561902/",
+      "from": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-f554649ca2f3",
+        "g": 25
+      },
+      "to": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-f554649ca2f3",
+        "g": 13
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-9122e3a5652a",
+      "u": "https://ojs.aaai.org/index.php/AAAI/article/view/21266",
+      "from": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-f554649ca2f3",
+        "g": 25
+      },
+      "to": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-f554649ca2f3",
+        "g": 13
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-a65eb902bb75",
+      "u": "https://ojs.aaai.org/index.php/AAAI/article/view/26377",
+      "from": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-f554649ca2f3",
+        "g": 25
+      },
+      "to": {
+        "topicId": "robotics-lab-evaluation-reliability-multi-robot-systems-f554649ca2f3",
+        "g": 13
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-8dc9773aedd7",
+      "u": "https://www.science.org/doi/10.1126/science.aax1566",
+      "from": {
+        "topicId": "robotics-lab-automated-experiments-scientific-workflows-7e6dbb0c7ab6",
+        "g": 0
+      },
+      "to": {
+        "topicId": "robotics-lab-automated-experiments-scientific-workflows-7e6dbb0c7ab6",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-187b8f495b64",
+      "u": "https://www.nature.com/articles/s42256-024-00832-8",
+      "from": {
+        "topicId": "robotics-lab-automated-experiments-scientific-workflows-6ddaf3910039",
+        "g": 1
+      },
+      "to": {
+        "topicId": "robotics-lab-automated-experiments-scientific-workflows-6ddaf3910039",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-9fb8da842ccc",
+      "u": "https://www.nature.com/articles/s41586-020-2442-2",
+      "from": {
+        "topicId": "robotics-lab-automated-experiments-scientific-workflows-7e6dbb0c7ab6",
+        "g": 0
+      },
+      "to": {
+        "topicId": "robotics-lab-automated-experiments-scientific-workflows-7e6dbb0c7ab6",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-d55d509e2598",
+      "u": "https://www.nature.com/articles/s41586-023-06734-w",
+      "from": {
+        "topicId": "robotics-lab-automated-experiments-scientific-workflows-7e6dbb0c7ab6",
+        "g": 0
+      },
+      "to": {
+        "topicId": "robotics-lab-automated-experiments-scientific-workflows-7e6dbb0c7ab6",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-56dffedbe26c",
+      "u": "https://www.nature.com/articles/s41586-023-06792-0",
+      "from": {
+        "topicId": "robotics-lab-automated-experiments-scientific-workflows-6ddaf3910039",
+        "g": 1
+      },
+      "to": {
+        "topicId": "robotics-lab-automated-experiments-scientific-workflows-6ddaf3910039",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "robotics-lab",
+      "paperId": "paper-2ae991ff0aee",
+      "u": "https://www.nature.com/articles/s41586-024-08173-7",
+      "from": {
+        "topicId": "robotics-lab-automated-experiments-scientific-workflows-7e6dbb0c7ab6",
+        "g": 0
+      },
+      "to": {
+        "topicId": "robotics-lab-automated-experiments-scientific-workflows-7e6dbb0c7ab6",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-cdb6e616aebe",
+      "u": "https://doi.org/10.1145/3372885.3373824",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-406a3a25b47e",
+        "g": 12
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-406a3a25b47e",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-dc69298c80e4",
+      "u": "https://doi.org/10.1007/978-3-030-79876-5_37",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-406a3a25b47e",
+        "g": 12
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-406a3a25b47e",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-31bf08657cd5",
+      "u": "https://openreview.net/forum?id=9ZPegFuFTFv",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-406a3a25b47e",
+        "g": 12
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-406a3a25b47e",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-0abc7c656641",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/4441469427094f8873d0fecb0c4e1cee-Abstract-Datasets_and_Benchmarks.html",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-406a3a25b47e",
+        "g": 12
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-406a3a25b47e",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-a8fcd32e743b",
+      "u": "https://arxiv.org/abs/2009.03393",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-2ac169d64abc",
+        "g": 13
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-2ac169d64abc",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-2449dc2f0a95",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/a8901c5e85fb8e1823bbf0f755053672-Abstract-Conference.html",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-2ac169d64abc",
+        "g": 13
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-2ac169d64abc",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-fff9e724dc7b",
+      "u": "https://openreview.net/forum?id=SMa9EAovKMC",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-2ac169d64abc",
+        "g": 13
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-2ac169d64abc",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-928f966d529b",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/b3b55c366d641c07180c40e4f978f311-Abstract-Conference.html",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-2ac169d64abc",
+        "g": 13
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-2ac169d64abc",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-3b8e43323aa2",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/d0c6bc641a56bebee9d985b937307367-Abstract-Conference.html",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-ceea7b76417e",
+        "g": 14
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-ceea7b76417e",
+        "g": 10
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-3600df4d2084",
+      "u": "https://www.nature.com/articles/s41586-023-06747-5",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-ceea7b76417e",
+        "g": 14
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-ceea7b76417e",
+        "g": 10
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-4b41c946f89e",
+      "u": "https://www.nature.com/articles/s41586-025-09833-y",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-ceea7b76417e",
+        "g": 14
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-ceea7b76417e",
+        "g": 10
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-a0ee18bd2d58",
+      "u": "https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/be83ab3ecd0db773eb2dc1b0a17836a1-Abstract-round2.html",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-89dc690ce84f",
+        "g": 15
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-89dc690ce84f",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-edaaae1b9494",
+      "u": "https://arxiv.org/abs/2110.14168",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-89dc690ce84f",
+        "g": 15
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-89dc690ce84f",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-6fee4ca55181",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/18abbeef8cfe9203fdf9053c9c4fe191-Abstract-Conference.html",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-89dc690ce84f",
+        "g": 15
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-89dc690ce84f",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-9fb5bdaba960",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/b225f5c7cd13615e9558c3931fa4e66f-Abstract-Conference.html",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-89dc690ce84f",
+        "g": 15
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-89dc690ce84f",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-1b3f01b9f1f4",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/aca97732e30bcf1303bc22ac3924fd16-Abstract-Conference.html",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-266b7787ecae",
+        "g": 16
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-89dc690ce84f",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-fa24a29129a1",
+      "u": "https://aclanthology.org/2024.acl-long.510/",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-266b7787ecae",
+        "g": 16
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-89dc690ce84f",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-f86298d7374c",
+      "u": "https://www.nature.com/articles/s41586-021-03229-4",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-561646169f93",
+        "g": 17
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-561646169f93",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-e089ccf7a8bf",
+      "u": "https://www.nature.com/articles/s41586-021-04086-x",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-561646169f93",
+        "g": 17
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-561646169f93",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-762e1a931b50",
+      "u": "https://doi.org/10.1080/10586458.2024.2382361",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-561646169f93",
+        "g": 17
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-561646169f93",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-fc7f8c4f05ca",
+      "u": "https://arxiv.org/abs/2104.14516",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-c041b9540384",
+        "g": 18
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-561646169f93",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-5d0733c554b9",
+      "u": "https://www.nature.com/articles/s41586-023-06924-6",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-c041b9540384",
+        "g": 18
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-561646169f93",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-560a2909b775",
+      "u": "https://arxiv.org/abs/2411.00566",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-c041b9540384",
+        "g": 18
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-561646169f93",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-eebb9f7abc4d",
+      "u": "https://openreview.net/forum?id=S1eZYeHFDS",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-23229a355100",
+        "g": 19
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-23229a355100",
+        "g": 13
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-6c431df293aa",
+      "u": "https://www.nature.com/articles/s41586-022-05172-4",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-23229a355100",
+        "g": 19
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-23229a355100",
+        "g": 13
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-9c0bc646052f",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/aa280e73c4e23e765fde232571116d3b-Abstract-Conference.html",
+      "from": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-23229a355100",
+        "g": 19
+      },
+      "to": {
+        "topicId": "mathematics-mathematical-reasoning-proof-discovery-23229a355100",
+        "g": 13
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-eaf7b85335d0",
+      "u": "https://openreview.net/forum?id=jh-rTtvkGeM",
+      "from": {
+        "topicId": "mathematics-optimization-learning-generalization-64bbfe4f717d",
+        "g": 7
+      },
+      "to": {
+        "topicId": "mathematics-optimization-learning-generalization-64bbfe4f717d",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-157b9b32db9f",
+      "u": "https://openreview.net/forum?id=nhKHA59gXz",
+      "from": {
+        "topicId": "mathematics-optimization-learning-generalization-64bbfe4f717d",
+        "g": 7
+      },
+      "to": {
+        "topicId": "mathematics-optimization-learning-generalization-64bbfe4f717d",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-344f2ea0d6d8",
+      "u": "https://jmlr.org/papers/v19/18-188.html",
+      "from": {
+        "topicId": "mathematics-optimization-learning-generalization-766b6ec20964",
+        "g": 8
+      },
+      "to": {
+        "topicId": "mathematics-optimization-learning-generalization-64bbfe4f717d",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-20213ae17359",
+      "u": "https://openreview.net/forum?id=S1eK3i09YQ",
+      "from": {
+        "topicId": "mathematics-optimization-learning-generalization-766b6ec20964",
+        "g": 8
+      },
+      "to": {
+        "topicId": "mathematics-optimization-learning-generalization-90c73b5d6231",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-5de614fe98e2",
+      "u": "https://proceedings.mlr.press/v97/allen-zhu19a.html",
+      "from": {
+        "topicId": "mathematics-optimization-learning-generalization-766b6ec20964",
+        "g": 8
+      },
+      "to": {
+        "topicId": "mathematics-optimization-learning-generalization-90c73b5d6231",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-313ca9c70a4f",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2018/hash/5a4be1fa34e62bb8a6ec6b91d2462f5a-Abstract.html",
+      "from": {
+        "topicId": "mathematics-optimization-learning-generalization-90c73b5d6231",
+        "g": 9
+      },
+      "to": {
+        "topicId": "mathematics-optimization-learning-generalization-90c73b5d6231",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-45a0b54d4dad",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2019/hash/0d1a9651497a38d8b1c3871c84528bd4-Abstract.html",
+      "from": {
+        "topicId": "mathematics-optimization-learning-generalization-90c73b5d6231",
+        "g": 9
+      },
+      "to": {
+        "topicId": "mathematics-optimization-learning-generalization-90c73b5d6231",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-a364e1db5ce0",
+      "u": "https://proceedings.mlr.press/v139/yang21c.html",
+      "from": {
+        "topicId": "mathematics-optimization-learning-generalization-90c73b5d6231",
+        "g": 9
+      },
+      "to": {
+        "topicId": "mathematics-optimization-learning-generalization-90c73b5d6231",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-b0145844a753",
+      "u": "https://openreview.net/forum?id=Sy8gdB9xx",
+      "from": {
+        "topicId": "mathematics-optimization-learning-generalization-73279c4fa0a5",
+        "g": 10
+      },
+      "to": {
+        "topicId": "mathematics-optimization-learning-generalization-73279c4fa0a5",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-899d871fb1ec",
+      "u": "https://doi.org/10.1073/pnas.1903070116",
+      "from": {
+        "topicId": "mathematics-optimization-learning-generalization-73279c4fa0a5",
+        "g": 10
+      },
+      "to": {
+        "topicId": "mathematics-optimization-learning-generalization-73279c4fa0a5",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-c3d17bfcba39",
+      "u": "https://doi.org/10.1073/pnas.1907378117",
+      "from": {
+        "topicId": "mathematics-optimization-learning-generalization-73279c4fa0a5",
+        "g": 10
+      },
+      "to": {
+        "topicId": "mathematics-optimization-learning-generalization-73279c4fa0a5",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-8c2df44a4158",
+      "u": "https://openreview.net/forum?id=B1g5sA4twr",
+      "from": {
+        "topicId": "mathematics-optimization-learning-generalization-73279c4fa0a5",
+        "g": 10
+      },
+      "to": {
+        "topicId": "mathematics-optimization-learning-generalization-73279c4fa0a5",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-bbc68f5d5617",
+      "u": "https://arxiv.org/abs/2201.02177",
+      "from": {
+        "topicId": "mathematics-optimization-learning-generalization-c8b014505702",
+        "g": 11
+      },
+      "to": {
+        "topicId": "mathematics-optimization-learning-generalization-c8b014505702",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-3b7dcba21d6c",
+      "u": "https://openreview.net/forum?id=9XFSbDPmdW",
+      "from": {
+        "topicId": "mathematics-optimization-learning-generalization-c8b014505702",
+        "g": 11
+      },
+      "to": {
+        "topicId": "mathematics-optimization-learning-generalization-c8b014505702",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-5ca11b94987a",
+      "u": "https://doi.org/10.1073/pnas.2311878121",
+      "from": {
+        "topicId": "mathematics-optimization-learning-generalization-c8b014505702",
+        "g": 11
+      },
+      "to": {
+        "topicId": "mathematics-optimization-learning-generalization-c8b014505702",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-bfb796b51e5c",
+      "u": "https://jmlr.org/papers/v6/hyvarinen05a.html",
+      "from": {
+        "topicId": "mathematics-probability-generation-optimal-transport-d7e4c4921b60",
+        "g": 3
+      },
+      "to": {
+        "topicId": "mathematics-probability-generation-optimal-transport-46e26a94551c",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-f8794f6ffaed",
+      "u": "https://openreview.net/forum?id=zyLVMgsZ0U_",
+      "from": {
+        "topicId": "mathematics-probability-generation-optimal-transport-d7e4c4921b60",
+        "g": 3
+      },
+      "to": {
+        "topicId": "mathematics-probability-generation-optimal-transport-46e26a94551c",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-bf8e308b03cf",
+      "u": "https://doi.org/10.1007/s002110050002",
+      "from": {
+        "topicId": "mathematics-probability-generation-optimal-transport-6e6e9dab7500",
+        "g": 4
+      },
+      "to": {
+        "topicId": "mathematics-probability-generation-optimal-transport-6e6e9dab7500",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-acc63d079a92",
+      "u": "https://openreview.net/forum?id=li7qeBbCR1t",
+      "from": {
+        "topicId": "mathematics-probability-generation-optimal-transport-1196c30068e6",
+        "g": 5
+      },
+      "to": {
+        "topicId": "mathematics-probability-generation-optimal-transport-6e6e9dab7500",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-afd6962ab53d",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/8ff87c96935244b63503f542472462b3-Abstract-Conference.html",
+      "from": {
+        "topicId": "mathematics-probability-generation-optimal-transport-46e26a94551c",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mathematics-probability-generation-optimal-transport-46e26a94551c",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-d577e58651be",
+      "u": "https://proceedings.mlr.press/v202/chen23o.html",
+      "from": {
+        "topicId": "mathematics-probability-generation-optimal-transport-46e26a94551c",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mathematics-probability-generation-optimal-transport-46e26a94551c",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-b5a5bc3f9139",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/9edce07129d2ec4c511a8783eb3d81b5-Abstract-Conference.html",
+      "from": {
+        "topicId": "mathematics-probability-generation-optimal-transport-46e26a94551c",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mathematics-probability-generation-optimal-transport-46e26a94551c",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-19daa0d5f989",
+      "u": "https://doi.org/10.1109/msp.2017.2693418",
+      "from": {
+        "topicId": "mathematics-geometry-symmetry-graph-representations-11c990f9ab76",
+        "g": 0
+      },
+      "to": {
+        "topicId": "mathematics-geometry-symmetry-graph-representations-11c990f9ab76",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-d3f40b1c3d44",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2019/hash/b9cfe8b6042cf759dc4c0cccb27a6737-Abstract.html",
+      "from": {
+        "topicId": "mathematics-geometry-symmetry-graph-representations-11c990f9ab76",
+        "g": 0
+      },
+      "to": {
+        "topicId": "mathematics-geometry-symmetry-graph-representations-11c990f9ab76",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-01306ab84db7",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2019/hash/ea9268cb43f55d1d12380fb6ea5bf572-Abstract.html",
+      "from": {
+        "topicId": "mathematics-geometry-symmetry-graph-representations-2269565224ec",
+        "g": 1
+      },
+      "to": {
+        "topicId": "mathematics-geometry-symmetry-graph-representations-11c990f9ab76",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-114f75294548",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/f1b0775946bc0329b35b823b86eeb5f5-Abstract.html",
+      "from": {
+        "topicId": "mathematics-geometry-symmetry-graph-representations-2269565224ec",
+        "g": 1
+      },
+      "to": {
+        "topicId": "mathematics-geometry-symmetry-graph-representations-11c990f9ab76",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-098371bafe80",
+      "u": "https://openreview.net/forum?id=ryGs6iA5Km",
+      "from": {
+        "topicId": "mathematics-geometry-symmetry-graph-representations-42b67f6d7bfb",
+        "g": 2
+      },
+      "to": {
+        "topicId": "mathematics-geometry-symmetry-graph-representations-42b67f6d7bfb",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-33c451a206c6",
+      "u": "https://doi.org/10.1609/aaai.v33i01.33014602",
+      "from": {
+        "topicId": "mathematics-geometry-symmetry-graph-representations-42b67f6d7bfb",
+        "g": 2
+      },
+      "to": {
+        "topicId": "mathematics-geometry-symmetry-graph-representations-42b67f6d7bfb",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-9a760177cede",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2019/hash/bb04af0f7ecaee4aae62035497da1387-Abstract.html",
+      "from": {
+        "topicId": "mathematics-geometry-symmetry-graph-representations-42b67f6d7bfb",
+        "g": 2
+      },
+      "to": {
+        "topicId": "mathematics-geometry-symmetry-graph-representations-42b67f6d7bfb",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-8c4fd7677b05",
+      "u": "https://doi.org/10.4007/annals.2009.170.941",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-4d2fee2adcd6",
+        "g": 20
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-4d2fee2adcd6",
+        "g": 14
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-e144d18a3d02",
+      "u": "https://doi.org/10.4007/annals.2026.203.3.4",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-4d2fee2adcd6",
+        "g": 20
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-4d2fee2adcd6",
+        "g": 14
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-124d195a01f8",
+      "u": "https://doi.org/10.4007/annals.2024.199.2.8",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-4d2fee2adcd6",
+        "g": 20
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-4d2fee2adcd6",
+        "g": 14
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-cbf1f5c79607",
+      "u": "https://doi.org/10.4007/annals.2019.190.3.6",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-93fb746b1a13",
+        "g": 21
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-93fb746b1a13",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-ed5d9e470bf6",
+      "u": "https://doi.org/10.4007/annals.2021.194.3.5",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-93fb746b1a13",
+        "g": 21
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-93fb746b1a13",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-4eee69c65dce",
+      "u": "https://doi.org/10.4007/annals.2021.194.2.2",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-93fb746b1a13",
+        "g": 21
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-93fb746b1a13",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-dd40373114d1",
+      "u": "https://arxiv.org/abs/2211.09055",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-93fb746b1a13",
+        "g": 21
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-93fb746b1a13",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-66ced7ae3e58",
+      "u": "https://doi.org/10.1090/jams/1028",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-93fb746b1a13",
+        "g": 21
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-93fb746b1a13",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-4599f5c49fe8",
+      "u": "https://doi.org/10.1109/focs57990.2023.00059",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-fa20f809d1b6",
+        "g": 22
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-fa20f809d1b6",
+        "g": 16
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-2a0fe40e87d6",
+      "u": "https://doi.org/10.4007/annals.2025.201.2.5",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-fa20f809d1b6",
+        "g": 22
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-fa20f809d1b6",
+        "g": 16
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-b8ba83143e71",
+      "u": "https://arxiv.org/abs/2402.17995",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-fa20f809d1b6",
+        "g": 22
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-fa20f809d1b6",
+        "g": 16
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-bed0de999ddb",
+      "u": "https://doi.org/10.4007/annals.2014.179.3.7",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-ec0c157cd41e",
+        "g": 23
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-ec0c157cd41e",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-abbd33a34fb7",
+      "u": "https://doi.org/10.4007/annals.2015.181.1.7",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-ec0c157cd41e",
+        "g": 23
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-ec0c157cd41e",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-ce54d07311fb",
+      "u": "https://doi.org/10.4007/annals.2026.203.2.6",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-ec0c157cd41e",
+        "g": 23
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-ec0c157cd41e",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-b72c89c004fa",
+      "u": "https://doi.org/10.1007/s10240-021-00127-3",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-ec0c157cd41e",
+        "g": 23
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-ec0c157cd41e",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-ee4c8488311b",
+      "u": "https://doi.org/10.4007/annals.2017.185.3.7",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-28438132f30a",
+        "g": 24
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-28438132f30a",
+        "g": 18
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-e19d671ac5af",
+      "u": "https://doi.org/10.4007/annals.2017.185.3.8",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-28438132f30a",
+        "g": 24
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-28438132f30a",
+        "g": 18
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-411096b68e3c",
+      "u": "https://doi.org/10.4007/annals.2020.191.2.5",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-28438132f30a",
+        "g": 24
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-28438132f30a",
+        "g": 18
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-7c24c4d8c87b",
+      "u": "https://arxiv.org/abs/2405.03599",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-28438132f30a",
+        "g": 24
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-28438132f30a",
+        "g": 18
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-a5a151e91be7",
+      "u": "https://doi.org/10.4007/annals.2015.182.1.9",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-917e2f98373e",
+        "g": 25
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-917e2f98373e",
+        "g": 19
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-c02060b6bc77",
+      "u": "https://doi.org/10.4007/annals.2016.184.2.7",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-917e2f98373e",
+        "g": 25
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-917e2f98373e",
+        "g": 19
+      }
+    },
+    {
+      "themeId": "mathematics",
+      "paperId": "paper-6e20dbfca0bb",
+      "u": "https://arxiv.org/abs/2502.17655",
+      "from": {
+        "topicId": "mathematics-pure-mathematics-917e2f98373e",
+        "g": 25
+      },
+      "to": {
+        "topicId": "mathematics-pure-mathematics-917e2f98373e",
+        "g": 19
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-c38a8009142b",
+      "u": "https://www.nature.com/articles/s41586-021-03819-2",
+      "from": {
+        "topicId": "life-medicine-biological-structure-engineering-2fbb201dcae1",
+        "g": 0
+      },
+      "to": {
+        "topicId": "life-medicine-biological-structure-engineering-2fbb201dcae1",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-6d37118a128b",
+      "u": "https://www.science.org/doi/10.1126/science.abj8754",
+      "from": {
+        "topicId": "life-medicine-biological-structure-engineering-2fbb201dcae1",
+        "g": 0
+      },
+      "to": {
+        "topicId": "life-medicine-biological-structure-engineering-2fbb201dcae1",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-434a84f76089",
+      "u": "https://www.science.org/doi/10.1126/science.ade2574",
+      "from": {
+        "topicId": "life-medicine-biological-structure-engineering-2fbb201dcae1",
+        "g": 0
+      },
+      "to": {
+        "topicId": "life-medicine-biological-structure-engineering-2fbb201dcae1",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-880baf1e28df",
+      "u": "https://www.nature.com/articles/s41586-024-07487-w",
+      "from": {
+        "topicId": "life-medicine-biological-structure-engineering-2fbb201dcae1",
+        "g": 0
+      },
+      "to": {
+        "topicId": "life-medicine-biological-structure-engineering-2fbb201dcae1",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-4d83f25d9efe",
+      "u": "https://doi.org/10.1073/pnas.2016239118",
+      "from": {
+        "topicId": "life-medicine-biological-structure-engineering-092ff0c47599",
+        "g": 1
+      },
+      "to": {
+        "topicId": "life-medicine-biological-structure-engineering-092ff0c47599",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-b145ede638d0",
+      "u": "https://doi.org/10.1109/tpami.2021.3095381",
+      "from": {
+        "topicId": "life-medicine-biological-structure-engineering-092ff0c47599",
+        "g": 1
+      },
+      "to": {
+        "topicId": "life-medicine-biological-structure-engineering-092ff0c47599",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-1e00412403df",
+      "u": "https://www.nature.com/articles/s41587-022-01618-2",
+      "from": {
+        "topicId": "life-medicine-biological-structure-engineering-092ff0c47599",
+        "g": 1
+      },
+      "to": {
+        "topicId": "life-medicine-biological-structure-engineering-092ff0c47599",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-cd2b78db2764",
+      "u": "https://www.science.org/doi/10.1126/science.ads0018",
+      "from": {
+        "topicId": "life-medicine-biological-structure-engineering-092ff0c47599",
+        "g": 1
+      },
+      "to": {
+        "topicId": "life-medicine-biological-structure-engineering-092ff0c47599",
+        "g": 1
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-3d3698969f0b",
+      "u": "https://www.science.org/doi/10.1126/science.add2187",
+      "from": {
+        "topicId": "life-medicine-biological-structure-engineering-d4223230142c",
+        "g": 2
+      },
+      "to": {
+        "topicId": "life-medicine-biological-structure-engineering-d4223230142c",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-ac1ebeb9dbc1",
+      "u": "https://proceedings.mlr.press/v202/yim23a.html",
+      "from": {
+        "topicId": "life-medicine-biological-structure-engineering-d4223230142c",
+        "g": 2
+      },
+      "to": {
+        "topicId": "life-medicine-biological-structure-engineering-d4223230142c",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-5a9ec91c7807",
+      "u": "https://www.nature.com/articles/s41586-023-06415-8",
+      "from": {
+        "topicId": "life-medicine-biological-structure-engineering-d4223230142c",
+        "g": 2
+      },
+      "to": {
+        "topicId": "life-medicine-biological-structure-engineering-d4223230142c",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-4ba8cd4a47ec",
+      "u": "https://www.nature.com/articles/s41586-023-06728-8",
+      "from": {
+        "topicId": "life-medicine-biological-structure-engineering-d4223230142c",
+        "g": 2
+      },
+      "to": {
+        "topicId": "life-medicine-biological-structure-engineering-d4223230142c",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-ee480b758423",
+      "u": "https://proceedings.mlr.press/v162/stark22b.html",
+      "from": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-4006e2645f2c",
+        "g": 3
+      },
+      "to": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-4006e2645f2c",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-686342b950d1",
+      "u": "https://openreview.net/forum?id=kKF8_K-mBbS",
+      "from": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-4006e2645f2c",
+        "g": 3
+      },
+      "to": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-4006e2645f2c",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-84929e5a8fcf",
+      "u": "https://doi.org/10.1039/d3sc04185a",
+      "from": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-4006e2645f2c",
+        "g": 3
+      },
+      "to": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-4006e2645f2c",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-8c7f0bb44179",
+      "u": "https://www.nature.com/articles/s42256-024-00792-z",
+      "from": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-bcd133c45158",
+        "g": 4
+      },
+      "to": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-4006e2645f2c",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-89e8a77b0964",
+      "u": "https://www.nature.com/articles/s41467-024-45461-2",
+      "from": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-bcd133c45158",
+        "g": 4
+      },
+      "to": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-4006e2645f2c",
+        "g": 3
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-6f9e1b8ee1b3",
+      "u": "https://www.science.org/doi/10.1126/science.adl2528",
+      "from": {
+        "topicId": "life-medicine-biological-structure-engineering-c6da537390d3",
+        "g": 5
+      },
+      "to": {
+        "topicId": "life-medicine-biological-structure-engineering-2fbb201dcae1",
+        "g": 0
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-41711d457e89",
+      "u": "https://doi.org/10.1016/j.cell.2020.01.021",
+      "from": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-b77bc397fee3",
+        "g": 6
+      },
+      "to": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-b77bc397fee3",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-b4f0fece0364",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8bd31288ad8e9a31d519fdeede7ee47d-Abstract-Conference.html",
+      "from": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-b77bc397fee3",
+        "g": 6
+      },
+      "to": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-b77bc397fee3",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-2fea0b321d91",
+      "u": "https://www.nature.com/articles/s41586-023-06887-8",
+      "from": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-b77bc397fee3",
+        "g": 6
+      },
+      "to": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-b77bc397fee3",
+        "g": 4
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-431c62f92679",
+      "u": "https://proceedings.mlr.press/v162/peng22b.html",
+      "from": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-7ce82ffaa3e3",
+        "g": 7
+      },
+      "to": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-7ce82ffaa3e3",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-e1f677c82795",
+      "u": "https://openreview.net/forum?id=kJqXEPXMsE0",
+      "from": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-7ce82ffaa3e3",
+        "g": 7
+      },
+      "to": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-7ce82ffaa3e3",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-35462002aff2",
+      "u": "https://www.nature.com/articles/s43588-024-00737-x",
+      "from": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-7ce82ffaa3e3",
+        "g": 7
+      },
+      "to": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-7ce82ffaa3e3",
+        "g": 5
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-e9edd371f5bc",
+      "u": "https://www.nature.com/articles/s41592-021-01252-x",
+      "from": {
+        "topicId": "life-medicine-genomics-cells-53cf8ea9a9c3",
+        "g": 8
+      },
+      "to": {
+        "topicId": "life-medicine-genomics-cells-53cf8ea9a9c3",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-e3065ed7f561",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/86ab6927ee4ae9bde4247793c46797c7-Abstract-Conference.html",
+      "from": {
+        "topicId": "life-medicine-genomics-cells-53cf8ea9a9c3",
+        "g": 8
+      },
+      "to": {
+        "topicId": "life-medicine-genomics-cells-53cf8ea9a9c3",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-982cfafb99c5",
+      "u": "https://www.science.org/doi/10.1126/science.ado9336",
+      "from": {
+        "topicId": "life-medicine-genomics-cells-53cf8ea9a9c3",
+        "g": 8
+      },
+      "to": {
+        "topicId": "life-medicine-genomics-cells-53cf8ea9a9c3",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-d542b0f5554e",
+      "u": "https://www.nature.com/articles/s41592-024-02523-z",
+      "from": {
+        "topicId": "life-medicine-genomics-cells-53cf8ea9a9c3",
+        "g": 8
+      },
+      "to": {
+        "topicId": "life-medicine-genomics-cells-53cf8ea9a9c3",
+        "g": 6
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-6603496e6054",
+      "u": "https://www.nature.com/articles/s41592-018-0229-2",
+      "from": {
+        "topicId": "life-medicine-genomics-cells-5d8b673bd379",
+        "g": 9
+      },
+      "to": {
+        "topicId": "life-medicine-genomics-cells-5d8b673bd379",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-3b9df02c3e9d",
+      "u": "https://www.nature.com/articles/s41586-023-06139-9",
+      "from": {
+        "topicId": "life-medicine-genomics-cells-5d8b673bd379",
+        "g": 9
+      },
+      "to": {
+        "topicId": "life-medicine-genomics-cells-5d8b673bd379",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-b59bad90f037",
+      "u": "https://www.nature.com/articles/s41592-024-02201-0",
+      "from": {
+        "topicId": "life-medicine-genomics-cells-5d8b673bd379",
+        "g": 9
+      },
+      "to": {
+        "topicId": "life-medicine-genomics-cells-5d8b673bd379",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-b7cdb5f794c0",
+      "u": "https://doi.org/10.1186/s13059-025-03574-x",
+      "from": {
+        "topicId": "life-medicine-genomics-cells-5d8b673bd379",
+        "g": 9
+      },
+      "to": {
+        "topicId": "life-medicine-genomics-cells-5d8b673bd379",
+        "g": 7
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-5405b4d8edbe",
+      "u": "https://www.nature.com/articles/s41586-021-04043-8",
+      "from": {
+        "topicId": "life-medicine-genomics-cells-cbe335abe4d8",
+        "g": 10
+      },
+      "to": {
+        "topicId": "life-medicine-genomics-cells-cbe335abe4d8",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-6c8a7d400511",
+      "u": "https://doi.org/10.15252/msb.202211517",
+      "from": {
+        "topicId": "life-medicine-genomics-cells-cbe335abe4d8",
+        "g": 10
+      },
+      "to": {
+        "topicId": "life-medicine-genomics-cells-cbe335abe4d8",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-77d1d9720236",
+      "u": "https://www.science.org/doi/10.1126/science.adg7492",
+      "from": {
+        "topicId": "life-medicine-genomics-cells-cbe335abe4d8",
+        "g": 10
+      },
+      "to": {
+        "topicId": "life-medicine-genomics-cells-cbe335abe4d8",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-b165848eb734",
+      "u": "https://www.nature.com/articles/s41587-023-01905-6",
+      "from": {
+        "topicId": "life-medicine-genomics-cells-cbe335abe4d8",
+        "g": 10
+      },
+      "to": {
+        "topicId": "life-medicine-genomics-cells-cbe335abe4d8",
+        "g": 8
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-9e8c84751726",
+      "u": "https://www.nature.com/articles/s41592-020-01008-z",
+      "from": {
+        "topicId": "life-medicine-medical-imaging-pathology-3b661324a7a0",
+        "g": 11
+      },
+      "to": {
+        "topicId": "life-medicine-medical-imaging-pathology-3b661324a7a0",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-ea334f3ab5fe",
+      "u": "https://doi.org/10.1148/ryai.230024",
+      "from": {
+        "topicId": "life-medicine-medical-imaging-pathology-3b661324a7a0",
+        "g": 11
+      },
+      "to": {
+        "topicId": "life-medicine-medical-imaging-pathology-3b661324a7a0",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-78435a10bf44",
+      "u": "https://www.nature.com/articles/s41467-024-44824-z",
+      "from": {
+        "topicId": "life-medicine-medical-imaging-pathology-3b661324a7a0",
+        "g": 11
+      },
+      "to": {
+        "topicId": "life-medicine-medical-imaging-pathology-3b661324a7a0",
+        "g": 9
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-a910158ff6fd",
+      "u": "https://www.nature.com/articles/s41551-020-00682-w",
+      "from": {
+        "topicId": "life-medicine-medical-imaging-pathology-74c4f1b1a1d5",
+        "g": 12
+      },
+      "to": {
+        "topicId": "life-medicine-medical-imaging-pathology-74c4f1b1a1d5",
+        "g": 10
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-2dba009fa217",
+      "u": "https://www.nature.com/articles/s41591-024-02857-3",
+      "from": {
+        "topicId": "life-medicine-medical-imaging-pathology-74c4f1b1a1d5",
+        "g": 12
+      },
+      "to": {
+        "topicId": "life-medicine-medical-imaging-pathology-74c4f1b1a1d5",
+        "g": 10
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-33d35908236e",
+      "u": "https://www.nature.com/articles/s41591-024-02856-4",
+      "from": {
+        "topicId": "life-medicine-medical-imaging-pathology-74c4f1b1a1d5",
+        "g": 12
+      },
+      "to": {
+        "topicId": "life-medicine-medical-imaging-pathology-74c4f1b1a1d5",
+        "g": 10
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-8b98c442a82d",
+      "u": "https://www.nature.com/articles/s41586-024-07441-w",
+      "from": {
+        "topicId": "life-medicine-medical-imaging-pathology-74c4f1b1a1d5",
+        "g": 12
+      },
+      "to": {
+        "topicId": "life-medicine-medical-imaging-pathology-74c4f1b1a1d5",
+        "g": 10
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-c9883cddfbba",
+      "u": "https://www.nature.com/articles/s41551-022-00936-9",
+      "from": {
+        "topicId": "life-medicine-medical-imaging-pathology-521fe7a343ba",
+        "g": 13
+      },
+      "to": {
+        "topicId": "life-medicine-medical-imaging-pathology-521fe7a343ba",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-8eb664e8fe8e",
+      "u": "https://www.nature.com/articles/s41586-023-06555-x",
+      "from": {
+        "topicId": "life-medicine-medical-imaging-pathology-521fe7a343ba",
+        "g": 13
+      },
+      "to": {
+        "topicId": "life-medicine-medical-imaging-pathology-521fe7a343ba",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-1facfe89ec2e",
+      "u": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/5abcdf8ecdcacba028c6662789194572-Abstract-Datasets_and_Benchmarks.html",
+      "from": {
+        "topicId": "life-medicine-medical-imaging-pathology-521fe7a343ba",
+        "g": 13
+      },
+      "to": {
+        "topicId": "life-medicine-medical-imaging-pathology-521fe7a343ba",
+        "g": 11
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-44eb565a6799",
+      "u": "https://doi.org/10.1371/journal.pdig.0000198",
+      "from": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-fc1bc85224b9",
+        "g": 14
+      },
+      "to": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-fc1bc85224b9",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-585ace48fcd9",
+      "u": "https://www.nature.com/articles/s41586-023-06291-2",
+      "from": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-fc1bc85224b9",
+        "g": 14
+      },
+      "to": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-fc1bc85224b9",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-bdd60e17725b",
+      "u": "https://www.nature.com/articles/s41591-024-03423-7",
+      "from": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-fc1bc85224b9",
+        "g": 14
+      },
+      "to": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-fc1bc85224b9",
+        "g": 12
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-11fe32b9bb8e",
+      "u": "https://www.nature.com/articles/s41591-024-03097-1",
+      "from": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-5324c033152a",
+        "g": 15
+      },
+      "to": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-5324c033152a",
+        "g": 13
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-7a309110f914",
+      "u": "https://www.nature.com/articles/s41586-025-08866-7",
+      "from": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-5324c033152a",
+        "g": 15
+      },
+      "to": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-5324c033152a",
+        "g": 13
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-2808b2a4a595",
+      "u": "https://www.nature.com/articles/s41586-025-08869-4",
+      "from": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-5324c033152a",
+        "g": 15
+      },
+      "to": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-5324c033152a",
+        "g": 13
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-073853e0f445",
+      "u": "https://www.nature.com/articles/s41746-022-00742-2",
+      "from": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-9b3bc6988a11",
+        "g": 16
+      },
+      "to": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-9b3bc6988a11",
+        "g": 14
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-59253e14ad61",
+      "u": "https://www.nature.com/articles/s41586-023-06160-y",
+      "from": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-9b3bc6988a11",
+        "g": 16
+      },
+      "to": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-9b3bc6988a11",
+        "g": 14
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-fc608266376d",
+      "u": "https://www.nature.com/articles/s41591-024-02855-5",
+      "from": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-9b3bc6988a11",
+        "g": 16
+      },
+      "to": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-9b3bc6988a11",
+        "g": 14
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-8f8fefdb1188",
+      "u": "https://www.nature.com/articles/s41586-025-09529-3",
+      "from": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-9b3bc6988a11",
+        "g": 16
+      },
+      "to": {
+        "topicId": "life-medicine-clinical-models-healthcare-applications-9b3bc6988a11",
+        "g": 14
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-c9d8cbb42c93",
+      "u": "https://www.nature.com/articles/s41591-021-01595-0",
+      "from": {
+        "topicId": "life-medicine-medical-evaluation-reliability-94bfcf52f6d4",
+        "g": 17
+      },
+      "to": {
+        "topicId": "life-medicine-medical-evaluation-reliability-94bfcf52f6d4",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-b5027cf42eaf",
+      "u": "https://doi.org/10.1016/s2589-7500(22)00063-2",
+      "from": {
+        "topicId": "life-medicine-medical-evaluation-reliability-94bfcf52f6d4",
+        "g": 17
+      },
+      "to": {
+        "topicId": "life-medicine-medical-evaluation-reliability-94bfcf52f6d4",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-30682e9acec6",
+      "u": "https://www.nature.com/articles/s41591-024-03113-4",
+      "from": {
+        "topicId": "life-medicine-medical-evaluation-reliability-94bfcf52f6d4",
+        "g": 17
+      },
+      "to": {
+        "topicId": "life-medicine-medical-evaluation-reliability-94bfcf52f6d4",
+        "g": 15
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-5fa1a8a87ba0",
+      "u": "https://www.nature.com/articles/s41591-020-1034-x",
+      "from": {
+        "topicId": "life-medicine-medical-evaluation-reliability-8fac933aecf7",
+        "g": 18
+      },
+      "to": {
+        "topicId": "life-medicine-medical-evaluation-reliability-8fac933aecf7",
+        "g": 16
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-18e486a25145",
+      "u": "https://doi.org/10.1001/jamainternmed.2021.2626",
+      "from": {
+        "topicId": "life-medicine-medical-evaluation-reliability-8fac933aecf7",
+        "g": 18
+      },
+      "to": {
+        "topicId": "life-medicine-medical-evaluation-reliability-8fac933aecf7",
+        "g": 16
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-a5a3dda84271",
+      "u": "https://doi.org/10.1016/s1470-2045(23)00298-x",
+      "from": {
+        "topicId": "life-medicine-medical-evaluation-reliability-8fac933aecf7",
+        "g": 18
+      },
+      "to": {
+        "topicId": "life-medicine-medical-evaluation-reliability-8fac933aecf7",
+        "g": 16
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-e3a2a2c4e071",
+      "u": "https://www.nature.com/articles/s41591-023-02437-x",
+      "from": {
+        "topicId": "life-medicine-medical-evaluation-reliability-2bd01642672b",
+        "g": 19
+      },
+      "to": {
+        "topicId": "life-medicine-medical-evaluation-reliability-2bd01642672b",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-e4e04621ccb7",
+      "u": "https://www.nature.com/articles/s41591-024-03445-1",
+      "from": {
+        "topicId": "life-medicine-medical-evaluation-reliability-2bd01642672b",
+        "g": 19
+      },
+      "to": {
+        "topicId": "life-medicine-medical-evaluation-reliability-2bd01642672b",
+        "g": 17
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-1754f6aaa10b",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/4252dc94531833029000f85dc5fac792-Abstract-Conference.html",
+      "from": {
+        "topicId": "life-medicine-laboratory-platforms-bioengineering-f7f44e00b58e",
+        "g": 20
+      },
+      "to": {
+        "topicId": "life-medicine-laboratory-platforms-bioengineering-f7f44e00b58e",
+        "g": 18
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-a08879c9b34a",
+      "u": "https://www.nature.com/articles/s41586-025-09442-9",
+      "from": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-43c272289faa",
+        "g": 21
+      },
+      "to": {
+        "topicId": "life-medicine-laboratory-platforms-bioengineering-f7f44e00b58e",
+        "g": 18
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-0fc6f0f347c2",
+      "u": "https://www.nature.com/articles/s41551-025-01463-z",
+      "from": {
+        "topicId": "life-medicine-laboratory-platforms-bioengineering-f7f44e00b58e",
+        "g": 20
+      },
+      "to": {
+        "topicId": "life-medicine-laboratory-platforms-bioengineering-f7f44e00b58e",
+        "g": 18
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-0084ba18bcd9",
+      "u": "https://www.nature.com/articles/s41592-021-01100-y",
+      "from": {
+        "topicId": "life-medicine-laboratory-platforms-bioengineering-5b5e4e25a489",
+        "g": 22
+      },
+      "to": {
+        "topicId": "life-medicine-biological-structure-engineering-d4223230142c",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-b2f3709b065f",
+      "u": "https://www.nature.com/articles/s41467-025-55987-8",
+      "from": {
+        "topicId": "life-medicine-laboratory-platforms-bioengineering-5b5e4e25a489",
+        "g": 22
+      },
+      "to": {
+        "topicId": "life-medicine-biological-structure-engineering-d4223230142c",
+        "g": 2
+      }
+    },
+    {
+      "themeId": "life-medicine",
+      "paperId": "paper-8894b6b77842",
+      "u": "https://doi.org/10.1016/j.cell.2025.07.033",
+      "from": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-43c272289faa",
+        "g": 21
+      },
+      "to": {
+        "topicId": "life-medicine-drug-discovery-molecular-intervention-b77bc397fee3",
+        "g": 4
+      }
+    }
+  ]
+}
