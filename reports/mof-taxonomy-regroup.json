@@ -1,0 +1,1181 @@
+{
+  "baselineCommit": "b8d665fd55f52de8d2668cecdb23e05ab406a4d8",
+  "reason": "User requested fewer MOF subtopics: keep MOF Stability and Rare-Earth Adsorption & Separation, add Glass MOFs as its own category, and merge the remaining categories into AI & Computational Methods, Structure, Synthesis & Manufacturing, and Functions & Applications.",
+  "themeId": "mof",
+  "allowedPaperFields": [
+    "g",
+    "topicId"
+  ],
+  "retiredTopicIds": [
+    "mof-adsorption-membranes-resource-separation-2302e59095d1",
+    "mof-adsorption-membranes-resource-separation-4c61d0b98b2a",
+    "mof-adsorption-membranes-resource-separation-612aec98703a",
+    "mof-adsorption-membranes-resource-separation-9271bfdf3c71",
+    "mof-automated-synthesis-experimental-decision-making-a7e5610cb5dd",
+    "mof-catalysis-transport-82ce330ca7e7",
+    "mof-data-knowledge-prediction-bdec0c0e5f8c",
+    "mof-machine-learning-potentials-molecular-simulation-f4b386cd9152",
+    "mof-manufacturing-processes-76b336f35493",
+    "mof-manufacturing-processes-ee79996ebcde",
+    "mof-screening-design-discovery-8d6264f1baa1",
+    "mof-screening-design-discovery-b699ff4f5717",
+    "mof-structure-synthesis-0fdb6e48a20d"
+  ],
+  "newTopicIds": [
+    "mof-mof-stability-data-driven-prediction"
+  ],
+  "papers": [
+    {
+      "paperId": "paper-c24b91ad986c",
+      "u": "https://www.nature.com/articles/s41557-024-01717-4",
+      "from": {
+        "topicId": "mof-structure-synthesis-427be1f26339",
+        "g": 11
+      },
+      "to": {
+        "topicId": "mof-structure-synthesis-427be1f26339",
+        "g": 10
+      }
+    },
+    {
+      "paperId": "paper-e649b44d4773",
+      "u": "https://pubs.rsc.org/en/content/articlehtml/2025/sc/d5sc05365j",
+      "from": {
+        "topicId": "mof-structure-synthesis-427be1f26339",
+        "g": 11
+      },
+      "to": {
+        "topicId": "mof-structure-synthesis-427be1f26339",
+        "g": 10
+      }
+    },
+    {
+      "paperId": "paper-eeee010e1fee",
+      "u": "https://www.nature.com/articles/s41467-023-41936-w",
+      "from": {
+        "topicId": "mof-structure-synthesis-0fdb6e48a20d",
+        "g": 12
+      },
+      "to": {
+        "topicId": "mof-structure-synthesis-427be1f26339",
+        "g": 10
+      }
+    },
+    {
+      "paperId": "paper-91235c67a479",
+      "u": "https://www.nature.com/articles/s41563-024-01960-7",
+      "from": {
+        "topicId": "mof-structure-synthesis-0fdb6e48a20d",
+        "g": 12
+      },
+      "to": {
+        "topicId": "mof-structure-synthesis-427be1f26339",
+        "g": 10
+      }
+    },
+    {
+      "paperId": "paper-9e80cce82263",
+      "u": "https://www.nature.com/articles/s41467-026-78352-9",
+      "from": {
+        "topicId": "mof-structure-synthesis-0fdb6e48a20d",
+        "g": 12
+      },
+      "to": {
+        "topicId": "mof-structure-synthesis-427be1f26339",
+        "g": 10
+      }
+    },
+    {
+      "paperId": "paper-0da1c7af90b8",
+      "u": "https://www.nature.com/articles/s41467-026-71378-z",
+      "from": {
+        "topicId": "mof-structure-synthesis-5c21489bf93b",
+        "g": 13
+      },
+      "to": {
+        "topicId": "mof-structure-synthesis-5c21489bf93b",
+        "g": 4
+      }
+    },
+    {
+      "paperId": "paper-afede6b91f4a",
+      "u": "https://www.nature.com/articles/s41563-026-02712-5",
+      "from": {
+        "topicId": "mof-structure-synthesis-5c21489bf93b",
+        "g": 13
+      },
+      "to": {
+        "topicId": "mof-structure-synthesis-5c21489bf93b",
+        "g": 4
+      }
+    },
+    {
+      "paperId": "paper-683effb49077",
+      "u": "https://www.sciencedirect.com/science/article/pii/S2590238521000709",
+      "from": {
+        "topicId": "mof-data-knowledge-prediction-842b4c181f62",
+        "g": 0
+      },
+      "to": {
+        "topicId": "mof-data-knowledge-prediction-842b4c181f62",
+        "g": 5
+      }
+    },
+    {
+      "paperId": "paper-fad8294f4e78",
+      "u": "https://onlinelibrary.wiley.com/doi/full/10.1002/adma.202304832",
+      "from": {
+        "topicId": "mof-data-knowledge-prediction-842b4c181f62",
+        "g": 0
+      },
+      "to": {
+        "topicId": "mof-data-knowledge-prediction-842b4c181f62",
+        "g": 5
+      }
+    },
+    {
+      "paperId": "paper-dfbd870b7735",
+      "u": "https://www.sciencedirect.com/science/article/pii/S2590238525001833",
+      "from": {
+        "topicId": "mof-data-knowledge-prediction-842b4c181f62",
+        "g": 0
+      },
+      "to": {
+        "topicId": "mof-data-knowledge-prediction-842b4c181f62",
+        "g": 5
+      }
+    },
+    {
+      "paperId": "paper-a3a6220b2043",
+      "u": "https://www.nature.com/articles/s42256-023-00628-2",
+      "from": {
+        "topicId": "mof-data-knowledge-prediction-bbaa71a84147",
+        "g": 1
+      },
+      "to": {
+        "topicId": "mof-data-knowledge-prediction-bbaa71a84147",
+        "g": 6
+      }
+    },
+    {
+      "paperId": "paper-fcb1e8e70e97",
+      "u": "https://www.nature.com/articles/s41467-025-60796-0",
+      "from": {
+        "topicId": "mof-data-knowledge-prediction-bbaa71a84147",
+        "g": 1
+      },
+      "to": {
+        "topicId": "mof-data-knowledge-prediction-bbaa71a84147",
+        "g": 6
+      }
+    },
+    {
+      "paperId": "paper-b848709ec894",
+      "u": "https://pubs.acs.org/doi/10.1021/acs.chemmater.3c00788",
+      "from": {
+        "topicId": "mof-data-knowledge-prediction-bdec0c0e5f8c",
+        "g": 2
+      },
+      "to": {
+        "topicId": "mof-data-knowledge-prediction-842b4c181f62",
+        "g": 5
+      }
+    },
+    {
+      "paperId": "paper-8ddf961d3261",
+      "u": "https://pubs.acs.org/doi/10.1021/jacs.5c11789",
+      "from": {
+        "topicId": "mof-data-knowledge-prediction-bdec0c0e5f8c",
+        "g": 2
+      },
+      "to": {
+        "topicId": "mof-data-knowledge-prediction-842b4c181f62",
+        "g": 5
+      }
+    },
+    {
+      "paperId": "paper-1c68b872589e",
+      "u": "https://www.nature.com/articles/s44387-026-00106-1",
+      "from": {
+        "topicId": "mof-data-knowledge-prediction-bbaa71a84147",
+        "g": 1
+      },
+      "to": {
+        "topicId": "mof-data-knowledge-prediction-bbaa71a84147",
+        "g": 6
+      }
+    },
+    {
+      "paperId": "paper-2f00e86abcaf",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/47547ee84e3fbbcbbbbad7c1fd9a973b-Abstract-Conference.html",
+      "from": {
+        "topicId": "mof-screening-design-discovery-9c8d7a9255b9",
+        "g": 3
+      },
+      "to": {
+        "topicId": "mof-screening-design-discovery-9c8d7a9255b9",
+        "g": 7
+      }
+    },
+    {
+      "paperId": "paper-bb72fd80036c",
+      "u": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/f392c6bbb14548df50092f10c9db440f-Abstract-Conference.html",
+      "from": {
+        "topicId": "mof-screening-design-discovery-9c8d7a9255b9",
+        "g": 3
+      },
+      "to": {
+        "topicId": "mof-screening-design-discovery-9c8d7a9255b9",
+        "g": 7
+      }
+    },
+    {
+      "paperId": "paper-1c90a97570f0",
+      "u": "https://www.nature.com/articles/s41467-024-55390-9",
+      "from": {
+        "topicId": "mof-screening-design-discovery-9c8d7a9255b9",
+        "g": 3
+      },
+      "to": {
+        "topicId": "mof-screening-design-discovery-9c8d7a9255b9",
+        "g": 7
+      }
+    },
+    {
+      "paperId": "paper-e27480193c26",
+      "u": "https://www.nature.com/articles/s41467-025-59952-3",
+      "from": {
+        "topicId": "mof-screening-design-discovery-9c8d7a9255b9",
+        "g": 3
+      },
+      "to": {
+        "topicId": "mof-screening-design-discovery-9c8d7a9255b9",
+        "g": 7
+      }
+    },
+    {
+      "paperId": "paper-d3552ed612e8",
+      "u": "https://www.nature.com/articles/s41524-023-01125-1",
+      "from": {
+        "topicId": "mof-screening-design-discovery-8d6264f1baa1",
+        "g": 4
+      },
+      "to": {
+        "topicId": "mof-screening-design-discovery-9c8d7a9255b9",
+        "g": 7
+      }
+    },
+    {
+      "paperId": "paper-0f91a3b1946e",
+      "u": "https://www.nature.com/articles/s44160-025-00939-9",
+      "from": {
+        "topicId": "mof-automated-synthesis-experimental-decision-making-e375ef1e96c8",
+        "g": 9
+      },
+      "to": {
+        "topicId": "mof-automated-synthesis-experimental-decision-making-e375ef1e96c8",
+        "g": 9
+      }
+    },
+    {
+      "paperId": "paper-56f10c24ffce",
+      "u": "https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202311983",
+      "from": {
+        "topicId": "mof-automated-synthesis-experimental-decision-making-a7e5610cb5dd",
+        "g": 10
+      },
+      "to": {
+        "topicId": "mof-automated-synthesis-experimental-decision-making-e375ef1e96c8",
+        "g": 9
+      }
+    },
+    {
+      "paperId": "paper-f08488f16be0",
+      "u": "https://www.nature.com/articles/s41467-024-48998-4",
+      "from": {
+        "topicId": "mof-screening-design-discovery-b699ff4f5717",
+        "g": 5
+      },
+      "to": {
+        "topicId": "mof-screening-design-discovery-9c8d7a9255b9",
+        "g": 7
+      }
+    },
+    {
+      "paperId": "paper-18c512b831d3",
+      "u": "https://www.nature.com/articles/s41597-022-01181-0",
+      "from": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mof-mof-stability-data-driven-prediction",
+        "g": 1
+      }
+    },
+    {
+      "paperId": "paper-b7201bfa0acd",
+      "u": "https://pubs.acs.org/doi/full/10.1021/jacs.4c05879",
+      "from": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mof-mof-stability-data-driven-prediction",
+        "g": 1
+      }
+    },
+    {
+      "paperId": "paper-285927793878",
+      "u": "https://www.nature.com/articles/s41467-023-42448-3",
+      "from": {
+        "topicId": "mof-machine-learning-potentials-molecular-simulation-f4b386cd9152",
+        "g": 7
+      },
+      "to": {
+        "topicId": "mof-machine-learning-potentials-molecular-simulation-012dbfa9a667",
+        "g": 8
+      }
+    },
+    {
+      "paperId": "paper-1823c800f610",
+      "u": "https://www.nature.com/articles/s41467-024-48136-0",
+      "from": {
+        "topicId": "mof-machine-learning-potentials-molecular-simulation-f4b386cd9152",
+        "g": 7
+      },
+      "to": {
+        "topicId": "mof-machine-learning-potentials-molecular-simulation-012dbfa9a667",
+        "g": 8
+      }
+    },
+    {
+      "paperId": "paper-bb45d3ec8d9c",
+      "u": "https://pubs.rsc.org/en/content/articlehtml/2024/ta/d4ta04222k",
+      "from": {
+        "topicId": "mof-machine-learning-potentials-molecular-simulation-f4b386cd9152",
+        "g": 7
+      },
+      "to": {
+        "topicId": "mof-machine-learning-potentials-molecular-simulation-012dbfa9a667",
+        "g": 8
+      }
+    },
+    {
+      "paperId": "paper-702f9d49b356",
+      "u": "https://www.nature.com/articles/s41524-024-01427-y",
+      "from": {
+        "topicId": "mof-machine-learning-potentials-molecular-simulation-012dbfa9a667",
+        "g": 8
+      },
+      "to": {
+        "topicId": "mof-machine-learning-potentials-molecular-simulation-012dbfa9a667",
+        "g": 8
+      }
+    },
+    {
+      "paperId": "paper-1839f42e2122",
+      "u": "https://pubs.acs.org/doi/10.1021/acsnano.4c12369",
+      "from": {
+        "topicId": "mof-machine-learning-potentials-molecular-simulation-012dbfa9a667",
+        "g": 8
+      },
+      "to": {
+        "topicId": "mof-machine-learning-potentials-molecular-simulation-012dbfa9a667",
+        "g": 8
+      }
+    },
+    {
+      "paperId": "paper-b65a0761262b",
+      "u": "https://pubs.acs.org/doi/full/10.1021/acs.chemmater.5c00821",
+      "from": {
+        "topicId": "mof-machine-learning-potentials-molecular-simulation-012dbfa9a667",
+        "g": 8
+      },
+      "to": {
+        "topicId": "mof-machine-learning-potentials-molecular-simulation-012dbfa9a667",
+        "g": 8
+      }
+    },
+    {
+      "paperId": "paper-8cdcd4ffdcca",
+      "u": "https://www.science.org/doi/10.1126/science.abi7281",
+      "from": {
+        "topicId": "mof-adsorption-membranes-resource-separation-fdcf707dd484",
+        "g": 14
+      },
+      "to": {
+        "topicId": "mof-adsorption-membranes-resource-separation-fdcf707dd484",
+        "g": 12
+      }
+    },
+    {
+      "paperId": "paper-41c5d5d72c87",
+      "u": "https://pubs.acs.org/doi/10.1021/jacs.3c14125",
+      "from": {
+        "topicId": "mof-adsorption-membranes-resource-separation-fdcf707dd484",
+        "g": 14
+      },
+      "to": {
+        "topicId": "mof-adsorption-membranes-resource-separation-fdcf707dd484",
+        "g": 12
+      }
+    },
+    {
+      "paperId": "paper-dbb4f4770516",
+      "u": "https://www.science.org/doi/10.1126/science.adk5697",
+      "from": {
+        "topicId": "mof-adsorption-membranes-resource-separation-fdcf707dd484",
+        "g": 14
+      },
+      "to": {
+        "topicId": "mof-adsorption-membranes-resource-separation-fdcf707dd484",
+        "g": 12
+      }
+    },
+    {
+      "paperId": "paper-950f5a0261c8",
+      "u": "https://www.science.org/doi/10.1126/science.ady2607",
+      "from": {
+        "topicId": "mof-adsorption-membranes-resource-separation-9271bfdf3c71",
+        "g": 15
+      },
+      "to": {
+        "topicId": "mof-adsorption-membranes-resource-separation-fdcf707dd484",
+        "g": 12
+      }
+    },
+    {
+      "paperId": "paper-eef16eee2aca",
+      "u": "https://www.nature.com/articles/s41467-026-71550-5",
+      "from": {
+        "topicId": "mof-adsorption-membranes-resource-separation-9271bfdf3c71",
+        "g": 15
+      },
+      "to": {
+        "topicId": "mof-adsorption-membranes-resource-separation-fdcf707dd484",
+        "g": 12
+      }
+    },
+    {
+      "paperId": "paper-5d739d67e922",
+      "u": "https://www.nature.com/articles/s41563-023-01541-0",
+      "from": {
+        "topicId": "mof-adsorption-membranes-resource-separation-2302e59095d1",
+        "g": 16
+      },
+      "to": {
+        "topicId": "mof-adsorption-membranes-resource-separation-fdcf707dd484",
+        "g": 12
+      }
+    },
+    {
+      "paperId": "paper-ba95d54e6be8",
+      "u": "https://www.nature.com/articles/s41467-024-54898-4",
+      "from": {
+        "topicId": "mof-adsorption-membranes-resource-separation-2302e59095d1",
+        "g": 16
+      },
+      "to": {
+        "topicId": "mof-adsorption-membranes-resource-separation-fdcf707dd484",
+        "g": 12
+      }
+    },
+    {
+      "paperId": "paper-2e7901f803b4",
+      "u": "https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202404058",
+      "from": {
+        "topicId": "mof-adsorption-membranes-resource-separation-2302e59095d1",
+        "g": 16
+      },
+      "to": {
+        "topicId": "mof-adsorption-membranes-resource-separation-fdcf707dd484",
+        "g": 12
+      }
+    },
+    {
+      "paperId": "paper-853800172396",
+      "u": "https://www.science.org/doi/10.1126/sciadv.adz5237",
+      "from": {
+        "topicId": "mof-adsorption-membranes-resource-separation-2302e59095d1",
+        "g": 16
+      },
+      "to": {
+        "topicId": "mof-adsorption-membranes-resource-separation-fdcf707dd484",
+        "g": 12
+      }
+    },
+    {
+      "paperId": "paper-1bec3917ab70",
+      "u": "https://www.nature.com/articles/s41467-022-32642-0",
+      "from": {
+        "topicId": "mof-adsorption-membranes-resource-separation-69cf2e6526bc",
+        "g": 17
+      },
+      "to": {
+        "topicId": "mof-adsorption-membranes-resource-separation-69cf2e6526bc",
+        "g": 13
+      }
+    },
+    {
+      "paperId": "paper-bdb1dd1ddc8d",
+      "u": "https://www.nature.com/articles/s44221-023-00103-7",
+      "from": {
+        "topicId": "mof-adsorption-membranes-resource-separation-69cf2e6526bc",
+        "g": 17
+      },
+      "to": {
+        "topicId": "mof-adsorption-membranes-resource-separation-69cf2e6526bc",
+        "g": 13
+      }
+    },
+    {
+      "paperId": "paper-f3fa6d972808",
+      "u": "https://www.nature.com/articles/s41467-024-53853-7",
+      "from": {
+        "topicId": "mof-adsorption-membranes-resource-separation-69cf2e6526bc",
+        "g": 17
+      },
+      "to": {
+        "topicId": "mof-adsorption-membranes-resource-separation-69cf2e6526bc",
+        "g": 13
+      }
+    },
+    {
+      "paperId": "paper-5ee07b7a3e8e",
+      "u": "https://www.nature.com/articles/s44221-024-00343-1",
+      "from": {
+        "topicId": "mof-adsorption-membranes-resource-separation-612aec98703a",
+        "g": 18
+      },
+      "to": {
+        "topicId": "mof-adsorption-membranes-resource-separation-69cf2e6526bc",
+        "g": 13
+      }
+    },
+    {
+      "paperId": "paper-108c114307ec",
+      "u": "https://onlinelibrary.wiley.com/doi/10.1002/adma.202413120",
+      "from": {
+        "topicId": "mof-adsorption-membranes-resource-separation-612aec98703a",
+        "g": 18
+      },
+      "to": {
+        "topicId": "mof-adsorption-membranes-resource-separation-69cf2e6526bc",
+        "g": 13
+      }
+    },
+    {
+      "paperId": "paper-2bece603df7d",
+      "u": "https://www.science.org/doi/10.1126/science.aaz8881",
+      "from": {
+        "topicId": "mof-adsorption-membranes-resource-separation-4c61d0b98b2a",
+        "g": 19
+      },
+      "to": {
+        "topicId": "mof-adsorption-membranes-resource-separation-fdcf707dd484",
+        "g": 12
+      }
+    },
+    {
+      "paperId": "paper-c0550b3fe7e7",
+      "u": "https://www.nature.com/articles/s44160-026-01163-9",
+      "from": {
+        "topicId": "mof-adsorption-membranes-resource-separation-4c61d0b98b2a",
+        "g": 19
+      },
+      "to": {
+        "topicId": "mof-adsorption-membranes-resource-separation-fdcf707dd484",
+        "g": 12
+      }
+    },
+    {
+      "paperId": "paper-c6750eb581ba",
+      "u": "https://www.nature.com/articles/s44160-024-00585-7",
+      "from": {
+        "topicId": "mof-catalysis-transport-8b8061545ac9",
+        "g": 20
+      },
+      "to": {
+        "topicId": "mof-catalysis-transport-8b8061545ac9",
+        "g": 14
+      }
+    },
+    {
+      "paperId": "paper-cf1706b6efbe",
+      "u": "https://www.nature.com/articles/s41467-024-51475-7",
+      "from": {
+        "topicId": "mof-catalysis-transport-8b8061545ac9",
+        "g": 20
+      },
+      "to": {
+        "topicId": "mof-catalysis-transport-8b8061545ac9",
+        "g": 14
+      }
+    },
+    {
+      "paperId": "paper-31bed07ad2d2",
+      "u": "https://www.nature.com/articles/s41929-025-01369-8",
+      "from": {
+        "topicId": "mof-catalysis-transport-8b8061545ac9",
+        "g": 20
+      },
+      "to": {
+        "topicId": "mof-catalysis-transport-8b8061545ac9",
+        "g": 14
+      }
+    },
+    {
+      "paperId": "paper-4da7a8e819be",
+      "u": "https://www.nature.com/articles/s41467-025-55891-1",
+      "from": {
+        "topicId": "mof-catalysis-transport-8b8061545ac9",
+        "g": 20
+      },
+      "to": {
+        "topicId": "mof-catalysis-transport-8b8061545ac9",
+        "g": 14
+      }
+    },
+    {
+      "paperId": "paper-93305bb4b603",
+      "u": "https://www.nature.com/articles/s41467-023-40110-6",
+      "from": {
+        "topicId": "mof-catalysis-transport-233c60387bed",
+        "g": 21
+      },
+      "to": {
+        "topicId": "mof-catalysis-transport-233c60387bed",
+        "g": 15
+      }
+    },
+    {
+      "paperId": "paper-ad58a4f4e821",
+      "u": "https://www.nature.com/articles/s43246-024-00620-2",
+      "from": {
+        "topicId": "mof-catalysis-transport-233c60387bed",
+        "g": 21
+      },
+      "to": {
+        "topicId": "mof-catalysis-transport-233c60387bed",
+        "g": 15
+      }
+    },
+    {
+      "paperId": "paper-781cb4727ca1",
+      "u": "https://www.nature.com/articles/s41557-026-02251-1",
+      "from": {
+        "topicId": "mof-catalysis-transport-233c60387bed",
+        "g": 21
+      },
+      "to": {
+        "topicId": "mof-catalysis-transport-233c60387bed",
+        "g": 15
+      }
+    },
+    {
+      "paperId": "paper-36f2c2ebfa9e",
+      "u": "https://pubs.acs.org/doi/10.1021/jacs.3c03943",
+      "from": {
+        "topicId": "mof-catalysis-transport-82ce330ca7e7",
+        "g": 22
+      },
+      "to": {
+        "topicId": "mof-catalysis-transport-233c60387bed",
+        "g": 15
+      }
+    },
+    {
+      "paperId": "paper-7cc4d3e34ba5",
+      "u": "https://pubs.acs.org/doi/10.1021/jacs.4c13792",
+      "from": {
+        "topicId": "mof-catalysis-transport-82ce330ca7e7",
+        "g": 22
+      },
+      "to": {
+        "topicId": "mof-catalysis-transport-233c60387bed",
+        "g": 15
+      }
+    },
+    {
+      "paperId": "paper-17dd6a9e52ac",
+      "u": "https://www.nature.com/articles/s44160-025-00738-2",
+      "from": {
+        "topicId": "mof-catalysis-transport-82ce330ca7e7",
+        "g": 22
+      },
+      "to": {
+        "topicId": "mof-catalysis-transport-233c60387bed",
+        "g": 15
+      }
+    },
+    {
+      "paperId": "paper-49757d2be019",
+      "u": "https://pubs.acs.org/doi/10.1021/acs.chemmater.4c00879",
+      "from": {
+        "topicId": "mof-manufacturing-processes-733bc952b248",
+        "g": 23
+      },
+      "to": {
+        "topicId": "mof-manufacturing-processes-733bc952b248",
+        "g": 11
+      }
+    },
+    {
+      "paperId": "paper-75bd287a15b1",
+      "u": "https://www.nature.com/articles/s41467-026-70927-w",
+      "from": {
+        "topicId": "mof-manufacturing-processes-733bc952b248",
+        "g": 23
+      },
+      "to": {
+        "topicId": "mof-manufacturing-processes-733bc952b248",
+        "g": 11
+      }
+    },
+    {
+      "paperId": "paper-db83c70fb499",
+      "u": "https://www.nature.com/articles/s41467-026-73803-9",
+      "from": {
+        "topicId": "mof-manufacturing-processes-733bc952b248",
+        "g": 23
+      },
+      "to": {
+        "topicId": "mof-manufacturing-processes-733bc952b248",
+        "g": 11
+      }
+    },
+    {
+      "paperId": "paper-aa3aa887fe38",
+      "u": "https://pubs.acs.org/doi/10.1021/acsami.1c22582",
+      "from": {
+        "topicId": "mof-manufacturing-processes-76b336f35493",
+        "g": 24
+      },
+      "to": {
+        "topicId": "mof-manufacturing-processes-733bc952b248",
+        "g": 11
+      }
+    },
+    {
+      "paperId": "paper-2a3a7c228d24",
+      "u": "https://onlinelibrary.wiley.com/doi/abs/10.1002/smll.202500510",
+      "from": {
+        "topicId": "mof-manufacturing-processes-76b336f35493",
+        "g": 24
+      },
+      "to": {
+        "topicId": "mof-manufacturing-processes-733bc952b248",
+        "g": 11
+      }
+    },
+    {
+      "paperId": "paper-3d62f893edb1",
+      "u": "https://www.nature.com/articles/s41557-024-01693-9",
+      "from": {
+        "topicId": "mof-manufacturing-processes-76b336f35493",
+        "g": 24
+      },
+      "to": {
+        "topicId": "mof-manufacturing-processes-733bc952b248",
+        "g": 11
+      }
+    },
+    {
+      "paperId": "paper-39802fd0d7ea",
+      "u": "https://www.sciencedirect.com/science/article/pii/S138589472205029X",
+      "from": {
+        "topicId": "mof-manufacturing-processes-ee79996ebcde",
+        "g": 25
+      },
+      "to": {
+        "topicId": "mof-manufacturing-processes-733bc952b248",
+        "g": 11
+      }
+    },
+    {
+      "paperId": "paper-d93899ed8a5f",
+      "u": "https://pubs.acs.org/doi/10.1021/acsami.4c09445",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 26
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 2
+      }
+    },
+    {
+      "paperId": "paper-0595bd10b10a",
+      "u": "https://pubs.acs.org/doi/10.1021/acsami.6c16452",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 26
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 2
+      }
+    },
+    {
+      "paperId": "paper-9b507b5f63cf",
+      "u": "https://www.nature.com/articles/s41467-024-45810-1",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 27
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 3
+      }
+    },
+    {
+      "paperId": "paper-0feae3aceef3",
+      "u": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.202419093",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 27
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 3
+      }
+    },
+    {
+      "paperId": "paper-221e08ac59f1",
+      "u": "https://doi.org/10.1021/cr5002589",
+      "from": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 0
+      }
+    },
+    {
+      "paperId": "paper-6b85694e25b7",
+      "u": "https://doi.org/10.1038/natrevmats.2015.18",
+      "from": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 0
+      }
+    },
+    {
+      "paperId": "paper-ced75e4adc82",
+      "u": "https://doi.org/10.1039/C5DT04049C",
+      "from": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 0
+      }
+    },
+    {
+      "paperId": "paper-2af8157bc18f",
+      "u": "https://doi.org/10.1038/s41578-019-0140-1",
+      "from": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 0
+      }
+    },
+    {
+      "paperId": "paper-348cc5da1302",
+      "u": "https://doi.org/10.1039/D0QI00973C",
+      "from": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 0
+      }
+    },
+    {
+      "paperId": "paper-d7d61323bda0",
+      "u": "https://doi.org/10.1039/D3SC06076D",
+      "from": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 0
+      }
+    },
+    {
+      "paperId": "paper-dc3bfa8818f8",
+      "u": "https://doi.org/10.1021/acs.chemmater.5c02564",
+      "from": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 0
+      }
+    },
+    {
+      "paperId": "paper-cb6df443175f",
+      "u": "https://doi.org/10.1021/acsami.5c09320",
+      "from": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mof-mof-stability-data-driven-prediction",
+        "g": 1
+      }
+    },
+    {
+      "paperId": "paper-89945697a092",
+      "u": "https://doi.org/10.1016/j.cplett.2025.142314",
+      "from": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 0
+      }
+    },
+    {
+      "paperId": "paper-5b6ba65eca5b",
+      "u": "https://doi.org/10.1039/D5CP04782J",
+      "from": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 0
+      }
+    },
+    {
+      "paperId": "paper-2c6f3f176e70",
+      "u": "https://doi.org/10.1038/s41467-026-70247-z",
+      "from": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 0
+      }
+    },
+    {
+      "paperId": "paper-886b2ed1184d",
+      "u": "https://doi.org/10.1016/j.eti.2026.104987",
+      "from": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 6
+      },
+      "to": {
+        "topicId": "mof-mof-stability-2f7e0250012b",
+        "g": 0
+      }
+    },
+    {
+      "paperId": "paper-78410171ea16",
+      "u": "https://doi.org/10.1016/j.ccr.2026.218197",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 27
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 3
+      }
+    },
+    {
+      "paperId": "paper-65127ef99328",
+      "u": "https://doi.org/10.1016/j.cej.2025.172100",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 27
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 3
+      }
+    },
+    {
+      "paperId": "paper-6c2d739a60d9",
+      "u": "https://doi.org/10.1016/j.seppur.2026.139438",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 27
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 3
+      }
+    },
+    {
+      "paperId": "paper-c79d78098549",
+      "u": "https://doi.org/10.1038/s41596-026-01425-y",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 27
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 3
+      }
+    },
+    {
+      "paperId": "paper-711775168ac8",
+      "u": "https://doi.org/10.1007/s10853-016-9807-9",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 26
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 2
+      }
+    },
+    {
+      "paperId": "paper-1ade2cb16f05",
+      "u": "https://doi.org/10.1021/acsami.8b07130",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 26
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 2
+      }
+    },
+    {
+      "paperId": "paper-88e2a9eb1e15",
+      "u": "https://doi.org/10.1021/acsami.9b00476",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 26
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 2
+      }
+    },
+    {
+      "paperId": "paper-f4c810ae7f5a",
+      "u": "https://doi.org/10.1021/acs.iecr.8b05220",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 26
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 2
+      }
+    },
+    {
+      "paperId": "paper-7675f21b3fe2",
+      "u": "https://doi.org/10.1016/j.cej.2020.124023",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 27
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 3
+      }
+    },
+    {
+      "paperId": "paper-6257ab0c37da",
+      "u": "https://doi.org/10.1016/j.micromeso.2020.110747",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 27
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 3
+      }
+    },
+    {
+      "paperId": "paper-35fec6c33691",
+      "u": "https://doi.org/10.1016/j.mineng.2021.106831",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 26
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 2
+      }
+    },
+    {
+      "paperId": "paper-7ff6292a1b69",
+      "u": "https://doi.org/10.1016/j.chemosphere.2021.130869",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 27
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 3
+      }
+    },
+    {
+      "paperId": "paper-f57322217a5a",
+      "u": "https://doi.org/10.1016/j.envres.2024.119890",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 26
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 2
+      }
+    },
+    {
+      "paperId": "paper-71eb3b0922a9",
+      "u": "https://doi.org/10.1111/nyas.70074",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 26
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 2
+      }
+    },
+    {
+      "paperId": "paper-8e84b4642f67",
+      "u": "https://doi.org/10.1016/j.ces.2025.122638",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 26
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-aeed40ca9887",
+        "g": 2
+      }
+    },
+    {
+      "paperId": "paper-01eefcf3f286",
+      "u": "https://doi.org/10.1016/j.cej.2026.180021",
+      "from": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 27
+      },
+      "to": {
+        "topicId": "mof-rare-earth-adsorption-separation-4f42b78546c3",
+        "g": 3
+      }
+    }
+  ]
+}
