@@ -11,7 +11,8 @@ Full institutional-access article HTML and the 71-page supplementary PDF were av
 - Full explainer browser regression: all 61 pages pass, 7,301 interaction cases.
 - Homepage catalogue and author/affiliation metadata browser regressions: pass.
 - Targeted page browser checks: both languages at 1440, 768 and 390 px, all five workflow states, four metric states and the new perovskite explainer pointers, state retention on language changes, keyboard activation, publication metadata and no horizontal overflow or page errors.
-- The new visual explainer was inspected at desktop and mobile widths; its light → perovskite → SAM → electrode story, pointer states and plain-language “why this paper” strip are visible.
+- The revised visual explainer was inspected at desktop and mobile widths; it uses formal definitions for perovskite, semiconductor, charge carrier, hole, interface and SAM, with pointer states for the light → perovskite → SAM → electrode sequence. The “why this paper” strip explains the research motivation without informal analogies.
+- Technical terms introduced later—PCE, MPP, DFT, MPNN, HOMO/LUMO, NMR and XPS—are expanded at first use.
 - All four publisher images loaded and decoded in Chromium. Original-figure and hero screenshots were inspected. English image alternative text and bilingual fallback messages for blocked image requests passed.
 
 Screenshots and test logs are local temporary QA outputs. External figure availability remains dependent on the publisher; the page provides direct figure links and a loading-failure message. Real screen-reader testing was not performed.
