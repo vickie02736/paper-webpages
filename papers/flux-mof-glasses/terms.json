@@ -1,0 +1,332 @@
+[
+  [
+    "配位数",
+    "coordination number",
+    "直接与一个金属结合的供体原子数。一个 phen 用两个 N 结合同一 Co，就贡献 2；不能只数分子。",
+    "Number of donor atoms directly bound to one metal. One phen binding a Co through two N atoms contributes 2; count atoms, not molecules."
+  ],
+  [
+    "连接度",
+    "connectivity",
+    "一个节点通过桥联连接体连接其他节点的数目。本页端基和只结合一个金属的 phen 不增加跨节点连接。",
+    "Number of connections from one node to other nodes through bridging linkers. Terminal linkers and phen bound to only one metal add no inter-node connection."
+  ],
+  [
+    "配位球",
+    "coordination sphere",
+    "金属及其直接结合的原子或配体组成的局部环境。配位球工程就是有目的地改变这些结合对象。",
+    "Local environment formed by a metal and its directly bound atoms or ligands. Coordination-sphere engineering deliberately changes these partners."
+  ],
+  [
+    "桥联",
+    "bridging",
+    "同一个连接体连接两个或更多金属中心，形成节点之间的化学联系。",
+    "A single linker binds two or more metal centres, creating a chemical connection between nodes."
+  ],
+  [
+    "端基",
+    "terminal",
+    "分子只在一端与所讨论网络结合，没有继续连接到另一个金属。它仍能占据配位位置。",
+    "A molecule binds the network at one end without continuing to another metal. It can still occupy a coordination site."
+  ],
+  [
+    "拓扑",
+    "topology",
+    "只看节点之间谁与谁连接的网络关系，暂不讨论精确键长和键角。连接度是局部指标，不能单独指定全部拓扑。",
+    "Pattern of which nodes connect to which, apart from precise distances and angles. Local connectivity alone does not determine the entire topology."
+  ],
+  [
+    "熔剂",
+    "flux",
+    "加入后使混合体系更容易在较低温度形成可流动相的组分。本文 phen 还可参与配位反应；不是所有熔剂都有同样作用。",
+    "An added component that enables a mobile phase at lower temperature. Here phen can also react through coordination; that is not true of every flux."
+  ],
+  [
+    "Tg",
+    "Tg",
+    "玻璃化转变温度：玻璃结构重排在测量时间尺度上开始明显的温度区间的特征值。依赖测量程序，不等于熔点。",
+    "Glass-transition temperature: a characteristic temperature for structural rearrangement becoming appreciable on the measurement timescale. Protocol-dependent and distinct from melting."
+  ],
+  [
+    "过冷液体",
+    "supercooled liquid",
+    "温度低于相应结晶平衡温度却没有结晶的液态。进一步冷却时，结构运动可能慢到形成玻璃。",
+    "Liquid remaining uncrystallized below its equilibrium crystallization temperature. Further cooling can slow structural motion enough to form glass."
+  ],
+  [
+    "DSC",
+    "DSC",
+    "差示扫描量热法：按程序加热或冷却样品，测它相对参照需要的热流。熔化峰与玻璃化转变的热容台阶是不同信号；热容指升温所需的热量。",
+    "Differential scanning calorimetry heats or cools a sample and measures heat flow relative to a reference. Melting peaks differ from the heat-capacity step at a glass transition; heat capacity is heat required for a temperature change."
+  ],
+  [
+    "PXRD",
+    "PXRD",
+    "粉末 X 射线衍射：用 X 射线照射粉末，记录不同角度的散射强度。晶体周期性产生特定峰；峰消失说明长程有序减弱，不能单独证明玻璃。",
+    "Powder X-ray diffraction records scattering intensity versus angle. Periodic crystals produce characteristic peaks. Their loss indicates reduced long-range order, but alone cannot establish glass formation."
+  ],
+  [
+    "Bragg",
+    "Bragg",
+    "布拉格峰是周期性结构使不同原子的散射波在特定方向相互增强形成的衍射峰。少量残余晶相仍可能给出峰。",
+    "Bragg peaks arise when scattering waves from a periodic arrangement reinforce one another in particular directions. Small residual crystalline fractions can still produce peaks."
+  ],
+  [
+    "PDF",
+    "PDF",
+    "原子对分布函数：对总散射数据做数学变换，得到不同原子间距离上的相关信息。峰表示常见距离，不能直接当作唯一三维原子结构。这里不是文档格式。",
+    "Pair distribution function: a mathematical transform of total scattering describes correlations at different atomic separations. Peaks indicate common distances, not a unique 3D atomic arrangement. Not the document format."
+  ],
+  [
+    "总散射",
+    "total scattering",
+    "同时分析清晰衍射峰和弥散散射。弥散散射包含无序结构的信息，因此适合研究非晶材料。",
+    "Analysis of both sharp diffraction peaks and diffuse scattering. Diffuse scattering carries information about disorder and is useful for amorphous solids."
+  ],
+  [
+    "远红外",
+    "far-IR",
+    "红外光能激发分子或金属–配体的振动。测量吸收峰的位置与变化，结合计算判断哪些结合环境改变。远红外对应较低频率的振动。",
+    "Infrared light excites molecular or metal–ligand vibrations. Absorption positions and changes, combined with calculations, help identify altered bonding environments. Far-IR probes lower-frequency vibrations."
+  ],
+  [
+    "IR",
+    "IR",
+    "红外光谱记录材料吸收哪些频率的红外光，用于识别化学基团和结合环境；峰位变化通常需要参照与计算共同解释。",
+    "Infrared spectroscopy records absorbed infrared frequencies to probe chemical groups and bonding environments. Interpreting shifts generally needs references and calculations."
+  ],
+  [
+    "XAS",
+    "XAS",
+    "X 射线吸收谱：扫描入射 X 射线能量，测某元素的吸收变化，研究其氧化态、近邻原子与配位环境。依赖模型解释，不是直接拍摄原子。",
+    "X-ray absorption spectroscopy scans incident energy and measures element-specific absorption to probe oxidation state, neighbors and coordination. Interpretation uses models; it is not an atomic photograph."
+  ],
+  [
+    "NMR",
+    "NMR",
+    "核磁共振：置于磁场的原子核对射频信号的响应随化学环境改变。本文先酸溶解样品，再检查有机组分与比例；因此不能由此直接读取原玻璃的网络连接。",
+    "Nuclear magnetic resonance probes environment-dependent responses of nuclei in a magnetic field. Here acid-dissolved samples reveal organic components and ratios, not the intact glass connectivity."
+  ],
+  [
+    "四面体",
+    "tetrahedral",
+    "四个供体原子围绕金属呈近似四面体分布；“四配位”只是原子数，四面体还描述空间排列。",
+    "Four donor atoms arranged approximately tetrahedrally around a metal. Four-coordinate counts atoms; tetrahedral also describes geometry."
+  ],
+  [
+    "异质性",
+    "heterogeneity",
+    "材料的不同局部位置不完全相同，例如分子环境和排列方式存在差异；不自动意味着分成宏观两相。",
+    "Variation among local environments or arrangements, not necessarily separation into two macroscopic phases."
+  ],
+  [
+    "构型",
+    "configurations",
+    "原子或分子的一种具体空间排列；不同构型可以具有同样化学组成。",
+    "Specific spatial arrangements of atoms or molecules; different configurations can have identical composition."
+  ],
+  [
+    "咪唑酸根",
+    "imidazolate",
+    "咪唑失去一个质子后得到的阴离子，可以用氮原子连接金属；苯并咪唑酸根 bim⁻ 在此结构上含稠合苯环。",
+    "An anion formed when imidazole loses a proton, able to link metals through nitrogen. Benzimidazolate (bim⁻) includes a fused benzene ring."
+  ],
+  [
+    "ZIF",
+    "ZIF",
+    "沸石咪唑酯框架，MOF 的一个家族，以咪唑酸根类分子连接金属。后面的数字是结构命名编号，不是元素个数。",
+    "Zeolitic imidazolate framework: a family of MOFs with imidazolate-type linkers. Numbers are structure identifiers, not atom counts."
+  ],
+  [
+    "phen",
+    "phen",
+    "1,10-菲咯啉，一种有机配体，两个 N 原子可以同时结合一个金属。这称为螯合；phen₁.₃₃ 指每个金属平均加入 1.33 个 phen，不表示每个金属恰好配位 1.33 个。",
+    "1,10-Phenanthroline, a ligand whose two N atoms can bind one metal simultaneously (chelation). phen₁.₃₃ means 1.33 phen molecules added per metal on average, not 1.33 bound to every metal."
+  ],
+  [
+    "压入模量",
+    "indentation modulus",
+    "把硬探针压入表面，由力与位移推算抵抗弹性形变的程度；数值越大通常越难弹性变形，不等于更难断裂。",
+    "Derived from force and displacement as a hard probe indents the surface. Larger values indicate greater resistance to elastic deformation, not necessarily fracture."
+  ],
+  [
+    "GPa",
+    "GPa",
+    "吉帕，1 GPa = 10⁹ Pa。这里是模量单位，描述应力与应变的关系；应力是单位面积承受的力，应变是相对形变。",
+    "Gigapascal: 1 GPa = 10⁹ Pa. Here a modulus unit relating stress (force per area) to strain (relative deformation)."
+  ],
+  [
+    "断裂韧性",
+    "fracture toughness",
+    "材料抵抗裂纹扩展的能力，与刚度、硬度不同。本文改性前后差异在实验不确定性内，不能断言显著提高。",
+    "Resistance to crack propagation, distinct from stiffness and hardness. The reported difference is within experimental uncertainty and is not a demonstrated significant improvement."
+  ],
+  [
+    "硬度",
+    "hardness",
+    "材料抵抗局部永久压入变形的能力。与弹性模量和裂纹扩展阻力是不同指标。",
+    "Resistance to localized permanent indentation, distinct from elastic modulus and resistance to crack growth."
+  ],
+  [
+    "Curie–Weiss",
+    "Curie–Weiss",
+    "居里–外斯规律用高温磁响应随温度的变化拟合参数 θ。负 θ 通常指向反铁磁相互作用；θ 不是直接测到的有序转变温度。",
+    "A law fitting temperature-dependent magnetic response at high temperature to obtain θ. Negative θ generally suggests antiferromagnetic interactions; θ is not a directly observed ordering temperature."
+  ],
+  [
+    "反铁磁",
+    "antiferromagnetic",
+    "相邻磁矩倾向反向排列的相互作用。磁矩描述微观磁性的强弱和方向；有反铁磁相互作用不必形成长程有序。",
+    "Interactions favoring oppositely aligned neighboring magnetic moments (quantities describing magnetic strength and direction). Such interactions need not produce long-range order."
+  ],
+  [
+    "长程磁有序",
+    "long-range magnetic order",
+    "许多磁矩在较大距离上形成协同、有规律的排列。本文改性玻璃在测量低限 5 K 以上未显示这种有序，不能推断更低温。",
+    "Coordinated, regular arrangement of magnetic moments over extended distances. The modified glass shows none down to 5 K; lower temperatures remain untested."
+  ],
+  [
+    "统计显著性",
+    "statistically significant",
+    "判断观察差异能否与测量波动区分，需要样本量、误差和统计方法；不能仅凭两个平均数不同就宣称效果。",
+    "Assessing whether a difference can be distinguished from variation requires sample sizes, uncertainty and statistical methods, not merely different means."
+  ],
+  [
+    "单齿",
+    "monodentate",
+    "同一配体以一个供体原子结合所讨论的金属；双齿是以两个供体原子结合。是否继续桥联其他金属，需要另行判断。",
+    "A ligand binds the metal under discussion through one donor atom; bidentate uses two. Bridging to another metal is a separate question."
+  ],
+  [
+    "配位聚合物",
+    "coordination polymer",
+    "金属与配体重复连接形成延展结构；一维表示连接沿链方向延伸，不表示原子只占一条直线。",
+    "An extended structure with repeated metal–ligand connections. One-dimensional means chain-like connectivity, not atoms on a geometrically straight line."
+  ],
+  [
+    "配位络合物",
+    "coordination-complex",
+    "金属与周围配体组成的单元。若这些单元不再由配体持续连成网络，形成的玻璃应与延展 MOF 玻璃区分。",
+    "Units made of metals and surrounding ligands. If units no longer link into an extended network, their glass differs from an extended MOF glass."
+  ],
+  [
+    "inic",
+    "inic",
+    "异烟酸根：含吡啶环和羧酸根的阴离子。它可通过不同部位结合金属；加入 phen 后，原有连接方式可能改变。",
+    "Isonicotinate, an anion containing pyridyl and carboxylate groups. Different sites can bind metals; adding phen can change those connections."
+  ],
+  [
+    "btc",
+    "btc",
+    "苯-1,3,5-三甲酸根，含三个羧酸根的有机连接体。Cu₃(btc)₂ 是本文测试的一种铜基框架。",
+    "Benzene-1,3,5-tricarboxylate, an organic linker with three carboxylate groups. Cu₃(btc)₂ is a copper framework tested here."
+  ],
+  [
+    "桨轮",
+    "paddle-wheel",
+    "一种由两个金属中心与周围桥联配体形成的局部构筑单元的专业结构名称。不是宏观运动部件。",
+    "A technical name for a local building unit containing two metal centres and surrounding bridging ligands, not a moving macroscopic component."
+  ],
+  [
+    "淬冷",
+    "quenching",
+    "把高温液态冷却，使结构没有充分时间结晶而被保留在非晶状态；需要用热分析等证明产物是玻璃。",
+    "Cooling a hot liquid so that its structure can be arrested without crystallizing; thermal and other evidence must establish that the product is glass."
+  ],
+  [
+    "配位键",
+    "coordination bond",
+    "配体的供电子原子与金属形成的化学键；配体是结合金属的分子或离子。一个配体可通过一个或多个原子结合金属。",
+    "A chemical bond between a metal and an electron-donating atom of a ligand. A ligand is a molecule or ion that binds a metal through one or more atoms."
+  ],
+  [
+    "配体交换",
+    "ligand exchange",
+    "金属周围原有的配体被其他配体替代的过程。速度取决于金属、配体、温度和溶剂；本文中速度影响结构能否充分重排。",
+    "Replacement of ligands around a metal by other ligands. Its rate depends on metal, ligands, temperature and solvent and influences structural rearrangement."
+  ],
+  [
+    "螯合",
+    "chelation",
+    "同一个配体的两个或更多供电子原子结合到同一个金属。此时配位数增加的数量与连接到其他金属的数量不相同。",
+    "Binding of two or more donor atoms of the same ligand to one metal. Coordinated-atom count and number of connections to other metals are different quantities."
+  ],
+  [
+    "吸附",
+    "adsorption",
+    "气体分子在材料表面或孔壁附近富集。吸附量必须连同气体种类、温度和压力比较，不能直接等同于孔的体积。",
+    "Accumulation of gas molecules near material surfaces or pore walls. Uptake comparisons require the same gas, temperature and pressure; uptake is not directly pore volume."
+  ],
+  [
+    "热容",
+    "heat capacity",
+    "使物体温度升高一度所需的热量。DSC 中热容的变化可用于识别玻璃化转变。",
+    "Heat required to raise the temperature by one degree. A heat-capacity change in DSC can help identify a glass transition."
+  ],
+  [
+    "蓝移",
+    "blue shift",
+    "光谱峰移向较高频率或波数；这里表示相应分子振动所需能量增加，是判断结合环境变化的证据之一。",
+    "A spectral shift to higher frequency or wavenumber. Here it indicates higher vibrational energy and contributes evidence for a changed bonding environment."
+  ],
+  [
+    "mmol",
+    "mmol",
+    "毫摩尔，1 mmol = 10⁻³ mol。mmol/g 表示每克样品吸附的物质的量；必须注明测量温度和压力。",
+    "Millimole, 10⁻³ mol. mmol/g expresses the amount adsorbed per gram; temperature and pressure must also be specified."
+  ],
+  [
+    "羧酸根",
+    "carboxylate",
+    "含 –COO⁻ 的基团，由羧酸失去 H⁺ 形成；其中氧原子可与金属配位。",
+    "A group containing –COO⁻, formed when a carboxylic acid loses H⁺; its oxygen atoms can bind metals."
+  ],
+  [
+    "K",
+    "K",
+    "开尔文，绝对温标单位：摄氏温度 = 开尔文温度 − 273.15。例如 77 K 为 −196.15 °C。θ 等拟合参数以 K 表示时，不应当作直接测量的相变温度。",
+    "Kelvin, the absolute temperature unit: °C = K − 273.15. For example, 77 K is −196.15 °C. Fitted parameters such as θ in kelvin are not directly measured transition temperatures."
+  ],
+  [
+    "kPa",
+    "kPa",
+    "千帕，压力单位：1 kPa = 1000 Pa。100 kPa 约为一个标准大气压。",
+    "Kilopascal, a pressure unit: 1 kPa = 1000 Pa. 100 kPa is approximately one standard atmosphere."
+  ],
+  [
+    "当量",
+    "equivalents",
+    "本页指平均每个金属离子对应的添加剂分子数；1.33 当量是样品整体的配比，不表示每个节点结合 1.33 个分子。",
+    "Here, the average number of additive molecules per metal ion. 1.33 equivalents is a bulk mixing ratio, not 1.33 molecules bound at every node."
+  ],
+  [
+    "双齿",
+    "bidentate",
+    "同一个配体通过两个供电子原子结合金属；应结合具体结构判断它们结合一个金属还是桥联不同金属。",
+    "A ligand binds through two donor atoms; the specific structure determines whether they bind one metal or bridge different metals."
+  ],
+  [
+    "纳米压痕",
+    "nanoindentation",
+    "用微小探针压入材料表面并记录力与位移，计算局部力学性质。结果取决于表面状态、压入深度与分析模型。",
+    "A small probe indents a surface while force and displacement are recorded to infer local mechanical properties, which depend on surface condition, depth and analysis model."
+  ],
+  [
+    "modifier",
+    "modifier",
+    "改性剂：加入材料以改变结构或性质的组分。本研究中的 phen 同时影响熔融行为，且在部分体系中参与配位反应。",
+    "An added component that changes structure or properties. Here phen changes melting behavior and participates in coordination in some systems."
+  ],
+  [
+    "膜分离选择性",
+    "membrane selectivity",
+    "不同气体通过膜的能力之比。需要膜的实际传输实验，不能由粉末吸附量直接推出。",
+    "The ratio of transport abilities of different gases through a membrane. It requires membrane transport measurements and cannot be inferred directly from powder uptake."
+  ],
+  [
+    "im",
+    "im",
+    "咪唑酸根的缩写，是咪唑失去 H⁺ 后形成的阴离子连接体；bim 则是苯并咪唑酸根。",
+    "Abbreviation for imidazolate, an anionic linker formed by loss of H⁺ from imidazole; bim denotes benzimidazolate."
+  ]
+]

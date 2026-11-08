@@ -1,0 +1,8 @@
+{
+  "baselineCommit": "5be1378",
+  "reason": "The two papers in the Glass MOFs topic now have completed bilingual explainers and are linked from the primary catalogue.",
+  "records": [
+    {"paperId":"paper-0da1c7af90b8","path":"./papers/direct-amorphous-mof-nanoclusters/"},
+    {"paperId":"paper-afede6b91f4a","path":"./papers/flux-mof-glasses/"}
+  ]
+}

@@ -25,6 +25,11 @@ Opening these pages does not require ChatGPT sign-in. Each supports Chinese and 
 
 - [FrontierCS 2 — A Benchmark for Computer Science R&D](frontier-cs/) — arXiv 2026; PDF-audited bilingual guide with all 48 tasks, judge isolation, complete 12-agent results, three case studies, FCI/FDI and 29 related works.
 
+## Glass MOF explainers
+
+- [Direct synthesis of amorphous MOFs from nanoclusters](direct-amorphous-mof-nanoclusters/) — Nature Communications 2026
+- [Flux-mediated ligand exchange restructures MOF glasses](flux-mof-glasses/) — Nature Materials 2026
+
 ## MOF stability and REE explainers
 
 - [Water stability review](water-stability-review/) — Chemical Reviews 2014

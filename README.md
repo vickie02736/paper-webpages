@@ -52,6 +52,13 @@ The library supports collecting ideas and developing research judgment. The exis
 
 - [FrontierCS 2 — A Benchmark for Computer Science R&D](papers/frontier-cs/) — PDF-audited task/judge diagrams, complete 12-agent results, three case studies and 29 related efforts
 
+## Glass MOF explainers
+
+- [Direct synthesis of amorphous MOFs from nanoclusters](papers/direct-amorphous-mof-nanoclusters/) — Nature Communications 2026
+- [Flux-mediated reconstruction of MOF glasses](papers/flux-mof-glasses/) — Nature Materials 2026
+
+These two pages distinguish amorphous MOFs from MOF glasses and connect synthesis kinetics, coordination exchange, defects, topology and property trade-offs.
+
 ## MOF stability and rare-earth expansion
 
 28 additional bilingual explainers cover 12 stability papers and 16 rare-earth adsorption/separation papers. All final main articles and listed supplementary materials were read; evidence ledgers distinguish experimental reports, model results and teaching calculations.
@@ -106,7 +113,7 @@ references/
     *.mm
 ```
 
-The explainers share the Research Atlas navy-and-cyan reading style, a two-row sticky header, accessible section navigation and reading progress. All 61 pages support complete Chinese/English switching, including interactive feedback, and remember the homepage's language preference. Ln local coordination, PMIDA–MIL-101 and CALF-20 also retain their parallel bilingual mode. Paper-specific diagrams, experiments and learning-depth options remain tailored to the subject.
+The explainers share the Research Atlas navy-and-cyan reading style, a two-row sticky header, accessible section navigation and reading progress. All 63 pages support complete Chinese/English switching, including interactive feedback, and remember the homepage's language preference. Ln local coordination, PMIDA–MIL-101 and CALF-20 also retain their parallel bilingual mode. Paper-specific diagrams, experiments and learning-depth options remain tailored to the subject.
 
 Start with the central idea, then explore the mechanism, evidence, limitations, and broader connections. See the [explainer implementation guide](papers/README.md#shared-reading-system) for the common styles and language controller.
 
@@ -124,7 +131,7 @@ With a search active, the explainer filter shows matching / total explainer coun
 
 The **Explainers from the past week / 近一周的讲解页** section includes explainers first created within the last seven UTC calendar days, ordered by their precise creation time, including creations on the same day; updating an existing page does not return it to the list or move it to the top. Before publishing, run `node scripts/update-explainer-updates.cjs` after committing the explainer changes to initialise missing creation timestamps from Git history while preserving existing creation times and first-publication dates; see the [catalogue guide](references/paper-catalog-guide.md).
 
-The homepage and all 58 paper explainers share expandable publication-time author/affiliation bylines and separate Published, Accepted and Preprint posted dates. Search includes full author lists, reliable Chinese/English institution names and acronyms. Metadata is maintained once per source URL in the catalogue; see the [schema and generation steps](references/paper-catalog-guide.md#authors-affiliations-and-paper-dates) and [unverified-information ledger](references/paper-metadata-audit.md).
+The homepage and all 60 paper explainers share expandable publication-time author/affiliation bylines and separate Published, Accepted and Preprint posted dates. Search includes full author lists, reliable Chinese/English institution names and acronyms. Metadata is maintained once per source URL in the catalogue; see the [schema and generation steps](references/paper-catalog-guide.md#authors-affiliations-and-paper-dates) and [unverified-information ledger](references/paper-metadata-audit.md).
 
 ## Classification and filters
 
