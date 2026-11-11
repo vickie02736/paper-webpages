@@ -73,9 +73,9 @@ for(const item of collection.items){const ai=catalog.themes.find(t=>t.id==='ai')
 assert(catalog.themes.find(t=>t.id==='mathematics').relatedPaperIds.includes(placement.paperId));
 assert.deepEqual(collection.items.filter(i=>i.type==='document').map(i=>i.path),verl.documentPages);
 for(const item of collection.items){assert(fs.existsSync(path.join(root,item.path,'index.html')));assert(catalog.explainers[item.path]);if(item.type==='paper')assert(papers.some(p=>p.id===item.paperId&&p.p===item.path));else assert(!item.paperId&&!papers.some(p=>p.p===item.path));}
-assert.equal(Object.keys(catalog.explainers).length,63);
-assert.equal(papers.length,493);assert.equal(sources.size,493);assert.equal(ids.size,493);
-assert.deepEqual(catalog.themes.map(t=>[t.id,t.p.length]),[['mof',96],['ai',104],['chemistry-materials',74],['robotics-lab',72],['mathematics',77],['life-medicine',70]]);
+assert.equal(Object.keys(catalog.explainers).length,64);
+assert.equal(papers.length,494);assert.equal(sources.size,494);assert.equal(ids.size,494);
+assert.deepEqual(catalog.themes.map(t=>[t.id,t.p.length]),[['mof',97],['ai',104],['chemistry-materials',74],['robotics-lab',72],['mathematics',77],['life-medicine',70]]);
 assert.equal(migration.mapping.length,451);
 assert.equal(migration.mapping.flatMap(m=>m.old).length,463);
 assert.equal(papers.flatMap(p=>p.legacyContexts).length,463);
@@ -99,7 +99,7 @@ for(const t of catalog.themes){
 for(const route of catalog.researchRoutes)for(const stage of route.stages)for(const id of stage.paperIds)assert(ids.has(id));
 for(const m of migration.mapping){const p=sources.get(m.sourceUrl),expected=m.paperId===placement.paperId?placement.to:m;assert.equal(p.id,m.paperId);assert.equal(p.topicId,regroupedTopic(p.id,expected.topicId));assert(catalog.themes.find(t=>t.id===expected.primaryThemeId).p.includes(p));}
 assert.equal(catalog.researchRoutes.length,3);
-assert.equal(new Set(papers.filter(p=>p.p).map(p=>p.p)).size,60);
+assert.equal(new Set(papers.filter(p=>p.p).map(p=>p.p)).size,61);
 for(const p of papers.filter(p=>p.p))assert(fs.existsSync(path.join(root,p.p,'index.html')));
 const mof=catalog.themes.find(t=>t.id==='mof');
 const categoryCount=name=>mof.p.filter(p=>mof.groups[p.g].category.zh===name).length;
@@ -109,7 +109,7 @@ for(const id of regroup.retiredTopicIds)assert(!mof.groups.some(g=>g.id===id));
 for(const m of subtopicRegroup.papers){const t=catalog.themes.find(x=>x.id===m.themeId);const p=t.p.find(x=>x.id===m.paperId);assert(p,'Regrouped paper keeps its primary theme');assert.equal(p.topicId,m.to.topicId);assert.equal(p.g,m.to.g);}
 for(const [id,info] of Object.entries(subtopicRegroup.themes)){const t=catalog.themes.find(x=>x.id===id);assert.equal(t.groups.length,info.topics[1]);assert.equal(new Set(t.groups.map(g=>g.categoryId)).size,info.categories[1]);for(const r of info.retiredTopicIds)assert(!t.groups.some(g=>g.id===r));for(const g of t.groups)assert(t.p.some(p=>p.topicId===g.id),'No empty topic');}
 assert.equal(mof.relatedPaperIds.length,5);
-console.log('PASS taxonomy: original451records/463contexts preserved;28MOF+11verl+2RL+1SAM additions;493papers/60paper+3document explainers;96/104/74/72/77/70 primary counts;explicit GRPO theme correction;immutable baseline metadata and dates.');
+console.log('PASS taxonomy: original451records/463contexts preserved;28MOF+11verl+2RL+1SAM additions;494papers/61paper+3document explainers;97/104/74/72/77/70 primary counts;explicit GRPO theme correction;immutable baseline metadata and dates.');
 if(process.argv.includes('--data-only'))process.exit(0);
 const {chromium}=require(process.env.PAPER_PLAYWRIGHT_MODULE||'playwright');
 (async()=>{
@@ -120,7 +120,7 @@ const {chromium}=require(process.env.PAPER_PLAYWRIGHT_MODULE||'playwright');
   const page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'});const errors=[];
   page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400&&r.url().startsWith(base))errors.push(r.url()+': '+r.status());});
   await page.goto(base);await page.waitForFunction(()=>!document.querySelector('#only-explainers').disabled);
-  assert.equal(await page.locator('#catalog .paper-row').count(),493);
+  assert.equal(await page.locator('#catalog .paper-row').count(),494);
   assert.deepEqual(await page.locator('.theme-menu').evaluateAll(nodes=>nodes.map(n=>n.dataset.theme)),catalog.themes.map(t=>t.id));
   await page.locator('#theme-filter').selectOption('mof');
   assert.equal(await page.locator('#catalog .paper-row').count(),96);

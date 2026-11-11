@@ -1,5 +1,7 @@
 # Paper explainers
 
+- [Mofography — 孔图、贯通与二甲苯筛选](mofography/)
+
 Each explainer is a static visual webpage using the shared Research Atlas reading system. The current collection includes:
 
 | Paper | Venue | Page |

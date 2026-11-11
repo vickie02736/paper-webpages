@@ -1,5 +1,7 @@
 # Paper Webpages
 
+- [Mofography — Pore graphs, percolation and xylene screening](papers/mofography/)
+
 Interactive, visual explanations of scientific papers and research concepts.
 
 **Open the homepage:** [Research Atlas](https://vickie02736.github.io/paper-webpages/) · [English version](https://vickie02736.github.io/paper-webpages/?lang=en)
@@ -8,9 +10,9 @@ This repository collects the paper explainer webpages and research maps created 
 
 ## Research around MOF + AI
 
-Six primary themes organize 493 papers, with one primary record per paper:
+Six primary themes organize 494 papers, with one primary record per paper:
 
-- [Metal–Organic Frameworks / 金属有机框架](https://vickie02736.github.io/paper-webpages/?theme=mof): 96 papers. Includes separate **MOF Stability / MOF 稳定性** and **Rare-Earth Adsorption & Separation / 稀土吸附与分离** subcategories.
+- [Metal–Organic Frameworks / 金属有机框架](https://vickie02736.github.io/paper-webpages/?theme=mof): 97 papers. Includes separate **MOF Stability / MOF 稳定性** and **Rare-Earth Adsorption & Separation / 稀土吸附与分离** subcategories.
 - [Artificial Intelligence & Computing / 人工智能与计算](https://vickie02736.github.io/paper-webpages/?theme=ai): 104 papers and 3 documentation articles.
 - [General Chemistry & Materials / 通用化学与材料](https://vickie02736.github.io/paper-webpages/?theme=chemistry-materials): 74 papers.
 - [Robotics & Lab Automation / 机器人与实验自动化](https://vickie02736.github.io/paper-webpages/?theme=robotics-lab): 72 papers.
@@ -113,7 +115,7 @@ references/
     *.mm
 ```
 
-The explainers share the Research Atlas navy-and-cyan reading style, a two-row sticky header, accessible section navigation and reading progress. All 63 pages support complete Chinese/English switching, including interactive feedback, and remember the homepage's language preference. Ln local coordination, PMIDA–MIL-101 and CALF-20 also retain their parallel bilingual mode. Paper-specific diagrams, experiments and learning-depth options remain tailored to the subject.
+The explainers share the Research Atlas navy-and-cyan reading style, a two-row sticky header, accessible section navigation and reading progress. All 64 pages support complete Chinese/English switching, including interactive feedback, and remember the homepage's language preference. Ln local coordination, PMIDA–MIL-101 and CALF-20 also retain their parallel bilingual mode. Paper-specific diagrams, experiments and learning-depth options remain tailored to the subject.
 
 Start with the central idea, then explore the mechanism, evidence, limitations, and broader connections. See the [explainer implementation guide](papers/README.md#shared-reading-system) for the common styles and language controller.
 
@@ -131,13 +133,13 @@ With a search active, the explainer filter shows matching / total explainer coun
 
 The **Explainers from the past week / 近一周的讲解页** section includes explainers first created within the last seven UTC calendar days, ordered by their precise creation time, including creations on the same day; updating an existing page does not return it to the list or move it to the top. Before publishing, run `node scripts/update-explainer-updates.cjs` after committing the explainer changes to initialise missing creation timestamps from Git history while preserving existing creation times and first-publication dates; see the [catalogue guide](references/paper-catalog-guide.md).
 
-The homepage and all 60 paper explainers share expandable publication-time author/affiliation bylines and separate Published, Accepted and Preprint posted dates. Search includes full author lists, reliable Chinese/English institution names and acronyms. Metadata is maintained once per source URL in the catalogue; see the [schema and generation steps](references/paper-catalog-guide.md#authors-affiliations-and-paper-dates) and [unverified-information ledger](references/paper-metadata-audit.md).
+The homepage and all 61 paper explainers share expandable publication-time author/affiliation bylines and separate Published, Accepted and Preprint posted dates. Search includes full author lists, reliable Chinese/English institution names and acronyms. Metadata is maintained once per source URL in the catalogue; see the [schema and generation steps](references/paper-catalog-guide.md#authors-affiliations-and-paper-dates) and [unverified-information ledger](references/paper-metadata-audit.md).
 
 ## Classification and filters
 
 Use the primary-theme selector and the expandable cross-disciplinary tags alongside global or within-theme search. Tags have separate object, method, task and application dimensions: selections within one dimension use OR; different dimensions use AND. For example, `?theme=mof&tag=application%3Aree` selects MOF rare-earth adsorption/separation, and `?tag=object%3Amof&tag=method%3Amlip` selects MOF interatomic potentials. `MLP`, `MLIP` and the old `AIRS` abbreviation are searchable aliases; the synthesis paper now displays its original abbreviation, AIRES.
 
-A paper reference uses `?paper=<stable-id>` and opens the primary entry. Existing `?q=`, `?lang=`, `?explainers=1`, `#themes`, `#recent` and all explainer paths remain valid. Related readings show the primary theme and do not affect the 493-paper total. A migration ledger preserves all 463 old listings: [`taxonomy-migration.json`](references/taxonomy-migration.json).
+A paper reference uses `?paper=<stable-id>` and opens the primary entry. Existing `?q=`, `?lang=`, `?explainers=1`, `#themes`, `#recent` and all explainer paths remain valid. Related readings show the primary theme and do not affect the 494-paper total. A migration ledger preserves all 463 old listings: [`taxonomy-migration.json`](references/taxonomy-migration.json).
 
 Run `node scripts/check-taxonomy.cjs --data-only` for migration and schema checks. Browser checks are described in the [catalogue guide](references/paper-catalog-guide.md).
 
